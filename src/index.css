@@ -1,0 +1,21 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+.container {
+  padding: 1% 12%;
+  margin: 1.3em;
+}
+.menubar {
+  list-style-type: none;
+}
+.menubar-nav-item {
+  display: inline;
+  padding: 0em 1.2em;
+}
+.menubar-a {
+  text-decoration: none;
+}
+.subtitle {
+  font-size: 1.4em;
+}
