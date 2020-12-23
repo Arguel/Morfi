@@ -10,15 +10,17 @@ body {
   height: 100%;
   margin: 0px;
 }
+/*--------------HEADER--------------*/
 .container {
   padding: 20px 90px;
 }
 .menubar {
   list-style-type: none;
+  padding: 0px;
 }
 .menubar-nav-item {
   display: inline;
-  padding: 0px 30px;
+  padding: 0px 2rem;
   font-family: 'Source Sans Pro', sans-serif;
 }
 .menubar-a {
@@ -44,8 +46,8 @@ body {
   grid-template-rows: 65% 1fr;
   grid-template-columns: 5fr 4fr;
   grid-gap: 10px;
-  margin-left: 200px; 
-  margin-right: 200px;
+  margin-left: 14%; 
+  margin-right: 14%;
   width: 70%;
   height: 80%;
 }
