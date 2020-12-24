@@ -95,7 +95,41 @@ body {
   opacity: 0.95;
   cursor: pointer;
 }
+
+/*--------------OFFERS------------------*/
+.h1-title {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+  color: #707070;
+  margin: 1.5rem;
+}
+.top-offers-container {
+  background: url("https://image.freepik.com/foto-gratis/fondo-madera_24972-623.jpg") no-repeat;
+  min-height: 15em;
+  background-size: 100% 100%;
+  opacity: 0.94;
+}
+.fa-caret-left {
+  color: white;
+}
+.fa-caret-right {
+  color: white;
+}
+/*---------------INFO-AND-CUSTOMER---------------*/
+.wrapper-section {
+  background-color: cyan;
+  margin: 5% 10%;
+}
+.wrapper-customer {
+  background-color: red;
+  max-width: 300px;
+}
+.customer-photo {
+  max-width: 5%;
+}
+/*----------------US-----------------*/
 .b-center {
   background-position: center;
   background-size: cover;
 }
+
