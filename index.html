@@ -7,7 +7,8 @@
   <title>Morfi</title>
   <link rel="stylesheet" href="src/index.css" type="text/css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/1131adf3a1.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -18,37 +19,77 @@
         <li class="menubar-nav-item">
           <a class="menubar-a subtitle" href="public/About/About-us.html">About</a>
           <ul class="sublist menubar">
-            <li><a class="sublist-a" href="#">About us</a></li>
+            <li><a class="sublist-a" href="public/About/About-us.html">About us</a></li>
             <li><a class="sublist-a" href="public/About/Our-products.html">Our products</a></li>
           </ul>
         </li>
         <li class="menubar-nav-item"><a class="menubar-a subtitle" href="public/Shop/Shop.html">Shop</a></li>
-        <li class="menubar-nav-item"><a class="menubar-a subtitle" href="public/Recipes/Recipes.html">Recipes</a></li>
         <li class="menubar-nav-item">
-          <a class="menubar-a subtitle" href="public/Help/Help.html">Help</a>
-          <ul>
-            <li><a href="#">Help</a></li>
+          <a class="menubar-a subtitle" href="public/Recipes/Recipes.html">Recipes</a>
+          <ul class="sublist menubar">
+            <li><a class="sublist-a" href="public/Recipes/Recipes.html">Recipes</a></li>
+            <li><a class="sublist-a" href="public/Recipes/Healthy-recipes.html">Healthy</a></li>
+            <li><a class="sublist-a" href="public/Recipes/Wholemeal-recipes.html">Wholemeal</a></li>
+            <li><a class="sublist-a" href="public/Recipes/Easy-recipes.html">Easy</a></li>
+          </ul>
+        </li>
+        <li class="menubar-nav-item">
+          <a class="menubar-a subtitle" href="public/Help/Contact.html">Help</a>
+          <ul class="sublist menubar">
+            <li><a class="sublist-a" href="public/Help/Contact.html">Contact</a></li>
+            <li><a class="sublist-a" href="public/Help/Locations.html">Locations</a></li>
           </ul>
         </li>
         <li class="menubar-nav-item"><input class="searchbar" type="text" name="searchbar" placeholder="Search"></li>
         <li class="menubar-nav-item"><a class="menubar-a subtitle" href="public/Account/Account.html">Account</a></li>
-        <li class="menubar-nav-item"><a class="menubar-a subtitle" href="public/Cart/Cart.html">Cart</a></li>
+        <li class="menubar-nav-item">
+          <a class="menubar-a subtitle" href="public/Cart/Cart.html">Cart</a>
+        </li>
       </ul>
     </div>
   </nav>
   <div class="wrapper-news">
-    <div class="events">
-      events
+    <div class="events b-center">
     </div>
-    <div class=" news">
-      news
+    <div class="news b-center">
     </div>
-    <div class="news-food">
-      new food
+    <div class="news-food b-center">
     </div>
   </div>
-  <h1>Top offers</h1>
-
+  <h1 class="h1-title">Top offers</h1>
+  <div class="top-offers-container">
+    <div>
+      offers container
+      <div>
+        offer1
+      </div>
+      <div>
+        offer2
+      </div>
+    </div>
+    <i class="fas fa-caret-left fa-7x"></i>
+    <i class="fas fa-caret-right fa-7x"></i>
+  </div>
+  <div class="wrapper-section">
+    <div class="tec-info">
+      <h2>Lorem Ipsum</h2>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+        a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
+        of Lorem Ipsum.</p>
+    </div>
+    <div class="wrapper-customer">
+      <div class="customer-photo">
+        <!--<img src="https://www.salvador-marin.es/wp-content/uploads/2020/06/Woman_1.jpg" alt="customer-photo">-->
+      </div>
+      <p class="customer-review">description</p>
+    </div>
+  </div>
+  <footer>
+    placeholder
+  </footer>
 </body>
 
 </html>
