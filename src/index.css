@@ -105,27 +105,72 @@ body {
 }
 .top-offers-container {
   background: url("https://image.freepik.com/foto-gratis/fondo-madera_24972-623.jpg") no-repeat;
-  min-height: 15em;
+  height: 40%;
   background-size: 100% 100%;
   opacity: 0.94;
+  display: flex;
+}
+.toffer-item {
+  margin: 0em 1em;
+  display: inline-block;
+  align-self: center;
+  flex: 1;
+}
+.toffer-item-photo {
+  background: url("https://steemitimages.com/640x0/http://www.culturizate.com/wp-content/uploads/2017/05/las-10-comidas-mas-deliciosas-del-mundo-9.jpg") no-repeat;
+  width: 200px;
+  height: 200px;
+  float: left;
+  margin-right: 30px;
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.8);
+}
+.toffer-item-title {
+  color: white;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 600;
+  font-family: 'Source Sans Pro', sans-serif;
+  overflow: hidden;
+}
+.toffer-item-price {
+  color: white;
+  text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.2em;
+  overflow: hidden;
+}
+.toffer-item-description {
+  color: white;
+  text-align: left;
+  font-size: 0.9em;
+  font-family: 'Source Sans Pro', sans-serif;
+  overflow: hidden;
 }
 .fa-caret-left {
   color: white;
+  margin: 5% 2%;
+  align-self: center;
 }
 .fa-caret-right {
   color: white;
+  margin: 5% 2%;
+  align-self: center;
 }
-/*---------------INFO-AND-CUSTOMER---------------*/
-.wrapper-section {
-  background-color: cyan;
-  margin: 5% 10%;
-}
-.wrapper-customer {
+/*-----------------FOOTER---------------*/
+.footer-container {
   background-color: red;
-  max-width: 300px;
 }
-.customer-photo {
-  max-width: 5%;
+.footer-logo {
+  background-color: green;
+  width: 300px;
+  height: 100px;
+}
+.social-icons {
+  list-style-type: none;
+  padding: 0px;
+}
+.subfooter {
+  background-color: grey;
 }
 /*----------------US-----------------*/
 .b-center {
