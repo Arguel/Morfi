@@ -14,11 +14,11 @@
 <body>
   <nav class="menu">
     <div class="container">
-      <ul class="menubar">
+      <ul class="list-none">
         <li class="menubar-nav-item"><a class="menubar-a subtitle" href="#">Home</a></li>
         <li class="menubar-nav-item">
           <a class="menubar-a subtitle" href="public/About/About-us.html">About</a>
-          <ul class="sublist menubar">
+          <ul class="sublist list-none">
             <li><a class="sublist-a" href="public/About/About-us.html">About us</a></li>
             <li><a class="sublist-a" href="public/About/Our-products.html">Our products</a></li>
           </ul>
@@ -26,7 +26,7 @@
         <li class="menubar-nav-item"><a class="menubar-a subtitle" href="public/Shop/Shop.html">Shop</a></li>
         <li class="menubar-nav-item">
           <a class="menubar-a subtitle" href="public/Recipes/Recipes.html">Recipes</a>
-          <ul class="sublist menubar">
+          <ul class="sublist list-none">
             <li><a class="sublist-a" href="public/Recipes/Recipes.html">Recipes</a></li>
             <li><a class="sublist-a" href="public/Recipes/Healthy-recipes.html">Healthy</a></li>
             <li><a class="sublist-a" href="public/Recipes/Wholemeal-recipes.html">Wholemeal</a></li>
@@ -35,7 +35,7 @@
         </li>
         <li class="menubar-nav-item">
           <a class="menubar-a subtitle" href="public/Help/Contact.html">Help</a>
-          <ul class="sublist menubar">
+          <ul class="sublist list-none">
             <li><a class="sublist-a" href="public/Help/Contact.html">Contact</a></li>
             <li><a class="sublist-a" href="public/Help/Locations.html">Locations</a></li>
           </ul>
@@ -49,46 +49,103 @@
     </div>
   </nav>
   <div class="wrapper-news">
-    <div class="events b-center">
-    </div>
-    <div class="news b-center">
-    </div>
-    <div class="news-food b-center">
-    </div>
+    <div class="events b-center"></div>
+    <div class="news b-center"></div>
+    <div class="news-food b-center"></div>
   </div>
-  <h1 class="h1-title">Top offers</h1>
+  <h1 id="top-offers" class="h1-title">Top offers</h1>
   <div class="top-offers-container">
-    <div>
-      offers container
-      <div>
-        offer1
-      </div>
-      <div>
-        offer2
+    <i class="fas fa-caret-left fa-7x"></i>
+    <div class="toffer-item">
+      <div class="toffer-item-photo b-center"></div>
+      <div class="toffer-item-title">Empanada</div>
+      <div class="toffer-item-price">$99.99</div>
+      <div class="toffer-item-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took
       </div>
     </div>
-    <i class="fas fa-caret-left fa-7x"></i>
+    <div class="toffer-item">
+      <div class="toffer-item-photo b-center"></div>
+      <div class="toffer-item-title">Empanada</div>
+      <div class="toffer-item-price">$99.99</div>
+      <div class="toffer-item-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took
+      </div>
+    </div>
     <i class="fas fa-caret-right fa-7x"></i>
   </div>
   <div class="wrapper-section">
     <div class="tec-info">
       <h2>Lorem Ipsum</h2>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+        industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+        make
         a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
+        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
+        containing
+        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
+        versions
         of Lorem Ipsum.</p>
     </div>
     <div class="wrapper-customer">
-      <div class="customer-photo">
-        <!--<img src="https://www.salvador-marin.es/wp-content/uploads/2020/06/Woman_1.jpg" alt="customer-photo">-->
-      </div>
-      <p class="customer-review">description</p>
+      <img class="customer-photo" src="https://www.salvador-marin.es/wp-content/uploads/2020/06/Woman_1.jpg"
+        alt="customer-photo">
+      <p class="customer-review">Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+        PageMaker including</p>
     </div>
   </div>
-  <footer>
-    placeholder
+  <footer class="footer-container">
+    <div class="wrapper-footer-left">
+      <div class="footer-logo-desc">
+        <img class="footer-logo" src="public/Img/el-re-logo.png" alt="logo">
+        <p class="footer-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem</p>
+      </div>
+      <ul class="social-icons list-none">
+        <li><a href="#"><i class="fab fa-facebook-square fa-2x"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter-square fa-2x"></i></a></li>
+        <li><a href="#"><i class="fab fa-youtube-square fa-2x"></i></a></li>
+        <li><a href="#"><i class="fab fa-instagram-square fa-2x"></i></a></li>
+      </ul>
+    </div>
+    <div class="wrapper-footer-right">
+      <ul class="list-none footer-list">
+        <li><a href="#">Home</a></li>
+      </ul>
+      <ul class="list-none footer-list">
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Our products</a></li>
+      </ul>
+      <ul class="list-none footer-list">
+        <li><a href="#">Shop</a></li>
+        <li><a href="#top-offers">Top offers</a></li>
+      </ul>
+      <ul class="list-none footer-list">
+        <li><a href="#">Recipes</a></li>
+        <li><a href="#">Healthy</a></li>
+        <li><a href="#">Wholemeal</a></li>
+        <li><a href="#">Easy</a></li>
+      </ul>
+      <ul class="list-none footer-list">
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Locations</a></li>
+      </ul>
+    </div>
+    <ul class="list-none terms">
+      <li><a href="#">Terms of Use</a></li>
+      <li><a href="#">Terms & Conditions</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li>
+        <ul class="list-none footer-sublist">
+          English
+          <li>Spanish</li>
+          <li>English</li>
+        </ul>
+      </li>
+    </ul>
+    <div class="rights">
+      <span>© 2020 Morfi. All Rights Reserved.</span>
+    </div>
   </footer>
 </body>
 
