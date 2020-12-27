@@ -14,7 +14,7 @@ body {
 .container {
   padding: 20px 90px;
 }
-.menubar {
+.list-none {
   list-style-type: none;
   padding: 0px;
 }
@@ -150,27 +150,115 @@ body {
   color: white;
   margin: 5% 2%;
   align-self: center;
+  cursor: pointer;
 }
 .fa-caret-right {
   color: white;
   margin: 5% 2%;
   align-self: center;
+  cursor: pointer;
+}
+/*-------------------CUSTOMER--------------------*/
+.wrapper-section {
+  background-color: red;
+  margin: 3% auto;
+  display: flex;
+  width: 90%;
+}
+.tec-info {
+  background-color: aqua;
+  margin: 8% 2%;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.wrapper-customer {
+  background-color: navy;
+}
+.customer-photo {
+  border-radius: 51px;
+  width: 300px;
+}
+.customer-review {
+  text-align: center;
+  margin: 5%;
 }
 /*-----------------FOOTER---------------*/
 .footer-container {
   background-color: red;
+  display: grid;
+  grid-template-rows: 80% 20%;
+  grid-template-columns: 30% 2fr 1fr;
+}
+.wrapper-footer-left {
+  background-color: black;
+}
+.footer-logo-desc {
+  background-color: black;
+  width: 300px;
+  font-family: 'Source Sans Pro', sans-serif;
+  display: inline-block;
+  margin: 2% 8% 0% 2%;
+  color: white;
+  text-align: center;
 }
 .footer-logo {
-  background-color: green;
   width: 300px;
   height: 100px;
 }
 .social-icons {
-  list-style-type: none;
-  padding: 0px;
+  background-color: black;
+  display: inline-block;
 }
-.subfooter {
-  background-color: grey;
+.social-icons li a {
+  text-decoration: none;
+  color: white;
+}
+.wrapper-footer-right {
+  background-color: black;
+  grid-column: 2 / 4;
+  display: flex;
+  justify-content: space-evenly;
+}
+.terms {
+  background-color: red;
+  grid-column: 1 / 3;
+}
+.terms li {
+  position: relative;
+  display: inline-block;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 0px 2em;
+}
+.terms li a {
+  text-decoration: none;
+  text-align: center;
+  font-weight: 400;
+  color: white;
+}
+.footer-sublist {
+  background-color: salmon;
+}
+.rights {
+  background-color: red;
+  grid-column: 3 / 4;
+  align-self: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: white;
+  font-weight: 400;
+  text-align: center;
+}
+.footer-list {
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-top: 3%;
+}
+.footer-list li {
+  padding: 3%;
+}
+.footer-list li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
+  font-size: 1.2rem;
+  white-space: nowrap;
 }
 /*----------------US-----------------*/
 .b-center {
