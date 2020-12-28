@@ -13,6 +13,7 @@ body {
 /*--------------HEADER--------------*/
 .container {
   padding: 20px 90px;
+  /*margin: 3% 6%;*/
 }
 .list-none {
   list-style-type: none;
