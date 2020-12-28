@@ -112,17 +112,28 @@ body {
 }
 .toffer-item {
   margin: 0em 1em;
-  display: inline-block;
+  display: flex;
   align-self: center;
   flex: 1;
+  align-items: center;
 }
-.toffer-item-photo {
+.toffer-item-photo1 {
   background: url("https://steemitimages.com/640x0/http://www.culturizate.com/wp-content/uploads/2017/05/las-10-comidas-mas-deliciosas-del-mundo-9.jpg") no-repeat;
   width: 200px;
   height: 200px;
-  float: left;
-  margin-right: 30px;
   box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.8);
+  border-radius: 2px;
+}
+.toffer-item-photo2 {
+  background: url("https://recetinas.com/wp-content/uploads/2019/03/pizza-napolitana-receta-1024x674.jpg") no-repeat;
+  width: 200px;
+  height: 200px;
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.8);
+  border-radius: 2px;
+}
+.toffer-desc {
+  flex: 2;
+  padding: 15px;
 }
 .toffer-item-title {
   color: white;
@@ -240,9 +251,6 @@ body {
   font-weight: 400;
   color: white;
 }
-.footer-sublist {
-  background-color: salmon;
-}
 .rights {
   background-color: #F51B01;
   grid-column: 3 / 4;
@@ -258,6 +266,7 @@ body {
 }
 .footer-list li {
   padding: 3%;
+  position: relative;
 }
 .footer-list li a {
   text-decoration: none;
@@ -265,6 +274,29 @@ body {
   font-weight: 400;
   font-size: 1.2rem;
   white-space: nowrap;
+}
+.change-language {
+  color: white;
+  display: inline-block;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  position: relative;
+  cursor: pointer;
+}
+.footer-sublist {
+  background-color: white;
+  box-shadow: 2px 8px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  position: absolute;
+  top: -50px;
+  display: none;
+}
+.footer-sublist li a {
+  color: black;
+  text-decoration: none;
+}
+.change-selector:hover .footer-sublist {
+  display: block;
 }
 /*----------------US-----------------*/
 .b-center {
