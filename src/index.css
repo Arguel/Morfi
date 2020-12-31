@@ -9,10 +9,12 @@ body {
   width: 100%;
   height: 100%;
   margin: 0px;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 /*--------------HEADER--------------*/
 .container {
   padding: 20px 90px;
+  /*margin: 3% 6%;*/
 }
 .list-none {
   list-style-type: none;
@@ -21,7 +23,6 @@ body {
 .menubar-nav-item {
   display: inline-block;
   padding: 0px 2rem;
-  font-family: 'Source Sans Pro', sans-serif;
   position: relative;
 }
 .menubar-a {
@@ -98,7 +99,6 @@ body {
 
 /*--------------OFFERS------------------*/
 .h1-title {
-  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 600;
   color: #707070;
   margin: 1.5rem;
@@ -112,38 +112,46 @@ body {
 }
 .toffer-item {
   margin: 0em 1em;
-  display: inline-block;
+  display: flex;
   align-self: center;
   flex: 1;
+  align-items: center;
 }
-.toffer-item-photo {
+.toffer-item-photo1 {
   background: url("https://steemitimages.com/640x0/http://www.culturizate.com/wp-content/uploads/2017/05/las-10-comidas-mas-deliciosas-del-mundo-9.jpg") no-repeat;
   width: 200px;
   height: 200px;
-  float: left;
-  margin-right: 30px;
   box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.8);
+  border-radius: 2px;
+}
+.toffer-item-photo2 {
+  background: url("https://recetinas.com/wp-content/uploads/2019/03/pizza-napolitana-receta-1024x674.jpg") no-repeat;
+  width: 200px;
+  height: 200px;
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.8);
+  border-radius: 2px;
+}
+.toffer-desc {
+  flex: 2;
+  padding: 15px;
 }
 .toffer-item-title {
   color: white;
   text-align: center;
   font-size: 1.5em;
   font-weight: 600;
-  font-family: 'Source Sans Pro', sans-serif;
   overflow: hidden;
 }
 .toffer-item-price {
   color: white;
   text-align: center;
-  font-family: 'Source Sans Pro', sans-serif;
   font-size: 1.2em;
   overflow: hidden;
 }
 .toffer-item-description {
   color: white;
   text-align: left;
-  font-size: 0.9em;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1em;
   overflow: hidden;
 }
 .fa-caret-left {
@@ -166,7 +174,6 @@ body {
 }
 .tec-info {
   margin: 4% 2%;
-  font-family: 'Source Sans Pro', sans-serif;
   padding: 4%;
   font-size: 1.2em;
 }
@@ -175,7 +182,6 @@ body {
 }
 .wrapper-customer {
   background-color: #F75B4A;
-  font-family: 'Source Sans Pro', sans-serif;
 }
 .customer-photo {
   border-radius: 51px;
@@ -200,7 +206,6 @@ body {
 .footer-logo-desc {
   background-color: black;
   width: 300px;
-  font-family: 'Source Sans Pro', sans-serif;
   display: inline-block;
   margin: 2% 8% 0% 2%;
   color: white;
@@ -231,7 +236,6 @@ body {
 .terms li {
   position: relative;
   display: inline-block;
-  font-family: 'Source Sans Pro', sans-serif;
   padding: 0px 2em;
 }
 .terms li a {
@@ -240,24 +244,20 @@ body {
   font-weight: 400;
   color: white;
 }
-.footer-sublist {
-  background-color: salmon;
-}
 .rights {
   background-color: #F51B01;
   grid-column: 3 / 4;
   align-self: center;
-  font-family: 'Source Sans Pro', sans-serif;
   color: white;
   font-weight: 400;
   text-align: center;
 }
 .footer-list {
-  font-family: 'Source Sans Pro', sans-serif;
   margin-top: 3%;
 }
 .footer-list li {
   padding: 3%;
+  position: relative;
 }
 .footer-list li a {
   text-decoration: none;
@@ -265,6 +265,28 @@ body {
   font-weight: 400;
   font-size: 1.2rem;
   white-space: nowrap;
+}
+.change-language {
+  color: white;
+  display: inline-block;
+  font-weight: 400;
+  position: relative;
+  cursor: pointer;
+}
+.footer-sublist {
+  background-color: white;
+  box-shadow: 2px 8px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  position: absolute;
+  top: -50px;
+  display: none;
+}
+.footer-sublist li a {
+  color: black;
+  text-decoration: none;
+}
+.change-selector:hover .footer-sublist {
+  display: block;
 }
 /*----------------US-----------------*/
 .b-center {
