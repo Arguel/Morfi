@@ -300,6 +300,47 @@ body {
   font-weight: 400;
   text-align: center;
 }
+/*-----------------NEWSLETTER-------------------*/
+.newsletter-container {
+  background-image: linear-gradient(to bottom, #3D3D3D, #929292 15%, #CECECE 50%, #929292 85%, #3D3D3D);
+  margin: 2% auto;
+  border-radius: 5px;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  color: #212121;
+}
+.newsletter-container p {
+  text-align: center;
+  width: 50%;
+  line-height: 2;
+  margin: 2%;
+}
+.newsletter-container aside {
+  width: 50%;
+  text-align: center;
+}
+.newsletter-container aside * {
+  display: block;
+  margin: 5px auto;
+}
+.newsletter-container input[name="newsletter"] {
+  width: 60%;
+  height: 1.5rem;
+  border-radius: 5px;
+  border-width: 0;
+}
+.newsletter-container input[name="newsletter-btn"] {
+  padding: .6rem .8rem;
+  border-radius: 5px;
+  border-width: 0;
+  background-color: #212121;
+  color: white;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+}
 /*----------------US-----------------*/
 .b-center {
   background-position: center;
