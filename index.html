@@ -12,49 +12,52 @@
 </head>
 
 <body>
-  <nav class="container">
+
+  <nav class="nav-menu-container">
     <ul class="list-none">
-      <li class="menubar-nav-item"><a class="menubar-a subtitle" href="#">Home</a></li>
-      <li class="menubar-nav-item">
-        <a class="menubar-a subtitle" href="public/About/About-us.html">About</a>
-        <ul class="sublist list-none">
-          <li><a class="sublist-a" href="public/About/About-us.html">About us</a></li>
-          <li><a class="sublist-a" href="public/About/Locations.html">Locations</a></li>
-          <li><a class="sublist-a" href="public/About/Our-products.html">Our products</a></li>
+      <li class="nav-menu-li"><a class="subtitle" href="#">Home</a></li>
+      <li class="nav-menu-li">
+        <a class="subtitle" href="public/About/About-us.html">About</a>
+        <ul class="nav-menu-sublist list-none">
+          <li><a href="public/About/About-us.html">About us</a></li>
+          <li><a href="public/About/Locations.html">Locations</a></li>
+          <li><a href="public/About/Our-products.html">Our products</a></li>
         </ul>
       </li>
-      <li class="menubar-nav-item"><a class="menubar-a subtitle" href="public/Shop/Shop.html">Shop</a></li>
-      <li class="menubar-nav-item">
-        <a class="menubar-a subtitle" href="public/Recipes/Recipes.html">Recipes</a>
-        <ul class="sublist list-none">
-          <li><a class="sublist-a" href="public/Recipes/Recipes.html">Recipes</a></li>
-          <li><a class="sublist-a" href="public/Recipes/Healthy-recipes.html">Healthy</a></li>
-          <li><a class="sublist-a" href="public/Recipes/Wholemeal-recipes.html">Wholemeal</a></li>
-          <li><a class="sublist-a" href="public/Recipes/Easy-recipes.html">Easy</a></li>
+      <li class="nav-menu-li"><a class="subtitle" href="public/Shop/Shop.html">Shop</a></li>
+      <li class="nav-menu-li">
+        <a class="subtitle" href="public/Recipes/Recipes.html">Recipes</a>
+        <ul class="nav-menu-sublist list-none">
+          <li><a href="public/Recipes/Recipes.html">Recipes</a></li>
+          <li><a href="public/Recipes/Healthy-recipes.html">Healthy</a></li>
+          <li><a href="public/Recipes/Wholemeal-recipes.html">Wholemeal</a></li>
+          <li><a href="public/Recipes/Easy-recipes.html">Easy</a></li>
         </ul>
       </li>
-      <li class="menubar-nav-item">
-        <a class="menubar-a subtitle" href="public/Help/Contact.html">Help</a>
-        <ul class="sublist list-none">
-          <li><a class="sublist-a" href="public/Help/Contact.html">Contact</a></li>
-          <li><a class="sublist-a" href="public/Help/FAQ.html">FAQ</a></li>
+      <li class="nav-menu-li">
+        <a class="subtitle" href="public/Help/Contact.html">Help</a>
+        <ul class="nav-menu-sublist list-none">
+          <li><a href="public/Help/Contact.html">Contact</a></li>
+          <li><a href="public/Help/FAQ.html">FAQ</a></li>
         </ul>
       </li>
-      <li class="menubar-nav-item"><input class="searchbar" type="text" name="searchbar" placeholder="Search"></li>
-      <li class="menubar-nav-item"><a class="menubar-a subtitle" href="public/Account/Account.html">Account</a></li>
-      <li class="menubar-nav-item">
-        <a class="menubar-a subtitle" href="public/Cart/Cart.html">Cart</a>
+      <li class="nav-menu-li"><input class="searchbar" type="text" name="searchbar" placeholder="Search"></li>
+      <li class="nav-menu-li"><a class="subtitle" href="public/Account/Account.html">Account</a></li>
+      <li class="nav-menu-li">
+        <a class="subtitle" href="public/Cart/Cart.html">Cart</a>
       </li>
     </ul>
   </nav>
-  <div class="wrapper-news">
+
+  <section class="news-container">
     <div class="events b-center"></div>
     <div class="news b-center"></div>
     <div class="news-food b-center"></div>
-  </div>
+  </section>
+
   <h1 id="top-offers" class="h1-title">Top offers</h1>
-  <div class="top-offers-container">
-    <i class="fas fa-caret-left fa-7x"></i>
+  <section class="top-offers-container">
+    <i class="fas fa-caret-left fa-7x toffer-arrow"></i>
     <div class="toffer-item">
       <div class="toffer-item-photo1 b-center"></div>
       <div class="toffer-desc">
@@ -77,10 +80,11 @@
           temperature—and served hot.</div>
       </div>
     </div>
-    <i class="fas fa-caret-right fa-7x"></i>
-  </div>
-  <div class="wrapper-section">
-    <div class="tec-info">
+    <i class="fas fa-caret-right fa-7x toffer-arrow"></i>
+  </section>
+
+  <section class="customer-testimonios-container">
+    <article class="tec-info">
       <h2 class="tec-info-title">Lorem Ipsum</h2>
       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
         industry's
@@ -92,19 +96,20 @@
         Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
         versions
         of Lorem Ipsum.</p>
-    </div>
-    <div class="wrapper-customer">
+    </article>
+    <aside class="wrapper-customer">
       <img class="customer-photo" src="https://www.salvador-marin.es/wp-content/uploads/2020/06/Woman_1.jpg"
         alt="customer-photo">
       <p class="customer-review">"Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
         PageMaker including"</p>
-    </div>
-  </div>
+    </aside>
+  </section>
+
   <footer class="footer-container">
     <div class="wrapper-footer-left">
       <div class="footer-logo-and-social">
         <div class="footer-logo-img b-center"></div>
-        <p class="footer-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem</p>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem</p>
       </div>
       <ul class="social-icons list-none">
         <li><a href="#"><i class="fab fa-facebook-square fa-2x"></i></a></li>
@@ -114,39 +119,39 @@
       </ul>
     </div>
     <div class="wrapper-footer-right">
-      <ul class="list-none footer-list">
+      <ul class="list-none">
         <li><a href="#">Home</a></li>
         <li><a href="#">Events</a></li>
         <li><a href="#">Newsletter</a></li>
       </ul>
-      <ul class="list-none footer-list">
+      <ul class="list-none">
         <li><a href="#">About us</a></li>
         <li><a href="#">Locations</a></li>
         <li><a href="#">Our products</a></li>
       </ul>
-      <ul class="list-none footer-list">
+      <ul class="list-none">
         <li><a href="#">Shop</a></li>
         <li><a href="#top-offers">Top offers</a></li>
       </ul>
-      <ul class="list-none footer-list">
+      <ul class="list-none">
         <li><a href="#">Recipes</a></li>
         <li><a href="#">Healthy</a></li>
         <li><a href="#">Wholemeal</a></li>
         <li><a href="#">Easy</a></li>
       </ul>
-      <ul class="list-none footer-list">
+      <ul class="list-none">
         <li><a href="#">Contact</a></li>
         <li><a href="#">FAQ</a></li>
       </ul>
     </div>
     <div class="subfooter">
-      <ul class="list-none terms">
+      <ul class="list-none">
         <li><a href="#">Terms of Use</a></li>
         <li><a href="#">Terms & Conditions</a></li>
         <li><a href="#">Privacy Policy</a></li>
         <li class="change-selector">
           <div class="change-language">English</div>
-          <ul class="list-none footer-sublist">
+          <ul class="footer-sublist list-none">
             <li><a href="#">Spanish</a></li>
             <li><a href="#">English</a></li>
           </ul>
@@ -155,6 +160,7 @@
       <div class="rights">© 2020 Morfi. All Rights Reserved.</div>
     </div>
   </footer>
+
 </body>
 
 </html>

@@ -2,29 +2,29 @@ html {
   line-height: 1.6;
   width: 100%;
   height: 100%;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
 }
 body {
   width: 100%;
   height: 100%;
-  margin: 0px;
+  margin: 0;
   font-family: 'Source Sans Pro', sans-serif;
 }
 /*--------------HEADER--------------*/
-.container {
+.nav-menu-container {
   padding: 20px 90px;
 }
 .list-none {
   list-style-type: none;
-  padding: 0px;
+  padding: 0;
 }
-.menubar-nav-item {
+.nav-menu-li {
   display: inline-block;
-  padding: 0px 2rem;
+  padding: 0 2rem;
   position: relative;
 }
-.menubar-a {
+.nav-menu-li a {
   text-decoration: none;
   color: #757575;
   font-weight: 400;
@@ -32,7 +32,7 @@ body {
 .subtitle {
   font-size: 1.5rem;
 }
-.sublist {
+.nav-menu-sublist {
   display: none;
   position: absolute;
   box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.2);
@@ -40,36 +40,36 @@ body {
   border: solid 1px rgba(0, 0, 0, 0.2);
   border-radius: 2px;
 }
-.sublist li {
+.nav-menu-sublist li {
   padding: 8px 17px;
   border-bottom: solid 1px rgba(0, 0, 0, 0.2);
   white-space: nowrap;
 }
-.sublist li:hover {
+.nav-menu-sublist li:hover {
   background-color: white;
 }
-.sublist-a {
+.nav-menu-sublist li a {
   text-decoration: none;
   color: #757575;
   font-weight: 400;
   font-size: 1em;
 }
-.menubar-nav-item:hover .sublist {
+.nav-menu-li:hover .nav-menu-sublist {
   display: block;
 }
 .searchbar {
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
   border: solid 1px #757575;
   border-radius: 3px;
-  padding: 5px 0px 5px 8px;
+  padding: 5px 0 5px 8px;
 }
 /*----------------NEWS-------------------*/
-.wrapper-news {
+.news-container {
   display: grid;
   grid-template-rows: 65% 1fr;
   grid-template-columns: 5fr 4fr;
   grid-gap: 10px;
-  margin: 0px 14% 0px 14%;
+  margin: 0 14% 0 14%;
   width: 70%;
   height: 80%;
 }
@@ -111,7 +111,7 @@ body {
   align-items: center;
 }
 .toffer-item {
-  margin: 0em 1em;
+  margin: 0 1em;
   display: flex;
   flex: 1;
   height: 200px;
@@ -121,19 +121,18 @@ body {
   background: url("https://steemitimages.com/640x0/http://www.culturizate.com/wp-content/uploads/2017/05/las-10-comidas-mas-deliciosas-del-mundo-9.jpg") no-repeat;
   width: 200px;
   height: 200px;
-  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.8);
   border-radius: 2px;
 }
 .toffer-item-photo2 {
   background: url("https://recetinas.com/wp-content/uploads/2019/03/pizza-napolitana-receta-1024x674.jpg") no-repeat;
   width: 200px;
   height: 200px;
-  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.8);
   border-radius: 2px;
 }
 .toffer-desc {
   flex: 2;
-  text-overflow: hidden;
   margin: 20px;
 }
 .toffer-item-title {
@@ -161,20 +160,14 @@ body {
   width: 100%;
   height: 6em;
 }
-.fa-caret-left {
-  color: white;
-  margin: 5% 2%;
-  align-self: center;
-  cursor: pointer;
-}
-.fa-caret-right {
+.toffer-arrow {
   color: white;
   margin: 5% 2%;
   align-self: center;
   cursor: pointer;
 }
 /*-------------------CUSTOMER--------------------*/
-.wrapper-section {
+.customer-testimonios-container {
   margin: 3% auto;
   display: flex;
   width: 90%;
@@ -226,13 +219,13 @@ body {
   width: 300px;
   height: 100px;
 }
-.footer-desc {
-  margin: 0px;
+.footer-logo-and-social p {
+  margin: 0;
 }
 .social-icons {
   display: inline-block;
   margin-top: 16px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 .social-icons li a {
   text-decoration: none;
@@ -243,14 +236,14 @@ body {
   display: flex;
   justify-content: space-evenly;
 }
-.footer-list {
+.wrapper-footer-right ul {
   margin: 1%;
 }
-.footer-list li {
+.wrapper-footer-right ul li {
   padding: 3%;
   position: relative;
 }
-.footer-list li a {
+.wrapper-footer-right ul li a {
   text-decoration: none;
   color: #212121;
   font-weight: 400;
@@ -263,27 +256,20 @@ body {
   height: 100%;
   display: grid;
 }
-.terms {
+.subfooter ul {
   background-color: #212121;
   grid-column: 1 / 3;
 }
-.terms li {
+.subfooter ul li {
   position: relative;
   display: inline-block;
-  padding: 0px 2em;
+  padding: 0 2em;
 }
-.terms li a {
+.subfooter ul li a {
   text-decoration: none;
   text-align: center;
   font-weight: 400;
   color: white;
-}
-.rights {
-  grid-column: 3 / 4;
-  align-self: center;
-  color: white;
-  font-weight: 400;
-  text-align: center;
 }
 .change-language {
   color: white;
@@ -306,6 +292,13 @@ body {
 }
 .change-selector:hover .footer-sublist {
   display: block;
+}
+.rights {
+  grid-column: 3 / 4;
+  align-self: center;
+  color: white;
+  font-weight: 400;
+  text-align: center;
 }
 /*----------------US-----------------*/
 .b-center {
