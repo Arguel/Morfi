@@ -14,7 +14,6 @@ body {
 /*--------------HEADER--------------*/
 .container {
   padding: 20px 90px;
-  /*margin: 3% 6%;*/
 }
 .list-none {
   list-style-type: none;
@@ -27,7 +26,7 @@ body {
 }
 .menubar-a {
   text-decoration: none;
-  color: #707070;
+  color: #757575;
   font-weight: 400;
 }
 .subtitle {
@@ -37,7 +36,7 @@ body {
   display: none;
   position: absolute;
   box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.2);
-  background-color: #ffffe6;
+  background-color: #FFFFE6;
   border: solid 1px rgba(0, 0, 0, 0.2);
   border-radius: 2px;
 }
@@ -51,7 +50,7 @@ body {
 }
 .sublist-a {
   text-decoration: none;
-  color: #707070;
+  color: #757575;
   font-weight: 400;
   font-size: 1em;
 }
@@ -60,7 +59,7 @@ body {
 }
 .searchbar {
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
-  border: solid 1px #707070;
+  border: solid 1px #757575;
   border-radius: 3px;
   padding: 5px 0px 5px 8px;
 }
@@ -100,21 +99,22 @@ body {
 /*--------------OFFERS------------------*/
 .h1-title {
   font-weight: 600;
-  color: #707070;
+  color: #757575;
   margin: 1.5rem;
 }
 .top-offers-container {
   background: url("https://image.freepik.com/foto-gratis/fondo-madera_24972-623.jpg") no-repeat;
-  height: 40%;
+  height: 300px;
   background-size: 100% 100%;
   opacity: 0.94;
   display: flex;
+  align-items: center;
 }
 .toffer-item {
   margin: 0em 1em;
   display: flex;
-  align-self: center;
   flex: 1;
+  height: 200px;
   align-items: center;
 }
 .toffer-item-photo1 {
@@ -133,7 +133,8 @@ body {
 }
 .toffer-desc {
   flex: 2;
-  padding: 15px;
+  text-overflow: hidden;
+  margin: 20px;
 }
 .toffer-item-title {
   color: white;
@@ -146,13 +147,19 @@ body {
   color: white;
   text-align: center;
   font-size: 1.2em;
-  overflow: hidden;
 }
 .toffer-item-description {
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
   color: white;
   text-align: left;
   font-size: 1em;
   overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  width: 100%;
+  height: 6em;
 }
 .fa-caret-left {
   color: white;
@@ -171,22 +178,28 @@ body {
   margin: 3% auto;
   display: flex;
   width: 90%;
+  box-shadow: 6px 8px 18px rgba(0, 0, 0, 0.3);
 }
 .tec-info {
   margin: 4% 2%;
   padding: 4%;
   font-size: 1.2em;
 }
+.tec-info p {
+  color: #757575;
+}
 .tec-info-title {
   margin-bottom: 6%;
+  color: #212121;
 }
 .wrapper-customer {
-  background-color: #F75B4A;
+  background-color: #212121;
 }
 .customer-photo {
   border-radius: 51px;
   width: 300px;
   margin: 50px;
+  border: solid 1px #757575;
 }
 .customer-review {
   text-align: center;
@@ -195,42 +208,63 @@ body {
 }
 /*-----------------FOOTER---------------*/
 .footer-container {
-  background-color: #F51B01;
   display: grid;
   grid-template-rows: 80% 20%;
   grid-template-columns: 30% 2fr 1fr;
+  align-items: center;
+  background-color: #D7D7D7;
 }
-.wrapper-footer-left {
-  background-color: black;
-}
-.footer-logo-desc {
-  background-color: black;
+.footer-logo-and-social {
   width: 300px;
   display: inline-block;
-  margin: 2% 8% 0% 2%;
-  color: white;
+  margin: 1% 8% 1% 2%;
+  color: #212121;
   text-align: center;
 }
-.footer-logo {
+.footer-logo-img {
+  background: url("../public/Img/el-re-logo.png") no-repeat;
   width: 300px;
   height: 100px;
 }
+.footer-desc {
+  margin: 0px;
+}
 .social-icons {
-  background-color: black;
   display: inline-block;
+  margin-top: 16px;
+  margin-bottom: 0px;
 }
 .social-icons li a {
   text-decoration: none;
-  color: white;
+  color: #212121;
 }
 .wrapper-footer-right {
-  background-color: black;
   grid-column: 2 / 4;
   display: flex;
   justify-content: space-evenly;
 }
+.footer-list {
+  margin: 1%;
+}
+.footer-list li {
+  padding: 3%;
+  position: relative;
+}
+.footer-list li a {
+  text-decoration: none;
+  color: #212121;
+  font-weight: 400;
+  font-size: 1.1rem;
+  white-space: nowrap;
+}
+.subfooter {
+  background-color: #212121;
+  grid-column: 1 / 4;
+  height: 100%;
+  display: grid;
+}
 .terms {
-  background-color: #F51B01;
+  background-color: #212121;
   grid-column: 1 / 3;
 }
 .terms li {
@@ -245,26 +279,11 @@ body {
   color: white;
 }
 .rights {
-  background-color: #F51B01;
   grid-column: 3 / 4;
   align-self: center;
   color: white;
   font-weight: 400;
   text-align: center;
-}
-.footer-list {
-  margin-top: 3%;
-}
-.footer-list li {
-  padding: 3%;
-  position: relative;
-}
-.footer-list li a {
-  text-decoration: none;
-  color: white;
-  font-weight: 400;
-  font-size: 1.2rem;
-  white-space: nowrap;
 }
 .change-language {
   color: white;
@@ -282,7 +301,7 @@ body {
   display: none;
 }
 .footer-sublist li a {
-  color: black;
+  color: #212121;
   text-decoration: none;
 }
 .change-selector:hover .footer-sublist {
