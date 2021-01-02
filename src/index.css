@@ -278,7 +278,7 @@ body {
   position: relative;
   cursor: pointer;
 }
-.footer-sublist {
+.change-selector .footer-sublist {
   background-color: white;
   box-shadow: 2px 8px 8px rgba(0, 0, 0, 0.2);
   border-radius: 3px;
@@ -286,7 +286,7 @@ body {
   top: -50px;
   display: none;
 }
-.footer-sublist li a {
+.change-selector .footer-sublist li a {
   color: #212121;
   text-decoration: none;
 }
