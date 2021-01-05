@@ -4,6 +4,7 @@ html {
   height: 100%;
   padding: 0;
   margin: 0;
+  background-color: #fff;
 }
 body {
   width: 100%;
@@ -18,6 +19,7 @@ body {
 .list-none {
   list-style-type: none;
   padding: 0;
+  z-index: 1;
 }
 .nav-menu-li {
   display: inline-block;
@@ -63,7 +65,7 @@ body {
   border-radius: 3px;
   padding: 5px 0 5px 8px;
 }
-/*----------------NEWS-------------------*/
+/*--------------NEWS-------------------*/
 .news-container {
   display: grid;
   grid-template-rows: 65% 1fr;
@@ -74,26 +76,36 @@ body {
   height: 80%;
 }
 .events {
-  background: url("https://www.greenpeace.org/static/planet4-mexico-stateless/2020/02/d3e10ab9-gp0strmec-1024x683.jpg") no-repeat;
   grid-column: 1 / 3;
 }
 .events:hover {
- opacity: 0.95;
- cursor: pointer;
+  opacity: 0.95;
+  cursor: pointer;
 }
-.news {
-  background: url("https://assets.soyvida.com/__export/1586455967375/sites/debate/img/2020/04/09/comida_saludable_freepik.jpg_172596871.jpg") no-repeat;
+.events-img {
+  width: 100%;
+  transform: translateY(-25%);
+  opacity: 0.95;
+  cursor: pointer;
 }
 .news:hover {
   opacity: 0.95;
   cursor: pointer;
 }
-.news-food {
-  background: url("https://www.infobae.com/new-resizer/SLKfej7KEbCFR7-vHTLCQW8TPeI=/750x0/filters:quality(100)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/08/01122831/tendencias-recetas-destacada.jpg") no-repeat;
+.news-img {
+  width: 100%;
+  transform: translateY(-15%);
 }
 .news-food:hover {
   opacity: 0.95;
   cursor: pointer;
+}
+.news-food-img {
+  width: 100%;
+  transform: translateY(-5%);
+}
+.of-hidden {
+  overflow: hidden;
 }
 
 /*--------------OFFERS------------------*/
@@ -117,19 +129,25 @@ body {
   height: 200px;
   align-items: center;
 }
-.toffer-item-photo1 {
-  background: url("https://steemitimages.com/640x0/http://www.culturizate.com/wp-content/uploads/2017/05/las-10-comidas-mas-deliciosas-del-mundo-9.jpg") no-repeat;
+.toffer-item-imga {
   width: 200px;
   height: 200px;
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.8);
   border-radius: 2px;
+  overflow: hidden;
 }
-.toffer-item-photo2 {
-  background: url("https://recetinas.com/wp-content/uploads/2019/03/pizza-napolitana-receta-1024x674.jpg") no-repeat;
-  width: 200px;
-  height: 200px;
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.8);
-  border-radius: 2px;
+.toffer-img {
+  height: 100%;
+  width: 250px;
+  transform: translateX(-10%);
+  /*transform: translateX(-25px);*/
+  margin: 0 auto;
+  border: 0;
+  vertical-align: middle;
+  transition: 1s;
+}
+.toffer-img:hover {
+  transform: translateX(-10%) scale(1.1, 1.1);
 }
 .toffer-desc {
   flex: 2;
@@ -166,7 +184,7 @@ body {
   align-self: center;
   cursor: pointer;
 }
-/*-------------------CUSTOMER--------------------*/
+/*--------------CUSTOMER--------------------*/
 .customer-testimonios-container {
   margin: 3% auto;
   display: flex;
@@ -200,7 +218,7 @@ body {
   margin: 5%;
   color: white;
 }
-/*-----------------FOOTER---------------*/
+/*--------------FOOTER---------------*/
 .footer-container {
   display: grid;
   grid-template-rows: 80% 20%;
@@ -215,10 +233,13 @@ body {
   color: #212121;
   text-align: center;
 }
-.footer-logo-img {
-  background: url("../public/Img/el-re-logo.png") no-repeat;
+.footer-logo {
   width: 300px;
   height: 100px;
+}
+.footer-logo-img {
+  width: 100%;
+  transform: translateY(-33%);
 }
 .footer-logo-and-social p {
   margin: 0;
@@ -301,7 +322,7 @@ body {
   font-weight: 400;
   text-align: center;
 }
-/*-----------------NEWSLETTER-------------------*/
+/*--------------NEWSLETTER-------------------*/
 .newsletter-container {
   background-image: linear-gradient(to bottom, #3D3D3D, #929292 15%, #CECECE 50%, #929292 85%, #3D3D3D);
   margin: 2% auto;
@@ -342,9 +363,3 @@ body {
   font-weight: 400;
   cursor: pointer;
 }
-/*----------------US-----------------*/
-.b-center {
-  background-position: center;
-  background-size: cover;
-}
-
