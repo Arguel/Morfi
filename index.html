@@ -7,147 +7,161 @@
   <title>Morfi</title>
   <link rel="stylesheet" href="assets/css/index.css" type="text/css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="icon" href="img/logo/icon.png">
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;600&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/1131adf3a1.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
-  <nav class="nav-menu-container">
-    <ul class="list-none">
-      <li class="nav-menu-li"><a class="subtitle" href="#">Home</a></li>
-      <li class="nav-menu-li">
-        <a class="subtitle" href="views/about/about-us.html">About</a>
-        <ul class="nav-menu-sublist list-none">
-          <li><a href="views/about/about-us.html">About us</a></li>
-          <li><a href="views/about/locations.html">Locations</a></li>
-          <li><a href="views/about/our-products.html">Our products</a></li>
-        </ul>
-      </li>
-      <li class="nav-menu-li"><a class="subtitle" href="views/shop/shop.html">Shop</a></li>
-      <li class="nav-menu-li">
-        <a class="subtitle" href="views/recipes/recipes.html">Recipes</a>
-        <ul class="nav-menu-sublist list-none">
-          <li><a href="views/recipes/recipes.html">Recipes</a></li>
-          <li><a href="views/recipes/healthy-recipes.html">Healthy</a></li>
-          <li><a href="views/recipes/wholemeal-recipes.html">Wholemeal</a></li>
-          <li><a href="views/recipes/easy-recipes.html">Easy</a></li>
-        </ul>
-      </li>
-      <li class="nav-menu-li">
-        <a class="subtitle" href="views/help/contact.html">Help</a>
-        <ul class="nav-menu-sublist list-none">
-          <li><a href="views/help/contact.html">Contact</a></li>
-          <li><a href="views/help/faq.html">FAQ</a></li>
-        </ul>
-      </li>
-      <li class="nav-menu-li"><input class="searchbar" type="text" name="searchbar" placeholder="Search"></li>
-      <li class="nav-menu-li"><a class="subtitle" href="views/account/account.html">Account</a></li>
-      <li class="nav-menu-li">
-        <a class="subtitle" href="views/cart/cart.html">Cart</a>
-      </li>
-    </ul>
-  </nav>
+  <header>
+    <nav class="nav-menu-container">
+      <ul class="nav-menu list-none">
+        <li class="nav-menu-li"><a class="subtitle" href="#">Home</a></li>
+        <li class="nav-menu-li">
+          <a class="subtitle" href="views/about/about-us.html">About</a>
+          <ul class="nav-menu-sublist list-none">
+            <li><a href="views/about/about-us.html">About us</a></li>
+            <li><a href="views/about/locations.html">Locations</a></li>
+            <li><a href="views/about/our-products.html">Our products</a></li>
+          </ul>
+        </li>
+        <li class="nav-menu-li"><a class="subtitle" href="views/shop/shop.html">Shop</a></li>
+        <li class="nav-menu-li">
+          <a class="subtitle" href="views/recipes/recipes.html">Recipes</a>
+          <ul class="nav-menu-sublist list-none">
+            <li><a href="views/recipes/recipes.html">Recipes</a></li>
+            <li><a href="views/recipes/healthy-recipes.html">Healthy</a></li>
+            <li><a href="views/recipes/wholemeal-recipes.html">Wholemeal</a></li>
+            <li><a href="views/recipes/easy-recipes.html">Easy</a></li>
+          </ul>
+        </li>
+        <li class="nav-menu-li">
+          <a class="subtitle" href="views/help/contact.html">Help</a>
+          <ul class="nav-menu-sublist list-none">
+            <li><a href="views/help/contact.html">Contact</a></li>
+            <li><a href="views/help/faq.html">FAQ</a></li>
+          </ul>
+        </li>
+        <li class="nav-menu-li">
+          <form>
+            <input class="searchbar" type="text" name="searchbar" placeholder="Search">
+          </form>
+        </li>
+        <li class="nav-menu-li"><a class="subtitle" href="views/account/account.html">Account</a></li>
+        <li class="nav-menu-li">
+          <a class="subtitle" href="views/cart/cart.html">Cart</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-  <section class="news-container">
-    <div class="events of-hidden">
-      <a href="https://www.greenpeace.org/static/planet4-mexico-stateless/2020/02/d3e10ab9-gp0strmec-1024x683.jpg">
-        <img class="events-img"
-          src="https://www.greenpeace.org/static/planet4-mexico-stateless/2020/02/d3e10ab9-gp0strmec-1024x683.jpg"
-          alt="events">
-      </a>
-    </div>
-    <div class="news of-hidden">
-      <a
-        href="https://assets.soyvida.com/__export/1586455967375/sites/debate/img/2020/04/09/comida_saludable_freepik.jpg_172596871.jpg">
-        <img class="news-img"
-          src="https://assets.soyvida.com/__export/1586455967375/sites/debate/img/2020/04/09/comida_saludable_freepik.jpg_172596871.jpg"
-          alt="news">
-      </a>
-    </div>
-    <div class="news-food of-hidden">
-      <a
-        href="https://www.infobae.com/new-resizer/SLKfej7KEbCFR7-vHTLCQW8TPeI=/750x0/filters:quality(100)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/08/01122831/tendencias-recetas-destacada.jpg">
-        <img class="news-food-img"
-          src="https://www.infobae.com/new-resizer/SLKfej7KEbCFR7-vHTLCQW8TPeI=/750x0/filters:quality(100)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/08/01122831/tendencias-recetas-destacada.jpg"
-          alt="news-food">
-      </a>
-    </div>
-  </section>
-
-  <h1 id="top-offers" class="h1-title">Top offers</h1>
-  <section class="top-offers-container">
-    <i class="fas fa-caret-left fa-7x toffer-arrow"></i>
-    <div class="toffer-item">
-      <div class="toffer-item-imga">
-        <a
-          href="https://steemitimages.com/640x0/http://www.culturizate.com/wp-content/uploads/2017/05/las-10-comidas-mas-deliciosas-del-mundo-9.jpg">
-          <img class="toffer-img"
-            src="https://steemitimages.com/640x0/http://www.culturizate.com/wp-content/uploads/2017/05/las-10-comidas-mas-deliciosas-del-mundo-9.jpg"
-            alt="Lasagna">
+  <main>
+    <section class="news-container">
+      <div class="events of-hidden">
+        <a href="https://www.greenpeace.org/static/planet4-mexico-stateless/2020/02/d3e10ab9-gp 0strmec-1024x683.jpg"
+          target="_blank" rel="noreferrer">
+          <img class="events-img"
+            src="https://www.greenpeace.org/static/planet4-mexico-stateless/2020/02/d3e10ab9-gp0strmec-1024x683.jpg"
+            alt="events">
         </a>
       </div>
-      <div class="toffer-desc">
-        <div class="toffer-item-title">Lasagna</div>
-        <div class="toffer-item-price">$44.99</div>
-        <div class="toffer-item-description">Italian dish made of stacked layers of thin flat pasta alternating with
-          fillings such as ragu (ground meats and tomato sauce) and other vegetables, cheese (which may include ricotta
-          and parmesan), and seasonings and spices such as garlic, oregano and basil.
+      <div class="news of-hidden">
+        <a href="https://assets.soyvida.com/__export/1586455967375/sites/debate/img/2020/04/09/comida_saludable_freepik.jpg_172596871.jpg"
+          target="_blank" rel="noreferrer">
+          <img class="news-img"
+            src="https://assets.soyvida.com/__export/1586455967375/sites/debate/img/2020/04/09/comida_saludable_freepik.jpg_172596871.jpg"
+            alt="news">
+        </a>
+      </div>
+      <div class="news-food of-hidden">
+        <a href="https://www.infobae.com/new-resizer/SLKfej7KEbCFR7-vHTLCQW8TPeI=/750x0/filters:quality(100)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/08/01122831/tendencias-recetas-destacada.jpg"
+          target="_blank" rel="noreferrer">
+          <img class="news-food-img"
+            src="https://www.infobae.com/new-resizer/SLKfej7KEbCFR7-vHTLCQW8TPeI=/750x0/filters:quality(100)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/08/01122831/tendencias-recetas-destacada.jpg"
+            alt="news-food">
+        </a>
+      </div>
+    </section>
+
+    <section class="top-offers-container">
+      <h1 id="top-offers" class="h1-title">Top offers</h1>
+      <div class="top-offers-data-container">
+        <i class="fas fa-caret-left fa-7x toffer-arrow"></i>
+        <div class="toffer-item">
+          <div class="toffer-item-imga">
+            <a
+              href="https://steemitimages.com/640x0/http://www.culturizate.com/wp-content/uploads/2017/05/las-10-comidas-mas-deliciosas-del-mundo-9.jpg">
+              <img class="toffer-img"
+                src="https://steemitimages.com/640x0/http://www.culturizate.com/wp-content/uploads/2017/05/las-10-comidas-mas-deliciosas-del-mundo-9.jpg"
+                alt="Lasagna">
+            </a>
+          </div>
+          <div class="toffer-desc">
+            <div class="toffer-item-title">Lasagna</div>
+            <div class="toffer-item-price">$44.99</div>
+            <div class="toffer-item-description">Italian dish made of stacked layers of thin flat pasta alternating with
+              fillings such as ragu (ground meats and tomato sauce) and other vegetables, cheese (which may include
+              ricotta
+              and parmesan), and seasonings and spices such as garlic, oregano and basil.
+            </div>
+          </div>
         </div>
+        <div class="toffer-item">
+          <div class="toffer-item-imga">
+            <a href="https://recetinas.com/wp-content/uploads/2019/03/pizza-napolitana-receta-1024x674.jpg">
+              <img class="toffer-img"
+                src="https://recetinas.com/wp-content/uploads/2019/03/pizza-napolitana-receta-1024x674.jpg" alt="Pizza">
+            </a>
+          </div>
+          <div class="toffer-desc">
+            <div class="toffer-item-title">Pizza</div>
+            <div class="toffer-item-price">$29.99</div>
+            <div class="toffer-item-description">Dish of Italian origin consisting of a flattened disk of bread dough
+              topped
+              with some combination of olive oil, oregano, tomato, olives, mozzarella or other cheese, and many other
+              ingredients, baked quickly—usually, in a commercial setting, using a wood-fired oven heated to a very high
+              temperature—and served hot.</div>
+          </div>
+        </div>
+        <i class="fas fa-caret-right fa-7x toffer-arrow"></i>
       </div>
-    </div>
-    <div class="toffer-item">
-      <div class="toffer-item-imga">
-        <a href="https://recetinas.com/wp-content/uploads/2019/03/pizza-napolitana-receta-1024x674.jpg">
-          <img class="toffer-img"
-            src="https://recetinas.com/wp-content/uploads/2019/03/pizza-napolitana-receta-1024x674.jpg" alt="Pizza">
-        </a>
-      </div>
-      <div class="toffer-desc">
-        <div class="toffer-item-title">Pizza</div>
-        <div class="toffer-item-price">$29.99</div>
-        <div class="toffer-item-description">Dish of Italian origin consisting of a flattened disk of bread dough topped
-          with some combination of olive oil, oregano, tomato, olives, mozzarella or other cheese, and many other
-          ingredients, baked quickly—usually, in a commercial setting, using a wood-fired oven heated to a very high
-          temperature—and served hot.</div>
-      </div>
-    </div>
-    <i class="fas fa-caret-right fa-7x toffer-arrow"></i>
-  </section>
+    </section>
 
-  <section class="newsletter-container">
-    <p>Stay informed with the latest in our recipes, offers, events and much more by subscribing to our weekly
-      newsletter
-      <br>
-      You can unsubscribe at any time</p>
-    <aside>
-      <label for="newsletter">Enter your email below</label>
-      <input type="email" id="newsletter" name="newsletter">
-      <input type="button" id="newsletter-btn" name="newsletter-btn" value="Suscribe">
-    </aside>
-  </section>
+    <section class="newsletter-container">
+      <p>Stay informed with the latest in our recipes, offers, events and much more by subscribing to our weekly
+        newsletter
+        <br>
+        You can unsubscribe at any time</p>
+      <aside>
+        <label for="newsletter">Enter your email below</label>
+        <input type="email" id="newsletter" name="newsletter">
+        <input type="button" id="newsletter-btn" name="newsletter-btn" value="Suscribe">
+      </aside>
+    </section>
 
-  <section class="customer-testimonios-container">
-    <article class="tec-info">
-      <h2 class="tec-info-title">Lorem Ipsum</h2>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-        industry's
-        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
-        make
-        a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
-        containing
-        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
-        versions
-        of Lorem Ipsum.</p>
-    </article>
-    <aside class="wrapper-customer">
-      <img class="customer-photo" src="https://www.salvador-marin.es/wp-content/uploads/2020/06/Woman_1.jpg"
-        alt="customer-avatar">
-      <p class="customer-review">"Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
-        PageMaker including"</p>
-    </aside>
-  </section>
+    <section class="customer-testimonios-container">
+      <article class="tec-info">
+        <h2 class="tec-info-title">Lorem Ipsum</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+          industry's
+          standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+          make
+          a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
+          containing
+          Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
+          versions
+          of Lorem Ipsum.</p>
+      </article>
+      <aside class="wrapper-customer">
+        <img class="customer-photo" src="https://www.salvador-marin.es/wp-content/uploads/2020/06/Woman_1.jpg"
+          alt="customer-avatar">
+        <p class="customer-review">"Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+          PageMaker including"</p>
+      </aside>
+    </section>
+  </main>
 
   <footer class="footer-container">
     <div class="wrapper-footer-left">
