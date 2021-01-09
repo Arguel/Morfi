@@ -18,8 +18,7 @@ header {
 }
 .nav-menu {
   max-width: 1200px;
-  margin: 20px auto;
-  overflow: hidden;
+  margin: 30px auto;
 }
 .nav-menu-li {
   display: inline-block;
@@ -31,6 +30,7 @@ header {
   color: #757575;
   font-weight: 400;
 }
+/*dropdown menu per item*/
 .nav-menu-sublist {
   display: none;
   position: absolute;
@@ -63,49 +63,58 @@ header {
   padding: 5px 0 5px 8px;
 }
 /*--------------NEWS-------------------*/
+/*main container*/
 .news-container {
   display: grid;
-  grid-template-rows: 330px 200px;
+  grid-template-rows: 320px 200px;
   grid-template-columns: 590px 400px;
   grid-gap: 10px;
   margin: 0 auto;
   max-width: 1000px;
 }
+/*big image*/
 .events {
   grid-column: 1 / 3;
-  /*border-top-left-radius: 30px;*/
 }
 .events:hover {
   opacity: 0.95;
   cursor: pointer;
 }
 .events-img {
+  height: inherit;
   width: 100%;
   transform: translateY(-25%);
   opacity: 0.95;
   cursor: pointer;
 }
+/*medium image*/
 .news:hover {
   opacity: 0.95;
   cursor: pointer;
 }
-.news-food {
-  /*border-bottom-right-radius: 30px;*/
-}
 .news-img {
+  height: inherit;
   width: 100%;
   transform: translateY(-15%);
 }
+/*small image*/
 .news-food:hover {
   opacity: 0.95;
   cursor: pointer;
 }
 .news-food-img {
+  height: inherit;
   width: 100%;
   transform: translateY(-5%);
 }
 
 /*--------------OFFERS------------------*/
+/*for h1 and flex*/
+.top-offers-container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+/*flex wood background*/
 .top-offers-data-container {
   background: url("https://image.freepik.com/foto-gratis/fondo-madera_24972-623.jpg") no-repeat;
   height: 300px;
@@ -114,6 +123,7 @@ header {
   display: flex;
   align-items: center;
 }
+/*item container*/
 .toffer-item {
   margin: 0 1em;
   display: flex;
@@ -121,6 +131,7 @@ header {
   height: 200px;
   align-items: center;
 }
+/*image and link container*/
 .toffer-item-imga {
   width: 200px;
   height: 200px;
@@ -132,7 +143,6 @@ header {
   height: 100%;
   width: 250px;
   transform: translateX(-10%);
-  /*transform: translateX(-25px);*/
   margin: 0 auto;
   border: 0;
   vertical-align: middle;
@@ -141,6 +151,7 @@ header {
 .toffer-img:hover {
   transform: translateX(-10%) scale(1.1, 1.1);
 }
+/*group (title, price, description) container*/
 .toffer-desc {
   flex: 2;
   margin: 20px;
@@ -181,7 +192,7 @@ header {
   background-image: linear-gradient(to bottom, #3D3D3D, #929292 15%, #CECECE 50%, #929292 85%, #3D3D3D);
   margin: 2% auto;
   border-radius: 5px;
-  width: 60%;
+  max-width: 800px;
   display: flex;
   align-items: center;
   color: #212121;
@@ -200,12 +211,14 @@ header {
   display: block;
   margin: 5px auto;
 }
+/*input for email*/
 .newsletter-container input[name="newsletter"] {
   width: 60%;
   height: 1.5rem;
   border-radius: 5px;
   border-width: 0;
 }
+/*button*/
 .newsletter-container input[name="newsletter-btn"] {
   padding: .6rem .8rem;
   border-radius: 5px;
@@ -221,9 +234,10 @@ header {
 .customer-testimonios-container {
   margin: 3% auto;
   display: flex;
-  width: 90%;
+  max-width: 1200px;
   box-shadow: 6px 8px 18px rgba(0, 0, 0, 0.3);
 }
+/*h1 and p container*/
 .tec-info {
   margin: 4% 2%;
   padding: 4%;
@@ -252,19 +266,32 @@ header {
   color: white;
 }
 /*--------------FOOTER---------------*/
-.footer-container {
-  display: grid;
-  grid-template-rows: 80% 20%;
-  grid-template-columns: 30% 2fr 1fr;
-  align-items: center;
+.footer-top {
   background-color: #D7D7D7;
 }
+.footer-top-container {
+  margin: 0 auto;
+  max-width: 1600px;
+  display: flex;
+  justify-content: space-around;
+}
+.footer-top-left {
+  display: flex;
+  align-items: center;
+  align-self: center;
+}
+.footer-top-right {
+  display: flex;
+  align-self: center;
+  justify-content: space-evenly;
+  flex: 1;
+}
+/*img and p left side container*/
 .footer-logo-and-social {
   width: 300px;
-  display: inline-block;
-  margin: 1% 8% 1% 2%;
-  color: #212121;
   text-align: center;
+  margin-right: 40px;
+  margin-left: 10px;
 }
 .footer-logo {
   width: 300px;
@@ -275,45 +302,44 @@ header {
   transform: translateY(-33%);
 }
 .footer-logo-and-social p {
-  margin: 0;
+  margin: 0 auto;
+  max-width: 200px;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #212121;
 }
 .social-icons {
-  display: inline-block;
-  margin-top: 16px;
-  margin-bottom: 0;
+  margin-right: 40px;
 }
 .social-icons li a {
   text-decoration: none;
   color: #212121;
 }
-.wrapper-footer-right {
-  grid-column: 2 / 4;
-  display: flex;
-  justify-content: space-evenly;
-}
-.wrapper-footer-right ul {
+.footer-top-right ul {
   margin: 1%;
 }
-.wrapper-footer-right ul li {
+.footer-top-right ul li {
   padding: 3%;
   position: relative;
 }
-.wrapper-footer-right ul li a {
+.footer-top-right ul li a {
   text-decoration: none;
   color: #212121;
   font-weight: 400;
   font-size: 1.1rem;
   white-space: nowrap;
 }
-.subfooter {
+.footer-bottom {
   background-color: #212121;
-  grid-column: 1 / 4;
-  height: 100%;
-  display: grid;
+}
+.subfooter {
+  display: flex;
+  margin: 0 auto;
+  max-width: 1600px;
+  align-items: center;
 }
 .subfooter ul {
-  background-color: #212121;
-  grid-column: 1 / 3;
+  flex-grow: 1;
 }
 .subfooter ul li {
   position: relative;
@@ -326,6 +352,7 @@ header {
   font-weight: 400;
   color: white;
 }
+/*div inside li item from subfooter list*/
 .change-language {
   color: white;
   display: inline-block;
@@ -333,6 +360,7 @@ header {
   position: relative;
   cursor: pointer;
 }
+/*footer-sublist == dropdown menu*/
 .change-selector .footer-sublist {
   background-color: white;
   box-shadow: 2px 8px 8px rgba(0, 0, 0, 0.2);
@@ -354,6 +382,8 @@ header {
   color: white;
   font-weight: 400;
   text-align: center;
+  margin-left: 10px;
+  margin-right: 50px;
 }
 /*--------------UTILS-------------*/
 .list-none {
