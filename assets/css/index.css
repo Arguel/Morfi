@@ -30,6 +30,14 @@ header {
   color: #757575;
   font-weight: 400;
 }
+.nav-menu-li a.active-page:after {
+  content: '';
+  display: block;
+  height: 8px;
+  background-image: linear-gradient(to bottom, #8BC34A, white);
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
 /*dropdown menu per item*/
 .nav-menu-sublist {
   display: none;
@@ -66,7 +74,7 @@ header {
 /*main container*/
 .news-container {
   display: grid;
-  grid-template-rows: 320px 200px;
+  grid-template-rows: 310px 200px;
   grid-template-columns: 590px 400px;
   grid-gap: 10px;
   margin: 0 auto;
@@ -329,24 +337,27 @@ header {
   font-size: 1.1rem;
   white-space: nowrap;
 }
+.footer-top-right ul li a:hover {
+  color: white;
+}
 .footer-bottom {
   background-color: #212121;
 }
-.subfooter {
+.footer-bottom-container {
   display: flex;
   margin: 0 auto;
   max-width: 1600px;
   align-items: center;
 }
-.subfooter ul {
+.footer-bottom-container ul {
   flex-grow: 1;
 }
-.subfooter ul li {
+.footer-bottom-container ul li {
   position: relative;
   display: inline-block;
   padding: 0 2em;
 }
-.subfooter ul li a {
+.footer-bottom-container ul li a {
   text-decoration: none;
   text-align: center;
   font-weight: 400;
