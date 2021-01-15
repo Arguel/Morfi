@@ -12,16 +12,16 @@ body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
 }
-/*--------------HEADER/NAV--------------*/
-header {
+/*--------------HEADER/NAV-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#*/
+header.home {
   width: 100%;
 }
 .nav-menu {
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 30px auto;
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: baseline;
 }
 .nav-menu-li {
   position: relative;
@@ -62,13 +62,15 @@ header {
 .nav-menu-li:hover .nav-menu-sublist {
   display: block;
 }
-.searchbar {
+.nav-menu-li form input.searchbar {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
   border: solid 1px #757575;
   border-radius: 3px;
-  padding: 5px 0 5px 8px;
+  max-width: 200px;
+  padding: 5px;
 }
-/*--------------NEWS-------------------*/
+/*--------------$Home-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#*/
+/*--------------NEWS---------------------*/
 /*main container*/
 .news-container {
   display: grid;
@@ -114,7 +116,7 @@ header {
   transform: translateY(-5%);
 }
 
-/*--------------OFFERS------------------*/
+/*--------------OFFERS---------------------*/
 /*for h1 and flex*/
 .top-offers-container {
   max-width: 1800px;
@@ -193,7 +195,7 @@ header {
   align-self: center;
   cursor: pointer;
 }
-/*--------------NEWSLETTER-------------------*/
+/*--------------NEWSLETTER---------------------*/
 .newsletter-container {
   background-image: linear-gradient(to bottom, #3D3D3D, #929292 15%, #CECECE 50%, #929292 85%, #3D3D3D);
   margin: 2% auto;
@@ -235,7 +237,7 @@ header {
   font-weight: 400;
   cursor: pointer;
 }
-/*--------------CUSTOMER--------------------*/
+/*--------------CUSTOMER---------------------*/
 .customer-testimonios-container {
   margin: 3% auto;
   display: flex;
@@ -270,7 +272,7 @@ header {
   margin: 5%;
   color: white;
 }
-/*--------------FOOTER---------------*/
+/*--------------FOOTER-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#*/
 .footer-top {
   background-color: #D7D7D7;
 }
@@ -384,7 +386,14 @@ header {
   text-align: center;
   flex-grow: 1;
 }
-/*--------------UTILS-------------*/
+/*--------------MEDIA QUERIES-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#*/
+/*--------------SMARTPHONE-------------*/
+@media only screen and (min-width: 768px) {
+  body {
+    /*background-color: red;*/
+  }
+}
+/*--------------UTILS-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#*/
 .list-none {
   list-style-type: none;
   padding: 0;
