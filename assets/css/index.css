@@ -51,6 +51,7 @@ header.home {
 .nav-menu-li a {
   color: #757575;
   font-weight: 400;
+  white-space: nowrap;
 }
 .nav-menu-li a.active-page:after {
   content: '';
@@ -88,6 +89,32 @@ header.home {
   border-radius: 3px;
   max-width: 200px;
   padding: 5px;
+}
+.nav-menu-account {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+.nav-menu-li div a.login-btn {
+  border: solid 1px #689F38;
+  padding: 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+.nav-menu-li div.login-btn-container::after {
+  content: '';
+  border-right: solid 1px rgba(0, 0, 0, 0.5);
+  padding: 5px 1em 5px 0;
+}
+.nav-menu-li div a.sign-up-btn {
+  background-color: #8BC34A;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  white-space: nowrap;
+}
+.nav-menu-li div.sign-up-btn-container {
+  padding-left: 1em;
 }
 /*--------------$Home-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#*/
 /*--------------NEWS---------------------*/
