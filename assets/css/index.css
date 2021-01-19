@@ -264,17 +264,27 @@ header.home {
 .toffer-item-title {
   color: white;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.7em;
   font-weight: 600;
   overflow: hidden;
+  cursor: pointer;
+  text-decoration: underline;
 }
 .toffer-item-price {
+  position: relative;
   color: white;
   text-align: center;
-  font-size: 1.2em;
+  font-size: 1.6em;
+}
+#toffer-item-price-normal {
+  position: absolute;
+  font-size: 60%;
+  text-decoration: line-through;
+  vertical-align: 40%;
+  padding-left: .3em;
 }
 .toffer-item-description {
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   display: -webkit-box;
   color: white;
@@ -284,7 +294,37 @@ header.home {
   white-space: normal;
   text-overflow: ellipsis;
   width: 100%;
-  height: 6em;
+}
+/*buttons container*/
+.toffer-item-btns {
+  text-align: center;
+  padding: 5px;
+  line-height: 50%;
+}
+/*icons of the buttons*/
+.toffer-btn-buy .fa-lg {
+  margin-right: .3em;
+  padding-right: .6em;
+  border-right: solid 1px #212121;
+  color: #212121;
+}
+.toffer-btn-buy {
+  background-color: #CDDC39;
+  border: 0;
+  width: 9em;
+  height: 2em;
+  border-radius: 5px;
+  font-size: 1em;
+  outline: none;
+  cursor: pointer;
+  white-space: nowrap;
+  margin: .2em 0;
+}
+.toffer-btn-buy:last-child {
+  background-color: #8BC34A;
+}
+.toffer-btn-buy:hover {
+  background-color: white;
 }
 .toffer-arrow {
   color: white;
