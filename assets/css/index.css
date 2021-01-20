@@ -100,8 +100,12 @@ header.home {
   display: block;
 }
 .nav-menu-sublist li a:hover {
-  background-color: #8BC34A;
   color: white;
+background: rgb(34,193,195);
+background: -moz-linear-gradient(300deg, rgba(34,193,195,1) 0%, rgba(0,198,0,1) 100%);
+background: -webkit-linear-gradient(300deg, rgba(34,193,195,1) 0%, rgba(0,198,0,1) 100%);
+background: linear-gradient(300deg, rgba(34,193,195,1) 0%, rgba(0,198,0,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#22c1c3",endColorstr="#00c600",GradientType=1);
 }
 /*searchbar*/
 .nav-menu-li form {
@@ -140,6 +144,9 @@ header.home {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.fa-search:hover {
+  color: #757575;
+}
 .nav-menu-account {
   display: flex;
   align-items: center;
@@ -157,11 +164,19 @@ header.home {
   padding: 5px 1em 5px 0;
 }
 .nav-menu-li div a.sign-up-btn {
-  background-color: #8BC34A;
+  background: rgb(139,195,74);
+  background: -moz-linear-gradient(180deg, rgba(139,195,74,0.8001777563202247) 0%, rgba(139,195,74,1) 50%, rgba(139,195,74,0.8) 100%);
+  background: -webkit-linear-gradient(180deg, rgba(139,195,74,0.8001777563202247) 0%, rgba(139,195,74,1) 50%, rgba(139,195,74,0.8) 100%);
+  background: linear-gradient(180deg, rgba(139,195,74,0.8001777563202247) 0%, rgba(139,195,74,1) 50%, rgba(139,195,74,0.8) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8bc34a",endColorstr="#8bc34a",GradientType=1);
   padding: 10px;
   border-radius: 5px;
   color: white;
   white-space: nowrap;
+}
+
+.nav-menu-li div a.sign-up-btn:hover {
+  background: #8BC34A;
 }
 .nav-menu-li div.sign-up-btn-container {
   padding-left: 1em;
@@ -309,7 +324,7 @@ header.home {
   color: #212121;
 }
 .toffer-btn-buy {
-  background-color: #CDDC39;
+  background-color: white;
   border: 0;
   width: 9em;
   height: 2em;
@@ -320,11 +335,8 @@ header.home {
   white-space: nowrap;
   margin: .2em 0;
 }
-.toffer-btn-buy:last-child {
-  background-color: #8BC34A;
-}
 .toffer-btn-buy:hover {
-  background-color: white;
+  background-color: #CDDC39;
 }
 .toffer-arrow {
   color: white;
@@ -335,6 +347,7 @@ header.home {
 /*--------------NEWSLETTER---------------------*/
 .newsletter-container {
   background-image: linear-gradient(to bottom, #3D3D3D, #929292 15%, #CECECE 50%, #929292 85%, #3D3D3D);
+  border: solid 1px #212121;
   margin: 2% auto;
   border-radius: 5px;
   max-width: 800px;
@@ -373,6 +386,7 @@ header.home {
   font-size: 1rem;
   font-weight: 400;
   cursor: pointer;
+  outline: none;
 }
 /*--------------CUSTOMER---------------------*/
 .customer-testimonios-container {
@@ -451,8 +465,12 @@ header.home {
   font-weight: 400;
   color: #212121;
 }
+.social-icons li {
+  text-align: center;
+}
 .social-icons li a {
   color: #212121;
+  font-size: 1.5em;
 }
 .footer-top-right ul li {
   padding: 5px;
