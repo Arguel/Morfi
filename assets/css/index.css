@@ -13,7 +13,7 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 a {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 /*--------------HEADER/NAV-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#*/
 header.home {
@@ -23,7 +23,7 @@ header.home {
   display: flex;
   justify-content: space-around;
   max-width: 1600px;
-  margin: 15px auto;
+  margin: 1.6em auto;
   align-items: center;
 }
 .nav-logo {
@@ -34,7 +34,6 @@ header.home {
 .nav-img {
   width: auto;
   height: 100%;
-  box-sizing: border-box;
 }
 .nav-wrapper {
   width: 800px;
@@ -47,6 +46,7 @@ header.home {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  margin: auto;
 }
 .nav-menu-li {
   position: relative;
@@ -93,7 +93,6 @@ header.home {
   color: #757575;
   font-weight: 400;
   font-size: 1em;
-  box-sizing: border-box;
   border-radius: 5px;
 }
 .nav-menu-li:hover .nav-menu-sublist {
@@ -101,11 +100,11 @@ header.home {
 }
 .nav-menu-sublist li a:hover {
   color: white;
-background: rgb(34,193,195);
-background: -moz-linear-gradient(300deg, rgba(34,193,195,1) 0%, rgba(0,198,0,1) 100%);
-background: -webkit-linear-gradient(300deg, rgba(34,193,195,1) 0%, rgba(0,198,0,1) 100%);
-background: linear-gradient(300deg, rgba(34,193,195,1) 0%, rgba(0,198,0,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#22c1c3",endColorstr="#00c600",GradientType=1);
+  background: rgb(0,198,0);
+  background: -moz-linear-gradient(90deg, rgba(0,198,0,1) 0%, rgba(3,123,238,1) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(0,198,0,1) 0%, rgba(3,123,238,1) 100%);
+  background: linear-gradient(90deg, rgba(0,198,0,1) 0%, rgba(3,123,238,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00c600",endColorstr="#037bee",GradientType=1);
 }
 /*searchbar*/
 .nav-menu-li form {
@@ -122,7 +121,6 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#22c1c3",endCo
   top: 0;
   right: 0;
   padding: 0 10px 0 30px;
-  box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.1em;
   font-weight: 400;
@@ -151,6 +149,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#22c1c3",endCo
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: auto;
 }
 .nav-menu-li div a.login-btn {
   border: solid 1px #689F38;
@@ -201,11 +200,11 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#22c1c3",endCo
   cursor: pointer;
 }
 .events-img {
-  height: inherit;
+  height: 310px;
   width: 100%;
-  transform: translateY(-25%);
   opacity: 0.95;
   cursor: pointer;
+  object-fit: cover;
 }
 /*medium image container*/
 .news:hover {
@@ -299,7 +298,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#22c1c3",endCo
   padding-left: .3em;
 }
 .toffer-item-description {
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   display: -webkit-box;
   color: white;
@@ -310,34 +309,6 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#22c1c3",endCo
   text-overflow: ellipsis;
   width: 100%;
 }
-/*buttons container*/
-.toffer-item-btns {
-  text-align: center;
-  padding: 5px;
-  line-height: 50%;
-}
-/*icons of the buttons*/
-.toffer-btn-buy .fa-lg {
-  margin-right: .3em;
-  padding-right: .6em;
-  border-right: solid 1px #212121;
-  color: #212121;
-}
-.toffer-btn-buy {
-  background-color: white;
-  border: 0;
-  width: 9em;
-  height: 2em;
-  border-radius: 5px;
-  font-size: 1em;
-  outline: none;
-  cursor: pointer;
-  white-space: nowrap;
-  margin: .2em 0;
-}
-.toffer-btn-buy:hover {
-  background-color: #CDDC39;
-}
 .toffer-arrow {
   color: white;
   margin: 5% 2%;
@@ -347,7 +318,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#22c1c3",endCo
 /*--------------NEWSLETTER---------------------*/
 .newsletter-container {
   background-image: linear-gradient(to bottom, #3D3D3D, #929292 15%, #CECECE 50%, #929292 85%, #3D3D3D);
-  border: solid 1px #212121;
+  box-shadow: 0px 5px 15px rgba(0,0,0,1);
   margin: 2% auto;
   border-radius: 5px;
   max-width: 800px;
