@@ -5,7 +5,7 @@ body {
 a {
     text-decoration: none;
 }
-/*--------------HEADER/NAV-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#*/
+/*===============HEADER/NAV=============================================*/
 .nav-menu-container {
     display: flex;
     justify-content: space-around;
@@ -13,6 +13,7 @@ a {
     margin: 1.6em auto;
     align-items: center;
 }
+/*--------------NAV-LOGO---------------------*/
 .nav-logo {
     height: 40px;
     text-align: center;
@@ -21,6 +22,7 @@ a {
     width: auto;
     height: 100%;
 }
+/*--------------NAV-NAVIGATION-MENU---------------------*/
 /*ul from navigation menu*/
 .nav-menu {
     display: flex;
@@ -125,6 +127,7 @@ a {
 .fa-search:hover {
     color: #757575;
 }
+/*--------------NAV-MENU-ACCOUNT---------------------*/
 .nav-menu-account {
     display: flex;
     align-items: center;
@@ -160,8 +163,8 @@ a {
 .nav-menu-li div.sign-up-btn-container {
     padding-left: 1em;
 }
-/*--------------$Home-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#*/
-/*--------------NEWS---------------------*/
+/*===============$Home=============================================*/
+/*=.=.=.=.=.=.=.=.=.=NEWS=.=.=.=.=.=.=.=.=.=*/
 /*main container*/
 .news-container {
     display: grid;
@@ -207,7 +210,7 @@ a {
     transform: translateY(-5%);
 }
 
-/*--------------OFFERS---------------------*/
+/*=.=.=.=.=.=.=.=.=.=OFFERS=.=.=.=.=.=.=.=.=.=*/
 /*for h1 and flex*/
 .top-offers-container {
     max-width: 1800px;
@@ -222,6 +225,7 @@ a {
     display: flex;
     align-items: center;
 }
+/*--------------ITEM-CONTAINER---------------------*/
 /*item container*/
 .toffer-item {
     margin: 0 1em;
@@ -230,6 +234,7 @@ a {
     height: 200px;
     align-items: center;
 }
+/*--------------IMAGE-CONTAINER---------------------*/
 /*image and link container*/
 .toffer-item-imga {
     width: 200px;
@@ -250,6 +255,7 @@ a {
 .toffer-img:hover {
     transform: translateX(-10%) scale(1.1, 1.1);
 }
+/*--------------DESCRIPTION-CONTAINER---------------------*/
 /*group (title, price, description) container*/
 .toffer-desc {
     flex: 2;
@@ -289,13 +295,14 @@ a {
     text-overflow: ellipsis;
     width: 100%;
 }
+/*--------------ARROW-ICONS---------------------*/
 .toffer-arrow {
     color: white;
     margin: 5% 2%;
     align-self: center;
     cursor: pointer;
 }
-/*--------------NEWSLETTER---------------------*/
+/*=.=.=.=.=.=.=.=.=.=NEWSLETTER=.=.=.=.=.=.=.=.=.=*/
 .newsletter-container {
     background-image: linear-gradient(to bottom, #3D3D3D, #929292 15%, #CECECE 50%, #929292 85%, #3D3D3D);
     box-shadow: 0px 5px 15px rgba(0,0,0,1);
@@ -339,13 +346,14 @@ a {
     cursor: pointer;
     outline: none;
 }
-/*--------------CUSTOMER---------------------*/
+/*=.=.=.=.=.=.=.=.=.=CUSTOMER=.=.=.=.=.=.=.=.=.=*/
 .customer-testimonios-container {
     margin: 3% auto;
     display: flex;
     max-width: 1200px;
     box-shadow: 6px 8px 18px rgba(0, 0, 0, 0.3);
 }
+/*--------------TEC-INFO---------------------*/
 /*h1 and p container*/
 .tec-info {
     margin: 4% 2%;
@@ -359,6 +367,7 @@ a {
     margin-bottom: 6%;
     color: #212121;
 }
+/*--------------CUSTOMER---------------------*/
 .wrapper-customer {
     background-color: #212121;
 }
@@ -374,7 +383,7 @@ a {
     margin: 5%;
     color: white;
 }
-/*--------------FOOTER-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#*/
+/*===============FOOTER=============================================*/
 .footer-top {
     background-color: #D7D7D7;
     height: 11em;
@@ -387,6 +396,7 @@ a {
     justify-content: space-around;
     align-items: center;
 }
+/*--------------FOOTER-TOP-LEFT---------------------*/
 .footer-top-left {
     display: flex;
     align-items: center;
@@ -419,6 +429,7 @@ a {
     color: #212121;
     font-size: 1.5em;
 }
+/*--------------FOOTER-TOP-RIGHT---------------------*/
 .footer-top-right {
     display: flex;
     align-self: center;
@@ -438,6 +449,7 @@ a {
 .footer-top-right ul li a:hover {
     color: white;
 }
+/*--------------FOOTER-BOTTOM---------------------*/
 .footer-bottom {
     background-color: #212121;
     height: 4em;
@@ -463,6 +475,7 @@ a {
     font-weight: 400;
     color: white;
 }
+/*--------------DROPDOWN LANGUAGE---------------------*/
 /*div that activates the dropdown in the footer*/
 .change-language {
     color: white;
@@ -486,6 +499,7 @@ a {
 .change-selector:hover .footer-sublist {
     display: block;
 }
+/*--------------RIGHTS---------------------*/
 .rights {
     align-self: center;
     color: white;
@@ -493,14 +507,14 @@ a {
     text-align: center;
     flex-grow: 1;
 }
-/*--------------MEDIA QUERIES-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#*/
+/*===============MEDIA QUERIES=============================================*/
 /*--------------SMARTPHONE-------------*/
 @media only screen and (min-width: 768px) {
     body {
         /*background-color: red;*/
     }
 }
-/*--------------UTILS-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#*/
+/*===============UTILS=============================================*/
 .list-none {
     list-style-type: none;
     padding: 0;
