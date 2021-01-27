@@ -7,11 +7,17 @@
   <title>Morfi</title>
   <link rel="stylesheet" href="bootstrap-5.0.0-beta1-dist/css/bootstrap.min.css" type="text/css">
   <link rel="stylesheet" href="assets/css/index.css" type="text/css">
+  <!--start-google-fonts-->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <!--end-google-fonts-->
+  <!--start-tab icon-->
   <link rel="icon" href="img/logo/white_background/small_logo_icon/svg/optimized/small_logo_icon.svg">
-  <script src="bootstrap-5.0.0-beta1-dist/js/bootstrap.min.js"></script>
+  <!--end-tab icon-->
+  <!--start-font-awesome-icons-->
   <script src="https://kit.fontawesome.com/1131adf3a1.js" crossorigin="anonymous"></script>
+  <!--end-font-awesome-icons-->
+  <!--------------------->
 </head>
 
 <body>
@@ -19,74 +25,88 @@
   <header class="home">
 
     <!--Start of nav-menu-container-->
-    <div class="nav-menu-container container-xxl">
-      <div class="nav-logo col-md-2">
-        <a href="/">
-          <img class="nav-img" src="img/logo/white_background/medium_logo_side/svg/optimized/medium_logo_side.svg"
-            alt="TheMorfi">
-        </a>
-      </div>
-      <nav class="col-md-7">
-        <ul class="nav-menu list-none">
-          <!--Home-->
-          <li class="nav-menu-li"><a class="subtitle" href="#">Home</a></li>
-          <!--About-->
-          <li class="nav-menu-li">
-            <a class="subtitle" href="views/about/about-us.html">About</a>
-            <ul class="nav-menu-sublist">
-              <li><a href="views/about/about-us.html">About us</a></li>
-              <li><a href="views/about/locations.html">Locations</a></li>
-              <li><a href="views/about/our-products.html">Our products</a></li>
-            </ul>
-          </li>
-          <!--Shop-->
-          <li class="nav-menu-li"><a class="subtitle" href="views/shop/shop.html">Shop</a></li>
-          <!--Recipes-->
-          <li class="nav-menu-li">
-            <a class="subtitle" href="views/recipes/recipes.html">Recipes</a>
-            <ul class="nav-menu-sublist">
-              <li><a href="views/recipes/recipes.html">Classics</a></li>
-              <li><a href="views/recipes/healthy-recipes.html">Healthy</a></li>
-              <li><a href="views/recipes/wholemeal-recipes.html">Wholemeal</a></li>
-              <li><a href="views/recipes/easy-recipes.html">Easy</a></li>
-            </ul>
-          </li>
-          <!--Help-->
-          <li class="nav-menu-li">
-            <a class="subtitle" href="views/help/contact.html">Help</a>
-            <ul class="nav-menu-sublist">
-              <li><a href="views/help/contact.html">Contact</a></li>
-              <li><a href="views/help/faq.html">FAQ</a></li>
-            </ul>
-          </li>
-          <!--Searchbar-->
-          <li class="nav-menu-li">
-            <form>
-              <div class="search-btn">
-                <i class="fas fa-search"></i>
-              </div>
-              <input class="searchbar" type="text" name="searchbar" placeholder="Search">
-            </form>
-          </li>
-        </ul>
+    <div class="container-xxl">
+      <nav class="navbar navbar-expand-lg navbar-light m-2">
+        <div class="nav-logo">
+          <a class="navbar-brand" href="/">
+            <img class="h-100 w-auto"
+              src="img/logo/white_background/medium_logo_side/svg/optimized/medium_logo_side.svg" alt="TheMorfi">
+          </a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!--nav-->
+          <ul class="navbar-nav align-items-center justify-content-around ms-auto me-auto col-lg-8">
+            <!--Home-->
+            <li class="nav-item">
+              <a class="nav-link active subtitle" aria-current="page">Home</a>
+            </li>
+            <!--About-->
+            <li class="nav-item dropdown text-center">
+              <a class="nav-link subtitle" href="#" id="navbarDropdownMenuLinkAbout" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">About</a>
+              <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdownMenuLinkAbout">
+                <li><a class="dropdown-item" href="views/about/about-us.html">About us</a></li>
+                <li><a class="dropdown-item" href="views/about/locations.html">Locations</a></li>
+                <li><a class="dropdown-item" href="views/about/our-products.html">Our products</a></li>
+              </ul>
+            </li>
+            <!--Shop-->
+            <li class="nav-item">
+              <a class="nav-link subtitle">Shop</a>
+            </li>
+            <!--Recipes-->
+            <li class="nav-item dropdown text-center">
+              <a class="nav-link subtitle" href="#" id="navbarDropdownMenuLinkRecipes" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">Recipes</a>
+              <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdownMenuLinkRecipes">
+                <li><a class="dropdown-item" href="views/recipes/recipes.html">Classics</a></li>
+                <li><a class="dropdown-item" href="views/recipes/healthy-recipes.html">Healthy</a></li>
+                <li><a class="dropdown-item" href="views/recipes/wholemeal-recipes.html">Wholemeal</a></li>
+                <li><a class="dropdown-item" href="views/recipes/easy-recipes.html">Easy</a></li>
+              </ul>
+            </li>
+            <!--Help-->
+            <li class="nav-item dropdown text-center">
+              <a class="nav-link subtitle" href="#" id="navbarDropdownMenuLinkHelp" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">Help</a>
+              <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdownMenuLinkHelp">
+                <li><a class="dropdown-item" href="views/help/contact.html">Contact</a></li>
+                <li><a class="dropdown-item" href="views/help/faq.html">FAQ</a></li>
+              </ul>
+            </li>
+            <!--Searchbar-->
+            <li class="nav-item">
+              <form>
+                <div class="input-group">
+                  <button class="input-group-text nav-searchbar" id="search-icon">
+                    <i class="fas fa-search"></i>
+                  </button>
+                  <input type="text" class="form-control nav-searchbar" placeholder="Search" aria-label="Search"
+                    aria-describedby="search-icon">
+                </div>
+              </form>
+            </li>
+          </ul>
+          <hr>
+          <!--account-nav-->
+          <ul class="navbar-nav align-items-center">
+            <li class="nav-item text-center">
+              <a class="nav-link">
+                <button type="button" class="btn btn-outline-success">Login</button>
+              </a>
+            </li>
+            <li class="nav-item text-center">
+              <a class="nav-link">
+                <button type="button" class="btn btn-primary">Sign up</button>
+              </a>
+            </li>
+          </ul>
+        </div>
       </nav>
-      <div class="col-md-2">
-        <ul class="nav-menu-account list-none">
-          <li class="nav-menu-li">
-            <div class="login-btn-container">
-              <a class="login-btn" href="views/account/account.html">Login</a>
-            </div>
-          </li>
-          <li class="nav-menu-li">
-            <div class="sign-up-btn-container">
-              <a class="sign-up-btn" href="views/account/account.html">Sign up</a>
-            </div>
-          </li>
-          <!--<li class="nav-menu-li">-->
-          <!--<a class="subtitle" href="views/cart/cart.html">Cart</a>-->
-          <!--</li>-->
-        </ul>
-      </div>
     </div>
     <!--End of nav-menu-container-->
 
@@ -95,32 +115,62 @@
   <main>
 
     <!--Start of news-container-->
-    <section class="news-container">
-      <div class="events of-hidden br-10">
-        <a href="https://www.greenpeace.org/static/planet4-mexico-stateless/2020/02/d3e10ab9-gp0strmec-1024x683.jpg"
-          rel="noreferrer">
-          <img class="events-img"
-            src="https://www.greenpeace.org/static/planet4-mexico-stateless/2020/02/d3e10ab9-gp0strmec-1024x683.jpg"
-            alt="events">
-        </a>
+    <section class="container-md" style="background-color: red;">
+      <div class="row g-2" style="background-color: plum;">
+        <div class="col-12">
+          <div class="border overflow-hidden" style="background-color: blue; height: 300px;">
+            <a href="https://www.greenpeace.org/static/planet4-mexico-stateless/2020/02/d3e10ab9-gp0strmec-1024x683.jpg"
+              class="w-100" rel="noreferrer">
+              <img class="w-100" src="img/home/news/big-image/optimized/family_meeting1.jpg" alt="events">
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="news of-hidden br-10">
-        <a href="https://assets.soyvida.com/__export/1586455967375/sites/debate/img/2020/04/09/comida_saludable_freepik.jpg_172596871.jpg"
-          rel="noreferrer">
-          <img class="news-img"
-            src="https://assets.soyvida.com/__export/1586455967375/sites/debate/img/2020/04/09/comida_saludable_freepik.jpg_172596871.jpg"
-            alt="news">
-        </a>
-      </div>
-      <div class="news-food of-hidden br-10">
-        <a href="https://www.infobae.com/new-resizer/SLKfej7KEbCFR7-vHTLCQW8TPeI=/750x0/filters:quality(100)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/08/01122831/tendencias-recetas-destacada.jpg"
-          rel="noreferrer">
-          <img class="news-food-img"
-            src="https://www.infobae.com/new-resizer/SLKfej7KEbCFR7-vHTLCQW8TPeI=/750x0/filters:quality(100)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/08/01122831/tendencias-recetas-destacada.jpg"
-            alt="news-food">
-        </a>
+      <div class="row g-2 mt-1" style="background-color: green;">
+        <div class="col-8">
+          <div class="border overflow-hidden" style="background-color: gold; height: 200px;">
+            <a href="https://assets.soyvida.com/__export/1586455967374/sites/debate/img/2020/04/09/comida_saludable_freepik.jpg_172596871.jpg"
+              rel="noreferrer">
+              <img class="w-100" src=" img/home/news/medium-image/optimized/healthy_food1.jpg" alt="news">
+            </a>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="border overflow-hidden" style="background-color: aqua; height: 200px;">
+            <a href="https://www.infobae.com/new-resizer/SLKfej6KEbCFR7-vHTLCQW8TPeI=/750x0/filters:quality(100)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/08/01122831/tendencias-recetas-destacada.jpg"
+              rel="noreferrer">
+              <img class="w-100 h-100" src="img/home/news/small-image/optimized/featured_recipe1.jpg" alt="news-food">
+            </a>
+          </div>
+        </div>
       </div>
     </section>
+    <!--<section class="news-container">-->
+    <!--<div class="events of-hidden br-10">-->
+    <!--<a href="https://www.greenpeace.org/static/planet4-mexico-stateless/2020/02/d3e10ab9-gp0strmec-1024x683.jpg"-->
+    <!--rel="noreferrer">-->
+    <!--<img class="events-img"-->
+    <!--src="https://www.greenpeace.org/static/planet4-mexico-stateless/2020/02/d3e10ab9-gp0strmec-1024x683.jpg"-->
+    <!--alt="events">-->
+    <!--</a>-->
+    <!--</div>-->
+    <!--<div class="news of-hidden br-10">-->
+    <!--<a href="https://assets.soyvida.com/__export/1586455967375/sites/debate/img/2020/04/09/comida_saludable_freepik.jpg_172596871.jpg"-->
+    <!--rel="noreferrer">-->
+    <!--<img class="news-img"-->
+    <!--src="https://assets.soyvida.com/__export/1586455967375/sites/debate/img/2020/04/09/comida_saludable_freepik.jpg_172596871.jpg"-->
+    <!--alt="news">-->
+    <!--</a>-->
+    <!--</div>-->
+    <!--<div class="news-food of-hidden br-10">-->
+    <!--<a href="https://www.infobae.com/new-resizer/SLKfej7KEbCFR7-vHTLCQW8TPeI=/750x0/filters:quality(100)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/08/01122831/tendencias-recetas-destacada.jpg"-->
+    <!--rel="noreferrer">-->
+    <!--<img class="news-food-img"-->
+    <!--src="https://www.infobae.com/new-resizer/SLKfej7KEbCFR7-vHTLCQW8TPeI=/750x0/filters:quality(100)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/08/01122831/tendencias-recetas-destacada.jpg"-->
+    <!--alt="news-food">-->
+    <!--</a>-->
+    <!--</div>-->
+    <!--</section>-->
     <!--End of news-container-->
 
     <!--Start of top-offers-container-->
@@ -184,7 +234,8 @@
       <p>Stay informed with the latest in our recipes, offers, events and much more by subscribing to our weekly
         newsletter
         <br>
-        You can unsubscribe at any time</p>
+        You can unsubscribe at any time
+      </p>
       <aside>
         <label for="newsletter">Enter your email below</label>
         <input type="email" id="newsletter" name="newsletter">
@@ -289,6 +340,8 @@
     </div>
     <!--footer-bottom-end-->
   </footer>
+
+  <script src="bootstrap-5.0.0-beta1-dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
