@@ -48,7 +48,7 @@
             <li class="nav-item dropdown text-center">
               <a class="nav-link subtitle" href="#" id="navbarDropdownMenuLinkAbout" role="button"
                 data-bs-toggle="dropdown" aria-expanded="false">About</a>
-              <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdownMenuLinkAbout">
+              <ul class="dropdown-menu text-center text-lg-start" aria-labelledby="navbarDropdownMenuLinkAbout">
                 <li><a class="dropdown-item" href="views/about/about-us.html">About us</a></li>
                 <li><a class="dropdown-item" href="views/about/locations.html">Locations</a></li>
                 <li><a class="dropdown-item" href="views/about/our-products.html">Our products</a></li>
@@ -62,7 +62,7 @@
             <li class="nav-item dropdown text-center">
               <a class="nav-link subtitle" href="#" id="navbarDropdownMenuLinkRecipes" role="button"
                 data-bs-toggle="dropdown" aria-expanded="false">Recipes</a>
-              <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdownMenuLinkRecipes">
+              <ul class="dropdown-menu text-center text-lg-start" aria-labelledby="navbarDropdownMenuLinkRecipes">
                 <li><a class="dropdown-item" href="views/recipes/recipes.html">Classics</a></li>
                 <li><a class="dropdown-item" href="views/recipes/healthy-recipes.html">Healthy</a></li>
                 <li><a class="dropdown-item" href="views/recipes/wholemeal-recipes.html">Wholemeal</a></li>
@@ -73,7 +73,7 @@
             <li class="nav-item dropdown text-center">
               <a class="nav-link subtitle" href="#" id="navbarDropdownMenuLinkHelp" role="button"
                 data-bs-toggle="dropdown" aria-expanded="false">Help</a>
-              <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdownMenuLinkHelp">
+              <ul class="dropdown-menu text-center text-lg-start" aria-labelledby="navbarDropdownMenuLinkHelp">
                 <li><a class="dropdown-item" href="views/help/contact.html">Contact</a></li>
                 <li><a class="dropdown-item" href="views/help/faq.html">FAQ</a></li>
               </ul>
@@ -119,19 +119,58 @@
       <div class="row g-2" style="background-color: plum;">
         <div class="col-12">
           <div class="border overflow-hidden" style="background-color: blue; height: 300px;">
-            <a href="https://www.greenpeace.org/static/planet4-mexico-stateless/2020/02/d3e10ab9-gp0strmec-1024x683.jpg"
-              class="w-100" rel="noreferrer">
-              <img class="w-100" src="img/home/news/big-image/optimized/family_meeting1.jpg" alt="events">
-            </a>
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
+                <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <a href="https://www.greenpeace.org/static/planet4-mexico-stateless/2020/02/d3e10ab9-gp0strmec-1024x683.jpg"
+                    class="d-block w-100" rel="noreferrer">
+                    <img class="img-fluid" src="img/home/news/big-image/optimized/family_meeting1.jpg" alt="events"
+                      style="width: 100%; height: 100%; object-fit: cover;">
+                  </a>
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="http://placekitten.com/1200/300" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Second slide label</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="http://placekitten.com/1200/300" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Third slide label</h5>
+                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                  </div>
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="row g-2 mt-1" style="background-color: green;">
+      <div class=" row g-2 mt-1" style="background-color: green;">
         <div class="col-8">
           <div class="border overflow-hidden" style="background-color: gold; height: 200px;">
             <a href="https://assets.soyvida.com/__export/1586455967374/sites/debate/img/2020/04/09/comida_saludable_freepik.jpg_172596871.jpg"
               rel="noreferrer">
-              <img class="w-100" src=" img/home/news/medium-image/optimized/healthy_food1.jpg" alt="news">
+              <img class="img-fluid" src=" img/home/news/medium-image/optimized/healthy_food1.jpg" alt="news"
+                style="width: 100%; height: 100%; object-fit: cover;">
             </a>
           </div>
         </div>
@@ -139,115 +178,88 @@
           <div class="border overflow-hidden" style="background-color: aqua; height: 200px;">
             <a href="https://www.infobae.com/new-resizer/SLKfej6KEbCFR7-vHTLCQW8TPeI=/750x0/filters:quality(100)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/08/01122831/tendencias-recetas-destacada.jpg"
               rel="noreferrer">
-              <img class="w-100 h-100" src="img/home/news/small-image/optimized/featured_recipe1.jpg" alt="news-food">
+              <img class="img-fluid" src="img/home/news/small-image/optimized/featured_recipe1.jpg" alt="news-food"
+                style="width: 100%; height: 100%; object-fit: cover;">
             </a>
           </div>
         </div>
       </div>
     </section>
-    <!--<section class="news-container">-->
-    <!--<div class="events of-hidden br-10">-->
-    <!--<a href="https://www.greenpeace.org/static/planet4-mexico-stateless/2020/02/d3e10ab9-gp0strmec-1024x683.jpg"-->
-    <!--rel="noreferrer">-->
-    <!--<img class="events-img"-->
-    <!--src="https://www.greenpeace.org/static/planet4-mexico-stateless/2020/02/d3e10ab9-gp0strmec-1024x683.jpg"-->
-    <!--alt="events">-->
-    <!--</a>-->
-    <!--</div>-->
-    <!--<div class="news of-hidden br-10">-->
-    <!--<a href="https://assets.soyvida.com/__export/1586455967375/sites/debate/img/2020/04/09/comida_saludable_freepik.jpg_172596871.jpg"-->
-    <!--rel="noreferrer">-->
-    <!--<img class="news-img"-->
-    <!--src="https://assets.soyvida.com/__export/1586455967375/sites/debate/img/2020/04/09/comida_saludable_freepik.jpg_172596871.jpg"-->
-    <!--alt="news">-->
-    <!--</a>-->
-    <!--</div>-->
-    <!--<div class="news-food of-hidden br-10">-->
-    <!--<a href="https://www.infobae.com/new-resizer/SLKfej7KEbCFR7-vHTLCQW8TPeI=/750x0/filters:quality(100)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/08/01122831/tendencias-recetas-destacada.jpg"-->
-    <!--rel="noreferrer">-->
-    <!--<img class="news-food-img"-->
-    <!--src="https://www.infobae.com/new-resizer/SLKfej7KEbCFR7-vHTLCQW8TPeI=/750x0/filters:quality(100)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/08/01122831/tendencias-recetas-destacada.jpg"-->
-    <!--alt="news-food">-->
-    <!--</a>-->
-    <!--</div>-->
-    <!--</section>-->
     <!--End of news-container-->
 
     <!--Start of top-offers-container-->
-    <section class="top-offers-container">
-      <h1 id="top-offers" class="h1-title">Top offers</h1>
-      <div class="top-offers-data-container">
-        <i class="fas fa-caret-left fa-7x toffer-arrow"></i>
-        <div class="toffer-item">
-          <div class="toffer-item-imga">
-            <a
-              href="https://steemitimages.com/640x0/http://www.culturizate.com/wp-content/uploads/2017/05/las-10-comidas-mas-deliciosas-del-mundo-9.jpg">
-              <img class="toffer-img"
+    <section class="container-xxl">
+      <h1 id="top-offers" class="h1-title text-center text-xl-start">Top offers</h1>
+      <div class="top-offers-data-container d-flex align-items-center justify-content-between">
+        <i class="fas fa-caret-left fa-7x toffer-arrow mx-1 mx-md-2 mx-xl-3"></i>
+        <div class="card my-2 my-md-2 my-xl-3 mx-lg-1 mx-xl-3 col-lg-8 col-xl-5">
+          <div class="row g-0">
+            <div class="col-md-5">
+              <img class="img-fluid"
                 src="https://steemitimages.com/640x0/http://www.culturizate.com/wp-content/uploads/2017/05/las-10-comidas-mas-deliciosas-del-mundo-9.jpg"
-                alt="Lasagna">
-            </a>
-          </div>
-          <div class="toffer-desc">
-            <div class="toffer-item-title">Lasagna</div>
-            <div class="toffer-item-price">
-              <span id="toffer-item-price-discount">
-                $44.99
-                <span id="toffer-item-price-normal">$60.00</span>
-              </span>
+                alt="..." style="width: 100%; height: 100%; object-fit: cover;">
             </div>
-            <div class="toffer-item-description">Italian dish made of stacked layers of thin flat pasta alternating with
-              fillings such as ragu (ground meats and tomato sauce) and other vegetables, cheese (which may include
-              ricotta
-              and parmesan), and seasonings and spices such as garlic, oregano and basil.
+            <div class="col-md-7">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                  content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="toffer-item">
-          <div class="toffer-item-imga">
-            <a href="https://recetinas.com/wp-content/uploads/2019/03/pizza-napolitana-receta-1024x674.jpg">
-              <img class="toffer-img"
-                src="https://recetinas.com/wp-content/uploads/2019/03/pizza-napolitana-receta-1024x674.jpg" alt="Pizza">
-            </a>
-          </div>
-          <div class="toffer-desc">
-            <div class="toffer-item-title">Pizza</div>
-            <div class="toffer-item-price">
-              <span id="toffer-item-price-discount">
-                $29.99
-                <span id="toffer-item-price-normal">$40.00</span>
-              </span>
+        <div class="card my-2 my-md-2 my-xl-3 mx-lg-1 mx-xl-3 col-lg-8 col-xl-4 d-none d-xl-block col-xl-5" style="">
+          <div class="row g-0">
+            <div class="col-md-5">
+              <img class="img-fluid"
+                src="https://recetinas.com/wp-content/uploads/2019/03/pizza-napolitana-receta-1024x674.jpg" alt="..."
+                style="width: 100%; height: 100%; object-fit: cover;">
             </div>
-            <div class="toffer-item-description">Dish of Italian origin consisting of a flattened disk of bread dough
-              topped with some combination of olive oil, oregano, tomato, olives, mozzarella or other cheese, and many
-              other ingredients, baked quickly—usually, in a commercial setting, using a wood-fired oven heated to a
-              very high temperature—and served hot.
+            <div class="col-md-7">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                  content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
             </div>
           </div>
         </div>
-        <i class="fas fa-caret-right fa-7x toffer-arrow"></i>
+        <i class="fas fa-caret-right fa-7x toffer-arrow mx-1 mx-md-2 mx-xl-3"></i>
       </div>
     </section>
     <!--End of top-offers-container-->
 
     <!--Start of newsletter-container-->
-    <section class="newsletter-container">
-      <p>Stay informed with the latest in our recipes, offers, events and much more by subscribing to our weekly
-        newsletter
-        <br>
-        You can unsubscribe at any time
-      </p>
-      <aside>
-        <label for="newsletter">Enter your email below</label>
-        <input type="email" id="newsletter" name="newsletter">
-        <input type="button" id="newsletter-btn" name="newsletter-btn" value="Suscribe">
-      </aside>
+    <section class="container d-flex align-items-center rounded mx-auto my-4 p-0 newsletter-container">
+      <div class="row col">
+        <div class="col-12 col-lg-6 my-auto mx-auto mx-lg-0">
+          <p class="m-auto text-center w-75">Stay informed with the latest in our
+            recipes, offers, events and much
+            more by
+            subscribing to our weekly
+            newsletter
+            <br>
+            You can unsubscribe at any time
+          </p>
+          <hr class="d-block d-lg-none">
+        </div>
+        <div class="col-12 col-lg-6">
+          <aside class="mx-auto">
+            <label for="newsletter">Enter your email below</label>
+            <input type="email" id="newsletter" name="newsletter">
+            <input type="button" id="newsletter-btn" name="newsletter-btn" value="Suscribe">
+          </aside>
+        </div>
     </section>
+    </div>
     <!--End of newsletter-container-->
 
     <!--Start of customer-testimonios-container-->
-    <section class="customer-testimonios-container">
-      <article class="tec-info">
-        <h2 class="tec-info-title">Lorem Ipsum</h2>
+    <section class="container-xxl mx-auto my-3 d-flex shadow-lg">
+      <article class="tec-info my-3 mx-1 p-1 col-8">
+        <h2 class="tec-info-title mb-3">Lorem Ipsum</h2>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
           industry's
           standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
@@ -259,10 +271,12 @@
           versions
           of Lorem Ipsum.</p>
       </article>
-      <aside class="wrapper-customer">
-        <img class="customer-photo" src="https://www.salvador-marin.es/wp-content/uploads/2020/06/Woman_1.jpg"
-          alt="customer-avatar">
-        <p class="customer-review">"Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+      <aside class="wrapper-customer col-4">
+        <img class="img-fluid customer-photo rounded"
+          src="https://www.salvador-marin.es/wp-content/uploads/2020/06/Woman_1.jpg" alt="customer-avatar">
+        <p class="customer-review m-2 text-center">"Lorem Ipsum passages, and more recently with desktop publishing
+          software like
+          Aldus
           PageMaker including"</p>
       </aside>
     </section>
@@ -271,74 +285,94 @@
   </main>
 
   <footer>
-    <div class="footer-top">
-      <div class="footer-top-container">
+    <div class="mx-auto mt-5 mb-0">
+      <div class="container-xxl h-100 p-0">
         <!--footer-top-left-start-->
-        <div class="footer-top-left">
-          <div class="footer-logo-and-social">
-            <div class="footer-logo of-hidden">
-              <img class="footer-logo-img" src="img/logo/white_background/full_logo/svg/optimized/full_logo.svg"
-                alt="logo-image">
+        <div class="row d-flex align-items-center justify-content-around footer-top m-0">
+          <div class="d-none d-lg-flex align-items-center justify-content-evenly col-lg-3 mt-2">
+            <div class="text-center">
+              <div class="footer-logo of-hidden mb-1">
+                <img class="footer-logo-img" src="img/logo/white_background/full_logo/svg/optimized/full_logo.svg"
+                  alt="logo-image">
+              </div>
+              <p class="footer-logo-p mb-0">Since 1997 making our customers happy</p>
             </div>
-            <p>Since 1997 making our customers happy</p>
-          </div>
-          <ul class="social-icons list-none">
-            <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-          </ul>
-        </div>
-        <!--footer-top-left-end-->
-        <!--footer-top-right-start-->
-        <div class="footer-top-right">
-          <ul class="list-none">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">Newsletter</a></li>
-          </ul>
-          <ul class="list-none">
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Locations</a></li>
-            <li><a href="#">Our products</a></li>
-          </ul>
-          <ul class="list-none">
-            <li><a href="#">Shop</a></li>
-            <li><a href="#top-offers">Top offers</a></li>
-          </ul>
-          <ul class="list-none">
-            <li><a href="#">Recipes</a></li>
-            <li><a href="#">Healthy</a></li>
-            <li><a href="#">Wholemeal</a></li>
-            <li><a href="#">Easy</a></li>
-          </ul>
-          <ul class="list-none">
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">FAQ</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <!--footer-top-right-end-->
-    <!--footer-bottom-start-->
-    <div class="footer-bottom">
-      <div class="footer-bottom-container">
-        <ul class="list-none">
-          <li><a href="#">Terms of Use</a></li>
-          <li><a href="#">Terms & Conditions</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li class="change-selector">
-            <div class="change-language">English</div>
-            <ul class="footer-sublist list-none">
-              <li><a href="#">Spanish</a></li>
-              <li><a href="#">English</a></li>
+            <ul class="social-icons list-none m-0">
+              <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
             </ul>
-          </li>
-        </ul>
-        <div class="rights">© 2020 Morfi. All Rights Reserved.</div>
+          </div>
+          <!--footer-top-left-end-->
+          <!--footer-top-right-start-->
+          <div class="col-12 col-lg-8 mt-3 mt-lg-2">
+            <div class="row d-flex justify-content-evenly w-100 m-0">
+              <div class="col-6 col-lg-2 text-center text-lg-start">
+                <h5>Home</h5>
+                <ul class="list-unstyled">
+                  <li><a href="#">Events</a></li>
+                  <li><a href="#">Newsletter</a></li>
+                </ul>
+              </div>
+              <div class="col-6 col-lg-2 text-center text-lg-start">
+                <h5>About</h5>
+                <ul class="list-unstyled">
+                  <li><a href="#">About us</a></li>
+                  <li><a href="#">Locations</a></li>
+                  <li><a href="#">Our products</a></li>
+                </ul>
+              </div>
+              <div class="col-6 col-lg-2 text-center text-lg-start">
+                <h5>Shop</h5>
+                <ul class="list-unstyled">
+                  <li><a href="#">Catalogue</a></li>
+                  <li><a href="#top-offers">Top offers</a></li>
+                </ul>
+              </div>
+              <div class="col-6 col-lg-2 text-center text-lg-start">
+                <h5>Recipes</h5>
+                <ul class="list-unstyled">
+                  <li><a href="#">Classics</a></li>
+                  <li><a href="#">Healthy</a></li>
+                  <li><a href="#">Wholemeal</a></li>
+                  <li><a href="#">Easy</a></li>
+                </ul>
+              </div>
+              <div class="col-12 col-lg-2 text-center text-lg-start">
+                <h5>Help</h5>
+                <ul class="list-unstyled">
+                  <li><a href="#">Contact</a></li>
+                  <li><a href="#">FAQ</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!--footer-top-right-end-->
+        </div>
+        <!--footer-bottom-start-->
+        <div class="row d-flex align-items-center justify-content-around my-0 mx-auto p-3 footer-bottom">
+          <div class="col-12 col-lg-8 m-2">
+            <div class="row">
+              <div class="col-3 text-center"><a class="footer-link" href="#">Terms of Use</a></div>
+              <div class="col-3 text-center"><a class="footer-link" href="#">Terms & Conditions</a></div>
+              <div class="col-3 text-center"><a class="footer-link" href="#">Privacy Policy</a></div>
+              <div class="col-3 change-selector text-center">
+                <div class="change-language">
+                  <i class="fas fa-globe"></i>
+                  English
+                </div>
+                <ul class="footer-sublist list-none">
+                  <li><a href="#">Spanish</a></li>
+                  <li><a href="#">English</a></li>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-3 rights text-center m-2">© 2020 Morfi. All Rights Reserved.</div>
+        </div>
+        <!--footer-bottom-end-->
       </div>
     </div>
-    <!--footer-bottom-end-->
   </footer>
 
   <script src="bootstrap-5.0.0-beta1-dist/js/bootstrap.bundle.min.js"></script>
