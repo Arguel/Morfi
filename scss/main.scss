@@ -1,0 +1,21 @@
+$color-darker-5: #212121;
+$color-darker-4: #757575;
+$color-darker-3: #BDBDBD;
+$color-darker-2: #D7D7D7;
+$color-darker-1: #DCEDC8;
+
+$color-green-5: #009736;
+$color-green-4: #00C600;
+$color-green-3: #689F38;
+$color-green-2: #8BC34A;
+$color-green-1: #CDDC39;
+
+$color-blue-1: #037BEE;
+
+
+//custom bootstrap classes
+
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "old-classes";
+
