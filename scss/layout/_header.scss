@@ -1,0 +1,79 @@
+/*===============HEADER/NAV=============================================*/
+.nav-logo {
+    height: 2.5em;
+    text-align: center;
+}
+.nav-searchbar {
+    height: 2em;
+    background-color: unset;
+}
+//dropdown's in the navbar
+.nav-color-list {
+    padding: .3em .7em;
+    box-shadow: .2em .3em .6em rgba(0, 0, 0, 0.2);
+}
+.nav-color-list li {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+}
+.nav-color-list li:last-child {
+    white-space: nowrap;
+    border: 0;
+}
+.nav-color-list li a {
+    padding: .5em 1em;
+    color: #757575;
+    font-weight: 400;
+    font-size: 1em;
+    border-radius: .3em;
+}
+.nav-color-list li a:hover {
+    color: white;
+    background: rgb(34,193,195);
+    background: -moz-linear-gradient(300deg, rgba(34,193,195,1) 0%, rgba(0,198,0,1) 100%);
+    background: -webkit-linear-gradient(300deg, rgba(34,193,195,1) 0%, rgba(0,198,0,1) 100%);
+    background: linear-gradient(300deg, rgba(34,193,195,1) 0%, rgba(0,198,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#22c1c3",endColorstr="#00c600",GradientType=1);
+}
+//searchbar icon
+.fa-search {
+    color: #D7D7D7;
+}
+//makes bootstrap dropdowns activate on hover
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+//account buttons
+.btn-login-container::after {
+    content: '';
+    border-right: solid 1px rgba(0,0,0,0.3);
+    padding-right: 1em;
+}
+.btn-login {
+    border: solid 1px #689F38;
+}
+.btn-sign-up-container {
+    padding-left: 1em;
+}
+.btn-sign-up {
+    background: rgb(139,195,74);
+    background: -moz-linear-gradient(180deg, rgba(139,195,74,0.8001777563202247) 0%, rgba(139,195,74,1) 50%, rgba(139,195,74,0.8) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(139,195,74,0.8001777563202247) 0%, rgba(139,195,74,1) 50%, rgba(139,195,74,0.8) 100%);
+    background: linear-gradient(180deg, rgba(139,195,74,0.8001777563202247) 0%, rgba(139,195,74,1) 50%, rgba(139,195,74,0.8) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8bc34a",endColorstr="#8bc34a",GradientType=1);
+    color: white !important;
+    transition: none;
+}
+.btn-sign-up:hover {
+    background: #8BC34A;
+}
+
+@media (max-width: 992px) {
+    .btn-login-container::after {
+        display: none;
+    }
+    .btn-sign-up-container {
+        padding-left: 0;
+    }
+}
+

@@ -5,54 +5,11 @@ body {
 a {
     text-decoration: none;
 }
-/*===============HEADER/NAV=============================================*/
-.nav-logo {
-    height: 2.5em;
-    text-align: center;
-}
-.nav-searchbar {
-    height: 2em;
-    background-color: unset;
-}
-.fa-search {
-    color: #D7D7D7;
-}
 /*===============$Home=============================================*/
 /*=.=.=.=.=.=.=.=.=.=NEWS=.=.=.=.=.=.=.=.=.=*/
 /*main container*/
-.news {
-  display: grid;
-  grid-template-rows: calc(62% - .8em) 38%;
-  grid-template-columns: calc(60% - .8em) 40%;
-  grid-gap: .8em;
-  margin: 0 auto;
-  max-height: 520px;
-  //max-width: calc(100% - 300px);
+.container-mw-1000px {
   max-width: 1000px;
-}
-.news__img {
-  height: 100%;
-  width: 100%;
-  cursor: pointer;
-  object-fit: cover;
-}
-/*big image container*/
-.news__events {
-  grid-column: 1 / 3;
-}
-.news_events:hover {
-  opacity: 0.95;
-  cursor: pointer;
-}
-/*medium image container*/
-.news__info:hover {
-  opacity: 0.95;
-  cursor: pointer;
-}
-/*small image container*/
-.news__food:hover {
-  opacity: 0.95;
-  cursor: pointer;
 }
 /*=.=.=.=.=.=.=.=.=.=OFFERS=.=.=.=.=.=.=.=.=.=*/
 /*flex wood background*/

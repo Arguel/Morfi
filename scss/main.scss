@@ -10,12 +10,30 @@ $color-green-3: #689F38;
 $color-green-2: #8BC34A;
 $color-green-1: #CDDC39;
 
-$color-blue-1: #037BEE;
+$color-blue-1: #22C1C3;
 
 
 //custom bootstrap classes
 
+$border-radius:               .40rem;
+$border-radius-sm:            .50rem;
+$border-radius-lg:            .80rem;
+$border-radius-pill:          50rem;
+
+$black:    #212121;
 
 @import "../node_modules/bootstrap/scss/bootstrap";
-@import "old-classes";
+@import "pages/home";
+@import "pages/shop";
+@import "layout/header";
+
+//@media (min-width: 576px)
+
+//@media (min-width: 768px)
+
+//@media (max-width: 992px)
+
+//@media (min-width: 1200px)
+
+//@media (min-width: 1400px)
 

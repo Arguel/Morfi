@@ -21,7 +21,7 @@
 
 <body>
 
-  <header class="home">
+  <header>
 
     <!--Start of nav-menu-container-->
     <div class="container-xxl">
@@ -47,7 +47,8 @@
             <li class="nav-item dropdown text-center">
               <a class="nav-link subtitle" href="#" id="navbarDropdownMenuLinkAbout" role="button"
                 data-bs-toggle="dropdown" aria-expanded="false">About</a>
-              <ul class="dropdown-menu text-center text-lg-start" aria-labelledby="navbarDropdownMenuLinkAbout">
+              <ul class="nav-color-list dropdown-menu text-center text-lg-start"
+                aria-labelledby="navbarDropdownMenuLinkAbout">
                 <li><a class="dropdown-item" href="views/about/about-us.html">About us</a></li>
                 <li><a class="dropdown-item" href="views/about/locations.html">Locations</a></li>
                 <li><a class="dropdown-item" href="views/about/our-products.html">Our products</a></li>
@@ -61,7 +62,8 @@
             <li class="nav-item dropdown text-center">
               <a class="nav-link subtitle" href="#" id="navbarDropdownMenuLinkRecipes" role="button"
                 data-bs-toggle="dropdown" aria-expanded="false">Recipes</a>
-              <ul class="dropdown-menu text-center text-lg-start" aria-labelledby="navbarDropdownMenuLinkRecipes">
+              <ul class="nav-color-list dropdown-menu text-center text-lg-start"
+                aria-labelledby="navbarDropdownMenuLinkRecipes">
                 <li><a class="dropdown-item" href="views/recipes/recipes.html">Classics</a></li>
                 <li><a class="dropdown-item" href="views/recipes/healthy-recipes.html">Healthy</a></li>
                 <li><a class="dropdown-item" href="views/recipes/wholemeal-recipes.html">Wholemeal</a></li>
@@ -72,7 +74,8 @@
             <li class="nav-item dropdown text-center">
               <a class="nav-link subtitle" href="#" id="navbarDropdownMenuLinkHelp" role="button"
                 data-bs-toggle="dropdown" aria-expanded="false">Help</a>
-              <ul class="dropdown-menu text-center text-lg-start" aria-labelledby="navbarDropdownMenuLinkHelp">
+              <ul class="nav-color-list dropdown-menu text-center text-lg-start"
+                aria-labelledby="navbarDropdownMenuLinkHelp">
                 <li><a class="dropdown-item" href="views/help/contact.html">Contact</a></li>
                 <li><a class="dropdown-item" href="views/help/faq.html">FAQ</a></li>
               </ul>
@@ -93,15 +96,13 @@
           <hr>
           <!--account-nav-->
           <ul class="navbar-nav align-items-center">
-            <li class="nav-item text-center">
-              <a class="nav-link">
-                <button type="button" class="btn btn-outline-success">Login</button>
-              </a>
+            <li class="nav-item d-block d-lg-flex text-center btn-login-container my-1">
+              <a class="nav-link btn-login rounded text-nowrap px-4 py-3 px-lg-2 py-lg-2"
+                href="views/account/login.html">Login</a>
             </li>
-            <li class="nav-item text-center">
-              <a class="nav-link">
-                <button type="button" class="btn btn-primary">Sign up</button>
-              </a>
+            <li class="nav-item text-center btn-sign-up-container my-1">
+              <a class="nav-link btn-sign-up rounded text-nowrap px-4 py-3 px-lg-2 py-lg-2"
+                href="views/account/register.html">Sign up</a>
             </li>
           </ul>
         </div>
@@ -114,26 +115,34 @@
   <main>
 
     <!--Start of news-container-->
-    <section class="news">
-      <div class="news__events of-hidden br-10">
-        <a href="https://www.greenpeace.org/static/planet4-mexico-stateless/2020/02/d3e10ab9-gp0strmec-1024x683.jpg"
-          rel="noreferrer">
-          <img class="news__img" src="img/home/news/big-image(events)(1000x320)/family-meeting1.jpg" alt="events">
-        </a>
-      </div>
-      <div class="news__info of-hidden br-10">
-        <a href="https://assets.soyvida.com/__export/1586455967375/sites/debate/img/2020/04/09/comida_saludable_freepik.jpg_172596871.jpg"
-          rel="noreferrer">
-          <img class="news__img"
-            src="img/home/news/medium-image(news)(600x200)/grilled-chicken-breast-and-fresh-vegetable1.jpg" alt="news">
-        </a>
-      </div>
-      <div class="news__food of-hidden br-10">
-        <a href="https://www.infobae.com/new-resizer/SLKfej7KEbCFR7-vHTLCQW8TPeI=/750x0/filters:quality(100)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/08/01122831/tendencias-recetas-destacada.jpg"
-          rel="noreferrer">
-          <img class="news__img" src="img/home/news/small-image(news recipes)(400x200)/featured-recipe1.jpg"
-            alt="news-food">
-        </a>
+    <section class="container-mw-1000px mx-auto px-3">
+      <div class="container-xxl">
+        <div class="row">
+          <div class="col g-2">
+            <a href="https://www.greenpeace.org/static/planet4-mexico-stateless/2020/02/d3e10ab9-gp0strmec-1024x683.jpg"
+              rel="noreferrer">
+              <img class="img-fluid h-100 w-100 rounded-3"
+                src="img/home/news/big-image(events)(1000x320)/family-meeting1.jpg" alt="events">
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-lg-7 g-2">
+            <a href="https://assets.soyvida.com/__export/1586455967373/sites/debate/img/2020/04/09/comida_saludable_freepik.jpg_172596871.jpg"
+              rel="noreferrer">
+              <img class="img-fluid h-100 w-100 rounded-3"
+                src="img/home/news/medium-image(news)(600x200)/grilled-chicken-breast-and-fresh-vegetable1.jpg"
+                alt="news">
+            </a>
+          </div>
+          <div class="col-5 d-none d-lg-block g-2">
+            <a href="https://www.infobae.com/new-resizer/SLKfej5KEbCFR7-vHTLCQW8TPeI=/750x0/filters:quality(100)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/08/01122831/tendencias-recetas-destacada.jpg"
+              rel="noreferrer">
+              <img class="img-fluid h-100 w-100 rounded-3"
+                src="img/home/news/small-image(news recipes)(400x200)/featured-recipe1.jpg" alt="news-food">
+            </a>
+          </div>
+        </div>
       </div>
     </section>
     <!--End of news-container-->

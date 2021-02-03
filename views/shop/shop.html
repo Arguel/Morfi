@@ -20,49 +20,63 @@
 </head>
 
 <body>
-  <main class="container-xxl">
-    <div class="row align-content-evenly justify-content-evenly">
-      <aside class="col-3 bg-primary">
-        div.
-      </aside>
-      <section class="col-8 bg-success">
-        <div class="row justify-content-evenly text-center">
-          <div class="col-3 bg-light">1</div>
-          <div class="col-3 bg-light">2</div>
-          <div class="col-3 bg-light">3</div>
-        </div>
-      </section>
 
-      <nav class="m-4" aria-label="...">
-        <ul class="pagination align-items-center justify-content-center m-0">
+  <header>
+    <!--nav-->
+  </header>
+
+  <main>
+    <div class="slider">
+      <div class="container-md">
+        <button class="slider__btn">l</button>
+        <div class="slider__carrusel">
+          <div class="slider__img slider__img--offer1">offer1</div>
+          <div class="slider__img slider__img--offer2">offer2</div>
+        </div>
+        <button class="slider__btn">r</button>
+      </div>
+    </div>
+
+
+    <section class="container-xxl">
+      <div class="row align-content-evenly justify-content-evenly">
+        <aside class="col-3 bg-primary">
+          div.
+        </aside>
+        <section class="col-8 bg-success">
+          <div class="row justify-content-evenly text-center">
+            <div class="col-3 bg-light">1</div>
+            <div class="col-3 bg-light">2</div>
+            <div class="col-3 bg-light">3</div>
+          </div>
+        </section>
+      </div>
+
+      <div class="shop-item">
+        <div class="shop-item__img">img</div>
+        <div class="shop-item__desc">desc</div>
+        <button class="shop-item__btn shop-item__btn--buy">Buy</button>
+      </div>
+
+      <nav class="m-8" aria-label="...">
+        <ul class="pagination align-items-center justify-content-center m-4">
           <li class="page-item disabled">
             <span class="page-link">Previous</span>
           </li>
-          <li class="page-item active" aria-current="page"><a class="page-link px-3" href="#">1</a></li>
-          <li class="page-item"><a class="page-link px-3" href="#">2</a></li>
-          <li class="page-item"><a class="page-link px-3" href="#">3</a></li>
+          <li class="page-item active" aria-current="page"><a class="page-link px-7" href="#">1</a></li>
+          <li class="page-item"><a class="page-link px-7" href="#">2</a></li>
+          <li class="page-item"><a class="page-link px-7" href="#">3</a></li>
           <li class="page-item">
             <a class="page-link" href="#">Next</a>
           </li>
         </ul>
       </nav>
-    </div>
-    <div class="slider">
-      <button class="slider__btn">l</button>
-      <div class="slider__carrusel">
-        <div class="slider__img slider__img--offer1">offer1</div>
-        <div class="slider__img slider__img--offer2">offer2</div>
-      </div>
-      <button class="slider__btn">r</button>
-    </div>
-
-    <div class="shop-item">
-      <div class="shop-item__img">img</div>
-      <div class="shop-item__desc">desc</div>
-      <button class="shop-item__btn shop-item__btn--buy">Buy</button>
-    </div>
-
+    </section>
   </main>
+
+  <footer>
+    <!--footer-->
+  </footer>
 
   <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
