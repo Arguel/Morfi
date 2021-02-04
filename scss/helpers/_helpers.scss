@@ -1,0 +1,16 @@
+.img-rez {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.img-ts-1 {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+}
+.img-normalize {
+  transition: 1s;
+}
+.img-normalize:hover {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+}

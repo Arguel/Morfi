@@ -11,12 +11,52 @@ a {
 .container-mw-1000px {
   max-width: 1000px;
 }
+.select-hover1:hover {
+    opacity: 0.95;
+}
+.select-hover2:hover {
+    opacity: 0.95;
+}
+.select-hover3:hover {
+    opacity: 0.95;
+}
 /*=.=.=.=.=.=.=.=.=.=OFFERS=.=.=.=.=.=.=.=.=.=*/
 /*flex wood background*/
-.top-offers-data-container {
+.toffer-data-container {
     background: url("https://image.freepik.com/foto-gratis/fondo-madera_24972-623.jpg") no-repeat;
     background-size: 100% 100%;
     opacity: 0.94;
+}
+.toffer-item-title {
+  font-size: 1.7em;
+  font-weight: 600;
+  overflow: hidden;
+  cursor: pointer;
+  //color: white;
+}
+.toffer-item-price {
+  position: relative;
+  font-size: 1.6em;
+  //color: white;
+}
+#toffer-item-price-normal {
+  position: absolute;
+  font-size: 60%;
+  text-decoration: line-through;
+  vertical-align: 40%;
+  padding-left: .3em;
+}
+.toffer-desc {
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    text-align: left;
+    font-size: 1em;
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+    width: 100%;
+    //color: white;
 }
 /*--------------ARROW-ICONS---------------------*/
 .toffer-arrow {

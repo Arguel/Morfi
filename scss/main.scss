@@ -1,32 +1,22 @@
-$color-darker-5: #212121;
-$color-darker-4: #757575;
-$color-darker-3: #BDBDBD;
-$color-darker-2: #D7D7D7;
-$color-darker-1: #DCEDC8;
-
-$color-green-5: #009736;
-$color-green-4: #00C600;
-$color-green-3: #689F38;
-$color-green-2: #8BC34A;
-$color-green-1: #CDDC39;
-
-$color-blue-1: #22C1C3;
+// The modules have to go in that precise order because we are working with bootstap
 
 
-//custom bootstrap classes
-
-$border-radius:               .40rem;
-$border-radius-sm:            .50rem;
-$border-radius-lg:            .80rem;
-$border-radius-pill:          50rem;
-
-$black:    #212121;
-
+// Configuration
+@import "helpers/variables";
+// Vendors
 @import "../node_modules/bootstrap/scss/bootstrap";
+// Layout & components
+@import "layout/header"; //navigation bar
+// Pages
 @import "pages/home";
 @import "pages/shop";
-@import "layout/header";
+// Helpers
+@import "helpers/helpers";
 
+
+
+
+//Media querries
 //@media (min-width: 576px)
 
 //@media (min-width: 768px)
