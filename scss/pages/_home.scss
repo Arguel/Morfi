@@ -12,20 +12,20 @@ a {
   max-width: 1000px;
 }
 .select-hover1:hover {
-    opacity: 0.95;
+    @include opacity(0.95)
 }
 .select-hover2:hover {
-    opacity: 0.95;
+    @include opacity(0.95)
 }
 .select-hover3:hover {
-    opacity: 0.95;
+    @include opacity(0.95)
 }
 /*=.=.=.=.=.=.=.=.=.=OFFERS=.=.=.=.=.=.=.=.=.=*/
 /*flex wood background*/
 .toffer-data-container {
     background: url("https://image.freepik.com/foto-gratis/fondo-madera_24972-623.jpg") no-repeat;
     background-size: 100% 100%;
-    opacity: 0.94;
+    @include opacity(0.94)
 }
 .toffer-item-title {
   font-size: 1.7em;
@@ -64,10 +64,6 @@ a {
     cursor: pointer;
 }
 /*=.=.=.=.=.=.=.=.=.=NEWSLETTER=.=.=.=.=.=.=.=.=.=*/
-.newsletter {
-    max-width: 800px;
-    margin: 3em auto;
-}
 .newsletter__data {
     //background-image: linear-gradient(to bottom, #3D3D3D, #929292 15%, #CECECE 50%, #929292 85%, #3D3D3D);
     //background-image: url("../../img/news.jpg");
