@@ -66,7 +66,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!--nav-->
-          <ul class="navbar-nav align-items-center justify-content-around ms-auto me-auto col-lg-8">
+          <ul class="navbar-nav align-items-center justify-content-around mx-auto col-lg-8">
             <!--Home-->
             <li class="nav-item">
               <a class="nav-link active subtitle" href="#" aria-current="page">Home</a>
@@ -271,14 +271,14 @@
         <div class="col-4 bg-primary">
           <h3 class="text-center text-dark my-4">What resenas says about us</h3>
           <div class="bg-light position-relative">
-            <div class="position-relative" style="z-index: 1;">
-              <figure>
+            <div class="position-absolute" style="z-index: 1; left: 50%;">
+              <figure class="m-0">
                 <div class="mx-auto rounded-2" style="width: 100px; height: 100px; background-color: red;"></div>
                 <figcaption></figcaption>
               </figure>
             </div>
-            <div class="bg-alert position-absolute rounded-3 border" style="top: 50px;">
-              <div class="card-title text-center mt-5">Chris Phillips</div>
+            <div class="bg-success rounded-3 border">
+              <div class=" card-title text-center mt-5">Chris Phillips</div>
               <div class="card-text text-center mb-4">"Lorem ipsum is simply dummy text of the printing and typesetting
                 industry. lorem ipsum has been the industry's standard dummy text ever since the 1500s"</div>
             </div>
@@ -296,7 +296,7 @@
     <!--pagemaker including versions of lorem ipsum.</p>-->
     <!--</article>-->
     <!--<aside class="wrapper-customer col-4">-->
-    <!--<h2 class="text-light text-center m-3"></h2>-->
+    <!--<h2 class="text-white text-center m-3"></h2>-->
     <!--<img class="img-fluid customer-photo d-block mx-auto rounded" src="img/home/customers-testimonios/woman.jpg"-->
     <!--alt="customer-avatar">-->
     <!--<p class="customer-review my-3 mx-1 text-center">"Lorem Ipsum passages, and more recently with desktop-->
@@ -308,38 +308,39 @@
   </main>
 
   <footer>
-    <div class="mx-auto mt-5 mb-0">
-      <div class="container-xxl h-100 p-0">
+    <div class="container-fluid bg-darker-2">
+      <div class="container-xxl my-0">
         <!--footer-top-left-start-->
         <div class="row d-flex align-items-center justify-content-around footer-top m-0">
-          <div class="row align-items-center justify-content-evenly col-lg-3">
+          <div class="row align-items-center justify-content-evenly col-lg-3 p-0">
 
-            <div class="col text-center d-none">
-              <div class="footer-logo of-hidden mb-1">
+            <div class="col-8 p-0 text-center d-none d-lg-block">
+              <div class="mw-200px mh-100px of-hidden mb-1 mx-auto">
                 <img class="footer-logo-img" src="img/logo/white_background/full_logo/svg/full_logo.svg"
                   alt="logo-image">
               </div>
-              <p class="footer-logo-p mb-0">Since 1997 making our customers happy</p>
+              <p class="footer-logo-p mb-0 text-dark mw-200px mx-auto">Since 1997 making our customers happy</p>
             </div>
-            <ul class="col col-sm-7 social-icons list-none m-2 m-lg-0 d-flex align-items-center justify-content-evenly">
+            <ul
+              class="col col-sm-7 col-md-2 list-unstyled m-2 m-lg-0 p-0 d-flex flex-row flex-lg-column align-items-center justify-content-evenly">
               <li class="m-1">
                 <a class="btn btn-dark" href="#" aria-label="facebook icon" role="button">
-                  <i class="fab fa-facebook-f fa-fw fs-5"></i>
+                  <i class="fab fa-facebook-f fa-fw fs-6"></i>
                 </a>
               </li>
               <li class="m-1">
                 <a class="btn btn-dark" href="#" aria-label="twitter icon" role="button">
-                  <i class="fab fa-twitter fa-fw fs-5"></i>
+                  <i class="fab fa-twitter fa-fw fs-6"></i>
                 </a>
               </li>
               <li class="m-1">
                 <a class="btn btn-dark" href="#" aria-label="youtube icon" role="button">
-                  <i class="fab fa-youtube fa-fw fs-5"></i>
+                  <i class="fab fa-youtube fa-fw fs-6"></i>
                 </a>
               </li>
               <li class="m-1">
                 <a class="btn btn-dark" href="#" aria-label="instagram icon" role="button">
-                  <i class="fab fa-instagram fa-fw fs-5"></i>
+                  <i class="fab fa-instagram fa-fw fs-6"></i>
                 </a>
               </li>
             </ul>
@@ -352,7 +353,7 @@
           </div>
           <!--footer-top-left-end-->
           <!--footer-top-right-start-->
-          <div class="col-12 col-lg-8 mt-3">
+          <div class="col-12 col-lg-8 mt-3 p-0">
             <div class="row d-flex justify-content-evenly w-100 m-0">
               <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
                 <h5 class="mb-2 mb-lg-4">Home</h5>
@@ -396,19 +397,24 @@
           </div>
           <!--footer-top-right-end-->
         </div>
+      </div>
+    </div>
+
+    <div class="container-fluid bg-dark">
+      <div class="container-xxl my-0">
         <!--footer-bottom-start-->
         <div class="row d-flex align-items-center justify-content-around my-0 mx-auto p-3 footer-bottom">
           <div class="col-12 col-lg-8 m-2">
             <div class="row">
-              <div class="col text-center mb-2"><a class="footer-link" href="#">Terms of Use</a></div>
-              <div class="col text-center mb-2"><a class="footer-link" href="#">Terms & Conditions</a></div>
-              <div class="col text-center mb-2"><a class="footer-link" href="#">Privacy Policy</a></div>
+              <div class="col text-center mb-2"><a class="footer-link text-white" href="#">Terms of Use</a></div>
+              <div class="col text-center mb-2"><a class="footer-link text-white" href="#">Terms & Conditions</a></div>
+              <div class="col text-center mb-2"><a class="footer-link text-white" href="#">Privacy Policy</a></div>
               <div class="col d-none d-lg-block change-selector text-center">
                 <div class="change-language">
                   <i class="fas fa-globe"></i>
                   English
                 </div>
-                <ul class="footer-sublist list-none">
+                <ul class="footer-sublist list-unstyled">
                   <li><a href="#">Spanish</a></li>
                   <li><a href="#">English</a></li>
               </div>
@@ -419,6 +425,7 @@
         <!--footer-bottom-end-->
       </div>
     </div>
+
   </footer>
 
   <!--<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>-->

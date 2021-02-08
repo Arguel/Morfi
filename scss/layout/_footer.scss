@@ -1,52 +1,13 @@
 /*===============FOOTER=============================================*/
-.footer-top {
-    background-color: #D7D7D7;
-    /*height: 11em;*/
-}
 /*--------------FOOTER-TOP-LEFT---------------------*/
 /*img and p left side container*/
-.footer-logo {
-    max-width: 200px;
-    max-height: 100px;
-}
 .footer-logo-img {
     width: 100%;
     height: 90px;
 }
 .footer-logo-p {
-    max-width: 200px;
     font-size: 1.1rem;
     font-weight: 400;
-    color: #212121;
-}
-//.social-icons li {
-    //text-align: center;
-//}
-//.social-icons li a {
-    //color: #212121;
-    //font-size: 1.5em;
-//}
-/*--------------FOOTER-TOP-RIGHT---------------------*/
-.footer-top-right ul li {
-    padding: 5px;
-    position: relative;
-}
-.footer-top-right ul li a {
-    color: #212121;
-    font-weight: 400;
-    font-size: 1.1rem;
-    white-space: nowrap;
-}
-.footer-top-right ul li a:hover {
-    color: white;
-}
-/*--------------FOOTER-BOTTOM---------------------*/
-.footer-bottom {
-    background-color: #212121;
-}
-.footer-link {
-    font-weight: 400;
-    color: white;
 }
 /*--------------DROPDOWN LANGUAGE---------------------*/
 /*div that activates the dropdown in the footer*/

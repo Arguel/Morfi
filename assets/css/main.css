@@ -7458,47 +7458,15 @@ textarea.form-control-lg {
     padding-left: 0; } }
 
 /*===============FOOTER=============================================*/
-.footer-top {
-  background-color: #D7D7D7;
-  /*height: 11em;*/ }
-
 /*--------------FOOTER-TOP-LEFT---------------------*/
 /*img and p left side container*/
-.footer-logo {
-  max-width: 200px;
-  max-height: 100px; }
-
 .footer-logo-img {
   width: 100%;
   height: 90px; }
 
 .footer-logo-p {
-  max-width: 200px;
   font-size: 1.1rem;
-  font-weight: 400;
-  color: #212121; }
-
-/*--------------FOOTER-TOP-RIGHT---------------------*/
-.footer-top-right ul li {
-  padding: 5px;
-  position: relative; }
-
-.footer-top-right ul li a {
-  color: #212121;
-  font-weight: 400;
-  font-size: 1.1rem;
-  white-space: nowrap; }
-
-.footer-top-right ul li a:hover {
-  color: white; }
-
-/*--------------FOOTER-BOTTOM---------------------*/
-.footer-bottom {
-  background-color: #212121; }
-
-.footer-link {
-  font-weight: 400;
-  color: white; }
+  font-weight: 400; }
 
 /*--------------DROPDOWN LANGUAGE---------------------*/
 /*div that activates the dropdown in the footer*/
@@ -7691,81 +7659,15 @@ a {
     .img-ts-1 {
       transition: none; } }
 
-.img-ts-2 {
-  transform: scale(1.2);
-  -webkit-transform: scale(1.2);
-  transition: transform 1s; }
-  @media (prefers-reduced-motion: reduce) {
-    .img-ts-2 {
-      transition: none; } }
-
-.img-ts-3 {
-  transform: scale(1.3);
-  -webkit-transform: scale(1.3);
-  transition: transform 1s; }
-  @media (prefers-reduced-motion: reduce) {
-    .img-ts-3 {
-      transition: none; } }
-
-.img-ts-4 {
-  transform: scale(1.4);
-  -webkit-transform: scale(1.4);
-  transition: transform 1s; }
-  @media (prefers-reduced-motion: reduce) {
-    .img-ts-4 {
-      transition: none; } }
-
-.img-ts-5 {
-  transform: scale(1.5);
-  -webkit-transform: scale(1.5);
-  transition: transform 1s; }
-  @media (prefers-reduced-motion: reduce) {
-    .img-ts-5 {
-      transition: none; } }
-
-.img-ts-6 {
-  transform: scale(1.6);
-  -webkit-transform: scale(1.6);
-  transition: transform 1s; }
-  @media (prefers-reduced-motion: reduce) {
-    .img-ts-6 {
-      transition: none; } }
-
-.img-ts-7 {
-  transform: scale(1.7);
-  -webkit-transform: scale(1.7);
-  transition: transform 1s; }
-  @media (prefers-reduced-motion: reduce) {
-    .img-ts-7 {
-      transition: none; } }
-
-.img-ts-8 {
-  transform: scale(1.8);
-  -webkit-transform: scale(1.8);
-  transition: transform 1s; }
-  @media (prefers-reduced-motion: reduce) {
-    .img-ts-8 {
-      transition: none; } }
-
-.img-ts-9 {
-  transform: scale(1.9);
-  -webkit-transform: scale(1.9);
-  transition: transform 1s; }
-  @media (prefers-reduced-motion: reduce) {
-    .img-ts-9 {
-      transition: none; } }
-
-.img-ts-10 {
-  transform: scale(2);
-  -webkit-transform: scale(2);
-  transition: transform 1s; }
-  @media (prefers-reduced-motion: reduce) {
-    .img-ts-10 {
-      transition: none; } }
-
 .img-normalize:hover {
   transform: scale(1);
   -webkit-transform: scale(1); }
+
+.mh-100px {
+  max-height: 100px; }
+
+.mw-200px {
+  max-width: 200px; }
 
 .mw-800px {
   max-width: 800px; }
@@ -7778,3 +7680,6 @@ a {
 
 .mw-1800px {
   max-width: 1800px; }
+
+.bg-darker-2 {
+  background-color: #D7D7D7; }
