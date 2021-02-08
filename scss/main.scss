@@ -8,13 +8,12 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 // Layout & components
 @import "layout/header"; //navigation bar
+@import "layout/footer";
 // Pages
 @import "pages/home";
 @import "pages/shop";
 // Helpers
 @import "helpers/helpers";
-
-
 
 
 //Media querries
