@@ -39,6 +39,41 @@
 }
 
 //background colors
+.bg-darker-5 {
+  background-color: $color-darker-5; //#212121
+}
+.bg-darker-4 {
+  background-color: $color-darker-4; //#757575
+}
+.bg-darker-3 {
+  background-color: $color-darker-3; //#BDBDBD
+}
 .bg-darker-2 {
   background-color: $color-darker-2; //#D7D7D7
+}
+.bg-darker-1 {
+  background-color: $color-darker-1; //#DCEDC8
+}
+.bg-green-5 {
+  background-color: $color-green-5; //#009736
+}
+.bg-green-4 {
+  background-color: $color-green-4; //#00C600
+}
+.bg-green-3 {
+  background-color: $color-green-3; //#689F38
+}
+.bg-green-2 {
+  background-color: $color-green-2; //#8BC34A
+}
+.bg-green-1 {
+  background-color: $color-green-1; //#CDDC39
+}
+.bg-cyan-1 {
+  background-color: $color-cyan-1; //22C1C3
+}
+
+//margins
+.mt-6 {
+  margin-top: 4rem;
 }
