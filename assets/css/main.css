@@ -7457,46 +7457,6 @@ textarea.form-control-lg {
   .btn-sign-up-container {
     padding-left: 0; } }
 
-/*===============FOOTER=============================================*/
-/*--------------FOOTER-TOP-LEFT---------------------*/
-/*img and p left side container*/
-.footer-logo-img {
-  width: 100%;
-  height: 90px; }
-
-.footer-logo-p {
-  font-size: 1.1rem;
-  font-weight: 400; }
-
-/*--------------DROPDOWN LANGUAGE---------------------*/
-/*div that activates the dropdown in the footer*/
-.change-language {
-  color: white;
-  display: inline-block;
-  font-weight: 400;
-  position: relative;
-  cursor: pointer; }
-
-/*footer-sublist is the dropdown list*/
-.change-selector .footer-sublist {
-  background-color: white;
-  box-shadow: 2px 8px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 3px;
-  position: absolute;
-  top: -50px;
-  display: none; }
-
-.change-selector .footer-sublist li a {
-  color: #212121; }
-
-.change-selector:hover .footer-sublist {
-  display: block; }
-
-/*--------------RIGHTS---------------------*/
-.rights {
-  color: white;
-  font-weight: 400; }
-
 /*====BASE====*/
 body {
   font-family: 'Montserrat', sans-serif; }
@@ -7506,10 +7466,6 @@ a {
 
 /*===============$Home=============================================*/
 /*=.=.=.=.=.=.=.=.=.=NEWS=.=.=.=.=.=.=.=.=.=*/
-/*main container*/
-.container-mw-1000px {
-  max-width: 1000px; }
-
 .select-hover1:hover {
   opacity: 0.95;
   filter: alpha(opacity=95); }
@@ -7551,22 +7507,14 @@ a {
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   display: -webkit-box;
-  text-align: left;
-  font-size: 1em;
   overflow: hidden;
   white-space: normal;
   text-overflow: ellipsis;
   width: 100%; }
 
-/*--------------ARROW-ICONS---------------------*/
-.toffer-arrow {
-  color: white;
-  cursor: pointer; }
-
 /*=.=.=.=.=.=.=.=.=.=NEWSLETTER=.=.=.=.=.=.=.=.=.=*/
 .newsletter__data {
-  box-shadow: 0px 5px 15px black;
-  color: #212121; }
+  box-shadow: 0px 5px 15px black; }
 
 .newsletter__data div * {
   display: block;
@@ -7594,62 +7542,15 @@ a {
   cursor: pointer;
   outline: none; }
 
-/*=.=.=.=.=.=.=.=.=.=CUSTOMER=.=.=.=.=.=.=.=.=.=*/
-/*--------------TEC-INFO---------------------*/
-/*h1 and p container*/
-.tec-info {
-  font-size: 1.2em; }
-
-.tec-info p {
-  color: #757575; }
-
-.tec-info-title {
-  color: #212121; }
-
-/*--------------CUSTOMER-TESTIMONIOS---------------------*/
-.wrapper-customer {
-  background-color: #212121; }
-
-.customer-photo {
-  border: solid 1px #757575;
-  color: white; }
-
-.customer-review {
-  color: white; }
-
-/*===============MEDIA QUERIES=============================================*/
-/*--------------SMARTPHONE-------------*/
-/*===============UTILS=============================================*/
-.list-none {
-  list-style-type: none;
-  padding: 0;
-  z-index: 1; }
-
-.subtitle {
-  font-size: 1.3rem; }
-
-.of-hidden {
-  overflow: hidden; }
-
-.h1-title {
-  font-weight: 600;
-  font-size: 2rem;
-  color: #757575;
-  margin: 1.5rem; }
-
-.br-10 {
-  border-radius: 10px; }
-
-/*--------------------------------------------------*/
-.slider {
-  max-width: 1000px;
-  background-color: pink;
-  margin: 0 auto; }
-
 .img-rez {
   width: 100%;
   height: 100%;
   object-fit: cover; }
+
+.pa-center-1 {
+  top: -3.125em;
+  left: 50%;
+  transform: translateX(-50%); }
 
 .img-ts-1 {
   transform: scale(1.1);
@@ -7664,22 +7565,25 @@ a {
   -webkit-transform: scale(1); }
 
 .mh-100px {
-  max-height: 100px; }
+  max-height: 6.25em; }
+
+.mw-100px {
+  max-width: 6.25em; }
 
 .mw-200px {
-  max-width: 200px; }
+  max-width: 12.5em; }
 
 .mw-800px {
-  max-width: 800px; }
+  max-width: 50em; }
 
 .mw-1000px {
-  max-width: 1000px; }
+  max-width: 62.5em; }
 
 .mw-1200px {
-  max-width: 1200px; }
+  max-width: 75em; }
 
 .mw-1800px {
-  max-width: 1800px; }
+  max-width: 112.5em; }
 
 .bg-darker-5 {
   background-color: #212121; }
@@ -7716,3 +7620,15 @@ a {
 
 .mt-6 {
   margin-top: 4rem; }
+
+.mb-6 {
+  margin-bottom: 4rem; }
+
+.h-white:hover {
+  color: white !important; }
+
+.h1-title {
+  font-weight: 600;
+  font-size: 2rem;
+  color: #757575;
+  margin: 1.5rem; }

@@ -22,7 +22,7 @@
 }
 .nav-color-list li a {
     padding: .5em 1em;
-    color: #757575;
+    color: $color-darker-4;
     font-weight: 400;
     font-size: 1em;
     border-radius: .3em;
@@ -37,7 +37,7 @@
 }
 //searchbar icon
 .fa-search {
-    color: #D7D7D7;
+    color: $color-darker-2;
 }
 //makes bootstrap dropdowns activate on hover
 .dropdown:hover .dropdown-menu {
@@ -50,7 +50,7 @@
     padding-right: 1em;
 }
 .btn-login {
-    border: solid 1px #689F38;
+    border: solid 1px $color-green-3;
 }
 .btn-sign-up-container {
     padding-left: 1em;
@@ -65,7 +65,7 @@
     transition: none;
 }
 .btn-sign-up:hover {
-    background: #8BC34A;
+    background: $color-green-2;
 }
 
 @media (max-width: 992px) {
