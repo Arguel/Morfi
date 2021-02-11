@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- HTML Meta Tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TheMorfi - Login</title>
+  <meta name="description"
+    content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more">
+  <meta name="keywords" content="THE, MORFI, FOOD, HEALTHY, BEST">
+
+  <!-- Google / Search Engine Tags -->
+  <meta itemprop="name" content="The Morfi">
+  <meta itemprop="description"
+    content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more">
+  <meta itemprop="image" content="https://i.imgur.com/NRUXriX.jpg">
+
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://arguel.github.io/morfi">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The Morfi">
+  <meta property="og:description"
+    content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more">
+  <meta property="og:image" content="https://i.imgur.com/NRUXriX.jpg">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Morfi">
+  <meta name="twitter:description"
+    content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more">
+  <meta name="twitter:image" content="https://i.imgur.com/NRUXriX.jpg">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="../../assets/css/main.css" type="text/css">
+  <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">-->
+
+  <!-- Google / Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Tab Icon -->
+  <link rel="icon" href="../../img/logo/white_background/small_logo_icon/svg/small_logo_icon.svg">
+
+  <!--Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/1131adf3a1.js" crossorigin="anonymous"></script>
+  <!--------------------->
+</head>
+
+<body>
+  <main>
+    <section class="container-xxl my-4">
+      <figure class="text-center h-100px">
+        <a href="../../index.html">
+          <img class="h-100 w-auto" src="../../img/logo/white_background/full_logo/svg/full_logo.svg" alt="TheMorfi">
+        </a>
+      </figure>
+    </section>
+    <section class="container-xxl bg-dark">
+      <div class="row align-items-center justify-content-evenly">
+        <div class="col-md-5 d-none d-md-block bg-primary rounded my-5">
+          <div class="bg-white" style="height: 320px;">image</div>
+          <!--<figure class="m-0">-->
+          <!--<img class="img-fluid" src="http://placekitten.com/800/400" alt="image">-->
+          <!--</figure>-->
+        </div>
+        <div class="col-10 col-md-5 bg-white rounded my-5">
+          <form class="row g-3 needs-validation p-3" novalidate>
+            <div class="col-md-11 mx-auto">
+              <label for="email-i" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email-i" placeholder="email@domain.com"
+                aria-describedby="email-i-feedback" required>
+              <div id="email-i-feedback" class="invalid-feedback">
+                Please choose a valid email.
+              </div>
+            </div>
+            <div class="col-md-11 mx-auto">
+              <label for="password-i" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password-i" placeholder="password"
+                aria-describedby="password-i-feedback" required>
+              <div id="password-i-feedback" class="invalid-feedback">
+                Please provide a valid password
+              </div>
+              <span class="d-block mt-2"><a class="text-dark" href="#">Forgot your password?</a></span>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-success d-block mx-auto w-50" type="submit">Log in</button>
+              <span class="d-block mt-4 text-center">Don't have an account? <a href="../account/register.html">Sign
+                  up</a></span>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+  <script charset="utf-8">
+    (function () {
+      'use strict'
+      var forms = document.querySelectorAll('.needs-validation')
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+            form.classList.add('was-validated')
+          }, false)
+        })
+    })()
+  </script>
+</body>
