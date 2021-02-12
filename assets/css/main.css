@@ -7646,3 +7646,6 @@ a {
   font-size: 2rem;
   color: #757575;
   margin: 1.5rem; }
+
+#map {
+  height: 500px; }

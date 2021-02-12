@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- HTML Meta Tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TheMorfi - Locations</title>
+  <meta name="description"
+    content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more">
+  <meta name="keywords" content="THE, MORFI, FOOD, HEALTHY, BEST">
+
+  <!-- Google / Search Engine Tags -->
+  <meta itemprop="name" content="The Morfi">
+  <meta itemprop="description"
+    content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more">
+  <meta itemprop="image" content="https://i.imgur.com/NRUXriX.jpg">
+
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://arguel.github.io/morfi">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The Morfi">
+  <meta property="og:description"
+    content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more">
+  <meta property="og:image" content="https://i.imgur.com/NRUXriX.jpg">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Morfi">
+  <meta name="twitter:description"
+    content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more">
+  <meta name="twitter:image" content="https://i.imgur.com/NRUXriX.jpg">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="../../assets/css/main.css" type="text/css">
+  <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">-->
+
+  <!-- Google / Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Tab Icon -->
+  <link rel="icon" href="../../img/logo/white_background/small_logo_icon/svg/small_logo_icon.svg">
+
+  <!--Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/1131adf3a1.js" crossorigin="anonymous"></script>
+  <!--------------------->
+  <!--Google maps-->
+  <script>
+    function initMap() {
+      const Woodmere = {lat: 33.885852, lng: -84.472114};
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 12,
+        center: Woodmere,
+      });
+      const marker = new google.maps.Marker({
+        position: Woodmere,
+        map: map,
+      });
+    }
+  </script>
+</head>
+
+<body>
+  <header>
+
+    <!--Start of nav-menu-container-->
+    <div class="container-xxl">
+      <nav class="navbar navbar-expand-lg navbar-light m-2">
+        <div class="nav-logo">
+          <a class="navbar-brand" href="/">
+            <img class="h-100 w-auto" src="../../img/logo/white_background/medium_logo_side/svg/medium_logo_side.svg"
+              alt="side-logo">
+          </a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!--nav-->
+          <ul class="navbar-nav align-items-center justify-content-around mx-auto col-lg-8">
+            <!--Home-->
+            <li class="nav-item">
+              <a class="nav-link active fs-5" href="#" aria-current="page">Home</a>
+            </li>
+            <!--About-->
+            <li class="nav-item dropdown text-center">
+              <a class="nav-link fs-5" href="#" id="navbarDropdownMenuLinkAbout" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">About</a>
+              <ul class="nav-color-list dropdown-menu text-center text-lg-start"
+                aria-labelledby="navbarDropdownMenuLinkAbout">
+                <li><a class="dropdown-item" href="views/about/about-us.html">About us</a></li>
+                <li><a class="dropdown-item" href="views/about/locations.html">Locations</a></li>
+                <li><a class="dropdown-item" href="views/about/our-products.html">Our products</a></li>
+              </ul>
+            </li>
+            <!--Shop-->
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="views/shop/shop.html">Shop</a>
+            </li>
+            <!--Recipes-->
+            <li class="nav-item dropdown text-center">
+              <a class="nav-link fs-5" href="#" id="navbarDropdownMenuLinkRecipes" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">Recipes</a>
+              <ul class="nav-color-list dropdown-menu text-center text-lg-start"
+                aria-labelledby="navbarDropdownMenuLinkRecipes">
+                <li><a class="dropdown-item" href="views/recipes/recipes.html">Classics</a></li>
+                <li><a class="dropdown-item" href="views/recipes/healthy-recipes.html">Healthy</a></li>
+                <li><a class="dropdown-item" href="views/recipes/wholemeal-recipes.html">Wholemeal</a></li>
+                <li><a class="dropdown-item" href="views/recipes/easy-recipes.html">Easy</a></li>
+              </ul>
+            </li>
+            <!--Help-->
+            <li class="nav-item dropdown text-center">
+              <a class="nav-link fs-5" href="#" id="navbarDropdownMenuLinkHelp" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">Help</a>
+              <ul class="nav-color-list dropdown-menu text-center text-lg-start"
+                aria-labelledby="navbarDropdownMenuLinkHelp">
+                <li><a class="dropdown-item" href="views/help/contact.html">Contact</a></li>
+                <li><a class="dropdown-item" href="views/help/faq.html">FAQ</a></li>
+              </ul>
+            </li>
+            <!--Searchbar-->
+            <li class="nav-item">
+              <form>
+                <div class="input-group">
+                  <button class="input-group-text nav-searchbar" id="search-icon" aria-label="searchbar icon">
+                    <i class="fas fa-search"></i>
+                  </button>
+                  <input type="text" class="form-control nav-searchbar" placeholder="Search" aria-label="Search"
+                    aria-describedby="search-icon">
+                </div>
+              </form>
+            </li>
+          </ul>
+          <hr>
+          <!--account-nav-->
+          <ul class="navbar-nav align-items-center">
+            <li class="nav-item d-block d-lg-flex text-center btn-login-container my-1">
+              <a class="nav-link btn-login rounded text-nowrap px-4 py-3 px-lg-2 py-lg-2"
+                href="views/account/login.html">Log in</a>
+            </li>
+            <li class="nav-item text-center btn-sign-up-container my-1">
+              <a class="nav-link btn-sign-up rounded text-nowrap px-4 py-3 px-lg-2 py-lg-2"
+                href="views/account/register.html">Sign up</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!--End of nav-menu-container-->
+
+  </header>
+
+  <main>
+
+    <section class="container-xxl my-5">
+      <p class="ms-2">We currently have restaurants in the following locations:</p>
+      <form class="row">
+        <div class="col text-center">
+          <label class="form-label fs-4 d-block mb-2" for="locations-i">Find a store near you</label>
+          <input class="form-control mx-auto w-50" type="text" name="locations-i" id="locations-i"
+            placeholder="e.g miami">
+        </div>
+      </form>
+      <div class="row mt-5 w-75 mx-auto align-items-center justify-content-evenly bg-success">
+        <div class="accordion col-md-3 m-2" id="accordionExample">
+          <div class="accordion-item bg-white rounded">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Accordion Item #2
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample">
+              <ul class="accordion-body list-unstyled m-0">
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
+                <li class="p-3"><a class="text-dark text-center" href="#">item1</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="accordion col-md-3 m-2" id="accordionExample">
+          <div class="accordion-item bg-white rounded">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Accordion Item #2
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample">
+              <ul class="accordion-body list-unstyled m-0">
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
+                <li class="p-3"><a class="text-dark text-center" href="#">item1</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion col-md-3 m-2" id="accordionExample">
+          <div class="accordion-item bg-white rounded">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Accordion Item #2
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample">
+              <ul class="accordion-body list-unstyled m-0">
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
+                <li class="p-3"><a class="text-dark text-center" href="#">item1</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion col-md-3 m-2" id="accordionExample">
+          <div class="accordion-item bg-white rounded">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Accordion Item #2
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample">
+              <ul class="accordion-body list-unstyled m-0">
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
+                <li class="p-3"><a class="text-dark text-center" href="#">item1</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion col-md-3 m-2" id="accordionExample">
+          <div class="accordion-item bg-white rounded">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Accordion Item #2
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample">
+              <ul class="accordion-body list-unstyled m-0">
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
+                <li class="p-3"><a class="text-dark text-center" href="#">item1</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion col-md-3 m-2" id="accordionExample">
+          <div class="accordion-item bg-white rounded">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Accordion Item #2
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample">
+              <ul class="accordion-body list-unstyled m-0">
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
+                <li class="p-3"><a class="text-dark text-center" href="#">item1</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion col-md-3 m-2" id="accordionExample">
+          <div class="accordion-item bg-white rounded">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Accordion Item #2
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample">
+              <ul class="accordion-body list-unstyled m-0">
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
+                <li class="p-3"><a class="text-dark text-center" href="#">item1</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion col-md-3 m-2" id="accordionExample">
+          <div class="accordion-item bg-white rounded">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Accordion Item #2
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample">
+              <ul class="accordion-body list-unstyled m-0">
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
+                <li class="p-3"><a class="text-dark text-center" href="#">item1</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion col-md-3 m-2" id="accordionExample">
+          <div class="accordion-item bg-white rounded">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Accordion Item #2
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample">
+              <ul class="accordion-body list-unstyled m-0">
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
+                <li class="p-3"><a class="text-dark text-center" href="#">item1</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="container-xl my-5">
+      <div class="row">
+        <div class="col-md-8 bg-success">
+          <div id="map" class="w-100"></div>
+        </div>
+        <div class="col-md-4 bg-primary">
+          <div>
+            <h3>Direction</h3>
+            <p>502 12 em street</p>
+            <p>502 12 em street</p>
+            <p>502 12 em street</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <!--footer-container-fluid-start-->
+    <div class="container-fluid bg-darker-2">
+      <!--footer-container-xxl-start-->
+      <div class="container-xxl my-0">
+        <!--footer-top-start-->
+        <div class="row d-flex align-items-center justify-content-around footer-top m-0">
+          <!--footer-top-left-start-->
+          <div class="row align-items-center justify-content-evenly col-lg-3 p-0">
+            <div class="col-8 p-0 text-center d-none d-lg-block">
+              <div class="mw-200px h-100px overflow-hidden mb-2 mx-auto">
+                <img class="w-100 h-100px" src="../../img/logo/white_background/full_logo/svg/full_logo.svg"
+                  alt="logo-image">
+              </div>
+              <p class="fs-6 mb-0 text-dark mw-200px mx-auto">Since 1997 making our customers happy</p>
+            </div>
+            <ul
+              class="col col-sm-7 col-md-2 list-unstyled m-2 m-lg-0 p-0 d-flex flex-row flex-lg-column align-items-center justify-content-evenly">
+              <li class="my-2 my-lg-3 mx-2 mx-lg-0">
+                <a class="p-2 bg-dark text-white rounded-circle" href="#" aria-label="facebook icon">
+                  <i class="fab fa-facebook-f fa-fw fs-6"></i>
+                </a>
+              </li>
+              <li class="my-2 my-lg-0 mb-lg-3 mx-2 mx-lg-0">
+                <a class="p-2 bg-dark text-white rounded-circle" href="#" aria-label="twitter icon">
+                  <i class="fab fa-twitter fa-fw fs-6"></i>
+                </a>
+              </li>
+              <li class="my-2 my-lg-0 mb-lg-3 mx-2 mx-lg-0">
+                <a class="p-2 bg-dark text-white rounded-circle" href="#" aria-label="youtube icon">
+                  <i class="fab fa-youtube fa-fw fs-6"></i>
+                </a>
+              </li>
+              <li class="my-2 my-lg-0 mb-lg-3 mx-2 mx-lg-0">
+                <a class="p-2 bg-dark text-white rounded-circle" href="#" aria-label="instagram icon">
+                  <i class="fab fa-instagram fa-fw fs-6"></i>
+                </a>
+              </li>
+            </ul>
+            <select class="col-4 d-block d-lg-none p-2 rounded" name="change-language" id="change-language">
+              <option selected value="English">English</option>
+              <option value="Spanish">Spanish</option>
+            </select>
+            <hr class="d-block d-lg-none my-0">
+          </div>
+          <!--footer-top-left-end-->
+          <!--footer-top-right-start-->
+          <div class="col-12 col-lg-8 mt-3 p-0">
+            <div class="row d-flex justify-content-evenly w-100 m-0">
+              <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
+                <h5 class="mb-2 mb-lg-4"><a href="#" class="text-dark h-white">Home</a></h5>
+                <ul class="list-unstyled">
+                  <li class="mb-1"><a class="text-dark h-white" href="#">Events</a></li>
+                  <li class="mb-1"><a class="text-dark h-white" href="#">Newsletter</a></li>
+                </ul>
+              </div>
+              <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
+                <h5 class="mb-2 mb-lg-4"><a href="#" class="text-dark h-white">About</a></h5>
+                <ul class="list-unstyled">
+                  <li class="mb-1"><a class="text-dark h-white" href="#">About us</a></li>
+                  <li class="mb-1"><a class="text-dark h-white" href="#">Locations</a></li>
+                  <li class="mb-1"><a class="text-dark h-white" href="#">Our products</a></li>
+                </ul>
+              </div>
+              <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
+                <h5 class="mb-2 mb-lg-4"><a href="#" class="text-dark h-white">Shop</a></h5>
+                <ul class="list-unstyled">
+                  <li class="mb-1"><a class="text-dark h-white" href="#">Catalogue</a></li>
+                  <li class="mb-1"><a class="text-dark h-white" href="#top-offers">Top offers</a></li>
+                </ul>
+              </div>
+              <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
+                <h5 class="mb-2 mb-lg-4"><a href="#" class="text-dark h-white">Recipes</a></h5>
+                <ul class="list-unstyled">
+                  <li class="mb-1"><a class="text-dark h-white" href="#">Classics</a></li>
+                  <li class="mb-1"><a class="text-dark h-white" href="#">Healthy</a></li>
+                  <li class="mb-1"><a class="text-dark h-white" href="#">Wholemeal</a></li>
+                  <li class="mb-1"><a class="text-dark h-white" href="#">Easy</a></li>
+                </ul>
+              </div>
+              <div class="col-12 col-lg-2 text-center text-lg-start mb-3">
+                <h5 class="mb-2 mb-lg-4"><a href="#" class="text-dark h-white">Help</a></h5>
+                <ul class="list-unstyled">
+                  <li class="mb-1"><a class="text-dark h-white" href="#">Contact</a></li>
+                  <li class="mb-1"><a class="text-dark h-white" href="#">FAQ</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!--footer-top-right-end-->
+        </div>
+        <!--footer-top-end-->
+      </div>
+      <!--footer-container-xxl-end-->
+    </div>
+    <!--footer-container-fluid-end-->
+
+    <!--footer-container-fluid-start-->
+    <div class="container-fluid bg-dark">
+      <!--footer-container-xxl-start-->
+      <div class="container-xxl my-0">
+        <!--footer-bottom-start-->
+        <div class="row d-flex align-items-center justify-content-around my-0 mx-auto p-3 footer-bottom">
+          <div class="col-12 col-lg-8 m-2 m-lg-0">
+            <div class="row align-items-center">
+              <div class="col text-center mb-2 mb-lg-0"><a class="footer-link text-white" href="#">Terms of Use</a>
+              </div>
+              <div class="col text-center mb-2 mb-lg-0"><a class="footer-link text-white" href="#">Terms &
+                  Conditions</a>
+              </div>
+              <div class="col text-center mb-2 mb-lg-0"><a class="footer-link text-white" href="#">Privacy Policy</a>
+              </div>
+              <div class="col text-center mb-2 mb-lg-0 d-none d-lg-block">
+                <i class="fas fa-globe text-white"></i>
+                <select class="col text-center p-2 rounded bg-dark text-white" name="change-language"
+                  id="change-language">
+                  <option selected value="English">English</option>
+                  <option value="Spanish">Spanish</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-3 text-white text-center m-2 m-lg-0">© 2020 Morfi. All Rights Reserved.</div>
+        </div>
+        <!--footer-bottom-end-->
+      </div>
+      <!--footer-container-xxl-end-->
+    </div>
+    <!--footer-container-fluid-end-->
+  </footer>
+
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&callback=initMap&libraries=&v=weekly"
+    async></script>
+  <!--<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>-->
+  <!--bootstrap js-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
