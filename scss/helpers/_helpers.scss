@@ -5,19 +5,12 @@
   object-fit: cover;
 }
 
-//position classes
-.pa-center-1 {
-  top: -3.125em;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
 //transforms scale classes
 @for $i from 1 through 1 {
   .img-ts-#{$i} {
-    transform: scale(1 + $i / 10);
-    -webkit-transform: scale(1 + $i / 10);
-    @include transition (transform 1s)
+    transform: scale(1 + $i / 10); // 1.1 first iteration, 1.2, 1.3, etc
+    -webkit-transform: scale(1 + $i / 10); // 1.1 first iteration, 1.2, 1.3, etc
+    @include transition (transform 1s) //mixin to maximize cross-browser compatibility
   }
 }
 .img-normalize:hover {
@@ -25,9 +18,28 @@
   -webkit-transform: scale(1);
 }
 
-///height classes
+@each $i in 0,.25,.50,.75,1 {
+  .opacity-#{$i * 100} { //opacity-0, opacity-25, opacity-50, opacity-75, opacity-100
+    @include opacity($i); //mixin to maximize cross-browser compatibility
+  }
+}
+
+//text-indent classes
+.t-indent-2 {
+  text-indent: 2rem;
+}
+
+//height classes
 .h-100px {
   height: 6.25em;
+}
+.h-200px {
+  height: 12.5em;
+}
+
+//width classes
+.w-200px {
+  width: 12.5em;
 }
 
 //max width classes
@@ -52,45 +64,80 @@
 
 //background colors
 .bg-darker-5 {
-  background-color: $color-darker-5; //#212121
+  background-color: $color-darker-5 !important; //#212121
 }
 .bg-darker-4 {
-  background-color: $color-darker-4; //#757575
+  background-color: $color-darker-4 !important; //#757575
 }
 .bg-darker-3 {
-  background-color: $color-darker-3; //#BDBDBD
+  background-color: $color-darker-3 !important; //#BDBDBD
 }
 .bg-darker-2 {
-  background-color: $color-darker-2; //#D7D7D7
+  background-color: $color-darker-2 !important; //#D7D7D7
 }
 .bg-darker-1 {
-  background-color: $color-darker-1; //#DCEDC8
+  background-color: $color-darker-1 !important; //#DCEDC8
 }
 .bg-green-5 {
-  background-color: $color-green-5; //#009736
+  background-color: $color-green-5 !important; //#009736
 }
 .bg-green-4 {
-  background-color: $color-green-4; //#00C600
+  background-color: $color-green-4 !important; //#00C600
 }
 .bg-green-3 {
-  background-color: $color-green-3; //#689F38
+  background-color: $color-green-3 !important; //#689F38
 }
 .bg-green-2 {
-  background-color: $color-green-2; //#8BC34A
+  background-color: $color-green-2 !important; //#8BC34A
 }
 .bg-green-1 {
-  background-color: $color-green-1; //#CDDC39
+  background-color: $color-green-1 !important; //#CDDC39
 }
 .bg-cyan-1 {
-  background-color: $color-cyan-1; //22C1C3
+  background-color: $color-cyan-1 !important; //22C1C3
+}
+
+//border colors
+.border-darker-5 {
+  border-color: $color-darker-5 !important;
+}
+.border-darker-4 {
+  border-color: $color-darker-4 !important;
+}
+.border-darker-3 {
+  border-color: $color-darker-3 !important;
+}
+.border-darker-2 {
+  border-color: $color-darker-2 !important;
+}
+.border-darker-1 {
+  border-color: $color-darker-1 !important;
+}
+.border-green-5 {
+  border-color: $color-green-5 !important;
+}
+.border-green-4 {
+  border-color: $color-green-4 !important;
+}
+.border-green-3 {
+  border-color: $color-green-3 !important;
+}
+.border-green-2 {
+  border-color: $color-green-2 !important;
+}
+.border-green-1 {
+  border-color: $color-green-1 !important;
+}
+.border-cyan-1 {
+  border-color: $color-cyan-1 !important;
 }
 
 //margins
 .mt-6 {
-  margin-top: 4rem;
+  margin-top: 4rem !important;
 }
 .mb-6 {
-  margin-bottom: 4rem;
+  margin-bottom: 4rem !important;
 }
 
 //hover status
@@ -103,7 +150,4 @@
   font-size: 2rem;
   color: $color-darker-4;
   margin: 1.5rem;
-}
-#map {
-  height: 500px;
 }

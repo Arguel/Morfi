@@ -1,0 +1,7 @@
+.rb-custom:after {
+  content: '';
+  border-right: solid 2px $color-darker-4;
+  padding: 5px 1em 5px 0;
+  height: 10em;
+  margin: auto;
+}
