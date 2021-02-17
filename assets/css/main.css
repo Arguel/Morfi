@@ -7708,6 +7708,9 @@ a {
 .h-white:hover {
   color: white !important; }
 
+.child-underline:hover .c-under {
+  text-decoration: underline; }
+
 .h1-title {
   font-weight: 600;
   font-size: 2rem;

@@ -144,6 +144,9 @@
 .h-white:hover {
   color: white !important;
 }
+.child-underline:hover .c-under { //class '.child-underline' applies to parent and class '.c-under' to child
+  text-decoration: underline;
+}
 //fonts
 .h1-title {
   font-weight: 600;
