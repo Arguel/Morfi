@@ -1,3 +1,10 @@
+/*====BASE====*/
+body {
+  font-family: 'Montserrat', sans-serif !important; }
+
+a {
+  text-decoration: none !important; }
+
 /*!
  * Bootstrap v5.0.0-beta2 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -7471,13 +7478,6 @@ textarea.form-control-lg {
   .btn-sign-up-container {
     padding-left: 0; } }
 
-/*====BASE====*/
-body {
-  font-family: 'Montserrat', sans-serif; }
-
-a {
-  text-decoration: none; }
-
 /*===============$Home=============================================*/
 /*=.=.=.=.=.=.=.=.=.=NEWS=.=.=.=.=.=.=.=.=.=*/
 .select-hover1:hover {
@@ -7516,15 +7516,6 @@ a {
   text-decoration: line-through;
   vertical-align: 40%;
   padding-left: .3em; }
-
-.toffer-desc {
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical;
-  display: -webkit-box;
-  overflow: hidden;
-  white-space: normal;
-  text-overflow: ellipsis;
-  width: 100%; }
 
 /*=.=.=.=.=.=.=.=.=.=NEWSLETTER=.=.=.=.=.=.=.=.=.=*/
 .newsletter__data {
@@ -7566,6 +7557,27 @@ a {
   height: 10em;
   margin: auto; }
 
+.rb-custom-1:before {
+  content: '';
+  display: block;
+  border-left: solid 1px #BDBDBD;
+  height: 3em;
+  margin: 1em 0; }
+
+.bg-linear-1 {
+  background: #eb1c24;
+  background: -moz-linear-gradient(176deg, #eb1c24 60%, rgba(255, 255, 255, 0) 61%);
+  background: -webkit-linear-gradient(176deg, #eb1c24 60%, rgba(255, 255, 255, 0) 61%);
+  background: linear-gradient(176deg, #eb1c24 60%, rgba(255, 255, 255, 0) 61%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eb1c24",endColorstr="#ffffff",GradientType=1); }
+
+.bg-linear-2 {
+  background: #e4eed5;
+  background: -moz-linear-gradient(176deg, #e4eed5 60%, #cbdceb 61%);
+  background: -webkit-linear-gradient(176deg, #e4eed5 60%, #cbdceb 61%);
+  background: linear-gradient(176deg, #e4eed5 60%, #cbdceb 61%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e4eed5",endColorstr="#cbdceb",GradientType=1); }
+
 .img-rez {
   width: 100%;
   height: 100%;
@@ -7603,17 +7615,20 @@ a {
   opacity: 1;
   filter: alpha(opacity=100); }
 
-.t-indent-2 {
-  text-indent: 2rem; }
-
 .h-100px {
   height: 6.25em; }
 
 .h-200px {
   height: 12.5em; }
 
+.h-500px {
+  height: 31.25em; }
+
 .w-200px {
   width: 12.5em; }
+
+.w-400px {
+  width: 25em; }
 
 .mw-100px {
   max-width: 6.25em; }
@@ -7666,6 +7681,12 @@ a {
 .bg-cyan-1 {
   background-color: #22C1C3 !important; }
 
+.bg-yellow-1 {
+  background-color: #ffd318 !important; }
+
+.bg-red-1 {
+  background-color: #ec2d34 !important; }
+
 .border-darker-5 {
   border-color: #212121 !important; }
 
@@ -7699,6 +7720,57 @@ a {
 .border-cyan-1 {
   border-color: #22C1C3 !important; }
 
+.border-yellow-1 {
+  border-color: #ffd318 !important; }
+
+.border-red-1 {
+  border-color: #ec2d34 !important; }
+
+.text-darker-5 {
+  color: #212121; }
+
+.text-darker-4 {
+  color: #757575; }
+
+.text-darker-3 {
+  color: #BDBDBD; }
+
+.text-darker-2 {
+  color: #D7D7D7; }
+
+.text-darker-1 {
+  color: #DCEDC8; }
+
+.text-green-5 {
+  color: #009736; }
+
+.text-green-4 {
+  color: #00C600; }
+
+.text-green-3 {
+  color: #689F38; }
+
+.text-green-2 {
+  color: #8BC34A; }
+
+.text-green-1 {
+  color: #CDDC39; }
+
+.text-cyan-1 {
+  color: #22C1C3; }
+
+.text-yellow-1 {
+  color: #ffd318; }
+
+.text-red-1 {
+  color: #ec2d34; }
+
+.border-10 {
+  border-width: 10px !important; }
+
+.rounded-top-left-6 {
+  border-top-left-radius: 1.8rem !important; }
+
 .mt-6 {
   margin-top: 4rem !important; }
 
@@ -7711,8 +7783,61 @@ a {
 .child-underline:hover .c-under {
   text-decoration: underline; }
 
+.h-shadow {
+  transition: .5s; }
+
+.h-shadow:hover {
+  box-shadow: 0 0.5rem 1rem rgba(33, 33, 33, 0.15) !important; }
+
 .h1-title {
   font-weight: 600;
   font-size: 2rem;
   color: #757575;
   margin: 1.5rem; }
+
+.ff-lato-4 {
+  font-family: 'Lato', sans-serif !important;
+  font-weight: 400; }
+
+.ff-lato-7 {
+  font-family: 'Lato', sans-serif !important;
+  font-weight: 700; }
+
+.ff-lato-9 {
+  font-family: 'Lato', sans-serif !important;
+  font-weight: 900; }
+
+.ff-mont-4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400; }
+
+.ff-mont-6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600; }
+
+.fs-3x {
+  font-size: 3rem; }
+
+.fs-4x {
+  font-size: 4rem; }
+
+.t-indent-2 {
+  text-indent: 2rem; }
+
+.text-truncate-4 {
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  width: 100%; }
+
+.text-truncate-5 {
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  width: 100%; }

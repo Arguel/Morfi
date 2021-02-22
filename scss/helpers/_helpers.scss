@@ -24,11 +24,6 @@
   }
 }
 
-//text-indent classes
-.t-indent-2 {
-  text-indent: 2rem;
-}
-
 //height classes
 .h-100px {
   height: 6.25em;
@@ -36,10 +31,16 @@
 .h-200px {
   height: 12.5em;
 }
+.h-500px {
+  height: 31.25em;
+}
 
 //width classes
 .w-200px {
   width: 12.5em;
+}
+.w-400px {
+  width: 25em;
 }
 
 //max width classes
@@ -94,7 +95,13 @@
   background-color: $color-green-1 !important; //#CDDC39
 }
 .bg-cyan-1 {
-  background-color: $color-cyan-1 !important; //22C1C3
+  background-color: $color-cyan-1 !important; //#22C1C3
+}
+.bg-yellow-1 {
+  background-color: $colorx-yellow-1 !important; //#ffd318
+}
+.bg-red-1 {
+  background-color: $colorx-red-1 !important; //#ec2d34
 }
 
 //border colors
@@ -131,6 +138,63 @@
 .border-cyan-1 {
   border-color: $color-cyan-1 !important;
 }
+.border-yellow-1 {
+  border-color: $colorx-yellow-1 !important;
+}
+.border-red-1 {
+  border-color: $colorx-red-1 !important;
+}
+
+//text colors
+.text-darker-5 {
+  color: $color-darker-5;
+}
+.text-darker-4 {
+  color: $color-darker-4;
+}
+.text-darker-3 {
+  color: $color-darker-3;
+}
+.text-darker-2 {
+  color: $color-darker-2;
+}
+.text-darker-1 {
+  color: $color-darker-1;
+}
+.text-green-5 {
+  color: $color-green-5;
+}
+.text-green-4 {
+  color: $color-green-4;
+}
+.text-green-3 {
+  color: $color-green-3;
+}
+.text-green-2 {
+  color: $color-green-2;
+}
+.text-green-1 {
+  color: $color-green-1;
+}
+.text-cyan-1 {
+  color: $color-cyan-1;
+}
+.text-yellow-1 {
+  color: $colorx-yellow-1;
+}
+.text-red-1 {
+  color: $colorx-red-1;
+}
+
+//border width
+.border-10 {
+  border-width: 10px !important;
+}
+
+//border radius
+.rounded-top-left-6 {
+  border-top-left-radius: 1.8rem !important;
+}
 
 //margins
 .mt-6 {
@@ -147,10 +211,54 @@
 .child-underline:hover .c-under { //class '.child-underline' applies to parent and class '.c-under' to child
   text-decoration: underline;
 }
+
+//shadows
+.h-shadow {
+  transition: .5s;
+}
+.h-shadow:hover {
+  box-shadow: 0 0.5rem 1rem rgba(33, 33, 33, 0.15) !important;
+}
+
 //fonts
 .h1-title {
   font-weight: 600;
   font-size: 2rem;
   color: $color-darker-4;
   margin: 1.5rem;
+}
+@each $i in 400, 700, 900 { //Lato
+  .ff-lato-#{$i * 0.01} { // 100*0.01 = 1, 400*0.01 = 4, etc
+    font-family: 'Lato', sans-serif !important;
+    font-weight: $i;
+  }
+}
+@each $i in 400, 600 { //Montserrat
+  .ff-mont-#{$i * 0.01} { // 100*0.01 = 1, 400*0.01 = 4, etc
+    font-family: 'Montserrat', sans-serif;
+    font-weight: $i;
+  }
+}
+.fs-3x {
+  font-size: 3rem;
+}
+.fs-4x {
+  font-size: 4rem;
+}
+
+//text-indent classes
+.t-indent-2 {
+  text-indent: 2rem;
+}
+//text truncation classes
+@each $i in 4, 5 {
+  .text-truncate-#{$i} {
+      -webkit-line-clamp: $i;
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      overflow: hidden;
+      white-space: normal;
+      text-overflow: ellipsis;
+      width: 100%;
+  }
 }

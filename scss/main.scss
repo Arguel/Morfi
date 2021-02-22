@@ -1,6 +1,7 @@
 // The modules have to go in that precise order because we are working with bootstap
 
-
+//Base
+@import "base/reset";
 // Configuration
 @import "helpers/variables";
 @import "helpers/mixins";
@@ -14,6 +15,7 @@
 @import "pages/locations";
 @import "pages/recipes";
 @import "pages/shop";
+@import "pages/top-offers";
 // Helpers
 @import "helpers/helpers";
 
