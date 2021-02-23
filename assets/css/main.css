@@ -7520,20 +7520,6 @@ textarea.form-control-lg {
   border-radius: 5px;
   border: solid 1px #757575; }
 
-/*button*/
-.newsletter__data input[name="newsletter-btn"] {
-  height: 2.5em;
-  width: 6em;
-  margin: 0.5rem auto;
-  border-radius: 5px;
-  border-width: 0;
-  background-color: #212121;
-  color: white;
-  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
-  font-weight: 400;
-  cursor: pointer;
-  outline: none; }
-
 #map {
   height: 500px; }
 
