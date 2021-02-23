@@ -7479,19 +7479,6 @@ textarea.form-control-lg {
     padding-left: 0; } }
 
 /*===============$Home=============================================*/
-/*=.=.=.=.=.=.=.=.=.=NEWS=.=.=.=.=.=.=.=.=.=*/
-.select-hover1:hover {
-  opacity: 0.95;
-  filter: alpha(opacity=95); }
-
-.select-hover2:hover {
-  opacity: 0.95;
-  filter: alpha(opacity=95); }
-
-.select-hover3:hover {
-  opacity: 0.95;
-  filter: alpha(opacity=95); }
-
 /*=.=.=.=.=.=.=.=.=.=OFFERS=.=.=.=.=.=.=.=.=.=*/
 /*flex wood background*/
 .toffer-data-container {
@@ -7729,6 +7716,15 @@ textarea.form-control-lg {
 .border-bottom-dashed {
   border-bottom: dashed 4px #757575; }
 
+.border-right-dashed {
+  border-right: dashed 2px #757575; }
+
+.border-10 {
+  border-width: 10px !important; }
+
+.rounded-top-left-6 {
+  border-top-left-radius: 1.8rem !important; }
+
 .text-darker-5 {
   color: #212121; }
 
@@ -7768,12 +7764,6 @@ textarea.form-control-lg {
 .text-red-1 {
   color: #ec2d34; }
 
-.border-10 {
-  border-width: 10px !important; }
-
-.rounded-top-left-6 {
-  border-top-left-radius: 1.8rem !important; }
-
 .mt-6 {
   margin-top: 4rem !important; }
 
@@ -7785,6 +7775,14 @@ textarea.form-control-lg {
 
 .child-underline:hover .c-under {
   text-decoration: underline; }
+
+.h-opacity-1:hover {
+  opacity: 0.95;
+  filter: alpha(opacity=95); }
+
+.h-opacity-2:hover {
+  opacity: 0.75;
+  filter: alpha(opacity=75); }
 
 .h-shadow {
   transition: .5s; }

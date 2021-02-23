@@ -145,9 +145,23 @@
 .border-red-1 {
   border-color: $colorx-red-1 !important;
 }
+
 //border style
 .border-bottom-dashed {
   border-bottom: dashed 4px $color-darker-4;
+}
+.border-right-dashed {
+  border-right: dashed 2px $color-darker-4;
+}
+
+//border width
+.border-10 {
+  border-width: 10px !important;
+}
+
+//border radius
+.rounded-top-left-6 {
+  border-top-left-radius: 1.8rem !important;
 }
 
 //text colors
@@ -191,16 +205,6 @@
   color: $colorx-red-1;
 }
 
-//border width
-.border-10 {
-  border-width: 10px !important;
-}
-
-//border radius
-.rounded-top-left-6 {
-  border-top-left-radius: 1.8rem !important;
-}
-
 //margins
 .mt-6 {
   margin-top: 4rem !important;
@@ -215,6 +219,13 @@
 }
 .child-underline:hover .c-under { //class '.child-underline' applies to parent and class '.c-under' to child
   text-decoration: underline;
+}
+//hover light
+.h-opacity-1:hover {
+  @include opacity(0.95)
+}
+.h-opacity-2:hover {
+  @include opacity(0.75)
 }
 
 //shadows
