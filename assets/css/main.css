@@ -7525,7 +7525,7 @@ textarea.form-control-lg {
 
 .rb-custom:after {
   content: '';
-  border-right: solid 2px #757575;
+  border-right: solid 2px #BDBDBD;
   padding: 5px 1em 5px 0;
   height: 10em;
   margin: auto; }
