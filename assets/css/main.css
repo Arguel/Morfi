@@ -7756,6 +7756,10 @@ textarea.form-control-lg {
 .mb-6 {
   margin-bottom: 4rem !important; }
 
+.m-reset-rl {
+  margin-right: 0;
+  margin-left: 0; }
+
 .h-white:hover {
   color: white !important; }
 
@@ -7828,3 +7832,8 @@ textarea.form-control-lg {
   white-space: normal;
   text-overflow: ellipsis;
   width: 100%; }
+
+.p-reset-rbl {
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important; }

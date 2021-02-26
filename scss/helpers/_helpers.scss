@@ -212,6 +212,10 @@
 .mb-6 {
   margin-bottom: 4rem !important;
 }
+.m-reset-rl{
+  margin-right: 0;
+  margin-left: 0;
+}
 
 //hover status
 .h-white:hover {
@@ -277,4 +281,11 @@
       text-overflow: ellipsis;
       width: 100%;
   }
+}
+
+//positions
+.p-reset-rbl {
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
 }
