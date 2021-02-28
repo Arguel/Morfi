@@ -36,11 +36,17 @@
 }
 
 //width classes
+.w-60px {
+  width: 3.75em;
+}
 .w-200px {
   width: 12.5em;
 }
 .w-400px {
   width: 25em;
+}
+.w-7 {
+  width: 7%;
 }
 
 //max width classes
@@ -215,6 +221,10 @@
 .m-reset-rl{
   margin-right: 0;
   margin-left: 0;
+}
+//padding
+.pt-6 {
+  padding-top: 4rem !important;
 }
 
 //hover status

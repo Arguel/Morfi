@@ -7520,6 +7520,9 @@ textarea.form-control-lg {
   border-radius: 5px;
   border: solid 1px #757575; }
 
+.cb-custom-home {
+  transition: 0.8s cubic-bezier(0.17, 0.67, 0.35, 0.9) !important; }
+
 #map {
   height: 500px; }
 
@@ -7597,11 +7600,17 @@ textarea.form-control-lg {
 .h-500px {
   height: 31.25em; }
 
+.w-60px {
+  width: 3.75em; }
+
 .w-200px {
   width: 12.5em; }
 
 .w-400px {
   width: 25em; }
+
+.w-7 {
+  width: 7%; }
 
 .mw-100px {
   max-width: 6.25em; }
@@ -7759,6 +7768,9 @@ textarea.form-control-lg {
 .m-reset-rl {
   margin-right: 0;
   margin-left: 0; }
+
+.pt-6 {
+  padding-top: 4rem !important; }
 
 .h-white:hover {
   color: white !important; }
