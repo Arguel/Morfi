@@ -34,6 +34,10 @@
 .h-500px {
   height: 31.25em;
 }
+//max height classes
+.min-h-100 {
+  min-height: 100%;
+}
 
 //width classes
 .w-60px {
@@ -41,6 +45,9 @@
 }
 .w-200px {
   width: 12.5em;
+}
+.w-220px {
+  width: 13.75em;
 }
 .w-400px {
   width: 25em;
@@ -67,6 +74,10 @@
 }
 .mw-1800px {
   max-width: 112.5em;
+}
+//object fit classes
+.obfit-cover {
+  object-fit: cover !important;
 }
 
 //background colors
@@ -231,10 +242,29 @@
 .h-white:hover {
   color: white !important;
 }
-.child-underline:hover .c-under { //class '.child-underline' applies to parent and class '.c-under' to child
+.h-pointer:hover {
+  cursor: pointer !important;
+}
+.h-underline:hover {
   text-decoration: underline;
 }
-//hover light
+.child-underline:hover .c-under { //class '.child-underline' applies to parent and class '.c-under' to child
+  text-decoration: underline !important;
+}
+//.child-color:hover .c-color-w {
+  //color: white !important;
+//}
+
+//NOT USED
+//hover backgrounds
+//.h-bg-darker-2:hover {
+  //background-color: $color-darker-2 !important;
+//}
+//.h-bg-green-2:hover {
+  //background-color: $color-green-2 !important;
+//}
+
+//hover light/opacity
 .h-opacity-1:hover {
   @include opacity(0.95)
 }
@@ -242,7 +272,7 @@
   @include opacity(0.75)
 }
 
-//shadows
+//hover shadows
 .h-shadow {
   transition: .5s;
 }

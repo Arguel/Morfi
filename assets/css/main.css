@@ -7600,11 +7600,17 @@ textarea.form-control-lg {
 .h-500px {
   height: 31.25em; }
 
+.min-h-100 {
+  min-height: 100%; }
+
 .w-60px {
   width: 3.75em; }
 
 .w-200px {
   width: 12.5em; }
+
+.w-220px {
+  width: 13.75em; }
 
 .w-400px {
   width: 25em; }
@@ -7629,6 +7635,9 @@ textarea.form-control-lg {
 
 .mw-1800px {
   max-width: 112.5em; }
+
+.obfit-cover {
+  object-fit: cover !important; }
 
 .bg-darker-5 {
   background-color: #212121 !important; }
@@ -7775,8 +7784,14 @@ textarea.form-control-lg {
 .h-white:hover {
   color: white !important; }
 
-.child-underline:hover .c-under {
+.h-pointer:hover {
+  cursor: pointer !important; }
+
+.h-underline:hover {
   text-decoration: underline; }
+
+.child-underline:hover .c-under {
+  text-decoration: underline !important; }
 
 .h-opacity-1:hover {
   opacity: 0.95;
