@@ -202,21 +202,308 @@
     <section class="container-xxl mb-5">
 
       <div class="row align-items-center ff-lato-4">
-        <div class="col-md-6">
+        <div class="col-12 col-lg-6">
           <nav aria-label="breadcrumb">
-            <ol class="breadcrumb m-0 p-md-3">
+            <ol class="breadcrumb m-0 p-3">
               <li class="breadcrumb-item"><a href="#">Condiments</a></li>
               <li class="breadcrumb-item"><a href="#">Example</a></li>
               <li class="breadcrumb-item active" aria-current="page">Text</li>
             </ol>
           </nav>
         </div>
-        <div class="col-md-6">
-          <div class="row align-items-center p-md-3">
-            <div class="col-md-8 text-end">
+        <div class="col-12 d-block d-lg-none">
+          <div class="p-3">
+            <button type="button" class="btn btn-light border w-100 text-center" data-bs-toggle="modal"
+              data-bs-target="#shop-filters">
+              <span>Sort &#38; Filter</span>
+              <span class="mx-2"><i class="fas fa-sliders-h"></i></span>
+            </button>
+          </div>
+          <!-- Modal -->
+          <div class="modal fade" id="shop-filters" tabindex="-1" aria-labelledby="shop-filters-label"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen">
+              <div class="modal-content">
+                <div class="modal-header position-relative">
+                  <span type="button"
+                    class="position-absolute top-50 start-0 translate-middle-y btn-primary px-3 py-2 mx-3 rounded"
+                    data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fas fa-arrow-left"></i>
+                  </span>
+                  <h5 class="modal-title d-block mx-auto" id="shop-filters-label">Sort &#38; Filter</h5>
+                </div>
+
+                <div class="modal-body p-0">
+                  <div class="container-fluid">
+                    <div class="accordion accordion-flush" id="shop-filters-body">
+
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                          <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            <span>Categories</span>
+                          </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse"
+                          aria-labelledby="flush-headingOne" data-bs-parent="#shop-filters-body">
+                          <div>
+                            <ul class="list-group list-group-flush list-unstyled">
+                              <li class="list-group-item active"><a class="sel-primary" href="#">All</a></li>
+                              <li class="list-group-item bg-light"><a class="text-dark" href="#">Appetizers</a></li>
+                              <li class="list-group-item bg-light"><a class="text-dark" href="#">Condiments</a></li>
+                              <li class="list-group-item bg-light"><a class="text-dark" href="#">Confectionery</a></li>
+                              <li class="list-group-item bg-light"><a class="text-dark" href="#">Convenience foods</a>
+                              </li>
+                              <li class="list-group-item bg-light"><a class="text-dark" href="#">Desserts</a></li>
+                              <li class="list-group-item bg-light"><a class="text-dark" href="#">Dips, pastes and
+                                  spreads</a></li>
+                              <li class="list-group-item bg-light"><a class="text-dark" href="#">Dried foods</a></li>
+                              <li class="list-group-item bg-light"><a class="text-dark" href="#">Dumplings</a></li>
+                              <li class="list-group-item bg-light"><a class="text-dark" href="#">Fast food</a></li>
+                              <li class="list-group-item bg-light"><a class="text-dark" href="#">Products</a></li>
+                              <li class="list-group-item bg-light text-decoration-underline"><a href="#">Show more</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingTwo">
+                          <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            <span>Region</span>
+                          </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                          aria-labelledby="flush-headingTwo" data-bs-parent="#shop-filters-body">
+                          <div>
+                            <ul class="list-group list-group-flush list-unstyled">
+                              <li class="list-group-item active"><span class="sel-primary">North America</span></li>
+                              <li class="list-group-item bg-light"><span>United States</span></li>
+                              <li class="list-group-item bg-light"><span>Europe</span></li>
+                              <li class="list-group-item bg-light"><span>Global</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingThree">
+                          <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseThree" aria-expanded="false"
+                            aria-controls="flush-collapseThree">
+                            <span>Discount</span>
+                          </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse"
+                          aria-labelledby="flush-headingThree" data-bs-parent="#shop-filters-body">
+                          <div>
+                            <ul class="list-group list-group-flush list-unstyled">
+                              <li class="list-group-item bg-light"><span>25%</span></li>
+                              <li class="list-group-item bg-light"><span>50%</span></li>
+                              <li class="list-group-item bg-light"><span>75%</span></li>
+                              <li class="list-group-item bg-light"><span>100%</span></li>
+                              <li class="list-group-item bg-light">
+                                <form class="row align-items-center">
+                                  <div class="col-6">
+                                    <div class="row align-items-center">
+                                      <div class="col-12 mb-1">
+                                        <label class="form-label" for="dsc-from-r">From:</label>
+                                        <input class="form-control" type="number" name="dsc-from-r" id="dsc-from-r"
+                                          placeholder="Min">
+                                      </div>
+                                      <div class="col-12 mt-1">
+                                        <label class="form-label" for="dis-to-r">To:</label>
+                                        <input class="form-control" type="number" name="dis-to-r" id="dis-to-r"
+                                          placeholder="Max">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-6 text-center">
+                                    <button class="btn btn-primary p-3">Submit</button>
+                                  </div>
+                                </form>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingFour">
+                          <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseFour" aria-expanded="false"
+                            aria-controls="flush-collapseFour">
+                            <span>Ratings</span>
+                          </button>
+                        </h2>
+                        <div id="flush-collapseFour" class="accordion-collapse collapse"
+                          aria-labelledby="flush-headingFour" data-bs-parent="#shop-filters-body">
+                          <div>
+                            <ul class="list-group list-group-flush list-unstyled">
+                              <li class="list-group-item active">
+                                <span class="sel-primary"><i class="fas fa-star"></i><i class="far fa-star"></i><i
+                                    class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                                  <span class="mx-2">&#38; Up</span>
+                                </span>
+                              </li>
+                              <li class="list-group-item bg-light">
+                                <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                                  <span class="mx-2">&#38; Up</span>
+                                </span>
+                              </li>
+                              <li class="list-group-item bg-light">
+                                <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                                  <span class="mx-2">&#38; Up</span>
+                                </span>
+                              </li>
+                              <li class="list-group-item bg-light">
+                                <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                                  <span class="mx-2">&#38; Up</span>
+                                </span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingFive">
+                          <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseFive" aria-expanded="false"
+                            aria-controls="flush-collapseFive">
+                            <span>Payment</span>
+                          </button>
+                        </h2>
+                        <div id="flush-collapseFive" class="accordion-collapse collapse"
+                          aria-labelledby="flush-headingFive" data-bs-parent="#shop-filters-body">
+                          <div>
+                            <ul class="list-group list-group-flush list-unstyled">
+                              <li class="list-group-item bg-light"><span>In 12 installments</span></li>
+                              <li class="list-group-item bg-light"><span>In 6 installments</span></li>
+                              <li class="list-group-item bg-light"><span>In cash</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingSix">
+                          <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                            <span>Promotions</span>
+                          </button>
+                        </h2>
+                        <div id="flush-collapseSix" class="accordion-collapse collapse"
+                          aria-labelledby="flush-headingSix" data-bs-parent="#shop-filters-body">
+                          <div>
+                            <ul class="list-group list-group-flush list-unstyled">
+                              <li class="list-group-item active"><span class="sel-primary">Special offers</span></li>
+                              <li class="list-group-item bg-light"><span>New</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingSeven">
+                          <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseSeven" aria-expanded="false"
+                            aria-controls="flush-collapseSeven">
+                            <span>Delivery</span>
+                          </button>
+                        </h2>
+                        <div id="flush-collapseSeven" class="accordion-collapse collapse"
+                          aria-labelledby="flush-headingSeven" data-bs-parent="#shop-filters-body">
+                          <div>
+                            <ul class="list-group list-group-flush list-unstyled">
+                              <li class="list-group-item bg-light"><span>Free shipping</span></li>
+                              <li class="list-group-item bg-light"><span>Withdrawal in person</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingEight">
+                          <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseEight" aria-expanded="false"
+                            aria-controls="flush-collapseEight">
+                            <span>Price</span>
+                          </button>
+                        </h2>
+                        <div id="flush-collapseEight" class="accordion-collapse collapse"
+                          aria-labelledby="flush-headingEight" data-bs-parent="#shop-filters-body">
+                          <div>
+                            <ul class="list-group list-group-flush list-unstyled">
+                              <li class="list-group-item bg-light">$0 - $10</li>
+                              <li class="list-group-item bg-light">$10 - $50</li>
+                              <li class="list-group-item bg-light">$50 - $100</li>
+                              <li class="list-group-item bg-light">$100+</li>
+                              <li class="list-group-item bg-light">
+                                <form class="row align-items-center">
+                                  <div class="col-6">
+                                    <div class="row align-items-center">
+                                      <div class="col-12 mb-1">
+                                        <label class="form-label" for="pri-from-r">From:</label>
+                                        <input class="form-control" type="number" name="pri-from-r" id="pri-from-r"
+                                          placeholder="Min">
+                                      </div>
+                                      <div class="col-12 mt-1">
+                                        <label class="form-label" for="pri-to-r">To:</label>
+                                        <input class="form-control" type="number" name="pri-to-r" id="pri-to-r"
+                                          placeholder="Max">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-6 text-center">
+                                    <button class="btn btn-primary p-3">Submit</button>
+                                  </div>
+                                </form>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingNine">
+                          <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseNine" aria-expanded="false"
+                            aria-controls="flush-collapseNine">
+                            <span>Sort by</span>
+                          </button>
+                        </h2>
+                        <div id="flush-collapseNine" class="accordion-collapse collapse"
+                          aria-labelledby="flush-headingNine" data-bs-parent="#shop-filters-body">
+                          <div>
+                            <ul class="list-group list-group-flush list-unstyled">
+                              <li class="list-group-item active"><span class="sel-primary">Featured</span></li>
+                              <li class="list-group-item bg-light"><span>Low to high</span></li>
+                              <li class="list-group-item bg-light"><span>High to low</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-none d-lg-block col-lg-6">
+          <div class="row align-items-center p-3">
+            <div class="col-lg-8 text-end">
               <label class="form-label m-0">Sort by</label>
             </div>
-            <div class="col-md-4">
+            <div class="col-lg-4">
               <select class="form-select" name="sortby" id="sortby">
                 <option value="featured" selected>Featured</option>
                 <option value="lowtohigh">Low to high</option>
@@ -228,20 +515,20 @@
       </div>
 
       <div class="row align-content-evenly justify-content-around">
-        <aside class="col-md-3 border bg-light">
+        <aside class="d-none d-lg-block col-lg-4 col-xl-3 border bg-light">
           <div class="p-md-3 ff-lato-4">
             searchbar
             <div>
               <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-9">
                   <h4>Categories <span class="text-muted fs-6">- (A-Z)</span></h4>
                 </div>
-                <div class="col-md-4 text-end">
+                <div class="col-md-3 text-end">
                   <span class="h-pointer h-underline">Clear</span>
                 </div>
               </div>
               <ul class="list-unstyled">
-                <li><a class="btn-primary px-2 py-1 rounded" href="#">All</a></li>
+                <li><a class="sel-primary" href="#">All</a></li>
                 <li><a class="text-dark" href="#">Appetizers</a></li>
                 <li><a class="text-dark" href="#">Condiments</a></li>
                 <li><a class="text-dark" href="#">Confectionery</a></li>
@@ -266,65 +553,106 @@
               </div>
               <ul class="list-unstyled">
                 <li>
-                  <a class="btn-primary px-2 py-1 rounded" href="#">North America</a>
-                  <span class="btn-primary px-2 py-1 rounded h-pointer"><i class="fas fa-times"></i></span>
+                  <span class="sel-primary" href="#">North America</span>
+                  <span class="sel-primary"><i class="fas fa-times"></i></span>
                 </li>
-                <li>United States</li>
-                <li>Europe</li>
-                <li>Global</li>
+                <li><span>United States</span></li>
+                <li><span>Europe</span></li>
+                <li><span>Global</span></li>
               </ul>
             </div>
             <div>
               <h4>Discount</h4>
               <ul class="list-unstyled">
-                <li>25%</li>
-                <li>50%</li>
-                <li>75%</li>
-                <li>100%</li>
+                <li><span>25%</span></li>
+                <li><span>50%</span></li>
+                <li><span>75%</span></li>
+                <li><span>100%</span></li>
                 <li>
-                  <span>Custom:</span>
-                  <span>From:</span>
-                  <span>To:</span>
+                  <form>
+                    <input class="w-80px border border-darker-4" type="number" name="dsc-from" id="dsc-from"
+                      placeholder="Min">
+                    <span>-</span>
+                    <input class="w-80px border border-darker-4" type="number" name="dis-to" id="dis-to"
+                      placeholder="Max">
+                    <span class="sel-primary"><i class="fas fa-chevron-right"></i></span>
+                  </form>
                 </li>
               </ul>
             </div>
             <div>
-              <h4>Reviews / Ratings</h4>
+              <h4>Ratings</h4>
               <ul class="list-unstyled">
-                <li>1 star</li>
-                <li>2 stars</li>
-                <li>3 start</li>
-                <li>4 stars</li>
-                <li>5 start</li>
+                <li>
+                  <span class="sel-primary"><i class="fas fa-star"></i><i class="far fa-star"></i><i
+                      class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                    <span class="mx-2">&#38; Up</span>
+                  </span>
+                  <span class="sel-primary"><i class="fas fa-times"></i></span>
+                </li>
+                <li>
+                  <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i
+                      class="far fa-star"></i><i class="far fa-star"></i>
+                    <span class="mx-2">&#38; Up</span>
+                  </span>
+                </li>
+                <li>
+                  <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="far fa-star"></i><i class="far fa-star"></i>
+                    <span class="mx-2">&#38; Up</span>
+                  </span>
+                </li>
+                <li>
+                  <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="far fa-star"></i>
+                    <span class="mx-2">&#38; Up</span>
+                  </span>
+                </li>
               </ul>
             </div>
             <div>
               <h4>Payment</h4>
               <ul class="list-unstyled">
-                <li>In 12 installments</li>
-                <li>In 6 installmentsasd</li>
-                <li>In cash</li>
+                <li><span>In 12 installments</span></li>
+                <li><span>In 6 installments</span></li>
+                <li><span>In cash</span></li>
               </ul>
             </div>
             <div>
               <h4>Promotions</h4>
               <ul class="list-unstyled">
-                <li>2x1</li>
-                <li>Wholesale purchases</li>
+                <li>
+                  <span class="sel-primary">Special offers</span>
+                  <span class="sel-primary"><i class="fas fa-times"></i></span>
+                </li>
+                <li>New</li>
               </ul>
             </div>
             <div>
               <h4>Delivery</h4>
               <ul class="list-unstyled">
-                <li>Free shipping</li>
-                <li>Withdrawal in person</li>
+                <li><span>Free shipping</span></li>
+                <li><span>Withdrawal in person</span></li>
               </ul>
             </div>
             <div>
               <!--select-->
               <h4>Price</h4>
               <ul class="list-unstyled">
-                <li>Range:</li>
+                <li>$0 - $10</li>
+                <li>$10 - $50</li>
+                <li>$50 - $100</li>
+                <li>$100+</li>
+                <li>
+                  <form>
+                    <input class="w-80px border border-darker-4" type="number" name="pri-from" id="pri-from"
+                      placeholder="Min">
+                    <span>-</span>
+                    <input class="w-80px border border-darker-4" type="number" name="pri-to" id="pri-to"
+                      placeholder="Max">
+                    <span class="sel-primary"><i class="fas fa-chevron-right"></i></span>
+                  </form>
+                </li>
               </ul>
             </div>
             <div class="text-center">
@@ -332,28 +660,14 @@
             </div>
           </div>
         </aside>
-        <section class="col-md-9">
-          <div class="d-flex flex-wrap justify-content-start">
+        <section class="col-md-12 col-lg-8 col-xl-9">
+          <ul class="list-unstyled">
 
-            <!--<div class="m-2 w-220px">-->
-            <!--<div class="border m-2 rounded">-->
-            <!--<figure class="mb-0 m-auto p-2 h-200px w-200px overflow-hidden">-->
-            <!--<img class="mw-100 mh-100 min-h-100 obfit-cover d-block m-auto" src="http://placekitten.com/200/300"-->
-            <!--alt="#">-->
-            <!--</figure>-->
-            <!--<div class="p-2">-->
-            <!--<h5 class="my-2 text-truncate">Pizza</h5>-->
-            <!--<div class="fw-bold">$155.99</div>-->
-            <!--<div class="text-truncate">Lorem Ipsum is simply dummy text of the printing and typesetting industry.-->
-            <!--Lorem Ipsum has been the industry's</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
-
-            <div class="m-2 w-220px">
+            <!--appetizer-->
+            <li class="m-2 shop-w-220px d-inline-block">
               <div class="border m-2 rounded">
                 <a class="d-block" href="#">
-                  <div class="m-auto p-2 h-200px w-200px overflow-hidden">
+                  <div class="m-auto p-2 h-200px overflow-hidden">
                     <figure class="figure w-100 h-100">
                       <img class="mw-100 mh-100 min-h-100 obfit-cover d-block m-auto"
                         src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2Fimage%2F2018%2F10%2Fmain%2Fpolenta-squares-ck.jpg%3Fitok%3DIBMQbdlz"
@@ -361,12 +675,17 @@
                     </figure>
                   </div>
                 </a>
-                <div class="p-2">
+                <div class="p-2 h-130px">
                   <h5 class="my-2 text-truncate ff-lato-4 child-underline">
                     <a class="c-under text-dark" href="#">Polenta Squares with Gorgonzola and Pine Nuts</a>
                   </h5>
-                  </a>
-                  <div class="fw-bold">$155</div>
+                  <div class="overflow-hidden text-truncate-2">
+                    <div class="fw-bold text-break">$10.99</div>
+                    <div class="text-break">
+                      <span class="text-decoration-line-through">$22.00</span>
+                      <span class="badge bg-primary">50% off</span>
+                    </div>
+                  </div>
                   <div class="text-truncate">Instead of crostini, try gluten-free polenta squares as the base for a
                     variety of toppings. Creamy polenta becomes perfectly firm once chilled; it will hold its shape when
                     sliced and seared. The result is a golden brown crust outside and a creamy, not rubbery, texture
@@ -375,13 +694,16 @@
                     come up with your own flavor combo. Try diced marinated tomato and basil, sautéed mushrooms and
                     garlic, or more substantial shredded pork shoulder.</div>
                 </div>
+                <div class="pb-2 px-2">
+                  <button class="btn btn-primary d-block w-100 ff-lato-4">Add to Cart</button>
+                </div>
               </div>
-            </div>
+            </li>
 
-            <div class="m-2 w-220px">
+            <li class="m-2 shop-w-220px d-inline-block">
               <div class="border m-2 rounded">
                 <a class="d-block" href="#">
-                  <div class="m-auto p-2 h-200px w-200px overflow-hidden">
+                  <div class="m-auto p-2 h-200px overflow-hidden">
                     <figure class="figure w-100 h-100">
                       <img class="mw-100 mh-100 min-h-100 obfit-cover d-block m-auto"
                         src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2F1536699573%2FMapleCauliBites.jpg%3Fitok%3Dyld-IFu0"
@@ -389,25 +711,29 @@
                     </figure>
                   </div>
                 </a>
-                <div class="p-2">
+                <div class="p-2 h-130px">
                   <h5 class="my-2 text-truncate ff-lato-4 child-underline">
                     <a class="c-under text-dark" href="#">Maple-Sesame Cauliflower Bites</a>
                   </h5>
-                  </a>
-                  <div class="fw-bold">$155</div>
+                  <div class="overflow-hidden text-truncate-2">
+                    <div class="fw-bold text-break">$103.25</div>
+                  </div>
                   <div class="text-truncate">Chickpea flour is gluten-free, protein packed, and makes an incredibly
                     light batter for baked cauliflower. Look for it near the other gluten-free flours at your local
                     health food store. Tamari is a slightly thicker, wheat-free alternative to soy sauce with a more
                     robust flavor. These bites can double as an appetizer or side dish served with grilled fish or baked
                     chicken.</div>
                 </div>
+                <div class="pb-2 px-2">
+                  <button class="btn btn-primary d-block w-100 ff-lato-4">Add to Cart</button>
+                </div>
               </div>
-            </div>
+            </li>
 
-            <div class="m-2 w-220px">
+            <li class="m-2 shop-w-220px d-inline-block">
               <div class="border m-2 rounded">
                 <a class="d-block" href="#">
-                  <div class="m-auto p-2 h-200px w-200px overflow-hidden">
+                  <div class="m-auto p-2 h-200px overflow-hidden">
                     <figure class="figure w-100 h-100">
                       <img class="mw-100 mh-100 min-h-100 obfit-cover d-block m-auto"
                         src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2F1526928428%2Fdouble-serrano-watermelon-bites-1807-p75.jpg%3Fitok%3DvO-71bBy"
@@ -415,23 +741,30 @@
                     </figure>
                   </div>
                 </a>
-                <div class="p-2">
+                <div class="p-2 h-130px">
                   <h5 class="my-2 text-truncate ff-lato-4 child-underline">
                     <a class="c-under text-dark" href="#">Double-Serrano Watermelon Bites</a>
                   </h5>
-                  </a>
-                  <div class="fw-bold">$155</div>
+                  <div class="overflow-hidden text-truncate-2">
+                    <div class="fw-bold text-break">$77.99</div>
+                    <div class="text-break">
+                      <span class="badge bg-primary">Special offer</span>
+                    </div>
+                  </div>
                   <div class="text-truncate">These bites are a step up from classic prosciutto-wrapped melon and provide
                     sweet, spicy, salty, tart, and meaty tastes. If you can’t find serrano ham, use prosciutto; you also
                     can use balsamic glaze in place of pomegranate molasses.</div>
                 </div>
+                <div class="pb-2 px-2">
+                  <button class="btn btn-primary d-block w-100 ff-lato-4">Add to Cart</button>
+                </div>
               </div>
-            </div>
+            </li>
 
-            <div class="m-2 w-220px">
+            <li class="m-2 shop-w-220px d-inline-block">
               <div class="border m-2 rounded">
                 <a class="d-block" href="#">
-                  <div class="m-auto p-2 h-200px w-200px overflow-hidden">
+                  <div class="m-auto p-2 h-200px overflow-hidden">
                     <figure class="figure w-100 h-100">
                       <img class="mw-100 mh-100 min-h-100 obfit-cover d-block m-auto"
                         src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2Fimage%2F2016%2F11%2Fmain%2Fsmoked-salmon-bites-1412p156.jpg%3Fitok%3D6dIoq1o3"
@@ -439,12 +772,13 @@
                     </figure>
                   </div>
                 </a>
-                <div class="p-2">
+                <div class="p-2 h-130px">
                   <h5 class="my-2 text-truncate ff-lato-4 child-underline">
                     <a class="c-under text-dark" href="#">Smoked Salmon Bites</a>
                   </h5>
-                  </a>
-                  <div class="fw-bold">$155</div>
+                  <div class="overflow-hidden text-truncate-2">
+                    <div class="fw-bold text-break">$98.00</div>
+                  </div>
                   <div class="text-truncate">If you're looking for an appetizer that will delight your guests with its
                     gorgeous presentation and rich, delicious taste, the search stops here. These beautiful canapés
                     start with a base of candy cane (or Chioggia) beet squares, whose alternating ruby and white rings
@@ -453,13 +787,16 @@
                     topping of easy-to-find salmon caviar turns what's truly a simple make-ahead nibble into an absolute
                     work of art that'll make you the talk of your social circle.</div>
                 </div>
+                <div class="pb-2 px-2">
+                  <button class="btn btn-primary d-block w-100 ff-lato-4">Add to Cart</button>
+                </div>
               </div>
-            </div>
+            </li>
 
-            <div class="m-2 w-220px">
+            <li class="m-2 shop-w-220px d-inline-block">
               <div class="border m-2 rounded">
                 <a class="d-block" href="#">
-                  <div class="m-auto p-2 h-200px w-200px overflow-hidden">
+                  <div class="m-auto p-2 h-200px overflow-hidden">
                     <figure class="figure w-100 h-100">
                       <img class="mw-100 mh-100 min-h-100 obfit-cover d-block m-auto"
                         src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2F1521749706%2Ffrench-onion-dip-with-sweet-potato-chips-ck-1805p56.jpg%3Fitok%3DH9sCBAZC%261522166517"
@@ -467,12 +804,13 @@
                     </figure>
                   </div>
                 </a>
-                <div class="p-2">
+                <div class="p-2 h-130px">
                   <h5 class="my-2 text-truncate ff-lato-4 child-underline">
                     <a class="c-under text-dark" href="#">French Onion Dip With Sweet Potato Chips</a>
                   </h5>
-                  </a>
-                  <div class="fw-bold">$155</div>
+                  <div class="overflow-hidden text-truncate-2">
+                    <div class="fw-bold text-break">$109.00</div>
+                  </div>
                   <div class="text-truncate">With big flavor and less heft, our healthier ode to the classic French
                     onion dip is a delicious way to sneak in extra vegetables. Ditch the sodium-bomb seasoning packets
                     and sour cream-and-mayonnaise–laden dip (which can pack a small meal’s worth of calories and sat fat
@@ -481,13 +819,18 @@
                     without a dipper, baked sweet potatoes will satisfy your chip craving for half the calories of most
                     bagged varieties.</div>
                 </div>
+                <div class="pb-2 px-2">
+                  <button class="btn btn-primary d-block w-100 ff-lato-4">Add to Cart</button>
+                </div>
               </div>
-            </div>
+            </li>
+            <!--appetizer-->
 
-            <div class="m-2 w-220px">
+            <!--dessert-->
+            <li class="m-2 shop-w-220px d-inline-block">
               <div class="border m-2 rounded">
                 <a class="d-block" href="#">
-                  <div class="m-auto p-2 h-200px w-200px overflow-hidden">
+                  <div class="m-auto p-2 h-200px overflow-hidden">
                     <figure class="figure w-100 h-100">
                       <img class="mw-100 mh-100 min-h-100 obfit-cover d-block m-auto"
                         src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2Fupdated_main_images%2F0901p174-banana-bars-x_1.jpg%3Fitok%3DSoWVe04e"
@@ -495,24 +838,28 @@
                     </figure>
                   </div>
                 </a>
-                <div class="p-2">
+                <div class="p-2 h-130px">
                   <h5 class="my-2 text-truncate ff-lato-4 child-underline">
                     <a class="text-dark c-under" href="#">Roasted Banana Bars with Browned Butter–Pecan Frosting</a>
                   </h5>
-                  </a>
-                  <div class="fw-bold">$155</div>
+                  <div class="overflow-hidden text-truncate-2">
+                    <div class="fw-bold text-break">$89.99</div>
+                  </div>
                   <div class="text-truncate">Put those ripe, speckled bananas to good use. This dish starts with
                     roasting bananas which adds caramelized notes to their tropical sweetness. The bananas flavor the
                     light-and-fluffy bars, which are topped with cream cheese icing and chopped pecans for the perfect
                     amount of tanginess and crunch.</div>
                 </div>
+                <div class="pb-2 px-2">
+                  <button class="btn btn-primary d-block w-100 ff-lato-4">Add to Cart</button>
+                </div>
               </div>
-            </div>
+            </li>
 
-            <div class="m-2 w-220px">
+            <li class="m-2 shop-w-220px d-inline-block">
               <div class="border m-2 rounded">
                 <a class="d-block" href="#">
-                  <div class="m-auto p-2 h-200px w-200px overflow-hidden">
+                  <div class="m-auto p-2 h-200px overflow-hidden">
                     <figure class="figure w-100 h-100">
                       <img class="mw-100 mh-100 min-h-100 obfit-cover d-block m-auto"
                         src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2Fupdated_main_images%2F0709p124-cake-x_1.jpg%3Fitok%3DGekV4VXU"
@@ -520,23 +867,27 @@
                     </figure>
                   </div>
                 </a>
-                <div class="p-2">
+                <div class="p-2 h-130px">
                   <h5 class="my-2 text-truncate ff-lato-4 child-underline">
                     <a class="text-dark c-under" href="#">Texas Sheet Cake</a>
                   </h5>
-                  </a>
-                  <div class="fw-bold">$155</div>
+                  <div class="overflow-hidden text-truncate-2">
+                    <div class="fw-bold text-break">$25.80</div>
+                  </div>
                   <div class="text-truncate">This recipe uses butter and buttermilk in quantities that give it the right
                     indulgently moist texture and rich flavor, but keep a serving's fat at just 10 grams and calories at
                     about 300.</div>
                 </div>
+                <div class="pb-2 px-2">
+                  <button class="btn btn-primary d-block w-100 ff-lato-4">Add to Cart</button>
+                </div>
               </div>
-            </div>
+            </li>
 
-            <div class="m-2 w-220px">
+            <li class="m-2 shop-w-220px d-inline-block">
               <div class="border m-2 rounded">
                 <a class="d-block" href="#">
-                  <div class="m-auto p-2 h-200px w-200px overflow-hidden">
+                  <div class="m-auto p-2 h-200px overflow-hidden">
                     <figure class="figure w-100 h-100">
                       <img class="mw-100 mh-100 min-h-100 obfit-cover d-block m-auto"
                         src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2Fimage%2F2017%2F03%2Fmain%2Fespresso-crinkle-cookies-0812p155_2.jpg%3Fitok%3DVg2x4laD"
@@ -544,23 +895,32 @@
                     </figure>
                   </div>
                 </a>
-                <div class="p-2">
+                <div class="p-2 h-130px">
                   <h5 class="my-2 text-truncate ff-lato-4 child-underline">
                     <a class="text-dark c-under" href="#">Espresso Crinkles</a>
                   </h5>
-                  </a>
-                  <div class="fw-bold">$155</div>
+                  <div class="overflow-hidden text-truncate-2">
+                    <div class="fw-bold text-break">$40.00</div>
+                    <div class="text-break">
+                      <span class="text-decoration-line-through">$50.00</span>
+                      <span class="badge bg-primary">New</span>
+                      <span class="badge bg-primary">20% off</span>
+                    </div>
+                  </div>
                   <div class="text-truncate">Unsweetened chocolate and instant espresso powder give depth of flavor to
                     these sophisticated cookies. A dredge in powdered sugar before baking ensures sweetness, and also
                     gives them a unique cracked surface and snow-covered look.</div>
                 </div>
+                <div class="pb-2 px-2">
+                  <button class="btn btn-primary d-block w-100 ff-lato-4">Add to Cart</button>
+                </div>
               </div>
-            </div>
+            </li>
 
-            <div class="m-2 w-220px">
+            <li class="m-2 shop-w-220px d-inline-block">
               <div class="border m-2 rounded">
                 <a class="d-block" href="#">
-                  <div class="m-auto p-2 h-200px w-200px overflow-hidden">
+                  <div class="m-auto p-2 h-200px overflow-hidden">
                     <figure class="figure w-100 h-100">
                       <img class="mw-100 mh-100 min-h-100 obfit-cover d-block m-auto"
                         src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2Fupdated_main_images%2F0211-vanilla-cheesecake-cherry-topping-x.jpg%3Fitok%3Dp2H6vW0H"
@@ -568,61 +928,254 @@
                     </figure>
                   </div>
                 </a>
-                <div class="p-2">
+                <div class="p-2 h-130px">
                   <h5 class="my-2 text-truncate ff-lato-4 child-underline">
                     <a class="text-dark c-under" href="#">Vanilla Cheesecake with Cherry Topping</a>
                   </h5>
-                  </a>
-                  <div class="fw-bold">$155</div>
+                  <div class="overflow-hidden text-truncate-2">
+                    <div class="fw-bold text-break">$40.73</div>
+                    <div class="text-break">
+                      <span class="badge bg-primary">Special offer</span>
+                    </div>
+                  </div>
                   <div class="text-truncate">In this rich cheesecake, we use the entire vanilla bean, so none of it is
                     wasted: The seeds flavor the cheesecake, and the bean halves flavor the topping.</div>
                 </div>
+                <div class="pb-2 px-2">
+                  <button class="btn btn-primary d-block w-100 ff-lato-4">Add to Cart</button>
+                </div>
               </div>
-            </div>
+            </li>
 
-            <div class="m-2 w-220px">
+            <li class="m-2 shop-w-220px d-inline-block">
               <div class="border m-2 rounded">
                 <a class="d-block" href="#">
-                  <div class="m-auto p-2 h-200px w-200px overflow-hidden">
+                  <div class="m-auto p-2 h-200px overflow-hidden">
                     <figure class="figure w-100 h-100">
                       <img class="mw-100 mh-100 min-h-100 obfit-cover d-block m-auto"
-                        src="http://placekitten.com/200/300" alt="#">
+                        src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2Fupdated_main_images%2F0910p178-amaretto-apple-streusel-cupcakes-x_0.jpg%3Fitok%3D3nsDjVEX"
+                        alt="#">
                     </figure>
                   </div>
                 </a>
-                <div class="p-2">
+                <div class="p-2 h-130px">
                   <h5 class="my-2 text-truncate ff-lato-4 child-underline">
-                    <a class="text-dark c-under" href="#">Pizaa</a>
+                    <a class="text-dark c-under" href="#">Amaretto Apple Streusel Cupcakes</a>
                   </h5>
-                  </a>
-                  <div class="fw-bold">$155</div>
-                  <div class="text-truncate">Lorem</div>
+                  <div class="overflow-hidden text-truncate-2">
+                    <div class="fw-bold text-break">$90.14</div>
+                  </div>
+                  <div class="text-truncate">Top tender apple cupcakes with a sweet and crunchy topping of brown sugar
+                    and almonds, then drizzle with a powdered sugar glaze. The amaretto adds an even more distinct
+                    almond flavor to the cupcakes, but if you don't have it, you can use almond extract instead.</div>
+                </div>
+                <div class="pb-2 px-2">
+                  <button class="btn btn-primary d-block w-100 ff-lato-4">Add to Cart</button>
                 </div>
               </div>
-            </div>
+            </li>
 
-            <div class="m-2 w-220px">
+            <li class="m-2 shop-w-220px d-inline-block">
               <div class="border m-2 rounded">
                 <a class="d-block" href="#">
-                  <div class="m-auto p-2 h-200px w-200px overflow-hidden">
+                  <div class="m-auto p-2 h-200px overflow-hidden">
                     <figure class="figure w-100 h-100">
                       <img class="mw-100 mh-100 min-h-100 obfit-cover d-block m-auto"
-                        src="http://placekitten.com/200/300" alt="#">
+                        src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2Fupdated_main_images%2F1201se-cf-salted-caramel-ice-cream-x_0.jpg%3Fitok%3DqtbTdD9p"
+                        alt="#">
                     </figure>
                   </div>
                 </a>
-                <div class="p-2">
+                <div class="p-2 h-130px">
                   <h5 class="my-2 text-truncate ff-lato-4 child-underline">
-                    <a class="text-dark c-under" href="#">Pizaa</a>
+                    <a class="text-dark c-under" href="#">Salted Caramel Ice Cream</a>
                   </h5>
-                  </a>
-                  <div class="fw-bold">$155</div>
-                  <div class="text-truncate">Lorem</div>
+                  <div class="overflow-hidden text-truncate-2">
+                    <div class="fw-bold text-break">$47.80</div>
+                  </div>
+                  <div class="text-truncate">It's hard to beat the sweet-salty goodness of this indulgent yet light
+                    caramel ice cream. Light ice cream has evolved from its watery ice-milk days and in the Test
+                    Kitchen, we like to get creative with ingredients and flavors, but we hold fast to settling for
+                    nothing less than smooth, creamy, rich results.</div>
+                </div>
+                <div class="pb-2 px-2">
+                  <button class="btn btn-primary d-block w-100 ff-lato-4">Add to Cart</button>
                 </div>
               </div>
-            </div>
+            </li>
 
-          </div>
+            <li class="m-2 shop-w-220px d-inline-block">
+              <div class="border m-2 rounded">
+                <a class="d-block" href="#">
+                  <div class="m-auto p-2 h-200px overflow-hidden">
+                    <figure class="figure w-100 h-100">
+                      <img class="mw-100 mh-100 min-h-100 obfit-cover d-block m-auto"
+                        src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2Fupdated_main_images%2F0710p260-tiramisu-x.jpg%3Fitok%3DtU3n6sxU"
+                        alt="#">
+                    </figure>
+                  </div>
+                </a>
+                <div class="p-2 h-130px">
+                  <h5 class="my-2 text-truncate ff-lato-4 child-underline">
+                    <a class="text-dark c-under" href="#">Tiramisu</a>
+                  </h5>
+                  <div class="overflow-hidden text-truncate-2">
+                    <div class="fw-bold text-break">$75.89</div>
+                  </div>
+                  <div class="text-truncate">Tiramisu is Italian for "lift me up." And its indulgent creamy,
+                    mocha-tinged flavor is indeed uplifting. With layers of ladyfingers, coffee, mascarpone cheese, and
+                    shaved or grated chocolate, traditional tiramisu is a cross between a trifle and bread pudding. Our
+                    lightened version is less than 300 calories per serving, and makes for a sophisticated dinner-party
+                    treat.</div>
+                </div>
+                <div class="pb-2 px-2">
+                  <button class="btn btn-primary d-block w-100 ff-lato-4">Add to Cart</button>
+                </div>
+              </div>
+            </li>
+
+            <li class="m-2 shop-w-220px d-inline-block">
+              <div class="border m-2 rounded">
+                <a class="d-block" href="#">
+                  <div class="m-auto p-2 h-200px overflow-hidden">
+                    <figure class="figure w-100 h-100">
+                      <img class="mw-100 mh-100 min-h-100 obfit-cover d-block m-auto"
+                        src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2Fupdated_main_images%2F1009p236-rum-grilled-pineapple-x_0.jpg%3Fitok%3D9uR5y_v2"
+                        alt="#">
+                    </figure>
+                  </div>
+                </a>
+                <div class="p-2 h-130px">
+                  <h5 class="my-2 text-truncate ff-lato-4 child-underline">
+                    <a class="text-dark c-under" href="#">Rum-Spiked Grilled Pineapple with Toasted Coconut</a>
+                  </h5>
+                  <div class="overflow-hidden text-truncate-2">
+                    <div class="fw-bold text-break">$30.53</div>
+                    <div class="text-break">
+                      <span class="badge bg-primary">Special offer</span>
+                    </div>
+                  </div>
+                  <div class="text-truncate">Perfect for a backyard cookout with friends, just six ingredients make one
+                    delicious dessert in less than 10 minutes. Grilling caramelizes the sugars in the fruit for a light
+                    treat that is delicious on its own or served with low-fat vanilla ice cream.</div>
+                </div>
+                <div class="pb-2 px-2">
+                  <button class="btn btn-primary d-block w-100 ff-lato-4">Add to Cart</button>
+                </div>
+              </div>
+            </li>
+
+            <li class="m-2 shop-w-220px d-inline-block">
+              <div class="border m-2 rounded">
+                <a class="d-block" href="#">
+                  <div class="m-auto p-2 h-200px overflow-hidden">
+                    <figure class="figure w-100 h-100">
+                      <img class="mw-100 mh-100 min-h-100 obfit-cover d-block m-auto"
+                        src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2Fupdated_main_images%2F0704p187-carrot-cake-x_1.jpg%3Fitok%3D-IhI7pGM"
+                        alt="#">
+                    </figure>
+                  </div>
+                </a>
+                <div class="p-2 h-130px">
+                  <h5 class="my-2 text-truncate ff-lato-4 child-underline">
+                    <a class="text-dark c-under" href="#">Carrot Cake</a>
+                  </h5>
+                  <div class="overflow-hidden text-truncate-2">
+                    <div class="fw-bold text-break">$11.99</div>
+                    <div class="text-break">
+                      <span class="text-decoration-line-through">$60.00</span>
+                      <span class="badge bg-primary">80% off</span>
+                    </div>
+                  </div>
+                  <div class="text-truncate">This lighter twist on traditional carrot cake features a tender cake packed
+                    with grated carrot, juicy pineapple, flaked coconut, and chopped pecans. Cream cheese frosting and a
+                    garnish of grated carrot tops the cake.</div>
+                </div>
+                <div class="pb-2 px-2">
+                  <button class="btn btn-primary d-block w-100 ff-lato-4">Add to Cart</button>
+                </div>
+              </div>
+            </li>
+            <!--dessert-->
+
+            <!--fast food-->
+            <li class="m-2 shop-w-220px d-inline-block">
+              <div class="border m-2 rounded">
+                <a class="d-block" href="#">
+                  <div class="m-auto p-2 h-200px overflow-hidden">
+                    <figure class="figure w-100 h-100">
+                      <img class="mw-100 mh-100 min-h-100 obfit-cover d-block m-auto"
+                        src="https://potatorolls.com/wp-content/uploads/2020/10/Blackened-Chicken-Sandwich3-960x640.jpg"
+                        alt="#">
+                    </figure>
+                  </div>
+                </a>
+                <div class="p-2 h-130px">
+                  <h5 class="my-2 text-truncate ff-lato-4 child-underline">
+                    <a class="text-dark c-under" href="#">Chicken Sandwich</a>
+                  </h5>
+                  <div class="overflow-hidden text-truncate-2">
+                    <div class="fw-bold text-break">$3.00</div>
+                  </div>
+                  <div class="text-truncate">The perfect combination of a generous portion of breaded chicken, soft bun,
+                    and tart pickles, it's enhanced by only one thing: Polynesian sauce.</div>
+                </div>
+                <div class="pb-2 px-2">
+                  <button class="btn btn-primary d-block w-100 ff-lato-4">Add to Cart</button>
+                </div>
+              </div>
+            </li>
+
+            <li class="m-2 shop-w-220px d-inline-block">
+              <div class="border m-2 rounded">
+                <a class="d-block" href="#">
+                  <div class="m-auto p-2 h-200px overflow-hidden">
+                    <figure class="figure w-100 h-100">
+                      <img class="mw-100 mh-100 min-h-100 obfit-cover d-block m-auto"
+                        src="https://fastfoodnutrition.org/item-photos/400x406/1181_s.jpg" alt="#">
+                    </figure>
+                  </div>
+                </a>
+                <div class="p-2 h-130px">
+                  <h5 class="my-2 text-truncate ff-lato-4 child-underline">
+                    <a class="text-dark c-under" href="#">Cheesy Gordita Crunch</a>
+                  </h5>
+                  <div class="overflow-hidden text-truncate-2">
+                    <div class="fw-bold text-break">$38.41</div>
+                  </div>
+                  <div class="text-truncate">An effective fast-food experience hinges on texture. Mouthfeel. Most fast
+                    food is rough and salty or mushy and gelatinous. But rarely the twain shall meet in one package.
+                  </div>
+                </div>
+                <div class="pb-2 px-2">
+                  <button class="btn btn-primary d-block w-100 ff-lato-4">Add to Cart</button>
+                </div>
+              </div>
+            </li>
+
+
+            <!--<div class="m-2 shop-w-220px">-->
+            <!--<div class="border m-2 rounded">-->
+            <!--<a class="d-block" href="#">-->
+            <!--<div class="m-auto p-2 h-200px overflow-hidden">-->
+            <!--<figure class="figure w-100 h-100">-->
+            <!--<img class="mw-100 mh-100 min-h-100 obfit-cover d-block m-auto" src="" alt="#">-->
+            <!--</figure>-->
+            <!--</div>-->
+            <!--</a>-->
+            <!--<div class="p-2">-->
+            <!--<h5 class="my-2 text-truncate ff-lato-4 child-underline">-->
+            <!--<a class="text-dark c-under" href="#"></a>-->
+            <!--</h5>-->
+            <!--</a>-->
+            <!--<div class="fw-bold"></div>-->
+            <!--<div class="text-truncate"></div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+
+
+          </ul>
         </section>
       </div>
     </section>

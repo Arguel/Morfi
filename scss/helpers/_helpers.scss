@@ -28,6 +28,9 @@
 .h-100px {
   height: 6.25em;
 }
+.h-130px {
+  height: 8.125em;
+}
 .h-200px {
   height: 12.5em;
 }
@@ -43,11 +46,24 @@
 .w-60px {
   width: 3.75em;
 }
+.w-80px {
+  width: 5em;
+}
 .w-200px {
   width: 12.5em;
 }
-.w-220px {
-  width: 13.75em;
+.shop-w-220px {
+  width: calc(50% - 20px);
+
+  @include bp-xs {
+    width: calc(100% - 20px);
+  }
+  @include bp-xl {
+    width: calc(33.33333% - 19px);
+  }
+  @include bp-xxl {
+    width: calc(25% - 20px)
+  }
 }
 .w-400px {
   width: 25em;
@@ -311,7 +327,7 @@
   text-indent: 2rem;
 }
 //text truncation classes
-@each $i in 4, 5 {
+@each $i in 2, 4, 5 {
   .text-truncate-#{$i} {
       -webkit-line-clamp: $i;
       -webkit-box-orient: vertical;
@@ -328,4 +344,16 @@
   right: 0 !important;
   bottom: 0 !important;
   left: 0 !important;
+}
+
+//item selected
+.sel-primary {
+  @extend .btn-primary;
+  @extend .px-2;
+  @extend .py-1;
+  @extend .rounded;
+  @extend .mx-1
+}
+.sel-primary:hover {
+  cursor: pointer;
 }
