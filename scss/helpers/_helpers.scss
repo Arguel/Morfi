@@ -348,7 +348,7 @@
   text-indent: 2rem;
 }
 //text truncation classes
-@each $i in 2, 4, 5 {
+@each $i in 2, 4, 5, 6 {
   .text-truncate-#{$i} {
       -webkit-line-clamp: $i;
       -webkit-box-orient: vertical;

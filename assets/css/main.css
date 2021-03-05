@@ -7566,12 +7566,21 @@ textarea.form-control-lg {
   background: linear-gradient(176deg, #eb1c24 60%, rgba(255, 255, 255, 0) 61%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eb1c24",endColorstr="#ffffff",GradientType=1); }
 
-.bg-linear-2 {
-  background: #e4eed5;
-  background: -moz-linear-gradient(176deg, #e4eed5 60%, #cbdceb 61%);
-  background: -webkit-linear-gradient(176deg, #e4eed5 60%, #cbdceb 61%);
-  background: linear-gradient(176deg, #e4eed5 60%, #cbdceb 61%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e4eed5",endColorstr="#cbdceb",GradientType=1); }
+@media only screen and (max-width: 576px) {
+  .bg-linear-2 {
+    background: #e4eed5; } }
+
+@media only screen and (min-width: 577px) {
+  .bg-linear-2 {
+    background: #e4eed5; } }
+
+@media only screen and (min-width: 992px) {
+  .bg-linear-2 {
+    background: #e4eed5;
+    background: -moz-linear-gradient(176deg, #e4eed5 60%, #cbdceb 61%);
+    background: -webkit-linear-gradient(176deg, #e4eed5 60%, #cbdceb 61%);
+    background: linear-gradient(176deg, #e4eed5 60%, #cbdceb 61%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e4eed5",endColorstr="#cbdceb",GradientType=1); } }
 
 .img-rez {
   width: 100%;
@@ -7914,6 +7923,15 @@ textarea.form-control-lg {
 
 .text-truncate-5 {
   -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  width: 100%; }
+
+.text-truncate-6 {
+  -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
   display: -webkit-box;
   overflow: hidden;
