@@ -1,0 +1,13 @@
+.shop-w-220px {
+  width: calc(50% - 20px);
+
+  @include bp-xs {
+    width: calc(100% - 20px);
+  }
+  @include bp-xl {
+    width: calc(33.33333% - 19px);
+  }
+  @include bp-xxl {
+    width: calc(25% - 20px);
+  }
+}

@@ -40,9 +40,7 @@
 .h-350px {
   height: 21.875em;
 }
-.h-500px {
-  height: 31.25em;
-}
+
 //max height classes
 .min-h-100 {
   min-height: 100%;
@@ -63,34 +61,6 @@
 }
 .w-7 {
   width: 7%;
-}
-//width specials
-.locations-w-50-searchbar {
-  width: 80%;
-
-  @include bp-md {
-    width: 50%;
-  }
-}
-.locations-w-75-locations {
-  width: 100%;
-
-  @include bp-xl {
-    width: 75%;
-  }
-}
-.shop-w-220px {
-  width: calc(50% - 20px);
-
-  @include bp-xs {
-    width: calc(100% - 20px);
-  }
-  @include bp-xl {
-    width: calc(33.33333% - 19px);
-  }
-  @include bp-xxl {
-    width: calc(25% - 20px);
-  }
 }
 
 //max width classes
@@ -337,10 +307,26 @@
   }
 }
 .fs-3x {
-  font-size: 3rem;
+  @include bp-xs {
+    font-size: 1.2rem;
+  }
+  @include bp-sm {
+    font-size: 1.5rem;
+  }
+  @include bp-lg {
+    font-size: 3rem;
+  }
 }
 .fs-4x {
-  font-size: 4rem;
+  @include bp-xs {
+    font-size: 2.2rem;
+  }
+  @include bp-sm {
+    font-size: 2.5rem;
+  }
+  @include bp-lg {
+    font-size: 4rem;
+  }
 }
 
 //text-indent classes

@@ -27,3 +27,12 @@
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e4eed5",endColorstr="#cbdceb",GradientType=1);
   }
 }
+.top-offers-h-500px {
+
+  @include bp-xs {
+    height: auto;
+  }
+  @include bp-sm {
+    height: 31.25em;
+  }
+}

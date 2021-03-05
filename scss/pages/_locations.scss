@@ -1,3 +1,18 @@
 #map {
   height: 500px;
 }
+
+.locations-w-50-searchbar {
+  width: 80%;
+
+  @include bp-md {
+    width: 50%;
+  }
+}
+.locations-w-75-locations {
+  width: 100%;
+
+  @include bp-xl {
+    width: 75%;
+  }
+}
