@@ -1,0 +1,5 @@
+//Used in "Our products page"
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: $white !important;
+  background-color: $color-darker-5 !important;
+}

@@ -31,8 +31,14 @@
 .h-130px {
   height: 8.125em;
 }
+.h-190px {
+  height: 11.875em;
+}
 .h-200px {
   height: 12.5em;
+}
+.h-350px {
+  height: 21.875em;
 }
 .h-500px {
   height: 31.25em;
@@ -52,6 +58,27 @@
 .w-200px {
   width: 12.5em;
 }
+.w-400px {
+  width: 25em;
+}
+.w-7 {
+  width: 7%;
+}
+//width specials
+.locations-w-50-searchbar {
+  width: 80%;
+
+  @include bp-md {
+    width: 50%;
+  }
+}
+.locations-w-75-locations {
+  width: 100%;
+
+  @include bp-xl {
+    width: 75%;
+  }
+}
 .shop-w-220px {
   width: calc(50% - 20px);
 
@@ -62,14 +89,8 @@
     width: calc(33.33333% - 19px);
   }
   @include bp-xxl {
-    width: calc(25% - 20px)
+    width: calc(25% - 20px);
   }
-}
-.w-400px {
-  width: 25em;
-}
-.w-7 {
-  width: 7%;
 }
 
 //max width classes

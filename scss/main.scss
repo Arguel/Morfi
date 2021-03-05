@@ -7,14 +7,14 @@
 @import "helpers/mixins";
 // Vendors
 @import "../node_modules/bootstrap/scss/bootstrap";
+@import "vendors/vendors-extensions/custom-config"; //to overwrite bootstrap classes
 // Layout & components
 @import "layout/header"; //navigation bar
-@import "layout/footer";
+@import "layout/footer"; //footer
 // Pages
 @import "pages/home";
 @import "pages/locations";
 @import "pages/recipes";
-@import "pages/shop";
 @import "pages/top-offers";
 // Helpers
 @import "helpers/helpers";

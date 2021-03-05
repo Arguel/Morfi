@@ -7421,6 +7421,11 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important; } }
 
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff !important;
+  background-color: #212121 !important; }
+
 /*===============HEADER/NAV=============================================*/
 .nav-logo {
   height: 2.5em;
@@ -7611,8 +7616,14 @@ textarea.form-control-lg {
 .h-130px {
   height: 8.125em; }
 
+.h-190px {
+  height: 11.875em; }
+
 .h-200px {
   height: 12.5em; }
+
+.h-350px {
+  height: 21.875em; }
 
 .h-500px {
   height: 31.25em; }
@@ -7629,6 +7640,24 @@ textarea.form-control-lg {
 .w-200px {
   width: 12.5em; }
 
+.w-400px {
+  width: 25em; }
+
+.w-7 {
+  width: 7%; }
+
+.locations-w-50-searchbar {
+  width: 80%; }
+  @media only screen and (min-width: 768px) {
+    .locations-w-50-searchbar {
+      width: 50%; } }
+
+.locations-w-75-locations {
+  width: 100%; }
+  @media only screen and (min-width: 1200px) {
+    .locations-w-75-locations {
+      width: 75%; } }
+
 .shop-w-220px {
   width: calc(50% - 20px); }
   @media only screen and (max-width: 576px) {
@@ -7640,12 +7669,6 @@ textarea.form-control-lg {
   @media only screen and (min-width: 1400px) {
     .shop-w-220px {
       width: calc(25% - 20px); } }
-
-.w-400px {
-  width: 25em; }
-
-.w-7 {
-  width: 7%; }
 
 .mw-100px {
   max-width: 6.25em; }
