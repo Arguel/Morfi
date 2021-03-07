@@ -25,11 +25,17 @@
 }
 
 //height classes
+.h-2px {
+  height: 2px;
+}
 .h-100px {
   height: 6.25em;
 }
 .h-130px {
   height: 8.125em;
+}
+.h-150px {
+  height: 9.375em;
 }
 .h-190px {
   height: 11.875em;
@@ -41,9 +47,12 @@
   height: 21.875em;
 }
 
-//max height classes
+//max/min height classes
 .min-h-100 {
   min-height: 100%;
+}
+.max-h-300px {
+  max-height: 18.75em;
 }
 
 //width classes
@@ -63,7 +72,7 @@
   width: 7%;
 }
 
-//max width classes
+//max/min width classes
 .mw-100px {
   max-width: 6.25em;
 }
@@ -186,6 +195,13 @@
 //border radius
 .rounded-top-left-6 {
   border-top-left-radius: 1.8rem !important;
+}
+//border display
+.border-xs-0 {
+
+  @include bp-xs {
+    border: none !important;
+  }
 }
 
 //text colors
@@ -331,7 +347,16 @@
 
 //text-indent classes
 .t-indent-2 {
-  text-indent: 2rem;
+
+  @include bp-xs {
+    text-indent: initial;
+  }
+  @include bp-sm {
+    text-indent: 1.2rem;
+  }
+  @include bp-md {
+    text-indent: 2rem;
+  }
 }
 //text truncation classes
 @each $i in 2, 4, 5, 6 {
@@ -351,6 +376,15 @@
   right: 0 !important;
   bottom: 0 !important;
   left: 0 !important;
+}
+.position-absolute-xs-0 {
+
+  @include bp-xs {
+    position: initial !important;
+  }
+  @include bp-sm {
+    position: absolute !important;
+  }
 }
 
 //item selected

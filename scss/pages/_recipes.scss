@@ -1,7 +1,39 @@
 .rb-custom:after {
-  content: '';
-  border-right: solid 2px $color-darker-3;
-  padding: 5px 1em 5px 0;
-  height: 10em;
-  margin: auto;
+  @include bp-xs {
+    display: none;
+  }
+  @include bp-sm {
+    content: '';
+    border-right: solid 2px $color-darker-3;
+    padding: 5px 1em 5px 0;
+    height: 10em;
+    margin: auto;
+  }
+}
+.bg-light-sm-white {
+
+  @include bp-xs {
+    background-color: $white !important; //bg-white
+  }
+  @include bp-sm {
+    background-color: #f8f9fa !important; //bg-light
+  }
+}
+.bg-trans-sm-green-5-active {
+
+  @include bp-xs {
+    background-color: #009736 !important; //bg-green-5
+  }
+  @include bp-sm {
+    background-color: transparent !important; //same as rgba(0,0,0,0)
+  }
+}
+.bg-trans-sm-green-2 {
+
+  @include bp-xs {
+    background-color: #8BC34A !important; //bg-green-2
+  }
+  @include bp-sm {
+    background-color: transparent !important; //same as rgba(0,0,0,0)
+  }
 }

@@ -1,0 +1,15 @@
+.contact-w-80 {
+
+    @include bp-xs {
+        width: 100% !important;
+    }
+    @include bp-sm {
+        width: 100% !important;
+    }
+    @include bp-md {
+        width: 90% !important;
+    }
+    @include bp-lg {
+        width: 80% !important;
+    }
+}
