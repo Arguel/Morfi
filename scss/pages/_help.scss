@@ -13,3 +13,15 @@
         width: 80% !important;
     }
 }
+.faq-w-75 {
+
+    @include bp-xs {
+        width: 95% !important;
+    }
+    @include bp-sm {
+        width: 90% !important;
+    }
+    @include bp-md {
+        width: 75% !important;
+    }
+}

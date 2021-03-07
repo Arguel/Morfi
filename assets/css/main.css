@@ -7557,42 +7557,6 @@ textarea.form-control-lg {
     .locations-w-75-locations {
       width: 75%; } }
 
-@media only screen and (max-width: 576px) {
-  .rb-custom:after {
-    display: none; } }
-
-@media only screen and (min-width: 577px) {
-  .rb-custom:after {
-    content: '';
-    border-right: solid 2px #BDBDBD;
-    padding: 5px 1em 5px 0;
-    height: 10em;
-    margin: auto; } }
-
-@media only screen and (max-width: 576px) {
-  .bg-light-sm-white {
-    background-color: #fff !important; } }
-
-@media only screen and (min-width: 577px) {
-  .bg-light-sm-white {
-    background-color: #f8f9fa !important; } }
-
-@media only screen and (max-width: 576px) {
-  .bg-trans-sm-green-5-active {
-    background-color: #009736 !important; } }
-
-@media only screen and (min-width: 577px) {
-  .bg-trans-sm-green-5-active {
-    background-color: transparent !important; } }
-
-@media only screen and (max-width: 576px) {
-  .bg-trans-sm-green-2 {
-    background-color: #8BC34A !important; } }
-
-@media only screen and (min-width: 577px) {
-  .bg-trans-sm-green-2 {
-    background-color: transparent !important; } }
-
 .shop-w-220px {
   width: calc(50% - 20px); }
   @media only screen and (max-width: 576px) {
@@ -7644,6 +7608,42 @@ textarea.form-control-lg {
     height: 31.25em; } }
 
 @media only screen and (max-width: 576px) {
+  .rb-custom:after {
+    display: none; } }
+
+@media only screen and (min-width: 577px) {
+  .rb-custom:after {
+    content: '';
+    border-right: solid 2px #BDBDBD;
+    padding: 5px 1em 5px 0;
+    height: 10em;
+    margin: auto; } }
+
+@media only screen and (max-width: 576px) {
+  .bg-light-sm-white {
+    background-color: #fff !important; } }
+
+@media only screen and (min-width: 577px) {
+  .bg-light-sm-white {
+    background-color: #f8f9fa !important; } }
+
+@media only screen and (max-width: 576px) {
+  .bg-trans-sm-green-5-active {
+    background-color: #009736 !important; } }
+
+@media only screen and (min-width: 577px) {
+  .bg-trans-sm-green-5-active {
+    background-color: transparent !important; } }
+
+@media only screen and (max-width: 576px) {
+  .bg-trans-sm-green-2 {
+    background-color: #8BC34A !important; } }
+
+@media only screen and (min-width: 577px) {
+  .bg-trans-sm-green-2 {
+    background-color: transparent !important; } }
+
+@media only screen and (max-width: 576px) {
   .contact-w-80 {
     width: 100% !important; } }
 
@@ -7658,6 +7658,18 @@ textarea.form-control-lg {
 @media only screen and (min-width: 992px) {
   .contact-w-80 {
     width: 80% !important; } }
+
+@media only screen and (max-width: 576px) {
+  .faq-w-75 {
+    width: 95% !important; } }
+
+@media only screen and (min-width: 577px) {
+  .faq-w-75 {
+    width: 90% !important; } }
+
+@media only screen and (min-width: 768px) {
+  .faq-w-75 {
+    width: 75% !important; } }
 
 .img-rez {
   width: 100%;
