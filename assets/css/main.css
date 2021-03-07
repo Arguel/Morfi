@@ -7671,6 +7671,50 @@ textarea.form-control-lg {
   .faq-w-75 {
     width: 75% !important; } }
 
+@media only screen and (max-width: 576px) {
+  .ticket-w-50 {
+    width: 95% !important; } }
+
+@media only screen and (min-width: 577px) {
+  .ticket-w-50 {
+    width: 80% !important; } }
+
+@media only screen and (min-width: 768px) {
+  .ticket-w-50 {
+    width: 70% !important; } }
+
+@media only screen and (min-width: 992px) {
+  .ticket-w-50 {
+    width: 50% !important; } }
+
+@media only screen and (max-width: 576px) {
+  .login-w-50 {
+    width: 90% !important; } }
+
+@media only screen and (min-width: 577px) {
+  .login-w-50 {
+    width: 70% !important; } }
+
+@media only screen and (min-width: 768px) {
+  .login-w-50 {
+    width: 50% !important; } }
+
+@media only screen and (max-width: 576px) {
+  .register-w-50 {
+    width: 95% !important; } }
+
+@media only screen and (min-width: 577px) {
+  .register-w-50 {
+    width: 90% !important; } }
+
+@media only screen and (min-width: 768px) {
+  .register-w-50 {
+    width: 70% !important; } }
+
+@media only screen and (min-width: 992px) {
+  .register-w-50 {
+    width: 50% !important; } }
+
 .img-rez {
   width: 100%;
   height: 100%;

@@ -1,0 +1,28 @@
+.login-w-50 {
+
+  @include bp-xs {
+    width: 90% !important;
+  }
+  @include bp-sm {
+    width: 70% !important;
+  }
+  @include bp-md {
+    width: 50% !important;
+  }
+}
+//-------------------------------------------------
+.register-w-50 {
+
+  @include bp-xs {
+    width: 95% !important;
+  }
+  @include bp-sm {
+    width: 90% !important;
+  }
+  @include bp-md {
+    width: 70% !important;
+  }
+  @include bp-lg {
+    width: 50% !important;
+  }
+}

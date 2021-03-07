@@ -148,7 +148,7 @@
 
       <div class="row my-4">
         <div class="col-12 col-md-7 col-lg-8">
-          <form class="row contact-w-80 p-4 mx-auto bg-light border shadow needs-validation">
+          <form class="row contact-w-80 p-4 mx-auto bg-light border shadow needs-validation" novalidate>
 
             <!--f-email-->
             <div class="col-md-12 g-4">
@@ -156,9 +156,9 @@
                   you)</small></label>
               <input type="email" class="form-control" name="f-email" id="f-email" aria-describedby="f-email-feedback"
                 required />
-            </div>
-            <div id="f-email-feedback" class="invalid-feedback">
-              Please choose a valid email.
+              <div id="f-email-feedback" class="invalid-feedback">
+                Please choose a valid email.
+              </div>
             </div>
             <!--f-email-->
 
@@ -172,9 +172,9 @@
                 <option value="option3">option3</option>
                 <option value="other">other</option>
               </select>
-            </div>
-            <div id="f-topic-feedback" class="invalid-feedback">
-              Please select an option
+              <div id="f-topic-feedback" class="invalid-feedback">
+                Please select an option
+              </div>
             </div>
             <!--f-topic-->
 
@@ -189,9 +189,9 @@
                 <option value="option3">option3</option>
                 <option value="other">other</option>
               </select>
-            </div>
-            <div id="f-subject-feedback" class="invalid-feedback">
-              Please select an option
+              <div id="f-subject-feedback" class="invalid-feedback">
+                Please select an option
+              </div>
             </div>
             <!--f-subject-->
 
@@ -199,17 +199,16 @@
             <div class="col-md-12 g-4">
               <label for="f-message" class="form-label">Message</label>
               <textarea type="text" class="form-control" name="f-message" id="f-message"
-                aria-describedby="f-message-feedback" rows="4" /></textarea>
-            </div>
-            <div id="f-message-feedback" class="invalid-feedback">
-              f-message
+                aria-describedby="f-message-feedback" rows="4" required /></textarea>
+              <div id="f-message-feedback" class="invalid-feedback">
+                Please describe your problem
+              </div>
             </div>
             <!--f-message-->
 
             <!--f-submit-->
-            <div class="col-md-12 g-3">
-              <input type="submit" class="form-control bg-primary border-0 text-white" name="f-submit" id="f-submit"
-                value="Submit">
+            <div class="col-md-12 g-4">
+              <button class="btn btn-primary w-100" type="submit">Sign up</button>
             </div>
             <!--f-submit-->
 

@@ -56,9 +56,9 @@
         </a>
       </figure>
     </section>
-    <section class="p-4">
-      <form class="row g-3 needs-validation p-3 w-50 m-auto bg-white border border-2 rounded" novalidate>
-        <div class="col-md-6">
+    <section class="container-xxl">
+      <form class="row g-3 needs-validation p-3 register-w-50 m-auto bg-white border border-2 rounded" novalidate>
+        <div class="col-sm-6">
           <label for="fname-i" class="form-label">First name</label>
           <input type="text" class="form-control" id="fname-i" placeholder="first name"
             aria-describedby="fname-i-feedback" required>
@@ -66,7 +66,7 @@
             Please complete your first name
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-sm-6">
           <label for="lname-i" class="form-label">Last name</label>
           <input type="text" class="form-control" id="lname-i" placeholder="last name"
             aria-describedby="lname-i-feedback" required>
@@ -74,7 +74,7 @@
             Please complete your last name
           </div>
         </div>
-        <div class="col-md-12">
+        <div class="col-sm-12">
           <label for="email-i" class="form-label">Email</label>
           <input type="email" class="form-control" id="email-i" placeholder="email@domain.com"
             aria-describedby="email-i-feedback" required>
@@ -82,7 +82,7 @@
             Please choose a valid email.
           </div>
         </div>
-        <div class="col-md-12">
+        <div class="col-sm-12">
           <label for="password-i" class="form-label">Password</label>
           <input type="password" class="form-control" id="password-i" placeholder="password"
             aria-describedby="password-i-feedback" required>
@@ -90,10 +90,10 @@
             Please provide a valid password
           </div>
         </div>
-        <div class="col-md-12">
+        <div class="col-12">
           <div class="row">
             <label for="d-month" class="form-label">Date of birth</label>
-            <div class="col-md-6">
+            <div class="col-12 col-sm-6">
               <select class="form-select" name="d-month" id="d-month" aria-describedby="d-month-feedback" required>
                 <option selected disabled value>month</option>
                 <option value="January">January</option>
@@ -113,16 +113,16 @@
                 Please select a valid month.
               </div>
             </div>
-            <div class="col-md-3">
-              <input type="text" class="form-control" id="d-day" placeholder="day" aria-describedby="d-day-feedback"
+            <div class="col-12 col-sm-3">
+              <input type="number" class="form-control" id="d-day" placeholder="day" aria-describedby="d-day-feedback"
                 required>
               <div id="d-day-feedback" class="invalid-feedback">
                 Please provide a valid day
               </div>
             </div>
-            <div class="col-md-3">
-              <input type="text" class="form-control" id="d-year" placeholder="year" aria-describedby="d-year-feedback"
-                required>
+            <div class="col-12 col-sm-3">
+              <input type="number" class="form-control" id="d-year" placeholder="year"
+                aria-describedby="d-year-feedback" required>
               <div id="d-year-feedback" class="invalid-feedback">
                 Please provide a valid year
               </div>
