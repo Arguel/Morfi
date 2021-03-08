@@ -7770,6 +7770,9 @@ textarea.form-control-lg {
 .h-200px {
   height: 12.5em; }
 
+.h-322px {
+  height: 20.125em; }
+
 .h-350px {
   height: 21.875em; }
 
@@ -7990,8 +7993,7 @@ textarea.form-control-lg {
 .h1-title {
   font-weight: 600;
   font-size: 2rem;
-  color: #757575;
-  margin: 1.5rem; }
+  color: #757575; }
 
 .ff-lato-4 {
   font-family: 'Lato', sans-serif !important;

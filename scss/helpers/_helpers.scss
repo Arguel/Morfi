@@ -43,6 +43,9 @@
 .h-200px {
   height: 12.5em;
 }
+.h-322px {
+  height: 20.125em;
+}
 .h-350px {
   height: 21.875em;
 }
@@ -308,7 +311,6 @@
   font-weight: 600;
   font-size: 2rem;
   color: $color-darker-4;
-  margin: 1.5rem;
 }
 @each $i in 400, 700, 900 { //Lato
   .ff-lato-#{$i * 0.01} { // 100*0.01 = 1, 400*0.01 = 4, etc
