@@ -1,4 +1,20 @@
 /*===============$Home=============================================*/
+//pop-up
+.home-h-100px {
+
+    @include bp-xs {
+        width: 4.25em;
+    }
+    @include bp-sm {
+        width: 4.25em;
+    }
+    @include bp-md {
+        width: 5.25em;
+    }
+    @include bp-lg {
+        width: 6.25em;
+    }
+}
 /*=.=.=.=.=.=.=.=.=.=OFFERS=.=.=.=.=.=.=.=.=.=*/
 /*flex wood background*/
 .toffer-data-container {

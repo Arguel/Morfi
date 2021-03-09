@@ -7427,10 +7427,6 @@ textarea.form-control-lg {
   background-color: #212121 !important; }
 
 /*===============HEADER/NAV=============================================*/
-.nav-logo {
-  height: 2.5em;
-  text-align: center; }
-
 .nav-searchbar {
   height: 2em;
   background-color: unset; }
@@ -7498,6 +7494,22 @@ textarea.form-control-lg {
     padding-left: 0; } }
 
 /*===============$Home=============================================*/
+@media only screen and (max-width: 576px) {
+  .home-h-100px {
+    width: 4.25em; } }
+
+@media only screen and (min-width: 577px) {
+  .home-h-100px {
+    width: 4.25em; } }
+
+@media only screen and (min-width: 768px) {
+  .home-h-100px {
+    width: 5.25em; } }
+
+@media only screen and (min-width: 992px) {
+  .home-h-100px {
+    width: 6.25em; } }
+
 /*=.=.=.=.=.=.=.=.=.=OFFERS=.=.=.=.=.=.=.=.=.=*/
 /*flex wood background*/
 .toffer-data-container {
@@ -7754,6 +7766,9 @@ textarea.form-control-lg {
 
 .h-2px {
   height: 2px; }
+
+.h-40px {
+  height: 2.5em; }
 
 .h-100px {
   height: 6.25em; }
