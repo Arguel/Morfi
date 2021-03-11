@@ -48,14 +48,15 @@
 </head>
 
 <body>
+
   <header>
 
     <!--Start of nav-menu-container-->
     <div class="container-xxl">
       <nav class="navbar navbar-expand-lg navbar-light m-2">
-        <div class="nav-logo">
-          <a class="navbar-brand" href="../../../index.html">
-            <img class="h-100 w-auto" src="../../../img/logo/white_background/medium_logo_side/svg/medium_logo_side.svg"
+        <div class="h-40px text-center">
+          <a class="navbar-brand" href="/">
+            <img class="h-100 w-auto" src="img/logo/white_background/medium_logo_side/svg/medium_logo_side.svg"
               alt="side-logo">
           </a>
         </div>
@@ -82,8 +83,14 @@
               </ul>
             </li>
             <!--Shop-->
-            <li class="nav-item">
-              <a class="nav-link fs-5" href="views/shop/shop.html">Shop</a>
+            <li class="nav-item dropdown text-center">
+              <a class="nav-link fs-5" href="#" id="navbarDropdownMenuLinkShop" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">Shop</a>
+              <ul class="nav-color-list dropdown-menu text-center text-lg-start"
+                aria-labelledby="navbarDropdownMenuLinkDrop">
+                <li><a class="dropdown-item" href="views/shop/shop.html">Catalogue</a></li>
+                <li><a class="dropdown-item" href="views/shop/top-offers.html">Top offers</a></li>
+              </ul>
             </li>
             <!--Recipes-->
             <li class="nav-item dropdown text-center">
@@ -91,7 +98,7 @@
                 data-bs-toggle="dropdown" aria-expanded="false">Recipes</a>
               <ul class="nav-color-list dropdown-menu text-center text-lg-start"
                 aria-labelledby="navbarDropdownMenuLinkRecipes">
-                <li><a class="dropdown-item" href="views/recipes/recipes.html">Classics</a></li>
+                <li><a class="dropdown-item" href="views/recipes/classics.html">Classics</a></li>
                 <li><a class="dropdown-item" href="views/recipes/healthy-recipes.html">Healthy</a></li>
                 <li><a class="dropdown-item" href="views/recipes/wholemeal-recipes.html">Wholemeal</a></li>
                 <li><a class="dropdown-item" href="views/recipes/easy-recipes.html">Easy</a></li>
@@ -104,7 +111,7 @@
               <ul class="nav-color-list dropdown-menu text-center text-lg-start"
                 aria-labelledby="navbarDropdownMenuLinkHelp">
                 <li><a class="dropdown-item" href="views/help/contact.html">Contact</a></li>
-                <li><a class="dropdown-item" href="views/help/faq.html">FAQ</a></li>
+                <li><a class="dropdown-item" href="views/help/faq/faq.html">FAQ</a></li>
               </ul>
             </li>
             <!--Searchbar-->
@@ -252,13 +259,12 @@
           <div class="row align-items-center justify-content-evenly col-lg-3 p-0">
             <div class="col-8 p-0 text-center d-none d-lg-block">
               <div class="mw-200px h-100px overflow-hidden mb-2 mx-auto">
-                <img class="w-100 h-100px" src="../../../img/logo/white_background/full_logo/svg/full_logo.svg"
-                  alt="logo-image">
+                <img class="w-100 h-100px" src="img/logo/white_background/full_logo/svg/full_logo.svg" alt="logo-image">
               </div>
-              <p class="fs-6 mb-0 text-dark mw-200px mx-auto">Since 1997 making our customers happy</p>
+              <p class="mb-0 text-dark mw-200px mx-auto">Since 1997 making our customers happy</p>
             </div>
             <ul
-              class="col col-sm-7 col-md-2 list-unstyled m-2 m-lg-0 p-0 d-flex flex-row flex-lg-column align-items-center justify-content-evenly">
+              class="col col-sm-7 col-md-5 col-lg-4 list-unstyled m-2 m-lg-0 p-0 d-flex flex-row flex-lg-column align-items-center justify-content-evenly">
               <li class="my-2 my-lg-3 mx-2 mx-lg-0">
                 <a class="p-2 bg-dark text-white rounded-circle" href="#" aria-label="facebook icon">
                   <i class="fab fa-facebook-f fa-fw fs-6"></i>
@@ -280,7 +286,8 @@
                 </a>
               </li>
             </ul>
-            <select class="col-4 d-block d-lg-none p-2 rounded" name="change-language" id="change-language">
+            <select class="col-7 col-sm-4 col-md-4 d-block d-lg-none p-2 rounded" name="change-language"
+              id="change-language">
               <option selected value="English">English</option>
               <option value="Spanish">Spanish</option>
             </select>
