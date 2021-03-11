@@ -18,3 +18,4 @@ A simple food website
 * Most of the images do not have a defined width and height
 * When the classes were assigned to the elements, a general order was not respected either, that is why the classes are all mixed
 * Most files don't have comments that can help
+* Many accessibility standards are missing

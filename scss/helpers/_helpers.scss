@@ -275,7 +275,7 @@
   cursor: pointer !important;
 }
 .h-underline:hover {
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 .child-underline:hover .c-under { //class '.child-underline' applies to parent and class '.c-under' to child
   text-decoration: underline !important;
@@ -402,4 +402,11 @@
 }
 .sel-primary:hover {
   cursor: pointer;
+}
+.sel-green-3 {
+  @extend .bg-green-3;
+  @extend .px-2;
+  @extend .py-1;
+  @extend .rounded;
+  @extend .mx-1;
 }

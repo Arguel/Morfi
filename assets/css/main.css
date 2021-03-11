@@ -5186,7 +5186,7 @@ textarea.form-control-lg {
   margin-right: 0 !important;
   margin-left: 0 !important; }
 
-.mx-1, .sel-primary {
+.mx-1, .sel-primary, .sel-green-3 {
   margin-right: 0.25rem !important;
   margin-left: 0.25rem !important; }
 
@@ -5348,7 +5348,7 @@ textarea.form-control-lg {
   padding-right: 0.25rem !important;
   padding-left: 0.25rem !important; }
 
-.px-2, .sel-primary {
+.px-2, .sel-primary, .sel-green-3 {
   padding-right: 0.5rem !important;
   padding-left: 0.5rem !important; }
 
@@ -5368,7 +5368,7 @@ textarea.form-control-lg {
   padding-top: 0 !important;
   padding-bottom: 0 !important; }
 
-.py-1, .sel-primary {
+.py-1, .sel-primary, .sel-green-3 {
   padding-top: 0.25rem !important;
   padding-bottom: 0.25rem !important; }
 
@@ -5646,7 +5646,7 @@ textarea.form-control-lg {
 .pe-auto {
   pointer-events: auto !important; }
 
-.rounded, .sel-primary {
+.rounded, .sel-primary, .sel-green-3 {
   border-radius: 0.4rem !important; }
 
 .rounded-0 {
@@ -7854,7 +7854,7 @@ textarea.form-control-lg {
 .bg-green-4 {
   background-color: #00C600 !important; }
 
-.bg-green-3 {
+.bg-green-3, .sel-green-3 {
   background-color: #689F38 !important; }
 
 .bg-green-2 {
@@ -7986,7 +7986,7 @@ textarea.form-control-lg {
   cursor: pointer !important; }
 
 .h-underline:hover {
-  text-decoration: underline; }
+  text-decoration: underline !important; }
 
 .child-underline:hover .c-under {
   text-decoration: underline !important; }
