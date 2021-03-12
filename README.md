@@ -21,3 +21,4 @@ A simple food website
 * Many accessibility standards are missing
 * The css is not minified
 * Several bootstrap classes are not used, it could be fixed by selecting only what will be used in the main.scss
+* The metatags are all the same
