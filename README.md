@@ -22,3 +22,6 @@ A simple food website
 * The css is not minified
 * Several bootstrap classes are not used, it could be fixed by selecting only what will be used in the main.scss
 * The metatags are all the same
+* Several pages and several buttons do not work or do not exist (for now)
+* The location map does not work because billing needs to be enabled, you could also put a map with an iframe but it seems to me that the most professional option is doing it like this
+* Most individual items do not have their own page, for example shop items

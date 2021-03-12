@@ -148,14 +148,21 @@
 
   <main>
     <section class="container-xxl">
-      <form class="row justify-content-around">
+      <div class="row justify-content-around">
         <div class="col-md-7 col-lg-6 col-xl-7 my-5 order-1 order-md-0">
           <div class="row flex-column">
 
             <div class="col text-center">
               <label class="form-label fs-3 mb-3" for="locations-i">¿How can we help you?</label>
-              <input class="form-control mx-auto w-75" type="text" name="locations-i" id="locations-i"
-                placeholder="e.g how to add a new payment method">
+              <form>
+                <div class="input-group mx-auto w-75">
+                  <input class="form-control" type="text" name="faq-i" id="faq-i"
+                    placeholder="e.g how to add a new payment method">
+                  <button class="input-group-text" id="si-faq" aria-label="search">
+                    <i class="fas fa-search text-darker-4"></i>
+                  </button>
+                </div>
+              </form>
             </div>
 
             <div class="col mt-6">
@@ -359,7 +366,7 @@
           </div>
 
         </div>
-      </form>
+      </div>
     </section>
   </main>
 
@@ -512,7 +519,9 @@
   </footer>
 
   <!--bootstrap js-->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

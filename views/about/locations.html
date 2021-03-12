@@ -166,8 +166,14 @@
       <form class="row mb-5">
         <div class="col text-center">
           <label class="form-label fs-4 mb-2" for="locations-i">Find a store near you</label>
-          <input class="form-control mx-auto locations-w-50-searchbar" type="text" name="locations-i" id="locations-i"
-            placeholder="e.g miami">
+          <form>
+            <div class="input-group locations-w-50-searchbar mx-auto">
+              <input class="form-control" type="text" name="locations-i" id="locations-i" placeholder="e.g miami">
+              <button class="input-group-text" id="si-locations" aria-label="search">
+                <i class="fas fa-search text-darker-4"></i>
+              </button>
+            </div>
+          </form>
         </div>
       </form>
 
@@ -186,9 +192,9 @@
             <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1"
               data-bs-parent="#Location1">
               <ul class="accordion-body list-unstyled m-0">
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
-                <li class="p-3"><a class="text-dark text-center" href="#">item1</a></li>
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Little Rock</a></li>
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Fayetteville</a></li>
+                <li class="p-3"><a class="text-dark text-center" href="#">Bentonville</a></li>
               </ul>
             </div>
           </div>
@@ -207,9 +213,9 @@
             <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2"
               data-bs-parent="#Location2">
               <ul class="accordion-body list-unstyled m-0">
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
-                <li class="p-3"><a class="text-dark text-center" href="#">item1</a></li>
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Jackson</a></li>
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Laurel</a></li>
+                <li class="p-3"><a class="text-dark text-center" href="#">Biloxi</a></li>
               </ul>
             </div>
           </div>
@@ -228,9 +234,9 @@
             <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3"
               data-bs-parent="#Location3">
               <ul class="accordion-body list-unstyled m-0">
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
-                <li class="p-3"><a class="text-dark text-center" href="#">item1</a></li>
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Montgomery</a></li>
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Birmingham</a></li>
+                <li class="p-3"><a class="text-dark text-center" href="#">Auburn</a></li>
               </ul>
             </div>
           </div>
@@ -249,9 +255,9 @@
             <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4"
               data-bs-parent="#Location4">
               <ul class="accordion-body list-unstyled m-0">
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
-                <li class="p-3"><a class="text-dark text-center" href="#">item1</a></li>
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Atlanta</a></li>
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Savannah</a></li>
+                <li class="p-3"><a class="text-dark text-center" href="#">Augusta</a></li>
               </ul>
             </div>
           </div>
@@ -270,9 +276,9 @@
             <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5"
               data-bs-parent="#Location5">
               <ul class="accordion-body list-unstyled m-0">
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
-                <li class="p-3"><a class="text-dark text-center" href="#">item1</a></li>
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Charleston</a></li>
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Columbia</a></li>
+                <li class="p-3"><a class="text-dark text-center" href="#">Myrtle Beach</a></li>
               </ul>
             </div>
           </div>
@@ -291,9 +297,9 @@
             <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6"
               data-bs-parent="#Location6">
               <ul class="accordion-body list-unstyled m-0">
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
-                <li class="p-3"><a class="text-dark text-center" href="#">item1</a></li>
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Nashville</a></li>
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Memphis</a></li>
+                <li class="p-3"><a class="text-dark text-center" href="#">Gatlinburg</a></li>
               </ul>
             </div>
           </div>
@@ -312,9 +318,9 @@
             <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7"
               data-bs-parent="#Location7">
               <ul class="accordion-body list-unstyled m-0">
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
-                <li class="p-3"><a class="text-dark text-center" href="#">item1</a></li>
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Orlando</a></li>
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Tampa</a></li>
+                <li class="p-3"><a class="text-dark text-center" href="#">San Petersburgo</a></li>
               </ul>
             </div>
           </div>
@@ -333,9 +339,9 @@
             <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="heading8"
               data-bs-parent="#Location8">
               <ul class="accordion-body list-unstyled m-0">
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
-                <li class="p-3"><a class="text-dark text-center" href="#">item1</a></li>
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Charleston</a></li>
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Morgantown</a></li>
+                <li class="p-3"><a class="text-dark text-center" href="#">Huntington</a></li>
               </ul>
             </div>
           </div>
@@ -354,9 +360,9 @@
             <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="heading9"
               data-bs-parent="#Location9">
               <ul class="accordion-body list-unstyled m-0">
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">item1</a></li>
-                <li class="p-3"><a class="text-dark text-center" href="#">item1</a></li>
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Evansville </a></li>
+                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Fort Wayne</a></li>
+                <li class="p-3"><a class="text-dark text-center" href="#">Bloomington</a></li>
               </ul>
             </div>
           </div>
@@ -374,7 +380,7 @@
         </div>
         <div class="col-md-4 bg-light border rounded-3">
 
-          <h1 class="text-center mt-3 ff-lato-4">Miami</h1>
+          <h1 class="text-center mt-3 ff-lato-4">Orlando</h1>
           <div class="bg-white p-4 m-2 border border-3 rounded">
             <h4 class="mb-4 border-bottom border-darker-3">Direction</h4>
             <p>1700 Convention Center Dr
@@ -560,10 +566,14 @@
     </div>
     <!--footer-container-fluid-end-->
   </footer>
-<!--google maps-->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBU4-t6ZoyKBcYEhv_7-xLvkmHzZuNWqd0&callback=initMap&libraries=&v=weekly" async></script>
+  <!--google maps-->
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBU4-t6ZoyKBcYEhv_7-xLvkmHzZuNWqd0&callback=initMap&libraries=&v=weekly"
+    async></script>
   <!--bootstrap js-->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
