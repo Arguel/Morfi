@@ -25,3 +25,9 @@ A simple food website
 * Several pages and several buttons do not work or do not exist (for now)
 * The location map does not work because billing needs to be enabled, you could also put a map with an iframe but it seems to me that the most professional option is doing it like this
 * Most individual items do not have their own page, for example shop items
+* Maybe there are functions implemented in some pages that do not work in others, for example links in the footer that work well in about us, but that in faq do not work directly <strong>(I am not saying that this happens, but yes, this can happen)</strong>, this occurs because I reuse the same code and sometimes I don't remember updating the rest of the pages
+* The offers that are in home/top-offers do not exist on the page where they should be (shop/top-offers)
+
+### Unknown bugs?
+
+I could not test that 100% of the page works well, although I did some tests, I cannot assure anything. If you find a bug and want to help me you can upload a pull request or you can open a new issue
