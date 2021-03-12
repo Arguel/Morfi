@@ -211,7 +211,7 @@
                   <p>We use Stripe, a well-established, secure, credit card payment gateway service to process your
                     credit card payment.</p>
                   <h5 class="mb-3 fw-bold ff-lato-4">Q. What payment methods are not accepted?</h5>
-                  <p>A. </p>
+                  <p>A. We <strong>do not accept</strong> any of the following payment methods</p>
                   <ul>
                     <li>PayPal</li>
                     <li>Bank transfer</li>
@@ -270,23 +270,43 @@
               <div class="my-5">
                 <h4 id="s-troubleshooting" class="border-bottom pb-2 ff-lato-4">Troubleshooting</h4>
                 <div class="my-4">
-                  <h5 class="mb-3 fw-bold ff-lato-4">Q. </h5>
-                  <p>A. </p>
-                  <h5 class="mb-3 fw-bold ff-lato-4">Q. </h5>
-                  <p>A. </p>
-                  <h5 class="mb-3 fw-bold ff-lato-4">Q. </h5>
-                  <p>A. </p>
+                  <h5 class="mb-3 fw-bold ff-lato-4">Q. The page does not work on my mobile device</h5>
+                  <p>A. Try the following:</p>
+                  <ul>
+                    <li>Log out and log in again</li>
+                    <li>Update the application to the latest version</li>
+                    <li>Uninstall and reinstall the app</li>
+                    <li>Try another mobile browser</li>
+                  </ul>
+                  <h5 class="mb-3 fw-bold ff-lato-4">Q. Purchase could not be made</h5>
+                  <p>A. This error can be due to several reasons:</p>
+                  <ul>
+                    <li>There is no more stock of the product</li>
+                    <li>The product is being updated (retry in a few hours)</li>
+                    <li>The product was temporarily removed</li>
+                  </ul>
                 </div>
               </div>
               <div class="my-5">
                 <h4 id="s-products" class="border-bottom pb-2 ff-lato-4">Products</h4>
                 <div class="my-4">
-                  <h5 class="mb-3 fw-bold ff-lato-4">Q. </h5>
-                  <p>A. </p>
-                  <h5 class="mb-3 fw-bold ff-lato-4">Q. </h5>
-                  <p>A. </p>
-                  <h5 class="mb-3 fw-bold ff-lato-4">Q. </h5>
-                  <p>A. </p>
+                  <h5 class="mb-3 fw-bold ff-lato-4">Q. How do I know that your products are of good quality?</h5>
+                  <p>A. All the products that we bring are of the best quality and are treated under various procedures
+                    to comply with all the certifications, if you are interested in knowing more about how we make our
+                    products you can go to the section of <a href="../../about/our-products.html">our products</a>.</p>
+                  <p>We are also affiliated with several of the largest distributors, who follow the same regulations
+                    and standards as us.</p>
+                  <h5 class="mb-3 fw-bold ff-lato-4">Q. Does The Morfi recycle? </h5>
+                  <p>A. All our restaurants recycle, from cardboard to used cooking oil. As cardboard contributes to
+                    around 50% to total kitchen refuse by volume, this is a big reduction of waste.</p>
+                  <h5 class="mb-3 fw-bold ff-lato-4">Q. Why do your prices vary between restaurants? </h5>
+                  <p>A. Each restaurant has a unique set of characteristics that can impact on pricing. For example,
+                    trading hours, customer traffic patterns and product demand differ. Many restaurants also offer a
+                    range of different service options such as drive-thru or delivery.</p>
+                  <h5 class="mb-3 fw-bold ff-lato-4">Q. I’ve got a suggestion for a new product. </h5>
+                  <p>A. Every year, we get plenty of new product suggestions. To prevent any possible misunderstandings
+                    or infringements, we’ve had to adopt a strict policy of not accepting ideas from outside our system.
+                    While we may be missing out on some great ideas, we’ve had to take this position.</p>
                 </div>
               </div>
 
@@ -310,15 +330,18 @@
                   <span class="c-under">Payments</span>
                   <i class="fas fa-money-check-alt fa-fw ms-auto text-primary"></i>
                 </a>
-                <a class="list-group-item list-group-item-action d-flex align-items-center child-underline" href="#">
+                <a class="list-group-item list-group-item-action d-flex align-items-center child-underline"
+                  href="#s-shipping">
                   <span class="c-under">Shipping</span>
                   <i class="fas fa-funnel-dollar fa-fw ms-auto text-primary"></i>
                 </a>
-                <a class="list-group-item list-group-item-action d-flex align-items-center child-underline" href="#">
+                <a class="list-group-item list-group-item-action d-flex align-items-center child-underline"
+                  href="#s-troubleshooting">
                   <span class="c-under">Troubleshooting</span>
                   <i class="fas fa-cogs fa-fw ms-auto text-primary"></i>
                 </a>
-                <a class="list-group-item list-group-item-action d-flex align-items-center child-underline" href="#">
+                <a class="list-group-item list-group-item-action d-flex align-items-center child-underline"
+                  href="#s-products">
                   <span class="c-under">Products</span>
                   <i class="fas fa-receipt fa-fw ms-auto text-primary"></i>
                 </a>
@@ -336,6 +359,7 @@
           </div>
 
         </div>
+      </form>
     </section>
   </main>
 
@@ -381,8 +405,9 @@
                 </a>
               </li>
             </ul>
-            <select class="col-7 col-sm-4 col-md-4 d-block d-lg-none p-2 rounded" name="change-language"
-              id="change-language">
+            <label class="visually-hidden" for="change-language-top">Language</label>
+            <select class="col-7 col-sm-4 col-md-4 d-block d-lg-none p-2 rounded" name="change-language-top"
+              id="change-language-top">
               <option selected value="English">English</option>
               <option value="Spanish">Spanish</option>
             </select>
@@ -468,8 +493,9 @@
               </div>
               <div class="col text-center mb-2 mb-lg-0 d-none d-lg-block">
                 <i class="fas fa-globe text-white"></i>
-                <select class="col text-center p-2 rounded bg-dark text-white" name="change-language"
-                  id="change-language">
+                <label class="visually-hidden" for="change-language-bottom">Language</label>
+                <select class="col text-center p-2 rounded bg-dark text-white" name="change-language-bottom"
+                  id="change-language-bottom">
                   <option selected value="English">English</option>
                   <option value="Spanish">Spanish</option>
                 </select>
@@ -485,11 +511,8 @@
     <!--footer-container-fluid-end-->
   </footer>
 
-  <!--<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>-->
   <!--bootstrap js-->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>
 
 </html>

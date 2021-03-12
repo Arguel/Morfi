@@ -206,7 +206,7 @@
             <div class="col-md-12 g-4">
               <label for="f-message" class="form-label">Message</label>
               <textarea type="text" class="form-control" name="f-message" id="f-message"
-                aria-describedby="f-message-feedback" rows="4" required /></textarea>
+                aria-describedby="f-message-feedback" rows="4" required></textarea>
               <div id="f-message-feedback" class="invalid-feedback">
                 Please write a description
               </div>
@@ -316,8 +316,9 @@
                 </a>
               </li>
             </ul>
-            <select class="col-7 col-sm-4 col-md-4 d-block d-lg-none p-2 rounded" name="change-language"
-              id="change-language">
+            <label class="visually-hidden" for="change-language-top">Language</label>
+            <select class="col-7 col-sm-4 col-md-4 d-block d-lg-none p-2 rounded" name="change-language-top"
+              id="change-language-top">
               <option selected value="English">English</option>
               <option value="Spanish">Spanish</option>
             </select>
@@ -399,8 +400,9 @@
               </div>
               <div class="col text-center mb-2 mb-lg-0 d-none d-lg-block">
                 <i class="fas fa-globe text-white"></i>
-                <select class="col text-center p-2 rounded bg-dark text-white" name="change-language"
-                  id="change-language">
+                <label class="visually-hidden" for="change-language-bottom">Language</label>
+                <select class="col text-center p-2 rounded bg-dark text-white" name="change-language-bottom"
+                  id="change-language-bottom">
                   <option selected value="English">English</option>
                   <option value="Spanish">Spanish</option>
                 </select>
@@ -432,11 +434,8 @@
         })
     })()
   </script>
-  <!--<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>-->
   <!--bootstrap js-->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>
 
 </html>
