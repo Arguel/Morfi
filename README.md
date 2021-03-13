@@ -28,6 +28,7 @@ A simple food website
 * Maybe there are functions implemented in some pages that do not work in others, for example links in the footer that work well in about us, but that in faq do not work directly <strong>(I am not saying that this happens, but yes, this can happen)</strong>, this occurs because I reuse the same code and sometimes I don't remember updating the rest of the pages
 * The offers that are in home/top-offers do not exist on the page where they should be (shop/top-offers)
 * Home/top-offers items are resized according to the size of the image (on mobile), causing small resizing
+* The BEM methodology was used at the beginning but now it is discontinued and the classes do not usually follow a pattern
 
 ### Unknown bugs?
 

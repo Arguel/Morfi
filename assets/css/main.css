@@ -7554,6 +7554,50 @@ textarea.form-control-lg {
 .cb-custom-home {
   transition: 0.8s cubic-bezier(0.17, 0.67, 0.35, 0.9) !important; }
 
+@media only screen and (max-width: 576px) {
+  .about-h-394px-rant {
+    min-height: 10.75em; } }
+
+@media only screen and (min-width: 577px) {
+  .about-h-394px-rant {
+    min-height: 25.875em; } }
+
+@media only screen and (min-width: 768px) {
+  .about-h-394px-rant {
+    min-height: 28.125em; } }
+
+@media only screen and (min-width: 992px) {
+  .about-h-394px-rant {
+    min-height: 18.1875em; } }
+
+@media only screen and (min-width: 1400px) {
+  .about-h-394px-rant {
+    min-height: 24.625em; } }
+
+@media only screen and (max-width: 576px) {
+  .about-h-196px-foun {
+    min-height: 3.75em; } }
+
+@media only screen and (min-width: 577px) {
+  .about-h-196px-foun {
+    min-height: 10.5em; } }
+
+@media only screen and (min-width: 768px) {
+  .about-h-196px-foun {
+    min-height: 14.4375em; } }
+
+@media only screen and (min-width: 992px) {
+  .about-h-196px-foun {
+    min-height: 8.8125em; } }
+
+@media only screen and (min-width: 1200px) {
+  .about-h-196px-foun {
+    min-height: 10.375em; } }
+
+@media only screen and (min-width: 1400px) {
+  .about-h-196px-foun {
+    min-height: 12.25em; } }
+
 #map {
   height: 500px; }
 
@@ -7791,8 +7835,14 @@ textarea.form-control-lg {
 .min-h-100 {
   min-height: 100%; }
 
+.min-h-208px {
+  min-height: 13em; }
+
 .min-h-282px {
   min-height: 17.625em; }
+
+.min-h-312px {
+  min-height: 19.5em; }
 
 .min-h-540px {
   min-height: 33.75em; }
