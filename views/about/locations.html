@@ -161,11 +161,14 @@
 
   <main>
 
+    <!--top section start-->
     <section class="container-xxl my-5">
-      <form class="row mb-5">
+
+      <!--main search container start-->
+      <div class="row mb-5">
         <div class="col text-center">
-          <label class="form-label fs-4 mb-2" for="locations-i">Find a store near you</label>
           <form>
+            <label class="form-label fs-4 mb-2" for="locations-i">Find a store near you</label>
             <div class="input-group locations-w-50-searchbar mx-auto">
               <input class="form-control" type="text" name="locations-i" id="locations-i" placeholder="e.g miami">
               <button class="input-group-text" id="si-locations" aria-label="search">
@@ -174,8 +177,10 @@
             </div>
           </form>
         </div>
-      </form>
+      </div>
+      <!--main search container end-->
 
+      <!--available locations start-->
       <h5 class="ff-lato-4 text-center">We currently have restaurants in the following locations: </h5>
       <div
         class="row locations-w-75-locations mx-auto align-items-center justify-content-evenly bg-light border rounded-3">
@@ -369,17 +374,27 @@
         <!--Location9-->
 
       </div>
+      <!--available locations end-->
     </section>
+    <!--top section end-->
 
+    <!--mid section start-->
     <section class="container-xl my-5">
       <div class="row">
+        <!--left map part start-->
         <div class="col-md-8 d-none d-md-block">
           <div id="map" class="w-100 rounded-3"></div>
           <p class="ms-2 mt-4">Needs billing enabled ↑</p>
         </div>
+        <!--left map part end-->
+
+        <!--right info part start-->
         <div class="col-md-4 bg-light border rounded-3">
 
+          <!--current location-->
           <h1 class="text-center mt-3 ff-lato-4">Orlando</h1>
+
+          <!--Direction-->
           <div class="bg-white p-4 m-2 border border-3 rounded">
             <h4 class="mb-4 border-bottom border-darker-3">Direction</h4>
             <p>1700 Convention Center Dr
@@ -387,7 +402,9 @@
               <br>United States
             </p>
           </div>
+          <!--Direction-->
 
+          <!--Schedule-->
           <div class="bg-white p-4 m-2 border border-3 rounded">
             <h4 class="mb-4 border-bottom border-darker-3">Schedule</h4>
             <ul>
@@ -395,7 +412,9 @@
               <li>Saturdays, from 9 am to 5 pm</li>
             </ul>
           </div>
+          <!--Schedule-->
 
+          <!--Reservations-->
           <div class="bg-white p-4 m-2 border border-3 rounded">
             <h4 class="mb-4 border-bottom border-darker-3">Contact / Reservations</h4>
             <h5 class="ff-lato-4 border rounded text-center p-2">Attention from 9:00 am to 11 pm
@@ -415,10 +434,13 @@
               <button type="button" class="btn btn-success">Make a reservation online</button>
             </div>
           </div>
+          <!--Reservations-->
 
         </div>
+        <!--right info part end-->
       </div>
     </section>
+    <!--mid section end-->
 
   </main>
 

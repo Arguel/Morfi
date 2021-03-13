@@ -151,8 +151,10 @@
         <h1 class="text-center">Create a new ticket</h1>
         <h5 class="text-center">If you still have any questions, do not hesitate to <a
             href="../../help/contact.html">contact us</a></h5>
+
         <form class="row g-3 needs-validation mb-5 mt-3 p-3 ticket-w-50 m-auto bg-white border border-2 rounded"
           novalidate>
+          <!--f-email-->
           <div class="col-md-12">
             <label for="email" class="form-label">Email</label>
             <input type="email" class="form-control" id="email" placeholder="email@domain.com"
@@ -161,6 +163,9 @@
               Please choose a valid email.
             </div>
           </div>
+          <!--f-email-->
+
+          <!--f-ticket-type-->
           <div class="col-md-12">
             <label class="form-label" for="ticket-type">Ticket type</label>
             <select class="form-select" name="ticket-type" id="ticket-type" aria-describedby="ticket-type-feedback"
@@ -175,11 +180,17 @@
               Please select a valid option.
             </div>
           </div>
+          <!--f-ticket-type-->
+
+          <!--f-subject-->
           <div class="col-md-12">
             <label class="form-label" for="problem">Subject/Problem</label>
             <input class="form-control" type="text" name="problem" id="problem"
               placeholder="e.g I don't have access to my account" />
           </div>
+          <!--f-subject-->
+
+          <!--f-description-->
           <div class="col-md-12">
             <label class="form-label" for="description">Description</label>
             <textarea class="form-control" type="text" name="description" id="description"
@@ -188,10 +199,16 @@
               Please provide a description of the problem
             </div>
           </div>
+          <!--f-description-->
+
+          <!--f-attachments-->
           <div class="col-md-12">
             <label class="form-label" for="attachments-m">Attachments</label>
             <input class="form-control" type="file" id="attachments-m" multiple>
           </div>
+          <!--f-attachments-->
+
+          <!--f-btns-->
           <div class="col-12">
             <div class="row justify-content-end">
               <div class="col-sm-3 my-2 my-md-0">
@@ -203,7 +220,9 @@
               </div>
             </div>
           </div>
+          <!--f-btns-->
         </form>
+
       </div>
     </section>
   </main>
