@@ -30,6 +30,7 @@ A simple food website
 * Home/top-offers items are resized according to the size of the image (on mobile), causing small resizing
 * The BEM methodology was used at the beginning but now it is discontinued and the classes do not usually follow a pattern
 * The page suffers from content shift, which is easy to fix but takes time
+* The full bootstrap js file is being used
 
 ### Unknown bugs?
 
