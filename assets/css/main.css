@@ -7427,6 +7427,12 @@ textarea.form-control-lg {
   background-color: #212121 !important; }
 
 /*===============HEADER/NAV=============================================*/
+.navbar-min-h {
+  min-height: 3.5em; }
+  @media only screen and (min-width: 992px) {
+    .navbar-min-h {
+      min-height: 4.125em; } }
+
 .nav-searchbar {
   height: 2em;
   background-color: unset; }
@@ -7843,6 +7849,9 @@ textarea.form-control-lg {
 
 .min-h-312px {
   min-height: 19.5em; }
+
+.min-h-362px {
+  min-height: 22.625em; }
 
 .min-h-540px {
   min-height: 33.75em; }

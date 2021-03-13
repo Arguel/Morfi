@@ -1,4 +1,11 @@
 /*===============HEADER/NAV=============================================*/
+.navbar-min-h {
+    min-height: 3.5em; //56px
+
+    @include bp-lg {
+        min-height: 4.125em; //66px
+    }
+}
 .nav-searchbar {
     height: 2em;
     background-color: unset;

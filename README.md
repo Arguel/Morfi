@@ -29,6 +29,7 @@ A simple food website
 * The offers that are in home/top-offers do not exist on the page where they should be (shop/top-offers)
 * Home/top-offers items are resized according to the size of the image (on mobile), causing small resizing
 * The BEM methodology was used at the beginning but now it is discontinued and the classes do not usually follow a pattern
+* The page suffers from content shift, which is easy to fix but takes time
 
 ### Unknown bugs?
 
