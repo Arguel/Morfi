@@ -1,7 +1,42 @@
-# Morfi
-A simple food website
 
----
+<p align="center">
+  <a href="https://morfi.vercel.app/">
+    <img src="https://i.imgur.com/cDNjn1M.png" alt="The Morfi logo" height="100">
+  </a>
+</p>
+
+# The Morfi
+A simple website that tries to imitate the behavior of a food franchise with restaurants all over the United States
+
+It is a project only with the intention of learning and improving skills, the entire page is pure fiction and most of the resources used in it are taken from other pages (in the credits section I try to mention all the ones I remember)
+
+<strong>Active deployments</strong>
+* [Vercel](https://morfi.vercel.app/) (full)
+* [000webhost](#) (coming soon) (only what is necessary to run)
+* [Github](https://arguel.github.io/morfi/) (full)
+
+## Table of contents
+
+- [Tests](#tests)
+- [Known issues](#known-issues)
+- [Images](#images)
+- [Credits](#credits)
+
+### Tests
+Several tests were done during development and most of them got positive ratings, except for the top-offers page which has a lot of content and a problem with js
+
+#### Results in the different browsers:
+(In the desktop version)
+* <b>Google Chrome v89.0.4389.90<br></b>
+(The page was developed in this browser, so everything works as it should)
+* <b>Firefox v86.0<br></b>
+(Seems to work fine, more tests are needed)
+* <b>Opera v74.0.3911.218<br></b>
+(Seems to work fine, more tests are needed)
+* <b>Internet Explorer v20H2<br></b>
+(Several css classes are broken, but the page can still be used)
+* <b>Microsoft Edge v89.0.774.54<br></b>
+(Seems to work fine, more tests are needed)
 
 ### Known issues
 
@@ -17,10 +52,10 @@ A simple food website
 * The original color palette was no longer respected once bootstrap was implemented
 * Most of the images do not have a defined width and height
 * When the classes were assigned to the elements, a general order was not respected either, that is why the classes are all mixed
-* Most files don't have comments that can help
+* ~~Most files don't have comments that can help~~
 * Many accessibility standards are missing
-* The css is not minified
-* Several bootstrap classes are not used, it could be fixed by selecting only what will be used in the main.scss
+* ~~The css is not minified~~
+* ~~Several bootstrap classes are not used, it could be fixed by selecting only what will be used in the main.scss~~
 * The metatags are all the same
 * Several pages and several buttons do not work or do not exist (for now)
 * The location map does not work because billing needs to be enabled, you could also put a map with an iframe but it seems to me that the most professional option is doing it like this
@@ -31,7 +66,20 @@ A simple food website
 * The BEM methodology was used at the beginning but now it is discontinued and the classes do not usually follow a pattern
 * The page suffers from content shift, which is easy to fix but takes time
 * The full bootstrap js file is being used
+* The fontawesome libraries are very heavy and are not used in their entirety (at least in its free version)
+* The page looks bad in large fonts
 
-### Unknown bugs?
+#### Unknown bugs?
 
-I could not test that 100% of the page works well, although I did some tests, I cannot assure anything. If you find a bug and want to help me you can upload a pull request or you can open a new issue
+I could not test that 100% of the page works well, although I did some tests, I cannot assure anything. If you find a bug and want to help me you can upload a pull request (in the rework branch) or you can open a [new issue](https://github.com/Arguel/morfi/issues/new)
+
+### Images
+Digital version
+<p align="center"><img src="https://i.imgur.com/ntUXogN.png" alt="The Morfi logo"></p>
+Website preview
+<p><img src="https://i.imgur.com/8HtUPWY.png" alt="The Morfi logo" height="200"></p>
+Color palette (they are not all used)
+<p align="center"><img src="https://i.imgur.com/hTmoHQk.png" alt="The Morfi logo"></p>
+
+### Credits
+(coming soon)
