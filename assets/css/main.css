@@ -6993,6 +6993,53 @@ textarea.form-control-lg {
   .top-offers-h-500px {
     height: 31.25em; } }
 
+.min-h-350px-os-si {
+  min-height: 21.875em; }
+
+@media only screen and (min-width: 577px) {
+  .min-h-708px-os-si {
+    min-height: 30.5em; } }
+
+@media only screen and (min-width: 768px) {
+  .min-h-708px-os-si {
+    min-height: 28.25em; } }
+
+@media only screen and (min-width: 992px) {
+  .min-h-708px-os-si {
+    min-height: 29.5em; } }
+
+@media only screen and (min-width: 1200px) {
+  .min-h-708px-os-si {
+    min-height: 33.25em; } }
+
+@media only screen and (min-width: 1400px) {
+  .min-h-708px-os-si {
+    min-height: 44.25em; } }
+
+@media only screen and (max-width: 576px) {
+  .min-h-725px-os-si {
+    min-height: 14.375em; } }
+
+@media only screen and (min-width: 577px) {
+  .min-h-725px-os-si {
+    min-height: 25.8125em; } }
+
+@media only screen and (min-width: 768px) {
+  .min-h-725px-os-si {
+    min-height: 28.625em; } }
+
+@media only screen and (min-width: 992px) {
+  .min-h-725px-os-si {
+    min-height: 35.4375em; } }
+
+@media only screen and (min-width: 1200px) {
+  .min-h-725px-os-si {
+    min-height: 41.75em; } }
+
+@media only screen and (min-width: 1400px) {
+  .min-h-725px-os-si {
+    min-height: 45.3125em; } }
+
 @media only screen and (max-width: 576px) {
   .rb-custom:after {
     display: none; } }

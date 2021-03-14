@@ -11,7 +11,7 @@
     width: calc(25% - 20px);
   }
 }
-//------------------------------------------------------------------
+//---------------------------top-offers---------------------------------------
 .rb-custom-1:before {
   content: '';
   display: block;
@@ -48,5 +48,47 @@
   }
   @include bp-sm {
     height: 31.25em;
+  }
+}
+.min-h-350px-os-si {
+  min-height: 21.875em; //350px
+}
+.min-h-708px-os-si {
+
+  @include bp-sm {
+    min-height: 30.5em; //488px
+  }
+  @include bp-md {
+    min-height: 28.25em; //452px
+  }
+  @include bp-lg {
+    min-height: 29.5em; //472px
+  }
+  @include bp-xl {
+    min-height: 33.25em; //532px
+  }
+  @include bp-xxl {
+    min-height: 44.25em; //708px
+  }
+}
+.min-h-725px-os-si {
+
+  @include bp-xs {
+    min-height: 14.375em; //230px
+  }
+  @include bp-sm {
+    min-height: 25.8125em; //413px
+  }
+  @include bp-md {
+    min-height: 28.625em; //458px
+  }
+  @include bp-lg {
+    min-height: 35.4375em; //567px
+  }
+  @include bp-xl {
+    min-height: 41.75em; //668px
+  }
+  @include bp-xxl {
+    min-height: 45.3125em; //725px
   }
 }
