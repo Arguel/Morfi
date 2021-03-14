@@ -68,6 +68,8 @@ Several tests were done during development and most of them got positive ratings
 * The full bootstrap js file is being used
 * The fontawesome libraries are very heavy and are not used in their entirety (at least in its free version)
 * The page looks bad in large fonts
+* The images lack adaptability for the mobile version of the page, a srcset could be used but that would also increase the total weight of the server
+* Libraries are being loaded in some pages that do not use them (for example fontawesome in the login and register pages)
 
 #### Unknown bugs?
 
