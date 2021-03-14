@@ -12,7 +12,7 @@ It is a project only with the intention of learning and improving skills, the en
 
 <strong>Active deployments</strong>
 * [Vercel](https://morfi.vercel.app/) (full)
-* [000webhost](#) (coming soon) (only what is necessary to run)
+* [000webhost](https://the-morfi.000webhostapp.com/) (only what is necessary to run)
 * [Github](https://arguel.github.io/morfi/) (full)
 
 ## Table of contents
@@ -70,6 +70,7 @@ Several tests were done during development and most of them got positive ratings
 * The page looks bad in large fonts
 * The images lack adaptability for the mobile version of the page, a srcset could be used but that would also increase the total weight of the server
 * Libraries are being loaded in some pages that do not use them (for example fontawesome in the login and register pages)
+* The page has problems with the cache
 
 #### Unknown bugs?
 
