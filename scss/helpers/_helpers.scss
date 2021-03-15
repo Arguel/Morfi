@@ -265,6 +265,47 @@
 .text-red-1 {
   color: $colorx-red-1;
 }
+//text colors-display
+.text-white-sm {
+
+  @include bp-sm {
+    color: white !important;
+  }
+}
+.text-darker-5-xs {
+
+  @include bp-xs {
+    color: $color-darker-5 !important;
+  }
+}
+.text-darker-5-xs.sel-green-3 {
+  color: $white !important;
+}
+//text-indent classes
+.t-indent-2 {
+
+  @include bp-xs {
+    text-indent: initial;
+  }
+  @include bp-sm {
+    text-indent: 1.2rem;
+  }
+  @include bp-md {
+    text-indent: 2rem;
+  }
+}
+//text truncation classes
+@each $i in 2, 4, 5, 6 {
+  .text-truncate-#{$i} {
+      -webkit-line-clamp: $i;
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      overflow: hidden;
+      white-space: normal;
+      text-overflow: ellipsis;
+      width: 100%;
+  }
+}
 
 //margins
 .mt-6 {
@@ -295,18 +336,6 @@
 .child-underline:hover .c-under { //class '.child-underline' applies to parent and class '.c-under' to child
   text-decoration: underline !important;
 }
-//.child-color:hover .c-color-w {
-  //color: white !important;
-//}
-
-//NOT USED
-//hover backgrounds
-//.h-bg-darker-2:hover {
-  //background-color: $color-darker-2 !important;
-//}
-//.h-bg-green-2:hover {
-  //background-color: $color-green-2 !important;
-//}
 
 //hover light/opacity
 .h-opacity-1:hover {
@@ -362,32 +391,6 @@
   }
   @include bp-lg {
     font-size: 4rem;
-  }
-}
-
-//text-indent classes
-.t-indent-2 {
-
-  @include bp-xs {
-    text-indent: initial;
-  }
-  @include bp-sm {
-    text-indent: 1.2rem;
-  }
-  @include bp-md {
-    text-indent: 2rem;
-  }
-}
-//text truncation classes
-@each $i in 2, 4, 5, 6 {
-  .text-truncate-#{$i} {
-      -webkit-line-clamp: $i;
-      -webkit-box-orient: vertical;
-      display: -webkit-box;
-      overflow: hidden;
-      white-space: normal;
-      text-overflow: ellipsis;
-      width: 100%;
   }
 }
 

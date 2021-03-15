@@ -19,19 +19,19 @@
     background-color: #f8f9fa !important; //bg-light
   }
 }
-.bg-trans-sm-green-5-active {
+//.bg-trans-sm-green-5-active {
+
+  //@include bp-xs {
+    //background-color: #009736 !important; //bg-green-5
+  //}
+  //@include bp-sm {
+    //background-color: transparent !important; //same as rgba(0,0,0,0)
+  //}
+//}
+.bg-trans-sm-light-2 {
 
   @include bp-xs {
-    background-color: #009736 !important; //bg-green-5
-  }
-  @include bp-sm {
-    background-color: transparent !important; //same as rgba(0,0,0,0)
-  }
-}
-.bg-trans-sm-green-2 {
-
-  @include bp-xs {
-    background-color: #8BC34A !important; //bg-green-2
+    background-color: #f8f9fa !important; //bg-light
   }
   @include bp-sm {
     background-color: transparent !important; //same as rgba(0,0,0,0)
