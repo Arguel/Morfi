@@ -31,6 +31,9 @@
 .h-40px {
   height: 2.5em;
 }
+.h-96px {
+  height: 6em;
+}
 .h-100px {
   height: 6.25em;
 }
@@ -220,7 +223,7 @@
 //border display
 .border-xs-0 {
 
-  @include bp-xs {
+  @include bps($bp-xs) {
     border: none !important;
   }
 }
@@ -268,13 +271,13 @@
 //text colors-display
 .text-white-sm {
 
-  @include bp-sm {
+  @include bps($bp-sm) {
     color: white !important;
   }
 }
 .text-darker-5-xs {
 
-  @include bp-xs {
+  @include bps($bp-xs) {
     color: $color-darker-5 !important;
   }
 }
@@ -284,13 +287,13 @@
 //text-indent classes
 .t-indent-2 {
 
-  @include bp-xs {
+  @include bps($bp-xs) {
     text-indent: initial;
   }
-  @include bp-sm {
+  @include bps($bp-sm) {
     text-indent: 1.2rem;
   }
-  @include bp-md {
+  @include bps($bp-md) {
     text-indent: 2rem;
   }
 }
@@ -372,24 +375,24 @@
   }
 }
 .fs-3x {
-  @include bp-xs {
+  @include bps($bp-xs) {
     font-size: 1.2rem;
   }
-  @include bp-sm {
+  @include bps($bp-sm) {
     font-size: 1.5rem;
   }
-  @include bp-lg {
+  @include bps($bp-lg) {
     font-size: 3rem;
   }
 }
 .fs-4x {
-  @include bp-xs {
+  @include bps($bp-xs) {
     font-size: 2.2rem;
   }
-  @include bp-sm {
+  @include bps($bp-sm) {
     font-size: 2.5rem;
   }
-  @include bp-lg {
+  @include bps($bp-lg) {
     font-size: 4rem;
   }
 }
@@ -402,10 +405,10 @@
 }
 .position-absolute-xs-0 {
 
-  @include bp-xs {
+  @include bps($bp-xs) {
     position: initial !important;
   }
-  @include bp-sm {
+  @include bps($bp-sm) {
     position: absolute !important;
   }
 }

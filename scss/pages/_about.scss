@@ -1,40 +1,40 @@
 //about us
 .about-h-394px-rant {
   
-  @include bp-xs {
+  @include bps($bp-xs) {
     min-height: 10.75em; //172px
   }
-  @include bp-sm {
+  @include bps($bp-sm) {
     min-height: 25.875em; //414px
   }
-  @include bp-md {
+  @include bps($bp-md) {
     min-height: 28.125em; //450px
   }
-  @include bp-lg {
+  @include bps($bp-lg) {
     min-height: 18.1875em; //291px
   }
-  @include bp-xxl {
+  @include bps($bp-xxl) {
     min-height: 24.625em;
   }
 }
 .about-h-196px-foun {
   
-  @include bp-xs {
+  @include bps($bp-xs) {
     min-height: 3.75em; //60px
   }
-  @include bp-sm {
+  @include bps($bp-sm) {
     min-height: 10.5em; //168px
   }
-  @include bp-md {
+  @include bps($bp-md) {
     min-height: 14.4375em; //231px
   }
-  @include bp-lg {
+  @include bps($bp-lg) {
     min-height: 8.8125em; //141px
   }
-  @include bp-xl {
+  @include bps($bp-xl) {
     min-height: 10.375em; //166px
   }
-  @include bp-xxl {
+  @include bps($bp-xxl) {
     min-height: 12.25em; //196px
   }
 }
@@ -47,14 +47,14 @@
 .locations-w-50-searchbar {
   width: 80%;
 
-  @include bp-md {
+  @include bps($bp-md) {
     width: 50%;
   }
 }
 .locations-w-75-locations {
   width: 100%;
 
-  @include bp-xl {
+  @include bps($bp-xl) {
     width: 75%;
   }
 }

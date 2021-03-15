@@ -2,7 +2,7 @@
 .navbar-min-h {
     min-height: 3.5em; //56px
 
-    @include bp-lg {
+    @include bps($bp-lg) {
         min-height: 4.125em; //66px
     }
 }

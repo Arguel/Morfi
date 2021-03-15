@@ -1,8 +1,8 @@
 .rb-custom:after {
-  @include bp-xs {
+  @include bps($bp-xs) {
     display: none;
   }
-  @include bp-sm {
+  @include bps($bp-sm) {
     content: '';
     border-right: solid 2px $color-darker-3;
     padding: 5px 1em 5px 0;
@@ -12,28 +12,74 @@
 }
 .bg-light-sm-white {
 
-  @include bp-xs {
+  @include bps($bp-xs) {
     background-color: $white !important; //bg-white
   }
-  @include bp-sm {
+  @include bps($bp-sm) {
     background-color: #f8f9fa !important; //bg-light
   }
 }
 //.bg-trans-sm-green-5-active {
 
-  //@include bp-xs {
+  //@include bps($bp-xs) {
     //background-color: #009736 !important; //bg-green-5
   //}
-  //@include bp-sm {
+  //@include bps($bp-sm) {
     //background-color: transparent !important; //same as rgba(0,0,0,0)
   //}
 //}
 .bg-trans-sm-light-2 {
 
-  @include bp-xs {
+  @include bps($bp-xs) {
     background-color: #f8f9fa !important; //bg-light
   }
-  @include bp-sm {
+  @include bps($bp-sm) {
     background-color: transparent !important; //same as rgba(0,0,0,0)
+  }
+}
+.rec-h-58px-im-title {
+
+  @include bps($bp-xs) {
+    min-height: 3.125rem; //50px
+  }
+  @include bps($bp-sm) {
+    min-height: 1.8125rem; //29px
+  }
+  @include bps($bp-md) {
+    min-height: 3.5rem; //56px
+  }
+  @include bps($bp-lg) {
+    min-height: 3.625rem; //58px
+  }
+}
+.recipes-text-truncate-2-1 {
+
+  @include bps($bp-xs) {
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+  @include bps($bp-sm) {
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+
+  @include bps($bp-md) {
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+    width: 100%;
   }
 }

@@ -2,16 +2,16 @@
 //pop-up
 .home-h-100px {
 
-    @include bp-xs {
+    @include bps($bp-xs) {
         width: 4.25em;
     }
-    @include bp-sm {
+    @include bps($bp-sm) {
         width: 4.25em;
     }
-    @include bp-md {
+    @include bps($bp-md) {
         width: 5.25em;
     }
-    @include bp-lg {
+    @include bps($bp-lg) {
         width: 6.25em;
     }
 }

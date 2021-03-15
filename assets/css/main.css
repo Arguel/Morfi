@@ -7069,6 +7069,52 @@ textarea.form-control-lg {
     background-color: transparent !important; } }
 
 @media only screen and (max-width: 576px) {
+  .rec-h-58px-im-title {
+    min-height: 3.125rem; } }
+
+@media only screen and (min-width: 577px) {
+  .rec-h-58px-im-title {
+    min-height: 1.8125rem; } }
+
+@media only screen and (min-width: 768px) {
+  .rec-h-58px-im-title {
+    min-height: 3.5rem; } }
+
+@media only screen and (min-width: 992px) {
+  .rec-h-58px-im-title {
+    min-height: 3.625rem; } }
+
+@media only screen and (max-width: 576px) {
+  .recipes-text-truncate-2-1 {
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+    width: 100%; } }
+
+@media only screen and (min-width: 577px) {
+  .recipes-text-truncate-2-1 {
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+    width: 100%; } }
+
+@media only screen and (min-width: 768px) {
+  .recipes-text-truncate-2-1 {
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+    width: 100%; } }
+
+@media only screen and (max-width: 576px) {
   .contact-w-80 {
     width: 100% !important; } }
 
@@ -7182,6 +7228,9 @@ textarea.form-control-lg {
 
 .h-40px {
   height: 2.5em; }
+
+.h-96px {
+  height: 6em; }
 
 .h-100px {
   height: 6.25em; }

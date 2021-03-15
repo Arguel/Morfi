@@ -1,13 +1,13 @@
 .shop-w-220px {
   width: calc(50% - 20px);
 
-  @include bp-xs {
+  @include bps($bp-xs) {
     width: calc(100% - 20px);
   }
-  @include bp-xl {
+  @include bps($bp-xl) {
     width: calc(33.33333% - 19px);
   }
-  @include bp-xxl {
+  @include bps($bp-xxl) {
     width: calc(25% - 20px);
   }
 }
@@ -27,13 +27,13 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eb1c24",endColorstr="#ffffff",GradientType=1);
 }
 .bg-linear-2 {
-  @include bp-xs {
+  @include bps($bp-xs) {
     background: rgb(228,238,213);
   }
-  @include bp-sm {
+  @include bps($bp-sm) {
     background: rgb(228,238,213);
   }
-  @include bp-lg {
+  @include bps($bp-lg) {
     background: rgb(228,238,213);
     background: -moz-linear-gradient(176deg, rgba(228,238,213,1) 60%, rgba(203,220,235,1) 61%);
     background: -webkit-linear-gradient(176deg, rgba(228,238,213,1) 60%, rgba(203,220,235,1) 61%);
@@ -43,10 +43,10 @@
 }
 .top-offers-h-500px {
 
-  @include bp-xs {
+  @include bps($bp-xs) {
     height: auto;
   }
-  @include bp-sm {
+  @include bps($bp-sm) {
     height: 31.25em;
   }
 }
@@ -55,40 +55,40 @@
 }
 .min-h-708px-os-si {
 
-  @include bp-sm {
+  @include bps($bp-sm) {
     min-height: 30.5em; //488px
   }
-  @include bp-md {
+  @include bps($bp-md) {
     min-height: 28.25em; //452px
   }
-  @include bp-lg {
+  @include bps($bp-lg) {
     min-height: 29.5em; //472px
   }
-  @include bp-xl {
+  @include bps($bp-xl) {
     min-height: 33.25em; //532px
   }
-  @include bp-xxl {
+  @include bps($bp-xxl) {
     min-height: 44.25em; //708px
   }
 }
 .min-h-725px-os-si {
 
-  @include bp-xs {
+  @include bps($bp-xs) {
     min-height: 14.375em; //230px
   }
-  @include bp-sm {
+  @include bps($bp-sm) {
     min-height: 25.8125em; //413px
   }
-  @include bp-md {
+  @include bps($bp-md) {
     min-height: 28.625em; //458px
   }
-  @include bp-lg {
+  @include bps($bp-lg) {
     min-height: 35.4375em; //567px
   }
-  @include bp-xl {
+  @include bps($bp-xl) {
     min-height: 41.75em; //668px
   }
-  @include bp-xxl {
+  @include bps($bp-xxl) {
     min-height: 45.3125em; //725px
   }
 }

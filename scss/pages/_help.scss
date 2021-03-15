@@ -1,44 +1,44 @@
 .contact-w-80 {
 
-    @include bp-xs {
+    @include bps($bp-xs) {
         width: 100% !important;
     }
-    @include bp-sm {
+    @include bps($bp-sm) {
         width: 100% !important;
     }
-    @include bp-md {
+    @include bps($bp-md) {
         width: 90% !important;
     }
-    @include bp-lg {
+    @include bps($bp-lg) {
         width: 80% !important;
     }
 }
 //----------------------------------------------------------------
 .faq-w-75 {
 
-    @include bp-xs {
+    @include bps($bp-xs) {
         width: 95% !important;
     }
-    @include bp-sm {
+    @include bps($bp-sm) {
         width: 90% !important;
     }
-    @include bp-md {
+    @include bps($bp-md) {
         width: 75% !important;
     }
 }
 //----------------------------------------------------------------
 .ticket-w-50 {
 
-    @include bp-xs {
+    @include bps($bp-xs) {
         width: 95% !important;
     }
-    @include bp-sm {
+    @include bps($bp-sm) {
         width: 80% !important;
     }
-    @include bp-md {
+    @include bps($bp-md) {
         width: 70% !important;
     }
-    @include bp-lg {
+    @include bps($bp-lg) {
         width: 50% !important;
     }
 }
