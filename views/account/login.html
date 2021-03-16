@@ -57,45 +57,48 @@
     </section>
     <section class="container-xxl bg-dark">
       <div class="row align-items-center justify-content-evenly">
-        <div class="col-md-5 d-none d-md-block bg-primary rounded my-5">
-          <figure class="m-0 h-500px overflow-hidden">
-            <img class="img-fluid" src="https://placekitten.com/600/400" alt="image">
+        <div class="col-md-5 d-none d-lg-block rounded my-5 min-h-400px overflow-hidden">
+          <figure class="m-0 h-400px overflow-hidden rounded">
+            <img class="img-fluid img-rez rounded" src="https://placekitten.com/600/400" alt="image">
+            <!--<img class="img-fluid img-rez rounded" src="../../img/account/login/4004991.png" alt="image">-->
           </figure>
         </div>
-        <div class="col-11 col-sm-10 col-md-5 bg-white rounded my-5">
+        <div class="col-11 col-sm-10 col-lg-5 bg-white rounded my-5 min-h-400px">
 
-          <form class="row g-3 needs-validation p-2 p-sm-3" novalidate>
-            <!--f-email-->
-            <div class="col-md-11 mx-auto">
-              <label for="email-i" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email-i" placeholder="email@domain.com"
-                aria-describedby="email-i-feedback" required>
-              <div id="email-i-feedback" class="invalid-feedback">
-                Please choose a valid email.
+          <div class="d-flex align-items-center min-h-400px">
+            <form class="row needs-validation p-2 p-sm-3" novalidate>
+              <!--f-email-->
+              <div class="col-md-11 mx-auto mb-3">
+                <label for="email-i" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email-i" placeholder="email@domain.com"
+                  aria-describedby="email-i-feedback" required>
+                <div id="email-i-feedback" class="invalid-feedback">
+                  Please choose a valid email.
+                </div>
               </div>
-            </div>
-            <!--f-email-->
+              <!--f-email-->
 
-            <!--f-password-->
-            <div class="col-md-11 mx-auto">
-              <label for="password-i" class="form-label">Password</label>
-              <input type="password" class="form-control" id="password-i" placeholder="password"
-                aria-describedby="password-i-feedback" required>
-              <div id="password-i-feedback" class="invalid-feedback">
-                Please provide a valid password
+              <!--f-password-->
+              <div class="col-md-11 mx-auto mb-3">
+                <label for="password-i" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password-i" placeholder="password"
+                  aria-describedby="password-i-feedback" required>
+                <div id="password-i-feedback" class="invalid-feedback">
+                  Please provide a valid password
+                </div>
+                <span class="d-block mt-2"><a class="text-dark" href="#">Forgot your password?</a></span>
               </div>
-              <span class="d-block mt-2"><a class="text-dark" href="#">Forgot your password?</a></span>
-            </div>
-            <!--f-password-->
+              <!--f-password-->
 
-            <!--f-login-btn-->
-            <div class="col-12">
-              <button class="btn btn-success d-block mx-auto login-w-50" type="submit">Log in</button>
-              <span class="d-block mt-4 text-center">Don't have an account? <a href="../account/register.html">Sign
-                  up</a></span>
-            </div>
-            <!--f-login-btn-->
-          </form>
+              <!--f-login-btn-->
+              <div class="col-12 mb-3">
+                <button class="btn btn-success d-block mx-auto login-w-50" type="submit">Log in</button>
+                <span class="d-block mt-4 text-center">Don't have an account? <a href="../account/register.html">Sign
+                    up</a></span>
+              </div>
+              <!--f-login-btn-->
+            </form>
+          </div>
 
         </div>
 
