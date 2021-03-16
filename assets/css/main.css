@@ -7262,6 +7262,9 @@ textarea.form-control-lg {
 .min-h-224px {
   min-height: 14em; }
 
+.min-h-271px {
+  min-height: 16.9375em; }
+
 .min-h-282px {
   min-height: 17.625em; }
 
@@ -7273,6 +7276,9 @@ textarea.form-control-lg {
 
 .min-h-540px {
   min-height: 33.75em; }
+
+.max-h-202px {
+  max-height: 12.625em; }
 
 .max-h-300px {
   max-height: 18.75em; }
