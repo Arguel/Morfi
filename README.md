@@ -71,6 +71,8 @@ Several tests were done during development and most of them got positive ratings
 * The images lack adaptability for the mobile version of the page, a srcset could be used but that would also increase the total weight of the server
 * Libraries are being loaded in some pages that do not use them (for example fontawesome in the login and register pages)
 * The page has problems with the cache
+* Navigation menus overlap if you have one active
+* The selected item of filters in the mobile version of shop is doubled when clicked or hovered with the mouse.
 
 #### Unknown bugs?
 
