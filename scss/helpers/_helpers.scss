@@ -111,7 +111,7 @@
   width: 7%;
 }
 
-//max/min width classes
+//max width classes
 .mw-100px {
   max-width: 6.25em;
 }
@@ -129,6 +129,10 @@
 }
 .mw-1800px {
   max-width: 112.5em;
+}
+//min width
+.min-w-179px {
+  min-width: 11.1875em;
 }
 //object fit classes
 .obfit-cover {

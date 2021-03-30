@@ -7322,6 +7322,9 @@ textarea.form-control-lg {
 .mw-1800px {
   max-width: 112.5em; }
 
+.min-w-179px {
+  min-width: 11.1875em; }
+
 .obfit-cover {
   object-fit: cover !important; }
 

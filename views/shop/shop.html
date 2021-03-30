@@ -128,15 +128,18 @@
           </ul>
           <hr>
           <!--account-nav-->
-          <ul class="navbar-nav align-items-center">
-            <li class="nav-item d-block d-lg-flex text-center btn-login-container my-1">
-              <a class="nav-link btn-login rounded text-nowrap px-4 py-3 px-lg-2 py-lg-2"
-                href="../account/login.html">Log in</a>
-            </li>
-            <li class="nav-item text-center btn-sign-up-container my-1">
-              <a class="nav-link btn-sign-up rounded text-nowrap px-4 py-3 px-lg-2 py-lg-2"
-                href="../account/register.html">Sign up</a>
-            </li>
+          <ul class="navbar-nav align-items-center justify-content-evenly min-w-179px">
+            <div class="mx-1">
+              <i class="fas fa-user-circle fa-fw fs-4 h-pointer"></i>
+              <span class="text-darker-4 h-pointer">Username</span>
+              <span class="visually-hidden">account</span>
+            </div>
+            <div class="mx-1 position-relative">
+              <i class="fas fa-shopping-cart fa-fw fs-4 h-pointer"></i>
+              <span
+                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary h-pointer">+5<span
+                  class="visually-hidden">cart</span></span>
+            </div>
           </ul>
         </div>
       </nav>
