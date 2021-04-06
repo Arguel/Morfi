@@ -182,9 +182,13 @@ const apiShopItems = [
 const items = document.getElementById('shop-items-display');
 const templateLi = document.getElementById('template-item-li').content;
 const fragment = document.createDocumentFragment();
+let cart = {};
 
 document.addEventListener('DOMContentLoaded', () => {
   fetchShopItems();
+})
+items.addEventListener('click', e => {
+  addToCart(e);
 })
 
 const fetchShopItems = async () => {
@@ -255,6 +259,9 @@ function renderShopItems(arrayItems) {
     //description
     templateLi.querySelector('div.text-truncate').textContent = product.description;
 
+    //add to cart button
+    templateLi.querySelector('.btn-primary').dataset.id = product.id;
+
     //we clone the template because there can only be one
     const clone = templateLi.cloneNode(true);
     fragment.appendChild(clone);
@@ -268,4 +275,37 @@ function renderShopItems(arrayItems) {
   })
   items.appendChild(fragment);
 }
+
+function addToCart(e) {
+  if (e.target.classList.contains('btn-primary')) {
+    setToCart(e.target.parentElement.parentElement);
+  };
+  e.stopPropagation();
+}
+
+function setToCart(parentItem) {
+  const product = {
+    id: parentItem.querySelector('.btn-primary').dataset.id,
+    title: parentItem.querySelector('h5 a').textContent,
+    finalPrice: parentItem.querySelector('div.ff-mont-6.text-break').textContent,
+    amount: 1,
+  }
+  if (cart.hasOwnProperty(product.id)) {
+    product.amount = cart[product.id].amount + 1;
+  }
+  cart[product.id] = {...product};
+  console.log(cart);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
