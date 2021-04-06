@@ -12,7 +12,7 @@ It is a project only with the intention of learning and improving skills, the en
 
 <strong>Active deployments</strong>
 * [Vercel](https://morfi.vercel.app/) (full)
-* [000webhost](https://the-morfi.000webhostapp.com/) (only what is necessary to run)
+* [000webhost](https://the-morfi.000webhostapp.com/) (outdated) (only what is necessary to run)
 * [Github](https://arguel.github.io/morfi/) (full)
 
 ## Table of contents
