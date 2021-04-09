@@ -239,7 +239,7 @@ function renderShopItems(arrayItems) {
     //title
     templateLi.querySelector('h5 a').textContent = product.title;
     //final price
-    templateLi.querySelector('div.ff-mont-6.text-break span').textContent = `$${(product.price - product.price * product.discount / 100).toFixed(2)}`;
+    templateLi.querySelector('div.ff-mont-6 span').textContent = `$${(product.price - product.price * product.discount / 100).toFixed(2)}`;
     //shipping
     if (product.hasFreeShipping) {
       const spanShippingIcon = document.createElement('span');
@@ -254,7 +254,7 @@ function renderShopItems(arrayItems) {
       shippingIcon.classList.add('fas', 'fa-truck');
       spanShippingIcon.appendChild(shippingIcon);
 
-      templateLi.querySelector('div.ff-mont-6.text-break').appendChild(spanShippingIcon);
+      templateLi.querySelector('div.ff-mont-6').appendChild(spanShippingIcon);
     }
 
     if (product.hasDiscount) {
@@ -305,7 +305,7 @@ function renderShopItems(arrayItems) {
       createdDiv = false; //it is important to reset the variable
     }
     if (product.hasFreeShipping) {
-      const priceContainer = templateLi.querySelector('div.ff-mont-6.text-break');
+      const priceContainer = templateLi.querySelector('div.ff-mont-6');
       priceContainer.removeChild(priceContainer.lastChild);
     }
 
@@ -329,7 +329,7 @@ function setToCart(parentItem) {
   const product = {
     id: parentItem.querySelector('.btn-primary').dataset.id,
     title: parentItem.querySelector('h5 a').textContent,
-    finalPrice: parentItem.querySelector('div.ff-mont-6.text-break span').textContent,
+    finalPrice: parentItem.querySelector('div.ff-mont-6 span').textContent,
     hasFreeShipping: shipping,
     amount: 1,
   }
