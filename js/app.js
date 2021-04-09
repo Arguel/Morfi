@@ -7,6 +7,7 @@ const apiShopItems = [
     "id": 1,
     "title": "Polenta Squares with Gorgonzola and Pine Nuts",
     "thumnailUrl": "../../img/shop/shop/polenta-squares-with-gorgonzola-and-pine-nuts.webp",
+    "hasFreeShipping": true,
     "hasDiscount": true,
     "discount": 50,
     "promotion": [
@@ -19,6 +20,7 @@ const apiShopItems = [
     "id": 2,
     "title": "Maple-Sesame Cauliflower Bites",
     "thumnailUrl": "../../img/shop/shop/maple-sesame-cauliflower-bites.webp",
+    "hasFreeShipping": false,
     "hasDiscount": false,
     "discount": 0,
     "promotion": [],
@@ -29,6 +31,7 @@ const apiShopItems = [
     "id": 3,
     "title": "Double-Serrano Watermelon Bites",
     "thumnailUrl": "../../img/shop/shop/double-serrano-watermelon-bites.webp",
+    "hasFreeShipping": false,
     "hasDiscount": false,
     "discount": 0,
     "promotion": [
@@ -41,6 +44,7 @@ const apiShopItems = [
     "id": 4,
     "title": "Smoked Salmon Bites",
     "thumnailUrl": "../../img/shop/shop/smoked-salmon-bites.webp",
+    "hasFreeShipping": true,
     "hasDiscount": false,
     "discount": 0,
     "promotion": [],
@@ -51,6 +55,7 @@ const apiShopItems = [
     "id": 5,
     "title": "French Onion Dip With Sweet Potato Chips",
     "thumnailUrl": "../../img/shop/shop/french-onion-dip-with-sweet-potato-chips.webp",
+    "hasFreeShipping": false,
     "hasDiscount": false,
     "discount": 0,
     "promotion": [],
@@ -61,6 +66,7 @@ const apiShopItems = [
     "id": 6,
     "title": "Roasted Banana Bars with Browned Butter–Pecan Frosting",
     "thumnailUrl": "../../img/shop/shop/roasted-banana-bars-with-browned-butter–pecan-frosting.webp",
+    "hasFreeShipping": false,
     "hasDiscount": false,
     "discount": 0,
     "promotion": [],
@@ -71,6 +77,7 @@ const apiShopItems = [
     "id": 7,
     "title": "Texas Sheet Cake",
     "thumnailUrl": "../../img/shop/shop/texas-sheet-cake.webp",
+    "hasFreeShipping": false,
     "hasDiscount": false,
     "discount": 0,
     "promotion": [],
@@ -81,11 +88,12 @@ const apiShopItems = [
     "id": 8,
     "title": "Espresso Crinkles",
     "thumnailUrl": "../../img/shop/shop/espresso-crinkles.webp",
+    "hasFreeShipping": false,
     "hasDiscount": true,
     "discount": 20,
     "promotion": [
-      "New",
-      "20% off"
+      "20% off",
+      "New"
     ],
     "description": "Unsweetened chocolate and instant espresso powder give depth of flavor to these sophisticated cookies. A dredge in powdered sugar before baking ensures sweetness, and also gives them a unique cracked surface and snow-covered look."
   },
@@ -94,6 +102,7 @@ const apiShopItems = [
     "id": 9,
     "title": "Vanilla Cheesecake with Cherry Topping",
     "thumnailUrl": "../../img/shop/shop/vanilla-cheesecake-with-cherry-topping.webp",
+    "hasFreeShipping": true,
     "hasDiscount": false,
     "discount": 0,
     "promotion": [
@@ -106,6 +115,7 @@ const apiShopItems = [
     "id": 10,
     "title": "Amaretto Apple Streusel Cupcakes",
     "thumnailUrl": "../../img/shop/shop/amaretto-apple-streusel-cupcakes.webp",
+    "hasFreeShipping": false,
     "hasDiscount": false,
     "discount": 0,
     "promotion": [],
@@ -116,6 +126,7 @@ const apiShopItems = [
     "id": 11,
     "title": "Salted Caramel Ice Cream",
     "thumnailUrl": "../../img/shop/shop/salted-caramel-ice-cream.webp",
+    "hasFreeShipping": false,
     "hasDiscount": false,
     "discount": 0,
     "promotion": [],
@@ -126,6 +137,7 @@ const apiShopItems = [
     "id": 12,
     "title": "Tiramisu",
     "thumnailUrl": "../../img/shop/shop/tiramisu.webp",
+    "hasFreeShipping": true,
     "hasDiscount": false,
     "discount": 0,
     "promotion": [],
@@ -136,6 +148,7 @@ const apiShopItems = [
     "id": 13,
     "title": "Rum-Spiked Grilled Pineapple with Toasted Coconut",
     "thumnailUrl": "../../img/shop/shop/rum-spiked-grilled-pineapple-with-toasted-coconut.webp",
+    "hasFreeShipping": false,
     "hasDiscount": false,
     "discount": 0,
     "promotion": [
@@ -148,6 +161,7 @@ const apiShopItems = [
     "id": 14,
     "title": "Carrot Cake",
     "thumnailUrl": "../../img/shop/shop/carrot-cake.webp",
+    "hasFreeShipping": false,
     "hasDiscount": true,
     "discount": 80,
     "promotion": [
@@ -160,6 +174,7 @@ const apiShopItems = [
     "id": 15,
     "title": "Chicken Sandwich",
     "thumnailUrl": "../../img/shop/shop/chicken-sandwich.webp",
+    "hasFreeShipping": false,
     "hasDiscount": false,
     "discount": 0,
     "promotion": [],
@@ -170,6 +185,7 @@ const apiShopItems = [
     "id": 16,
     "title": "Cheesy Gordita Crunch",
     "thumnailUrl": "../../img/shop/shop/cheesy-gordita-crunch.webp",
+    "hasFreeShipping": true,
     "hasDiscount": false,
     "discount": 0,
     "promotion": [],
@@ -209,7 +225,7 @@ function renderShopItems(arrayItems) {
 
   function createSubContainer() {
     const divContainer = document.createElement('div');
-    divContainer.classList.add('text-break', 'd-flex', 'align-items-center');
+    divContainer.classList.add('text-break', 'text-truncate-1');
     createdDiv = true;
     return divContainer;
   }
@@ -223,7 +239,23 @@ function renderShopItems(arrayItems) {
     //title
     templateLi.querySelector('h5 a').textContent = product.title;
     //final price
-    templateLi.querySelector('div.ff-mont-6.text-break').textContent = `$${(product.price - product.price * product.discount / 100).toFixed(2)}`;
+    templateLi.querySelector('div.ff-mont-6.text-break span').textContent = `$${(product.price - product.price * product.discount / 100).toFixed(2)}`;
+    //shipping
+    if (product.hasFreeShipping) {
+      const spanShippingIcon = document.createElement('span');
+      spanShippingIcon.classList.add('badge', 'bg-white', 'rounded', 'text-green-5');
+
+      const spanShippingLabel = document.createElement('span');
+      spanShippingLabel.classList.add('visually-hidden');
+      spanShippingLabel.textContent = 'Free shipping';
+      spanShippingIcon.appendChild(spanShippingLabel);
+
+      const shippingIcon = document.createElement('i');
+      shippingIcon.classList.add('fas', 'fa-truck');
+      spanShippingIcon.appendChild(shippingIcon);
+
+      templateLi.querySelector('div.ff-mont-6.text-break').appendChild(spanShippingIcon);
+    }
 
     if (product.hasDiscount) {
       var divContainer = createSubContainer();
@@ -266,12 +298,17 @@ function renderShopItems(arrayItems) {
     const clone = templateLi.cloneNode(true);
     fragment.appendChild(clone);
 
-    //check if the discounts/promotions container was created, and if it was created, it will delete it so it is not added to all items and only applies to the necessary ones
+    //check if the discounts/promotions/shipping container was created, and if it was created, it will delete it so it is not added to all items and only applies to the necessary ones
     if (createdDiv) {
       const mainContainer = templateLi.querySelector('div.overflow-hidden.text-truncate-2');
       mainContainer.removeChild(mainContainer.lastChild); //here we remove the new child that we create "divContainer"
       createdDiv = false; //it is important to reset the variable
     }
+    if (product.hasFreeShipping) {
+      const priceContainer = templateLi.querySelector('div.ff-mont-6.text-break');
+      priceContainer.removeChild(priceContainer.lastChild);
+    }
+
   })
   items.appendChild(fragment);
 }
@@ -284,10 +321,16 @@ function addToCart(e) {
 }
 
 function setToCart(parentItem) {
+  const shippingElem = parentItem.querySelector('span.text-green-5 span.visually-hidden');
+  let shipping = false;
+  if (shippingElem !== null && shippingElem !== undefined) {
+    shipping = true
+  }
   const product = {
     id: parentItem.querySelector('.btn-primary').dataset.id,
     title: parentItem.querySelector('h5 a').textContent,
-    finalPrice: parentItem.querySelector('div.ff-mont-6.text-break').textContent,
+    finalPrice: parentItem.querySelector('div.ff-mont-6.text-break span').textContent,
+    hasFreeShipping: shipping,
     amount: 1,
   }
   if (cart.hasOwnProperty(product.id)) {
@@ -296,7 +339,6 @@ function setToCart(parentItem) {
   cart[product.id] = {...product};
   console.log(cart);
 }
-
 
 
 

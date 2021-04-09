@@ -7484,6 +7484,15 @@ textarea.form-control-lg {
   .t-indent-2 {
     text-indent: 2rem; } }
 
+.text-truncate-1 {
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  width: 100%; }
+
 .text-truncate-2 {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -7532,6 +7541,9 @@ textarea.form-control-lg {
 
 .pt-6 {
   padding-top: 4rem !important; }
+
+.ps-60px {
+  padding-left: 60px !important; }
 
 .h-white:hover {
   color: white !important; }
@@ -7623,3 +7635,6 @@ textarea.form-control-lg {
 
 .sel-primary:hover {
   cursor: pointer; }
+
+.outline-none {
+  outline: none; }
