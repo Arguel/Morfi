@@ -7,9 +7,12 @@ const cartMainContainer = document.getElementById('cart-container');
 
 const fragment = document.createDocumentFragment();
 
+//items added from shop page
 let itemsToBuy = localStorage.getItem('cart');
 
 if (itemsToBuy === null) {
+  //container showing that the cart is empty
+
   const divEmptyContainer = document.createElement('div');
   divEmptyContainer.classList.add('my-4', 'p-2', 'fs-5');
   divEmptyContainer.textContent = 'Your shopping cart is empty';
@@ -53,9 +56,30 @@ function renderCartItems(arrayItems) {
     const altAttribute = product.title.toLowerCase().replaceAll(" ", "-");
     productImage.setAttribute("src", product.thumnailUrl);
     productImage.setAttribute("alt", altAttribute);
+    //shipping
+    if (product.hasFreeShipping) {
+      //shipping container creation
+      const divShipping = document.createElement('div');
+      divShipping.classList.add('text-green-5', 'mb-1');
+      const iconShipping = document.createElement('i');
+      iconShipping.classList.add('fas', 'fa-truck', 'mx-1');
+      const spanShipping = document.createElement('span');
+      spanShipping.classList.add('fw-bold');
+      spanShipping.textContent = 'Free shipping';
+      divShipping.appendChild(iconShipping);
+      divShipping.appendChild(spanShipping);
+
+      templateCartItem.querySelector('.mx-2').appendChild(divShipping);
+    }
 
     const clone = templateCartItem.cloneNode(true);
     fragment.appendChild(clone);
+
+    //if the shipping container was added we remove it
+    if (product.hasFreeShipping) {
+      const shippingContainer = templateCartItem.querySelector('.mx-2');
+      shippingContainer.removeChild(shippingContainer.lastChild);
+    }
   });
   cartItems.appendChild(fragment);
 
@@ -63,19 +87,23 @@ function renderCartItems(arrayItems) {
 }
 
 function renderCartFooter(arrayItems) {
+  //we add all the units
   const nQuantity = Object.values(arrayItems).reduce((acc, {quantity}) => acc + quantity, 0);
+  //we add all the prices to calculate the total
   const nFinalPrice = Object.values(arrayItems).reduce((acc, {quantity, finalPrice}) => acc + quantity * finalPrice, 0);
-  cartMainContainer.querySelector('span').textContent = `(${nQuantity})`; //cart label in checkout
+  //top cart label in checkout
+  cartMainContainer.querySelector('span').textContent = `(${nQuantity})`;
 
+  //final calculation of the checkout (coupons, shipping, discounts, etc)
   templateCartFooter.querySelectorAll('span')[2].textContent = nFinalPrice;
   templateCartFooter.querySelectorAll('span')[11].textContent = nFinalPrice; //the last item
 
   const clone = templateCartFooter.cloneNode(true);
   fragment.appendChild(clone);
 
+  //buy button at the end of checkout
   const divBuyBtn = document.createElement('div');
   divBuyBtn.classList.add('col-10', 'py-5', 'pe-0', 'text-end');
-
   const buyBtn = document.createElement('button');
   buyBtn.classList.add('btn', 'btn-primary', 'ff-lato-7', 'fs-5');
   buyBtn.textContent = 'Finish buy';
@@ -83,6 +111,7 @@ function renderCartFooter(arrayItems) {
   divBuyBtn.appendChild(buyBtn);
   fragment.appendChild(divBuyBtn);
 
+  //we add the cost calculator and the button to finish the purchase
   cartMainContainer.appendChild(fragment);
 }
 
