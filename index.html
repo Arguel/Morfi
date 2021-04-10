@@ -1085,20 +1085,20 @@
         duration: 2200,
       })
       setTimeout(function () {
-        var x = document.querySelectorAll(".customer-a-review");
-        for (var i = 0; i < x.length; i++) {
-          x[i].style.display = "block";
-          x[i].style.overflowX = "hidden";
+        let customerReviews = document.querySelectorAll(".customer-a-review"); // customer animation review
+        for (let i = 0; i < customerReviews.length; i++) {
+          customerReviews[i].style.display = "block";
+          customerReviews[i].style.overflowX = "hidden";
         }
       }, 500);
-      var myModal = new bootstrap.Modal(document.getElementById('myModal'), {
+      let myModal = new bootstrap.Modal(document.getElementById('myModal'), {
         keyboard: true,
         backdrop: true,
         focus: true,
       });
-      if (localStorage.getItem('isExecuted') === null) {
+      if (localStorage.getItem('executedHomeIntro') === null) {
         myModal.toggle()
-        localStorage.setItem('isExecuted', 'true')
+        localStorage.setItem('executedHomeIntro', 'true')
       }
     }
   </script>

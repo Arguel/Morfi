@@ -195,15 +195,15 @@ const apiShopItems = [
 
 //-----------------------------------------------------------
 
-const items = document.getElementById('shop-items-display');
-const templateLi = document.getElementById('template-item-li').content;
+const shopItems = document.getElementById('shop-items-display');
+const templateShopLi = document.getElementById('template-item-li').content;
 const fragment = document.createDocumentFragment();
-let cart = {};
+let cart = JSON.parse(localStorage.getItem('cart')) || {};
 
 document.addEventListener('DOMContentLoaded', () => {
   fetchShopItems();
 })
-items.addEventListener('click', e => {
+shopItems.addEventListener('click', e => {
   addToCart(e);
 })
 
@@ -214,7 +214,11 @@ const fetchShopItems = async () => {
     renderShopItems(apiShopItems);
   } catch (error) {
     console.log(error);
-    items.innerHTML = '<h4 class="text-center m-4">Error while loading items.</h4>';
+    const errorContainer = document.createElement('h4');
+    errorContainer.classList.add('text-center', 'm-4');
+    errorContainer.textContent = 'Error while loading items.';
+    fragment.appendChild(errorContainer);
+    shopItems.appendChild(fragment);
   }
 }
 
@@ -232,14 +236,14 @@ function renderShopItems(arrayItems) {
 
   arrayItems.forEach(product => {
     //image
-    const productImage = templateLi.querySelector('img');
+    const productImage = templateShopLi.querySelector('img');
     const altAttribute = product.title.toLowerCase().replaceAll(" ", "-");
     productImage.setAttribute("src", product.thumnailUrl);
     productImage.setAttribute("alt", altAttribute);
     //title
-    templateLi.querySelector('h5 a').textContent = product.title;
+    templateShopLi.querySelector('h5 a').textContent = product.title;
     //final price
-    templateLi.querySelector('div.ff-mont-6 span').textContent = `$${(product.price - product.price * product.discount / 100).toFixed(2)}`;
+    templateShopLi.querySelector('div.ff-mont-6 span').textContent = `$${(product.price - product.price * product.discount / 100).toFixed(2)}`;
     //shipping
     if (product.hasFreeShipping) {
       const spanShippingIcon = document.createElement('span');
@@ -254,7 +258,7 @@ function renderShopItems(arrayItems) {
       shippingIcon.classList.add('fas', 'fa-truck');
       spanShippingIcon.appendChild(shippingIcon);
 
-      templateLi.querySelector('div.ff-mont-6').appendChild(spanShippingIcon);
+      templateShopLi.querySelector('div.ff-mont-6').appendChild(spanShippingIcon);
     }
 
     if (product.hasDiscount) {
@@ -285,32 +289,32 @@ function renderShopItems(arrayItems) {
     //we check if the container has been created and if it is true we add it to our template temporarily
     if (createdDiv) {
       //here we add the possible labels to each item
-      templateLi.querySelector('div.overflow-hidden.text-truncate-2').appendChild(divContainer);
+      templateShopLi.querySelector('div.overflow-hidden.text-truncate-2').appendChild(divContainer);
     }
 
     //description
-    templateLi.querySelector('div.text-truncate').textContent = product.description;
+    templateShopLi.querySelector('div.text-truncate').textContent = product.description;
 
     //add to cart button
-    templateLi.querySelector('.btn-primary').dataset.id = product.id;
+    templateShopLi.querySelector('.btn-primary').dataset.id = product.id;
 
     //we clone the template because there can only be one
-    const clone = templateLi.cloneNode(true);
+    const clone = templateShopLi.cloneNode(true);
     fragment.appendChild(clone);
 
     //check if the discounts/promotions/shipping container was created, and if it was created, it will delete it so it is not added to all items and only applies to the necessary ones
     if (createdDiv) {
-      const mainContainer = templateLi.querySelector('div.overflow-hidden.text-truncate-2');
+      const mainContainer = templateShopLi.querySelector('div.overflow-hidden.text-truncate-2');
       mainContainer.removeChild(mainContainer.lastChild); //here we remove the new child that we create "divContainer"
       createdDiv = false; //it is important to reset the variable
     }
     if (product.hasFreeShipping) {
-      const priceContainer = templateLi.querySelector('div.ff-mont-6');
+      const priceContainer = templateShopLi.querySelector('div.ff-mont-6');
       priceContainer.removeChild(priceContainer.lastChild);
     }
 
   })
-  items.appendChild(fragment);
+  shopItems.appendChild(fragment);
 }
 
 function addToCart(e) {
@@ -326,18 +330,21 @@ function setToCart(parentItem) {
   if (shippingElem !== null && shippingElem !== undefined) {
     shipping = true
   }
+  const finalPriceSelector = parentItem.querySelector('div.ff-mont-6 span').textContent
   const product = {
     id: parentItem.querySelector('.btn-primary').dataset.id,
     title: parentItem.querySelector('h5 a').textContent,
-    finalPrice: parentItem.querySelector('div.ff-mont-6 span').textContent,
+    finalPrice: parseInt(finalPriceSelector.substr(1)),
     hasFreeShipping: shipping,
-    amount: 1,
+    thumnailUrl: parentItem.querySelector('img').getAttribute('src'),
+    quantity: 1,
   }
   if (cart.hasOwnProperty(product.id)) {
-    product.amount = cart[product.id].amount + 1;
+    product.quantity = cart[product.id].quantity + 1;
   }
   cart[product.id] = {...product};
-  console.log(cart);
+
+  localStorage.setItem('cart', JSON.stringify(cart));
 }
 
 

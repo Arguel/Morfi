@@ -149,138 +149,24 @@
     <!--main cart container-->
     <section class="container-xxl my-4">
       <!--display cart start-->
-      <div class="row justify-content-center">
+      <div class="row justify-content-center min-h-400px">
         <div class="col-11 border rounded shadow">
           <!--internal cart information start-->
-          <div class="row my-5 justify-content-center">
+          <div id="cart-container" class="row my-5 justify-content-center">
 
             <!--shopping cart navigation -->
             <div class="col-10">
               <div class="row border-bottom ff-lato-4">
                 <div class="col-3 text-center p-2 border-bottom border-dark border-2 h-pointer fw-bold">Cart
-                  <span>(20)</span>
+                  <span>(0)</span>
                 </div>
                 <div class="col-3 text-center p-2 h-pointer text-primary">Saved</div>
               </div>
             </div>
 
-            <!--item 1-->
-            <div class="col-10 py-5 border-bottom">
-              <div class="row ff-lato-4">
-                <div class="col-8 overflow-hidden ps-0">
-                  <div class="text-truncate">
-                    <div class="d-flex align-items-center">
-                      <figure class="m-0 w-60px text-center">
-                        <img class="img-fluid rounded" src="http://placekitten.com/200/200" alt="item">
-                      </figure>
-                      <div class="mx-2">
-                        <div class="fw-bold mb-1">Polenta Squares with Gorgonzola and Pine Nuts</div>
-                        <div class="text-green-5 mb-1">
-                          <i class="fas fa-truck mx-1"></i>
-                          <span class="fw-bold">Free shipping</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-2">
-                  <div class="border p-2 d-flex justify-content-center rounded">
-                    <form>
-                      <label class="visually-hidden" for="reducequantity">reduce quantity</label>
-                      <input class="bg-white border-0" type="submit" name="reducequantity" value="-"
-                        id="reducequantity">
-                    </form>
-                    <label class="visually-hidden" for="quantity">quantity</label>
-                    <input class="bg-white border-0 w-60px text-center outline-none" type="number" name="quantity"
-                      value="1" id="quantity">
-                    <form>
-                      <label class="visually-hidden" for="increasequantity">increase quantity</label>
-                      <input class="bg-white border-0" type="submit" name="increasequantity" value="+"
-                        id="increasequantity">
-                    </form>
-                  </div>
-                  <div class="text-center">
-                    <span class="text-muted">30 available</span>
-                  </div>
-                </div>
-                <div class="col-2 fw-bold ff-lato-4 fs-5 pe-0">
-                  <span>$</span>
-                  <span>800.000</span>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-12 ps-60px ff-lato-4 text-primary">
-                  <ul class="list-unstyled my-0 mx-2">
-                    <li class="d-inline-block">
-                      <span class="h-pointer pe-2">Remove</span>
-                    </li>
-                    <li class="d-inline-block">
-                      <span class="h-pointer px-2">Buy now</span>
-                    </li>
-                    <li class="d-inline-block h-pointer">
-                      <span class="h-pointer ps-2">Save for later</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-10 py-5 border-bottom">
-              <div class="row justify-content-end">
-                <div class="col-4">
-
-                  <div class="row my-1">
-                    <div class="col-6 ff-lato-4">
-                      <span>Original price:</span>
-                    </div>
-                    <div class="col-6 ff-lato-4 pe-0">
-                      <span>$</span>
-                      <span>800.000</span>
-                    </div>
-                  </div>
-
-                  <div class="row my-1">
-                    <div class="col-6 ff-lato-4">
-                      <span>Coupon discounts:</span>
-                    </div>
-                    <div class="col-6 ff-lato-4 pe-0">
-                      <span>No coupons</span>
-                    </div>
-                  </div>
-
-                  <div class="row my-1">
-                    <div class="col-6 ff-lato-4">
-                      <span>Shipping:</span>
-                    </div>
-                    <div class="col-6 ff-lato-4 pe-0">
-                      <span class="text-green-5">Free</span>
-                    </div>
-                  </div>
-
-                  <div class="row my-1">
-                    <div class="col-6 ff-lato-4">
-                      <span>Taxes:</span>
-                    </div>
-                    <div class="col-6 ff-lato-4 pe-0">
-                      <span>(0%)</span>
-                    </div>
-                  </div>
-
-                  <div class="row my-1 border-top">
-                    <div class="col-6 fw-bold ff-lato-4 fs-5">
-                      <span>Total:</span>
-                    </div>
-                    <div class="col-6 fw-bold ff-lato-4 fs-5 pe-0">
-                      <span>$</span>
-                      <span>800.000</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-10 py-5 pe-0 text-end">
-              <button class="btn btn-primary ff-lato-7 fs-5">Finish buy</button>
+            <!--cart items-->
+            <div class="col-10">
+              <div id="cart-items"></div>
             </div>
 
           </div>
@@ -436,3 +322,130 @@
     </div>
     <!--footer-container-fluid-end-->
   </footer>
+
+  <template id="template-cart-item">
+    <div class="col-12 py-5 border-bottom">
+      <div class="row ff-lato-4">
+        <div class="col-8 overflow-hidden ps-0">
+          <div class="text-truncate">
+            <div class="d-flex align-items-center">
+              <figure class="m-0 w-60px text-center">
+                <img class="img-fluid rounded" src="http://placekitten.com/200/200" alt="item">
+              </figure>
+              <div class="mx-2">
+                <div class="fw-bold mb-1">title</div>
+
+                <div class="text-green-5 mb-1">
+                  <i class="fas fa-truck mx-1"></i>
+                  <span class="fw-bold">Free shipping</span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="border p-2 d-flex justify-content-center rounded">
+            <form>
+              <label class="visually-hidden" for="reducequantity">reduce quantity</label>
+              <input class="bg-white border-0" type="submit" name="reducequantity" value="-">
+            </form>
+            <label class="visually-hidden" for="quantity">quantity</label>
+            <input class="bg-white border-0 w-60px text-center outline-none" type="number" name="quantity" value="1">
+            <form>
+              <label class="visually-hidden" for="increasequantity">increase quantity</label>
+              <input class="bg-white border-0" type="submit" name="increasequantity" value="+">
+            </form>
+          </div>
+          <div class="text-center">
+            <span class="text-muted">30 available</span>
+          </div>
+        </div>
+        <div class="col-2 fw-bold ff-lato-4 fs-5 pe-0">
+          <span>$</span>
+          <span>800.000</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 ps-60px ff-lato-4 text-primary">
+          <ul class="list-unstyled my-0 mx-2">
+            <li class="d-inline-block">
+              <span class="h-pointer pe-2">Remove</span>
+            </li>
+            <li class="d-inline-block">
+              <span class="h-pointer px-2">Buy now</span>
+            </li>
+            <li class="d-inline-block h-pointer">
+              <span class="h-pointer ps-2">Save for later</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <template id="template-cart-footer">
+    <!--cart calculator start-->
+    <div class="col-10 py-5 border-bottom">
+      <div class="row justify-content-end">
+        <div class="col-4">
+
+          <div class="row my-1">
+            <div class="col-6 ff-lato-4">
+              <span>Original price:</span>
+            </div>
+            <div class="col-6 ff-lato-4 pe-0">
+              <span>$</span>
+              <span>0.00</span>
+            </div>
+          </div>
+
+          <div class="row my-1">
+            <div class="col-6 ff-lato-4">
+              <span>Coupon discounts:</span>
+            </div>
+            <div class="col-6 ff-lato-4 pe-0">
+              <span>No coupons</span>
+            </div>
+          </div>
+
+          <div class="row my-1">
+            <div class="col-6 ff-lato-4">
+              <span>Shipping:</span>
+            </div>
+            <div class="col-6 ff-lato-4 pe-0">
+              <span class="text-green-5">Free</span>
+            </div>
+          </div>
+
+          <div class="row my-1">
+            <div class="col-6 ff-lato-4">
+              <span>Taxes:</span>
+            </div>
+            <div class="col-6 ff-lato-4 pe-0">
+              <span>(0%)</span>
+            </div>
+          </div>
+
+          <div class="row my-1 border-top">
+            <div class="col-6 fw-bold ff-lato-4 fs-5">
+              <span>Total:</span>
+            </div>
+            <div class="col-6 fw-bold ff-lato-4 fs-5 pe-0">
+              <span>$</span>
+              <span>0.00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--cart calculator end-->
+  </template>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+  <script src="../../js/cart.js" charset="utf-8"></script>
+</body>
+
+</html>
