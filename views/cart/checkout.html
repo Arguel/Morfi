@@ -149,14 +149,14 @@
     <!--main cart container-->
     <section class="container-xxl my-4">
       <!--display cart start-->
-      <div class="row justify-content-center min-h-400px">
+      <div class="row justify-content-center min-h-400px ff-lato-4">
         <div class="col-11 border rounded shadow">
           <!--internal cart information start-->
           <div id="cart-container" class="row my-5 justify-content-center">
 
             <!--shopping cart navigation -->
             <div class="col-10">
-              <div class="row border-bottom ff-lato-4">
+              <div class="row border-bottom">
                 <div class="col-3 text-center p-2 border-bottom border-dark border-2 h-pointer fw-bold">Cart
                   <span>(0)</span>
                 </div>
@@ -165,7 +165,7 @@
             </div>
 
             <!--cart items-->
-            <div class="col-10">
+            <div class="col-10 px-0">
               <div id="cart-items"></div>
             </div>
 
@@ -324,9 +324,9 @@
   </footer>
 
   <template id="template-cart-item">
-    <div class="col-12 py-5 border-bottom">
-      <div class="row ff-lato-4">
-        <div class="col-8 overflow-hidden ps-0">
+    <div class="col-12 py-5 border-bottom ff-lato-4">
+      <div class="row">
+        <div class="col-8 overflow-hidden">
           <div class="text-truncate">
             <div class="d-flex align-items-center">
               <figure class="m-0 w-60px text-center">
@@ -352,27 +352,29 @@
             </form>
           </div>
           <div class="text-center">
-            <span class="text-muted">30 available</span>
+            <span class="text-muted">10 available</span>
           </div>
         </div>
-        <div class="col-2 fw-bold ff-lato-4 fs-5 pe-0">
+        <div class="col-2 fw-bold fs-5 pe-0">
           <span>$</span>
-          <span>800.000</span>
+          <span>0.00</span>
         </div>
       </div>
       <div class="row">
-        <div class="col-12 ps-60px ff-lato-4 text-primary">
-          <ul class="list-unstyled my-0 mx-2">
-            <li class="d-inline-block">
-              <span class="h-pointer pe-2">Remove</span>
-            </li>
-            <li class="d-inline-block">
-              <span class="h-pointer px-2">Buy now</span>
-            </li>
-            <li class="d-inline-block h-pointer">
-              <span class="h-pointer ps-2">Save for later</span>
-            </li>
-          </ul>
+        <div class="col-12 text-primary">
+          <div class="ps-60px">
+            <ul class="list-unstyled my-0 mx-2">
+              <li class="d-inline-block">
+                <span class="h-pointer pe-2">Remove</span>
+              </li>
+              <li class="d-inline-block">
+                <span class="h-pointer px-2">Buy now</span>
+              </li>
+              <li class="d-inline-block h-pointer">
+                <span class="h-pointer ps-2">Save for later</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -380,56 +382,116 @@
 
   <template id="template-cart-footer">
     <!--cart calculator start-->
-    <div class="col-10 py-5 border-bottom">
-      <div class="row justify-content-end">
+    <div class="col-10 py-5 border-bottom ff-lato-4">
+      <div class="row align-items-center">
+        <div class="col-8">
+          <div class="mb-4">
+            <h1 class="fs-3 fw-bold mb-3">
+              <span>Choose payment method</span>
+            </h1>
+            <div class="d-flex align-items-center flex-wrap">
+              <figure
+                class="my-2 me-2 w-150px h-100px overflow-hidden rounded border border-2 border-primary h-pointer">
+                <img class="img-fluid p-3" src="../../img/cart/paypal.jpeg" alt="payment-paypal">
+              </figure>
+              <figure class="my-2 me-2 w-150px h-100px overflow-hidden rounded h-pointer">
+                <img class="img-rez p-3" src="../../img/cart/mastercard.png" alt="payment-mastercard">
+              </figure>
+              <figure class="my-2 me-2 w-150px h-100px overflow-hidden rounded h-pointer">
+                <img class="img-fluid p-3" src="../../img/cart/visaandmaster.png" alt="payment-visaandmaster">
+              </figure>
+              <figure class="my-2 me-2 w-150px h-100px overflow-hidden rounded h-pointer">
+                <img class="img-fluid p-3" src="../../img/cart/paysafecard.jpeg" alt="payment-paysafecard">
+              </figure>
+              <figure class="my-2 me-2 w-150px h-100px overflow-hidden rounded h-pointer">
+                <img class="img-fluid p-3" src="../../img/cart/klarna.png" alt="payment-klarna">
+              </figure>
+            </div>
+          </div>
+          <div class="mb-4">
+            <h1 class="fs-3 fw-bold mb-3">
+              <span>Billing address</span>
+            </h1>
+            <div class="d-flex align-items-center">
+              <button
+                class="w-200px h-100px bg-white rounded border border-2 border-primary d-flex align-items-center justify-content-center"
+                type="button" aria-label="Add new address">
+                <span class="fw-bold">+Add new address</span>
+              </button>
+            </div>
+          </div>
+        </div>
         <div class="col-4">
 
           <div class="row my-1">
-            <div class="col-6 ff-lato-4">
+            <div class="col-6">
               <span>Original price:</span>
             </div>
-            <div class="col-6 ff-lato-4 pe-0">
+            <div class="col-6 pe-0">
               <span>$</span>
               <span>0.00</span>
             </div>
           </div>
 
           <div class="row my-1">
-            <div class="col-6 ff-lato-4">
-              <span>Coupon discounts:</span>
-            </div>
-            <div class="col-6 ff-lato-4 pe-0">
-              <span>No coupons</span>
-            </div>
-          </div>
-
-          <div class="row my-1">
-            <div class="col-6 ff-lato-4">
+            <div class="col-6">
               <span>Shipping:</span>
             </div>
-            <div class="col-6 ff-lato-4 pe-0">
+            <div class="col-6 pe-0">
               <span class="text-green-5">Free</span>
             </div>
           </div>
 
           <div class="row my-1">
-            <div class="col-6 ff-lato-4">
-              <span>Taxes:</span>
+            <div class="col-6">
+              <span>Tax included:</span>
             </div>
-            <div class="col-6 ff-lato-4 pe-0">
-              <span>(0%)</span>
-            </div>
-          </div>
-
-          <div class="row my-1 border-top">
-            <div class="col-6 fw-bold ff-lato-4 fs-5">
-              <span>Total:</span>
-            </div>
-            <div class="col-6 fw-bold ff-lato-4 fs-5 pe-0">
+            <div class="col-6 pe-0">
               <span>$</span>
               <span>0.00</span>
             </div>
           </div>
+
+          <div class="row my-1">
+            <div class="col-6">
+              <span>Payment fee:</span>
+            </div>
+            <div class="col-6 pe-0">
+              <span>$</span>
+              <span>0.00</span>
+            </div>
+          </div>
+
+          <div class="row my-1">
+            <div class="col-6">
+              <span>Coupon discounts:</span>
+            </div>
+            <div class="col-6 pe-0">
+              <span>No coupons</span>
+            </div>
+          </div>
+
+          <div class="row my-1 border-top">
+            <div class="col-6 fw-bold fs-5">
+              <span>Total:</span>
+            </div>
+            <div class="col-6 fw-bold fs-5 pe-0">
+              <span>$</span>
+              <span>0.00</span>
+            </div>
+          </div>
+
+          <div class="row my-1 py-3">
+            <label class="visually-hidden" for="applyCoupon">Apply coupon</label>
+            <form class="input-group">
+              <input class="form-control" type="text" name="applyCoupon" id="applyCoupon" placeholder="Enter Coupon"
+                aria-label="Apply coupon" aria-describedby="applyCouponBtn">
+              <button class="btn btn-primary" type="button" id="applyCouponBtn">
+                <span>Apply</span>
+              </button>
+            </form>
+          </div>
+
         </div>
       </div>
     </div>

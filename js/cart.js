@@ -50,7 +50,7 @@ function renderCartItems(arrayItems) {
     templateCartItem.querySelector('input[name="reducequantity"]').dataset.id = product.id;
     templateCartItem.querySelector('input[name="increasequantity"]').dataset.id = product.id;
     //final price
-    templateCartItem.querySelectorAll('div.fw-bold.ff-lato-4 span')[1].textContent = product.quantity * product.finalPrice;
+    templateCartItem.querySelectorAll('div.fw-bold span')[1].textContent = product.quantity * product.finalPrice;
     //image
     const productImage = templateCartItem.querySelector('img');
     const altAttribute = product.title.toLowerCase().replaceAll(" ", "-");
@@ -95,8 +95,8 @@ function renderCartFooter(arrayItems) {
   cartMainContainer.querySelector('span').textContent = `(${nQuantity})`;
 
   //final calculation of the checkout (coupons, shipping, discounts, etc)
-  templateCartFooter.querySelectorAll('span')[2].textContent = nFinalPrice;
-  templateCartFooter.querySelectorAll('span')[11].textContent = nFinalPrice; //the last item
+  templateCartFooter.querySelectorAll('span')[5].textContent = nFinalPrice;
+  templateCartFooter.querySelectorAll('span')[18].textContent = nFinalPrice; //the last item
 
   const clone = templateCartFooter.cloneNode(true);
   fragment.appendChild(clone);
