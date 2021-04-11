@@ -28,7 +28,7 @@ if (itemsToBuy === null) {
   fragment.appendChild(divEmptyContainer);
   fragment.appendChild(aCatalog);
 
-  itemsToBuy.classList.add('text-center');
+  cartItems.classList.add('text-center');
   cartItems.appendChild(fragment);
 } else {
   try {
@@ -106,7 +106,7 @@ function renderCartFooter(arrayItems) {
   divBuyBtn.classList.add('col-10', 'py-5', 'pe-0', 'text-end');
   const buyBtn = document.createElement('button');
   buyBtn.classList.add('btn', 'btn-primary', 'ff-lato-7', 'fs-5');
-  buyBtn.textContent = 'Finish buy';
+  buyBtn.textContent = 'Proceed to checkout';
 
   divBuyBtn.appendChild(buyBtn);
   fragment.appendChild(divBuyBtn);
