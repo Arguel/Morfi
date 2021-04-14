@@ -1,0 +1,10 @@
+.cart-title-250px {
+  width: auto !important;
+
+  @include bps($bp-md) {
+    width: 15.625em !important; //250px
+  }
+  @include bps($bp-lg) {
+    width: auto !important;
+  }
+}
