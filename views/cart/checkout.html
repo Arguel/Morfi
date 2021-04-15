@@ -360,8 +360,10 @@
         </div>
         <div
           class="col-12 col-sm-6 col-md-2 fw-bold fs-5 order-1 order-md-0 text-center text-sm-end my-0 my-sm-3 my-md-0">
-          <span>$</span>
-          <span>0.00</span>
+          <div class="d-flex justify-content-center justify-content-sm-end">
+            <div>$</div>
+            <div class="text-truncate">0.00</div>
+          </div>
         </div>
         <div class="col-12 text-primary">
           <div class="ps-60px text-center text-sm-start">
@@ -384,14 +386,14 @@
 
   <template id="template-cart-footer">
     <!--cart calculator start-->
-    <div class="col-10 py-5 border-bottom ff-lato-4">
+    <div class="col-12 col-sm-11 col-md-10 py-5 border-bottom ff-lato-4">
       <div class="row align-items-center">
-        <div class="col-8">
+        <div class="col-12 col-lg-8 text-center text-sm-start">
           <div class="mb-4">
             <h1 class="fs-3 fw-bold mb-3">
               <span>Choose payment method</span>
             </h1>
-            <div class="d-flex align-items-center flex-wrap">
+            <div class="d-flex align-items-center justify-content-center justify-content-sm-start flex-wrap">
               <figure class="my-2 me-2 overflow-hidden rounded border border-2 border-primary h-pointer">
                 <img class="img-fluid w-150px h-100px obfit-contain p-3" src="../../img/cart/paypal.jpeg"
                   alt="payment-paypal">
@@ -418,7 +420,7 @@
             <h1 class="fs-3 fw-bold mb-3">
               <span>Billing address</span>
             </h1>
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center justify-content-center justify-content-sm-start flex-wrap">
               <button
                 class="w-200px h-100px bg-white rounded border border-2 border-primary d-flex align-items-center justify-content-center"
                 type="button" aria-label="Add new address">
@@ -427,15 +429,17 @@
             </div>
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-12 col-md-10 col-lg-4 mx-auto mt-5 mt-lg-0">
 
           <div class="row my-1">
             <div class="col-6">
               <span>Original price:</span>
             </div>
             <div class="col-6">
-              <span>$</span>
-              <span>0.00</span>
+              <div class="d-flex">
+                <div>$</div>
+                <div class="text-truncate">0.00</div>
+              </div>
             </div>
           </div>
 
@@ -453,8 +457,10 @@
               <span>Tax included:</span>
             </div>
             <div class="col-6">
-              <span>$</span>
-              <span>0.00</span>
+              <div class="d-flex">
+                <div>$</div>
+                <div class="text-truncate">0.00</div>
+              </div>
             </div>
           </div>
 
@@ -463,8 +469,10 @@
               <span>Payment fee:</span>
             </div>
             <div class="col-6">
-              <span>$</span>
-              <span>0.00</span>
+              <div class="d-flex">
+                <div>$</div>
+                <div class="text-truncate">0.00</div>
+              </div>
             </div>
           </div>
 
@@ -482,20 +490,24 @@
               <span>Total:</span>
             </div>
             <div class="col-6 fw-bold fs-5">
-              <span>$</span>
-              <span>0.00</span>
+              <div class="d-flex">
+                <div>$</div>
+                <div class="text-truncate">0.00</div>
+              </div>
             </div>
           </div>
 
           <div class="row my-1 py-3">
-            <label class="visually-hidden" for="applyCoupon">Apply coupon</label>
-            <form class="input-group">
-              <input class="form-control" type="text" name="applyCoupon" id="applyCoupon" placeholder="Enter Coupon"
-                aria-label="Apply coupon" aria-describedby="applyCouponBtn">
-              <button class="btn btn-primary" type="button" id="applyCouponBtn">
-                <span>Apply</span>
-              </button>
-            </form>
+            <div class="col-12 col-sm-10 col-lg-12 mx-auto">
+              <label class="visually-hidden" for="applyCoupon">Apply coupon</label>
+              <form class="input-group">
+                <input class="form-control" type="text" name="applyCoupon" id="applyCoupon" placeholder="Enter Coupon"
+                  aria-label="Apply coupon" aria-describedby="applyCouponBtn">
+                <button class="btn btn-primary" type="button" id="applyCouponBtn">
+                  <span>Apply</span>
+                </button>
+              </form>
+            </div>
           </div>
 
         </div>

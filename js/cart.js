@@ -50,7 +50,7 @@ function renderCartItems(arrayItems) {
     templateCartItem.querySelector('input[name="reducequantity"]').dataset.id = product.id;
     templateCartItem.querySelector('input[name="increasequantity"]').dataset.id = product.id;
     //final price
-    templateCartItem.querySelectorAll('div.fw-bold span')[1].textContent = product.quantity * product.finalPrice;
+    templateCartItem.querySelector('div.d-flex div.text-truncate').textContent = product.quantity * product.finalPrice;
     //image
     const productImage = templateCartItem.querySelector('img');
     const altAttribute = product.title.toLowerCase().replaceAll(" ", "-");
@@ -95,15 +95,15 @@ function renderCartFooter(arrayItems) {
   cartMainContainer.querySelector('span').textContent = `(${nQuantity})`;
 
   //final calculation of the checkout (coupons, shipping, discounts, etc)
-  templateCartFooter.querySelectorAll('span')[5].textContent = nFinalPrice;
-  templateCartFooter.querySelectorAll('span')[18].textContent = nFinalPrice; //the last item
+  templateCartFooter.querySelector('div.d-flex div.text-truncate').textContent = nFinalPrice;
+  templateCartFooter.querySelectorAll('div.d-flex div.text-truncate')[3].textContent = nFinalPrice; //the last item
 
   const clone = templateCartFooter.cloneNode(true);
   fragment.appendChild(clone);
 
   //buy button at the end of checkout
   const divBuyBtn = document.createElement('div');
-  divBuyBtn.classList.add('col-10', 'py-5', 'pe-0', 'text-end');
+  divBuyBtn.classList.add('col-10', 'py-5', 'pe-0', 'text-center', 'text-sm-end');
   const buyBtn = document.createElement('button');
   buyBtn.classList.add('btn', 'btn-primary', 'ff-lato-7', 'fs-5');
   buyBtn.textContent = 'Proceed to checkout';
