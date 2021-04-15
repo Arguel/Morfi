@@ -8,3 +8,10 @@
     width: auto !important;
   }
 }
+.ps-60px {
+  padding-left: 3.75em !important;
+
+  @include bps($bp-xs) {
+    padding-left: initial !important;
+  }
+}

@@ -326,13 +326,14 @@
   </footer>
 
   <template id="template-cart-item">
-    <div class="col-12 py-5 border-bottom ff-lato-4">
+    <div class="col-12 py-5 border-bottom ff-lato-4 overflow-hidden">
       <div class="row">
         <div class="col-12 col-md-7 col-lg-8 overflow-hidden">
           <div class="text-truncate">
-            <div class="d-flex align-items-center">
+            <div
+              class="d-flex align-items-center flex-column flex-sm-row justify-content-center justify-content-sm-start text-center text-sm-start">
               <figure class="m-0 w-60px h-60px text-center">
-                <img class="img-rez rounded" src="http://placekitten.com/200/200" alt="item">
+                <img class="img-rez rounded">
               </figure>
               <div class="mx-2">
                 <div class="fw-bold mb-1 text-truncate-1 cart-title-250px">title</div>
@@ -340,7 +341,7 @@
             </div>
           </div>
         </div>
-        <div class="col-4 col-md-3 col-lg-2 order-1 order-md-0">
+        <div class="col-11 col-sm-6 col-md-3 col-lg-2 order-1 order-md-0 my-2 my-sm-3 my-md-0 mx-auto mx-md-0">
           <div class="border p-2 d-flex justify-content-center rounded">
             <form>
               <label class="visually-hidden" for="reducequantity">reduce quantity</label>
@@ -357,21 +358,22 @@
             <span class="text-muted">10 available</span>
           </div>
         </div>
-        <div class="col-4 col-md-2 fw-bold fs-5 pe-0 order-1 order-md-0">
+        <div
+          class="col-12 col-sm-6 col-md-2 fw-bold fs-5 order-1 order-md-0 text-center text-sm-end my-0 my-sm-3 my-md-0">
           <span>$</span>
           <span>0.00</span>
         </div>
         <div class="col-12 text-primary">
-          <div class="ps-60px">
+          <div class="ps-60px text-center text-sm-start">
             <ul class="list-unstyled my-0 mx-2">
               <li class="d-inline-block">
-                <span class="h-pointer pe-2">Remove</span>
+                <span class="h-pointer ps-1 ps-sm-0 pe-1 pe-sm-2">Remove</span>
               </li>
               <li class="d-inline-block">
-                <span class="h-pointer px-2">Buy now</span>
+                <span class="h-pointer ps-1 ps-sm-0 pe-1 pe-sm-2">Buy now</span>
               </li>
               <li class="d-inline-block h-pointer">
-                <span class="h-pointer ps-2">Save for later</span>
+                <span class="h-pointer ps-1 ps-sm-0 pe-1 pe-sm-0">Save for later</span>
               </li>
             </ul>
           </div>
@@ -431,7 +433,7 @@
             <div class="col-6">
               <span>Original price:</span>
             </div>
-            <div class="col-6 pe-0">
+            <div class="col-6">
               <span>$</span>
               <span>0.00</span>
             </div>
@@ -441,7 +443,7 @@
             <div class="col-6">
               <span>Shipping:</span>
             </div>
-            <div class="col-6 pe-0">
+            <div class="col-6">
               <span class="text-green-5">Free</span>
             </div>
           </div>
@@ -450,7 +452,7 @@
             <div class="col-6">
               <span>Tax included:</span>
             </div>
-            <div class="col-6 pe-0">
+            <div class="col-6">
               <span>$</span>
               <span>0.00</span>
             </div>
@@ -460,7 +462,7 @@
             <div class="col-6">
               <span>Payment fee:</span>
             </div>
-            <div class="col-6 pe-0">
+            <div class="col-6">
               <span>$</span>
               <span>0.00</span>
             </div>
@@ -470,7 +472,7 @@
             <div class="col-6">
               <span>Coupon discounts:</span>
             </div>
-            <div class="col-6 pe-0">
+            <div class="col-6">
               <span>No coupons</span>
             </div>
           </div>
@@ -479,7 +481,7 @@
             <div class="col-6 fw-bold fs-5">
               <span>Total:</span>
             </div>
-            <div class="col-6 fw-bold fs-5 pe-0">
+            <div class="col-6 fw-bold fs-5">
               <span>$</span>
               <span>0.00</span>
             </div>

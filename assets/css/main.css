@@ -7195,6 +7195,12 @@ textarea.form-control-lg {
     .cart-title-250px {
       width: auto !important; } }
 
+.ps-60px {
+  padding-left: 3.75em !important; }
+  @media only screen and (max-width: 576px) {
+    .ps-60px {
+      padding-left: initial !important; } }
+
 .img-rez {
   width: 100%;
   height: 100%;
@@ -7559,9 +7565,6 @@ textarea.form-control-lg {
 
 .pt-6 {
   padding-top: 4rem !important; }
-
-.ps-60px {
-  padding-left: 60px !important; }
 
 .h-white:hover {
   color: white !important; }

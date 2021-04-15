@@ -62,7 +62,7 @@ function renderCartItems(arrayItems) {
       const divShipping = document.createElement('div');
       divShipping.classList.add('text-green-5', 'mb-1');
       const iconShipping = document.createElement('i');
-      iconShipping.classList.add('fas', 'fa-truck', 'mx-1');
+      iconShipping.classList.add('fas', 'fa-truck', 'me-1');
       const spanShipping = document.createElement('span');
       spanShipping.classList.add('fw-bold');
       spanShipping.textContent = 'Free shipping';
