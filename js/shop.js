@@ -327,7 +327,7 @@ function addToCart(e) {
 function setToCart(parentItem) {
   const shippingElem = parentItem.querySelector('span.text-green-5 span.visually-hidden');
   let shipping = false;
-  if (shippingElem !== null && shippingElem !== undefined) {
+  if (shippingElem !== null) {
     shipping = true
   }
   const finalPriceSelector = parentItem.querySelector('div.ff-mont-6 span').textContent
