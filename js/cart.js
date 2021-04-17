@@ -21,8 +21,8 @@ if (itemsToBuy === null) {
   }
 }
 
-cartItems.addEventListener('click', (e) => {
-  unitManager(e);
+cartItems.addEventListener('click', e => {
+  itemManager(e);
 })
 
 function renderEmptyCart() {
@@ -58,9 +58,8 @@ function renderCartItems(arrayItems) {
     templateCartItem.querySelector('div.fw-bold.mb-1').textContent = product.title;
     //quantity
     templateCartItem.querySelector('input[name="quantity"]').value = product.quantity;
-    //increase/reduce quantity buttons
-    templateCartItem.querySelector('input[name="reducequantity"]').dataset.id = product.id;
-    templateCartItem.querySelector('input[name="increasequantity"]').dataset.id = product.id;
+    //main row container
+    templateCartItem.querySelector('.row').dataset.id = product.id;
     //final price
     templateCartItem.querySelector('div.d-flex div.text-truncate').textContent = product.quantity * product.finalPrice;
     //image
@@ -138,16 +137,38 @@ function renderCartFooter(arrayItems) {
   })
 }
 
-function unitManager(e) {
-  if (e.target.name == 'reducequantity') {
-    //this prevent the parent form from reloading the page
-    e.target.parentNode.addEventListener('submit', event => {
-      event.preventDefault();
-    })
-    //this is as if we were to search for a particular object within itemsToBuy with an id/index
-    const product = itemsToBuy[e.target.dataset.id];
-    product.quantity--;
-    itemsToBuy[e.target.dataset.id] = {...product};
+function itemManager(e) {
+  //console.log(e.target);
+  //console.log(e.target.attributes);
+  //console.log(e.target.textContent);
+  switch (e.target.name) {
+
+    case 'reducequantity': case 'increasequantity':
+      e.target.parentNode.addEventListener('submit', event => {
+        event.preventDefault();
+      })
+
+      const product = itemsToBuy[e.target.closest('.row').dataset.id];
+      if (e.target.name == 'reducequantity') {
+        product.quantity--;
+      }
+      if (e.target.name == 'increasequantity') {
+        product.quantity++;
+      }
+      itemsToBuy[e.target.closest('.row').dataset.id] = {...product};
+      localStorage.setItem('cart', JSON.stringify(itemsToBuy));
+      renderCartItems(itemsToBuy);
+      break;
+
+    case 'quantity':
+      e.target.addEventListener('change', () => {
+        e.target.value;
+      })
+      break;
+  }
+
+  if (e.target.classList.contains('h-pointer', 'ps-1', 'ps-sm-0', 'pe-1', 'pe-sm-2') && e.target.textContent === 'Remove') {
+    delete itemsToBuy[e.target.closest('.row').dataset.id];
     localStorage.setItem('cart', JSON.stringify(itemsToBuy));
     renderCartItems(itemsToBuy);
   }

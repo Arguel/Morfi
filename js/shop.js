@@ -319,7 +319,7 @@ function renderShopItems(arrayItems) {
 
 function addToCart(e) {
   if (e.target.classList.contains('btn-primary')) {
-    setToCart(e.target.parentElement.parentElement);
+    setToCart(e.target.closest('.border.m-2.rounded'));
   };
   e.stopPropagation();
 }
@@ -346,15 +346,3 @@ function setToCart(parentItem) {
 
   localStorage.setItem('cart', JSON.stringify(cart));
 }
-
-
-
-
-
-
-
-
-
-
-
-
