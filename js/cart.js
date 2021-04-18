@@ -81,6 +81,11 @@ function renderCartItems(arrayItems) {
     templateCartItem.querySelector(itemTitleSelector).textContent = product.title;
     //quantity
     templateCartItem.querySelector(inputUnitSelector).value = product.quantity;
+    if (product.quantity > 1) {
+      templateCartItem.querySelector('input[name="reducequantity"]').removeAttribute('disabled');
+    } else {
+      templateCartItem.querySelector('input[name="reducequantity"]').setAttribute('disabled', '');
+    }
     //main row container
     templateCartItem.querySelector(itemMainRowSelector).dataset.id = product.id;
     //final price
@@ -146,11 +151,7 @@ function renderCartFooter(arrayItems) {
     return;
   })
   clearBtn.addEventListener('click', () => {
-    localStorage.removeItem('cart');
-
-    cartMainContainer.querySelector(mainUnitLabelSelector).textContent = '(0)';
-    cartMainContainer.removeChild(cartMainContainer.lastElementChild);
-    renderEmptyCart();
+    resetCart();
   })
 }
 
@@ -185,7 +186,7 @@ function itemManager(e) {
   if (e.target.classList.contains('h-pointer', 'ps-1', 'ps-sm-0', 'pe-1', 'pe-sm-2') && e.target.textContent === 'Remove') {
     delete itemsToBuy[e.target.closest(itemMainRowSelector).dataset.id];
     localStorage.setItem('cart', JSON.stringify(itemsToBuy));
-    renderCartItems(itemsToBuy);
+    (Object.values(itemsToBuy).length == 0) ? resetCart() : renderCartItems(itemsToBuy);
   }
 
   e.stopPropagation();
@@ -194,8 +195,9 @@ function itemManager(e) {
 function updateCartContent(element) {
 
   //Objects
-  const itemQuantity = itemsToBuy[element.target.closest(itemMainRowSelector).dataset.id].quantity;
-  const itemPrice = itemsToBuy[element.target.closest(itemMainRowSelector).dataset.id].finalPrice;
+  const mainObject = itemsToBuy[element.target.closest(itemMainRowSelector).dataset.id];
+  const itemQuantity = mainObject.quantity;
+  const itemPrice = mainObject.finalPrice;
 
   /* we select the container div (main container of units)
    * element.target.closest('.border.p-2')
@@ -203,6 +205,15 @@ function updateCartContent(element) {
    * this brings up the number of units of the object with a given id
    * itemsToBuy[element.target.closest(itemMainRowSelector).dataset.id].quantity
     */
+
+  if (itemQuantity > 1) {
+    //this basically dynamically selects the rendered items in the shopping cart
+    //for example.querySelector('.row[data-id="1"]')
+    const itemRow = cartItems.querySelector('.row[data-id="' + mainObject.id + '"]');
+    itemRow.querySelector('input[name="reducequantity"]').removeAttribute('disabled');
+  } else {
+    element.target.setAttribute('disabled', '');
+  }
 
   //input containing the number of current units
   element.target.closest('.border.p-2').querySelector(inputUnitSelector).value = itemQuantity;
@@ -235,6 +246,9 @@ function footerCalculator(arrayItems) {
   return finalResults;
 }
 
-
-
-
+function resetCart() {
+  localStorage.removeItem('cart');
+  cartMainContainer.querySelector(mainUnitLabelSelector).textContent = '(0)';
+  cartMainContainer.removeChild(cartMainContainer.lastElementChild);
+  renderEmptyCart();
+}

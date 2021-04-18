@@ -198,7 +198,6 @@ const apiShopItems = [
 const shopItems = document.getElementById('shop-items-display');
 const templateShopLi = document.getElementById('template-item-li').content;
 const fragment = document.createDocumentFragment();
-let cart = JSON.parse(localStorage.getItem('cart')) || {};
 
 document.addEventListener('DOMContentLoaded', () => {
   fetchShopItems();
@@ -325,6 +324,9 @@ function addToCart(e) {
 }
 
 function setToCart(parentItem) {
+  //to keep our cart updated (in case the user is editing several tabs at the same time)
+  let cart = JSON.parse(localStorage.getItem('cart')) || {};
+
   const shippingElem = parentItem.querySelector('span.text-green-5 span.visually-hidden');
   let shipping = false;
   if (shippingElem !== null) {
