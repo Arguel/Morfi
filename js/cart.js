@@ -7,6 +7,29 @@ const cartMainContainer = document.getElementById('cart-container');
 
 const fragment = document.createDocumentFragment();
 
+
+
+//cart selectors
+
+//final price per item, it is also used in the footer to make the final calculations
+const finalPriceSelector = 'div.d-flex div.text-truncate';
+//title
+const itemTitleSelector = 'div.fw-bold.mb-1';
+//main row with data-id
+const itemMainRowSelector = '.row';
+//input with the current number of units
+const inputUnitSelector = 'input[name="quantity"]';
+//main item image
+const itemImageSelector = 'img';
+//main container that stores the title (we use it to insert the label that says free shipping)
+const titleContainerSelector = '.mx-2';
+//it helps us to check if the container containing the footer was created or not
+const footerContainerSelector = 'h1.fs-3.fw-bold';
+//main label containing the total number of units in the cart
+const mainUnitLabelSelector = 'span';
+//footer buttons (clean cart and checkout)
+const footerButtonsSelector = 'button.btn.btn-primary.ff-lato-7';
+
 //items added from shop page
 let itemsToBuy = localStorage.getItem('cart');
 
@@ -55,15 +78,15 @@ function renderCartItems(arrayItems) {
 
   Object.values(arrayItems).forEach(product => {
     //title
-    templateCartItem.querySelector('div.fw-bold.mb-1').textContent = product.title;
+    templateCartItem.querySelector(itemTitleSelector).textContent = product.title;
     //quantity
-    templateCartItem.querySelector('input[name="quantity"]').value = product.quantity;
+    templateCartItem.querySelector(inputUnitSelector).value = product.quantity;
     //main row container
-    templateCartItem.querySelector('.row').dataset.id = product.id;
+    templateCartItem.querySelector(itemMainRowSelector).dataset.id = product.id;
     //final price
-    templateCartItem.querySelector('div.d-flex div.text-truncate').textContent = product.quantity * product.finalPrice;
+    templateCartItem.querySelector(finalPriceSelector).textContent = product.quantity * product.finalPrice;
     //image
-    const productImage = templateCartItem.querySelector('img');
+    const productImage = templateCartItem.querySelector(itemImageSelector);
     const altAttribute = product.title.toLowerCase().replaceAll(" ", "-");
     productImage.setAttribute("src", product.thumnailUrl);
     productImage.setAttribute("alt", altAttribute);
@@ -80,7 +103,7 @@ function renderCartItems(arrayItems) {
       divShipping.appendChild(iconShipping);
       divShipping.appendChild(spanShipping);
 
-      templateCartItem.querySelector('.mx-2').appendChild(divShipping);
+      templateCartItem.querySelector(titleContainerSelector).appendChild(divShipping);
     }
 
     const clone = templateCartItem.cloneNode(true);
@@ -88,7 +111,7 @@ function renderCartItems(arrayItems) {
 
     //if the shipping container was added we remove it
     if (product.hasFreeShipping) {
-      const shippingContainer = templateCartItem.querySelector('.mx-2');
+      const shippingContainer = templateCartItem.querySelector(titleContainerSelector);
       shippingContainer.removeChild(shippingContainer.lastChild);
     }
   });
@@ -100,21 +123,15 @@ function renderCartItems(arrayItems) {
 function renderCartFooter(arrayItems) {
 
   //This basically checks if the footer was created, so we don't render it again
-  const cartFooter = cartMainContainer.querySelector('h1.fs-3.fw-bold');
+  const cartFooter = cartMainContainer.querySelector(footerContainerSelector);
   if (cartFooter != null) {
     cartMainContainer.removeChild(cartMainContainer.lastElementChild);
   }
 
-  //we add all the units
-  const nQuantity = Object.values(arrayItems).reduce((acc, {quantity}) => acc + quantity, 0);
-  //we add all the prices to calculate the total
-  const nFinalPrice = Object.values(arrayItems).reduce((acc, {quantity, finalPrice}) => acc + quantity * finalPrice, 0);
-  //top cart label in checkout
-  cartMainContainer.querySelector('span').textContent = `(${nQuantity})`;
-
+  const {rfinalPrice} = footerCalculator(arrayItems);
   //final calculation of the checkout (coupons, shipping, discounts, etc)
-  templateCartFooter.querySelector('div.d-flex div.text-truncate').textContent = nFinalPrice;
-  templateCartFooter.querySelectorAll('div.d-flex div.text-truncate')[3].textContent = nFinalPrice; //the last item
+  templateCartFooter.querySelector(finalPriceSelector).textContent = rfinalPrice;
+  templateCartFooter.querySelectorAll(finalPriceSelector)[3].textContent = rfinalPrice; //the last item
 
   const clone = templateCartFooter.cloneNode(true);
   fragment.appendChild(clone);
@@ -123,24 +140,21 @@ function renderCartFooter(arrayItems) {
   cartMainContainer.appendChild(fragment);
 
   //button events
-  const buyBtn = document.querySelectorAll('button.btn.btn-primary.ff-lato-7')[1];
-  const clearBtn = document.querySelectorAll('button.btn.btn-primary.ff-lato-7')[0];
+  const buyBtn = document.querySelectorAll(footerButtonsSelector)[1];
+  const clearBtn = document.querySelectorAll(footerButtonsSelector)[0];
   buyBtn.addEventListener('click', () => {
     return;
   })
   clearBtn.addEventListener('click', () => {
     localStorage.removeItem('cart');
 
-    cartMainContainer.querySelector('span').textContent = '(0)';
+    cartMainContainer.querySelector(mainUnitLabelSelector).textContent = '(0)';
     cartMainContainer.removeChild(cartMainContainer.lastElementChild);
     renderEmptyCart();
   })
 }
 
 function itemManager(e) {
-  //console.log(e.target);
-  //console.log(e.target.attributes);
-  //console.log(e.target.textContent);
   switch (e.target.name) {
 
     case 'reducequantity': case 'increasequantity':
@@ -148,16 +162,17 @@ function itemManager(e) {
         event.preventDefault();
       })
 
-      const product = itemsToBuy[e.target.closest('.row').dataset.id];
+      //we capture the object to modify
+      const product = itemsToBuy[e.target.closest(itemMainRowSelector).dataset.id];
       if (e.target.name == 'reducequantity') {
         product.quantity--;
       }
       if (e.target.name == 'increasequantity') {
         product.quantity++;
       }
-      itemsToBuy[e.target.closest('.row').dataset.id] = {...product};
+      itemsToBuy[e.target.closest(itemMainRowSelector).dataset.id] = {...product};
       localStorage.setItem('cart', JSON.stringify(itemsToBuy));
-      renderCartItems(itemsToBuy);
+      updateCartContent(e)
       break;
 
     case 'quantity':
@@ -168,7 +183,7 @@ function itemManager(e) {
   }
 
   if (e.target.classList.contains('h-pointer', 'ps-1', 'ps-sm-0', 'pe-1', 'pe-sm-2') && e.target.textContent === 'Remove') {
-    delete itemsToBuy[e.target.closest('.row').dataset.id];
+    delete itemsToBuy[e.target.closest(itemMainRowSelector).dataset.id];
     localStorage.setItem('cart', JSON.stringify(itemsToBuy));
     renderCartItems(itemsToBuy);
   }
@@ -176,8 +191,49 @@ function itemManager(e) {
   e.stopPropagation();
 }
 
+function updateCartContent(element) {
 
+  //Objects
+  const itemQuantity = itemsToBuy[element.target.closest(itemMainRowSelector).dataset.id].quantity;
+  const itemPrice = itemsToBuy[element.target.closest(itemMainRowSelector).dataset.id].finalPrice;
 
+  /* we select the container div (main container of units)
+   * element.target.closest('.border.p-2')
+   *
+   * this brings up the number of units of the object with a given id
+   * itemsToBuy[element.target.closest(itemMainRowSelector).dataset.id].quantity
+    */
+
+  //input containing the number of current units
+  element.target.closest('.border.p-2').querySelector(inputUnitSelector).value = itemQuantity;
+
+  // price multiplied by number of units
+  element.target.closest(itemMainRowSelector).querySelector(finalPriceSelector).textContent = itemQuantity * itemPrice;
+
+  const {rfinalPrice} = footerCalculator(itemsToBuy);
+
+  //this selects the summary section of the shopping cart footer
+  const newCartFooter = cartMainContainer.querySelector('.col-12.col-md-10.col-lg-4.mx-auto.mt-5.mt-lg-0');
+  newCartFooter.querySelector(finalPriceSelector).textContent = rfinalPrice;
+  newCartFooter.querySelectorAll(finalPriceSelector)[3].textContent = rfinalPrice; //the last item
+}
+
+function footerCalculator(arrayItems) {
+  //n stands for new
+  //we add all the units
+  const nQuantity = Object.values(arrayItems).reduce((acc, {quantity}) => acc + quantity, 0);
+  //we add all the prices to calculate the total
+  const nFinalPrice = Object.values(arrayItems).reduce((acc, {quantity, finalPrice}) => acc + quantity * finalPrice, 0);
+  //top cart label in checkout
+  cartMainContainer.querySelector(mainUnitLabelSelector).textContent = `(${nQuantity})`;
+
+  //r for results
+  const finalResults = {
+    rfinalPrice: nFinalPrice,
+    rquantity: nQuantity
+  }
+  return finalResults;
+}
 
 
 
