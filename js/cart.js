@@ -177,8 +177,16 @@ function itemManager(e) {
       break;
 
     case 'quantity':
-      e.target.addEventListener('change', () => {
-        e.target.value;
+      e.target.addEventListener('keyup', () => {
+        let actualNumber = parseInt(e.target.value, 10);
+        if (actualNumber >= 0 && actualNumber !== NaN && actualNumber !== null) {
+          actualNumber = actualNumber;
+        } else {
+          actualNumber = '';
+        }
+        itemsToBuy[e.target.closest(itemMainRowSelector).dataset.id].quantity = actualNumber;
+        localStorage.setItem('cart', JSON.stringify(itemsToBuy));
+        updateCartContent(e)
       })
       break;
   }
@@ -206,13 +214,13 @@ function updateCartContent(element) {
    * itemsToBuy[element.target.closest(itemMainRowSelector).dataset.id].quantity
     */
 
+  //this basically dynamically selects the rendered items in the shopping cart
+  //for example.querySelector('.row[data-id="1"]')
+  const itemRow = cartItems.querySelector('.row[data-id="' + mainObject.id + '"]');
   if (itemQuantity > 1) {
-    //this basically dynamically selects the rendered items in the shopping cart
-    //for example.querySelector('.row[data-id="1"]')
-    const itemRow = cartItems.querySelector('.row[data-id="' + mainObject.id + '"]');
     itemRow.querySelector('input[name="reducequantity"]').removeAttribute('disabled');
   } else {
-    element.target.setAttribute('disabled', '');
+    itemRow.querySelector('input[name="reducequantity"]').setAttribute('disabled', '');
   }
 
   //input containing the number of current units
