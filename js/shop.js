@@ -332,11 +332,11 @@ function setToCart(parentItem) {
   if (shippingElem !== null) {
     shipping = true
   }
-  const finalPriceSelector = parentItem.querySelector('div.ff-mont-6 span').textContent
+  const finalPriceSelector = parentItem.querySelector('div.ff-mont-6 span').textContent;
   const product = {
     id: parentItem.querySelector('.btn-primary').dataset.id,
     title: parentItem.querySelector('h5 a').textContent,
-    finalPrice: parseInt(finalPriceSelector.substr(1)),
+    finalPrice: parseFloat(finalPriceSelector.substr(1)),
     hasFreeShipping: shipping,
     thumnailUrl: parentItem.querySelector('img').getAttribute('src'),
     quantity: 1,

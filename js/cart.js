@@ -1,3 +1,5 @@
+"use strict";
+
 //templates
 const templateCartItem = document.getElementById('template-cart-item').content;
 const templateCartFooter = document.getElementById('template-cart-footer').content;
@@ -24,7 +26,7 @@ const itemImageSelector = 'img';
 //main container that stores the title (we use it to insert the label that says free shipping)
 const titleContainerSelector = '.mx-2';
 //it helps us to check if the container containing the footer was created or not
-const footerContainerSelector = 'h1.fs-3.fw-bold';
+const footerContainerSelector = '.col-12.col-sm-11.col-md-10.py-5.border-bottom.ff-lato-4.mx-auto';
 //main label containing the total number of units in the cart
 const mainUnitLabelSelector = 'span';
 //footer buttons (clean cart and checkout)
@@ -44,8 +46,8 @@ if (itemsToBuy === null) {
   }
 }
 
-cartItems.addEventListener('click', e => {
-  itemManager(e);
+cartMainContainer.addEventListener('click', e => {
+  cartManager(e);
 })
 
 function renderEmptyCart() {
@@ -133,10 +135,11 @@ function renderCartFooter(arrayItems) {
     cartMainContainer.removeChild(cartMainContainer.lastElementChild);
   }
 
-  const {rfinalPrice} = footerCalculator(arrayItems);
+  const {rfinalPrice, rpaymentMethod} = footerCalculator(arrayItems);
   //final calculation of the checkout (coupons, shipping, discounts, etc)
   templateCartFooter.querySelector(finalPriceSelector).textContent = rfinalPrice;
-  templateCartFooter.querySelectorAll(finalPriceSelector)[3].textContent = rfinalPrice; //the last item
+  templateCartFooter.querySelectorAll(finalPriceSelector)[2].textContent = rpaymentMethod;
+  templateCartFooter.querySelectorAll(finalPriceSelector)[3].textContent = rfinalPrice + rpaymentMethod; //the last item
 
   const clone = templateCartFooter.cloneNode(true);
   fragment.appendChild(clone);
@@ -155,7 +158,8 @@ function renderCartFooter(arrayItems) {
   })
 }
 
-function itemManager(e) {
+function cartManager(e) {
+  //-----cart summary
   switch (e.target.name) {
 
     case 'reducequantity': case 'increasequantity':
@@ -197,47 +201,78 @@ function itemManager(e) {
     (Object.values(itemsToBuy).length == 0) ? resetCart() : renderCartItems(itemsToBuy);
   }
 
+  //-----cart payment methods
+  const paymentMethodParentNode = e.target.parentNode.classList.contains('my-2', 'me-2', 'overflow-hidden', 'rounded', 'h-pointer');
+  if (paymentMethodParentNode) {
+    console.log(e.target);
+    cartMainContainer.querySelectorAll('.my-2.me-2.overflow-hidden.rounded.h-pointer').forEach(e => {
+      e.classList.remove('border', 'border-2', 'border-primary');
+    });
+    e.target.parentNode.classList.add('border', 'border-2', 'border-primary');
+    switch (e.target.dataset.method) {
+      case 'paypal':
+        updateCartContent(e, 'paypal');
+        break;
+      case 'mastercard':
+        updateCartContent(e, 'mastercard');
+        break;
+      case 'visaandmaster':
+        updateCartContent(e, 'visaandmaster');
+        break;
+      case 'paysafecard':
+        updateCartContent(e, 'paysafecard');
+        break;
+      case 'klarna':
+        updateCartContent(e, 'klarna');
+        break;
+    }
+  }
+
   e.stopPropagation();
 }
 
-function updateCartContent(element) {
+function updateCartContent(element, paymentMethod) {
 
   //Objects
   const mainObject = itemsToBuy[element.target.closest(itemMainRowSelector).dataset.id];
-  const itemQuantity = mainObject.quantity;
-  const itemPrice = mainObject.finalPrice;
+  if (mainObject !== undefined) {
 
-  /* we select the container div (main container of units)
-   * element.target.closest('.border.p-2')
-   *
-   * this brings up the number of units of the object with a given id
-   * itemsToBuy[element.target.closest(itemMainRowSelector).dataset.id].quantity
-    */
+    const itemQuantity = mainObject.quantity;
+    const itemPrice = mainObject.finalPrice;
 
-  //this basically dynamically selects the rendered items in the shopping cart
-  //for example.querySelector('.row[data-id="1"]')
-  const itemRow = cartItems.querySelector('.row[data-id="' + mainObject.id + '"]');
-  if (itemQuantity > 1) {
-    itemRow.querySelector('input[name="reducequantity"]').removeAttribute('disabled');
-  } else {
-    itemRow.querySelector('input[name="reducequantity"]').setAttribute('disabled', '');
+    /* we select the container div (main container of units)
+     * element.target.closest('.border.p-2')
+     *
+     * this brings up the number of units of the object with a given id
+     * itemsToBuy[element.target.closest(itemMainRowSelector).dataset.id].quantity
+      */
+
+    //this basically dynamically selects the rendered items in the shopping cart
+    //for example.querySelector('.row[data-id="1"]')
+    const itemRow = cartItems.querySelector('.row[data-id="' + mainObject.id + '"]');
+    if (itemQuantity > 1) {
+      itemRow.querySelector('input[name="reducequantity"]').removeAttribute('disabled');
+    } else {
+      itemRow.querySelector('input[name="reducequantity"]').setAttribute('disabled', '');
+    }
+
+    //input containing the number of current units
+    element.target.closest('.border.p-2').querySelector(inputUnitSelector).value = itemQuantity;
+
+    // price multiplied by number of units
+    element.target.closest(itemMainRowSelector).querySelector(finalPriceSelector).textContent = itemQuantity * itemPrice;
+
   }
-
-  //input containing the number of current units
-  element.target.closest('.border.p-2').querySelector(inputUnitSelector).value = itemQuantity;
-
-  // price multiplied by number of units
-  element.target.closest(itemMainRowSelector).querySelector(finalPriceSelector).textContent = itemQuantity * itemPrice;
-
-  const {rfinalPrice} = footerCalculator(itemsToBuy);
+  const {rfinalPrice, rpaymentMethod} = footerCalculator(itemsToBuy, paymentMethod);
 
   //this selects the summary section of the shopping cart footer
-  const newCartFooter = cartMainContainer.querySelector('.col-12.col-md-10.col-lg-4.mx-auto.mt-5.mt-lg-0');
+  const newCartFooter = cartMainContainer.querySelector(footerContainerSelector);
   newCartFooter.querySelector(finalPriceSelector).textContent = rfinalPrice;
-  newCartFooter.querySelectorAll(finalPriceSelector)[3].textContent = rfinalPrice; //the last item
+  newCartFooter.querySelectorAll(finalPriceSelector)[2].textContent = rpaymentMethod;
+  newCartFooter.querySelectorAll(finalPriceSelector)[3].textContent = rfinalPrice + rpaymentMethod; //the last item
 }
 
-function footerCalculator(arrayItems) {
+function footerCalculator(arrayItems, paymentMethod = 'paypal') {
   //n stands for new
   //we add all the units
   const nQuantity = Object.values(arrayItems).reduce((acc, {quantity}) => acc + quantity, 0);
@@ -246,10 +281,31 @@ function footerCalculator(arrayItems) {
   //top cart label in checkout
   cartMainContainer.querySelector(mainUnitLabelSelector).textContent = `(${nQuantity})`;
 
+  let nMethodFee = 0;
+  switch (paymentMethod) {
+    case 'paypal':
+      nMethodFee = 15;
+      break;
+    case 'mastercard':
+      nMethodFee = 10;
+      break;
+    case 'visaandmaster':
+      nMethodFee = 21;
+      break;
+    case 'paysafecard':
+      nMethodFee = 8;
+      break;
+    case 'klarna':
+      nMethodFee = 2;
+      break;
+  }
+  nMethodFee = nFinalPrice * nMethodFee / 100;
+
   //r for results
   const finalResults = {
     rfinalPrice: nFinalPrice,
-    rquantity: nQuantity
+    rquantity: nQuantity,
+    rpaymentMethod: nMethodFee
   }
   return finalResults;
 }
