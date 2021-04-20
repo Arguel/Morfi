@@ -195,11 +195,31 @@ const apiShopItems = [
 
 //-----------------------------------------------------------
 
-const shopItems = document.getElementById('shop-items-display');
+//templates
 const templateShopLi = document.getElementById('template-item-li').content;
+
+//containers
+const shopItems = document.getElementById('shop-items-display');
 const cartMiniIcon = document.querySelector('span.position-absolute.top-0.start-100.translate-middle.badge.rounded-pill.bg-primary.h-pointer span');
+
+//fragments
 const fragment = document.createDocumentFragment();
+
 let cart = JSON.parse(localStorage.getItem('cart')) || {};
+
+
+//selectors
+
+const itemImageSelector = 'img';
+const itemTitleSeletor = 'h5 a';
+const itemFinalPriceSelector = 'div.ff-mont-6 span';
+const finalPriceParentSelector = 'div.ff-mont-6';
+const priceAndShippingSelector = 'div.overflow-hidden.text-truncate-2';
+const itemDescriptionSelector = 'div.text-truncate';
+const addToCartSelector = '.btn-primary';
+const fullItemSelector = '.border.m-2.rounded';
+const shippingTagSelector = 'span.text-green-5 span.visually-hidden';
+
 
 document.addEventListener('DOMContentLoaded', () => {
   fetchShopItems();
@@ -247,14 +267,14 @@ function renderShopItems(arrayItems) {
 
   arrayItems.forEach(product => {
     //image
-    const productImage = templateShopLi.querySelector('img');
+    const productImage = templateShopLi.querySelector(itemImageSelector);
     const altAttribute = product.title.toLowerCase().replaceAll(" ", "-");
     productImage.setAttribute("src", product.thumnailUrl);
     productImage.setAttribute("alt", altAttribute);
     //title
-    templateShopLi.querySelector('h5 a').textContent = product.title;
+    templateShopLi.querySelector(itemTitleSeletor).textContent = product.title;
     //final price
-    templateShopLi.querySelector('div.ff-mont-6 span').textContent = `$${(product.price - product.price * product.discount / 100).toFixed(2)}`;
+    templateShopLi.querySelector(itemFinalPriceSelector).textContent = `$${(product.price - product.price * product.discount / 100).toFixed(2)}`;
     //shipping
     if (product.hasFreeShipping) {
       const spanShippingIcon = document.createElement('span');
@@ -269,7 +289,7 @@ function renderShopItems(arrayItems) {
       shippingIcon.classList.add('fas', 'fa-truck');
       spanShippingIcon.appendChild(shippingIcon);
 
-      templateShopLi.querySelector('div.ff-mont-6').appendChild(spanShippingIcon);
+      templateShopLi.querySelector(finalPriceParentSelector).appendChild(spanShippingIcon);
     }
 
     if (product.hasDiscount) {
@@ -300,14 +320,14 @@ function renderShopItems(arrayItems) {
     //we check if the container has been created and if it is true we add it to our template temporarily
     if (createdDiv) {
       //here we add the possible labels to each item
-      templateShopLi.querySelector('div.overflow-hidden.text-truncate-2').appendChild(divContainer);
+      templateShopLi.querySelector(priceAndShippingSelector).appendChild(divContainer);
     }
 
     //description
-    templateShopLi.querySelector('div.text-truncate').textContent = product.description;
+    templateShopLi.querySelector(itemDescriptionSelector).textContent = product.description;
 
     //add to cart button
-    templateShopLi.querySelector('.btn-primary').dataset.id = product.id;
+    templateShopLi.querySelector(addToCartSelector).dataset.id = product.id;
 
     //we clone the template because there can only be one
     const clone = templateShopLi.cloneNode(true);
@@ -315,12 +335,12 @@ function renderShopItems(arrayItems) {
 
     //check if the discounts/promotions/shipping container was created, and if it was created, it will delete it so it is not added to all items and only applies to the necessary ones
     if (createdDiv) {
-      const mainContainer = templateShopLi.querySelector('div.overflow-hidden.text-truncate-2');
+      const mainContainer = templateShopLi.querySelector(priceAndShippingSelector);
       mainContainer.removeChild(mainContainer.lastChild); //here we remove the new child that we create "divContainer"
       createdDiv = false; //it is important to reset the variable
     }
     if (product.hasFreeShipping) {
-      const priceContainer = templateShopLi.querySelector('div.ff-mont-6');
+      const priceContainer = templateShopLi.querySelector(finalPriceParentSelector);
       priceContainer.removeChild(priceContainer.lastChild);
     }
 
@@ -330,7 +350,7 @@ function renderShopItems(arrayItems) {
 
 function addToCart(e) {
   if (e.target.classList.contains('btn-primary')) {
-    setToCart(e.target.closest('.border.m-2.rounded'));
+    setToCart(e.target.closest(fullItemSelector));
   };
   e.stopPropagation();
 }
@@ -339,18 +359,18 @@ function setToCart(parentItem) {
   //to keep our cart updated (in case the user is editing several tabs at the same time)
   cart = JSON.parse(localStorage.getItem('cart')) || {};
 
-  const shippingElem = parentItem.querySelector('span.text-green-5 span.visually-hidden');
+  const shippingElem = parentItem.querySelector(shippingTagSelector);
   let shipping = false;
   if (shippingElem !== null) {
     shipping = true
   }
-  const finalPriceSelector = parentItem.querySelector('div.ff-mont-6 span').textContent;
+  const finalPriceSelector = parentItem.querySelector(itemFinalPriceSelector).textContent;
   const product = {
-    id: parentItem.querySelector('.btn-primary').dataset.id,
-    title: parentItem.querySelector('h5 a').textContent,
+    id: parentItem.querySelector(addToCartSelector).dataset.id,
+    title: parentItem.querySelector(itemTitleSeletor).textContent,
     finalPrice: parseFloat(finalPriceSelector.substr(1)),
     hasFreeShipping: shipping,
-    thumnailUrl: parentItem.querySelector('img').getAttribute('src'),
+    thumnailUrl: parentItem.querySelector(itemImageSelector).getAttribute('src'),
     quantity: 1,
   }
   if (cart.hasOwnProperty(product.id)) {

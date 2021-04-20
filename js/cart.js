@@ -3,12 +3,13 @@
 //templates
 const templateCartItem = document.getElementById('template-cart-item').content;
 const templateCartFooter = document.getElementById('template-cart-footer').content;
+
 //containers
 const cartItems = document.getElementById('cart-items');
 const cartMainContainer = document.getElementById('cart-container');
 
+//fragments
 const fragment = document.createDocumentFragment();
-
 
 
 //cart selectors
@@ -31,6 +32,12 @@ const footerContainerSelector = '.col-12.col-sm-11.col-md-10.py-5.border-bottom.
 const mainUnitLabelSelector = 'span';
 //footer buttons (clean cart and checkout)
 const footerButtonsSelector = 'button.btn.btn-primary.ff-lato-7';
+//this selects the parent of the element that is clicked, in our case it is a figure tag
+const paymentFigureSelector = 'figure.my-2.me-2.overflow-hidden.rounded.h-pointer';
+//remove span (used to remove the items when you click it, it is present in each rendered item)
+const itemSpanSelector = '.h-pointer.ps-1.ps-sm-0.pe-1.pe-sm-2';
+//present in each item (it is the button that appears with the value of "-" and allows to decrease the number of units of the item)
+const inputReduceSelector = 'input[name="reducequantity"]';
 
 //items added from shop page
 let itemsToBuy = localStorage.getItem('cart');
@@ -84,14 +91,14 @@ function renderCartItems(arrayItems) {
     //quantity
     templateCartItem.querySelector(inputUnitSelector).value = product.quantity;
     if (product.quantity > 1) {
-      templateCartItem.querySelector('input[name="reducequantity"]').removeAttribute('disabled');
+      templateCartItem.querySelector(inputReduceSelector).removeAttribute('disabled');
     } else {
-      templateCartItem.querySelector('input[name="reducequantity"]').setAttribute('disabled', '');
+      templateCartItem.querySelector(inputReduceSelector).setAttribute('disabled', '');
     }
     //main row container
     templateCartItem.querySelector(itemMainRowSelector).dataset.id = product.id;
     //final price
-    templateCartItem.querySelector(finalPriceSelector).textContent = product.quantity * product.finalPrice;
+    templateCartItem.querySelector(finalPriceSelector).textContent = (product.quantity * product.finalPrice).toFixed(2);
     //image
     const productImage = templateCartItem.querySelector(itemImageSelector);
     const altAttribute = product.title.toLowerCase().replaceAll(" ", "-");
@@ -137,9 +144,9 @@ function renderCartFooter(arrayItems) {
 
   const {rfinalPrice, rpaymentMethod} = footerCalculator(arrayItems);
   //final calculation of the checkout (coupons, shipping, discounts, etc)
-  templateCartFooter.querySelector(finalPriceSelector).textContent = rfinalPrice;
-  templateCartFooter.querySelectorAll(finalPriceSelector)[2].textContent = rpaymentMethod;
-  templateCartFooter.querySelectorAll(finalPriceSelector)[3].textContent = rfinalPrice + rpaymentMethod; //the last item
+  templateCartFooter.querySelector(finalPriceSelector).textContent = rfinalPrice.toFixed(2);
+  templateCartFooter.querySelectorAll(finalPriceSelector)[2].textContent = rpaymentMethod.toFixed(2);
+  templateCartFooter.querySelectorAll(finalPriceSelector)[3].textContent = (rfinalPrice + rpaymentMethod).toFixed(2); //the last item
 
   const clone = templateCartFooter.cloneNode(true);
   fragment.appendChild(clone);
@@ -195,17 +202,16 @@ function cartManager(e) {
       break;
   }
 
-  if (e.target.matches('.h-pointer.ps-1.ps-sm-0.pe-1.pe-sm-2') && e.target.textContent === 'Remove') {
+  if (e.target.matches(itemSpanSelector) && e.target.textContent === 'Remove') {
     delete itemsToBuy[e.target.closest(itemMainRowSelector).dataset.id];
     localStorage.setItem('cart', JSON.stringify(itemsToBuy));
     (Object.values(itemsToBuy).length == 0) ? resetCart() : renderCartItems(itemsToBuy);
   }
 
   //-----cart payment methods
-  const paymentMethodParentNode = e.target.parentNode.matches('.my-2.me-2.overflow-hidden.rounded.h-pointer');
+  const paymentMethodParentNode = e.target.parentNode.matches(paymentFigureSelector);
   if (paymentMethodParentNode) {
-    console.log(e.target);
-    cartMainContainer.querySelectorAll('.my-2.me-2.overflow-hidden.rounded.h-pointer').forEach(e => {
+    cartMainContainer.querySelectorAll(paymentFigureSelector).forEach(e => {
       e.classList.remove('border', 'border-2', 'border-primary');
     });
     e.target.parentNode.classList.add('border', 'border-2', 'border-primary');
@@ -243,7 +249,7 @@ function updateCartContent(element, paymentMethod) {
     /* we select the container div (main container of units)
      * element.target.closest('.border.p-2')
      *
-     * this brings up the number of units of the object with a given id
+     * this next line brings up the number of units of the object with a given id
      * itemsToBuy[element.target.closest(itemMainRowSelector).dataset.id].quantity
       */
 
@@ -251,25 +257,25 @@ function updateCartContent(element, paymentMethod) {
     //for example.querySelector('.row[data-id="1"]')
     const itemRow = cartItems.querySelector('.row[data-id="' + mainObject.id + '"]');
     if (itemQuantity > 1) {
-      itemRow.querySelector('input[name="reducequantity"]').removeAttribute('disabled');
+      itemRow.querySelector(inputReduceSelector).removeAttribute('disabled');
     } else {
-      itemRow.querySelector('input[name="reducequantity"]').setAttribute('disabled', '');
+      itemRow.querySelector(inputReduceSelector).setAttribute('disabled', '');
     }
 
     //input containing the number of current units
     element.target.closest('.border.p-2').querySelector(inputUnitSelector).value = itemQuantity;
 
     // price multiplied by number of units
-    element.target.closest(itemMainRowSelector).querySelector(finalPriceSelector).textContent = itemQuantity * itemPrice;
+    element.target.closest(itemMainRowSelector).querySelector(finalPriceSelector).textContent = (itemQuantity * itemPrice).toFixed(2);
 
   }
   const {rfinalPrice, rpaymentMethod} = footerCalculator(itemsToBuy, paymentMethod);
 
   //this selects the summary section of the shopping cart footer
   const newCartFooter = cartMainContainer.querySelector(footerContainerSelector);
-  newCartFooter.querySelector(finalPriceSelector).textContent = rfinalPrice;
-  newCartFooter.querySelectorAll(finalPriceSelector)[2].textContent = rpaymentMethod;
-  newCartFooter.querySelectorAll(finalPriceSelector)[3].textContent = rfinalPrice + rpaymentMethod; //the last item
+  newCartFooter.querySelector(finalPriceSelector).textContent = rfinalPrice.toFixed(2);
+  newCartFooter.querySelectorAll(finalPriceSelector)[2].textContent = rpaymentMethod.toFixed(2);
+  newCartFooter.querySelectorAll(finalPriceSelector)[3].textContent = (rfinalPrice + rpaymentMethod).toFixed(2); //the last item
 }
 
 function footerCalculator(arrayItems, paymentMethod = 'paypal') {
@@ -299,9 +305,10 @@ function footerCalculator(arrayItems, paymentMethod = 'paypal') {
       nMethodFee = 2;
       break;
   }
+  //percentage that will be added to the final price of the product
   nMethodFee = nFinalPrice * nMethodFee / 100;
 
-  //r for results
+  //r stands for results
   const finalResults = {
     rfinalPrice: nFinalPrice,
     rquantity: nQuantity,
@@ -313,6 +320,7 @@ function footerCalculator(arrayItems, paymentMethod = 'paypal') {
 function resetCart() {
   localStorage.removeItem('cart');
   cartMainContainer.querySelector(mainUnitLabelSelector).textContent = '(0)';
+  //the next line removes the footer that contains the payment methods and the cost calculator
   cartMainContainer.removeChild(cartMainContainer.lastElementChild);
   renderEmptyCart();
 }
