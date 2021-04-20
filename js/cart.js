@@ -186,7 +186,7 @@ function cartManager(e) {
         if (actualNumber >= 0 && actualNumber !== NaN && actualNumber !== null) {
           actualNumber = actualNumber;
         } else {
-          actualNumber = '';
+          actualNumber = 0;
         }
         itemsToBuy[e.target.closest(itemMainRowSelector).dataset.id].quantity = actualNumber;
         localStorage.setItem('cart', JSON.stringify(itemsToBuy));
@@ -195,14 +195,14 @@ function cartManager(e) {
       break;
   }
 
-  if (e.target.classList.contains('h-pointer', 'ps-1', 'ps-sm-0', 'pe-1', 'pe-sm-2') && e.target.textContent === 'Remove') {
+  if (e.target.matches('.h-pointer.ps-1.ps-sm-0.pe-1.pe-sm-2') && e.target.textContent === 'Remove') {
     delete itemsToBuy[e.target.closest(itemMainRowSelector).dataset.id];
     localStorage.setItem('cart', JSON.stringify(itemsToBuy));
     (Object.values(itemsToBuy).length == 0) ? resetCart() : renderCartItems(itemsToBuy);
   }
 
   //-----cart payment methods
-  const paymentMethodParentNode = e.target.parentNode.classList.contains('my-2', 'me-2', 'overflow-hidden', 'rounded', 'h-pointer');
+  const paymentMethodParentNode = e.target.parentNode.matches('.my-2.me-2.overflow-hidden.rounded.h-pointer');
   if (paymentMethodParentNode) {
     console.log(e.target);
     cartMainContainer.querySelectorAll('.my-2.me-2.overflow-hidden.rounded.h-pointer').forEach(e => {

@@ -197,13 +197,16 @@ const apiShopItems = [
 
 const shopItems = document.getElementById('shop-items-display');
 const templateShopLi = document.getElementById('template-item-li').content;
+const cartMiniIcon = document.querySelector('span.position-absolute.top-0.start-100.translate-middle.badge.rounded-pill.bg-primary.h-pointer span');
 const fragment = document.createDocumentFragment();
+let cart = JSON.parse(localStorage.getItem('cart')) || {};
 
 document.addEventListener('DOMContentLoaded', () => {
   fetchShopItems();
 })
 shopItems.addEventListener('click', e => {
   addToCart(e);
+  renderCartIcons(cart);
 })
 
 const fetchShopItems = async () => {
@@ -211,6 +214,7 @@ const fetchShopItems = async () => {
     //const res = await fetch('shop items');
     //const data = await res.json();
     renderShopItems(apiShopItems);
+    renderCartIcons(cart);
   } catch (error) {
     console.log(error);
     const errorContainer = document.createElement('h4');
@@ -221,6 +225,14 @@ const fetchShopItems = async () => {
   }
 }
 
+function renderCartIcons(arrayItems) {
+  const itemsInCart = Object.values(arrayItems).reduce((acc, {quantity}) => acc + quantity, 0);
+  if (itemsInCart <= 9) {
+    cartMiniIcon.textContent = itemsInCart;
+  } else {
+    cartMiniIcon.textContent = '+9';
+  }
+}
 
 function renderShopItems(arrayItems) {
 
@@ -325,7 +337,7 @@ function addToCart(e) {
 
 function setToCart(parentItem) {
   //to keep our cart updated (in case the user is editing several tabs at the same time)
-  let cart = JSON.parse(localStorage.getItem('cart')) || {};
+  cart = JSON.parse(localStorage.getItem('cart')) || {};
 
   const shippingElem = parentItem.querySelector('span.text-green-5 span.visually-hidden');
   let shipping = false;
