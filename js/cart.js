@@ -166,6 +166,7 @@ function renderCartFooter(arrayItems) {
 }
 
 function cartManager(e) {
+
   //-----cart summary
   switch (e.target.name) {
 
@@ -176,12 +177,9 @@ function cartManager(e) {
 
       //we capture the object to modify
       const product = itemsToBuy[e.target.closest(itemMainRowSelector).dataset.id];
-      if (e.target.name == 'reducequantity') {
-        product.quantity--;
-      }
-      if (e.target.name == 'increasequantity') {
-        product.quantity++;
-      }
+
+      (e.target.name == 'reducequantity') ? product.quantity-- : product.quantity++;
+
       itemsToBuy[e.target.closest(itemMainRowSelector).dataset.id] = {...product};
       localStorage.setItem('cart', JSON.stringify(itemsToBuy));
       updateCartContent(e)
@@ -202,6 +200,7 @@ function cartManager(e) {
       break;
   }
 
+  //-----cart item remove label
   if (e.target.matches(itemSpanSelector) && e.target.textContent === 'Remove') {
     delete itemsToBuy[e.target.closest(itemMainRowSelector).dataset.id];
     localStorage.setItem('cart', JSON.stringify(itemsToBuy));

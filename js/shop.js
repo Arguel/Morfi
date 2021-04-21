@@ -356,6 +356,7 @@ function addToCart(e) {
 }
 
 function setToCart(parentItem) {
+
   //to keep our cart updated (in case the user is editing several tabs at the same time)
   cart = JSON.parse(localStorage.getItem('cart')) || {};
 
