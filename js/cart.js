@@ -43,7 +43,7 @@ const inputReduceSelector = 'input[name="reducequantity"]';
 let itemsToBuy = localStorage.getItem('cart');
 
 if (itemsToBuy === null) {
-  renderEmptyCart();
+  //renderEmptyCart();
 } else {
   try {
     itemsToBuy = JSON.parse(itemsToBuy);
@@ -322,4 +322,8 @@ function resetCart() {
   //the next line removes the footer that contains the payment methods and the cost calculator
   cartMainContainer.removeChild(cartMainContainer.lastElementChild);
   renderEmptyCart();
+}
+
+function renderCheckout() {
+
 }
