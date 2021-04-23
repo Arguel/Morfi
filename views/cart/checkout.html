@@ -170,17 +170,17 @@
             <div class="col-10">
               <div class="row" id="cart-items">
 
-                <h1 class="fw-bold text-center my-2">Your order</h1>
+                <h1 class="text-center text-sm-start my-2 fs-2 mt-3 mt-sm-4 fw-bold">Your order</h1>
 
                 <div class="col-12">
                   <div class="row border-top">
-                    <div class="col-xs-12 col-lg-8">
-                      <div>
-                        <span>title</span>
-                        <span>price</span>
+                    <div class="col-xs-12 col-lg-8 my-2">
+                      <div class="d-flex flex-column flex-sm-row justify-content-between text-center my-1">
+                        <div class="text-truncate w-checkout-item-title">Solitaire Christmas. Match 2 Card</div>
+                        <div class="text-truncate w-checkout-item-price pe-auto pe-sm-2">ARS$ 7,47</div>
                       </div>
                     </div>
-                    <div class="col-xs-12 col-lg-4 bg-darker-2 text-center">
+                    <div class="col-xs-12 col-lg-4 bg-darker-2 text-center p-2 p-lg-3 p-xl-4">
                       <h2 class="fw-bold">Payment Methods</h2>
                       <p>When you submit your payment information your data is protected by Secure Socket Layer (SSL)
                         technology certified by a digital certificate.</p>
@@ -190,41 +190,52 @@
                   </div>
                 </div>
 
-                <div class="col-12 my-3">
-                  <div class="row text-center">
-                    <div class="col-12 fw-bold border-top">
+                <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 my-3 mx-auto">
+                  <div class="row text-center text-sm-start">
+                    <div class="col-12 col-sm-6 fw-bold cost-border text-center text-sm-end">
                       <span>Payment method:</span>
                     </div>
-                    <div class="col-12">
+                    <div class="col-12 col-sm-6">
                       <span class="text-truncate-1">Visa ending in 2394</span>
                       <a href="../account/payment-methods">(Change)</a>
                     </div>
-                    <div class="col-12 fw-bold border-top">
+                    <div class="col-12 col-sm-6 fw-bold cost-border text-center text-sm-end">
                       <span>Shipping to:</span>
                     </div>
-                    <div class="col-12 text-break text-truncate-2">
-                      <span class="text-truncate-1">Marillon hill</span>
-                      <a href="../account/payment-methods">(Change)</a>
+                    <div class="col-12 col-sm-6">
+                      <div class="text-break text-truncate-2">
+                        <span class="text-truncate-1">Marillon hill</span>
+                        <a href="../account/payment-methods">(Change)</a>
+                      </div>
                     </div>
-                    <div class="col-12 fw-bold border-top">
-                      <span>Subtotal (counting taxes):</span>
+                    <div class="col-12 col-sm-6 fw-bold cost-border text-center text-sm-end">
+                      <span>Subtotal (tax included):</span>
                     </div>
-                    <div class="col-12 text-break text-truncate-2">
-                      <span>ARS $13552222222222222222222222222.33</span>
+                    <div class="col-12 col-sm-6">
+                      <div class="text-break text-truncate-2">
+                        <span>$13552.33</span>
+                      </div>
                     </div>
-                    <div class="col-12 fw-bold border-top">
+
+                    <div class="col-12 col-sm-6 fw-bold cost-border text-center text-sm-end">
                       <span>Discount:</span>
                     </div>
-                    <div class="col-12 text-break text-truncate-2">
-                      <span>ARS $516.93000000000000000000000</span>
-                      <span>(75%)</span>
+                    <div class="col-12 col-sm-6">
+                      <div class="text-break text-truncate-2">
+                        <span>-$516.93</span>
+                        <span>(75%)</span>
+                      </div>
                     </div>
-                    <div class="col-12 fw-bold border-top">
+
+                    <div class="col-12 col-sm-6 fw-bold cost-border text-center text-sm-end">
                       <span>ORDER TOTAL:</span>
                     </div>
-                    <div class="col-12 text-break text-truncate-2">
-                      <span>ARS $4900000000000.99</span>
+                    <div class="col-12 col-sm-6">
+                      <div class="text-break text-truncate-2">
+                        <span>$49.99</span>
+                      </div>
                     </div>
+
                   </div>
                 </div>
 
@@ -232,7 +243,9 @@
                   <span>By placing your order, you agree to our <a href="#">Terms and Conditions</a> and <a
                       href="#">Privacy
                       Policy</a>.</span>
-                  <button class="btn btn-primary my-3">Finish buy</button>
+                  <div>
+                    <button class="btn btn-primary my-3">Finish buy</button>
+                  </div>
                 </div>
 
               </div>

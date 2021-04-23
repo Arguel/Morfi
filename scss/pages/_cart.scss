@@ -15,3 +15,27 @@
     padding-left: initial !important;
   }
 }
+
+.w-checkout-item-title {
+  width: auto;
+
+  @include bps($bp-sm) {
+    max-width: 60% !important;
+  }
+}
+
+.w-checkout-item-price {
+  width: auto;
+
+  @include bps($bp-sm) {
+    max-width: 30% !important;
+  }
+}
+
+.cost-border {
+  border-top: initial;
+
+  @include bps($bp-xs) {
+    border-top: 1px $color-darker-2 solid;
+  }
+}

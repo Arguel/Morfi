@@ -7201,6 +7201,24 @@ textarea.form-control-lg {
     .ps-60px {
       padding-left: initial !important; } }
 
+.w-checkout-item-title {
+  width: auto; }
+  @media only screen and (min-width: 577px) {
+    .w-checkout-item-title {
+      max-width: 60% !important; } }
+
+.w-checkout-item-price {
+  width: auto; }
+  @media only screen and (min-width: 577px) {
+    .w-checkout-item-price {
+      max-width: 30% !important; } }
+
+.cost-border {
+  border-top: initial; }
+  @media only screen and (max-width: 576px) {
+    .cost-border {
+      border-top: 1px #D7D7D7 solid; } }
+
 .img-rez {
   width: 100%;
   height: 100%;
