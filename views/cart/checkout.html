@@ -154,8 +154,17 @@
           <!--internal cart information start-->
           <div id="cart-container" class="row my-5 justify-content-center">
 
+            <div class="col-12 text-primary fs-5 mb-3">
+              <span class="ms-4 h-pointer">
+                <span class="p-1 mx-2 rounded bg-primary text-white rounded">
+                  <i class="fas fa-chevron-left fa-fw"></i>
+                </span>
+                Go back
+              </span>
+            </div>
+
             <!--shopping cart navigation -->
-            <div class="col-10">
+            <div class="col-10 d-none">
               <div class="row border-bottom">
                 <div
                   class="col-6 col-sm-5 col-md-4 col-lg-3 text-center p-2 border-bottom border-dark border-2 h-pointer fw-bold">
@@ -170,17 +179,22 @@
             <div class="col-10">
               <div class="row" id="cart-items">
 
+
                 <h1 class="text-center text-sm-start my-2 fs-2 mt-3 mt-sm-4 fw-bold">Your order</h1>
 
                 <div class="col-12">
                   <div class="row border-top">
-                    <div class="col-xs-12 col-lg-8 my-2">
+                    <div class="col-xs-12 col-md-8 my-2">
                       <div class="d-flex flex-column flex-sm-row justify-content-between text-center my-1">
-                        <div class="text-truncate w-checkout-item-title">Solitaire Christmas. Match 2 Card</div>
+                        <div class="text-truncate w-checkout-item-title">
+                          <span class="fw-bold">units</span>
+                          <span> - </span>
+                          <span>Solitaire Christmas. Match 2 Card</span>
+                        </div>
                         <div class="text-truncate w-checkout-item-price pe-auto pe-sm-2">ARS$ 7,47</div>
                       </div>
                     </div>
-                    <div class="col-xs-12 col-lg-4 bg-darker-2 text-center p-2 p-lg-3 p-xl-4">
+                    <div class="col-xs-12 col-md-4 bg-darker-2 text-center p-2 p-lg-3 p-xl-4">
                       <h2 class="fw-bold">Payment Methods</h2>
                       <p>When you submit your payment information your data is protected by Secure Socket Layer (SSL)
                         technology certified by a digital certificate.</p>
@@ -190,7 +204,7 @@
                   </div>
                 </div>
 
-                <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 my-3 mx-auto">
+                <div class="col-12 col-sm-11 col-md-8 col-lg-6 my-3 mx-auto">
                   <div class="row text-center text-sm-start">
                     <div class="col-12 col-sm-6 fw-bold cost-border text-center text-sm-end">
                       <span>Payment method:</span>
@@ -244,7 +258,7 @@
                       href="#">Privacy
                       Policy</a>.</span>
                   <div>
-                    <button class="btn btn-primary my-3">Finish buy</button>
+                    <button class="btn btn-primary ff-lato-7 fs-5 my-3">Finish buy</button>
                   </div>
                 </div>
 
