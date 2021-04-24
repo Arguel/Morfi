@@ -3,6 +3,7 @@
 //templates
 const templateCartItem = document.getElementById('template-cart-item').content;
 const templateCartFooter = document.getElementById('template-cart-footer').content;
+const templateCartCheckout = document.getElementById('template-cart-checkout').content;
 
 //containers
 const cartItems = document.getElementById('cart-items');
@@ -43,7 +44,7 @@ const inputReduceSelector = 'input[name="reducequantity"]';
 let itemsToBuy = localStorage.getItem('cart');
 
 if (itemsToBuy === null) {
-  //renderEmptyCart();
+  renderEmptyCart();
 } else {
   try {
     itemsToBuy = JSON.parse(itemsToBuy);
@@ -158,7 +159,7 @@ function renderCartFooter(arrayItems) {
   const buyBtn = document.querySelectorAll(footerButtonsSelector)[1];
   const clearBtn = document.querySelectorAll(footerButtonsSelector)[0];
   buyBtn.addEventListener('click', () => {
-    return;
+    renderCheckout(itemsToBuy);
   })
   clearBtn.addEventListener('click', () => {
     resetCart();
@@ -324,6 +325,66 @@ function resetCart() {
   renderEmptyCart();
 }
 
-function renderCheckout() {
+function renderCheckout(arrayItems) {
+  //remove last items
+  cartItems.innerHTML = '';
+  //remove last footer
+  cartMainContainer.removeChild(cartMainContainer.lastElementChild);
+
+  const divGoBackContainer = document.createElement('div');
+  divGoBackContainer.classList.add('col-12', 'text-primary', 'fs-5', 'mb-3');
+  const spanGoback = document.createElement('span');
+  spanGoback.classList.add('ms-4', 'h-pointer');
+  spanGoback.textContent = 'Go back';
+  const innerSpanGoBack = document.createElement('span');
+  innerSpanGoBack.classList.add('p-1', 'mx-2', 'rounded', 'bg-primary', 'text-white', 'rounded');
+  const leftArrowIcon = document.createElement('i');
+  leftArrowIcon.classList.add('fas', 'fa-chevron-left', 'fa-fw');
+
+  spanGoback.addEventListener('click', () => {
+    //render empty cart
+    //render checkout basic
+  })
+
+  innerSpanGoBack.appendChild(leftArrowIcon);
+  spanGoback.appendChild(innerSpanGoBack);
+  spanGoback.insertBefore(innerSpanGoBack, spanGoback.childNodes[0]);
+  divGoBackContainer.appendChild(spanGoback);
+
+  //fragment.appendChild(divGoBackContainer);
+  cartMainContainer.insertBefore(divGoBackContainer, cartMainContainer.childNodes[0]);
+
+
+  //cart and saved icons tab selector, a better option maybe is to remove the child for complete
+  cartMainContainer.querySelector('.col-10').classList.add('d-none');
+  Object.values(arrayItems).forEach(product => {
+    const mainProductContainer = document.createElement('div');
+    mainProductContainer.classList.add('d-flex', 'flex-column', 'flex-sm-row', 'justify-content-between', 'text-center', 'my-1');
+    const leftDivContainer = document.createElement('div');
+    leftDivContainer.classList.add('text-truncate', 'w-checkout-item-title');
+    const spanUnits = document.createElement('span');
+    spanUnits.classList.add('fw-bold');
+    console.log(product.quantity);
+    spanUnits.textContent = product.quantity;
+    const spanSeparator = document.createElement('span');
+    spanSeparator.textContent = ' - ';
+    const spanItemTitle = document.createElement('span');
+    spanItemTitle.textContent = product.title;
+    const rightDivContainer = document.createElement('div');
+    rightDivContainer.classList.add('text-truncate', 'w-checkout-item-price', 'pe-auto', 'pe-sm-2');
+    rightDivContainer.textContent = `$${(product.quantity * product.finalPrice).toFixed(2)}`;
+
+    leftDivContainer.appendChild(spanUnits);
+    leftDivContainer.appendChild(spanSeparator);
+    leftDivContainer.appendChild(spanItemTitle);
+
+    mainProductContainer.appendChild(leftDivContainer);
+    mainProductContainer.appendChild(rightDivContainer);
+    //main data/product container
+    templateCartCheckout.querySelector('div.col-xs-12.col-md-8.my-2').appendChild(mainProductContainer);
+  });
+  const clone = templateCartCheckout.cloneNode(true);
+  fragment.appendChild(clone);
+  cartItems.appendChild(fragment);
 
 }
