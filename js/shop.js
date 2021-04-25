@@ -365,13 +365,33 @@ function setToCart(parentItem) {
   if (shippingElem !== null) {
     shipping = true
   }
-  const finalPriceSelector = parentItem.querySelector(itemFinalPriceSelector).textContent;
+
+  let finalPriceSelector = parentItem.querySelector(itemFinalPriceSelector).textContent;
+  finalPriceSelector = parseFloat(finalPriceSelector.substr(1));
+
+  //original price of the product that appears in the items in case of discount
+  const basePriceElem = parentItem.querySelector('span.text-decoration-line-through.me-1');
+  let basePrice = false;
+  let discount = false;
+  if (basePriceElem !== null) {
+    //If we detect that our final price exists then our discount will also exist
+    basePrice = parseFloat(basePriceElem.textContent.substr(1));
+    //This is when we get our discount percentage back
+    const discountElem = parentItem.querySelector('span.badge.bg-primary.me-1');
+    //It only brings us the numbers, which is what we care about
+    discount = parseInt(discountElem.textContent);
+  } else {
+    basePrice = finalPriceSelector;
+  }
+
   const product = {
+    price: basePrice,
+    finalPrice: finalPriceSelector,
     id: parentItem.querySelector(addToCartSelector).dataset.id,
     title: parentItem.querySelector(itemTitleSeletor).textContent,
-    finalPrice: parseFloat(finalPriceSelector.substr(1)),
-    hasFreeShipping: shipping,
     thumnailUrl: parentItem.querySelector(itemImageSelector).getAttribute('src'),
+    hasFreeShipping: shipping,
+    hasDiscount: discount,
     quantity: 1,
   }
   if (cart.hasOwnProperty(product.id)) {

@@ -42,14 +42,19 @@ const inputReduceSelector = 'input[name="reducequantity"]';
 
 //items added from shop page
 let itemsToBuy = localStorage.getItem('cart');
+//checkout status
+let checkoutStatus = JSON.parse(localStorage.getItem('cartData')) || {
+  inCart: false,
+  chosenPaymentMethod: 'paypal',
+};
 
 if (itemsToBuy === null) {
   renderEmptyCart();
 } else {
   try {
     itemsToBuy = JSON.parse(itemsToBuy);
-    if (JSON.parse(localStorage.getItem('inCheckout'))) {
-      renderCheckout(itemsToBuy);
+    if (checkoutStatus.inCart === false) {
+      renderCheckout(itemsToBuy, checkoutStatus.chosenPaymentMethod);
     } else {
       renderCartItems(itemsToBuy);
     }
@@ -71,16 +76,19 @@ function renderEmptyCart() {
   divEmptyContainer.classList.add('my-4', 'p-2', 'fs-5');
   divEmptyContainer.textContent = 'Your shopping cart is empty';
 
+  const divCatalog = document.createElement('div');
+  divCatalog.classList.add('my-5');
   const aCatalog = document.createElement('a');
   aCatalog.setAttribute('href', '../shop/shop.html');
 
   const aCatalogBtn = document.createElement('button');
-  aCatalogBtn.classList.add('btn', 'btn-primary', 'ff-lato-7', 'fs-5', 'my-5', 'col-md-8', 'col-lg-4');
+  aCatalogBtn.classList.add('btn', 'btn-primary', 'ff-lato-7', 'fs-5', 'col-md-8', 'col-lg-4');
   aCatalogBtn.textContent = 'Check catalog';
 
   aCatalog.appendChild(aCatalogBtn);
+  divCatalog.appendChild(aCatalog);
   fragment.appendChild(divEmptyContainer);
-  fragment.appendChild(aCatalog);
+  fragment.appendChild(divCatalog);
 
   cartItems.classList.add('text-center');
   cartItems.appendChild(fragment);
@@ -89,7 +97,8 @@ function renderEmptyCart() {
 function renderCartItems(arrayItems) {
 
   cartItems.innerHTML = '';
-  localStorage.setItem('inCheckout', 'false')
+  checkoutStatus.inCart = true;
+  localStorage.setItem('cartData', JSON.stringify(checkoutStatus))
 
   Object.values(arrayItems).forEach(product => {
     //title
@@ -160,7 +169,7 @@ function renderCartFooter(arrayItems) {
   const buyBtn = document.querySelectorAll(footerButtonsSelector)[1];
   const clearBtn = document.querySelectorAll(footerButtonsSelector)[0];
   buyBtn.addEventListener('click', () => {
-    renderCheckout(itemsToBuy);
+    renderCheckout(itemsToBuy, checkoutStatus.chosenPaymentMethod);
   })
   clearBtn.addEventListener('click', () => {
     resetCart();
@@ -283,8 +292,10 @@ function footerCalculator(arrayItems, paymentMethod = 'paypal') {
   //n stands for new
   //we add all the units
   const nQuantity = Object.values(arrayItems).reduce((acc, {quantity}) => acc + quantity, 0);
-  //we add all the prices to calculate the total
+  //we add all the final prices to calculate the total
   const nFinalPrice = Object.values(arrayItems).reduce((acc, {quantity, finalPrice}) => acc + quantity * finalPrice, 0);
+  //we add all the prices to calculate the total
+  const nPrice = Object.values(arrayItems).reduce((acc, {quantity, price}) => acc + quantity * price, 0);
   //top cart label in checkout
   cartMainContainer.querySelector(mainUnitLabelSelector).textContent = `(${nQuantity})`;
 
@@ -292,28 +303,35 @@ function footerCalculator(arrayItems, paymentMethod = 'paypal') {
   switch (paymentMethod) {
     case 'paypal':
       nMethodFee = 15;
+      checkoutStatus.chosenPaymentMethod = 'paypal'
       break;
     case 'mastercard':
       nMethodFee = 10;
+      checkoutStatus.chosenPaymentMethod = 'mastercard'
       break;
     case 'visaandmaster':
       nMethodFee = 21;
+      checkoutStatus.chosenPaymentMethod = 'visaandmaster'
       break;
     case 'paysafecard':
       nMethodFee = 8;
+      checkoutStatus.chosenPaymentMethod = 'paysafecard'
       break;
     case 'klarna':
       nMethodFee = 2;
+      checkoutStatus.chosenPaymentMethod = 'klarna'
       break;
   }
   //percentage that will be added to the final price of the product
   nMethodFee = nFinalPrice * nMethodFee / 100;
+  localStorage.setItem('cartData', JSON.stringify(checkoutStatus))
 
   //r stands for results
   const finalResults = {
     rfinalPrice: nFinalPrice,
     rquantity: nQuantity,
-    rpaymentMethod: nMethodFee
+    rpaymentMethod: nMethodFee,
+    rprice: nPrice,
   }
   return finalResults;
 }
@@ -326,10 +344,12 @@ function resetCart() {
   renderEmptyCart();
 }
 
-function renderCheckout(arrayItems) {
+function renderCheckout(arrayItems, paymentMethod) {
   //we clean the board to render the new purchase order
   cartItems.innerHTML = '';
   footerHasBeenCreated();
+
+  const {rfinalPrice, rpaymentMethod, rprice} = footerCalculator(arrayItems, paymentMethod);
 
   //Here we create the "go back" button to return to the shopping cart
   const divGoBackContainer = document.createElement('div');
@@ -390,6 +410,15 @@ function renderCheckout(arrayItems) {
     productsContainer.appendChild(mainProductContainer);
 
   });
+  const discountPercentage = Math.ceil((rprice - rfinalPrice) * 100 / rprice);
+  //base price excluding discounts
+  templateCartCheckout.querySelectorAll('div.text-break.text-truncate-2 span')[1].textContent = `$${(rprice + rpaymentMethod).toFixed(2)}`;
+  //discounts
+  templateCartCheckout.querySelectorAll('div.text-break.text-truncate-2 span')[2].textContent = `$${(rprice - rfinalPrice).toFixed(2)}`;
+  //discount percentage
+  templateCartCheckout.querySelectorAll('div.text-break.text-truncate-2 span')[3].textContent = `(${discountPercentage}%)`;
+  //final price counting discounts
+  templateCartCheckout.querySelectorAll('div.text-break.text-truncate-2 span')[4].textContent = `$${(rfinalPrice + rpaymentMethod).toFixed(2)}`;
 
   const clone = templateCartCheckout.cloneNode(true);
   fragment.appendChild(clone);
@@ -397,7 +426,8 @@ function renderCheckout(arrayItems) {
   //to delete the previous items and leave the template in its original state (this in case an item is deleted)
   productsContainer.innerHTML = '';
 
-  localStorage.setItem('inCheckout', 'true');
+  checkoutStatus.inCart = false;
+  localStorage.setItem('cartData', JSON.stringify(checkoutStatus));
 }
 
 function footerHasBeenCreated() {
