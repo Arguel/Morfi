@@ -48,7 +48,11 @@ if (itemsToBuy === null) {
 } else {
   try {
     itemsToBuy = JSON.parse(itemsToBuy);
-    renderCartItems(itemsToBuy);
+    if (JSON.parse(localStorage.getItem('inCheckout'))) {
+      renderCheckout(itemsToBuy);
+    } else {
+      renderCartItems(itemsToBuy);
+    }
   } catch (error) {
     console.log(error);
   }
@@ -85,6 +89,7 @@ function renderEmptyCart() {
 function renderCartItems(arrayItems) {
 
   cartItems.innerHTML = '';
+  localStorage.setItem('inCheckout', 'false')
 
   Object.values(arrayItems).forEach(product => {
     //title
@@ -137,11 +142,7 @@ function renderCartItems(arrayItems) {
 
 function renderCartFooter(arrayItems) {
 
-  //This basically checks if the footer was created, so we don't render it again
-  const cartFooter = cartMainContainer.querySelector(footerContainerSelector);
-  if (cartFooter != null) {
-    cartMainContainer.removeChild(cartMainContainer.lastElementChild);
-  }
+  footerHasBeenCreated();
 
   const {rfinalPrice, rpaymentMethod} = footerCalculator(arrayItems);
   //final calculation of the checkout (coupons, shipping, discounts, etc)
@@ -326,11 +327,11 @@ function resetCart() {
 }
 
 function renderCheckout(arrayItems) {
-  //remove last items
+  //we clean the board to render the new purchase order
   cartItems.innerHTML = '';
-  //remove last footer
-  cartMainContainer.removeChild(cartMainContainer.lastElementChild);
+  footerHasBeenCreated();
 
+  //Here we create the "go back" button to return to the shopping cart
   const divGoBackContainer = document.createElement('div');
   divGoBackContainer.classList.add('col-12', 'text-primary', 'fs-5', 'mb-3');
   const spanGoback = document.createElement('span');
@@ -342,8 +343,10 @@ function renderCheckout(arrayItems) {
   leftArrowIcon.classList.add('fas', 'fa-chevron-left', 'fa-fw');
 
   spanGoback.addEventListener('click', () => {
-    //render empty cart
-    //render checkout basic
+    cartMainContainer.querySelector('.col-10').classList.remove('d-none');
+    //this removes the "go back" button
+    cartMainContainer.removeChild(cartMainContainer.querySelector('div.col-12.text-primary.fs-5.mb-3'));
+    renderCartItems(itemsToBuy);
   })
 
   innerSpanGoBack.appendChild(leftArrowIcon);
@@ -351,20 +354,23 @@ function renderCheckout(arrayItems) {
   spanGoback.insertBefore(innerSpanGoBack, spanGoback.childNodes[0]);
   divGoBackContainer.appendChild(spanGoback);
 
-  //fragment.appendChild(divGoBackContainer);
+  //we insert our "go back" button at the beginning of our board
   cartMainContainer.insertBefore(divGoBackContainer, cartMainContainer.childNodes[0]);
 
-
-  //cart and saved icons tab selector, a better option maybe is to remove the child for complete
+  //this next line refers to the "cart" and "saved" boxes (which appear at the beginning of the cart)
+  //We do not delete the child in case the user wants to re-render the cart (that's easier and we only delete the class we just added)
   cartMainContainer.querySelector('.col-10').classList.add('d-none');
+
+  //Here we render each of the items that had been added to the cart (one below the other)
+  const productsContainer = templateCartCheckout.querySelector('div.col-xs-12.col-md-8.my-2');
   Object.values(arrayItems).forEach(product => {
+
     const mainProductContainer = document.createElement('div');
     mainProductContainer.classList.add('d-flex', 'flex-column', 'flex-sm-row', 'justify-content-between', 'text-center', 'my-1');
     const leftDivContainer = document.createElement('div');
     leftDivContainer.classList.add('text-truncate', 'w-checkout-item-title');
     const spanUnits = document.createElement('span');
     spanUnits.classList.add('fw-bold');
-    console.log(product.quantity);
     spanUnits.textContent = product.quantity;
     const spanSeparator = document.createElement('span');
     spanSeparator.textContent = ' - ';
@@ -381,10 +387,26 @@ function renderCheckout(arrayItems) {
     mainProductContainer.appendChild(leftDivContainer);
     mainProductContainer.appendChild(rightDivContainer);
     //main data/product container
-    templateCartCheckout.querySelector('div.col-xs-12.col-md-8.my-2').appendChild(mainProductContainer);
+    productsContainer.appendChild(mainProductContainer);
+
   });
+
   const clone = templateCartCheckout.cloneNode(true);
   fragment.appendChild(clone);
   cartItems.appendChild(fragment);
+  //to delete the previous items and leave the template in its original state (this in case an item is deleted)
+  productsContainer.innerHTML = '';
 
+  localStorage.setItem('inCheckout', 'true');
+}
+
+function footerHasBeenCreated() {
+  //This basically checks if the footer was created, so we don't render it again
+  const cartFooter = cartMainContainer.querySelector(footerContainerSelector);
+  if (cartFooter != null) {
+    //If we enter the "if" it is because the footer is rendered, so we are going to eliminate it to avoid errors
+    cartMainContainer.removeChild(cartMainContainer.lastElementChild);
+    return true;
+  }
+  return false;
 }
