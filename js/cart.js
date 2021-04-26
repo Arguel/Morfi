@@ -44,7 +44,7 @@ const inputReduceSelector = 'input[name="reducequantity"]';
 let itemsToBuy = localStorage.getItem('cart');
 //checkout status
 let checkoutStatus = JSON.parse(localStorage.getItem('cartData')) || {
-  inCart: false,
+  inCart: true,
   chosenPaymentMethod: 'paypal',
 };
 
@@ -96,6 +96,7 @@ function renderEmptyCart() {
 
 function renderCartItems(arrayItems) {
 
+  console.log('renderCartItems' + checkoutStatus);
   cartItems.innerHTML = '';
   checkoutStatus.inCart = true;
   localStorage.setItem('cartData', JSON.stringify(checkoutStatus))
@@ -174,6 +175,12 @@ function renderCartFooter(arrayItems) {
   clearBtn.addEventListener('click', () => {
     resetCart();
   })
+
+  //This basically renders the payment method that was selected the last time, in case it is the default, the paypal one will be rendered
+  cartMainContainer.querySelectorAll(paymentFigureSelector).forEach(elem => {
+    elem.classList.remove('border', 'border-2', 'border-primary');
+  });
+  cartMainContainer.querySelector(`img[data-method="${checkoutStatus.chosenPaymentMethod}"]`).parentNode.classList.add('border', 'border-2', 'border-primary');
 }
 
 function cartManager(e) {
@@ -226,20 +233,26 @@ function cartManager(e) {
     });
     e.target.parentNode.classList.add('border', 'border-2', 'border-primary');
     switch (e.target.dataset.method) {
+      //updateCartContent() will call footerCalculator() and it will save the information that we are storing in ram memory, so we don't have to call the localStorage function 5 times
       case 'paypal':
-        updateCartContent(e, 'paypal');
+        checkoutStatus.chosenPaymentMethod = 'paypal';
+        updateCartContent(e);
         break;
       case 'mastercard':
-        updateCartContent(e, 'mastercard');
+        checkoutStatus.chosenPaymentMethod = 'mastercard'
+        updateCartContent(e);
         break;
       case 'visaandmaster':
-        updateCartContent(e, 'visaandmaster');
+        checkoutStatus.chosenPaymentMethod = 'visaandmaster'
+        updateCartContent(e);
         break;
       case 'paysafecard':
-        updateCartContent(e, 'paysafecard');
+        checkoutStatus.chosenPaymentMethod = 'paysafecard'
+        updateCartContent(e);
         break;
       case 'klarna':
-        updateCartContent(e, 'klarna');
+        checkoutStatus.chosenPaymentMethod = 'klarna'
+        updateCartContent(e);
         break;
     }
   }
@@ -247,7 +260,7 @@ function cartManager(e) {
   e.stopPropagation();
 }
 
-function updateCartContent(element, paymentMethod) {
+function updateCartContent(element) {
 
   //Objects
   const mainObject = itemsToBuy[element.target.closest(itemMainRowSelector).dataset.id];
@@ -279,7 +292,7 @@ function updateCartContent(element, paymentMethod) {
     element.target.closest(itemMainRowSelector).querySelector(finalPriceSelector).textContent = (itemQuantity * itemPrice).toFixed(2);
 
   }
-  const {rfinalPrice, rpaymentMethod} = footerCalculator(itemsToBuy, paymentMethod);
+  const {rfinalPrice, rpaymentMethod} = footerCalculator(itemsToBuy);
 
   //this selects the summary section of the shopping cart footer
   const newCartFooter = cartMainContainer.querySelector(footerContainerSelector);
@@ -288,7 +301,7 @@ function updateCartContent(element, paymentMethod) {
   newCartFooter.querySelectorAll(finalPriceSelector)[3].textContent = (rfinalPrice + rpaymentMethod).toFixed(2); //the last item
 }
 
-function footerCalculator(arrayItems, paymentMethod = 'paypal') {
+function footerCalculator(arrayItems) {
   //n stands for new
   //we add all the units
   const nQuantity = Object.values(arrayItems).reduce((acc, {quantity}) => acc + quantity, 0);
@@ -299,27 +312,24 @@ function footerCalculator(arrayItems, paymentMethod = 'paypal') {
   //top cart label in checkout
   cartMainContainer.querySelector(mainUnitLabelSelector).textContent = `(${nQuantity})`;
 
+  const paymentMethod = checkoutStatus.chosenPaymentMethod;
+  console.log('paymentMethod is: ' + paymentMethod);
   let nMethodFee = 0;
   switch (paymentMethod) {
     case 'paypal':
       nMethodFee = 15;
-      checkoutStatus.chosenPaymentMethod = 'paypal'
       break;
     case 'mastercard':
       nMethodFee = 10;
-      checkoutStatus.chosenPaymentMethod = 'mastercard'
       break;
     case 'visaandmaster':
       nMethodFee = 21;
-      checkoutStatus.chosenPaymentMethod = 'visaandmaster'
       break;
     case 'paysafecard':
       nMethodFee = 8;
-      checkoutStatus.chosenPaymentMethod = 'paysafecard'
       break;
     case 'klarna':
       nMethodFee = 2;
-      checkoutStatus.chosenPaymentMethod = 'klarna'
       break;
   }
   //percentage that will be added to the final price of the product

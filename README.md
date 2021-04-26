@@ -90,4 +90,4 @@ Color palette (they are not all used)
 <p align="center"><img src="https://i.imgur.com/hTmoHQk.png" alt="The Morfi logo"></p>
 
 ### Credits (in construction)
-[credits page](https://morfi.vercel.app/views/about/credits.html)
+[Credits page](https://morfi.vercel.app/views/about/credits.html)
