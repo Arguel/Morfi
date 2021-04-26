@@ -5,7 +5,7 @@
   <!-- HTML Meta Tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TheMorfi - Checkout</title>
+  <title>TheMorfi - Saved cart</title>
   <meta name="description"
     content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more">
   <meta name="keywords" content="THE, MORFI, FOOD, HEALTHY, BEST">
@@ -157,15 +157,15 @@
             <!--shopping cart navigation -->
             <div class="col-10">
               <div class="row border-bottom">
-                <div
-                  class="col-6 col-sm-5 col-md-4 col-lg-3 text-center p-2 h-pointer border-bottom border-dark border-2 fw-bold">
-                  <a class="text-dark" href="checkout.html">
+                <div class="col-6 col-sm-5 col-md-4 col-lg-3 text-center p-2 h-pointer">
+                  <a class="text-primary" href="checkout.html">
                     Cart
                     <span>(0)</span>
                   </a>
                 </div>
-                <div class="col-6 col-sm-5 col-md-4 col-lg-3 text-center p-2 h-pointer">
-                  <a class="text-primary" href="saved.html">
+                <div
+                  class="col-6 col-sm-5 col-md-4 col-lg-3 text-center p-2 h-pointer border-bottom border-dark border-2 fw-bold">
+                  <a class="text-dark" href="saved.html">
                     Saved
                     <span>(0)</span>
                   </a>
@@ -384,7 +384,7 @@
                 <span class="h-pointer ps-1 ps-sm-0 pe-1 pe-sm-2">Buy now</span>
               </li>
               <li class="d-inline-block h-pointer">
-                <span class="h-pointer ps-1 ps-sm-0 pe-1 pe-sm-2">Save for later</span>
+                <span class="h-pointer ps-1 ps-sm-0 pe-1 pe-sm-2">Add to cart</span>
               </li>
             </ul>
           </div>
@@ -393,229 +393,10 @@
     </div>
   </template>
 
-  <template id="template-cart-footer">
-    <!--cart calculator start-->
-    <div class="col-12">
-      <div class="row">
-
-        <div class="col-12 col-sm-11 col-md-10 py-5 border-bottom ff-lato-4 mx-auto">
-          <div class="row align-items-center">
-            <div class="col-12 col-lg-8 text-center text-sm-start">
-              <div class="mb-4">
-                <h1 class="fs-3 fw-bold mb-3">
-                  <span>Choose payment method</span>
-                </h1>
-                <div class="d-flex align-items-center justify-content-center justify-content-sm-start flex-wrap">
-                  <figure class="my-2 me-2 overflow-hidden rounded h-pointer border border-2 border-primary">
-                    <img class="img-fluid w-150px h-100px obfit-contain p-3" src="../../img/cart/paypal.jpeg"
-                      alt="payment-paypal" data-method="paypal">
-                  </figure>
-                  <figure class="my-2 me-2 overflow-hidden rounded h-pointer">
-                    <img class="img-rez w-150px h-100px obfit-contain p-3" src="../../img/cart/mastercard.png"
-                      alt="payment-mastercard" data-method="mastercard">
-                  </figure>
-                  <figure class="my-2 me-2 overflow-hidden rounded h-pointer">
-                    <img class="img-fluid w-150px h-100px obfit-contain p-3" src="../../img/cart/visaandmaster.png"
-                      alt="payment-visaandmaster" data-method="visaandmaster">
-                  </figure>
-                  <figure class="my-2 me-2 overflow-hidden rounded h-pointer">
-                    <img class="img-fluid w-150px h-100px obfit-contain p-3" src="../../img/cart/paysafecard.jpeg"
-                      alt="payment-paysafecard" data-method="paysafecard">
-                  </figure>
-                  <figure class="my-2 me-2 overflow-hidden rounded h-pointer">
-                    <img class="img-fluid w-150px h-100px obfit-contain p-3" src="../../img/cart/klarna.png"
-                      alt="payment-klarna" data-method="klarna">
-                  </figure>
-                </div>
-              </div>
-              <div class="mb-4">
-                <h1 class="fs-3 fw-bold mb-3">
-                  <span>Billing address</span>
-                </h1>
-                <div class="d-flex align-items-center justify-content-center justify-content-sm-start flex-wrap">
-                  <button
-                    class="w-200px h-100px bg-white rounded border border-2 border-primary d-flex align-items-center justify-content-center"
-                    type="button" aria-label="Add new address">
-                    <span class="fw-bold">+Add new address</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-10 col-lg-4 mx-auto mt-5 mt-lg-0">
-
-              <div class="row my-1">
-                <div class="col-6">
-                  <span>Original price:</span>
-                </div>
-                <div class="col-6">
-                  <div class="d-flex">
-                    <div>$</div>
-                    <div class="text-truncate">0.00</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row my-1">
-                <div class="col-6">
-                  <span>Shipping:</span>
-                </div>
-                <div class="col-6">
-                  <span class="text-green-5">Free</span>
-                </div>
-              </div>
-
-              <div class="row my-1">
-                <div class="col-6">
-                  <span>Tax included:</span>
-                </div>
-                <div class="col-6">
-                  <div class="d-flex">
-                    <div>$</div>
-                    <div class="text-truncate">0.00</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row my-1">
-                <div class="col-6">
-                  <span>Payment fee:</span>
-                </div>
-                <div class="col-6">
-                  <div class="d-flex">
-                    <div>$</div>
-                    <div class="text-truncate">0.00</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row my-1">
-                <div class="col-6">
-                  <span>Coupon discounts:</span>
-                </div>
-                <div class="col-6">
-                  <span>No coupons</span>
-                </div>
-              </div>
-
-              <div class="row my-1 border-top">
-                <div class="col-6 fw-bold fs-5">
-                  <span>Total:</span>
-                </div>
-                <div class="col-6 fw-bold fs-5">
-                  <div class="d-flex">
-                    <div>$</div>
-                    <div class="text-truncate">0.00</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row my-1 py-3">
-                <div class="col-12 col-sm-10 col-lg-12 mx-auto">
-                  <label class="visually-hidden" for="applyCoupon">Apply coupon</label>
-                  <form class="input-group">
-                    <input class="form-control" type="text" name="applyCoupon" id="applyCoupon"
-                      placeholder="Enter Coupon" aria-label="Apply coupon" aria-describedby="applyCouponBtn">
-                    <button class="btn btn-primary" type="button" id="applyCouponBtn">
-                      <span>Apply</span>
-                    </button>
-                  </form>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        <div class="col-10 py-5 px-0 mx-auto">
-          <div class="d-flex justify-content-center justify-content-sm-between flex-wrap">
-            <button class="btn btn-primary ff-lato-7 fs-5 mx-1 my-2 my-sm-0">Clear cart</button>
-            <button class="btn btn-primary ff-lato-7 fs-5 mx-1 my-2 my-sm-0">Proceed to checkout</button>
-          </div>
-        </div>
-
-      </div>
-    </div>
-    <!--cart calculator end-->
-  </template>
-
-  <template id="template-cart-checkout">
-    <h1 class="text-center text-sm-start my-2 fs-2 mt-3 mt-sm-4 fw-bold">Your order</h1>
-
-    <div class="col-12">
-      <div class="row border-top">
-        <div class="col-xs-12 col-md-8 my-2"></div>
-        <div class="col-xs-12 col-md-4 bg-darker-2 text-center p-2 p-lg-3 p-xl-4">
-          <h2 class="fw-bold">Payment Methods</h2>
-          <p>When you submit your payment information your data is protected by Secure Socket Layer (SSL)
-            technology certified by a digital certificate.</p>
-          <p>Once you've completed this transaction, you'll receive an email message confirming receipt of
-            your purchase. </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-12 col-sm-11 col-md-8 col-lg-6 my-3 mx-auto">
-      <div class="row text-center text-sm-start">
-        <div class="col-12 col-sm-6 fw-bold cost-border text-center text-sm-end">
-          <span>Payment method:</span>
-        </div>
-        <div class="col-12 col-sm-6">
-          <span class="text-truncate-1">Visa ending in 2394</span>
-          <a href="../account/payment-methods">(Change)</a>
-        </div>
-        <div class="col-12 col-sm-6 fw-bold cost-border text-center text-sm-end">
-          <span>Shipping to:</span>
-        </div>
-        <div class="col-12 col-sm-6">
-          <div class="text-break text-truncate-2">
-            <span class="text-truncate-1">Marillon hill</span>
-            <a href="../account/payment-methods">(Change)</a>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 fw-bold cost-border text-center text-sm-end">
-          <span>Subtotal (tax included):</span>
-        </div>
-        <div class="col-12 col-sm-6">
-          <div class="text-break text-truncate-2">
-            <span>$13552.33</span>
-          </div>
-        </div>
-
-        <div class="col-12 col-sm-6 fw-bold cost-border text-center text-sm-end">
-          <span>Discount:</span>
-        </div>
-        <div class="col-12 col-sm-6">
-          <div class="text-break text-truncate-2">
-            <span>-$516.93</span>
-            <span>(75%)</span>
-          </div>
-        </div>
-
-        <div class="col-12 col-sm-6 fw-bold cost-border text-center text-sm-end">
-          <span>ORDER TOTAL:</span>
-        </div>
-        <div class="col-12 col-sm-6">
-          <div class="text-break text-truncate-2">
-            <span>$49.99</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="col-12 text-center">
-      <span>By placing your order, you agree to our <a href="#">Terms and Conditions</a> and <a href="#">Privacy
-          Policy</a>.</span>
-      <div>
-        <button class="btn btn-primary ff-lato-7 fs-5 my-3">Finish buy</button>
-      </div>
-    </div>
-  </template>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
     crossorigin="anonymous"></script>
-  <script src="../../js/cart.js" charset="utf-8"></script>
+  <script src="../../js/saved.js" charset="utf-8"></script>
 </body>
 
 </html>

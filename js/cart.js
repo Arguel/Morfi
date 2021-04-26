@@ -58,6 +58,7 @@ if (itemsToBuy === null) {
       renderCheckout(itemsToBuy, checkoutStatus.chosenPaymentMethod);
     } else {
       renderCartItems(itemsToBuy);
+      renderCartFooter(itemsToBuy);
     }
   } catch (error) {
     console.log(error);
@@ -147,7 +148,6 @@ function renderCartItems(arrayItems) {
   });
   cartItems.appendChild(fragment);
 
-  renderCartFooter(itemsToBuy);
 }
 
 function renderCartFooter(arrayItems) {
