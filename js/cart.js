@@ -47,6 +47,7 @@ let checkoutStatus = JSON.parse(localStorage.getItem('cartData')) || {
   inCart: true,
   chosenPaymentMethod: 'paypal',
 };
+let savedForLaterItems = JSON.parse(localStorage.getItem('savedForLater')) || {};
 
 if (itemsToBuy === null) {
   renderEmptyCart();
@@ -96,7 +97,6 @@ function renderEmptyCart() {
 
 function renderCartItems(arrayItems) {
 
-  console.log('renderCartItems' + checkoutStatus);
   cartItems.innerHTML = '';
   checkoutStatus.inCart = true;
   localStorage.setItem('cartData', JSON.stringify(checkoutStatus))
@@ -225,6 +225,22 @@ function cartManager(e) {
     (Object.values(itemsToBuy).length == 0) ? resetCart() : renderCartItems(itemsToBuy);
   }
 
+  //-----cart item buy now label
+  if (e.target.matches(itemSpanSelector) && e.target.textContent === 'Buy now') {
+    //we select only 1 item only
+    const buyNowItem = itemsToBuy[e.target.closest(itemMainRowSelector).dataset.id];
+    //And here pay attention, we add it to a list and pass it as an argument to the renderCheckout() function, (all this is temporary, if the user reloads the page the rest of the items will be added)
+    renderCheckout([buyNowItem], checkoutStatus.chosenPaymentMethod);
+  }
+
+  //-----cart item save for later label
+  if (e.target.matches(itemSpanSelector) && e.target.textContent === 'Save for later') {
+    const targetId = e.target.closest(itemMainRowSelector).dataset.id;
+    const saveForLater = itemsToBuy[targetId];
+    savedForLaterItems[targetId] = {...saveForLater};
+    localStorage.setItem('savedForLater', JSON.stringify(savedForLaterItems));
+  }
+
   //-----cart payment methods
   const paymentMethodParentNode = e.target.parentNode.matches(paymentFigureSelector);
   if (paymentMethodParentNode) {
@@ -313,7 +329,6 @@ function footerCalculator(arrayItems) {
   cartMainContainer.querySelector(mainUnitLabelSelector).textContent = `(${nQuantity})`;
 
   const paymentMethod = checkoutStatus.chosenPaymentMethod;
-  console.log('paymentMethod is: ' + paymentMethod);
   let nMethodFee = 0;
   switch (paymentMethod) {
     case 'paypal':
