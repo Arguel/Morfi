@@ -30,10 +30,6 @@ const titleContainerSelector = '.mx-2';
 const footerContainerSelector = '.col-12.col-sm-11.col-md-10.py-5.border-bottom.ff-lato-4.mx-auto';
 //main label containing the total number of units in the cart
 const mainUnitLabelSelector = 'span';
-//footer buttons (clean cart and checkout)
-const footerButtonsSelector = 'button.btn.btn-primary.ff-lato-7';
-//this selects the parent of the element that is clicked, in our case it is a figure tag
-const paymentFigureSelector = 'figure.my-2.me-2.overflow-hidden.rounded.h-pointer';
 //remove span (used to remove the items when you click it, it is present in each rendered item)
 const itemSpanSelector = '.h-pointer.ps-1.ps-sm-0.pe-1.pe-sm-2';
 //present in each item (it is the button that appears with the value of "-" and allows to decrease the number of units of the item)
@@ -201,6 +197,7 @@ function cartManager(e) {
     //we select only 1 item only
     const buyNowItem = savedForLaterItems[e.target.closest(itemMainRowSelector).dataset.id];
     //And here pay attention, we add it to a list and pass it as an argument to the renderCheckout() function, (all this is temporary, if the user reloads the page the rest of the items will be added)
+    keepPaymentUpdated();
     renderCheckout([buyNowItem], checkoutStatus.chosenPaymentMethod);
   }
 
@@ -323,6 +320,7 @@ function renderCheckout(arrayItems, paymentMethod) {
     cartMainContainer.querySelector('.col-10').classList.remove('d-none');
     //this removes the "go back" button
     cartMainContainer.removeChild(cartMainContainer.querySelector('div.col-12.text-primary.fs-5.mb-3'));
+    keepPaymentUpdated();
     renderCartItems(savedForLaterItems);
   })
 
@@ -399,4 +397,12 @@ function footerHasBeenCreated() {
 function updateLabel(arrayItems) {
   const nQuantity = Object.values(arrayItems).reduce((acc, {quantity}) => acc + quantity, 0);
   cartMainContainer.querySelector(mainUnitLabelSelector).textContent = `(${nQuantity})`;
+}
+
+function keepPaymentUpdated() {
+  //This function basically fixes the payment method error when having several tabs open editing the same content
+  checkoutStatus = JSON.parse(localStorage.getItem('cartData')) || {
+    inCart: true,
+    chosenPaymentMethod: 'paypal',
+  };
 }

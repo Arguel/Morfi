@@ -233,7 +233,7 @@ function cartManager(e) {
   if (e.target.matches(itemSpanSelector) && e.target.textContent === 'Remove') {
     delete itemsToBuy[e.target.closest(itemMainRowSelector).dataset.id];
     localStorage.setItem('cart', JSON.stringify(itemsToBuy));
-    (Object.values(itemsToBuy).length == 0) ? resetCart() : renderCartItems(itemsToBuy);
+    (Object.values(itemsToBuy).length == 0) ? resetCart() : renderCartItems(itemsToBuy); renderCartFooter(itemsToBuy);
   }
 
   //-----cart item buy now label
@@ -404,6 +404,7 @@ function renderCheckout(arrayItems, paymentMethod) {
     //this removes the "go back" button
     cartMainContainer.removeChild(cartMainContainer.querySelector('div.col-12.text-primary.fs-5.mb-3'));
     renderCartItems(itemsToBuy);
+    renderCartFooter(itemsToBuy);
   })
 
   innerSpanGoBack.appendChild(leftArrowIcon);
