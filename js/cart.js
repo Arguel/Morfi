@@ -39,6 +39,14 @@ const paymentFigureSelector = 'figure.my-2.me-2.overflow-hidden.rounded.h-pointe
 const itemSpanSelector = '.h-pointer.ps-1.ps-sm-0.pe-1.pe-sm-2';
 //present in each item (it is the button that appears with the value of "-" and allows to decrease the number of units of the item)
 const inputReduceSelector = 'input[name="reducequantity"]';
+//handles the span tags that appear at the end of the checkout section (final price, discounts, original amount)
+const checkoutCalculationSeletor = 'div.text-break.text-truncate-2 span';
+//this is where all the items rendered in the checkout will be saved (one below the other)
+const checkoutItemContainerSelector = 'div.col-xs-12.col-md-8.my-2';
+//these are the labels that appear at the top of the cart showing the quantities of units with the name of "cart" and "saved" respectively
+const cartLabelsContainerSelector = '.col-10';
+//button that is rendered at the top of the cart while the checkout is loading
+const goBackBtnSelector = 'div.col-12.text-primary.fs-5.mb-3';
 
 //items added from shop page
 let itemsToBuy = localStorage.getItem('cart');
@@ -400,9 +408,9 @@ function renderCheckout(arrayItems, paymentMethod) {
   leftArrowIcon.classList.add('fas', 'fa-chevron-left', 'fa-fw');
 
   spanGoback.addEventListener('click', () => {
-    cartMainContainer.querySelector('.col-10').classList.remove('d-none');
+    cartMainContainer.querySelector(cartLabelsContainerSelector).classList.remove('d-none');
     //this removes the "go back" button
-    cartMainContainer.removeChild(cartMainContainer.querySelector('div.col-12.text-primary.fs-5.mb-3'));
+    cartMainContainer.removeChild(cartMainContainer.querySelector(goBackBtnSelector));
     renderCartItems(itemsToBuy);
     renderCartFooter(itemsToBuy);
   })
@@ -417,10 +425,10 @@ function renderCheckout(arrayItems, paymentMethod) {
 
   //this next line refers to the "cart" and "saved" boxes (which appear at the beginning of the cart)
   //We do not delete the child in case the user wants to re-render the cart (that's easier and we only delete the class we just added)
-  cartMainContainer.querySelector('.col-10').classList.add('d-none');
+  cartMainContainer.querySelector(cartLabelsContainerSelector).classList.add('d-none');
 
   //Here we render each of the items that had been added to the cart (one below the other)
-  const productsContainer = templateCartCheckout.querySelector('div.col-xs-12.col-md-8.my-2');
+  const productsContainer = templateCartCheckout.querySelector(checkoutItemContainerSelector);
   Object.values(arrayItems).forEach(product => {
 
     const mainProductContainer = document.createElement('div');
@@ -450,13 +458,13 @@ function renderCheckout(arrayItems, paymentMethod) {
   });
   const discountPercentage = Math.ceil((rprice - rfinalPrice) * 100 / rprice);
   //base price excluding discounts
-  templateCartCheckout.querySelectorAll('div.text-break.text-truncate-2 span')[1].textContent = `$${(rprice + rpaymentMethod).toFixed(2)}`;
+  templateCartCheckout.querySelectorAll(checkoutCalculationSeletor)[1].textContent = `$${(rprice + rpaymentMethod).toFixed(2)}`;
   //discounts
-  templateCartCheckout.querySelectorAll('div.text-break.text-truncate-2 span')[2].textContent = `$${(rprice - rfinalPrice).toFixed(2)}`;
+  templateCartCheckout.querySelectorAll(checkoutCalculationSeletor)[2].textContent = `$${(rprice - rfinalPrice).toFixed(2)}`;
   //discount percentage
-  templateCartCheckout.querySelectorAll('div.text-break.text-truncate-2 span')[3].textContent = `(${discountPercentage}%)`;
+  templateCartCheckout.querySelectorAll(checkoutCalculationSeletor)[3].textContent = `(${discountPercentage}%)`;
   //final price counting discounts
-  templateCartCheckout.querySelectorAll('div.text-break.text-truncate-2 span')[4].textContent = `$${(rfinalPrice + rpaymentMethod).toFixed(2)}`;
+  templateCartCheckout.querySelectorAll(checkoutCalculationSeletor)[4].textContent = `$${(rfinalPrice + rpaymentMethod).toFixed(2)}`;
 
   const clone = templateCartCheckout.cloneNode(true);
   fragment.appendChild(clone);
