@@ -2,8 +2,7 @@
 
 //templates
 const templateCartItem = document.getElementById('template-cart-item').content;
-//const templateCartFooter = document.getElementById('template-cart-footer').content;
-//const templateCartCheckout = document.getElementById('template-cart-checkout').content;
+const templateCartCheckout = document.getElementById('template-cart-checkout').content;
 
 //containers
 const cartItems = document.getElementById('cart-items');
@@ -43,26 +42,19 @@ const inputReduceSelector = 'input[name="reducequantity"]';
 //items added from shop page
 let itemsToBuy = localStorage.getItem('cart');
 //checkout status
-//let checkoutStatus = JSON.parse(localStorage.getItem('cartData')) || {
-//inCart: true,
-//chosenPaymentMethod: 'paypal',
-//};
+let checkoutStatus = JSON.parse(localStorage.getItem('cartData')) || {
+  inCart: true,
+  chosenPaymentMethod: 'paypal',
+};
 let savedForLaterItems = localStorage.getItem('savedForLater');
 
 if (savedForLaterItems === null) {
   renderEmptySavedCart();
 } else {
   try {
-    //itemsToBuy = JSON.parse(itemsToBuy);
-    //if (checkoutStatus.inCart === false) {
-    //renderCheckout(itemsToBuy, checkoutStatus.chosenPaymentMethod);
-    //} else {
-    //renderCartItems(itemsToBuy);
     savedForLaterItems = JSON.parse(savedForLaterItems);
     footerCalculator(savedForLaterItems);
     renderCartItems(savedForLaterItems);
-    //renderCartFooter(itemsToBuy);
-    //}
   } catch (error) {
     console.log(error);
   }
@@ -72,8 +64,7 @@ if (itemsToBuy === null) {
 } else {
   try {
     itemsToBuy = JSON.parse(itemsToBuy)
-    const nQuantity = Object.values(itemsToBuy).reduce((acc, {quantity}) => acc + quantity, 0);
-    cartMainContainer.querySelector(mainUnitLabelSelector).textContent = `(${nQuantity})`;
+    updateLabel(itemsToBuy)
   } catch (error) {
     console.log(error);
   }
@@ -110,8 +101,6 @@ function renderEmptySavedCart() {
 function renderCartItems(arrayItems) {
 
   cartItems.innerHTML = '';
-  //checkoutStatus.inCart = true;
-  //localStorage.setItem('cartData', JSON.stringify(checkoutStatus))
 
   Object.values(arrayItems).forEach(product => {
     //title
@@ -162,40 +151,8 @@ function renderCartItems(arrayItems) {
   //we remove the border of the last element to make it visually more attractive
   cartItems.lastElementChild.classList.remove('border-bottom');
 
+  footerCalculator(arrayItems);
 }
-
-//function renderCartFooter(arrayItems) {
-
-//footerHasBeenCreated();
-
-//const {rfinalPrice, rpaymentMethod} = footerCalculator(arrayItems);
-//final calculation of the checkout(coupons, shipping, discounts, etc)
-//templateCartFooter.querySelector(finalPriceSelector).textContent = rfinalPrice.toFixed(2);
-//templateCartFooter.querySelectorAll(finalPriceSelector)[2].textContent = rpaymentMethod.toFixed(2);
-//templateCartFooter.querySelectorAll(finalPriceSelector)[3].textContent = (rfinalPrice + rpaymentMethod).toFixed(2); //the last item
-
-//const clone = templateCartFooter.cloneNode(true);
-//fragment.appendChild(clone);
-
-//we add the cost calculator and the button to finish the purchase
-//cartMainContainer.appendChild(fragment);
-
-//button events
-//const buyBtn = document.querySelectorAll(footerButtonsSelector)[1];
-//const clearBtn = document.querySelectorAll(footerButtonsSelector)[0];
-//buyBtn.addEventListener('click', () => {
-//renderCheckout(itemsToBuy, checkoutStatus.chosenPaymentMethod);
-//})
-//clearBtn.addEventListener('click', () => {
-//resetCart();
-//})
-
-//This basically renders the payment method that was selected the last time, in case it is the default, the paypal one will be rendered
-//cartMainContainer.querySelectorAll(paymentFigureSelector).forEach(elem => {
-//elem.classList.remove('border', 'border-2', 'border-primary');
-//});
-//cartMainContainer.querySelector(`img[data-method="${checkoutStatus.chosenPaymentMethod}"]`).parentNode.classList.add('border', 'border-2', 'border-primary');
-//}
 
 function cartManager(e) {
 
@@ -247,45 +204,14 @@ function cartManager(e) {
     renderCheckout([buyNowItem], checkoutStatus.chosenPaymentMethod);
   }
 
-  //-----cart item save for later label
+  //-----cart item add to cart label
   if (e.target.matches(itemSpanSelector) && e.target.textContent === 'Add to cart') {
     const targetId = e.target.closest(itemMainRowSelector).dataset.id;
-    const saveForLater = savedForLaterItems[targetId];
-    savedForLaterItems[targetId] = {...saveForLater};
-    localStorage.setItem('savedForLater', JSON.stringify(savedForLaterItems));
+    const addToCart = savedForLaterItems[targetId];
+    itemsToBuy[targetId] = {...addToCart};
+    localStorage.setItem('cart', JSON.stringify(itemsToBuy));
+    updateLabel(itemsToBuy)
   }
-
-  //-----cart payment methods
-  //const paymentMethodParentNode = e.target.parentNode.matches(paymentFigureSelector);
-  //if (paymentMethodParentNode) {
-  //cartMainContainer.querySelectorAll(paymentFigureSelector).forEach(e => {
-  //e.classList.remove('border', 'border-2', 'border-primary');
-  //});
-  //e.target.parentNode.classList.add('border', 'border-2', 'border-primary');
-  //switch (e.target.dataset.method) {
-  //updateCartContent() will call footerCalculator() and it will save the information that we are storing in ram memory, so we don't have to call the localStorage function 5 times
-  //case 'paypal':
-  //checkoutStatus.chosenPaymentMethod = 'paypal';
-  //updateCartContent(e);
-  //break;
-  //case 'mastercard':
-  //checkoutStatus.chosenPaymentMethod = 'mastercard'
-  //updateCartContent(e);
-  //break;
-  //case 'visaandmaster':
-  //checkoutStatus.chosenPaymentMethod = 'visaandmaster'
-  //updateCartContent(e);
-  //break;
-  //case 'paysafecard':
-  //checkoutStatus.chosenPaymentMethod = 'paysafecard'
-  //updateCartContent(e);
-  //break;
-  //case 'klarna':
-  //checkoutStatus.chosenPaymentMethod = 'klarna'
-  //updateCartContent(e);
-  //break;
-  //}
-  //}
 
   e.stopPropagation();
 }
@@ -323,12 +249,6 @@ function updateCartContent(element) {
 
   }
   footerCalculator(savedForLaterItems);
-
-  //this selects the summary section of the shopping cart footer
-  //const newCartFooter = cartMainContainer.querySelector(footerContainerSelector);
-  //newCartFooter.querySelector(finalPriceSelector).textContent = rfinalPrice.toFixed(2);
-  //newCartFooter.querySelectorAll(finalPriceSelector)[2].textContent = rpaymentMethod.toFixed(2);
-  //newCartFooter.querySelectorAll(finalPriceSelector)[3].textContent = (rfinalPrice + rpaymentMethod).toFixed(2); //the last item
 }
 
 function footerCalculator(arrayItems) {
@@ -342,34 +262,34 @@ function footerCalculator(arrayItems) {
   //top cart label in checkout
   cartMainContainer.querySelectorAll(mainUnitLabelSelector)[1].textContent = `(${nQuantity})`;
 
-  //const paymentMethod = checkoutStatus.chosenPaymentMethod;
-  //let nMethodFee = 0;
-  //switch (paymentMethod) {
-  //case 'paypal':
-  //nMethodFee = 15;
-  //break;
-  //case 'mastercard':
-  //nMethodFee = 10;
-  //break;
-  //case 'visaandmaster':
-  //nMethodFee = 21;
-  //break;
-  //case 'paysafecard':
-  //nMethodFee = 8;
-  //break;
-  //case 'klarna':
-  //nMethodFee = 2;
-  //break;
-  //}
+  const paymentMethod = checkoutStatus.chosenPaymentMethod;
+  let nMethodFee = 0;
+  switch (paymentMethod) {
+    case 'paypal':
+      nMethodFee = 15;
+      break;
+    case 'mastercard':
+      nMethodFee = 10;
+      break;
+    case 'visaandmaster':
+      nMethodFee = 21;
+      break;
+    case 'paysafecard':
+      nMethodFee = 8;
+      break;
+    case 'klarna':
+      nMethodFee = 2;
+      break;
+  }
   //percentage that will be added to the final price of the product
-  //nMethodFee = nFinalPrice * nMethodFee / 100;
-  //localStorage.setItem('cartData', JSON.stringify(checkoutStatus))
+  nMethodFee = nFinalPrice * nMethodFee / 100;
+  localStorage.setItem('cartData', JSON.stringify(checkoutStatus))
 
   //r stands for results
   const finalResults = {
     rfinalPrice: nFinalPrice,
     rquantity: nQuantity,
-    //rpaymentMethod: nMethodFee,
+    rpaymentMethod: nMethodFee,
     rprice: nPrice,
   }
   return finalResults;
@@ -377,105 +297,106 @@ function footerCalculator(arrayItems) {
 
 function resetCart() {
   localStorage.removeItem('savedForLater');
-  cartMainContainer.querySelector(mainUnitLabelSelector).textContent = '(0)';
-  //the next line removes the footer that contains the payment methods and the cost calculator
-  //cartMainContainer.removeChild(cartMainContainer.lastElementChild);
+  cartMainContainer.querySelectorAll(mainUnitLabelSelector)[1].textContent = '(0)';
   renderEmptySavedCart();
 }
 
-//function renderCheckout(arrayItems, paymentMethod) {
-//we clean the board to render the new purchase order
-//cartItems.innerHTML = '';
-//footerHasBeenCreated();
+function renderCheckout(arrayItems, paymentMethod) {
+  //we clean the board to render the new purchase order
+  cartItems.innerHTML = '';
+  footerHasBeenCreated();
 
-//const {rfinalPrice, rpaymentMethod, rprice} = footerCalculator(arrayItems, paymentMethod);
+  const {rfinalPrice, rpaymentMethod, rprice} = footerCalculator(arrayItems, paymentMethod);
 
-//Here we create the "go back" button to return to the shopping cart
-//const divGoBackContainer = document.createElement('div');
-//divGoBackContainer.classList.add('col-12', 'text-primary', 'fs-5', 'mb-3');
-//const spanGoback = document.createElement('span');
-//spanGoback.classList.add('ms-4', 'h-pointer');
-//spanGoback.textContent = 'Go back';
-//const innerSpanGoBack = document.createElement('span');
-//innerSpanGoBack.classList.add('p-1', 'mx-2', 'rounded', 'bg-primary', 'text-white', 'rounded');
-//const leftArrowIcon = document.createElement('i');
-//leftArrowIcon.classList.add('fas', 'fa-chevron-left', 'fa-fw');
+  //Here we create the "go back" button to return to the shopping cart
+  const divGoBackContainer = document.createElement('div');
+  divGoBackContainer.classList.add('col-12', 'text-primary', 'fs-5', 'mb-3');
+  const spanGoback = document.createElement('span');
+  spanGoback.classList.add('ms-4', 'h-pointer');
+  spanGoback.textContent = 'Go back';
+  const innerSpanGoBack = document.createElement('span');
+  innerSpanGoBack.classList.add('p-1', 'mx-2', 'rounded', 'bg-primary', 'text-white', 'rounded');
+  const leftArrowIcon = document.createElement('i');
+  leftArrowIcon.classList.add('fas', 'fa-chevron-left', 'fa-fw');
 
-//spanGoback.addEventListener('click', () => {
-//cartMainContainer.querySelector('.col-10').classList.remove('d-none');
-//this removes the "go back" button
-//cartMainContainer.removeChild(cartMainContainer.querySelector('div.col-12.text-primary.fs-5.mb-3'));
-//renderCartItems(savedForLaterItems);
-//})
+  spanGoback.addEventListener('click', () => {
+    cartMainContainer.querySelector('.col-10').classList.remove('d-none');
+    //this removes the "go back" button
+    cartMainContainer.removeChild(cartMainContainer.querySelector('div.col-12.text-primary.fs-5.mb-3'));
+    renderCartItems(savedForLaterItems);
+  })
 
-//innerSpanGoBack.appendChild(leftArrowIcon);
-//spanGoback.appendChild(innerSpanGoBack);
-//spanGoback.insertBefore(innerSpanGoBack, spanGoback.childNodes[0]);
-//divGoBackContainer.appendChild(spanGoback);
+  innerSpanGoBack.appendChild(leftArrowIcon);
+  spanGoback.appendChild(innerSpanGoBack);
+  spanGoback.insertBefore(innerSpanGoBack, spanGoback.childNodes[0]);
+  divGoBackContainer.appendChild(spanGoback);
 
-//we insert our "go back" button at the beginning of our board
-//cartMainContainer.insertBefore(divGoBackContainer, cartMainContainer.childNodes[0]);
+  //we insert our "go back" button at the beginning of our board
+  cartMainContainer.insertBefore(divGoBackContainer, cartMainContainer.childNodes[0]);
 
-//this next line refers to the "cart" and "saved" boxes(which appear at the beginning of the cart)
-//We do not delete the child in case the user wants to re - render the cart(that's easier and we only delete the class we just added)
-//cartMainContainer.querySelector('.col-10').classList.add('d-none');
+  //this next line refers to the "cart" and "saved" boxes (which appear at the beginning of the cart)
+  //We do not delete the child in case the user wants to re-render the cart (that's easier and we only delete the class we just added)
+  cartMainContainer.querySelector('.col-10').classList.add('d-none');
 
-//Here we render each of the items that had been added to the cart(one below the other)
-//const productsContainer = templateCartCheckout.querySelector('div.col-xs-12.col-md-8.my-2');
-//Object.values(arrayItems).forEach(product => {
+  //Here we render each of the items that had been added to the cart (one below the other)
+  const productsContainer = templateCartCheckout.querySelector('div.col-xs-12.col-md-8.my-2');
+  Object.values(arrayItems).forEach(product => {
 
-//const mainProductContainer = document.createElement('div');
-//mainProductContainer.classList.add('d-flex', 'flex-column', 'flex-sm-row', 'justify-content-between', 'text-center', 'my-1');
-//const leftDivContainer = document.createElement('div');
-//leftDivContainer.classList.add('text-truncate', 'w-checkout-item-title');
-//const spanUnits = document.createElement('span');
-//spanUnits.classList.add('fw-bold');
-//spanUnits.textContent = product.quantity;
-//const spanSeparator = document.createElement('span');
-//spanSeparator.textContent = ' - ';
-//const spanItemTitle = document.createElement('span');
-//spanItemTitle.textContent = product.title;
-//const rightDivContainer = document.createElement('div');
-//rightDivContainer.classList.add('text-truncate', 'w-checkout-item-price', 'pe-auto', 'pe-sm-2');
-//rightDivContainer.textContent = `$${(product.quantity * product.finalPrice).toFixed(2)}`;
+    const mainProductContainer = document.createElement('div');
+    mainProductContainer.classList.add('d-flex', 'flex-column', 'flex-sm-row', 'justify-content-between', 'text-center', 'my-1');
+    const leftDivContainer = document.createElement('div');
+    leftDivContainer.classList.add('text-truncate', 'w-checkout-item-title');
+    const spanUnits = document.createElement('span');
+    spanUnits.classList.add('fw-bold');
+    spanUnits.textContent = product.quantity;
+    const spanSeparator = document.createElement('span');
+    spanSeparator.textContent = ' - ';
+    const spanItemTitle = document.createElement('span');
+    spanItemTitle.textContent = product.title;
+    const rightDivContainer = document.createElement('div');
+    rightDivContainer.classList.add('text-truncate', 'w-checkout-item-price', 'pe-auto', 'pe-sm-2');
+    rightDivContainer.textContent = `$${(product.quantity * product.finalPrice).toFixed(2)}`;
 
-//leftDivContainer.appendChild(spanUnits);
-//leftDivContainer.appendChild(spanSeparator);
-//leftDivContainer.appendChild(spanItemTitle);
+    leftDivContainer.appendChild(spanUnits);
+    leftDivContainer.appendChild(spanSeparator);
+    leftDivContainer.appendChild(spanItemTitle);
 
-//mainProductContainer.appendChild(leftDivContainer);
-//mainProductContainer.appendChild(rightDivContainer);
-//main data / product container
-//productsContainer.appendChild(mainProductContainer);
+    mainProductContainer.appendChild(leftDivContainer);
+    mainProductContainer.appendChild(rightDivContainer);
+    //main data/product container
+    productsContainer.appendChild(mainProductContainer);
 
-//});
-//const discountPercentage = Math.ceil((rprice - rfinalPrice) * 100 / rprice);
-//base price excluding discounts
-//templateCartCheckout.querySelectorAll('div.text-break.text-truncate-2 span')[1].textContent = `$${(rprice + rpaymentMethod).toFixed(2)}`;
-//discounts
-//templateCartCheckout.querySelectorAll('div.text-break.text-truncate-2 span')[2].textContent = `$${(rprice - rfinalPrice).toFixed(2)}`;
-//discount percentage
-//templateCartCheckout.querySelectorAll('div.text-break.text-truncate-2 span')[3].textContent = `(${discountPercentage}%)`;
-//final price counting discounts
-//templateCartCheckout.querySelectorAll('div.text-break.text-truncate-2 span')[4].textContent = `$${(rfinalPrice + rpaymentMethod).toFixed(2)}`;
+  });
+  const discountPercentage = Math.ceil((rprice - rfinalPrice) * 100 / rprice);
+  //base price excluding discounts
+  templateCartCheckout.querySelectorAll('div.text-break.text-truncate-2 span')[1].textContent = `$${(rprice + rpaymentMethod).toFixed(2)}`;
+  //discounts
+  templateCartCheckout.querySelectorAll('div.text-break.text-truncate-2 span')[2].textContent = `$${(rprice - rfinalPrice).toFixed(2)}`;
+  //discount percentage
+  templateCartCheckout.querySelectorAll('div.text-break.text-truncate-2 span')[3].textContent = `(${discountPercentage}%)`;
+  //final price counting discounts
+  templateCartCheckout.querySelectorAll('div.text-break.text-truncate-2 span')[4].textContent = `$${(rfinalPrice + rpaymentMethod).toFixed(2)}`;
 
-//const clone = templateCartCheckout.cloneNode(true);
-//fragment.appendChild(clone);
-//cartItems.appendChild(fragment);
-//to delete the previous items and leave the template in its original state(this in case an item is deleted)
-//productsContainer.innerHTML = '';
+  const clone = templateCartCheckout.cloneNode(true);
+  fragment.appendChild(clone);
+  cartItems.appendChild(fragment);
+  //to delete the previous items and leave the template in its original state (this in case an item is deleted)
+  productsContainer.innerHTML = '';
 
-//checkoutStatus.inCart = false;
-//localStorage.setItem('cartData', JSON.stringify(checkoutStatus));
-//}
+}
 
-//function footerHasBeenCreated() {
-//This basically checks if the footer was created, so we don't render it again
-//const cartFooter = cartMainContainer.querySelector(footerContainerSelector);
-//if (cartFooter != null) {
-//If we enter the "if" it is because the footer is rendered, so we are going to eliminate it to avoid errors
-    //cartMainContainer.removeChild(cartMainContainer.lastElementChild);
-    //return true;
-  //}
-  //return false;
-//}
+function footerHasBeenCreated() {
+  //This basically checks if the footer was created, so we don't render it again
+  const cartFooter = cartMainContainer.querySelector(footerContainerSelector);
+  if (cartFooter != null) {
+    //If we enter the "if" it is because the footer is rendered, so we are going to eliminate it to avoid errors
+    cartMainContainer.removeChild(cartMainContainer.lastElementChild);
+    return true;
+  }
+  return false;
+}
+
+function updateLabel(arrayItems) {
+  const nQuantity = Object.values(arrayItems).reduce((acc, {quantity}) => acc + quantity, 0);
+  cartMainContainer.querySelector(mainUnitLabelSelector).textContent = `(${nQuantity})`;
+}
