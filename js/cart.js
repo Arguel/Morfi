@@ -74,9 +74,9 @@ function renderEmptyCart() {
 
   cartItems.innerHTML = '';
 
-  const divEmptyContainer = document.createElement('div');
-  divEmptyContainer.classList.add('my-4', 'p-2', 'fs-5');
-  divEmptyContainer.textContent = 'Your shopping cart is empty';
+  const h1Header = document.createElement('h1');
+  h1Header.classList.add('my-4', 'p-2', 'fs-4');
+  h1Header.textContent = 'Your shopping cart is empty';
 
   const divCatalog = document.createElement('div');
   divCatalog.classList.add('my-5');
@@ -89,9 +89,10 @@ function renderEmptyCart() {
 
   aCatalog.appendChild(aCatalogBtn);
   divCatalog.appendChild(aCatalog);
-  fragment.appendChild(divEmptyContainer);
+  fragment.appendChild(h1Header);
   fragment.appendChild(divCatalog);
 
+  //this class will be automatically removed when the page is updated
   cartItems.classList.add('text-center');
   cartItems.appendChild(fragment);
 }
