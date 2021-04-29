@@ -24,6 +24,7 @@ $(() => {
     const usernameLength = $('#email').val().length;
     if (usernameLength > 20 || usernameLength === 0) {
       $('#email-feedback').html("The length of the email cannot exceed 20 characters and it can't be empty either");
+      $('#email-feedback').addClass('my-2 py-2');
       $('#email-feedback').show();
       emailFeedback = true;
     } else {
@@ -35,6 +36,7 @@ $(() => {
     const ticketChoosen = $('#ticket-type').val();
     if (ticketChoosen === null) {
       $('#ticket-type-feedback').html('Please select a valid option');
+      $('#ticket-type-feedback').addClass('my-2 py-2');
       $('#ticket-type-feedback').show();
       ticketTypeFeedback = true;
     } else {
@@ -46,6 +48,7 @@ $(() => {
     const descriptionValue = $('#description').val();
     if (descriptionValue === '') {
       $('#description-feedback').html('Please provide a description of the problem');
+      $('#description-feedback').addClass('my-2 py-2');
       $('#description-feedback').show();
       descriptionFeedback = true;
     } else {
