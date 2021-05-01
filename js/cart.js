@@ -1,5 +1,13 @@
 "use strict";
 
+//coupons object
+const validCoupons = {
+  christmas2020: 15,
+  thanksgivingday: 30,
+  test: 20,
+}
+let coupon;
+
 //templates
 const templateCartItem = document.getElementById('template-cart-item').content;
 const templateCartFooter = document.getElementById('template-cart-footer').content;
@@ -51,9 +59,10 @@ const goBackBtnSelector = 'div.col-12.text-primary.fs-5.mb-3';
 //items added from shop page
 let itemsToBuy = localStorage.getItem('cart');
 //checkout status
-let checkoutStatus = JSON.parse(localStorage.getItem('cartData')) || {
+let checkoutStatus = JSON.parse(localStorage.getItem('checkoutStatus')) || {
   inCart: true,
   chosenPaymentMethod: 'paypal',
+  activeCoupon: undefined,
 };
 let savedForLaterItems = JSON.parse(localStorage.getItem('savedForLater')) || {};
 
@@ -118,7 +127,7 @@ function renderCartItems(arrayItems) {
 
   cartItems.innerHTML = '';
   checkoutStatus.inCart = true;
-  localStorage.setItem('cartData', JSON.stringify(checkoutStatus))
+  localStorage.setItem('checkoutStatus', JSON.stringify(checkoutStatus))
 
   Object.values(arrayItems).forEach(product => {
     //title
@@ -200,6 +209,18 @@ function renderCartFooter(arrayItems) {
     elem.classList.remove('border', 'border-2', 'border-primary');
   });
   cartMainContainer.querySelector(`img[data-method="${checkoutStatus.chosenPaymentMethod}"]`).parentNode.classList.add('border', 'border-2', 'border-primary');
+
+  //form containing the input to apply our coupon
+  coupon = document.getElementById('applyCoupon');
+  if (coupon) {
+    coupon.parentNode.addEventListener('submit', e => {
+      e.preventDefault();
+      checkCoupon();
+    });
+  }
+  if (checkoutStatus.activeCoupon) {
+    checkCoupon();
+  }
 }
 
 function cartManager(e) {
@@ -237,11 +258,20 @@ function cartManager(e) {
       break;
   }
 
+  if (e.target.parentNode.id === 'applyCouponBtn' || e.target.id === 'applyCouponBtn') {
+    checkCoupon();
+  }
+
   //-----cart item remove label
   if (e.target.matches(itemSpanSelector) && e.target.textContent === 'Remove') {
     delete itemsToBuy[e.target.closest(itemMainRowSelector).dataset.id];
     localStorage.setItem('cart', JSON.stringify(itemsToBuy));
-    (Object.values(itemsToBuy).length == 0) ? resetCart() : renderCartItems(itemsToBuy); renderCartFooter(itemsToBuy);
+    if (Object.values(itemsToBuy).length == 0) {
+      resetCart();
+    } else {
+      renderCartItems(itemsToBuy);
+      renderCartFooter(itemsToBuy);
+    }
   }
 
   //-----cart item buy now label
@@ -369,7 +399,7 @@ function footerCalculator(arrayItems) {
   }
   //percentage that will be added to the final price of the product
   nMethodFee = nFinalPrice * nMethodFee / 100;
-  localStorage.setItem('cartData', JSON.stringify(checkoutStatus))
+  localStorage.setItem('checkoutStatus', JSON.stringify(checkoutStatus))
 
   //r stands for results
   const finalResults = {
@@ -473,7 +503,7 @@ function renderCheckout(arrayItems, paymentMethod) {
   productsContainer.innerHTML = '';
 
   checkoutStatus.inCart = false;
-  localStorage.setItem('cartData', JSON.stringify(checkoutStatus));
+  localStorage.setItem('checkoutStatus', JSON.stringify(checkoutStatus));
 }
 
 function footerHasBeenCreated() {
@@ -490,4 +520,41 @@ function footerHasBeenCreated() {
 function updateLabel(arrayItems) {
   const nQuantity = Object.values(arrayItems).reduce((acc, {quantity}) => acc + quantity, 0);
   cartMainContainer.querySelectorAll(mainUnitLabelSelector)[1].textContent = `(${nQuantity})`;
+}
+
+function checkCoupon() {
+
+  const couponContainer = cartMainContainer.querySelector('div.border.p-1.rounded');
+  const mainSpanInfo = couponContainer.querySelector('span');
+
+  if (validCoupons[coupon.value.toLowerCase()]) {
+    buildDiscountTag(mainSpanInfo);
+  } else if (checkoutStatus.activeCoupon) {
+    coupon.value = checkoutStatus.activeCoupon;
+    buildDiscountTag(mainSpanInfo);
+  } else {
+    couponContainer.querySelector('span').textContent = 'Sorry, The Coupon Code you entered is invalid. Please check and try again!';
+    checkoutStatus.activeCoupon = undefined;
+    localStorage.setItem('checkoutStatus', JSON.stringify(checkoutStatus));
+  }
+}
+
+function buildDiscountTag(mainTag) {
+  mainTag.textContent = `${validCoupons[coupon.value.toLowerCase()]}% - ${coupon.value.toLowerCase()}`;
+  const spanRemove = document.createElement('span');
+  spanRemove.classList.add('sel-primary', 'mx-1');
+  const spanRemoveIcon = document.createElement('i');
+  spanRemoveIcon.classList.add('fas', 'fa-times', 'fa-fw');
+
+  spanRemove.appendChild(spanRemoveIcon);
+  spanRemove.addEventListener('click', () => {
+    coupon.value = '';
+    mainTag.innerHTML = 'No coupons applied';
+    checkoutStatus.activeCoupon = undefined;
+    localStorage.setItem('checkoutStatus', JSON.stringify(checkoutStatus));
+  });
+
+  mainTag.appendChild(spanRemove);
+  checkoutStatus.activeCoupon = coupon.value.toLowerCase();
+  localStorage.setItem('checkoutStatus', JSON.stringify(checkoutStatus))
 }

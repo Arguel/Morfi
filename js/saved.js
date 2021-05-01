@@ -46,9 +46,10 @@ const goBackBtnSelector = 'div.col-12.text-primary.fs-5.mb-3';
 //items added from shop page
 let itemsToBuy = localStorage.getItem('cart');
 //checkout status
-let checkoutStatus = JSON.parse(localStorage.getItem('cartData')) || {
+let checkoutStatus = JSON.parse(localStorage.getItem('checkoutStatus')) || {
   inCart: true,
   chosenPaymentMethod: 'paypal',
+  activeCoupon: undefined,
 };
 let savedForLaterItems = localStorage.getItem('savedForLater');
 
@@ -288,7 +289,7 @@ function footerCalculator(arrayItems) {
   }
   //percentage that will be added to the final price of the product
   nMethodFee = nFinalPrice * nMethodFee / 100;
-  localStorage.setItem('cartData', JSON.stringify(checkoutStatus))
+  localStorage.setItem('checkoutStatus', JSON.stringify(checkoutStatus))
 
   //r stands for results
   const finalResults = {
@@ -409,7 +410,7 @@ function updateLabel(arrayItems) {
 
 function keepPaymentUpdated() {
   //This function basically fixes the payment method error when having several tabs open editing the same content
-  checkoutStatus = JSON.parse(localStorage.getItem('cartData')) || {
+  checkoutStatus = JSON.parse(localStorage.getItem('checkoutStatus')) || {
     inCart: true,
     chosenPaymentMethod: 'paypal',
   };
