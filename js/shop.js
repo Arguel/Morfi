@@ -10,6 +10,7 @@ const apiShopItems = [
     "hasFreeShipping": true,
     "hasDiscount": true,
     "discount": 50,
+    "unitsAvailable": 34,
     "promotion": [
       "50% off"
     ],
@@ -23,6 +24,7 @@ const apiShopItems = [
     "hasFreeShipping": false,
     "hasDiscount": false,
     "discount": 0,
+    "unitsAvailable": 53,
     "promotion": [],
     "description": "Chickpea flour is gluten-free, protein packed, and makes an incredibly light batter for baked cauliflower. Look for it near the other gluten-free flours at your local health food store. Tamari is a slightly thicker, wheat-free alternative to soy sauce with a more robust flavor. These bites can double as an appetizer or side dish served with grilled fish or baked chicken."
   },
@@ -34,6 +36,7 @@ const apiShopItems = [
     "hasFreeShipping": false,
     "hasDiscount": false,
     "discount": 0,
+    "unitsAvailable": 63,
     "promotion": [
       "Special offer"
     ],
@@ -47,6 +50,7 @@ const apiShopItems = [
     "hasFreeShipping": true,
     "hasDiscount": false,
     "discount": 0,
+    "unitsAvailable": 35,
     "promotion": [],
     "description": "If you're looking for an appetizer that will delight your guests with its gorgeous presentation and rich, delicious taste, the search stops here. These beautiful canapés start with a base of candy cane (or Chioggia) beet squares, whose alternating ruby and white rings are stunning. (You can add more color to the platter by alternating candy cane beet and golden beet slices.) The beet stays raw, so the slices are crunchy and sweet and hold up nicely. The jewel-like topping of easy-to-find salmon caviar turns what's truly a simple make-ahead nibble into an absolute work of art that'll make you the talk of your social circle."
   },
@@ -58,6 +62,7 @@ const apiShopItems = [
     "hasFreeShipping": false,
     "hasDiscount": false,
     "discount": 0,
+    "unitsAvailable": 19,
     "promotion": [],
     "description": "With big flavor and less heft, our healthier ode to the classic French onion dip is a delicious way to sneak in extra vegetables. Ditch the sodium-bomb seasoning packets and sour cream-and-mayonnaise–laden dip (which can pack a small meal’s worth of calories and sat fat into a single serving) for our homemade dip. And be patient with the caramelizing process—slowly sizzled onions have noteworthy sweetness and concentrated umami. And because no dip is complete without a dipper, baked sweet potatoes will satisfy your chip craving for half the calories of most bagged varieties."
   },
@@ -69,6 +74,7 @@ const apiShopItems = [
     "hasFreeShipping": false,
     "hasDiscount": false,
     "discount": 0,
+    "unitsAvailable": 2,
     "promotion": [],
     "description": "Put those ripe, speckled bananas to good use. This dish starts with roasting bananas which adds caramelized notes to their tropical sweetness. The bananas flavor the light-and-fluffy bars, which are topped with cream cheese icing and chopped pecans for the perfect amount of tanginess and crunch."
   },
@@ -80,6 +86,7 @@ const apiShopItems = [
     "hasFreeShipping": false,
     "hasDiscount": false,
     "discount": 0,
+    "unitsAvailable": 221,
     "promotion": [],
     "description": "This recipe uses butter and buttermilk in quantities that give it the right indulgently moist texture and rich flavor, but keep a serving's fat at just 10 grams and calories at about 300."
   },
@@ -91,6 +98,7 @@ const apiShopItems = [
     "hasFreeShipping": false,
     "hasDiscount": true,
     "discount": 20,
+    "unitsAvailable": 83,
     "promotion": [
       "20% off",
       "New"
@@ -105,6 +113,7 @@ const apiShopItems = [
     "hasFreeShipping": true,
     "hasDiscount": false,
     "discount": 0,
+    "unitsAvailable": 55,
     "promotion": [
       "Special offer"
     ],
@@ -118,6 +127,7 @@ const apiShopItems = [
     "hasFreeShipping": false,
     "hasDiscount": false,
     "discount": 0,
+    "unitsAvailable": 15,
     "promotion": [],
     "description": "Top tender apple cupcakes with a sweet and crunchy topping of brown sugar and almonds, then drizzle with a powdered sugar glaze. The amaretto adds an even more distinct almond flavor to the cupcakes, but if you don't have it, you can use almond extract instead."
   },
@@ -129,6 +139,7 @@ const apiShopItems = [
     "hasFreeShipping": false,
     "hasDiscount": false,
     "discount": 0,
+    "unitsAvailable": 9,
     "promotion": [],
     "description": "It's hard to beat the sweet-salty goodness of this indulgent yet light caramel ice cream. Light ice cream has evolved from its watery ice-milk days and in the Test Kitchen, we like to get creative with ingredients and flavors, but we hold fast to settling for nothing less than smooth, creamy, rich results."
   },
@@ -140,6 +151,7 @@ const apiShopItems = [
     "hasFreeShipping": true,
     "hasDiscount": false,
     "discount": 0,
+    "unitsAvailable": 39,
     "promotion": [],
     "description": "Tiramisu is Italian for 'lift me up.' And its indulgent creamy, mocha-tinged flavor is indeed uplifting. With layers of ladyfingers, coffee, mascarpone cheese, and shaved or grated chocolate, traditional tiramisu is a cross between a trifle and bread pudding. Our lightened version is less than 300 calories per serving, and makes for a sophisticated dinner-party treat."
   },
@@ -151,6 +163,7 @@ const apiShopItems = [
     "hasFreeShipping": false,
     "hasDiscount": false,
     "discount": 0,
+    "unitsAvailable": 390,
     "promotion": [
       "Special offer"
     ],
@@ -164,6 +177,7 @@ const apiShopItems = [
     "hasFreeShipping": false,
     "hasDiscount": true,
     "discount": 80,
+    "unitsAvailable": 35,
     "promotion": [
       "80% off"
     ],
@@ -177,6 +191,7 @@ const apiShopItems = [
     "hasFreeShipping": false,
     "hasDiscount": false,
     "discount": 0,
+    "unitsAvailable": 24,
     "promotion": [],
     "description": "The perfect combination of a generous portion of breaded chicken, soft bun, and tart pickles, it's enhanced by only one thing: Polynesian sauce."
   },
@@ -188,6 +203,7 @@ const apiShopItems = [
     "hasFreeShipping": true,
     "hasDiscount": false,
     "discount": 0,
+    "unitsAvailable": 220,
     "promotion": [],
     "description": "An effective fast-food experience hinges on texture. Mouthfeel. Most fast food is rough and salty or mushy and gelatinous. But rarely the twain shall meet in one package."
   }

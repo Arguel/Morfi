@@ -1,5 +1,12 @@
 "use strict";
 
+//coupons object
+const validCoupons = {
+  christmas2020: 15,
+  thanksgivingday: 30,
+  test: 20,
+}
+
 //templates
 const templateCartItem = document.getElementById('template-cart-item').content;
 const templateCartCheckout = document.getElementById('template-cart-checkout').content;
@@ -29,7 +36,9 @@ const titleContainerSelector = '.mx-2';
 //it helps us to check if the container containing the footer was created or not
 const footerContainerSelector = '.col-12.col-sm-11.col-md-10.py-5.border-bottom.ff-lato-4.mx-auto';
 //main label containing the total number of units in the cart
-const mainUnitLabelSelector = 'span';
+const cartLabelSelector = 'span#cart-label';
+//main label containing the total number of units in the saved cart
+const savedLabelSelector = 'span#saved-label';
 //remove span (used to remove the items when you click it, it is present in each rendered item)
 const itemSpanSelector = '.h-pointer.ps-1.ps-sm-0.pe-1.pe-sm-2';
 //present in each item (it is the button that appears with the value of "-" and allows to decrease the number of units of the item)
@@ -65,7 +74,7 @@ if (savedForLaterItems === null) {
   }
 }
 if (itemsToBuy === null) {
-  cartMainContainer.querySelector(mainUnitLabelSelector).textContent = '(0)';
+  cartMainContainer.querySelector(cartLabelSelector).textContent = '(0)';
 } else {
   try {
     itemsToBuy = JSON.parse(itemsToBuy)
@@ -266,7 +275,7 @@ function footerCalculator(arrayItems) {
   //we add all the prices to calculate the total
   const nPrice = Object.values(arrayItems).reduce((acc, {quantity, price}) => acc + quantity * price, 0);
   //top cart label in checkout
-  cartMainContainer.querySelectorAll(mainUnitLabelSelector)[1].textContent = `(${nQuantity})`;
+  cartMainContainer.querySelector(savedLabelSelector).textContent = `(${nQuantity})`;
 
   const paymentMethod = checkoutStatus.chosenPaymentMethod;
   let nMethodFee = 0;
@@ -303,7 +312,7 @@ function footerCalculator(arrayItems) {
 
 function resetCart() {
   localStorage.removeItem('savedForLater');
-  cartMainContainer.querySelectorAll(mainUnitLabelSelector)[1].textContent = '(0)';
+  cartMainContainer.querySelector(savedLabelSelector).textContent = '(0)';
   renderEmptySavedCart();
 }
 
@@ -405,7 +414,7 @@ function footerHasBeenCreated() {
 
 function updateLabel(arrayItems) {
   const nQuantity = Object.values(arrayItems).reduce((acc, {quantity}) => acc + quantity, 0);
-  cartMainContainer.querySelector(mainUnitLabelSelector).textContent = `(${nQuantity})`;
+  cartMainContainer.querySelector(cartLabelSelector).textContent = `(${nQuantity})`;
 }
 
 function keepPaymentUpdated() {

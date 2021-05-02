@@ -38,7 +38,9 @@ const titleContainerSelector = '.mx-2';
 //it helps us to check if the container containing the footer was created or not
 const footerContainerSelector = '.col-12.col-sm-11.col-md-10.py-5.border-bottom.ff-lato-4.mx-auto';
 //main label containing the total number of units in the cart
-const mainUnitLabelSelector = 'span';
+const cartLabelSelector = 'span#cart-label';
+//main label containing the total number of units in the saved cart
+const savedLabelSelector = 'span#saved-label';
 //footer buttons (clean cart and checkout)
 const footerButtonsSelector = 'button.btn.btn-primary.ff-lato-7';
 //this selects the parent of the element that is clicked, in our case it is a figure tag
@@ -55,6 +57,8 @@ const checkoutItemContainerSelector = 'div.col-xs-12.col-md-8.my-2';
 const cartLabelsContainerSelector = '.col-10';
 //button that is rendered at the top of the cart while the checkout is loading
 const goBackBtnSelector = 'div.col-12.text-primary.fs-5.mb-3';
+//discount label when the summary section of the shopping footer is loaded
+const discountsLabelSelector = 'span#discounts-label';
 
 //items added from shop page
 let itemsToBuy = localStorage.getItem('cart');
@@ -82,7 +86,7 @@ if (itemsToBuy === null) {
   }
 }
 if (savedForLaterItems === {}) {
-  cartMainContainer.querySelectorAll(mainUnitLabelSelector)[1].textContent = '(0)';
+  cartMainContainer.querySelector(savedLabelSelector).textContent = '(0)';
 } else {
   try {
     updateLabel(savedForLaterItems)
@@ -182,11 +186,16 @@ function renderCartFooter(arrayItems) {
 
   footerHasBeenCreated();
 
-  const {rfinalPrice, rpaymentMethod} = footerCalculator(arrayItems);
+  const {rfinalPrice, rpaymentMethod, rcoupondiscount, rcoupondiscountpercentage} = footerCalculator(arrayItems);
   //final calculation of the checkout (coupons, shipping, discounts, etc)
+  //Original price:
   templateCartFooter.querySelector(finalPriceSelector).textContent = rfinalPrice.toFixed(2);
+  //Payment fee:
   templateCartFooter.querySelectorAll(finalPriceSelector)[2].textContent = rpaymentMethod.toFixed(2);
-  templateCartFooter.querySelectorAll(finalPriceSelector)[3].textContent = (rfinalPrice + rpaymentMethod).toFixed(2); //the last item
+  //Coupon discounts:
+  templateCartFooter.querySelector(discountsLabelSelector).textContent = `-$${rcoupondiscount.toFixed(2)} (${rcoupondiscountpercentage}%)`;
+  //Total:
+  templateCartFooter.querySelectorAll(finalPriceSelector)[3].textContent = (rfinalPrice + rpaymentMethod - rcoupondiscount).toFixed(2); //the last item
 
   const clone = templateCartFooter.cloneNode(true);
   fragment.appendChild(clone);
@@ -358,13 +367,18 @@ function updateCartContent(element) {
     element.target.closest(itemMainRowSelector).querySelector(finalPriceSelector).textContent = (itemQuantity * itemPrice).toFixed(2);
 
   }
-  const {rfinalPrice, rpaymentMethod} = footerCalculator(itemsToBuy);
+  const {rfinalPrice, rpaymentMethod, rcoupondiscount, rcoupondiscountpercentage} = footerCalculator(itemsToBuy);
 
   //this selects the summary section of the shopping cart footer
   const newCartFooter = cartMainContainer.querySelector(footerContainerSelector);
+  //Original price:
   newCartFooter.querySelector(finalPriceSelector).textContent = rfinalPrice.toFixed(2);
+  //Payment fee:
   newCartFooter.querySelectorAll(finalPriceSelector)[2].textContent = rpaymentMethod.toFixed(2);
-  newCartFooter.querySelectorAll(finalPriceSelector)[3].textContent = (rfinalPrice + rpaymentMethod).toFixed(2); //the last item
+  //Coupon discounts:
+  newCartFooter.querySelector(discountsLabelSelector).textContent = `-$${rcoupondiscount.toFixed(2)} (${rcoupondiscountpercentage}%)`;
+  //Total:
+  newCartFooter.querySelectorAll(finalPriceSelector)[3].textContent = (rfinalPrice + rpaymentMethod - rcoupondiscount).toFixed(2); //the last item
 }
 
 function footerCalculator(arrayItems) {
@@ -376,10 +390,10 @@ function footerCalculator(arrayItems) {
   //we add all the prices to calculate the total
   const nPrice = Object.values(arrayItems).reduce((acc, {quantity, price}) => acc + quantity * price, 0);
   //top cart label in checkout
-  cartMainContainer.querySelector(mainUnitLabelSelector).textContent = `(${nQuantity})`;
+  cartMainContainer.querySelector(cartLabelSelector).textContent = `(${nQuantity})`;
 
   const paymentMethod = checkoutStatus.chosenPaymentMethod;
-  let nMethodFee = 0;
+  let [nMethodFee, nCouponDiscount, nCouponDiscountPercentage] = [0, 0, 0];
   switch (paymentMethod) {
     case 'paypal':
       nMethodFee = 15;
@@ -401,19 +415,27 @@ function footerCalculator(arrayItems) {
   nMethodFee = nFinalPrice * nMethodFee / 100;
   localStorage.setItem('checkoutStatus', JSON.stringify(checkoutStatus))
 
+  //percentage that will be removed from the final price of the product
+  if (checkoutStatus.activeCoupon) {
+    nCouponDiscount = nFinalPrice * validCoupons[checkoutStatus.activeCoupon] / 100;
+    const discountedPrice = nFinalPrice - nCouponDiscount;
+    nCouponDiscountPercentage = Math.ceil((discountedPrice - nFinalPrice) * 100 / discountedPrice)
+  }
   //r stands for results
   const finalResults = {
     rfinalPrice: nFinalPrice,
     rquantity: nQuantity,
     rpaymentMethod: nMethodFee,
     rprice: nPrice,
+    rcoupondiscount: nCouponDiscount,
+    rcoupondiscountpercentage: nCouponDiscountPercentage,
   }
   return finalResults;
 }
 
 function resetCart() {
   localStorage.removeItem('cart');
-  cartMainContainer.querySelector(mainUnitLabelSelector).textContent = '(0)';
+  cartMainContainer.querySelector(cartLabelSelector).textContent = '(0)';
   //the next line removes the footer that contains the payment methods and the cost calculator
   cartMainContainer.removeChild(cartMainContainer.lastElementChild);
   renderEmptyCart();
@@ -490,7 +512,7 @@ function renderCheckout(arrayItems, paymentMethod) {
   //base price excluding discounts
   templateCartCheckout.querySelectorAll(checkoutCalculationSeletor)[1].textContent = `$${(rprice + rpaymentMethod).toFixed(2)}`;
   //discounts
-  templateCartCheckout.querySelectorAll(checkoutCalculationSeletor)[2].textContent = `$${(rprice - rfinalPrice).toFixed(2)}`;
+  templateCartCheckout.querySelectorAll(checkoutCalculationSeletor)[2].textContent = `-$${(rprice - rfinalPrice).toFixed(2)}`;
   //discount percentage
   templateCartCheckout.querySelectorAll(checkoutCalculationSeletor)[3].textContent = `(${discountPercentage}%)`;
   //final price counting discounts
@@ -519,7 +541,7 @@ function footerHasBeenCreated() {
 
 function updateLabel(arrayItems) {
   const nQuantity = Object.values(arrayItems).reduce((acc, {quantity}) => acc + quantity, 0);
-  cartMainContainer.querySelectorAll(mainUnitLabelSelector)[1].textContent = `(${nQuantity})`;
+  cartMainContainer.querySelector(savedLabelSelector).textContent = `(${nQuantity})`;
 }
 
 function checkCoupon() {
