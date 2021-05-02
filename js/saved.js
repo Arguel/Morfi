@@ -321,7 +321,7 @@ function renderCheckout(arrayItems, paymentMethod) {
   cartItems.innerHTML = '';
   footerHasBeenCreated();
 
-  const {rfinalPrice, rpaymentMethod, rprice} = footerCalculator(arrayItems, paymentMethod);
+  const {rfinalPrice, rpaymentMethod, rprice, rcoupondiscount} = footerCalculator(arrayItems, paymentMethod);
 
   //Here we create the "go back" button to return to the shopping cart
   const divGoBackContainer = document.createElement('div');
@@ -383,15 +383,16 @@ function renderCheckout(arrayItems, paymentMethod) {
     productsContainer.appendChild(mainProductContainer);
 
   });
-  const discountPercentage = Math.ceil((rprice - rfinalPrice) * 100 / rprice);
+
+  const discountPercentage = Math.ceil((rprice - (rfinalPrice - rcoupondiscount)) * 100 / (rprice + rpaymentMethod));
   //base price excluding discounts
   templateCartCheckout.querySelectorAll(checkoutCalculationSeletor)[1].textContent = `$${(rprice + rpaymentMethod).toFixed(2)}`;
   //discounts
-  templateCartCheckout.querySelectorAll(checkoutCalculationSeletor)[2].textContent = `$${(rprice - rfinalPrice).toFixed(2)}`;
+  templateCartCheckout.querySelectorAll(checkoutCalculationSeletor)[2].textContent = `-$${(rprice - (rfinalPrice - rcoupondiscount)).toFixed(2)}`;
   //discount percentage
   templateCartCheckout.querySelectorAll(checkoutCalculationSeletor)[3].textContent = `(${discountPercentage}%)`;
   //final price counting discounts
-  templateCartCheckout.querySelectorAll(checkoutCalculationSeletor)[4].textContent = `$${(rfinalPrice + rpaymentMethod).toFixed(2)}`;
+  templateCartCheckout.querySelectorAll(checkoutCalculationSeletor)[4].textContent = `$${(rfinalPrice + rpaymentMethod - rcoupondiscount).toFixed(2)}`;
 
   const clone = templateCartCheckout.cloneNode(true);
   fragment.appendChild(clone);
