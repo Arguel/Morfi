@@ -274,11 +274,17 @@ function footerCalculator(arrayItems) {
   const nFinalPrice = Object.values(arrayItems).reduce((acc, {quantity, finalPrice}) => acc + quantity * finalPrice, 0);
   //we add all the prices to calculate the total
   const nPrice = Object.values(arrayItems).reduce((acc, {quantity, price}) => acc + quantity * price, 0);
+  //shipping
+  let nShipping = Object.values(arrayItems).reduce((acc, {hasFreeShipping}) => {
+    if (!hasFreeShipping) acc += 50;
+    return acc;
+  }, 0);
+
   //top cart label in checkout
   cartMainContainer.querySelector(savedLabelSelector).textContent = `(${nQuantity})`;
 
   const paymentMethod = checkoutStatus.chosenPaymentMethod;
-  let nMethodFee = 0;
+  let [nMethodFee, nCouponDiscount] = [0, 0];
   switch (paymentMethod) {
     case 'paypal':
       nMethodFee = 15;
@@ -300,12 +306,18 @@ function footerCalculator(arrayItems) {
   nMethodFee = nFinalPrice * nMethodFee / 100;
   localStorage.setItem('checkoutStatus', JSON.stringify(checkoutStatus))
 
+  //percentage that will be removed from the final price of the product
+  if (checkoutStatus.activeCoupon) {
+    nCouponDiscount = nFinalPrice * validCoupons[checkoutStatus.activeCoupon] / 100;
+  }
   //r stands for results
   const finalResults = {
     rfinalPrice: nFinalPrice,
+    rshipping: nShipping,
     rquantity: nQuantity,
     rpaymentMethod: nMethodFee,
     rprice: nPrice,
+    rcoupondiscount: nCouponDiscount,
   }
   return finalResults;
 }
@@ -321,7 +333,7 @@ function renderCheckout(arrayItems, paymentMethod) {
   cartItems.innerHTML = '';
   footerHasBeenCreated();
 
-  const {rfinalPrice, rpaymentMethod, rprice, rcoupondiscount} = footerCalculator(arrayItems, paymentMethod);
+  const {rfinalPrice, rshipping, rpaymentMethod, rprice, rcoupondiscount} = footerCalculator(arrayItems, paymentMethod);
 
   //Here we create the "go back" button to return to the shopping cart
   const divGoBackContainer = document.createElement('div');
@@ -392,7 +404,7 @@ function renderCheckout(arrayItems, paymentMethod) {
   //discount percentage
   templateCartCheckout.querySelectorAll(checkoutCalculationSeletor)[3].textContent = `(${discountPercentage}%)`;
   //final price counting discounts
-  templateCartCheckout.querySelectorAll(checkoutCalculationSeletor)[4].textContent = `$${(rfinalPrice + rpaymentMethod - rcoupondiscount).toFixed(2)}`;
+  templateCartCheckout.querySelectorAll(checkoutCalculationSeletor)[4].textContent = `$${(rfinalPrice + rshipping + rpaymentMethod - rcoupondiscount).toFixed(2)}`;
 
   const clone = templateCartCheckout.cloneNode(true);
   fragment.appendChild(clone);
