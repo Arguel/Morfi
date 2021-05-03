@@ -226,15 +226,26 @@ let cart = JSON.parse(localStorage.getItem('cart')) || {};
 
 //selectors
 
+//these are the images that are rendered for each product in shop.html
 const itemImageSelector = 'img';
+//title of each product
 const itemTitleSeletor = 'h5 a';
+//the final price of each product (counting discounts)
 const itemFinalPriceSelector = 'div.ff-mont-6 span';
+//the parent element of the "itemFinalPriceSelector", we use it to add the free shipping icon
 const finalPriceParentSelector = 'div.ff-mont-6';
+//the parent element of "finalPriceParentSelector", we use it to manage the promotion/discount labels that appear on each item, for example "50% off", "Special offer"
 const priceAndShippingSelector = 'div.overflow-hidden.text-truncate-2';
+//selector used to insert the description of each product
 const itemDescriptionSelector = 'div.text-truncate';
+//blue button that appears on each product
 const addToCartSelector = '.btn-primary';
+//this selects the main parent of each product, which would be the "white square"
 const fullItemSelector = '.border.m-2.rounded';
+//label that is added in case the product has free shipping, appears on some items only
 const shippingTagSelector = 'span.text-green-5 span.visually-hidden';
+//unit selector that is added inside the product title
+const itemUnitsSelector = 'h5 a span';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -287,8 +298,14 @@ function renderShopItems(arrayItems) {
     const altAttribute = product.title.toLowerCase().replaceAll(" ", "-");
     productImage.setAttribute("src", product.thumnailUrl);
     productImage.setAttribute("alt", altAttribute);
+    //units
+    const spanItemUnits = document.createElement('span');
+    spanItemUnits.classList.add('mx-2', 'text-darker-4', 'd-none')
+    spanItemUnits.textContent = `[u/${product.unitsAvailable}]`;
     //title
-    templateShopLi.querySelector(itemTitleSeletor).textContent = product.title;
+    const itemTitle = templateShopLi.querySelector(itemTitleSeletor);
+    itemTitle.textContent = product.title;
+    itemTitle.appendChild(spanItemUnits);
     //final price
     templateShopLi.querySelector(itemFinalPriceSelector).textContent = `$${(product.price - product.price * product.discount / 100).toFixed(2)}`;
     //shipping
@@ -400,6 +417,9 @@ function setToCart(parentItem) {
     basePrice = finalPriceSelector;
   }
 
+  //the units come in "u/XX" format, where "X" is the number of units, we are going to use only the numbers that is why we use substr(2)
+  const units = parseInt(parentItem.querySelector(itemUnitsSelector).textContent.substr(3));
+
   const product = {
     price: basePrice,
     finalPrice: finalPriceSelector,
@@ -408,6 +428,7 @@ function setToCart(parentItem) {
     thumnailUrl: parentItem.querySelector(itemImageSelector).getAttribute('src'),
     hasFreeShipping: shipping,
     hasDiscount: discount,
+    unitsAvailable: units,
     quantity: 1,
   }
   if (cart.hasOwnProperty(product.id)) {
