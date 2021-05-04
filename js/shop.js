@@ -245,7 +245,7 @@ const fullItemSelector = '.border.m-2.rounded';
 //label that is added in case the product has free shipping, appears on some items only
 const shippingTagSelector = 'span.text-green-5 span.visually-hidden';
 //unit selector that is added inside the product title
-const itemUnitsSelector = 'h5 a span';
+const itemUnitsSelector = 'span.mx-2.text-darker-4.d-none';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -302,10 +302,10 @@ function renderShopItems(arrayItems) {
     const spanItemUnits = document.createElement('span');
     spanItemUnits.classList.add('mx-2', 'text-darker-4', 'd-none')
     spanItemUnits.textContent = `[u/${product.unitsAvailable}]`;
+    //units label (hidden)
+    templateShopLi.querySelector(finalPriceParentSelector).appendChild(spanItemUnits);
     //title
-    const itemTitle = templateShopLi.querySelector(itemTitleSeletor);
-    itemTitle.textContent = product.title;
-    itemTitle.appendChild(spanItemUnits);
+    templateShopLi.querySelector(itemTitleSeletor).textContent = product.title;
     //final price
     templateShopLi.querySelector(itemFinalPriceSelector).textContent = `$${(product.price - product.price * product.discount / 100).toFixed(2)}`;
     //shipping
@@ -362,6 +362,7 @@ function renderShopItems(arrayItems) {
     //add to cart button
     templateShopLi.querySelector(addToCartSelector).dataset.id = product.id;
 
+
     //we clone the template because there can only be one
     const clone = templateShopLi.cloneNode(true);
     fragment.appendChild(clone);
@@ -376,8 +377,10 @@ function renderShopItems(arrayItems) {
       const priceContainer = templateShopLi.querySelector(finalPriceParentSelector);
       priceContainer.removeChild(priceContainer.lastChild);
     }
+    //the number of units is updated according to each product
+    templateShopLi.querySelector(finalPriceParentSelector).removeChild(spanItemUnits);
 
-  })
+  });
   shopItems.appendChild(fragment);
 }
 

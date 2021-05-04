@@ -49,6 +49,8 @@ const paymentFigureSelector = 'figure.my-2.me-2.overflow-hidden.rounded.h-pointe
 const itemSpanSelector = '.h-pointer.ps-1.ps-sm-0.pe-1.pe-sm-2';
 //present in each item (it is the button that appears with the value of "-" and allows to decrease the number of units of the item)
 const inputReduceSelector = 'input[name="reducequantity"]';
+//present in each item (it is the button that appears with the value of "+" and allows to increase the number of units of the item)
+const inputIncreaseSelector = 'input[name="increasequantity"]';
 //handles the span tags that appear at the end of the checkout section (final price, discounts, original amount)
 const checkoutCalculationSeletor = 'div.text-break.text-truncate-2 span';
 //this is where all the items rendered in the checkout will be saved (one below the other)
@@ -61,6 +63,8 @@ const goBackBtnSelector = 'div.col-12.text-primary.fs-5.mb-3';
 const discountsLabelSelector = 'span#discounts-label';
 //shipping label when the summary section of the shopping footer is loaded
 const shippingLabelSelector = 'span#shipping-label';
+//unit selector for each item (this appears below the input that handles the units)
+const itemUnitsSelector = 'div.text-center span.text-muted';
 
 //items added from shop page
 let itemsToBuy = localStorage.getItem('cart');
@@ -139,12 +143,21 @@ function renderCartItems(arrayItems) {
     //title
     templateCartItem.querySelector(itemTitleSelector).textContent = product.title;
     //quantity
-    templateCartItem.querySelector(inputUnitSelector).value = product.quantity;
-    if (product.quantity > 1) {
+    if (product.quantity > 1 && product.quantity < product.unitsAvailable) {
       templateCartItem.querySelector(inputReduceSelector).removeAttribute('disabled');
+      //Trying to delete an attribute that does not exist will NOT throw an error, so we can use it safely
+      templateCartItem.querySelector(inputIncreaseSelector).removeAttribute('disabled');
+      templateCartItem.querySelector(inputUnitSelector).value = product.quantity;
+    } else if (product.quantity >= product.unitsAvailable) {
+      templateCartItem.querySelector(inputReduceSelector).removeAttribute('disabled');
+      templateCartItem.querySelector(inputIncreaseSelector).setAttribute('disabled', '');
+      templateCartItem.querySelector(inputUnitSelector).value = product.unitsAvailable;
     } else {
       templateCartItem.querySelector(inputReduceSelector).setAttribute('disabled', '');
+      templateCartItem.querySelector(inputUnitSelector).value = product.quantity;
     }
+
+    templateCartItem.querySelector(itemUnitsSelector).textContent = `${product.unitsAvailable} available`;
     //main row container
     templateCartItem.querySelector(itemMainRowSelector).dataset.id = product.id;
     //final price
@@ -266,10 +279,13 @@ function cartManager(e) {
       break;
 
     case 'quantity':
+      const maxUnits = itemsToBuy[e.target.closest(itemMainRowSelector).dataset.id].unitsAvailable;
       e.target.addEventListener('keyup', () => {
         let actualNumber = parseInt(e.target.value, 10);
-        if (actualNumber >= 0 && actualNumber !== NaN && actualNumber !== null) {
+        if (actualNumber >= 0 && actualNumber <= maxUnits && actualNumber !== NaN && actualNumber !== null) {
           actualNumber = actualNumber;
+        } else if (actualNumber > maxUnits) {
+          actualNumber = maxUnits;
         } else {
           actualNumber = 0;
         }
@@ -355,6 +371,7 @@ function updateCartContent(element) {
   if (mainObject !== undefined) {
 
     const itemQuantity = mainObject.quantity;
+    const itemUnitssAvailable = mainObject.unitsAvailable
     const itemPrice = mainObject.finalPrice;
 
     /* we select the container div (main container of units)
@@ -367,14 +384,19 @@ function updateCartContent(element) {
     //this basically dynamically selects the rendered items in the shopping cart
     //for example.querySelector('.row[data-id="1"]')
     const itemRow = cartItems.querySelector('.row[data-id="' + mainObject.id + '"]');
-    if (itemQuantity > 1) {
+    if (itemQuantity > 1 && itemQuantity < itemUnitssAvailable) {
       itemRow.querySelector(inputReduceSelector).removeAttribute('disabled');
+      //Trying to delete an attribute that does not exist will NOT throw an error, so we can use it safely
+      itemRow.querySelector(inputIncreaseSelector).removeAttribute('disabled');
+      element.target.closest('.border.p-2').querySelector(inputUnitSelector).value = itemQuantity;
+    } else if (itemQuantity >= itemUnitssAvailable) {
+      itemRow.querySelector(inputReduceSelector).removeAttribute('disabled');
+      itemRow.querySelector(inputIncreaseSelector).setAttribute('disabled', '');
+      element.target.closest('.border.p-2').querySelector(inputUnitSelector).value = itemUnitssAvailable;
     } else {
       itemRow.querySelector(inputReduceSelector).setAttribute('disabled', '');
+      element.target.closest('.border.p-2').querySelector(inputUnitSelector).value = itemQuantity;
     }
-
-    //input containing the number of current units
-    element.target.closest('.border.p-2').querySelector(inputUnitSelector).value = itemQuantity;
 
     // price multiplied by number of units
     element.target.closest(itemMainRowSelector).querySelector(finalPriceSelector).textContent = (itemQuantity * itemPrice).toFixed(2);
