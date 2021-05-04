@@ -1,11 +1,12 @@
 "use strict";
 
-//coupons object
+//coupons object (aka valid coupons)
 const validCoupons = {
   christmas2020: 15,
   thanksgivingday: 30,
   test: 20,
 }
+//this is the input that is rendered in the footer and there the possible coupons will be entered
 let coupon;
 
 //templates
@@ -65,6 +66,12 @@ const discountsLabelSelector = 'span#discounts-label';
 const shippingLabelSelector = 'span#shipping-label';
 //unit selector for each item (this appears below the input that handles the units)
 const itemUnitsSelector = 'div.text-center span.text-muted';
+//main container to manage the units of each item
+const inputsUnitsSelector = '.border.p-2';
+//rounded box showing discounts/errors
+const couponBoxSelector = 'div.border.p-1.rounded';
+//first span detected within "couponBoxSelector"
+const firstCouponSpanSelector = 'span';
 
 //items added from shop page
 let itemsToBuy = localStorage.getItem('cart');
@@ -143,20 +150,25 @@ function renderCartItems(arrayItems) {
     //title
     templateCartItem.querySelector(itemTitleSelector).textContent = product.title;
     //quantity
+    //we check if the units are within the appropriate range
     if (product.quantity > 1 && product.quantity < product.unitsAvailable) {
       templateCartItem.querySelector(inputReduceSelector).removeAttribute('disabled');
       //Trying to delete an attribute that does not exist will NOT throw an error, so we can use it safely
       templateCartItem.querySelector(inputIncreaseSelector).removeAttribute('disabled');
       templateCartItem.querySelector(inputUnitSelector).value = product.quantity;
-    } else if (product.quantity >= product.unitsAvailable) {
+    }
+    //in case the units exceed the maximum available/stock
+    else if (product.quantity >= product.unitsAvailable) {
       templateCartItem.querySelector(inputReduceSelector).removeAttribute('disabled');
       templateCartItem.querySelector(inputIncreaseSelector).setAttribute('disabled', '');
       templateCartItem.querySelector(inputUnitSelector).value = product.unitsAvailable;
-    } else {
+    }
+    //this in case the value of the units is less than or equal to 1
+    else {
       templateCartItem.querySelector(inputReduceSelector).setAttribute('disabled', '');
       templateCartItem.querySelector(inputUnitSelector).value = product.quantity;
     }
-
+    //label that appears below the inputs that manage the units
     templateCartItem.querySelector(itemUnitsSelector).textContent = `${product.unitsAvailable} available`;
     //main row container
     templateCartItem.querySelector(itemMainRowSelector).dataset.id = product.id;
@@ -218,9 +230,6 @@ function renderCartFooter(arrayItems) {
   //Coupon discounts:
   templateCartFooter.querySelector(discountsLabelSelector).textContent = `-$${rcoupondiscount.toFixed(2)} (${rcoupondiscountpercentage}%)`;
   //Total:
-  //console.log((rfinalPrice + rshipping + rpaymentMethod - rcoupondiscount));
-  //console.log(`Orin price: ${rfinalPrice}, Shipping: ${rshipping}, Payment: ${rpaymentMethod}, coupon: ${rcoupondiscount}`);
-  //console.log(rfinalPrice + rshipping);
   templateCartFooter.querySelectorAll(finalPriceSelector)[3].textContent = (rfinalPrice + rshipping + rpaymentMethod - rcoupondiscount).toFixed(2); //the last item
 
   const clone = templateCartFooter.cloneNode(true);
@@ -253,6 +262,7 @@ function renderCartFooter(arrayItems) {
       checkCoupon();
     });
   }
+  //with this we check if there is any active coupon saved in localStorage
   if (checkoutStatus.activeCoupon) {
     checkCoupon();
   }
@@ -271,6 +281,7 @@ function cartManager(e) {
       //we capture the object to modify
       const product = itemsToBuy[e.target.closest(itemMainRowSelector).dataset.id];
 
+      //We check if the input has the name "reducequantity", if it is true we reduce the quantity by 1, if it is false we are referring to the input of "increasequantity" so we have to increase the quantity by 1
       (e.target.name == 'reducequantity') ? product.quantity-- : product.quantity++;
 
       itemsToBuy[e.target.closest(itemMainRowSelector).dataset.id] = {...product};
@@ -279,7 +290,9 @@ function cartManager(e) {
       break;
 
     case 'quantity':
+      //this will basically search by id for an object within our collection of objects "itemsToBuy"
       const maxUnits = itemsToBuy[e.target.closest(itemMainRowSelector).dataset.id].unitsAvailable;
+
       e.target.addEventListener('keyup', () => {
         let actualNumber = parseInt(e.target.value, 10);
         if (actualNumber >= 0 && actualNumber <= maxUnits && actualNumber !== NaN && actualNumber !== null) {
@@ -322,15 +335,20 @@ function cartManager(e) {
 
   //-----cart item save for later label
   if (e.target.matches(itemSpanSelector) && e.target.textContent === 'Save for later') {
+    //Id
     const targetId = e.target.closest(itemMainRowSelector).dataset.id;
+    //Object
     const saveForLater = itemsToBuy[targetId];
+
     savedForLaterItems[targetId] = {...saveForLater};
     localStorage.setItem('savedForLater', JSON.stringify(savedForLaterItems));
     updateLabel(savedForLaterItems)
   }
 
   //-----cart payment methods
+  //check if our element/event matches with our paymentFigureSelector selector
   const paymentMethodParentNode = e.target.parentNode.matches(paymentFigureSelector);
+
   if (paymentMethodParentNode) {
     cartMainContainer.querySelectorAll(paymentFigureSelector).forEach(e => {
       e.classList.remove('border', 'border-2', 'border-primary');
@@ -375,7 +393,7 @@ function updateCartContent(element) {
     const itemPrice = mainObject.finalPrice;
 
     /* we select the container div (main container of units)
-     * element.target.closest('.border.p-2')
+     * element.target.closest(unitsContainerSelector)
      *
      * this next line brings up the number of units of the object with a given id
      * itemsToBuy[element.target.closest(itemMainRowSelector).dataset.id].quantity
@@ -384,18 +402,24 @@ function updateCartContent(element) {
     //this basically dynamically selects the rendered items in the shopping cart
     //for example.querySelector('.row[data-id="1"]')
     const itemRow = cartItems.querySelector('.row[data-id="' + mainObject.id + '"]');
+
+    //we check if the units are within the appropriate range
     if (itemQuantity > 1 && itemQuantity < itemUnitssAvailable) {
       itemRow.querySelector(inputReduceSelector).removeAttribute('disabled');
       //Trying to delete an attribute that does not exist will NOT throw an error, so we can use it safely
       itemRow.querySelector(inputIncreaseSelector).removeAttribute('disabled');
-      element.target.closest('.border.p-2').querySelector(inputUnitSelector).value = itemQuantity;
-    } else if (itemQuantity >= itemUnitssAvailable) {
+      element.target.closest(unitsContainerSelector).querySelector(inputUnitSelector).value = itemQuantity;
+    }
+    //in case the units exceed the maximum available/stock
+    else if (itemQuantity >= itemUnitssAvailable) {
       itemRow.querySelector(inputReduceSelector).removeAttribute('disabled');
       itemRow.querySelector(inputIncreaseSelector).setAttribute('disabled', '');
-      element.target.closest('.border.p-2').querySelector(inputUnitSelector).value = itemUnitssAvailable;
-    } else {
+      element.target.closest(unitsContainerSelector).querySelector(inputUnitSelector).value = itemUnitssAvailable;
+    }
+    //this in case the value of the units is less than or equal to 1
+    else {
       itemRow.querySelector(inputReduceSelector).setAttribute('disabled', '');
-      element.target.closest('.border.p-2').querySelector(inputUnitSelector).value = itemQuantity;
+      element.target.closest(unitsContainerSelector).querySelector(inputUnitSelector).value = itemQuantity;
     }
 
     // price multiplied by number of units
@@ -434,6 +458,8 @@ function footerCalculator(arrayItems) {
   const nPrice = Object.values(arrayItems).reduce((acc, {quantity, price}) => acc + quantity * price, 0);
   //shipping
   let nHasFreeShipping = false;
+
+  //This basically adds up to $50 for each product that does not have free shipping
   let nShipping = Object.values(arrayItems).reduce((acc, {hasFreeShipping}) => {
     if (!hasFreeShipping) acc += 50;
     return acc;
@@ -469,9 +495,9 @@ function footerCalculator(arrayItems) {
 
   //percentage that will be removed from the final price of the product
   if (checkoutStatus.activeCoupon) {
+    //nCouponDiscount in this case is the percentage that will be subtracted from the final price, for example the "test" coupon applies a 20% discount, then nCouponDiscount would be equal to 20
     nCouponDiscount = nFinalPrice * validCoupons[checkoutStatus.activeCoupon] / 100;
-    const discountedPrice = nFinalPrice - nCouponDiscount;
-    nCouponDiscountPercentage = Math.ceil((nFinalPrice - discountedPrice) * 100 / nFinalPrice)
+    nCouponDiscountPercentage = validCoupons[checkoutStatus.activeCoupon];
   }
   //r stands for results
   const finalResults = {
@@ -505,15 +531,18 @@ function renderCheckout(arrayItems, paymentMethod) {
   //Here we create the "go back" button to return to the shopping cart
   const divGoBackContainer = document.createElement('div');
   divGoBackContainer.classList.add('col-12', 'text-primary', 'fs-5', 'mb-3');
-  const spanGoback = document.createElement('span');
-  spanGoback.classList.add('ms-4', 'h-pointer');
-  spanGoback.textContent = 'Go back';
+  const goBackBtn = document.createElement('button');
+  goBackBtn.classList.add('border-0', 'bg-transparent', 'ms-4');
+  const spanGoBack = document.createElement('span');
+  spanGoBack.classList.add('h-pointer');
+  spanGoBack.textContent = 'Go back';
   const innerSpanGoBack = document.createElement('span');
   innerSpanGoBack.classList.add('p-1', 'mx-2', 'rounded', 'bg-primary', 'text-white', 'rounded');
   const leftArrowIcon = document.createElement('i');
   leftArrowIcon.classList.add('fas', 'fa-chevron-left', 'fa-fw');
 
-  spanGoback.addEventListener('click', () => {
+  goBackBtn.addEventListener('click', () => {
+    //we make our labels reappear
     cartMainContainer.querySelector(cartLabelsContainerSelector).classList.remove('d-none');
     //this removes the "go back" button
     cartMainContainer.removeChild(cartMainContainer.querySelector(goBackBtnSelector));
@@ -522,9 +551,11 @@ function renderCheckout(arrayItems, paymentMethod) {
   })
 
   innerSpanGoBack.appendChild(leftArrowIcon);
-  spanGoback.appendChild(innerSpanGoBack);
-  spanGoback.insertBefore(innerSpanGoBack, spanGoback.childNodes[0]);
-  divGoBackContainer.appendChild(spanGoback);
+  spanGoBack.appendChild(innerSpanGoBack);
+  //this basically adds our icon before the "Go back" text
+  spanGoBack.insertBefore(innerSpanGoBack, spanGoBack.childNodes[0]);
+  goBackBtn.appendChild(spanGoBack);
+  divGoBackContainer.appendChild(goBackBtn);
 
   //we insert our "go back" button at the beginning of our board
   cartMainContainer.insertBefore(divGoBackContainer, cartMainContainer.childNodes[0]);
@@ -537,6 +568,7 @@ function renderCheckout(arrayItems, paymentMethod) {
   const productsContainer = templateCartCheckout.querySelector(checkoutItemContainerSelector);
   Object.values(arrayItems).forEach(product => {
 
+    //items
     const mainProductContainer = document.createElement('div');
     mainProductContainer.classList.add('d-flex', 'flex-column', 'flex-sm-row', 'justify-content-between', 'text-center', 'my-1');
     const leftDivContainer = document.createElement('div');
@@ -578,6 +610,7 @@ function renderCheckout(arrayItems, paymentMethod) {
   //to delete the previous items and leave the template in its original state (this in case an item is deleted)
   productsContainer.innerHTML = '';
 
+  //this saves us the checkout in case the user reloads the page
   checkoutStatus.inCart = false;
   localStorage.setItem('checkoutStatus', JSON.stringify(checkoutStatus));
 }
@@ -594,14 +627,15 @@ function footerHasBeenCreated() {
 }
 
 function updateLabel(arrayItems) {
+  //This function only updates the top labels that show the quantities of items in each section (cart / saved)
   const nQuantity = Object.values(arrayItems).reduce((acc, {quantity}) => acc + quantity, 0);
   cartMainContainer.querySelector(savedLabelSelector).textContent = `(${nQuantity})`;
 }
 
 function checkCoupon() {
-
-  const couponContainer = cartMainContainer.querySelector('div.border.p-1.rounded');
-  const mainSpanInfo = couponContainer.querySelector('span');
+  //this function checks if the coupon is valid
+  const couponContainer = cartMainContainer.querySelector(couponBoxSelector);
+  const mainSpanInfo = couponContainer.querySelector(firstCouponSpanSelector);
 
   if (validCoupons[coupon.value.toLowerCase()]) {
     buildDiscountTag(mainSpanInfo);
@@ -609,7 +643,7 @@ function checkCoupon() {
     coupon.value = checkoutStatus.activeCoupon;
     buildDiscountTag(mainSpanInfo);
   } else {
-    couponContainer.querySelector('span').textContent = 'Sorry, The Coupon Code you entered is invalid. Please check and try again!';
+    couponContainer.querySelector(firstCouponSpanSelector).textContent = 'Sorry, The Coupon Code you entered is invalid. Please check and try again!';
     checkoutStatus.activeCoupon = undefined;
     localStorage.setItem('checkoutStatus', JSON.stringify(checkoutStatus));
   }
