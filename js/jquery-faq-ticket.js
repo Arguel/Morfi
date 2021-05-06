@@ -10,6 +10,9 @@ $(() => {
   let ticketTypeFeedback = false;
   let descriptionFeedback = false;
 
+
+  let userEmail, ticketChoosen, descriptionValue;
+
   $('#email').on('focusout', () => {
     checkEmail();
   });
@@ -21,8 +24,8 @@ $(() => {
   });
 
   function checkEmail() {
-    const usernameLength = $('#email').val().length;
-    if (usernameLength > 20 || usernameLength === 0) {
+    userEmail = $('#email').val();
+    if (userEmail.length > 20 || userEmail.length === 0) {
       $('#email-feedback').html("The length of the email cannot exceed 20 characters and it can't be empty either");
       $('#email-feedback').addClass('my-2 py-2');
       $('#email-feedback').show();
@@ -33,7 +36,7 @@ $(() => {
   }
 
   function checkTicketType() {
-    const ticketChoosen = $('#ticket-type').val();
+    ticketChoosen = $('#ticket-type').val();
     if (ticketChoosen === null) {
       $('#ticket-type-feedback').html('Please select a valid option');
       $('#ticket-type-feedback').addClass('my-2 py-2');
@@ -45,7 +48,7 @@ $(() => {
   }
 
   function checkDescription() {
-    const descriptionValue = $('#description').val();
+    descriptionValue = $('#description').val();
     if (descriptionValue === '') {
       $('#description-feedback').html('Please provide a description of the problem');
       $('#description-feedback').addClass('my-2 py-2');
@@ -56,7 +59,8 @@ $(() => {
     }
   }
 
-  $('#form-faq-ticket').on('submit', () => {
+  $('#form-faq-ticket').on('submit', (e) => {
+    e.preventDefault();
 
     emailFeedback = false;
     ticketTypeFeedback = false;
@@ -67,6 +71,19 @@ $(() => {
     checkDescription();
 
     if (emailFeedback === false && ticketTypeFeedback === false && descriptionFeedback === false) {
+      const formData = [userEmail, ticketChoosen, descriptionValue];
+      $.ajax({
+        method: "POST",
+        url: "https://jsonplaceholder.typicode.com/posts",
+        contentType: "application/json",
+        data: JSON.stringify(formData),
+      })
+        .done(() => {
+          alert('Form sent successfully');
+        })
+        .fail(() => {
+          alert('The request cannot be processed at this time, please try again later');
+        })
       return true;
     } else {
       return false;

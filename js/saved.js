@@ -56,7 +56,7 @@ const goBackBtnSelector = 'div.col-12.text-primary.fs-5.mb-3';
 //unit selector for each item (this appears below the input that handles the units)
 const itemUnitsSelector = 'div.text-center span.text-muted';
 //main container to manage the units of each item
-const inputsUnitsSelector = '.border.p-2';
+const unitsContainerSelector = '.border.p-2';
 
 //items added from shop page
 let itemsToBuy = localStorage.getItem('cart');

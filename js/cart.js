@@ -67,7 +67,7 @@ const shippingLabelSelector = 'span#shipping-label';
 //unit selector for each item (this appears below the input that handles the units)
 const itemUnitsSelector = 'div.text-center span.text-muted';
 //main container to manage the units of each item
-const inputsUnitsSelector = '.border.p-2';
+const unitsContainerSelector = '.border.p-2';
 //rounded box showing discounts/errors
 const couponBoxSelector = 'div.border.p-1.rounded';
 //first span detected within "couponBoxSelector"
