@@ -13,6 +13,7 @@ let coupon;
 const templateCartItem = document.getElementById('template-cart-item').content;
 const templateCartFooter = document.getElementById('template-cart-footer').content;
 const templateCartCheckout = document.getElementById('template-cart-checkout').content;
+const templateCartPurchase = document.getElementById('template-cart-purchase').content;
 
 //containers
 const cartItems = document.getElementById('cart-items');
@@ -541,13 +542,14 @@ function renderCheckout(arrayItems, paymentMethod) {
   const leftArrowIcon = document.createElement('i');
   leftArrowIcon.classList.add('fas', 'fa-chevron-left', 'fa-fw');
 
-  goBackBtn.addEventListener('click', () => {
+  goBackBtn.addEventListener('click', (e) => {
     //we make our labels reappear
     cartMainContainer.querySelector(cartLabelsContainerSelector).classList.remove('d-none');
     //this removes the "go back" button
     cartMainContainer.removeChild(cartMainContainer.querySelector(goBackBtnSelector));
     renderCartItems(itemsToBuy);
     renderCartFooter(itemsToBuy);
+    e.stopPropagation();
   })
 
   innerSpanGoBack.appendChild(leftArrowIcon);
@@ -609,6 +611,12 @@ function renderCheckout(arrayItems, paymentMethod) {
   cartItems.appendChild(fragment);
   //to delete the previous items and leave the template in its original state (this in case an item is deleted)
   productsContainer.innerHTML = '';
+
+  const finishBuy = document.querySelector(footerButtonsSelector);
+  finishBuy.addEventListener('click', (e) => {
+    renderPurchaseFinished(arrayItems);
+    e.stopPropagation();
+  });
 
   //this saves us the checkout in case the user reloads the page
   checkoutStatus.inCart = false;
@@ -688,4 +696,41 @@ function buildDiscountTag(mainTag) {
 
   //we clean the input after we execute our function, so we don't bother the user
   coupon.value = '';
+}
+
+function renderPurchaseFinished(arrayItems) {
+
+  cartMainContainer.innerHTML = '';
+  cartMainContainer.classList.remove('my-5');
+  cartMainContainer.classList.add('h-100');
+  cartItems.classList.add('h-100');
+
+  const clone = templateCartPurchase.cloneNode(true);
+  fragment.appendChild(clone);
+  cartMainContainer.appendChild(fragment);
+
+  //checkoutStatus.inCart = false;
+  checkoutStatus.inCart = true;
+  localStorage.setItem('checkoutStatus', JSON.stringify(checkoutStatus));
+
+  Object.values(arrayItems).forEach(product => {
+    if (itemsToBuy[product.id]) {
+      delete itemsToBuy[product.id];
+    }
+
+    if (savedForLaterItems[product.id]) {
+      delete savedForLaterItems[product.id];
+    }
+  });
+
+  localStorage.setItem('cart', JSON.stringify(itemsToBuy));
+  localStorage.setItem('savedForLater', JSON.stringify(savedForLaterItems));
+
+  if (Object.values(itemsToBuy).length == 0) {
+    localStorage.removeItem('cart');
+  }
+
+  if (Object.values(savedForLaterItems).length == 0) {
+    localStorage.removeItem('savedForLater');
+  }
 }

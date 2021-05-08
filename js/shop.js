@@ -260,6 +260,10 @@ const fetchShopItems = async () => {
   try {
     //const res = await fetch('shop items');
     //const data = await res.json();
+
+    //we hide the loading icon and proceed to render the store items
+    document.querySelector('div.spinner-grow.text-secondary.my-2').classList.add('d-none');
+
     renderShopItems(apiShopItems);
     renderCartIcons(cart);
   } catch (error) {
