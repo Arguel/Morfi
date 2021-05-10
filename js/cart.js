@@ -215,6 +215,7 @@ function renderCartFooter(arrayItems) {
   footerHasBeenCreated();
 
   const {rfinalPrice, rshipping, rhasfreeshipping, rpaymentMethod, rcoupondiscount, rcoupondiscountpercentage} = footerCalculator(arrayItems);
+
   //final calculation of the checkout (coupons, shipping, discounts, etc)
   //Original price:
   templateCartFooter.querySelector(finalPriceSelector).textContent = rfinalPrice.toFixed(2);
@@ -709,7 +710,6 @@ function renderPurchaseFinished(arrayItems) {
   fragment.appendChild(clone);
   cartMainContainer.appendChild(fragment);
 
-  //checkoutStatus.inCart = false;
   checkoutStatus.inCart = true;
   localStorage.setItem('checkoutStatus', JSON.stringify(checkoutStatus));
 
