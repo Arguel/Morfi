@@ -4263,7 +4263,7 @@ textarea.form-control-lg {
 .border {
   border: 1px solid #dee2e6 !important; }
 
-.border-0 {
+.border-0, .sel-none {
   border: 0 !important; }
 
 .border-top {
@@ -4317,7 +4317,7 @@ textarea.form-control-lg {
 .border-white {
   border-color: #fff !important; }
 
-.border-0 {
+.border-0, .sel-none {
   border-width: 0 !important; }
 
 .border-1 {
@@ -4717,7 +4717,7 @@ textarea.form-control-lg {
   padding-right: 0.25rem !important;
   padding-left: 0.25rem !important; }
 
-.px-2, .sel-primary, .sel-green-3 {
+.px-2, .sel-green-3 {
   padding-right: 0.5rem !important;
   padding-left: 0.5rem !important; }
 
@@ -4737,7 +4737,7 @@ textarea.form-control-lg {
   padding-top: 0 !important;
   padding-bottom: 0 !important; }
 
-.py-1, .sel-primary, .sel-green-3 {
+.py-1, .sel-green-3 {
   padding-top: 0.25rem !important;
   padding-bottom: 0.25rem !important; }
 
@@ -4910,7 +4910,7 @@ textarea.form-control-lg {
 .text-dark {
   color: #212529 !important; }
 
-.text-white {
+.text-white, .sel-primary {
   color: #fff !important; }
 
 .text-body {
@@ -4970,7 +4970,7 @@ textarea.form-control-lg {
 .bg-white {
   background-color: #fff !important; }
 
-.bg-transparent {
+.bg-transparent, .sel-none {
   background-color: transparent !important; }
 
 .bg-gradient {

@@ -67,6 +67,8 @@ const fetchShopItems = async () => {
         apiShopItems = data;
       });
 
+    apiShopItems = filterResults(apiShopItems);
+
     renderShopItems(apiShopItems);
     renderCartIcons(cart);
   } catch (error) {
@@ -93,6 +95,8 @@ function renderCartIcons(arrayItems) {
 }
 
 function renderShopItems(arrayItems) {
+
+  shopItems.innerHTML = '';
 
   let createdDiv = false;
 
@@ -251,4 +255,63 @@ function setToCart(parentItem) {
   cart[product.id] = {...product};
 
   localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+function filterResults(objCollection) {
+
+  const filters = JSON.parse(localStorage.getItem('filters')) || {
+    sortby: 'Featured', //Low to high, High to low
+    region: 'North america', //United states, Europe, Global
+    discount: 25, //50, 75, 100, customMinMax
+    ratings: 1, //2, 3, 4
+    payment: 'In 12 installments', //In 6 installments, In cash
+    promotions: 'Special offer', //New
+    delivery: 'Free shipping', //Withdrawal in person
+    price: 'int', //
+  };
+
+  for (const prop in filters) {
+    objCollection = filtersHandler(filters[prop], filters);
+  }
+
+
+  return objCollection;
+}
+
+
+function filtersHandler(item, objFilters) {
+
+  switch (item) {
+
+    case 'Featured':
+      apiShopItems = apiShopItems;
+      break;
+
+    case 'Low to high':
+      apiShopItems = Object.values(apiShopItems).sort((obj1, obj2) => obj1.price - obj2.price);
+      break;
+
+    case 'High to low':
+      break;
+
+    case 'United states':
+      break;
+
+    case 'Europe':
+      break;
+
+    case 'Global':
+      break;
+
+    case 'Featured':
+      break;
+
+    case 'Featured':
+      break;
+
+    default:
+      localStorage.setItem('filters', JSON.stringify(objFilters));
+  }
+
+  return apiShopItems;
 }

@@ -446,10 +446,9 @@
 //item selected
 .sel-primary {
   @extend .btn-primary;
-  @extend .px-2;
-  @extend .py-1;
   @extend .rounded;
-  @extend .mx-1
+  @extend .mx-1;
+  @extend .text-white;
 }
 .sel-primary:hover {
   cursor: pointer;
@@ -460,6 +459,10 @@
   @extend .py-1;
   @extend .rounded;
   @extend .mx-1;
+}
+.sel-none {
+  @extend .border-0;
+  @extend .bg-transparent;
 }
 
 //input

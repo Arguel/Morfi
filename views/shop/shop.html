@@ -439,7 +439,7 @@
                           aria-labelledby="flush-headingSix" data-bs-parent="#shop-filters-body">
                           <div>
                             <ul class="list-group list-group-flush list-unstyled">
-                              <li class="list-group-item active"><span class="sel-primary">Special offers</span></li>
+                              <li class="list-group-item active"><span class="sel-primary">Special offer</span></li>
                               <li class="list-group-item bg-light"><span>New</span></li>
                             </ul>
                           </div>
@@ -481,7 +481,9 @@
                           aria-labelledby="flush-headingEight" data-bs-parent="#shop-filters-body">
                           <div>
                             <ul class="list-group list-group-flush list-unstyled">
-                              <li class="list-group-item bg-light">$0 - $10</li>
+                              <li class="list-group-item bg-light">
+                                <button class="sel-none">$0 - $10</button>
+                              </li>
                               <li class="list-group-item bg-light">$10 - $50</li>
                               <li class="list-group-item bg-light">$50 - $100</li>
                               <li class="list-group-item bg-light">$100+</li>
@@ -588,18 +590,66 @@
                 </div>
               </div>
               <ul class="list-unstyled">
-                <li><a class="sel-primary" href="#">All</a></li>
-                <li><a class="text-dark" href="#">Appetizers</a></li>
-                <li><a class="text-dark" href="#">Condiments</a></li>
-                <li><a class="text-dark" href="#">Confectionery</a></li>
-                <li><a class="text-dark" href="#">Convenience foods</a></li>
-                <li><a class="text-dark" href="#">Desserts</a></li>
-                <li><a class="text-dark" href="#">Dips, pastes and spreads</a></li>
-                <li><a class="text-dark" href="#">Dried foods</a></li>
-                <li><a class="text-dark" href="#">Dumplings</a></li>
-                <li><a class="text-dark" href="#">Fast food</a></li>
-                <li><a class="text-dark" href="#">Products</a></li>
-                <li><a class="text-decoration-underline" href="#">Show more</a></li>
+                <li>
+                  <button class="sel-primary">
+                    <a class="text-white" href="#">All</a>
+                  </button>
+                </li>
+                <li>
+                  <button class="sel-none">
+                    <a class="text-dark" href="#">Appetizers</a>
+                  </button>
+                </li>
+                <li>
+                  <button class="sel-none">
+                    <a class="text-dark" href="#">Condiments</a>
+                  </button>
+                </li>
+                <li>
+                  <button class="sel-none">
+                    <a class="text-dark" href="#">Confectionery</a>
+                  </button>
+                </li>
+                <li>
+                  <button class="sel-none">
+                    <a class="text-dark" href="#">Convenience foods</a>
+                  </button>
+                </li>
+                <li>
+                  <button class="sel-none">
+                    <a class="text-dark" href="#">Desserts</a>
+                  </button>
+                </li>
+                <li>
+                  <button class="sel-none">
+                    <a class="text-dark" href="#">Dips, pastes and spreads</a>
+                  </button>
+                </li>
+                <li>
+                  <button class="sel-none">
+                    <a class="text-dark" href="#">Dried foods</a>
+                  </button>
+                </li>
+                <li>
+                  <button class="sel-none">
+                    <a class="text-dark" href="#">Dumplings</a>
+                  </button>
+                </li>
+                <li>
+                  <button class="sel-none">
+                    <a class="text-dark" href="#">Fast food</a>
+                  </button>
+                </li>
+                <li>
+                  <button class="sel-none">
+                    <a class="text-dark" href="#">Products</a>
+                  </button>
+                </li>
+                <li>
+                  <button class="sel-none">
+                    <a class="text-decoration-underline" href="#">Show more</a>
+                  </button>
+                </li>
               </ul>
             </div>
             <div>
@@ -613,23 +663,37 @@
               </div>
               <ul class="list-unstyled">
                 <li>
-                  <span class="sel-primary">North America</span>
-                  <span class="sel-primary"><i class="fas fa-times"></i></span>
+                  <button class="sel-primary">North America</button>
+                  <button class="sel-primary"><i class="fas fa-times"></i></button>
                 </li>
-                <li><span>United States</span></li>
-                <li><span>Europe</span></li>
-                <li><span>Global</span></li>
+                <li>
+                  <button class="sel-none">United States</button>
+                </li>
+                <li>
+                  <button class="sel-none">Europe</button>
+                </li>
+                <li>
+                  <button class="sel-none">Global</button>
+                </li>
               </ul>
             </div>
             <div>
               <h4>Discount</h4>
               <ul class="list-unstyled">
-                <li><span>25%</span></li>
-                <li><span>50%</span></li>
-                <li><span>75%</span></li>
-                <li><span>100%</span></li>
                 <li>
-                  <form>
+                  <button class="sel-none">25%</button>
+                </li>
+                <li>
+                  <button class="sel-none">50%</button>
+                </li>
+                <li>
+                  <button class="sel-none">75%</button>
+                </li>
+                <li>
+                  <button class="sel-none">100%</button>
+                </li>
+                <li>
+                  <form class="px-1">
                     <label class="visually-hidden" for="dis-from">minimum-discount</label>
                     <input class="w-80px border border-darker-4" type="number" name="dis-from" id="dis-from"
                       placeholder="Min">
@@ -637,7 +701,7 @@
                     <label class="visually-hidden" for="dis-to">maximum-discount</label>
                     <input class="w-80px border border-darker-4" type="number" name="dis-to" id="dis-to"
                       placeholder="Max">
-                    <span class="sel-primary"><i class="fas fa-chevron-right"></i></span>
+                    <button class="sel-primary"><i class="fas fa-chevron-right"></i></button>
                   </form>
                 </li>
               </ul>
@@ -646,67 +710,103 @@
               <h4>Ratings</h4>
               <ul class="list-unstyled">
                 <li>
-                  <span class="sel-primary"><i class="fas fa-star"></i><i class="far fa-star"></i><i
-                      class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                  <button class="sel-primary">
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
                     <span class="mx-2">&#38; Up</span>
-                  </span>
-                  <span class="sel-primary"><i class="fas fa-times"></i></span>
+                  </button>
+                  <button class="sel-primary"><i class="fas fa-times"></i></button>
                 </li>
                 <li>
-                  <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i
-                      class="far fa-star"></i><i class="far fa-star"></i>
+                  <button class="sel-none">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
                     <span class="mx-2">&#38; Up</span>
-                  </span>
+                  </button>
                 </li>
                 <li>
-                  <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                      class="far fa-star"></i><i class="far fa-star"></i>
+                  <button class="sel-none">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
                     <span class="mx-2">&#38; Up</span>
-                  </span>
+                  </button>
                 </li>
                 <li>
-                  <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                      class="fas fa-star"></i><i class="far fa-star"></i>
+                  <button class="sel-none">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
                     <span class="mx-2">&#38; Up</span>
-                  </span>
+                  </button>
                 </li>
               </ul>
             </div>
             <div>
               <h4>Payment</h4>
               <ul class="list-unstyled">
-                <li><span>In 12 installments</span></li>
-                <li><span>In 6 installments</span></li>
-                <li><span>In cash</span></li>
+                <li>
+                  <button class="sel-none">In 12 installments</button>
+                </li>
+                <li>
+                  <button class="sel-none">In 6 installments</button>
+                </li>
+                <li>
+                  <button class="sel-none">In cash</button>
+                </li>
               </ul>
             </div>
             <div>
               <h4>Promotions</h4>
               <ul class="list-unstyled">
                 <li>
-                  <span class="sel-primary">Special offers</span>
-                  <span class="sel-primary"><i class="fas fa-times"></i></span>
+                  <button class="sel-primary">Special offer</button>
+                  <button class="sel-primary"><i class="fas fa-times"></i></button>
                 </li>
-                <li>New</li>
+                <li>
+                  <button class="sel-none">New</button>
+                </li>
               </ul>
             </div>
             <div>
               <h4>Delivery</h4>
               <ul class="list-unstyled">
-                <li><span>Free shipping</span></li>
-                <li><span>Withdrawal in person</span></li>
+                <li>
+                  <button class="sel-none">Free shipping</button>
+                </li>
+                <li>
+                  <button class="sel-none">Withdrawal in person</button>
+                </li>
               </ul>
             </div>
             <div>
               <!--select-->
               <h4>Price</h4>
               <ul class="list-unstyled">
-                <li>$0 - $10</li>
-                <li>$10 - $50</li>
-                <li>$50 - $100</li>
-                <li>$100+</li>
                 <li>
-                  <form>
+                  <button class="sel-none">$0 - $10</button>
+                </li>
+                <li>
+                  <button class="sel-none">$10 - $50</button>
+                </li>
+                <li>
+                  <button class="sel-none">$50 - $100</button>
+                </li>
+                <li>
+                  <button class="sel-none">$100+</button>
+                </li>
+                <li>
+                  <form class="px-1">
                     <label class="visually-hidden" for="pri-from">price-from</label>
                     <input class="w-80px border border-darker-4" type="number" name="pri-from" id="pri-from"
                       placeholder="Min">
@@ -714,7 +814,7 @@
                     <label class="visually-hidden" for="pri-to">price-to</label>
                     <input class="w-80px border border-darker-4" type="number" name="pri-to" id="pri-to"
                       placeholder="Max">
-                    <span class="sel-primary"><i class="fas fa-chevron-right"></i></span>
+                    <button class="sel-primary"><i class="fas fa-chevron-right"></i></button>
                   </form>
                 </li>
               </ul>
