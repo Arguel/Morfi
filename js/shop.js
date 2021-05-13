@@ -68,6 +68,7 @@ const fetchShopItems = async () => {
       });
 
     apiShopItems = filterResults(apiShopItems);
+    console.log(apiShopItems);
 
     renderShopItems(apiShopItems);
     renderCartIcons(cart);
@@ -265,13 +266,15 @@ function filterResults(objCollection) {
     discount: 25, //50, 75, 100, customMinMax
     ratings: 1, //2, 3, 4
     payment: 'In 12 installments', //In 6 installments, In cash
-    promotions: 'Special offer', //New
+    promotions: [
+      'Special offer',
+    ], //New
     delivery: 'Free shipping', //Withdrawal in person
-    price: 'int', //
+    price: '$0 - $10', //customMinMax
   };
 
   for (const prop in filters) {
-    objCollection = filtersHandler(filters[prop], filters);
+    objCollection = filtersHandler(filters[prop], filters, apiShopItems);
   }
 
 
@@ -279,39 +282,131 @@ function filterResults(objCollection) {
 }
 
 
-function filtersHandler(item, objFilters) {
+function filtersHandler(item, objFilters, defaultArray) {
 
   switch (item) {
 
+    //---------------------Sortby
     case 'Featured':
-      apiShopItems = apiShopItems;
+      apiShopItems = Object.values(apiShopItems).sort(obj1 => obj1.id);;
+      objFilters.sortby = 'Featured';
       break;
 
     case 'Low to high':
       apiShopItems = Object.values(apiShopItems).sort((obj1, obj2) => obj1.price - obj2.price);
+      objFilters.sortby = 'Low to high';
       break;
 
     case 'High to low':
+      apiShopItems = Object.values(apiShopItems).sort((obj1, obj2) => obj2.price - obj1.price);
+      objFilters.sortby = 'High to low';
       break;
 
+    //---------------------Region
     case 'United states':
+      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.region === 'United states');
+      objFilters.region = 'United states';
       break;
 
     case 'Europe':
+      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.region === 'Europe');
+      objFilters.region = 'Europe';
       break;
 
     case 'Global':
+      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.region === 'Global');
+      objFilters.region = 'Global';
       break;
 
-    case 'Featured':
+    //---------------------Discount
+    case '25%':
+      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.discount >= 25);
+      objFilters.discount = '25%';
       break;
 
-    case 'Featured':
+    case '50%':
+      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.discount >= 50);
+      objFilters.discount = '50%';
+      break;
+
+    case '75%':
+      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.discount >= 75);
+      objFilters.discount = '75%';
+      break;
+
+    case '100%':
+      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.discount >= 100);
+      objFilters.discount = '100%';
+      break;
+
+    //---------------------Payment
+    //case 'In 12 installments':
+    //apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.payment === 'In 12 installments');
+    //objFilters.payment = 'In 12 installments';
+    //break;
+
+    //case 'In 6 installments':
+    //apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.payment === 'In 6 installments');
+    //objFilters.payment = 'In 6 installments';
+    //break;
+
+    //case 'In cash':
+    //apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.payment === 'In cash');
+    //objFilters.payment = 'In cash';
+    //break;
+
+    //---------------------Promotions
+    //case 'Special offer':
+    //apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.promotions.includes('Special offer'));
+    //objFilters.promotions = 'Special offer';
+    //break;
+
+    //case 'New':
+    //apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.promotions.includes('New'));
+    //objFilters.promotions = 'New';
+    //break;
+
+    //---------------------Delivery
+    case 'Free shipping':
+      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.hasFreeShipping);
+      objFilters.delivery = 'Free shipping';
+      break;
+
+    case 'Withdrawal in person':
+      apiShopItems = Object.values(apiShopItems).filter(obj1 => !obj1.hasFreeShipping);
+      objFilters.delivery = 'Withdrawal in person';
+      break;
+
+    //---------------------Price
+    case '$0 - $10':
+      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.price > 0 && obj1.price <= 10);
+      objFilters.price = '$0 - $10';
+      break;
+
+    case '$10 - $50':
+      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.price > 10 && obj1.price <= 50);
+      objFilters.price = '$10 - $50';
+      break;
+
+    case '$50 - $100':
+      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.price > 50 && obj1.price <= 100);
+      objFilters.price = '$50 - $100';
+      break;
+
+    case '$100+':
+      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.price > 100);
+      objFilters.price = '$100+';
+      break;
+
+    //---------------------Buttons
+    case 'Clean all filters':
+      objFilters = ;
       break;
 
     default:
       localStorage.setItem('filters', JSON.stringify(objFilters));
   }
 
+  console.log(apiShopItems);
   return apiShopItems;
 }
