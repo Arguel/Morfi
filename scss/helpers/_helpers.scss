@@ -448,6 +448,7 @@
   @extend .btn-primary;
   @extend .rounded;
   @extend .mx-1;
+  @extend .mb-1;
   @extend .text-white;
 }
 .sel-primary:hover {
@@ -463,6 +464,7 @@
 .sel-none {
   @extend .border-0;
   @extend .bg-transparent;
+  @extend .mb-1;
 }
 
 //input

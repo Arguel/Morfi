@@ -1,12 +1,24 @@
 "use strict";
 //-----------------------------------------------------------
 
+const userFiltersBase = {
+  sortby: undefined, //Featured, Low to high, High to low
+  region: undefined, //North america, United states, Europe, Global
+  discount: undefined, //25, 50, 75, 100, customMinMax
+  ratings: undefined, //1, 2, 3, 4
+  payment: [], //In 12 installments, In 6 installments, In cash
+  promotions: [], //Special offer, New
+  delivery: undefined, //Free shipping, Withdrawal in person
+  price: undefined, //$0 - $10, $10 - $50, $50 - $100, $100+, customMinMax
+}
+
 //templates
 const templateShopLi = document.getElementById('template-item-li').content;
 
 //containers
 const shopItems = document.getElementById('shop-items-display');
 const cartMiniIcon = document.querySelector('span.position-absolute.top-0.start-100.translate-middle.badge.rounded-pill.bg-primary.h-pointer span');
+const mainShopContainer = document.getElementById('main-shop-container');
 
 //fragments
 const fragment = document.createDocumentFragment();
@@ -41,9 +53,10 @@ const itemUnitsSelector = 'span.mx-2.text-darker-4.d-none';
 document.addEventListener('DOMContentLoaded', () => {
   fetchShopItems();
 })
-shopItems.addEventListener('click', e => {
+mainShopContainer.addEventListener('click', e => {
   addToCart(e);
   renderCartIcons(cart);
+  filtersClickHandler(e);
 })
 
 
@@ -68,21 +81,39 @@ const fetchShopItems = async () => {
       });
 
     apiShopItems = filterResults(apiShopItems);
-    console.log(apiShopItems);
 
-    renderShopItems(apiShopItems);
-    renderCartIcons(cart);
+    if (apiShopItems.length !== 0) {
+      renderShopItems(apiShopItems);
+      renderCartIcons(cart);
+    } else {
+      renderPageError('no items found', true);
+    }
+
   } catch (error) {
     renderPageError(error);
   }
 }
 
-function renderPageError(error) {
-  console.log(error);
+function renderPageError(error, emptySearch = false) {
+
+  shopItems.innerHTML = '';
+
   const errorContainer = document.createElement('h4');
-  errorContainer.classList.add('text-center', 'm-4');
+  errorContainer.classList.add('text-center', 'my-4', 'mx-4', 'fw-bold', 'ff-lato-4');
   errorContainer.textContent = 'Error while loading items.';
-  fragment.appendChild(errorContainer);
+
+  if (emptySearch) {
+    errorContainer.textContent = "Oops... we didn't find anything for this search :(";
+    const errorDesc = document.createElement('h5');
+    errorDesc.classList.add('text-center', 'mx-4', 'ff-lato-4');
+    errorDesc.textContent = 'You can try a more general term or check that it is well written';
+    fragment.appendChild(errorContainer);
+    fragment.appendChild(errorDesc);
+  } else {
+    console.log(error);
+    fragment.appendChild(errorContainer);
+  }
+
   shopItems.appendChild(fragment);
 }
 
@@ -201,7 +232,7 @@ function renderShopItems(arrayItems) {
 }
 
 function addToCart(e) {
-  if (e.target.classList.contains('btn-primary')) {
+  if (e.target.matches('button.btn.btn-primary.d-block.w-100.ff-lato-4')) {
     setToCart(e.target.closest(fullItemSelector));
   };
   e.stopPropagation();
@@ -260,29 +291,37 @@ function setToCart(parentItem) {
 
 function filterResults(objCollection) {
 
-  const filters = JSON.parse(localStorage.getItem('filters')) || {
-    sortby: 'Featured', //Low to high, High to low
-    region: 'North america', //United states, Europe, Global
-    discount: 25, //50, 75, 100, customMinMax
-    ratings: 1, //2, 3, 4
-    payment: 'In 12 installments', //In 6 installments, In cash
-    promotions: [
-      'Special offer',
-    ], //New
-    delivery: 'Free shipping', //Withdrawal in person
-    price: '$0 - $10', //customMinMax
-  };
+  const filters = JSON.parse(localStorage.getItem('filters')) || {...userFiltersBase};
 
   for (const prop in filters) {
-    objCollection = filtersHandler(filters[prop], filters, apiShopItems);
+    objCollection = filtersConfigHandler(filters[prop], filters, null);
   }
 
-
   return objCollection;
+
 }
 
+function filtersClickHandler(event) {
 
-function filtersHandler(item, objFilters, defaultArray) {
+  console.log(event.target);
+  const filters = JSON.parse(localStorage.getItem('filters')) || {...userFiltersBase};
+
+  if (event.target.classList.contains('sel-none')) {
+
+    filtersConfigHandler(event.target.textContent, filters, event);
+    //we show the loading icon 
+    document.querySelector('div.spinner-grow.text-secondary.my-2').classList.remove('d-none');
+    fetchShopItems();
+  }
+
+}
+function filtersClickCloseHandler(event) {
+  //if (event.target.dataset.) {
+
+  //}
+}
+
+function filtersConfigHandler(item, objFilters, event) {
 
   switch (item) {
 
@@ -303,7 +342,7 @@ function filtersHandler(item, objFilters, defaultArray) {
       break;
 
     //---------------------Region
-    case 'United states':
+    case 'United States':
       apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.region === 'United states');
       objFilters.region = 'United states';
       break;
@@ -340,20 +379,26 @@ function filtersHandler(item, objFilters, defaultArray) {
       break;
 
     //---------------------Payment
-    //case 'In 12 installments':
-    //apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.payment === 'In 12 installments');
-    //objFilters.payment = 'In 12 installments';
-    //break;
+    case 'In 12 installments':
+      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.payment === 'In 12 installments');
+      if (!objFilters.payment.includes('In 12 installments')) {
+        objFilters.payment = [...objFilters.payment, 'In 12 installments'];
+      }
+      break;
 
-    //case 'In 6 installments':
-    //apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.payment === 'In 6 installments');
-    //objFilters.payment = 'In 6 installments';
-    //break;
+    case 'In 6 installments':
+      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.payment === 'In 6 installments');
+      if (!objFilters.payment.includes('In 6 installments')) {
+        objFilters.payment = [...objFilters.payment, 'In 6 installments'];
+      }
+      break;
 
-    //case 'In cash':
-    //apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.payment === 'In cash');
-    //objFilters.payment = 'In cash';
-    //break;
+    case 'In cash':
+      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.payment === 'In cash');
+      if (!objFilters.payment.includes('In cash')) {
+        objFilters.payment = [...objFilters.payment, 'In cash'];
+      }
+      break;
 
     //---------------------Promotions
     //case 'Special offer':
@@ -369,6 +414,7 @@ function filtersHandler(item, objFilters, defaultArray) {
     //---------------------Delivery
     case 'Free shipping':
       apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.hasFreeShipping);
+
       objFilters.delivery = 'Free shipping';
       break;
 
@@ -400,13 +446,36 @@ function filtersHandler(item, objFilters, defaultArray) {
 
     //---------------------Buttons
     case 'Clean all filters':
-      objFilters = ;
+      objFilters = {...userFiltersBase};
       break;
 
-    default:
-      localStorage.setItem('filters', JSON.stringify(objFilters));
   }
 
-  console.log(apiShopItems);
+  if (Array.isArray(item) && item.length !== 0) {
+    for (const value of item) {
+      filtersConfigHandler(value, objFilters, null)
+    }
+  }
+
+  if (event) {
+    event.target.classList.remove('sel-none');
+    event.target.classList.add('sel-primary');
+
+    const closeBtn = document.createElement('button');
+    closeBtn.classList.add('sel-primary');
+    const crossIcon = document.createElement('i');
+    crossIcon.classList.add('fas', 'fa-times');
+
+    closeBtn.appendChild(crossIcon)
+    closeBtn.addEventListener('click', () => {
+      closeBtn.parentNode.removeChild(closeBtn);
+      event.target.classList.remove('sel-primary');
+      event.target.classList.add('sel-none');
+    });
+
+    event.target.parentNode.appendChild(closeBtn);
+  }
+
+  localStorage.setItem('filters', JSON.stringify(objFilters));
   return apiShopItems;
 }

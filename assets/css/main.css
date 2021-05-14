@@ -4652,7 +4652,7 @@ textarea.form-control-lg {
 .mb-0 {
   margin-bottom: 0 !important; }
 
-.mb-1 {
+.mb-1, .sel-primary, .sel-none {
   margin-bottom: 0.25rem !important; }
 
 .mb-2 {
