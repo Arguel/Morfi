@@ -2,15 +2,40 @@
 //-----------------------------------------------------------
 
 const userFiltersBase = {
-  sortby: undefined, //Featured, Low to high, High to low
-  region: undefined, //North america, United states, Europe, Global
-  discount: undefined, //25, 50, 75, 100, customMinMax
-  ratings: undefined, //1, 2, 3, 4
+  sortby: [], //Featured, Low to high, High to low
+  region: [], //North america, United states, Europe, Global
+  discount: [], //25, 50, 75, 100, customMinMax
+  ratings: [], //1, 2, 3, 4
   payment: [], //In 12 installments, In 6 installments, In cash
   promotions: [], //Special offer, New
-  delivery: undefined, //Free shipping, Withdrawal in person
-  price: undefined, //$0 - $10, $10 - $50, $50 - $100, $100+, customMinMax
+  delivery: [], //Free shipping, Withdrawal in person
+  price: [], //$0 - $10, $10 - $50, $50 - $100, $100+, customMinMax
 }
+
+const cleanAllFiltersBtn = document.getElementById('clean-all-filters');
+cleanAllFiltersBtn.addEventListener('click', (e) => {
+  localStorage.setItem('filters', JSON.stringify({...userFiltersBase}));
+  updateListing();
+  //select all remove's buttons
+  const previousFilters = document.querySelectorAll('.sel-primary .fa-times');
+  if (previousFilters) {
+    for (let oldFilter of previousFilters) {
+      const parent = oldFilter.closest('li');
+      parent.removeChild(parent.lastChild);
+      parent.firstElementChild.classList.remove('sel-primary');
+      parent.firstElementChild.classList.add('sel-none');
+    }
+  }
+  e.stopPropagation();
+})
+
+//const arrayCrossRemoveFilter = document.querySelector('.fa-times[data-prefix="fas"]');
+//arrayCrossRemoveFilter.forEach(crossIcon => {
+//crossIcon.addEventListener('click', (e) => {
+//e.parentNode
+//e.stopPropagation();
+//})
+//})
 
 //templates
 const templateShopLi = document.getElementById('template-item-li').content;
@@ -52,11 +77,16 @@ const itemUnitsSelector = 'span.mx-2.text-darker-4.d-none';
 
 document.addEventListener('DOMContentLoaded', () => {
   fetchShopItems();
-})
+});
+
 mainShopContainer.addEventListener('click', e => {
-  addToCart(e);
   renderCartIcons(cart);
-  filtersClickHandler(e);
+  if (e.target.matches('button.btn.btn-primary.d-block.w-100.ff-lato-4')) {
+    addToCart(e);
+  }
+  if (e.target.classList.contains('sel-none')) {
+    filtersClickHandler(e);
+  }
 })
 
 
@@ -86,6 +116,7 @@ const fetchShopItems = async () => {
       renderShopItems(apiShopItems);
       renderCartIcons(cart);
     } else {
+      renderCartIcons(cart);
       renderPageError('no items found', true);
     }
 
@@ -232,9 +263,7 @@ function renderShopItems(arrayItems) {
 }
 
 function addToCart(e) {
-  if (e.target.matches('button.btn.btn-primary.d-block.w-100.ff-lato-4')) {
-    setToCart(e.target.closest(fullItemSelector));
-  };
+  setToCart(e.target.closest(fullItemSelector));
   e.stopPropagation();
 }
 
@@ -289,174 +318,197 @@ function setToCart(parentItem) {
   localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-function filterResults(objCollection) {
+function filterResults(objArray) {
 
   const filters = JSON.parse(localStorage.getItem('filters')) || {...userFiltersBase};
 
   for (const prop in filters) {
-    objCollection = filtersConfigHandler(filters[prop], filters, null);
+    objArray = filtersConfigHandler(filters[prop], filters, null);
   }
 
-  return objCollection;
+  return objArray;
 
 }
 
 function filtersClickHandler(event) {
 
-  console.log(event.target);
   const filters = JSON.parse(localStorage.getItem('filters')) || {...userFiltersBase};
 
-  if (event.target.classList.contains('sel-none')) {
-
-    filtersConfigHandler(event.target.textContent, filters, event);
-    //we show the loading icon 
-    document.querySelector('div.spinner-grow.text-secondary.my-2').classList.remove('d-none');
-    fetchShopItems();
-  }
+  filtersConfigHandler(event.target.textContent, filters, event);
+  updateListing();
 
 }
-function filtersClickCloseHandler(event) {
-  //if (event.target.dataset.) {
 
-  //}
-}
+//function filtersClickCloseHandler(event) {
+//if (event.target.dataset.) {
+
+//}
+//}
 
 function filtersConfigHandler(item, objFilters, event) {
+  //This function has double functionality, it manages the filters and on the other hand it manages the user clicks on the filter buttons (on the shop.html page)
 
-  switch (item) {
-
-    //---------------------Sortby
-    case 'Featured':
-      apiShopItems = Object.values(apiShopItems).sort(obj1 => obj1.id);;
-      objFilters.sortby = 'Featured';
-      break;
-
-    case 'Low to high':
-      apiShopItems = Object.values(apiShopItems).sort((obj1, obj2) => obj1.price - obj2.price);
-      objFilters.sortby = 'Low to high';
-      break;
-
-    case 'High to low':
-      apiShopItems = Object.values(apiShopItems).sort((obj1, obj2) => obj2.price - obj1.price);
-      objFilters.sortby = 'High to low';
-      break;
-
-    //---------------------Region
-    case 'United States':
-      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.region === 'United states');
-      objFilters.region = 'United states';
-      break;
-
-    case 'Europe':
-      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.region === 'Europe');
-      objFilters.region = 'Europe';
-      break;
-
-    case 'Global':
-      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.region === 'Global');
-      objFilters.region = 'Global';
-      break;
-
-    //---------------------Discount
-    case '25%':
-      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.discount >= 25);
-      objFilters.discount = '25%';
-      break;
-
-    case '50%':
-      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.discount >= 50);
-      objFilters.discount = '50%';
-      break;
-
-    case '75%':
-      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.discount >= 75);
-      objFilters.discount = '75%';
-      break;
-
-    case '100%':
-      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.discount >= 100);
-      objFilters.discount = '100%';
-      break;
-
-    //---------------------Payment
-    case 'In 12 installments':
-      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.payment === 'In 12 installments');
-      if (!objFilters.payment.includes('In 12 installments')) {
-        objFilters.payment = [...objFilters.payment, 'In 12 installments'];
-      }
-      break;
-
-    case 'In 6 installments':
-      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.payment === 'In 6 installments');
-      if (!objFilters.payment.includes('In 6 installments')) {
-        objFilters.payment = [...objFilters.payment, 'In 6 installments'];
-      }
-      break;
-
-    case 'In cash':
-      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.payment === 'In cash');
-      if (!objFilters.payment.includes('In cash')) {
-        objFilters.payment = [...objFilters.payment, 'In cash'];
-      }
-      break;
-
-    //---------------------Promotions
-    //case 'Special offer':
-    //apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.promotions.includes('Special offer'));
-    //objFilters.promotions = 'Special offer';
-    //break;
-
-    //case 'New':
-    //apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.promotions.includes('New'));
-    //objFilters.promotions = 'New';
-    //break;
-
-    //---------------------Delivery
-    case 'Free shipping':
-      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.hasFreeShipping);
-
-      objFilters.delivery = 'Free shipping';
-      break;
-
-    case 'Withdrawal in person':
-      apiShopItems = Object.values(apiShopItems).filter(obj1 => !obj1.hasFreeShipping);
-      objFilters.delivery = 'Withdrawal in person';
-      break;
-
-    //---------------------Price
-    case '$0 - $10':
-      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.price > 0 && obj1.price <= 10);
-      objFilters.price = '$0 - $10';
-      break;
-
-    case '$10 - $50':
-      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.price > 10 && obj1.price <= 50);
-      objFilters.price = '$10 - $50';
-      break;
-
-    case '$50 - $100':
-      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.price > 50 && obj1.price <= 100);
-      objFilters.price = '$50 - $100';
-      break;
-
-    case '$100+':
-      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.price > 100);
-      objFilters.price = '$100+';
-      break;
-
-    //---------------------Buttons
-    case 'Clean all filters':
-      objFilters = {...userFiltersBase};
-      break;
-
-  }
-
+  //this part manages the filters/property part (NOT the shop buttons)
   if (Array.isArray(item) && item.length !== 0) {
     for (const value of item) {
-      filtersConfigHandler(value, objFilters, null)
+      filtersConfigHandler(value, objFilters, null);
     }
   }
 
+  //this handles the shop buttons and active filters/properties
+  if (typeof item === 'string') {
+
+    switch (item) {
+
+      //---------------------Sortby
+      case 'Featured':
+        apiShopItems = Object.values(apiShopItems).sort(obj1 => obj1.id);;
+        if (!objFilters.sortby.includes('Featured')) objFilters.sortby = [...objFilters.sortby, 'Featured'];
+        filtersEvents(event, objFilters, 'sortby', 'Featured');
+        break;
+
+      case 'Low to high':
+        apiShopItems = Object.values(apiShopItems).sort((obj1, obj2) => obj1.price - obj2.price);
+        if (!objFilters.sortby.includes('Low to high')) objFilters.sortby = [...objFilters.sortby, 'Low to high'];
+        filtersEvents(event, objFilters, 'sortby', 'Low to high');
+        break;
+
+      case 'High to low':
+        apiShopItems = Object.values(apiShopItems).sort((obj1, obj2) => obj2.price - obj1.price);
+        if (!objFilters.sortby.includes('High to low')) objFilters.sortby = [...objFilters.sortby, 'High to low'];
+        filtersEvents(event, objFilters, 'sortby', 'High to low');
+        break;
+
+      //---------------------Region
+
+      case 'North America':
+        apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.region.includes('north america'));
+        if (!objFilters.region.includes('North America')) objFilters.region = [...objFilters.region, 'North America'];
+        filtersEvents(event, objFilters, 'region', 'North America');
+        break;
+
+      case 'United States':
+        apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.region.includes('united states'));
+        if (!objFilters.region.includes('United states')) objFilters.region = [...objFilters.region, 'United states'];
+        filtersEvents(event, objFilters, 'region', 'United States');
+        break;
+
+      case 'Europe':
+        apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.region.includes('europe'));
+        if (!objFilters.region.includes('Europe')) objFilters.region = [...objFilters.region, 'Europe'];
+        filtersEvents(event, objFilters, 'region', 'Europe');
+        break;
+
+      case 'Global':
+        apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.region.includes('global'));
+        if (!objFilters.region.includes('Global')) objFilters.region = [...objFilters.region, 'Global'];
+        filtersEvents(event, objFilters, 'region', 'Global');
+        break;
+
+      //---------------------Discount
+      case '25%':
+        apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.discount >= 25);
+        if (!objFilters.discount.includes('25%')) objFilters.discount = [...objFilters.discount, '25%'];
+        filtersEvents(event, objFilters, 'discount', '25%');
+        break;
+
+      case '50%':
+        apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.discount >= 50);
+        if (!objFilters.discount.includes('50%')) objFilters.discount = [...objFilters.discount, '50%'];
+        filtersEvents(event, objFilters, 'discount', '50%');
+        break;
+
+      case '75%':
+        apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.discount >= 75);
+        if (!objFilters.discount.includes('75%')) objFilters.discount = [...objFilters.discount, '75%'];
+        filtersEvents(event, objFilters, 'discount', '75%');
+        break;
+
+      case '100%':
+        apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.discount >= 100);
+        if (!objFilters.discount.includes('100%')) objFilters.discount = [...objFilters.discount, '100%'];
+        filtersEvents(event, objFilters, 'discount', '100%');
+        break;
+
+      //---------------------Payment
+      case 'In 12 installments':
+        apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.payment.includes('In 12 installments'));
+        if (!objFilters.payment.includes('In 12 installments')) objFilters.payment = [...objFilters.payment, 'In 12 installments'];
+        filtersEvents(event, objFilters, 'payment', 'In 12 installments');
+        break;
+
+      case 'In 6 installments':
+        apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.payment.includes('In 6 installments'));
+        if (!objFilters.payment.includes('In 6 installments')) objFilters.payment = [...objFilters.payment, 'In 6 installments'];
+        filtersEvents(event, objFilters, 'payment', 'In 6 installments');
+        break;
+
+      case 'In cash':
+        apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.payment.includes('In cash'));
+        if (!objFilters.payment.includes('In cash')) objFilters.payment = [...objFilters.payment, 'In cash'];
+        filtersEvents(event, objFilters, 'payment', 'In cash');
+        break;
+
+      //---------------------Promotions
+      case 'Special offer':
+        apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.promotion.includes('Special offer'));
+        if (!objFilters.promotions.includes('Special offer')) objFilters.promotions = [...objFilters.promotions, 'Special offer'];
+        filtersEvents(event, objFilters, 'promotions', 'Special offer');
+        break;
+
+      case 'New':
+        apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.promotion.includes('New'));
+        if (!objFilters.promotions.includes('New')) objFilters.promotions = [...objFilters.promotions, 'New'];
+        filtersEvents(event, objFilters, 'promotions', 'New');
+        break;
+
+      //---------------------Delivery
+      case 'Free shipping':
+        apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.hasFreeShipping);
+        if (!objFilters.delivery.includes('Free shipping')) objFilters.delivery = [...objFilters.delivery, 'Free shipping'];
+        filtersEvents(event, objFilters, 'delivery', 'Free shipping');
+        break;
+
+      case 'Withdrawal in person':
+        apiShopItems = Object.values(apiShopItems).filter(obj1 => !obj1.hasFreeShipping);
+        if (!objFilters.delivery.includes('Withdrawal in person')) objFilters.delivery = [...objFilters.delivery, 'Withdrawal in person'];
+        filtersEvents(event, objFilters, 'delivery', 'Withdrawal in person');
+        break;
+
+      //---------------------Price
+      case '$0 - $10':
+        apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.price > 0 && obj1.price <= 10);
+        if (!objFilters.price.includes('$0 - $10')) objFilters.price = [...objFilters.price, '$0 - $10'];
+        filtersEvents(event, objFilters, 'price', '$0 - $10');
+        break;
+
+      case '$10 - $50':
+        apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.price > 10 && obj1.price <= 50);
+        if (!objFilters.price.includes('$10 - $50')) objFilters.price = [...objFilters.price, '$10 - $50'];
+        filtersEvents(event, objFilters, 'price', '$10 - $50');
+        break;
+
+      case '$50 - $100':
+        apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.price > 50 && obj1.price <= 100);
+        if (!objFilters.price.includes('$50 - $100')) objFilters.price = [...objFilters.price, '$50 - $100'];
+        filtersEvents(event, objFilters, 'price', '$50 - $100');
+        break;
+
+      case '$100+':
+        apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.price > 100);
+        if (!objFilters.price.includes('$100+')) objFilters.price = [...objFilters.price, '$100+'];
+        filtersEvents(event, objFilters, 'price', '$100+');
+        break;
+
+    }
+
+  }
+
+  localStorage.setItem('filters', JSON.stringify(objFilters));
+  return apiShopItems;
+}
+
+function filtersEvents(event, filterArray, filterArrayProp, itemToRemove) {
   if (event) {
     event.target.classList.remove('sel-none');
     event.target.classList.add('sel-primary');
@@ -471,11 +523,18 @@ function filtersConfigHandler(item, objFilters, event) {
       closeBtn.parentNode.removeChild(closeBtn);
       event.target.classList.remove('sel-primary');
       event.target.classList.add('sel-none');
+      filterArray[filterArrayProp].splice(filterArray[filterArrayProp].indexOf(itemToRemove), 1);
+      localStorage.setItem('filters', JSON.stringify(filterArray));
+      updateListing();
     });
 
     event.target.parentNode.appendChild(closeBtn);
   }
-
-  localStorage.setItem('filters', JSON.stringify(objFilters));
-  return apiShopItems;
 }
+
+function updateListing() {
+  //we show the loading icon 
+  document.querySelector('div.spinner-grow.text-secondary.my-2').classList.remove('d-none');
+  fetchShopItems();
+}
+
