@@ -12,11 +12,11 @@
       "50% off"
     ],
     "categories": [
-      "appetizer"
+      "Appetizer"
     ],
     "region": [
-      "north america",
-      "europe"
+      "North America",
+      "Europe"
     ],
     "rating": 4.23,
     "payment": [
@@ -37,11 +37,11 @@
     "unitsAvailable": 53,
     "promotion": [],
     "categories": [
-      "appetizer"
+      "Appetizer"
     ],
     "region": [
-      "united states",
-      "europe"
+      "United States",
+      "Europe"
     ],
     "rating": 2.56,
     "payment": [
@@ -64,10 +64,10 @@
       "Special offer"
     ],
     "categories": [
-      "appetizer"
+      "Appetizer"
     ],
     "region": [
-      "global"
+      "Global"
     ],
     "rating": 3.51,
     "payment": [
@@ -87,10 +87,10 @@
     "unitsAvailable": 35,
     "promotion": [],
     "categories": [
-      "appetizer"
+      "Appetizer"
     ],
     "region": [
-      "europe"
+      "Europe"
     ],
     "rating": 4.23,
     "payment": [
@@ -109,10 +109,10 @@
     "unitsAvailable": 19,
     "promotion": [],
     "categories": [
-      "appetizer"
+      "Appetizer"
     ],
     "region": [
-      "north america"
+      "North America"
     ],
     "rating": 5,
     "payment": [
@@ -132,10 +132,10 @@
     "unitsAvailable": 2,
     "promotion": [],
     "categories": [
-      "dessert"
+      "Dessert"
     ],
     "region": [
-      "global"
+      "Global"
     ],
     "rating": 1.24,
     "payment": [
@@ -155,11 +155,11 @@
     "unitsAvailable": 221,
     "promotion": [],
     "categories": [
-      "dessert"
+      "Dessert"
     ],
     "region": [
-      "north america",
-      "united states"
+      "North America",
+      "United States"
     ],
     "rating": 2.53,
     "payment": [
@@ -181,11 +181,11 @@
       "New"
     ],
     "categories": [
-      "dessert"
+      "Dessert"
     ],
     "region": [
-      "north america",
-      "united states"
+      "North America",
+      "United States"
     ],
     "rating": 3.12,
     "payment": [
@@ -207,11 +207,11 @@
       "Special offer"
     ],
     "categories": [
-      "dessert"
+      "Dessert"
     ],
     "region": [
-      "united states",
-      "europe"
+      "United States",
+      "Europe"
     ],
     "rating": 4.51,
     "payment": [
@@ -230,11 +230,11 @@
     "unitsAvailable": 15,
     "promotion": [],
     "categories": [
-      "dessert"
+      "Dessert"
     ],
     "region": [
-      "north america",
-      "united states"
+      "North America",
+      "United States"
     ],
     "rating": 5,
     "payment": [
@@ -254,11 +254,11 @@
     "unitsAvailable": 9,
     "promotion": [],
     "categories": [
-      "dessert"
+      "Dessert"
     ],
     "region": [
-      "north america",
-      "europe"
+      "North America",
+      "Europe"
     ],
     "rating": 1.11,
     "payment": [
@@ -279,11 +279,11 @@
     "unitsAvailable": 39,
     "promotion": [],
     "categories": [
-      "dessert"
+      "Dessert"
     ],
     "region": [
-      "north america",
-      "europe"
+      "North America",
+      "Europe"
     ],
     "rating": 2.35,
     "payment": [
@@ -305,10 +305,10 @@
       "Special offer"
     ],
     "categories": [
-      "dessert"
+      "Dessert"
     ],
     "region": [
-      "global"
+      "Global"
     ],
     "rating": 3.51,
     "payment": [
@@ -329,10 +329,10 @@
       "80% off"
     ],
     "categories": [
-      "dessert"
+      "Dessert"
     ],
     "region": [
-      "global"
+      "Global"
     ],
     "rating": 4.44,
     "payment": [
@@ -353,10 +353,10 @@
     "unitsAvailable": 24,
     "promotion": [],
     "categories": [
-      "fast food"
+      "Fast food"
     ],
     "region": [
-      "europe"
+      "Europe"
     ],
     "rating": 5,
     "payment": [
@@ -375,10 +375,10 @@
     "unitsAvailable": 220,
     "promotion": [],
     "categories": [
-      "fast food"
+      "Fast food"
     ],
     "region": [
-      "europe"
+      "Europe"
     ],
     "rating": 1.39,
     "payment": [
