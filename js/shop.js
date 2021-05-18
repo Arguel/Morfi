@@ -2,14 +2,73 @@
 //-----------------------------------------------------------
 
 const userFiltersBase = {
-  sortby: [], //Featured, Low to high, High to low
+  sortby: "", //Featured, Low to high, High to low
   region: [], //North america, United states, Europe, Global
   discount: [], //25, 50, 75, 100, customMinMax
+  customDiscount: "",
   ratings: [], //1, 2, 3, 4
   payment: [], //In 12 installments, In 6 installments, In cash
   promotions: [], //Special offer, New
   delivery: [], //Free shipping, Withdrawal in person
   price: [], //$0 - $10, $10 - $50, $50 - $100, $100+, customMinMax
+  customPrice: "",
+  customSearch: "",
+}
+
+const filtersBtnsCotainer = document.getElementById('filters-btns-container');
+const arrayInactiveBtns = [...filtersBtnsCotainer.querySelectorAll('.sel-none')];
+
+const sortbyLabel = document.getElementById('sortby');
+sortbyLabel.addEventListener('change', () => {
+  const filters = JSON.parse(localStorage.getItem('filters')) || {...userFiltersBase};
+
+  filtersConfigHandler(sortby.value, filters, null, false);
+  updateListing(false);
+});
+
+//const disabledClass = document.getElementsByClassName('disabled');
+//for (const elem of disabledClass) {
+//elem.disabled = true;
+//}
+
+const minPriceInput = document.getElementById('pri-from');
+const maxPriceInput = document.getElementById('pri-to');
+const priceFilter = document.getElementById('price-filter');
+priceFilter.addEventListener('click', () => {
+
+  const filters = JSON.parse(localStorage.getItem('filters')) || {...userFiltersBase};
+
+  minPriceInput.value = minPriceInput.value.replace(/[e\+\-]/gi, "");
+  maxPriceInput.value = maxPriceInput.value.replace(/[e\+\-]/gi, "");
+  if (minPriceInput.value !== "" && maxPriceInput.value !== "") {
+    apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.price >= parseInt(minPriceInput.value) && obj1.price <= parseInt(maxPriceInput.value));
+    filters.customPrice = `CustomPrice: $${minPriceInput.value} - $${maxPriceInput.value}`;
+  } else {
+    filters.customPrice = "";
+  }
+  localStorage.setItem('filters', JSON.stringify(filters));
+  updateListing(false);
+
+});
+const discountFilter = document.getElementById('discount-filter');
+//discountFilter.addEventListener('cli', e => {
+//});
+
+function priceAndDiscountFilter(event, minContainer, maxContainer, property) {
+  event.preventDefault();
+
+  const filters = JSON.parse(localStorage.getItem('filters')) || {...userFiltersBase};
+
+  minContainer.value = minContainer.value.replace(/[e\+\-]/gi, "");
+  maxContainer.value = maxContainer.value.replace(/[e\+\-]/gi, "");
+  if (minContainer.value !== "" && maxContainer.value !== "") {
+    apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.price >= parseInt(minPriceInput.value) && obj1.price <= parseInt(maxPriceInput.value));
+    filters.customPrice = `CustomPrice: $${minPriceInput.value} - $${maxPriceInput.value}`;
+  } else {
+    filters.customPrice = "";
+  }
+  localStorage.setItem('filters', JSON.stringify(filters));
+  updateListing(false);
 }
 
 const cleanAllFiltersBtn = document.getElementById('clean-all-filters');
@@ -26,19 +85,10 @@ cleanAllFiltersBtn.addEventListener('click', e => {
       parent.firstElementChild.classList.remove('sel-primary');
       parent.firstElementChild.classList.add('sel-none');
     }
+    minPriceInput.value = "";
+    maxPriceInput.value = "";
   }
 })
-
-const filtersBtnsCotainer = document.getElementById('filters-btns-container');
-const arrayInactiveBtns = [...filtersBtnsCotainer.querySelectorAll('.sel-none')];
-
-//const arrayCrossRemoveFilter = document.querySelector('.fa-times[data-prefix="fas"]');
-//arrayCrossRemoveFilter.forEach(crossIcon => {
-//crossIcon.addEventListener('click', (e) => {
-//e.parentNode
-//e.stopPropagation();
-//})
-//})
 
 //templates
 const templateShopLi = document.getElementById('template-item-li').content;
@@ -343,12 +393,6 @@ function filtersClickHandler(event) {
 
 }
 
-//function filtersClickCloseHandler(event) {
-//if (event.target.dataset.) {
-
-//}
-//}
-
 function filtersConfigHandler(item, objFilters, eventTarget, loadPreviousFilters) {
   //This function has double functionality, it manages the filters and on the other hand it manages the user clicks on the filter buttons (on the shop.html page)
 
@@ -367,23 +411,20 @@ function filtersConfigHandler(item, objFilters, eventTarget, loadPreviousFilters
       //---------------------Sortby
       case 'Featured':
         apiShopItems = Object.values(apiShopItems).sort(obj1 => obj1.id);;
-        if (!objFilters.sortby.includes('Featured')) objFilters.sortby = [...objFilters.sortby, 'Featured'];
-        if (loadPreviousFilters) eventTarget = arrayInactiveBtns.filter(btn => btn.innerText == 'Featured')[0];
-        filtersEvents(eventTarget, objFilters, 'sortby', 'Featured');
+        objFilters.sortby = 'Featured';
+        sortby.value = 'Featured';
         break;
 
       case 'Low to high':
         apiShopItems = Object.values(apiShopItems).sort((obj1, obj2) => obj1.price - obj2.price);
-        if (!objFilters.sortby.includes('Low to high')) objFilters.sortby = [...objFilters.sortby, 'Low to high'];
-        if (loadPreviousFilters) eventTarget = arrayInactiveBtns.filter(btn => btn.innerText == 'Low to high')[0];
-        filtersEvents(eventTarget, objFilters, 'sortby', 'Low to high');
+        objFilters.sortby = 'Low to high';
+        sortby.value = 'Low to high';
         break;
 
       case 'High to low':
         apiShopItems = Object.values(apiShopItems).sort((obj1, obj2) => obj2.price - obj1.price);
-        if (!objFilters.sortby.includes('High to low')) objFilters.sortby = [...objFilters.sortby, 'High to low'];
-        if (loadPreviousFilters) eventTarget = arrayInactiveBtns.filter(btn => btn.innerText == 'High to low')[0];
-        filtersEvents(eventTarget, objFilters, 'sortby', 'High to low');
+        objFilters.sortby = 'High to low';
+        sortby.value = 'High to low';
         break;
 
       //---------------------Region
@@ -525,6 +566,14 @@ function filtersConfigHandler(item, objFilters, eventTarget, loadPreviousFilters
         filtersEvents(eventTarget, objFilters, 'price', '$100+');
         break;
 
+    }
+
+    if (item.startsWith('CustomPrice:')) {
+      const bothPricesArray = item.split('-').map(string => string.replace(/\D/g, ''));
+      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.price >= bothPricesArray[0] && obj1.price <= bothPricesArray[1]);
+
+      minPriceInput.value = bothPricesArray[0];
+      maxPriceInput.value = bothPricesArray[1];
     }
 
   }
