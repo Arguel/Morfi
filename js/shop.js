@@ -31,42 +31,55 @@ sortbyLabel.addEventListener('change', () => {
 //elem.disabled = true;
 //}
 
+//Custom prices
 const minPriceInput = document.getElementById('pri-from');
 const maxPriceInput = document.getElementById('pri-to');
-const priceFilter = document.getElementById('price-filter');
-priceFilter.addEventListener('click', () => {
+const priceFilterBtn = document.getElementById('price-filter');
+
+
+//Custom discounts
+const minDiscountInput = document.getElementById('dis-from');
+const maxDiscountInput = document.getElementById('dis-to');
+const discountFilterBtn = document.getElementById('discount-filter');
+
+//Custom search
+const searchInput = document.getElementById('s-shop');
+const searchFilterBtn = document.getElementById('si-shop');
+
+priceFilterBtn.addEventListener('click', event => {
+  priceAndDiscountFilter(event, minPriceInput, maxPriceInput, 'customPrice', 'price', 'CustomPrice: ');
+});
+
+discountFilterBtn.addEventListener('click', event => {
+  priceAndDiscountFilter(event, minDiscountInput, maxDiscountInput, 'customDiscount', 'discount', 'CustomDiscount: ');
+});
+
+searchFilterBtn.addEventListener('click', event => {
+  event.stopPropagation();
 
   const filters = JSON.parse(localStorage.getItem('filters')) || {...userFiltersBase};
 
-  minPriceInput.value = minPriceInput.value.replace(/[e\+\-]/gi, "");
-  maxPriceInput.value = maxPriceInput.value.replace(/[e\+\-]/gi, "");
-  if (minPriceInput.value !== "" && maxPriceInput.value !== "") {
-    apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.price >= parseInt(minPriceInput.value) && obj1.price <= parseInt(maxPriceInput.value));
-    filters.customPrice = `CustomPrice: $${minPriceInput.value} - $${maxPriceInput.value}`;
-  } else {
-    filters.customPrice = "";
-  }
+  apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.title.toLowerCase().startsWith(searchInput.value.toLowerCase()));
+  filters.customSearch = `CustomSearch: ${searchInput.value}`;
+
   localStorage.setItem('filters', JSON.stringify(filters));
   updateListing(false);
+})
 
-});
-const discountFilter = document.getElementById('discount-filter');
-//discountFilter.addEventListener('cli', e => {
-//});
-
-function priceAndDiscountFilter(event, minContainer, maxContainer, property) {
-  event.preventDefault();
+function priceAndDiscountFilter(event, minContainer, maxContainer, filterProperty, productProperty, stringTemplate) {
+  event.stopPropagation();
 
   const filters = JSON.parse(localStorage.getItem('filters')) || {...userFiltersBase};
 
   minContainer.value = minContainer.value.replace(/[e\+\-]/gi, "");
   maxContainer.value = maxContainer.value.replace(/[e\+\-]/gi, "");
   if (minContainer.value !== "" && maxContainer.value !== "") {
-    apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.price >= parseInt(minPriceInput.value) && obj1.price <= parseInt(maxPriceInput.value));
-    filters.customPrice = `CustomPrice: $${minPriceInput.value} - $${maxPriceInput.value}`;
+    apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1[productProperty] >= parseInt(minContainer.value) && obj1.price <= parseInt(maxContainer.value));
+    filters[filterProperty] = stringTemplate + minContainer.value + ' - ' + maxContainer.value;
   } else {
-    filters.customPrice = "";
+    filters[filterProperty] = "";
   }
+
   localStorage.setItem('filters', JSON.stringify(filters));
   updateListing(false);
 }
@@ -574,6 +587,21 @@ function filtersConfigHandler(item, objFilters, eventTarget, loadPreviousFilters
 
       minPriceInput.value = bothPricesArray[0];
       maxPriceInput.value = bothPricesArray[1];
+    }
+
+    if (item.startsWith('CustomDiscount:')) {
+      const bothDiscountsArray = item.split('-').map(string => string.replace(/\D/g, ''));
+      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.price >= bothDiscountsArray[0] && obj1.price <= bothDiscountsArray[1]);
+
+      minDiscountInput.value = bothDiscountsArray[0];
+      maxDiscountInput.value = bothDiscountsArray[1];
+    }
+
+    if (item.startsWith('CustomSearch:')) {
+      const text = item.substr(14);
+      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.title.toLowerCase().startsWith(text.toLowerCase()));
+
+      searchInput.value = text;
     }
 
   }
