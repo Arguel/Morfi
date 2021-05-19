@@ -77,8 +77,12 @@ function searchFilter(event) {
 
   const filters = JSON.parse(localStorage.getItem('filters')) || {...userFiltersBase};
 
-  apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.title.toLowerCase().startsWith(searchInput.value.toLowerCase()));
-  filters.customSearch = `CustomSearch: ${searchInput.value}`;
+  if (searchInput.value !== "") {
+    apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.title.toLowerCase().startsWith(searchInput.value.toLowerCase()));
+    filters.customSearch = `CustomSearch: ${searchInput.value}`;
+  } else {
+    filters.customSearch = "";
+  }
 
   localStorage.setItem('filters', JSON.stringify(filters));
   updateListing(false);

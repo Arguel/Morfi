@@ -597,9 +597,9 @@ function renderCheckout(arrayItems, paymentMethod) {
     productsContainer.appendChild(mainProductContainer);
 
   });
-  const discountPercentage = Math.ceil((rprice - (rfinalPrice - rcoupondiscount)) * 100 / (rprice + rpaymentMethod));
+  const discountPercentage = Math.ceil((rprice - (rfinalPrice - rcoupondiscount)) * 100 / (rprice + rshipping + rpaymentMethod));
   //base price excluding discounts
-  templateCartCheckout.querySelectorAll(checkoutCalculationSeletor)[1].textContent = `$${(rprice + rpaymentMethod).toFixed(2)}`;
+  templateCartCheckout.querySelectorAll(checkoutCalculationSeletor)[1].textContent = `$${(rprice + rpaymentMethod + rshipping).toFixed(2)}`;
   //discounts
   templateCartCheckout.querySelectorAll(checkoutCalculationSeletor)[2].textContent = `-$${(rprice - (rfinalPrice - rcoupondiscount)).toFixed(2)}`;
   //discount percentage

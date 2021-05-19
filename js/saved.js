@@ -10,6 +10,7 @@ const validCoupons = {
 //templates
 const templateCartItem = document.getElementById('template-cart-item').content;
 const templateCartCheckout = document.getElementById('template-cart-checkout').content;
+const templateCartPurchase = document.getElementById('template-cart-purchase').content;
 
 //containers
 const cartItems = document.getElementById('cart-items');
@@ -57,6 +58,8 @@ const goBackBtnSelector = 'div.col-12.text-primary.fs-5.mb-3';
 const itemUnitsSelector = 'div.text-center span.text-muted';
 //main container to manage the units of each item
 const unitsContainerSelector = '.border.p-2';
+//footer buttons (clean cart and checkout)
+const footerButtonsSelector = 'button.btn.btn-primary.ff-lato-7';
 
 //items added from shop page
 let itemsToBuy = localStorage.getItem('cart');
@@ -447,9 +450,9 @@ function renderCheckout(arrayItems, paymentMethod) {
 
   });
 
-  const discountPercentage = Math.ceil((rprice - (rfinalPrice - rcoupondiscount)) * 100 / (rprice + rpaymentMethod));
+  const discountPercentage = Math.ceil((rprice - (rfinalPrice - rcoupondiscount)) * 100 / (rprice + rshipping + rpaymentMethod));
   //base price excluding discounts
-  templateCartCheckout.querySelectorAll(checkoutCalculationSeletor)[1].textContent = `$${(rprice + rpaymentMethod).toFixed(2)}`;
+  templateCartCheckout.querySelectorAll(checkoutCalculationSeletor)[1].textContent = `$${(rprice + rshipping + rpaymentMethod).toFixed(2)}`;
   //discounts
   templateCartCheckout.querySelectorAll(checkoutCalculationSeletor)[2].textContent = `-$${(rprice - (rfinalPrice - rcoupondiscount)).toFixed(2)}`;
   //discount percentage
@@ -463,6 +466,11 @@ function renderCheckout(arrayItems, paymentMethod) {
   //to delete the previous items and leave the template in its original state (this in case an item is deleted)
   productsContainer.innerHTML = '';
 
+  const finishBuy = document.querySelector(footerButtonsSelector);
+  finishBuy.addEventListener('click', (e) => {
+    renderPurchaseFinished(arrayItems);
+    e.stopPropagation();
+  });
 }
 
 function footerHasBeenCreated() {
@@ -488,4 +496,40 @@ function keepPaymentUpdated() {
     inCart: true,
     chosenPaymentMethod: 'paypal',
   };
+}
+
+function renderPurchaseFinished(arrayItems) {
+
+  cartMainContainer.innerHTML = '';
+  cartMainContainer.classList.remove('my-5');
+  cartMainContainer.classList.add('h-100');
+  cartItems.classList.add('h-100');
+
+  const clone = templateCartPurchase.cloneNode(true);
+  fragment.appendChild(clone);
+  cartMainContainer.appendChild(fragment);
+
+  checkoutStatus.inCart = true;
+  localStorage.setItem('checkoutStatus', JSON.stringify(checkoutStatus));
+
+  Object.values(arrayItems).forEach(product => {
+    if (itemsToBuy[product.id]) {
+      delete itemsToBuy[product.id];
+    }
+
+    if (savedForLaterItems[product.id]) {
+      delete savedForLaterItems[product.id];
+    }
+  });
+
+  localStorage.setItem('cart', JSON.stringify(itemsToBuy));
+  localStorage.setItem('savedForLater', JSON.stringify(savedForLaterItems));
+
+  if (Object.values(itemsToBuy).length == 0) {
+    localStorage.removeItem('cart');
+  }
+
+  if (Object.values(savedForLaterItems).length == 0) {
+    localStorage.removeItem('savedForLater');
+  }
 }
