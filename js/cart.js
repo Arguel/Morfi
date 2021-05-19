@@ -278,7 +278,7 @@ function cartManager(e) {
     case 'reducequantity': case 'increasequantity':
       e.target.parentNode.addEventListener('submit', event => {
         event.preventDefault();
-      })
+      });
 
       //we capture the object to modify
       const product = itemsToBuy[e.target.closest(itemMainRowSelector).dataset.id];

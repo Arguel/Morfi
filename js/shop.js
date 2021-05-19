@@ -18,6 +18,19 @@ const userFiltersBase = {
 const filtersBtnsCotainer = document.getElementById('filters-btns-container');
 const arrayInactiveBtns = [...filtersBtnsCotainer.querySelectorAll('.sel-none')];
 
+const ratingBtnsArray = document.querySelectorAll('.sel-none[data-stars]');
+for (const ratingFilterBtn of ratingBtnsArray) {
+  ratingFilterBtn.addEventListener('click', event => {
+    event.stopPropagation();
+    const filters = JSON.parse(localStorage.getItem('filters')) || {...userFiltersBase};
+    const starIdentifier = `${ratingFilterBtn.dataset.stars} star`
+    filtersEvents(ratingFilterBtn, filters, 'ratings', starIdentifier);
+    if (!filters.ratings.includes(starIdentifier)) filters.ratings = [...filters.ratings, starIdentifier];
+    localStorage.setItem('filters', JSON.stringify(filters));
+    updateListing(false);
+  });
+}
+
 const sortbyLabel = document.getElementById('sortby');
 sortbyLabel.addEventListener('change', () => {
   const filters = JSON.parse(localStorage.getItem('filters')) || {...userFiltersBase};
@@ -36,7 +49,6 @@ const minPriceInput = document.getElementById('pri-from');
 const maxPriceInput = document.getElementById('pri-to');
 const priceFilterBtn = document.getElementById('price-filter');
 
-
 //Custom discounts
 const minDiscountInput = document.getElementById('dis-from');
 const maxDiscountInput = document.getElementById('dis-to');
@@ -49,12 +61,18 @@ const searchFilterBtn = document.getElementById('si-shop');
 priceFilterBtn.addEventListener('click', event => {
   priceAndDiscountFilter(event, minPriceInput, maxPriceInput, 'customPrice', 'price', 'CustomPrice: ');
 });
-
 discountFilterBtn.addEventListener('click', event => {
   priceAndDiscountFilter(event, minDiscountInput, maxDiscountInput, 'customDiscount', 'discount', 'CustomDiscount: ');
 });
-
+searchInput.closest('form').addEventListener('submit', event => {
+  event.preventDefault();
+  searchFilter(event);
+});
 searchFilterBtn.addEventListener('click', event => {
+  searchFilter(event);
+});
+
+function searchFilter(event) {
   event.stopPropagation();
 
   const filters = JSON.parse(localStorage.getItem('filters')) || {...userFiltersBase};
@@ -64,7 +82,7 @@ searchFilterBtn.addEventListener('click', event => {
 
   localStorage.setItem('filters', JSON.stringify(filters));
   updateListing(false);
-})
+}
 
 function priceAndDiscountFilter(event, minContainer, maxContainer, filterProperty, productProperty, stringTemplate) {
   event.stopPropagation();
@@ -74,7 +92,7 @@ function priceAndDiscountFilter(event, minContainer, maxContainer, filterPropert
   minContainer.value = minContainer.value.replace(/[e\+\-]/gi, "");
   maxContainer.value = maxContainer.value.replace(/[e\+\-]/gi, "");
   if (minContainer.value !== "" && maxContainer.value !== "") {
-    apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1[productProperty] >= parseInt(minContainer.value) && obj1.price <= parseInt(maxContainer.value));
+    apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1[productProperty] >= parseInt(minContainer.value) && obj1[productProperty] <= parseInt(maxContainer.value));
     filters[filterProperty] = stringTemplate + minContainer.value + ' - ' + maxContainer.value;
   } else {
     filters[filterProperty] = "";
@@ -498,6 +516,31 @@ function filtersConfigHandler(item, objFilters, eventTarget, loadPreviousFilters
         filtersEvents(eventTarget, objFilters, 'discount', '100%');
         break;
 
+      //---------------------Ratings
+      case '1 star':
+        apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.rating >= 1);
+        if (loadPreviousFilters) eventTarget = arrayInactiveBtns.filter(btn => btn.dataset.stars == '1')[0];
+        filtersEvents(eventTarget, objFilters, 'ratings', '1 star');
+        break;
+
+      case '2 star':
+        apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.rating >= 2);
+        if (loadPreviousFilters) eventTarget = arrayInactiveBtns.filter(btn => btn.dataset.stars == '2')[0];
+        filtersEvents(eventTarget, objFilters, 'ratings', '2 star');
+        break;
+
+      case '3 star':
+        apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.rating >= 3);
+        if (loadPreviousFilters) eventTarget = arrayInactiveBtns.filter(btn => btn.dataset.stars == '3')[0];
+        filtersEvents(eventTarget, objFilters, 'ratings', '3 star');
+        break;
+
+      case '4 star':
+        apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.rating >= 4);
+        if (loadPreviousFilters) eventTarget = arrayInactiveBtns.filter(btn => btn.dataset.stars == '4')[0];
+        filtersEvents(eventTarget, objFilters, 'ratings', '4 star');
+        break;
+
       //---------------------Payment
       case 'In 12 installments':
         apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.payment.includes('In 12 installments'));
@@ -591,7 +634,7 @@ function filtersConfigHandler(item, objFilters, eventTarget, loadPreviousFilters
 
     if (item.startsWith('CustomDiscount:')) {
       const bothDiscountsArray = item.split('-').map(string => string.replace(/\D/g, ''));
-      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.price >= bothDiscountsArray[0] && obj1.price <= bothDiscountsArray[1]);
+      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.discount >= bothDiscountsArray[0] && obj1.discount <= bothDiscountsArray[1]);
 
       minDiscountInput.value = bothDiscountsArray[0];
       maxDiscountInput.value = bothDiscountsArray[1];
