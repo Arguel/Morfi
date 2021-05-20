@@ -21,13 +21,16 @@ const arrayInactiveBtns = [...filtersBtnsCotainer.querySelectorAll('.sel-none')]
 const ratingBtnsArray = document.querySelectorAll('.sel-none[data-stars]');
 for (const ratingFilterBtn of ratingBtnsArray) {
   ratingFilterBtn.addEventListener('click', event => {
-    event.stopPropagation();
-    const filters = JSON.parse(localStorage.getItem('filters')) || {...userFiltersBase};
-    const starIdentifier = `${ratingFilterBtn.dataset.stars} star`
-    filtersEvents(ratingFilterBtn, filters, 'ratings', starIdentifier);
-    if (!filters.ratings.includes(starIdentifier)) filters.ratings = [...filters.ratings, starIdentifier];
-    localStorage.setItem('filters', JSON.stringify(filters));
-    updateListing(false);
+    if (!ratingFilterBtn.classList.contains('sel-primary')) {
+      event.stopPropagation();
+      const filters = JSON.parse(localStorage.getItem('filters')) || {...userFiltersBase};
+      const starIdentifier = `${ratingFilterBtn.dataset.stars} star`
+      filtersEvents(ratingFilterBtn, filters, 'ratings', starIdentifier);
+      renderClearBtn(event.target, 'ratings');
+      if (!filters.ratings.includes(starIdentifier)) filters.ratings = [...filters.ratings, starIdentifier];
+      localStorage.setItem('filters', JSON.stringify(filters));
+      updateListing(false);
+    }
   });
 }
 
@@ -470,32 +473,32 @@ function filtersConfigHandler(item, objFilters, eventTarget, loadPreviousFilters
         apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.region.includes('North America'));
         if (!objFilters.region.includes('North America')) objFilters.region = [...objFilters.region, 'North America'];
         if (loadPreviousFilters) eventTarget = arrayInactiveBtns.filter(btn => btn.innerText == 'North America')[0];
-        if (!objFilters.region !== []) renderClearBtn(eventTarget, 'region');
         filtersEvents(eventTarget, objFilters, 'region', 'North America');
+        renderClearBtn(eventTarget, 'region');
         break;
 
       case 'United States':
         apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.region.includes('United States'));
         if (!objFilters.region.includes('United States')) objFilters.region = [...objFilters.region, 'United States'];
         if (loadPreviousFilters) eventTarget = arrayInactiveBtns.filter(btn => btn.innerText == 'United States')[0];
-        if (!objFilters.region !== []) renderClearBtn(eventTarget, 'region');
         filtersEvents(eventTarget, objFilters, 'region', 'United States');
+        renderClearBtn(eventTarget, 'region');
         break;
 
       case 'Europe':
         apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.region.includes('Europe'));
         if (!objFilters.region.includes('Europe')) objFilters.region = [...objFilters.region, 'Europe'];
         if (loadPreviousFilters) eventTarget = arrayInactiveBtns.filter(btn => btn.innerText == 'Europe')[0];
-        if (!objFilters.region !== []) renderClearBtn(eventTarget, 'region');
         filtersEvents(eventTarget, objFilters, 'region', 'Europe');
+        renderClearBtn(eventTarget, 'region');
         break;
 
       case 'Global':
         apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.region.includes('Global'));
         if (!objFilters.region.includes('Global')) objFilters.region = [...objFilters.region, 'Global'];
         if (loadPreviousFilters) eventTarget = arrayInactiveBtns.filter(btn => btn.innerText == 'Global')[0];
-        if (!objFilters.region !== []) renderClearBtn(eventTarget, 'region');
         filtersEvents(eventTarget, objFilters, 'region', 'Global');
+        renderClearBtn(eventTarget, 'region');
         break;
 
       //---------------------Discount
@@ -503,61 +506,61 @@ function filtersConfigHandler(item, objFilters, eventTarget, loadPreviousFilters
         apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.discount >= 25);
         if (!objFilters.discount.includes('25%')) objFilters.discount = [...objFilters.discount, '25%'];
         if (loadPreviousFilters) eventTarget = arrayInactiveBtns.filter(btn => btn.innerText == '25%')[0];
-        if (!objFilters.discount !== []) renderClearBtn(eventTarget, 'discount');
         filtersEvents(eventTarget, objFilters, 'discount', '25%');
+        renderClearBtn(eventTarget, 'discount');
         break;
 
       case '50%':
         apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.discount >= 50);
         if (!objFilters.discount.includes('50%')) objFilters.discount = [...objFilters.discount, '50%'];
         if (loadPreviousFilters) eventTarget = arrayInactiveBtns.filter(btn => btn.innerText == '50%')[0];
-        if (!objFilters.discount !== []) renderClearBtn(eventTarget, 'discount');
         filtersEvents(eventTarget, objFilters, 'discount', '50%');
+        renderClearBtn(eventTarget, 'discount');
         break;
 
       case '75%':
         apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.discount >= 75);
         if (!objFilters.discount.includes('75%')) objFilters.discount = [...objFilters.discount, '75%'];
         if (loadPreviousFilters) eventTarget = arrayInactiveBtns.filter(btn => btn.innerText == '75%')[0];
-        if (!objFilters.discount !== []) renderClearBtn(eventTarget, 'discount');
         filtersEvents(eventTarget, objFilters, 'discount', '75%');
+        renderClearBtn(eventTarget, 'discount');
         break;
 
       case '100%':
         apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.discount >= 100);
         if (!objFilters.discount.includes('100%')) objFilters.discount = [...objFilters.discount, '100%'];
         if (loadPreviousFilters) eventTarget = arrayInactiveBtns.filter(btn => btn.innerText == '100%')[0];
-        if (!objFilters.discount !== []) renderClearBtn(eventTarget, 'discount');
         filtersEvents(eventTarget, objFilters, 'discount', '100%');
+        renderClearBtn(eventTarget, 'discount');
         break;
 
       //---------------------Ratings
       case '1 star':
         apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.rating >= 1);
         if (loadPreviousFilters) eventTarget = arrayInactiveBtns.filter(btn => btn.dataset.stars == '1')[0];
-        if (!objFilters.ratings !== []) renderClearBtn(eventTarget, 'ratings');
         filtersEvents(eventTarget, objFilters, 'ratings', '1 star');
+        renderClearBtn(eventTarget, 'ratings');
         break;
 
       case '2 star':
         apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.rating >= 2);
         if (loadPreviousFilters) eventTarget = arrayInactiveBtns.filter(btn => btn.dataset.stars == '2')[0];
-        if (!objFilters.ratings !== []) renderClearBtn(eventTarget, 'ratings');
         filtersEvents(eventTarget, objFilters, 'ratings', '2 star');
+        renderClearBtn(eventTarget, 'ratings');
         break;
 
       case '3 star':
         apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.rating >= 3);
         if (loadPreviousFilters) eventTarget = arrayInactiveBtns.filter(btn => btn.dataset.stars == '3')[0];
-        if (!objFilters.ratings !== []) renderClearBtn(eventTarget, 'ratings');
         filtersEvents(eventTarget, objFilters, 'ratings', '3 star');
+        renderClearBtn(eventTarget, 'ratings');
         break;
 
       case '4 star':
         apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.rating >= 4);
         if (loadPreviousFilters) eventTarget = arrayInactiveBtns.filter(btn => btn.dataset.stars == '4')[0];
-        if (!objFilters.ratings !== []) renderClearBtn(eventTarget, 'ratings');
         filtersEvents(eventTarget, objFilters, 'ratings', '4 star');
+        renderClearBtn(eventTarget, 'ratings');
         break;
 
       //---------------------Payment
@@ -565,24 +568,24 @@ function filtersConfigHandler(item, objFilters, eventTarget, loadPreviousFilters
         apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.payment.includes('In 12 installments'));
         if (!objFilters.payment.includes('In 12 installments')) objFilters.payment = [...objFilters.payment, 'In 12 installments'];
         if (loadPreviousFilters) eventTarget = arrayInactiveBtns.filter(btn => btn.innerText == 'In 12 installments')[0];
-        if (!objFilters.payment !== []) renderClearBtn(eventTarget, 'payment');
         filtersEvents(eventTarget, objFilters, 'payment', 'In 12 installments');
+        renderClearBtn(eventTarget, 'payment');
         break;
 
       case 'In 6 installments':
         apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.payment.includes('In 6 installments'));
         if (!objFilters.payment.includes('In 6 installments')) objFilters.payment = [...objFilters.payment, 'In 6 installments'];
         if (loadPreviousFilters) eventTarget = arrayInactiveBtns.filter(btn => btn.innerText == 'In 6 installments')[0];
-        if (!objFilters.payment !== []) renderClearBtn(eventTarget, 'payment');
         filtersEvents(eventTarget, objFilters, 'payment', 'In 6 installments');
+        renderClearBtn(eventTarget, 'payment');
         break;
 
       case 'In cash':
         apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.payment.includes('In cash'));
         if (!objFilters.payment.includes('In cash')) objFilters.payment = [...objFilters.payment, 'In cash'];
         if (loadPreviousFilters) eventTarget = arrayInactiveBtns.filter(btn => btn.innerText == 'In cash')[0];
-        if (!objFilters.payment !== []) renderClearBtn(eventTarget, 'payment');
         filtersEvents(eventTarget, objFilters, 'payment', 'In cash');
+        renderClearBtn(eventTarget, 'payment');
         break;
 
       //---------------------Promotions
@@ -590,16 +593,16 @@ function filtersConfigHandler(item, objFilters, eventTarget, loadPreviousFilters
         apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.promotion.includes('Special offer'));
         if (!objFilters.promotions.includes('Special offer')) objFilters.promotions = [...objFilters.promotions, 'Special offer'];
         if (loadPreviousFilters) eventTarget = arrayInactiveBtns.filter(btn => btn.innerText == 'Special offer')[0];
-        if (!objFilters.promotions !== []) renderClearBtn(eventTarget, 'promotions');
         filtersEvents(eventTarget, objFilters, 'promotions', 'Special offer');
+        renderClearBtn(eventTarget, 'promotions');
         break;
 
       case 'New':
         apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.promotion.includes('New'));
         if (!objFilters.promotions.includes('New')) objFilters.promotions = [...objFilters.promotions, 'New'];
         if (loadPreviousFilters) eventTarget = arrayInactiveBtns.filter(btn => btn.innerText == 'New')[0];
-        if (!objFilters.promotions !== []) renderClearBtn(eventTarget, 'promotions');
         filtersEvents(eventTarget, objFilters, 'promotions', 'New');
+        renderClearBtn(eventTarget, 'promotions');
         break;
 
       //---------------------Delivery
@@ -607,16 +610,16 @@ function filtersConfigHandler(item, objFilters, eventTarget, loadPreviousFilters
         apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.hasFreeShipping);
         if (!objFilters.delivery.includes('Free shipping')) objFilters.delivery = [...objFilters.delivery, 'Free shipping'];
         if (loadPreviousFilters) eventTarget = arrayInactiveBtns.filter(btn => btn.innerText == 'Free shipping')[0];
-        if (!objFilters.delivery !== []) renderClearBtn(eventTarget, 'delivery');
         filtersEvents(eventTarget, objFilters, 'delivery', 'Free shipping');
+        renderClearBtn(eventTarget, 'delivery');
         break;
 
       case 'Withdrawal in person':
         apiShopItems = Object.values(apiShopItems).filter(obj1 => !obj1.hasFreeShipping);
         if (!objFilters.delivery.includes('Withdrawal in person')) objFilters.delivery = [...objFilters.delivery, 'Withdrawal in person'];
         if (loadPreviousFilters) eventTarget = arrayInactiveBtns.filter(btn => btn.innerText == 'Withdrawal in person')[0];
-        if (!objFilters.delivery !== []) renderClearBtn(eventTarget, 'delivery');
         filtersEvents(eventTarget, objFilters, 'delivery', 'Withdrawal in person');
+        renderClearBtn(eventTarget, 'delivery');
         break;
 
       //---------------------Price
@@ -624,38 +627,38 @@ function filtersConfigHandler(item, objFilters, eventTarget, loadPreviousFilters
         apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.price > 0 && obj1.price <= 10);
         if (!objFilters.price.includes('$0 - $10')) objFilters.price = [...objFilters.price, '$0 - $10'];
         if (loadPreviousFilters) eventTarget = arrayInactiveBtns.filter(btn => btn.innerText == '$0 - $10')[0];
-        if (!objFilters.price !== []) renderClearBtn(eventTarget, 'price');
         filtersEvents(eventTarget, objFilters, 'price', '$0 - $10');
+        renderClearBtn(eventTarget, 'price');
         break;
 
       case '$10 - $50':
         apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.price > 10 && obj1.price <= 50);
         if (!objFilters.price.includes('$10 - $50')) objFilters.price = [...objFilters.price, '$10 - $50'];
         if (loadPreviousFilters) eventTarget = arrayInactiveBtns.filter(btn => btn.innerText == '$10 - $50')[0];
-        if (!objFilters.price !== []) renderClearBtn(eventTarget, 'price');
         filtersEvents(eventTarget, objFilters, 'price', '$10 - $50');
+        renderClearBtn(eventTarget, 'price');
         break;
 
       case '$50 - $100':
         apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.price > 50 && obj1.price <= 100);
         if (!objFilters.price.includes('$50 - $100')) objFilters.price = [...objFilters.price, '$50 - $100'];
         if (loadPreviousFilters) eventTarget = arrayInactiveBtns.filter(btn => btn.innerText == '$50 - $100')[0];
-        if (!objFilters.price !== []) renderClearBtn(eventTarget, 'price');
         filtersEvents(eventTarget, objFilters, 'price', '$50 - $100');
+        renderClearBtn(eventTarget, 'price');
         break;
 
       case '$100+':
         apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.price > 100);
         if (!objFilters.price.includes('$100+')) objFilters.price = [...objFilters.price, '$100+'];
         if (loadPreviousFilters) eventTarget = arrayInactiveBtns.filter(btn => btn.innerText == '$100+')[0];
-        if (!objFilters.price !== []) renderClearBtn(eventTarget, 'price');
         filtersEvents(eventTarget, objFilters, 'price', '$100+');
+        renderClearBtn(eventTarget, 'price');
         break;
 
     }
 
     if (item.startsWith('CustomPrice:')) {
-      if (!objFilters.customPrice !== "") renderClearBtn(minPriceInput, 'customPrice');
+      renderClearBtn(minPriceInput, 'customPrice');
       const bothPricesArray = item.split('-').map(string => string.replace(/\D/g, ''));
       apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.price >= bothPricesArray[0] && obj1.price <= bothPricesArray[1]);
 
@@ -664,7 +667,7 @@ function filtersConfigHandler(item, objFilters, eventTarget, loadPreviousFilters
     }
 
     if (item.startsWith('CustomDiscount:')) {
-      if (!objFilters.customDiscount !== "") renderClearBtn(minDiscountInput, 'customDiscount');
+      renderClearBtn(minDiscountInput, 'customDiscount');
       const bothDiscountsArray = item.split('-').map(string => string.replace(/\D/g, ''));
       apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.discount >= bothDiscountsArray[0] && obj1.discount <= bothDiscountsArray[1]);
 
@@ -704,7 +707,7 @@ function filtersEvents(eventTarget, filterArray, filterArrayProp, itemToRemove) 
       eventTarget.classList.add('sel-none');
 
       filterArray[filterArrayProp].splice(filterArray[filterArrayProp].indexOf(itemToRemove), 1);
-      if (filterArray[filterArrayProp] === [] || filterArray[filterArrayProp] === "") {
+      if (filterArray[filterArrayProp].length === 0 || filterArray[filterArrayProp] === "") {
         const parentElem = eventTarget.closest('div').firstElementChild;
         parentElem.removeChild(parentElem.lastChild);
       }
@@ -722,54 +725,63 @@ function updateListing(loadPreviousFilters) {
   fetchShopItems(loadPreviousFilters);
 }
 
-function renderClearBtn(eventTarget = undefined, propertyToDelete) {
+function renderClearBtn(eventTarget, propertyToDelete) {
 
-  const parentElem = eventTarget.closest('div');
-  const childDivElem = eventTarget.closest('div').firstElementChild;
+  if (eventTarget) {
 
-  const clearContainer = document.createElement('div');
-  clearContainer.classList.add('col-md-3', 'text-end');
-  const clearBtn = document.createElement('button');
-  clearBtn.classList.add('sel-none');
-  const spanClear = document.createElement('span');
-  spanClear.classList.add('h-pointer', 'h-underline')
-  spanClear.textContent = 'Clear';
+    const parentElem = eventTarget.closest('div');
+    const childDivElem = eventTarget.closest('div').firstElementChild;
+    const previouslyCreated = childDivElem.querySelector('div.col-md-3.text-end');
 
-  clearBtn.appendChild(spanClear);
-  clearBtn.addEventListener('click', e => {
-    e.stopPropagation();
-    const filters = JSON.parse(localStorage.getItem('filters')) || {...userFiltersBase};
-    childDivElem.removeChild(childDivElem.lastChild);
+    if (!previouslyCreated) {
 
-    filters[propertyToDelete] = [];
+      const clearContainer = document.createElement('div');
+      clearContainer.classList.add('col-md-3', 'text-end');
+      const clearBtn = document.createElement('button');
+      clearBtn.classList.add('sel-none');
+      const spanClear = document.createElement('span');
+      spanClear.classList.add('h-pointer', 'h-underline')
+      spanClear.textContent = 'Clear';
 
-    const previousFilters = parentElem.querySelectorAll('.sel-primary .fa-times');
-    for (let oldFilter of previousFilters) {
-      const parent = oldFilter.closest('li');
-      parent.removeChild(parent.lastChild);
-      parent.firstElementChild.classList.remove('sel-primary');
-      parent.firstElementChild.classList.add('sel-none');
+      clearBtn.appendChild(spanClear);
+      clearBtn.addEventListener('click', e => {
+        e.stopPropagation();
+        const filters = JSON.parse(localStorage.getItem('filters')) || {...userFiltersBase};
+        childDivElem.removeChild(childDivElem.lastChild);
+
+        filters[propertyToDelete] = [];
+
+        const previousFilters = parentElem.querySelectorAll('.sel-primary .fa-times');
+        for (let oldFilter of previousFilters) {
+          const parent = oldFilter.closest('li');
+          parent.removeChild(parent.lastChild);
+          parent.firstElementChild.classList.remove('sel-primary');
+          parent.firstElementChild.classList.add('sel-none');
+        }
+
+        switch (propertyToDelete) {
+          case 'price': case 'customPrice':
+            filters.customPrice = "";
+            minPriceInput.value = "";
+            maxPriceInput.value = "";
+            break;
+          case 'discount': case 'customDiscount':
+            filters.customDiscount = "";
+            minDiscountInput.value = "";
+            maxDiscountInput.value = "";
+            break;
+        }
+
+        localStorage.setItem('filters', JSON.stringify(filters));
+        updateListing(false);
+      });
+
+      clearContainer.appendChild(clearBtn);
+
+      childDivElem.appendChild(clearContainer);
+
     }
 
-    switch (propertyToDelete) {
-      case 'price':
-        filters.customPrice = "";
-        minPriceInput.value = "";
-        maxPriceInput.value = "";
-        break;
-      case 'discount':
-        filters.discount = "";
-        minDiscountInput.value = "";
-        maxDiscountInput.value = "";
-        break;
-    }
-
-    localStorage.setItem('filters', JSON.stringify(filters));
-    updateListing(false);
-  });
-
-  clearContainer.appendChild(clearBtn);
-
-  childDivElem.appendChild(clearContainer);
+  }
 
 }
