@@ -175,9 +175,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 mainShopContainer.addEventListener('click', e => {
   e.stopPropagation();
-  renderCartIcons(cart);
   if (e.target.matches('button.btn.btn-primary.d-block.w-100.ff-lato-4')) {
     addToCart(e);
+    renderCartIcons(cart);
   }
   if (e.target.classList.contains('sel-none')) {
     filtersClickHandler(e);
@@ -208,8 +208,8 @@ const fetchShopItems = async (loadPreviousFilters = true) => {
     apiShopItems = filterResults(apiShopItems, loadPreviousFilters);
 
     if (apiShopItems.length !== 0) {
-      renderShopItems(apiShopItems);
       renderCartIcons(cart);
+      renderShopItems(apiShopItems);
     } else {
       renderCartIcons(cart);
       renderPageError('no items found', true);
