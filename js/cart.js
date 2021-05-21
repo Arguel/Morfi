@@ -284,7 +284,7 @@ function cartManager(e) {
       const product = itemsToBuy[e.target.closest(itemMainRowSelector).dataset.id];
 
       //We check if the input has the name "reducequantity", if it is true we reduce the quantity by 1, if it is false we are referring to the input of "increasequantity" so we have to increase the quantity by 1
-      (e.target.name == 'reducequantity') ? product.quantity-- : product.quantity++;
+      (e.target.name === 'reducequantity') ? product.quantity-- : product.quantity++;
 
       itemsToBuy[e.target.closest(itemMainRowSelector).dataset.id] = {...product};
       localStorage.setItem('cart', JSON.stringify(itemsToBuy));
@@ -295,10 +295,10 @@ function cartManager(e) {
       //this will basically search by id for an object within our collection of objects "itemsToBuy"
       const maxUnits = itemsToBuy[e.target.closest(itemMainRowSelector).dataset.id].unitsAvailable;
 
+      let actualNumber;
       e.target.addEventListener('keyup', () => {
-        let actualNumber = parseInt(e.target.value, 10);
-        if (actualNumber >= 0 && actualNumber <= maxUnits && actualNumber !== NaN && actualNumber !== null) {
-          actualNumber = actualNumber;
+        if (actualNumber >= 0 && actualNumber <= maxUnits && actualNumber !== null) {
+          actualNumber = parseInt(e.target.value, 10);
         } else if (actualNumber > maxUnits) {
           actualNumber = maxUnits;
         } else {
@@ -502,7 +502,7 @@ function footerCalculator(arrayItems) {
     nCouponDiscountPercentage = validCoupons[checkoutStatus.activeCoupon];
   }
   //r stands for results
-  const finalResults = {
+  return {
     rfinalPrice: nFinalPrice,
     rshipping: nShipping,
     rhasfreeshipping: nHasFreeShipping,
@@ -511,8 +511,7 @@ function footerCalculator(arrayItems) {
     rprice: nPrice,
     rcoupondiscount: nCouponDiscount,
     rcoupondiscountpercentage: nCouponDiscountPercentage,
-  }
-  return finalResults;
+  };
 }
 
 function resetCart() {
@@ -726,11 +725,11 @@ function renderPurchaseFinished(arrayItems) {
   localStorage.setItem('cart', JSON.stringify(itemsToBuy));
   localStorage.setItem('savedForLater', JSON.stringify(savedForLaterItems));
 
-  if (Object.values(itemsToBuy).length == 0) {
+  if (Object.values(itemsToBuy).length === 0) {
     localStorage.removeItem('cart');
   }
 
-  if (Object.values(savedForLaterItems).length == 0) {
+  if (Object.values(savedForLaterItems).length === 0) {
     localStorage.removeItem('savedForLater');
   }
 }
