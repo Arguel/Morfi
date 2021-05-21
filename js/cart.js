@@ -99,7 +99,7 @@ if (itemsToBuy === null) {
     console.log(error);
   }
 }
-if (savedForLaterItems === {}) {
+if (Object.entries(savedForLaterItems).length === 0) {
   cartMainContainer.querySelector(savedLabelSelector).textContent = '(0)';
 } else {
   try {
@@ -111,7 +111,7 @@ if (savedForLaterItems === {}) {
 
 cartMainContainer.addEventListener('click', e => {
   cartManager(e);
-})
+});
 
 function renderEmptyCart() {
   //container showing that the cart is empty
@@ -319,7 +319,7 @@ function cartManager(e) {
   if (e.target.matches(itemSpanSelector) && e.target.textContent === 'Remove') {
     delete itemsToBuy[e.target.closest(itemMainRowSelector).dataset.id];
     localStorage.setItem('cart', JSON.stringify(itemsToBuy));
-    if (Object.values(itemsToBuy).length == 0) {
+    if (Object.values(itemsToBuy).length === 0) {
       resetCart();
     } else {
       renderCartItems(itemsToBuy);
@@ -357,7 +357,7 @@ function cartManager(e) {
     });
     e.target.parentNode.classList.add('border', 'border-2', 'border-primary');
     switch (e.target.dataset.method) {
-      //updateCartContent() will call footerCalculator() and it will save the information that we are storing in ram memory, so we don't have to call the localStorage function 5 times
+      //updateCartContent() will call footerCalculator() and it will save the information that we are storing in memory, so we don't have to call the localStorage function 5 times
       case 'paypal':
         checkoutStatus.chosenPaymentMethod = 'paypal';
         updateCartContent(e);
@@ -615,8 +615,8 @@ function renderCheckout(arrayItems, paymentMethod) {
 
   const finishBuy = document.querySelector(footerButtonsSelector);
   finishBuy.addEventListener('click', (e) => {
-    renderPurchaseFinished(arrayItems);
     e.stopPropagation();
+    renderPurchaseFinished(arrayItems);
   });
 
   //this saves us the checkout in case the user reloads the page
@@ -627,7 +627,7 @@ function renderCheckout(arrayItems, paymentMethod) {
 function footerHasBeenCreated() {
   //This basically checks if the footer was created, so we don't render it again
   const cartFooter = cartMainContainer.querySelector(footerContainerSelector);
-  if (cartFooter != null) {
+  if (cartFooter !== null) {
     //If we enter the "if" it is because the footer is rendered, so we are going to eliminate it to avoid errors
     cartMainContainer.removeChild(cartMainContainer.lastElementChild);
     return true;

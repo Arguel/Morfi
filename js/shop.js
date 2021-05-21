@@ -83,6 +83,18 @@ const fullItemSelector = '.border.m-2.rounded';
 const shippingTagSelector = 'span.text-green-5 span.visually-hidden';
 //unit selector that is added inside the product title
 const itemUnitsSelector = 'span.mx-2.text-darker-4.d-none';
+//cross icon in the new generated filters
+const filterCrossIconSelector = '.sel-primary .fa-times';
+//blue button to add to the shopping cart, present in each of the products
+const productCartBtnSelector = 'button.btn.btn-primary.d-block.w-100.ff-lato-4';
+//icon that appears in the products section of the store when the items are being loaded through AJAX
+const loadingIconSelector = 'div.spinner-grow.text-secondary.my-2';
+//original price tag that appears with a line through it on some products
+const originalPriceSelector = 'span.text-decoration-line-through.me-1';
+//promotional label that appears on some products
+const promotionBadgeSelector = 'span.badge.bg-primary.me-1';
+//button that is rendered in case of having one or more active filters in a particular section
+const clearSectionFilterBtnSelector = 'div.col-md-3.text-end';
 
 //fragments-----------------------------------------------------------------------------------------
 
@@ -133,7 +145,7 @@ cleanAllFiltersBtn.addEventListener('click', e => {
   updateListing(false);
 
   //select all active filters (all those with the cross icon)
-  const previousFilters = document.querySelectorAll('.sel-primary .fa-times');
+  const previousFilters = document.querySelectorAll(filterCrossIconSelector);
   if (previousFilters) {
     for (let oldFilter of previousFilters) {
       const parent = oldFilter.closest('li');
@@ -152,7 +164,7 @@ cleanAllFiltersBtn.addEventListener('click', e => {
 });
 mainShopContainer.addEventListener('click', e => {
   e.stopPropagation();
-  if (e.target.matches('button.btn.btn-primary.d-block.w-100.ff-lato-4')) {
+  if (e.target.matches(productCartBtnSelector)) {
     addToCart(e);
     renderCartIcons(cart);
   }
@@ -184,7 +196,7 @@ const fetchShopItems = async (loadPreviousFilters = true) => {
       //The error case is not handled because below it is handled with try / catch
       .done(data => {
         //we hide the loading icon and proceed to render the store items
-        document.querySelector('div.spinner-grow.text-secondary.my-2').classList.add('d-none');
+        document.querySelector(loadingIconSelector).classList.add('d-none');
         apiShopItems = data;
       });
 
@@ -365,14 +377,14 @@ function setToCart(parentItem) {
   finalPriceSelector = parseFloat(finalPriceSelector.substr(1));
 
   //original price of the product that appears in the items in case of discount
-  const basePriceElem = parentItem.querySelector('span.text-decoration-line-through.me-1');
+  const basePriceElem = parentItem.querySelector(originalPriceSelector);
   let basePrice = false;
   let discount = false;
   if (basePriceElem !== null) {
     //If we detect that our final price exists then our discount will also exist
     basePrice = parseFloat(basePriceElem.textContent.substr(1));
     //This is when we get our discount percentage back
-    const discountElem = parentItem.querySelector('span.badge.bg-primary.me-1');
+    const discountElem = parentItem.querySelector(promotionBadgeSelector);
     //It only brings us the numbers, which is what we care about
     discount = parseInt(discountElem.textContent);
   } else {
@@ -721,7 +733,7 @@ function filtersEvents(eventTarget, filterArray, filterArrayProp, itemToRemove) 
 //this function updates the products (to handle active filters)
 function updateListing(loadPreviousFilters) {
   //we show the loading icon 
-  document.querySelector('div.spinner-grow.text-secondary.my-2').classList.remove('d-none');
+  document.querySelector(loadingIconSelector).classList.remove('d-none');
   fetchShopItems(loadPreviousFilters);
 }
 
@@ -732,7 +744,7 @@ function renderClearBtn(eventTarget, propertyToDelete) {
 
     const parentElem = eventTarget.closest('div');
     const childDivElem = eventTarget.closest('div').firstElementChild;
-    const previouslyCreated = childDivElem.querySelector('div.col-md-3.text-end');
+    const previouslyCreated = childDivElem.querySelector(clearSectionFilterBtnSelector);
 
     //check that the button has not been created previously
     if (!previouslyCreated) {
@@ -755,7 +767,7 @@ function renderClearBtn(eventTarget, propertyToDelete) {
         filters[propertyToDelete] = [];
 
         //functionality quite similar to that of the cleanAllFiltersBtn button
-        const previousFilters = parentElem.querySelectorAll('.sel-primary .fa-times');
+        const previousFilters = parentElem.querySelectorAll(filterCrossIconSelector);
         for (let oldFilter of previousFilters) {
           const parent = oldFilter.closest('li');
           parent.removeChild(parent.lastChild);
