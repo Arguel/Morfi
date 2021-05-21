@@ -1,6 +1,16 @@
 "use strict";
 //-----------------------------------------------------------
 
+
+//future class implementation
+
+//const disabledClass = document.getElementsByClassName('disabled');
+//for (const elem of disabledClass) {
+//elem.disabled = true;
+//}
+
+
+//default version of the filters (the user can modify them at will)
 const userFiltersBase = {
   sortby: "", //Featured, Low to high, High to low
   region: [], //North america, United states, Europe, Global
@@ -15,137 +25,43 @@ const userFiltersBase = {
   customSearch: "",
 }
 
-const filtersBtnsCotainer = document.getElementById('filters-btns-container');
-const arrayInactiveBtns = [...filtersBtnsCotainer.querySelectorAll('.sel-none')];
+//templates-----------------------------------------------------------------------------------------
 
+const templateShopLi = document.getElementById('template-item-li').content;
+
+//containers/arrays-----------------------------------------------------------------------------------------
+
+//where our products will be loaded (on the right side)
+const shopItems = document.getElementById('shop-items-display');
+//units icon that appears in the navigation bar
+const cartMiniIcon = document.querySelector('span.position-absolute.top-0.start-100.translate-middle.badge.rounded-pill.bg-primary.h-pointer span');
+//this container includes the product loading section and the filter categories
+const mainShopContainer = document.getElementById('main-shop-container');
+//filter category container
+const filtersBtnsContainer = document.getElementById('filters-btns-container');
+//all buttons disabled (html default class)
+const arrayInactiveBtns = [...filtersBtnsContainer.querySelectorAll('.sel-none')];
+//shopping cart containing all the items that we are adding
+let cart = JSON.parse(localStorage.getItem('cart')) || {};
+//this function clears all filters and resets everything to its original state (inputs = "", select = default value)
+const cleanAllFiltersBtn = document.getElementById('clean-all-filters');
+//this basically selects all the buttons that contain the star icons (which are difficult to select normally) and adds the same properties to them as the other filters.
 const ratingBtnsArray = document.querySelectorAll('.sel-none[data-stars]');
-for (const ratingFilterBtn of ratingBtnsArray) {
-  ratingFilterBtn.addEventListener('click', event => {
-    if (!ratingFilterBtn.classList.contains('sel-primary')) {
-      event.stopPropagation();
-      const filters = JSON.parse(localStorage.getItem('filters')) || {...userFiltersBase};
-      const starIdentifier = `${ratingFilterBtn.dataset.stars} star`
-      filtersEvents(ratingFilterBtn, filters, 'ratings', starIdentifier);
-      renderClearBtn(event.target, 'ratings');
-      if (!filters.ratings.includes(starIdentifier)) filters.ratings = [...filters.ratings, starIdentifier];
-      localStorage.setItem('filters', JSON.stringify(filters));
-      updateListing(false);
-    }
-  });
-}
-
+//select tag that controls filters of 'Featured', 'Low to high', 'High to low'
 const sortByLabel = document.getElementById('sortby');
-sortByLabel.addEventListener('change', () => {
-  const filters = JSON.parse(localStorage.getItem('filters')) || {...userFiltersBase};
-
-  filtersConfigHandler(sortByLabel.value, filters, null, false);
-  updateListing(false);
-});
-
-//const disabledClass = document.getElementsByClassName('disabled');
-//for (const elem of disabledClass) {
-//elem.disabled = true;
-//}
-
 //Custom prices
 const minPriceInput = document.getElementById('pri-from');
 const maxPriceInput = document.getElementById('pri-to');
 const priceFilterBtn = document.getElementById('price-filter');
-
 //Custom discounts
 const minDiscountInput = document.getElementById('dis-from');
 const maxDiscountInput = document.getElementById('dis-to');
 const discountFilterBtn = document.getElementById('discount-filter');
-
 //Custom search
 const searchInput = document.getElementById('s-shop');
 const searchFilterBtn = document.getElementById('si-shop');
 
-priceFilterBtn.addEventListener('click', event => {
-  priceAndDiscountFilter(event, minPriceInput, maxPriceInput, 'customPrice', 'price', 'CustomPrice: ');
-});
-discountFilterBtn.addEventListener('click', event => {
-  priceAndDiscountFilter(event, minDiscountInput, maxDiscountInput, 'customDiscount', 'discount', 'CustomDiscount: ');
-});
-searchInput.closest('form').addEventListener('submit', event => {
-  event.preventDefault();
-  searchFilter(event);
-});
-searchFilterBtn.addEventListener('click', event => {
-  searchFilter(event);
-});
-
-function searchFilter(event) {
-  event.stopPropagation();
-
-  const filters = JSON.parse(localStorage.getItem('filters')) || {...userFiltersBase};
-
-  if (searchInput.value !== "") {
-    apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.title.toLowerCase().startsWith(searchInput.value.toLowerCase()));
-    filters.customSearch = `CustomSearch: ${searchInput.value}`;
-  } else {
-    filters.customSearch = "";
-  }
-
-  localStorage.setItem('filters', JSON.stringify(filters));
-  updateListing(false);
-}
-
-function priceAndDiscountFilter(event, minContainer, maxContainer, filterProperty, productProperty, stringTemplate) {
-  event.stopPropagation();
-
-  const filters = JSON.parse(localStorage.getItem('filters')) || {...userFiltersBase};
-
-  minContainer.value = minContainer.value.replace(/[e\+\-]/gi, "");
-  maxContainer.value = maxContainer.value.replace(/[e\+\-]/gi, "");
-  if (minContainer.value !== "" && maxContainer.value !== "") {
-    apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1[productProperty] >= parseInt(minContainer.value) && obj1[productProperty] <= parseInt(maxContainer.value));
-    filters[filterProperty] = stringTemplate + minContainer.value + ' - ' + maxContainer.value;
-  } else {
-    filters[filterProperty] = "";
-  }
-
-  localStorage.setItem('filters', JSON.stringify(filters));
-  updateListing(false);
-}
-
-const cleanAllFiltersBtn = document.getElementById('clean-all-filters');
-cleanAllFiltersBtn.addEventListener('click', e => {
-  e.stopPropagation();
-  localStorage.setItem('filters', JSON.stringify({...userFiltersBase}));
-  updateListing(false);
-  //select all remove's buttons
-  const previousFilters = document.querySelectorAll('.sel-primary .fa-times');
-  if (previousFilters) {
-    for (let oldFilter of previousFilters) {
-      const parent = oldFilter.closest('li');
-      parent.removeChild(parent.lastChild);
-      parent.firstElementChild.classList.remove('sel-primary');
-      parent.firstElementChild.classList.add('sel-none');
-    }
-    minPriceInput.value = "";
-    maxPriceInput.value = "";
-    minDiscountInput.value = "";
-    maxDiscountInput.value = "";
-    sortByLabel.value = "Featured";
-  }
-});
-
-//templates
-const templateShopLi = document.getElementById('template-item-li').content;
-
-//containers
-const shopItems = document.getElementById('shop-items-display');
-const cartMiniIcon = document.querySelector('span.position-absolute.top-0.start-100.translate-middle.badge.rounded-pill.bg-primary.h-pointer span');
-const mainShopContainer = document.getElementById('main-shop-container');
-
-//fragments
-const fragment = document.createDocumentFragment();
-
-let cart = JSON.parse(localStorage.getItem('cart')) || {};
-
-
-//selectors
+//selectors-----------------------------------------------------------------------------------------
 
 //these are the images that are rendered for each product in shop.html
 const itemImageSelector = 'img';
@@ -168,11 +84,72 @@ const shippingTagSelector = 'span.text-green-5 span.visually-hidden';
 //unit selector that is added inside the product title
 const itemUnitsSelector = 'span.mx-2.text-darker-4.d-none';
 
+//fragments-----------------------------------------------------------------------------------------
 
-document.addEventListener('DOMContentLoaded', () => {
-  fetchShopItems();
+const fragment = document.createDocumentFragment();
+
+//events handlers-----------------------------------------------------------------------------------------
+
+for (const ratingFilterBtn of ratingBtnsArray) {
+  ratingFilterBtn.addEventListener('click', event => {
+    if (!ratingFilterBtn.classList.contains('sel-primary')) {
+      event.stopPropagation();
+      const filters = JSON.parse(localStorage.getItem('filters')) || {...userFiltersBase};
+      const starIdentifier = `${ratingFilterBtn.dataset.stars} star` // '1 star' for example
+
+      filtersEvents(ratingFilterBtn, filters, 'ratings', starIdentifier);
+      renderClearBtn(event.target, 'ratings');
+
+      //this checks that our filter is not in the list already
+      if (!filters.ratings.includes(starIdentifier)) filters.ratings = [...filters.ratings, starIdentifier];
+
+      localStorage.setItem('filters', JSON.stringify(filters));
+      updateListing(false);
+    }
+  });
+}
+sortByLabel.addEventListener('change', () => {
+  const filters = JSON.parse(localStorage.getItem('filters')) || {...userFiltersBase};
+
+  filtersConfigHandler(sortByLabel.value, filters, null, false);
+  updateListing(false);
 });
+priceFilterBtn.addEventListener('click', event => {
+  priceAndDiscountFilter(event, minPriceInput, maxPriceInput, 'customPrice', 'price', 'CustomPrice: ');
+});
+discountFilterBtn.addEventListener('click', event => {
+  priceAndDiscountFilter(event, minDiscountInput, maxDiscountInput, 'customDiscount', 'discount', 'CustomDiscount: ');
+});
+searchInput.closest('form').addEventListener('submit', event => {
+  event.preventDefault();
+  searchFilter(event);
+});
+searchFilterBtn.addEventListener('click', event => {
+  searchFilter(event);
+});
+cleanAllFiltersBtn.addEventListener('click', e => {
+  e.stopPropagation();
+  localStorage.setItem('filters', JSON.stringify({...userFiltersBase}));
+  updateListing(false);
 
+  //select all active filters (all those with the cross icon)
+  const previousFilters = document.querySelectorAll('.sel-primary .fa-times');
+  if (previousFilters) {
+    for (let oldFilter of previousFilters) {
+      const parent = oldFilter.closest('li');
+      parent.removeChild(parent.lastChild);
+      parent.firstElementChild.classList.remove('sel-primary');
+      parent.firstElementChild.classList.add('sel-none');
+    }
+
+    //reset our filters to their default state
+    minPriceInput.value = "";
+    maxPriceInput.value = "";
+    minDiscountInput.value = "";
+    maxDiscountInput.value = "";
+    sortByLabel.value = "Featured";
+  }
+});
 mainShopContainer.addEventListener('click', e => {
   e.stopPropagation();
   if (e.target.matches('button.btn.btn-primary.d-block.w-100.ff-lato-4')) {
@@ -183,8 +160,14 @@ mainShopContainer.addEventListener('click', e => {
     filtersClickHandler(e);
   }
 })
+//-----------------------------------------------------------------------------------------
 
+//this calls our main function once the page is done parsing
+document.addEventListener('DOMContentLoaded', () => {
+  fetchShopItems();
+});
 
+//this variable will store all the products that are loaded from the JSON
 let apiShopItems;
 const fetchShopItems = async (loadPreviousFilters = true) => {
   try {
@@ -205,6 +188,7 @@ const fetchShopItems = async (loadPreviousFilters = true) => {
         apiShopItems = data;
       });
 
+    //filter our results in case there are filters saved in localStorage
     apiShopItems = filterResults(apiShopItems, loadPreviousFilters);
 
     if (apiShopItems.length !== 0) {
@@ -220,14 +204,15 @@ const fetchShopItems = async (loadPreviousFilters = true) => {
   }
 }
 
+//this function can handle 2 types of errors, error loading the products or a general functionality error
 function renderPageError(error, emptySearch = false) {
-
   shopItems.innerHTML = '';
 
   const errorContainer = document.createElement('h4');
   errorContainer.classList.add('text-center', 'my-4', 'mx-4', 'fw-bold', 'ff-lato-4');
   errorContainer.textContent = 'Error while loading items.';
 
+  //this in case of errors with the products or filters
   if (emptySearch) {
     errorContainer.textContent = "Oops... we didn't find anything for this search :(";
     const errorDesc = document.createElement('h5');
@@ -243,7 +228,9 @@ function renderPageError(error, emptySearch = false) {
   shopItems.appendChild(fragment);
 }
 
+//this function manages the units label of the shopping cart (top right in the navigation bar)
 function renderCartIcons(arrayItems) {
+  //sum the total of all the units of the products in the cart
   const itemsInCart = Object.values(arrayItems).reduce((acc, {quantity}) => acc + quantity, 0);
   if (itemsInCart <= 9) {
     cartMiniIcon.textContent = itemsInCart;
@@ -252,6 +239,7 @@ function renderCartIcons(arrayItems) {
   }
 }
 
+//this function renders all products
 function renderShopItems(arrayItems) {
 
   shopItems.innerHTML = '';
@@ -358,8 +346,8 @@ function renderShopItems(arrayItems) {
 }
 
 function addToCart(e) {
-  setToCart(e.target.closest(fullItemSelector));
   e.stopPropagation();
+  setToCart(e.target.closest(fullItemSelector));
 }
 
 function setToCart(parentItem) {
@@ -413,6 +401,7 @@ function setToCart(parentItem) {
   localStorage.setItem('cart', JSON.stringify(cart));
 }
 
+//this function filters our results according to the filters that we have saved in localStorage
 function filterResults(objArray, loadPreviousFilters) {
 
   const filters = JSON.parse(localStorage.getItem('filters')) || {...userFiltersBase};
@@ -424,7 +413,7 @@ function filterResults(objArray, loadPreviousFilters) {
   return objArray;
 
 }
-
+//this function handles user clicks in the filters section (it only activates when an element with the class ".sel-none" is clicked)
 function filtersClickHandler(event) {
 
   const filters = JSON.parse(localStorage.getItem('filters')) || {...userFiltersBase};
@@ -434,8 +423,8 @@ function filtersClickHandler(event) {
 
 }
 
+//this function has double functionality, it manages the filters and on the other hand it manages the user clicks on the filter buttons (on the shop.html page)
 function filtersConfigHandler(item, objFilters, eventTarget, loadPreviousFilters) {
-  //This function has double functionality, it manages the filters and on the other hand it manages the user clicks on the filter buttons (on the shop.html page)
 
   //this part manages the filters/property part (NOT the shop buttons)
   if (Array.isArray(item) && item.length !== 0) {
@@ -451,29 +440,36 @@ function filtersConfigHandler(item, objFilters, eventTarget, loadPreviousFilters
 
       //---------------------Sortby
       case 'Featured':
+        //apiShopItems being our array of products
         apiShopItems = Object.values(apiShopItems).sort(obj1 => obj1.id);;
+        //objFilters being our filters stored in localStorage
         objFilters.sortby = 'Featured';
-        sortby.value = 'Featured';
+        //sortByLabel being the <select> tag that manages the formation of our items
+        sortByLabel.value = 'Featured';
         break;
 
       case 'Low to high':
         apiShopItems = Object.values(apiShopItems).sort((obj1, obj2) => obj1.price - obj2.price);
         objFilters.sortby = 'Low to high';
-        sortby.value = 'Low to high';
+        sortByLabel.value = 'Low to high';
         break;
 
       case 'High to low':
         apiShopItems = Object.values(apiShopItems).sort((obj1, obj2) => obj2.price - obj1.price);
         objFilters.sortby = 'High to low';
-        sortby.value = 'High to low';
+        sortByLabel.value = 'High to low';
         break;
 
       //---------------------Region
       case 'North America':
         apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.region.includes('North America'));
+        //this checks if the filter is not already saved
         if (!objFilters.region.includes('North America')) objFilters.region = [...objFilters.region, 'North America'];
+        //here we check if loadPreviousFilters is true, which means that we have to load the previous filters (classes and buttons) and that it is the first time the page is loaded
         if (loadPreviousFilters) eventTarget = arrayInactiveBtns.filter(btn => btn.innerText == 'North America')[0];
+        //filtersEvents() function adds classes and functionalities to remove filters
         filtersEvents(eventTarget, objFilters, 'region', 'North America');
+        //renderClearBtn() renders the clear button, which clears all the filters of that particular section (only if it is not created yet, if the button is already created this function does nothing)
         renderClearBtn(eventTarget, 'region');
         break;
 
@@ -659,8 +655,9 @@ function filtersConfigHandler(item, objFilters, eventTarget, loadPreviousFilters
 
     if (item.startsWith('CustomPrice:')) {
       renderClearBtn(minPriceInput, 'customPrice');
+      //Example string: CustomPrice: 13 - 14141 ( the array of ['13','14141'] would be stored in the variable bothPricesArray )
       const bothPricesArray = item.split('-').map(string => string.replace(/\D/g, ''));
-      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.price >= bothPricesArray[0] && obj1.price <= bothPricesArray[1]);
+      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.price >= parseInt(bothPricesArray[0]) && obj1.price <= parseInt(bothPricesArray[1]));
 
       minPriceInput.value = bothPricesArray[0];
       maxPriceInput.value = bothPricesArray[1];
@@ -669,7 +666,7 @@ function filtersConfigHandler(item, objFilters, eventTarget, loadPreviousFilters
     if (item.startsWith('CustomDiscount:')) {
       renderClearBtn(minDiscountInput, 'customDiscount');
       const bothDiscountsArray = item.split('-').map(string => string.replace(/\D/g, ''));
-      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.discount >= bothDiscountsArray[0] && obj1.discount <= bothDiscountsArray[1]);
+      apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.discount >= parseInt(bothDiscountsArray[0]) && obj1.discount <= parseInt(bothDiscountsArray[1]));
 
       minDiscountInput.value = bothDiscountsArray[0];
       maxDiscountInput.value = bothDiscountsArray[1];
@@ -699,6 +696,7 @@ function filtersEvents(eventTarget, filterArray, filterArrayProp, itemToRemove) 
     crossIcon.classList.add('fas', 'fa-times');
 
     closeBtn.appendChild(crossIcon)
+    //this section generates the icon of a cross that will eliminate the classes and remove it from the active filters
     closeBtn.addEventListener('click', e => {
       e.stopPropagation();
       filterArray = JSON.parse(localStorage.getItem('filters')) || {...userFiltersBase};
@@ -707,6 +705,7 @@ function filtersEvents(eventTarget, filterArray, filterArrayProp, itemToRemove) 
       eventTarget.classList.add('sel-none');
 
       filterArray[filterArrayProp].splice(filterArray[filterArrayProp].indexOf(itemToRemove), 1);
+      //this checks if the filter property is empty, if so, the clear button will be removed as well
       if (filterArray[filterArrayProp].length === 0 || filterArray[filterArrayProp] === "") {
         const parentElem = eventTarget.closest('div').firstElementChild;
         parentElem.removeChild(parentElem.lastChild);
@@ -719,12 +718,14 @@ function filtersEvents(eventTarget, filterArray, filterArrayProp, itemToRemove) 
   }
 }
 
+//this function updates the products (to handle active filters)
 function updateListing(loadPreviousFilters) {
   //we show the loading icon 
   document.querySelector('div.spinner-grow.text-secondary.my-2').classList.remove('d-none');
   fetchShopItems(loadPreviousFilters);
 }
 
+//this function creates a clear button next to each filter section to be able to remove several filters at the same time.
 function renderClearBtn(eventTarget, propertyToDelete) {
 
   if (eventTarget) {
@@ -733,6 +734,7 @@ function renderClearBtn(eventTarget, propertyToDelete) {
     const childDivElem = eventTarget.closest('div').firstElementChild;
     const previouslyCreated = childDivElem.querySelector('div.col-md-3.text-end');
 
+    //check that the button has not been created previously
     if (!previouslyCreated) {
 
       const clearContainer = document.createElement('div');
@@ -749,8 +751,10 @@ function renderClearBtn(eventTarget, propertyToDelete) {
         const filters = JSON.parse(localStorage.getItem('filters')) || {...userFiltersBase};
         childDivElem.removeChild(childDivElem.lastChild);
 
+        //some properties are a string but it does not matter because when generating a new filter they are overwritten and become strings again
         filters[propertyToDelete] = [];
 
+        //functionality quite similar to that of the cleanAllFiltersBtn button
         const previousFilters = parentElem.querySelectorAll('.sel-primary .fa-times');
         for (let oldFilter of previousFilters) {
           const parent = oldFilter.closest('li');
@@ -759,6 +763,7 @@ function renderClearBtn(eventTarget, propertyToDelete) {
           parent.firstElementChild.classList.add('sel-none');
         }
 
+        //this serves to clean the inputs
         switch (propertyToDelete) {
           case 'price': case 'customPrice':
             filters.customPrice = "";
@@ -784,4 +789,42 @@ function renderClearBtn(eventTarget, propertyToDelete) {
 
   }
 
+}
+
+//filter based on what the user types
+function searchFilter(event) {
+  event.stopPropagation();
+
+  const filters = JSON.parse(localStorage.getItem('filters')) || {...userFiltersBase};
+
+  if (searchInput.value !== "") {
+    apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1.title.toLowerCase().startsWith(searchInput.value.toLowerCase()));
+    filters.customSearch = `CustomSearch: ${searchInput.value}`;
+  } else {
+    filters.customSearch = "";
+  }
+
+  localStorage.setItem('filters', JSON.stringify(filters));
+  updateListing(false);
+}
+
+//this function handles the results of the inputs that appear in the discount and price filters
+function priceAndDiscountFilter(event, minContainer, maxContainer, filterProperty, productProperty, stringTemplate) {
+  event.stopPropagation();
+
+  const filters = JSON.parse(localStorage.getItem('filters')) || {...userFiltersBase};
+
+  //this deletes signs that we don't want in our string
+  minContainer.value = minContainer.value.replace(/[e\+\-]/gi, "");
+  maxContainer.value = maxContainer.value.replace(/[e\+\-]/gi, "");
+
+  if (minContainer.value !== "" && maxContainer.value !== "") {
+    apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1[productProperty] >= parseInt(minContainer.value) && obj1[productProperty] <= parseInt(maxContainer.value));
+    filters[filterProperty] = stringTemplate + minContainer.value + ' - ' + maxContainer.value;
+  } else {
+    filters[filterProperty] = "";
+  }
+
+  localStorage.setItem('filters', JSON.stringify(filters));
+  updateListing(false);
 }
