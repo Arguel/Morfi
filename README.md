@@ -81,7 +81,7 @@ I could not test that 100% of the page works well, although I did some tests, I 
 ### Images
 Digital version
 <p align="center">
-    <img src="https://i.imgur.com/ntUXogN.png" alt="digital1">
+    <img src="https://i.imgur.com/lnFv8zW.png" alt="digital1">
     <img src="https://i.imgur.com/heFQlBe.png" alt="digital2">
 </p>
 Website preview
