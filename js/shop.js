@@ -146,8 +146,14 @@ cleanAllFiltersBtn.addEventListener('click', e => {
 
   //select all active filters (all those with the cross icon)
   const previousFilters = document.querySelectorAll(filterCrossIconSelector);
+  const previousCleanBtns = document.querySelectorAll(clearSectionFilterBtnSelector);
+  if (previousCleanBtns) {
+    for (const oldCleanBtn of previousCleanBtns) {
+      oldCleanBtn.parentNode.removeChild(oldCleanBtn);
+    }
+  }
   if (previousFilters) {
-    for (let oldFilter of previousFilters) {
+    for (const oldFilter of previousFilters) {
       const parent = oldFilter.closest('li');
       parent.removeChild(parent.lastChild);
       parent.firstElementChild.classList.remove('sel-primary');
@@ -828,8 +834,8 @@ function priceAndDiscountFilter(event, minContainer, maxContainer, filterPropert
   const filters = JSON.parse(localStorage.getItem('filters')) || {...userFiltersBase};
 
   //this deletes signs that we don't want in our string
-  minContainer.value = minContainer.value.replace(/[e+\-]/gi, "");
-  maxContainer.value = maxContainer.value.replace(/[e+\-]/gi, "");
+  minContainer.value = minContainer.value.replace(/[e\+\-]/gi, "");
+  maxContainer.value = maxContainer.value.replace(/[e\+\-]/gi, "");
 
   if (minContainer.value !== "" && maxContainer.value !== "") {
     apiShopItems = Object.values(apiShopItems).filter(obj1 => obj1[productProperty] >= parseInt(minContainer.value) && obj1[productProperty] <= parseInt(maxContainer.value));
