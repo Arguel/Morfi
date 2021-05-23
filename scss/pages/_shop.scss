@@ -99,3 +99,10 @@
   border-right: 10px solid transparent;
   border-bottom: 10px solid $color-darker-5;
 }
+.animation-cart-option {
+  opacity: 0;
+  transition: opacity .15s ease-in-out;
+}
+.cart-product:hover .animation-cart-option {
+  opacity: 1;
+}
