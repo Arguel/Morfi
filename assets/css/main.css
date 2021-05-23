@@ -7085,6 +7085,13 @@ textarea.form-control-lg {
   .min-h-725px-os-si {
     min-height: 45.3125em; } }
 
+.cart-triangle {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #212121; }
+
 @media only screen and (max-width: 576px) {
   .rb-custom:after {
     display: none; } }
@@ -7384,6 +7391,9 @@ textarea.form-control-lg {
 
 .w-400px {
   width: 25em; }
+
+.w-500px {
+  width: 31.25em; }
 
 .w-7 {
   width: 7%; }
