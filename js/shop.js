@@ -60,6 +60,10 @@ const discountFilterBtn = document.getElementById('discount-filter');
 //Custom search
 const searchInput = document.getElementById('s-shop');
 const searchFilterBtn = document.getElementById('si-shop');
+//Cart submenu
+const cartCheckout = document.getElementById('cart-checkout');
+const cartTriangleIcon = document.querySelector('.position-absolute.top-100.start-50.translate-middle.mt-1.cart-triangle');
+const cartCheckoutSubmenu = document.querySelector('.position-absolute.end-0.mt-2.w-500px.ff-lato-4');
 
 //selectors-----------------------------------------------------------------------------------------
 
@@ -177,7 +181,12 @@ mainShopContainer.addEventListener('click', e => {
   if (e.target.classList.contains('sel-none')) {
     filtersClickHandler(e);
   }
-})
+});
+cartCheckout.addEventListener('click', e => {
+  e.preventDefault();
+  cartTriangleIcon.classList.remove('d-none');
+  cartCheckoutSubmenu.classList.remove('d-none');
+});
 //-----------------------------------------------------------------------------------------
 
 //this calls our main function once the page is done parsing

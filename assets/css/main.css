@@ -7099,6 +7099,12 @@ textarea.form-control-lg {
 .cart-product:hover .animation-cart-option {
   opacity: 1; }
 
+.cart-product-bg-hover {
+  background-color: #fff; }
+
+.cart-product-bg-hover:hover {
+  background-color: #DCEDC8; }
+
 @media only screen and (max-width: 576px) {
   .rb-custom:after {
     display: none; } }

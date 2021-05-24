@@ -106,3 +106,9 @@
 .cart-product:hover .animation-cart-option {
   opacity: 1;
 }
+.cart-product-bg-hover {
+  background-color: $white;
+}
+.cart-product-bg-hover:hover {
+  background-color: $color-darker-1;
+}

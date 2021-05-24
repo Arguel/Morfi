@@ -141,13 +141,13 @@
           <hr>
           <!--account-nav-->
           <ul class="navbar-nav align-items-center justify-content-evenly min-w-179px">
-            <li class="mx-1">
+            <li class="mx-1 d-none d-lg-block">
               <i class="fas fa-user-circle fa-fw fs-4 h-pointer"></i>
               <span class="text-darker-4 h-pointer">Username</span>
               <span class="visually-hidden">account</span>
             </li>
-            <li class="mx-1 position-relative">
-              <a class="text-dark" href="../cart/checkout.html">
+            <li class="mx-1 d-none d-lg-block position-relative">
+              <a class="text-dark" id="cart-checkout" href="../cart/checkout.html">
                 <i class="fas fa-shopping-cart fa-fw fs-4 h-pointer"></i>
                 <span
                   class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary h-pointer">
@@ -156,57 +156,31 @@
                 </span>
               </a>
 
-              <span class="position-absolute top-100 start-50 translate-middle mt-1 cart-triangle"></span>
+              <span class="position-absolute top-100 start-50 translate-middle mt-1 cart-triangle d-none"></span>
 
-              <div class="position-absolute end-0 mt-2 w-500px ff-lato-4">
+              <div class="position-absolute end-0 mt-2 w-500px ff-lato-4 d-none">
                 <div class="bg-white border border-1 border-darker-5">
+
                   <div class="bg-light pt-3 px-3">
                     <div class="row">
                       <div class="col-4">
                         <div class="row">
                           <div class="col-12 text-muted">Your shopping cart</div>
-                          <div class="col-12 fw-bold text-truncate">3 Products added</div>
+                          <div class="col-12 fw-bold text-truncate">Products added</div>
                         </div>
                       </div>
                       <div class="col-8 text-end">
                         <div class="row align-items-center">
                           <div class="col-4">
-                            <div class="text-truncate fw-bold">$99.99</div>
+                            <div class="text-truncate fw-bold">$</div>
                           </div>
                           <div class="col-8 text-center">
                             <a class="btn btn-primary bg-gradient text-uppercase" href="../cart/checkout.html"
-                              type="button">Go to
-                              checkout</a>
+                              type="button">Go to checkout</a>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-
-                  <div class="border-top border-darker-5 border-1 cart-product">
-                    <a class="row m-1 align-items-center text-dark child-underline" href="#">
-                      <div class="col-3 ps-0">
-                        <figure class="m-0">
-                          <img class="img-fluid h-60px w-100 obfit-cover"
-                            src="../../img/shop/shop/french-onion-dip-with-sweet-potato-chips.webp" alt="">
-                        </figure>
-                      </div>
-                      <div class="col-5">
-                        <span class="text-truncate-1">French Onion Dip With Sweet Potato Chips</span>
-                        <ul class="list-unstyled text-muted">
-                          <li class="d-inline-block">
-                            <span class="c-under pe-2">Remove</span>
-                          </li>
-                          <li class="d-inline-block">
-                            <span class="c-under pe-2 animation-cart-option">Save for later</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="col-2">
-                        <span class="badge bg-primary p-2">-20%</span>
-                      </div>
-                      <div class="col-2 pe-0 text-truncate">$33.94</div>
-                    </a>
                   </div>
 
                 </div>
@@ -1121,6 +1095,32 @@
         </div>
       </div>
     </li>
+  </template>
+  <template id="template-cart-product-submenu">
+    <div class="border-top border-darker-5 border-1 p-1 cart-product cart-product-bg-hover">
+      <a class="row align-items-center m-auto text-dark child-underline" href="#">
+        <div class="col-3 ps-0">
+          <figure class="m-0">
+            <img class="img-fluid h-60px w-100 obfit-cover" src="#" alt="#">
+          </figure>
+        </div>
+        <div class="col-5">
+          <span class="text-truncate-1">Product</span>
+          <ul class="list-unstyled text-muted">
+            <li class="d-inline-block">
+              <span class="c-under pe-2">Remove</span>
+            </li>
+            <li class="d-inline-block">
+              <span class="c-under pe-2 animation-cart-option">Save for later</span>
+            </li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <span class="badge bg-primary p-2">Disc</span>
+        </div>
+        <div class="col-2 pe-0 text-truncate">$</div>
+      </a>
+    </div>
   </template>
 
 </body>
