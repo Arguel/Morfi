@@ -28,6 +28,8 @@ const userFiltersBase = {
 //templates-----------------------------------------------------------------------------------------
 
 const templateShopLi = document.getElementById('template-item-li').content;
+const templateCartSubmenu = document.getElementById('template-cart-checkout-submenu').content;
+const templateCartSubmenuProduct = document.getElementById('template-cart-product-submenu').content;
 
 //containers/arrays-----------------------------------------------------------------------------------------
 
@@ -62,8 +64,6 @@ const searchInput = document.getElementById('s-shop');
 const searchFilterBtn = document.getElementById('si-shop');
 //Cart submenu
 const cartCheckout = document.getElementById('cart-checkout');
-const cartTriangleIcon = document.querySelector('.position-absolute.top-100.start-50.translate-middle.mt-1.cart-triangle');
-const cartCheckoutSubmenu = document.querySelector('.position-absolute.end-0.mt-2.w-500px.ff-lato-4');
 
 //selectors-----------------------------------------------------------------------------------------
 
@@ -184,8 +184,29 @@ mainShopContainer.addEventListener('click', e => {
 });
 cartCheckout.addEventListener('click', e => {
   e.preventDefault();
-  cartTriangleIcon.classList.remove('d-none');
-  cartCheckoutSubmenu.classList.remove('d-none');
+  const cartCheckoutTriangle = document.querySelector('.position-absolute.top-100.start-50.translate-middle.mt-1.cart-triangle');
+  const cartCheckoutSubmenu = document.querySelector('.position-absolute.end-0.mt-2.w-500px.ff-lato-4');
+  //const cartCheckoutRender = sessionStorage.getItem('submenu');
+  //if (!cartCheckoutRender) {
+  //renderCartSubmenu();
+  //}
+
+  if (cartCheckoutTriangle && cartCheckoutSubmenu) {
+
+    const triangleHasClass = cartCheckoutTriangle.classList.contains('d-none');
+    const submenuHasClass = cartCheckoutSubmenu.classList.contains('d-none');
+
+    if (triangleHasClass && submenuHasClass) {
+      cartCheckoutTriangle.classList.remove('d-none');
+      cartCheckoutSubmenu.classList.remove('d-none');
+    } else {
+      cartCheckoutTriangle.classList.add('d-none');
+      cartCheckoutSubmenu.classList.add('d-none');
+    }
+
+  } else {
+    renderCartSubmenu();
+  }
 });
 //-----------------------------------------------------------------------------------------
 
@@ -855,4 +876,22 @@ function priceAndDiscountFilter(event, minContainer, maxContainer, filterPropert
 
   localStorage.setItem('filters', JSON.stringify(filters));
   updateListing(false);
+}
+function renderCartSubmenu() {
+  const cart = localStorage.getItem('cart');
+  if (cart) {
+    cart = JSON.parse(cart);
+    const nQuantity = Object.values(cart).reduce((acc, {quantity}) => acc + quantity, 0);
+    templateCartSubmenu.querySelector('.col-12.fw-bold.text-truncate').textContent = `${nQuantity} Products added`;
+    const nDiscountedPrices = Object.values(cart).reduce((acc, {price, hasDiscount}) => acc + price - (price * hasDiscount / 100), 0);
+    templateCartSubmenu.querySelector('.text-truncate.fw-bold').textContent = `$${nDiscountedPrices}`;
+  }
+
+  //we clone the template because there can only be one
+  const clone = templateCartSubmenu.cloneNode(true);
+  fragment.appendChild(clone);
+
+  cartCheckout.appendChild(fragment);
+
+  sessionStorage.setItem('cartSubmenu', JSON.stringify('true'))
 }

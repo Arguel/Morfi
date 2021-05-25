@@ -155,37 +155,6 @@
                   <span class="visually-hidden">cart</span>
                 </span>
               </a>
-
-              <span class="position-absolute top-100 start-50 translate-middle mt-1 cart-triangle d-none"></span>
-
-              <div class="position-absolute end-0 mt-2 w-500px ff-lato-4 d-none">
-                <div class="bg-white border border-1 border-darker-5">
-
-                  <div class="bg-light pt-3 px-3">
-                    <div class="row">
-                      <div class="col-4">
-                        <div class="row">
-                          <div class="col-12 text-muted">Your shopping cart</div>
-                          <div class="col-12 fw-bold text-truncate">Products added</div>
-                        </div>
-                      </div>
-                      <div class="col-8 text-end">
-                        <div class="row align-items-center">
-                          <div class="col-4">
-                            <div class="text-truncate fw-bold">$</div>
-                          </div>
-                          <div class="col-8 text-center">
-                            <a class="btn btn-primary bg-gradient text-uppercase" href="../cart/checkout.html"
-                              type="button">Go to checkout</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
             </li>
           </ul>
         </div>
@@ -1096,6 +1065,34 @@
       </div>
     </li>
   </template>
+  <template id="template-cart-checkout-submenu">
+    <span class="position-absolute top-100 start-50 translate-middle mt-1 cart-triangle"></span>
+    <div class="position-absolute end-0 mt-2 w-500px ff-lato-4 cart-submenu-manager">
+      <div class="bg-white border border-1 border-darker-5">
+        <div class="bg-light pt-3 px-3">
+          <div class="row">
+            <div class="col-4">
+              <div class="row">
+                <div class="col-12 text-muted">Your shopping cart</div>
+                <div class="col-12 fw-bold text-truncate">0 Products added</div>
+              </div>
+            </div>
+            <div class="col-8 text-end">
+              <div class="row align-items-center">
+                <div class="col-4">
+                  <div class="text-truncate fw-bold">$0.00</div>
+                </div>
+                <div class="col-8 text-center">
+                  <a class="btn btn-primary bg-gradient text-uppercase" href="../cart/checkout.html" type="button">Go to
+                    checkout</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
   <template id="template-cart-product-submenu">
     <div class="border-top border-darker-5 border-1 p-1 cart-product cart-product-bg-hover">
       <a class="row align-items-center m-auto text-dark child-underline" href="#">
@@ -1122,7 +1119,6 @@
       </a>
     </div>
   </template>
-
 </body>
 
 </html>
