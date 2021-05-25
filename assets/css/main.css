@@ -7088,8 +7088,8 @@ textarea.form-control-lg {
 .cart-triangle {
   width: 0;
   height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
   border-bottom: 10px solid #212121; }
 
 .animation-cart-option {
