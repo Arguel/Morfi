@@ -7390,6 +7390,9 @@ textarea.form-control-lg {
 .max-h-300px {
   max-height: 18.75em; }
 
+.max-h-400px {
+  max-height: 25em; }
+
 .w-60px {
   width: 3.75em; }
 

@@ -880,15 +880,15 @@ function priceAndDiscountFilter(event, minContainer, maxContainer, filterPropert
 function renderCartSubmenu() {
   const cart = JSON.parse(localStorage.getItem('cart'));
 
-  const submenuParent = templateCartSubmenu.querySelector('.bg-white.border.border-1.border-darker-5');
+  //const submenuParent = templateCartSubmenu.querySelector('.bg-white.border.border-1.border-darker-5');
+  const productsContainer = templateCartSubmenu.getElementById('cart-checkout-products');
   if (cart) {
     const products = Object.values(cart);
 
     //products added label
-    const nQuantity = Object.values(products).reduce((acc, {quantity}) => acc + quantity, 0);
-    templateCartSubmenu.querySelector('.col-12.fw-bold.text-truncate').textContent = `${nQuantity} Products added`;
+    templateCartSubmenu.querySelector('.col-12.fw-bold.text-truncate').textContent = `${products.length} Products added`;
     //total prices
-    const nDiscountedPrices = Object.values(products).reduce((acc, {price, hasDiscount}) => acc + price - (price * hasDiscount / 100), 0);
+    const nDiscountedPrices = Object.values(products).reduce((acc, {price, hasDiscount, quantity}) => acc + (price - (price * hasDiscount / 100)) * quantity, 0);
     templateCartSubmenu.querySelector('div.row.align-items-center div.text-truncate.fw-bold').textContent = `$${nDiscountedPrices.toFixed(2)}`;
 
     //.........................
@@ -912,18 +912,18 @@ function renderCartSubmenu() {
         pDiscount.textContent = '';
       }
       //price
-      console.log(product.price);
-      templateCartSubmenuProduct.querySelector('div.col-2.pe-0.text-truncate.fw-bold').textContent = `$${product.finalPrice}`;
+      templateCartSubmenuProduct.querySelector('div.col-2.pe-0.text-truncate.fw-bold').textContent = `$${product.finalPrice * product.quantity}`;
 
       //buttons 
-      //templateCartSubmenuProduct.querySelectorAll('c-under pe-2')[0].setAttribute('data-pId', product.id);
-      //templateCartSubmenuProduct.querySelectorAll('c-under pe-2')[1].setAttribute('data-pId', product.id);
+      //templateCartSubmenuProduct.querySelectorAll('.c-under.pe-2')[0].setAttribute('data-pId', product.id);
+      //templateCartSubmenuProduct.querySelectorAll('.c-under.pe-2')[1].setAttribute('data-pId', product.id);
 
       const clone = templateCartSubmenuProduct.cloneNode(true);
       fragment.appendChild(clone);
     });
 
-    submenuParent.appendChild(fragment);
+    productsContainer.appendChild(fragment);
+    //submenuParent.appendChild(productsContainer);
   } else {
     const emptyProductDiv = document.createElement('div');
     emptyProductDiv.classList.add('border-top', 'border-darker-5', 'border-1', 'p-1');
@@ -932,7 +932,7 @@ function renderCartSubmenu() {
     emptyTextdiv.textContent = 'The shopping cart is empty';
 
     emptyProductDiv.appendChild(emptyTextdiv);
-    submenuParent.appendChild(emptyProductDiv);
+    productsContainer.appendChild(emptyProductDiv);
   }
 
   //we clone the template because there can only be one
