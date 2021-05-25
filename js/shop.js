@@ -916,8 +916,8 @@ function renderCartSubmenu() {
       templateCartSubmenuProduct.querySelector('div.col-2.pe-0.text-truncate.fw-bold').textContent = `$${product.finalPrice}`;
 
       //buttons 
-      templateCartSubmenuProduct.querySelectorAll('c-under pe-2')[0].setAttribute('data-pId', product.id);
-      templateCartSubmenuProduct.querySelectorAll('c-under pe-2')[1].setAttribute('data-pId', product.id);
+      //templateCartSubmenuProduct.querySelectorAll('c-under pe-2')[0].setAttribute('data-pId', product.id);
+      //templateCartSubmenuProduct.querySelectorAll('c-under pe-2')[1].setAttribute('data-pId', product.id);
 
       const clone = templateCartSubmenuProduct.cloneNode(true);
       fragment.appendChild(clone);
