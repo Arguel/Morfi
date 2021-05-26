@@ -212,16 +212,16 @@ cartCheckout.addEventListener('click', e => {
 
   if (presentItemsArray[0] && presentItemsArray[1]) {
 
-    const triangleHasClass = presentItemsArray[0].classList.contains('d-none');
-    const submenuHasClass = presentItemsArray[1].classList.contains('d-none');
+    const triangleHasClass = presentItemsArray[0].classList.contains('d-none-anim');
+    const submenuHasClass = presentItemsArray[1].classList.contains('d-none-anim');
 
     if (triangleHasClass && submenuHasClass) {
-      presentItemsArray[0].classList.remove('d-none');
-      presentItemsArray[1].classList.remove('d-none');
+      presentItemsArray[0].classList.remove('d-none-anim');
+      presentItemsArray[1].classList.remove('d-none-anim');
       submenuSessionData.active = true;
     } else {
-      presentItemsArray[0].classList.add('d-none');
-      presentItemsArray[1].classList.add('d-none');
+      presentItemsArray[0].classList.add('d-none-anim');
+      presentItemsArray[1].classList.add('d-none-anim');
       submenuSessionData.active = false;
     }
 
@@ -1012,12 +1012,12 @@ function renderCartSubmenu(visible = true) {
   //this part manages the visibility of our changes in the DOM
   presentItemsArray = submenuChecker(templateCartSubmenu);
   if (!visible) {
-    presentItemsArray[0].classList.add('d-none');
-    presentItemsArray[1].classList.add('d-none');
+    presentItemsArray[0].classList.add('d-none-anim');
+    presentItemsArray[1].classList.add('d-none-anim');
     submenuSessionData.active = false;
   } else {
-    presentItemsArray[0].classList.remove('d-none');
-    presentItemsArray[1].classList.remove('d-none');
+    presentItemsArray[0].classList.remove('d-none-anim');
+    presentItemsArray[1].classList.remove('d-none-anim');
     submenuSessionData.active = true;
   }
   //we clone the template because there can only be one

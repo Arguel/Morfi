@@ -112,6 +112,15 @@
 .cart-product-bg-hover:hover {
   background-color: $color-darker-1;
 }
+.animation-cart-submenu {
+  visibility: visible;
+  opacity: 1;
+  transition: all .30s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+.animation-cart-submenu.d-none-anim {
+  visibility: hidden;
+  opacity: 0;
+}
 //.cart-submenu-manager {
   //display: block;
 //}

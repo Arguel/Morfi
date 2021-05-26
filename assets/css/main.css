@@ -7105,6 +7105,15 @@ textarea.form-control-lg {
 .cart-product-bg-hover:hover {
   background-color: #DCEDC8; }
 
+.animation-cart-submenu {
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1); }
+
+.animation-cart-submenu.d-none-anim {
+  visibility: hidden;
+  opacity: 0; }
+
 @media only screen and (max-width: 576px) {
   .rb-custom:after {
     display: none; } }
