@@ -39,6 +39,8 @@ const templateCartSubmenuProduct = document.getElementById('template-cart-produc
 
 //containers/arrays-----------------------------------------------------------------------------------------
 
+//shopping cart containing all the items that we are adding
+let cart = JSON.parse(localStorage.getItem('cart')) || {};
 //where our products will be loaded (on the right side)
 const shopItems = document.getElementById('shop-items-display');
 //units icon that appears in the navigation bar
@@ -49,8 +51,6 @@ const mainShopContainer = document.getElementById('main-shop-container');
 const filtersBtnsContainer = document.getElementById('filters-btns-container');
 //all buttons disabled (html default class)
 const arrayInactiveBtns = [...filtersBtnsContainer.querySelectorAll('.sel-none')];
-//shopping cart containing all the items that we are adding
-let cart = JSON.parse(localStorage.getItem('cart')) || {};
 //this function clears all filters and resets everything to its original state (inputs = "", select = default value)
 const cleanAllFiltersBtn = document.getElementById('clean-all-filters');
 //this basically selects all the buttons that contain the star icons (which are difficult to select normally) and adds the same properties to them as the other filters.
@@ -105,6 +105,20 @@ const originalPriceSelector = 'span.text-decoration-line-through.me-1';
 const promotionBadgeSelector = 'span.badge.bg-primary.me-1';
 //button that is rendered in case of having one or more active filters in a particular section
 const clearSectionFilterBtnSelector = 'div.col-md-3.text-end';
+//submenu handlers
+const submenuTriangleSelector = '.position-absolute.top-100.start-50.translate-middle.mt-1.cart-triangle';
+const submenuDataContainerSelector = '.position-absolute.end-0.mt-2.w-500px.ff-lato-4';
+//handlers of a particular product from the submenu
+const submenuMainProductSelector = 'a.row.align-items-center.m-auto';
+const submenuProductPriceSelector = 'div.col-2.pe-0.text-truncate.fw-bold';
+const submenuSaveForLaterSelector = '.c-under.pe-2.animation-cart-option';
+const submenuRemoveSelector = '.c-under.pe-2';
+const submenuImageSelector = 'img.img-fluid.h-60px.w-100.obfit-cover';
+const submenuTitleSelector = 'div.col-5 span.text-truncate-1.fw-bold';
+const submenuDiscountSelector = 'div.col-2 span.badge.bg-primary.p-2';
+//submenu data container handlers
+const submenuTotalProductsSelector = '.col-12.fw-bold.text-truncate';
+const submenuTotalPriceSelector = 'div.row.align-items-center div.text-truncate.fw-bold';
 
 //fragments-----------------------------------------------------------------------------------------
 
@@ -219,10 +233,10 @@ cartCheckout.addEventListener('click', e => {
 });
 cartCheckout.parentNode.addEventListener('click', e => {
   e.stopPropagation();
-  if (e.target.matches('.c-under.pe-2') && e.target.textContent === 'Remove') {
+  if (e.target.matches(submenuRemoveSelector) && e.target.textContent === 'Remove') {
     e.preventDefault();
-    const productId = e.target.closest('a.row.align-items-center.m-auto').dataset.productid;
-    const cart = JSON.parse(localStorage.getItem('cart'));
+    const productId = e.target.closest(submenuMainProductSelector).dataset.productid;
+    cart = JSON.parse(localStorage.getItem('cart'));
     if (cart[productId]) {
       delete cart[productId];
       localStorage.setItem('cart', JSON.stringify(cart));
@@ -230,20 +244,21 @@ cartCheckout.parentNode.addEventListener('click', e => {
         localStorage.removeItem('cart');
         renderCartSubmenu();
         const parent = cartCheckout.parentNode;
-        parent.querySelector('.col-12.fw-bold.text-truncate').textContent = '0 Products added';
-        parent.querySelector('div.row.align-items-center div.text-truncate.fw-bold').textContent = '$0.00';
+        parent.querySelector(submenuTotalProductsSelector).textContent = '0 Products added';
+        parent.querySelector(submenuTotalPriceSelector).textContent = '$0.00';
+        cartMiniIcon.textContent = '0';
       } else {
         renderCartSubmenu();
+        renderCartIcons(cart);
       }
-      renderCartIcons(cart);
     }
   }
 
-  if (e.target.matches('.c-under.pe-2.animation-cart-option') && e.target.textContent === 'Save for later') {
+  if (e.target.matches(submenuSaveForLaterSelector) && e.target.textContent === 'Save for later') {
     e.preventDefault();
-    const productId = e.target.closest('a.row.align-items-center.m-auto').dataset.productid;
-    const cart = JSON.parse(localStorage.getItem('cart'));
-    const savedForLater = JSON.parse(localStorage.getItem('savedForLater'));
+    const productId = e.target.closest(submenuMainProductSelector).dataset.productid;
+    cart = JSON.parse(localStorage.getItem('cart'));
+    const savedForLater = JSON.parse(localStorage.getItem('savedForLater')) || {};
     if (cart[productId]) {
       const productToSave = cart[productId];
       savedForLater[productId] = {...productToSave};
@@ -289,6 +304,9 @@ const fetchShopItems = async (loadPreviousFilters = true) => {
       renderCartIcons(cart);
       renderPageError('no items found', true);
     }
+
+    const submenuSessionData = JSON.parse(sessionStorage.getItem('cartSubmenu')) || submenuSession;
+    if (submenuSessionData.active) renderCartSubmenu();
 
   } catch (error) {
     renderPageError(error);
@@ -921,7 +939,7 @@ function priceAndDiscountFilter(event, minContainer, maxContainer, filterPropert
   updateListing(false);
 }
 function renderCartSubmenu(visible = true) {
-  const cart = JSON.parse(localStorage.getItem('cart'));
+  cart = JSON.parse(localStorage.getItem('cart'));
   const submenuSessionData = JSON.parse(sessionStorage.getItem('cartSubmenu')) || submenuSession;
 
   const productsContainer = templateCartSubmenu.getElementById('cart-checkout-products');
@@ -938,39 +956,35 @@ function renderCartSubmenu(visible = true) {
     const products = Object.values(cart);
 
     //products added label
-    templateCartSubmenu.querySelector('.col-12.fw-bold.text-truncate').textContent = `${products.length} Products added`;
+    templateCartSubmenu.querySelector(submenuTotalProductsSelector).textContent = `${products.length} Products added`;
     //total prices
     const nDiscountedPrices = Object.values(products).reduce((acc, {price, hasDiscount, quantity}) => acc + (price - (price * hasDiscount / 100)) * quantity, 0);
-    templateCartSubmenu.querySelector('div.row.align-items-center div.text-truncate.fw-bold').textContent = `$${nDiscountedPrices.toFixed(2)}`;
+    templateCartSubmenu.querySelector(submenuTotalPriceSelector).textContent = `$${nDiscountedPrices.toFixed(2)}`;
 
     //.........................
 
     products.forEach(product => {
       //id to identify the product
-      templateCartSubmenuProduct.querySelector('a.row.align-items-center.m-auto').setAttribute('data-productid', product.id);
+      templateCartSubmenuProduct.querySelector(submenuMainProductSelector).setAttribute('data-productid', product.id);
       //anchor/href
       //const pLink = templateCartSubmenuProduct.querySelector('a.row.align-items-center.m-auto.text-dark.child-underline');
       //productLink.setAttribute('href', product)
       //image
-      const pImage = templateCartSubmenuProduct.querySelector('img.img-fluid.h-60px.w-100.obfit-cover');
+      const pImage = templateCartSubmenuProduct.querySelector(submenuImageSelector);
       const pImageAlt = product.title.toLowerCase().replaceAll(" ", "-");
       pImage.setAttribute('src', product.thumnailUrl);
       pImage.setAttribute('alt', pImageAlt);
       //title
-      templateCartSubmenuProduct.querySelector('div.col-5 span.text-truncate-1.fw-bold').textContent = product.title;
+      templateCartSubmenuProduct.querySelector(submenuTitleSelector).textContent = product.title;
       //discounts
-      const pDiscount = templateCartSubmenuProduct.querySelector('div.col-2 span.badge.bg-primary.p-2');
+      const pDiscount = templateCartSubmenuProduct.querySelector(submenuDiscountSelector);
       if (product.hasDiscount) {
         pDiscount.textContent = `-${product.hasDiscount}%`;
       } else {
         pDiscount.textContent = '';
       }
       //price
-      templateCartSubmenuProduct.querySelector('div.col-2.pe-0.text-truncate.fw-bold').textContent = `$${product.finalPrice * product.quantity}`;
-
-      //buttons 
-      //templateCartSubmenuProduct.querySelectorAll('.c-under.pe-2')[0].setAttribute('data-pId', product.id);
-      //templateCartSubmenuProduct.querySelectorAll('.c-under.pe-2')[1].setAttribute('data-pId', product.id);
+      templateCartSubmenuProduct.querySelector(submenuProductPriceSelector).textContent = `$${product.finalPrice * product.quantity}`;
 
       const clone = templateCartSubmenuProduct.cloneNode(true);
       fragment.appendChild(clone);
@@ -1017,8 +1031,8 @@ function updateSubmenuContent() {
   }
 }
 function submenuChecker(documentOrTemplate = document) {
-  const cartCheckoutTriangle = documentOrTemplate.querySelector('.position-absolute.top-100.start-50.translate-middle.mt-1.cart-triangle');
-  const cartCheckoutSubmenu = documentOrTemplate.querySelector('.position-absolute.end-0.mt-2.w-500px.ff-lato-4');
+  const cartCheckoutTriangle = documentOrTemplate.querySelector(submenuTriangleSelector);
+  const cartCheckoutSubmenu = documentOrTemplate.querySelector(submenuDataContainerSelector);
 
   return [cartCheckoutTriangle, cartCheckoutSubmenu];
 }
