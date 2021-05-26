@@ -25,6 +25,12 @@ const userFiltersBase = {
   customSearch: "",
 }
 
+//manager of the shopping cart mini submenu (saved in sessionStorage)
+const submenuSession = {
+  rendered: false,
+  active: false
+}
+
 //templates-----------------------------------------------------------------------------------------
 
 const templateShopLi = document.getElementById('template-item-li').content;
@@ -176,8 +182,7 @@ mainShopContainer.addEventListener('click', e => {
   e.stopPropagation();
   if (e.target.matches(productCartBtnSelector)) {
     addToCart(e);
-    updateSubmenuContent(e);
-    renderCartSubmenu();
+    updateSubmenuContent();
     renderCartIcons(cart);
   }
   if (e.target.classList.contains('sel-none')) {
@@ -189,6 +194,8 @@ cartCheckout.addEventListener('click', e => {
 
   const presentItemsArray = submenuChecker();
 
+  const submenuSessionData = JSON.parse(sessionStorage.getItem('cartSubmenu')) || submenuSession;
+
   if (presentItemsArray[0] && presentItemsArray[1]) {
 
     const triangleHasClass = presentItemsArray[0].classList.contains('d-none');
@@ -197,10 +204,14 @@ cartCheckout.addEventListener('click', e => {
     if (triangleHasClass && submenuHasClass) {
       presentItemsArray[0].classList.remove('d-none');
       presentItemsArray[1].classList.remove('d-none');
+      submenuSessionData.active = true;
     } else {
       presentItemsArray[0].classList.add('d-none');
       presentItemsArray[1].classList.add('d-none');
+      submenuSessionData.active = false;
     }
+
+    sessionStorage.setItem('cartSubmenu', JSON.stringify(submenuSessionData));
 
   } else {
     renderCartSubmenu();
@@ -875,11 +886,20 @@ function priceAndDiscountFilter(event, minContainer, maxContainer, filterPropert
   localStorage.setItem('filters', JSON.stringify(filters));
   updateListing(false);
 }
-function renderCartSubmenu() {
+function renderCartSubmenu(visible = true) {
   const cart = JSON.parse(localStorage.getItem('cart'));
+  const submenuSessionData = JSON.parse(sessionStorage.getItem('cartSubmenu')) || submenuSession;
 
   const productsContainer = templateCartSubmenu.getElementById('cart-checkout-products');
   productsContainer.innerHTML = '';
+  let presentItemsArray = submenuChecker();
+  //if they are created
+  if (presentItemsArray[0] && presentItemsArray[1]) {
+    const parent = presentItemsArray[0].parentNode;
+    parent.removeChild(presentItemsArray[0]);
+    parent.removeChild(presentItemsArray[1]);
+  }
+
   if (cart) {
     const products = Object.values(cart);
 
@@ -934,36 +954,37 @@ function renderCartSubmenu() {
     productsContainer.appendChild(emptyProductDiv);
   }
 
+  //if visible is equal to "False"
+  presentItemsArray = submenuChecker(templateCartSubmenu);
+  if (!visible) {
+    presentItemsArray[0].classList.add('d-none');
+    presentItemsArray[1].classList.add('d-none');
+    submenuSessionData.active = false;
+  } else {
+    presentItemsArray[0].classList.remove('d-none');
+    presentItemsArray[1].classList.remove('d-none');
+    submenuSessionData.active = true;
+  }
   //we clone the template because there can only be one
   const clone = templateCartSubmenu.cloneNode(true);
   fragment.appendChild(clone);
 
   cartCheckout.parentNode.appendChild(fragment);
 
-  sessionStorage.setItem('cartSubmenu', JSON.stringify('true'))
+  submenuSessionData.rendered = true;
+  sessionStorage.setItem('cartSubmenu', JSON.stringify(submenuSessionData));
 }
-function updateSubmenuContent(event) {
-  const productId = event.target.dataset.id;
-  const submenuProduct = document.querySelector(`[data-productId="${productId}"]`)
-  if (submenuProduct) {
-    const submenu = document.querySelector('div.position-absolute.end-0.mt-2.w-500px.ff-lato-4.cart-submenu-manager');
-    //const productsContainer = document.getElementById('cart-checkout-products');
-    const cart = JSON.parse(localStorage.getItem('cart'));
-    const products = Object.values(cart);
-
-    const cartProduct = cart[productId];
-    submenuProduct.querySelector('div.col-2.pe-0.text-truncate.fw-bold').textContent = `$${cartProduct.finalPrice * cartProduct.quantity}`;
-
-    //products added label
-    submenu.querySelector('.col-12.fw-bold.text-truncate').textContent = `${products.length} Products added`;
-    //total prices
-    const nDiscountedPrices = Object.values(products).reduce((acc, {price, hasDiscount, quantity}) => acc + (price - (price * hasDiscount / 100)) * quantity, 0);
-    submenu.querySelector('div.row.align-items-center div.text-truncate.fw-bold').textContent = `$${nDiscountedPrices.toFixed(2)}`;
+function updateSubmenuContent() {
+  const submenuSessionData = JSON.parse(sessionStorage.getItem('cartSubmenu')) || submenuSession;
+  if (submenuSessionData.active) {
+    renderCartSubmenu();
+  } else {
+    renderCartSubmenu(false);
   }
 }
-function submenuChecker() {
-  const cartCheckoutTriangle = document.querySelector('.position-absolute.top-100.start-50.translate-middle.mt-1.cart-triangle');
-  const cartCheckoutSubmenu = document.querySelector('.position-absolute.end-0.mt-2.w-500px.ff-lato-4');
+function submenuChecker(documentOrTemplate = document) {
+  const cartCheckoutTriangle = documentOrTemplate.querySelector('.position-absolute.top-100.start-50.translate-middle.mt-1.cart-triangle');
+  const cartCheckoutSubmenu = documentOrTemplate.querySelector('.position-absolute.end-0.mt-2.w-500px.ff-lato-4');
 
   return [cartCheckoutTriangle, cartCheckoutSubmenu];
 }
