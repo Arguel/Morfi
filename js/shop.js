@@ -233,14 +233,18 @@ cartCheckout.addEventListener('click', e => {
 });
 cartCheckout.parentNode.addEventListener('click', e => {
   e.stopPropagation();
+  //this manages clicks on the submenu products (on the "remove" and "save for later" tags)
+
   if (e.target.matches(submenuRemoveSelector) && e.target.textContent === 'Remove') {
     e.preventDefault();
     const productId = e.target.closest(submenuMainProductSelector).dataset.productid;
     cart = JSON.parse(localStorage.getItem('cart'));
+    //if our cart contains the property (this is in case the user deletes the shopping cart while on another page)
     if (cart[productId]) {
       delete cart[productId];
       localStorage.setItem('cart', JSON.stringify(cart));
       if (Object.values(cart).length === 0) {
+        //if our cart is empty we will return the values to default
         localStorage.removeItem('cart');
         renderCartSubmenu();
         const parent = cartCheckout.parentNode;
@@ -259,6 +263,7 @@ cartCheckout.parentNode.addEventListener('click', e => {
     const productId = e.target.closest(submenuMainProductSelector).dataset.productid;
     cart = JSON.parse(localStorage.getItem('cart'));
     const savedForLater = JSON.parse(localStorage.getItem('savedForLater')) || {};
+    //if our cart contains the property (this is in case the user deletes the shopping cart while on another page)
     if (cart[productId]) {
       const productToSave = cart[productId];
       savedForLater[productId] = {...productToSave};
@@ -945,7 +950,7 @@ function renderCartSubmenu(visible = true) {
   const productsContainer = templateCartSubmenu.getElementById('cart-checkout-products');
   productsContainer.innerHTML = '';
   let presentItemsArray = submenuChecker();
-  //if they are created
+  //this basically serves to delete old values and load new ones (something like returning the values to default)
   if (presentItemsArray[0] && presentItemsArray[1]) {
     const parent = presentItemsArray[0].parentNode;
     parent.removeChild(presentItemsArray[0]);
@@ -992,6 +997,8 @@ function renderCartSubmenu(visible = true) {
 
     productsContainer.appendChild(fragment);
   } else {
+    //this simply adds a tag in case there are no products to list
+
     const emptyProductDiv = document.createElement('div');
     emptyProductDiv.classList.add('border-top', 'border-darker-5', 'border-1', 'p-1');
     const emptyTextdiv = document.createElement('div');
@@ -1002,7 +1009,7 @@ function renderCartSubmenu(visible = true) {
     productsContainer.appendChild(emptyProductDiv);
   }
 
-  //if visible is equal to "False"
+  //this part manages the visibility of our changes in the DOM
   presentItemsArray = submenuChecker(templateCartSubmenu);
   if (!visible) {
     presentItemsArray[0].classList.add('d-none');
@@ -1023,16 +1030,20 @@ function renderCartSubmenu(visible = true) {
   sessionStorage.setItem('cartSubmenu', JSON.stringify(submenuSessionData));
 }
 function updateSubmenuContent() {
+  //this function manages the clicks and adds the items in the background if the cart is not visible
   const submenuSessionData = JSON.parse(sessionStorage.getItem('cartSubmenu')) || submenuSession;
   if (submenuSessionData.active) {
+    //in case the cart is active (visible)
     renderCartSubmenu();
   } else {
+    //in case the cart is not active (not visible)
     renderCartSubmenu(false);
   }
 }
 function submenuChecker(documentOrTemplate = document) {
+  //this check if our cart is rendered or not, and returns the values (it can be a null value if the cart is not rendered, and the element in the DOM if it is rendered)
   const cartCheckoutTriangle = documentOrTemplate.querySelector(submenuTriangleSelector);
   const cartCheckoutSubmenu = documentOrTemplate.querySelector(submenuDataContainerSelector);
-
+  //this returns a array
   return [cartCheckoutTriangle, cartCheckoutSubmenu];
 }
