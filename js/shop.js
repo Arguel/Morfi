@@ -217,6 +217,40 @@ cartCheckout.addEventListener('click', e => {
     renderCartSubmenu();
   }
 });
+cartCheckout.parentNode.addEventListener('click', e => {
+  e.stopPropagation();
+  if (e.target.matches('.c-under.pe-2') && e.target.textContent === 'Remove') {
+    e.preventDefault();
+    const productId = e.target.closest('a.row.align-items-center.m-auto').dataset.productid;
+    const cart = JSON.parse(localStorage.getItem('cart'));
+    if (cart[productId]) {
+      delete cart[productId];
+      localStorage.setItem('cart', JSON.stringify(cart));
+      if (Object.values(cart).length === 0) {
+        localStorage.removeItem('cart');
+        renderCartSubmenu();
+        const parent = cartCheckout.parentNode;
+        parent.querySelector('.col-12.fw-bold.text-truncate').textContent = '0 Products added';
+        parent.querySelector('div.row.align-items-center div.text-truncate.fw-bold').textContent = '$0.00';
+      } else {
+        renderCartSubmenu();
+      }
+      renderCartIcons(cart);
+    }
+  }
+
+  if (e.target.matches('.c-under.pe-2.animation-cart-option') && e.target.textContent === 'Save for later') {
+    e.preventDefault();
+    const productId = e.target.closest('a.row.align-items-center.m-auto').dataset.productid;
+    const cart = JSON.parse(localStorage.getItem('cart'));
+    const savedForLater = JSON.parse(localStorage.getItem('savedForLater'));
+    if (cart[productId]) {
+      const productToSave = cart[productId];
+      savedForLater[productId] = {...productToSave};
+      localStorage.setItem('savedForLater', JSON.stringify(savedForLater));
+    }
+  }
+});
 //-----------------------------------------------------------------------------------------
 
 //this calls our main function once the page is done parsing
@@ -913,7 +947,7 @@ function renderCartSubmenu(visible = true) {
 
     products.forEach(product => {
       //id to identify the product
-      templateCartSubmenuProduct.querySelector('a.row.align-items-center.m-auto').setAttribute('data-productId', product.id);
+      templateCartSubmenuProduct.querySelector('a.row.align-items-center.m-auto').setAttribute('data-productid', product.id);
       //anchor/href
       //const pLink = templateCartSubmenuProduct.querySelector('a.row.align-items-center.m-auto.text-dark.child-underline');
       //productLink.setAttribute('href', product)
