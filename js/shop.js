@@ -238,7 +238,7 @@ cartCheckout.parentNode.addEventListener('click', e => {
   if (e.target.matches(submenuRemoveSelector) && e.target.textContent === 'Remove') {
     e.preventDefault();
     const productId = e.target.closest(submenuMainProductSelector).dataset.productid;
-    cart = JSON.parse(localStorage.getItem('cart'));
+    cart = JSON.parse(localStorage.getItem('cart')) || {};
     //if our cart contains the property (this is in case the user deletes the shopping cart while on another page)
     if (cart[productId]) {
       delete cart[productId];
@@ -261,7 +261,7 @@ cartCheckout.parentNode.addEventListener('click', e => {
   if (e.target.matches(submenuSaveForLaterSelector) && e.target.textContent === 'Save for later') {
     e.preventDefault();
     const productId = e.target.closest(submenuMainProductSelector).dataset.productid;
-    cart = JSON.parse(localStorage.getItem('cart'));
+    cart = JSON.parse(localStorage.getItem('cart')) || {};
     const savedForLater = JSON.parse(localStorage.getItem('savedForLater')) || {};
     //if our cart contains the property (this is in case the user deletes the shopping cart while on another page)
     if (cart[productId]) {
