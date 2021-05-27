@@ -49,43 +49,31 @@
 <body>
   <section class="container-xxl">
 
-    <div class="text-center mb-5 mt-3">
-      <h1 class="fw-bold"><a href="/">TheMorfi</a> Credits Section</h1>
+    <div class="text-center mb-5 p-2 bg-green-5 bg-gradient rounded-bottom text-white">
+      <h1 class="fw-bold"><a class="text-white text-decoration-underline" href="/">TheMorfi</a> Credits Section</h1>
       <h3>Images in their original quality (the page is likely to load slowly)</h3>
-    </div>
-    <div class="row">
-      <div class="col-12 col-md-4 text-center">
-        <!--<h5>Music to see the credits</h5>-->
-        <!--<figure class="figure">-->
-        <!--<img class="img-fluid h-400px w-400px"-->
-        <!--src="https://i.pinimg.com/originals/de/81/7b/de817b3df05b9fcb2f8cc6602d16d408.jpg" alt="meme">-->
-        <!--</figure>-->
-      </div>
-      <div class="col-12 col-md-8">
-        <div class="ratio ratio-16x9">
-          <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/lcOxhH8N3Bo" title="YouTube video player"-->
-          <!--frameborder="0"-->
-          <!--allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"-->
-          <!--allowfullscreen></iframe>-->
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-4">
-        <figure>
-          <img class="img-fluid" src="" alt="">
-          <figcaption>
-            <!--<div>@Author: Unknown</div>-->
-            <!--<div>@Hosted on: test</div>-->
-          </figcaption>
-        </figure>
-      </div>
-      <div class="col-4"></div>
-      <div class="col-4"></div>
     </div>
 
   </section>
-
+  <template id="items">
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-4">
+        <figure class="text-center">
+          <img class="img-fluid h-400px w-400px obfit-contain rounded border shadow" src="" alt="">
+          <figcaption class="ff-lato-4 text-center py-3 my-1 border rounded shadow">
+            <div>
+              <span class="fs-5 fw-bold">@Author:</span>
+              <span class="fs-5">Unknown</span>
+            </div>
+            <div>
+              <span class="fs-5 fw-bold">@Hosted on:</span>
+              <span class="fs-5">Unknown</span>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </template>
   <!--AOS-->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <!--bootstrap js-->
