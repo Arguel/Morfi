@@ -246,10 +246,9 @@ cartCheckout.parentNode.addEventListener('click', e => {
       if (Object.values(cart).length === 0) {
         //if our cart is empty we will return the values to default
         localStorage.removeItem('cart');
+        templateCartSubmenu.querySelector(submenuTotalProductsSelector).textContent = '0 Products added';
+        templateCartSubmenu.querySelector(submenuTotalPriceSelector).textContent = '$0.00';
         renderCartSubmenu();
-        const parent = cartCheckout.parentNode;
-        parent.querySelector(submenuTotalProductsSelector).textContent = '0 Products added';
-        parent.querySelector(submenuTotalPriceSelector).textContent = '$0.00';
         cartMiniIcon.textContent = '0';
       } else {
         renderCartSubmenu();
