@@ -344,12 +344,12 @@ function renderPageError(error, emptySearch = false) {
 
 //this function manages the units label of the shopping cart (top right in the navigation bar)
 function renderCartIcons(arrayItems) {
-  //sum the total of all the units of the products in the cart
-  const itemsInCart = Object.values(arrayItems).reduce((acc, {quantity}) => acc + quantity, 0);
-  if (itemsInCart <= 9) {
-    cartMiniIcon.textContent = itemsInCart;
+  if (!arrayItems) {
+    cartMiniIcon.textContent = '0';
   } else {
-    cartMiniIcon.textContent = '+9';
+    //sum the total of all the units of the products in the cart
+    const itemsInCart = Object.values(arrayItems).reduce((acc, {quantity}) => acc + quantity, 0);
+    (itemsInCart <= 9) ? cartMiniIcon.textContent = itemsInCart : cartMiniIcon.textContent = '+9';
   }
 }
 
