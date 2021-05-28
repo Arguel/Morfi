@@ -43,6 +43,21 @@
 
   <!--Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/1131adf3a1.js" crossorigin="anonymous"></script>
+
+  <!--Bootstrap js bundle-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"
+    defer></script>
+
+  <!--Jquery lib-->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous" defer></script>
+
+  <!--AOS-->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+
+  <!--Main shop js-->
+  <script src="../../js/credits.js" charset="utf-8" defer></script>
   <!--------------------->
 </head>
 
@@ -54,32 +69,25 @@
       <h3>Images in their original quality (the page is likely to load slowly)</h3>
     </div>
 
+    <div class="row"></div>
   </section>
-  <template id="items">
-    <div class="row">
-      <div class="col-12 col-md-6 col-lg-4">
-        <figure class="text-center">
-          <img class="img-fluid h-400px w-400px obfit-contain rounded border shadow" src="" alt="">
-          <figcaption class="ff-lato-4 text-center py-3 my-1 border rounded shadow">
-            <div>
-              <span class="fs-5 fw-bold">@Author:</span>
-              <span class="fs-5">Unknown</span>
-            </div>
-            <div>
-              <span class="fs-5 fw-bold">@Hosted on:</span>
-              <span class="fs-5">Unknown</span>
-            </div>
-          </figcaption>
-        </figure>
-      </div>
+  <template id="template-items">
+    <div class="col-12 col-md-6 col-lg-4">
+      <figure class="text-center">
+        <img class="img-fluid h-400px w-400px obfit-contain rounded border shadow" src="" alt="">
+        <figcaption class="ff-lato-4 text-center py-3 my-1 border rounded shadow">
+          <div>
+            <span class="fs-5 fw-bold">@Author:</span>
+            <a href="" class="fs-5">Unknown</a>
+          </div>
+          <div>
+            <span class="fs-5 fw-bold">@Hosted on:</span>
+            <a href="" class="fs-5">Unknown</a>
+          </div>
+        </figcaption>
+      </figure>
     </div>
   </template>
-  <!--AOS-->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <!--bootstrap js-->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-    crossorigin="anonymous"></script>
 </body>
 
 </html>
