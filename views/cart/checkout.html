@@ -1,645 +1,810 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- HTML Meta Tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TheMorfi - Checkout</title>
+    <meta
+      name="description"
+      content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more"
+    />
+    <meta name="keywords" content="THE, MORFI, FOOD, HEALTHY, BEST" />
 
-<head>
-  <!-- HTML Meta Tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TheMorfi - Checkout</title>
-  <meta name="description"
-    content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more">
-  <meta name="keywords" content="THE, MORFI, FOOD, HEALTHY, BEST">
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="The Morfi" />
+    <meta
+      itemprop="description"
+      content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more"
+    />
+    <meta itemprop="image" content="https://i.imgur.com/NRUXriX.jpg" />
 
-  <!-- Google / Search Engine Tags -->
-  <meta itemprop="name" content="The Morfi">
-  <meta itemprop="description"
-    content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more">
-  <meta itemprop="image" content="https://i.imgur.com/NRUXriX.jpg">
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://arguel.github.io/morfi" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="The Morfi" />
+    <meta
+      property="og:description"
+      content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more"
+    />
+    <meta property="og:image" content="https://i.imgur.com/NRUXriX.jpg" />
 
-  <!-- Facebook Meta Tags -->
-  <meta property="og:url" content="https://arguel.github.io/morfi">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="The Morfi">
-  <meta property="og:description"
-    content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more">
-  <meta property="og:image" content="https://i.imgur.com/NRUXriX.jpg">
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The Morfi" />
+    <meta
+      name="twitter:description"
+      content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more"
+    />
+    <meta name="twitter:image" content="https://i.imgur.com/NRUXriX.jpg" />
 
-  <!-- Twitter Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="The Morfi">
-  <meta name="twitter:description"
-    content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more">
-  <meta name="twitter:image" content="https://i.imgur.com/NRUXriX.jpg">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../../assets/css/main.css" type="text/css" />
 
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="../../assets/css/main.css" type="text/css">
+    <!-- Google / Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet" />
+    <!-- Tab Icon -->
+    <link rel="icon" href="../../img/logo/white_background/small_logo_icon/svg/small_logo_icon.svg" />
 
-  <!-- Google / Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
-  <!-- Tab Icon -->
-  <link rel="icon" href="../../img/logo/white_background/small_logo_icon/svg/small_logo_icon.svg">
+    <!--Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/1131adf3a1.js" crossorigin="anonymous"></script>
 
-  <!--Font Awesome Icons -->
-  <script src="https://kit.fontawesome.com/1131adf3a1.js" crossorigin="anonymous"></script>
+    <!--Bootstrap js bundle-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <!--Main cart js-->
+    <script src="../../js/cart.js" charset="utf-8" defer></script>
+    <!--------------------->
+  </head>
 
-  <!--Bootstrap js bundle-->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"
-    defer></script>
-  <!--Main cart js-->
-  <script src="../../js/cart.js" charset="utf-8" defer></script>
-  <!--------------------->
-</head>
-
-<body>
-
-  <header>
-
-    <!--Start of nav-menu-container-->
-    <div class="container-xxl">
-      <nav class="navbar navbar-expand-lg navbar-light m-2">
-        <div class="h-40px text-center">
-          <a class="navbar-brand" href="/">
-            <img class="h-100 w-auto" src="../../img/logo/white_background/medium_logo_side/svg/medium_logo_side.svg"
-              alt="side-logo">
-          </a>
-        </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <!--nav-->
-          <ul class="navbar-nav align-items-center justify-content-around mx-auto col-lg-8">
-            <!--Home-->
-            <li class="nav-item">
-              <a class="nav-link fs-5" href="/" aria-current="page">Home</a>
-            </li>
-            <!--About-->
-            <li class="nav-item dropdown text-center">
-              <a class="nav-link fs-5" href="#" id="navbarDropdownMenuLinkAbout" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">About</a>
-              <ul class="nav-color-list dropdown-menu text-center text-lg-start"
-                aria-labelledby="navbarDropdownMenuLinkAbout">
-                <li><a class="dropdown-item" href="../about/about-us.html">About us</a></li>
-                <li><a class="dropdown-item" href="../about/locations.html">Locations</a></li>
-                <li><a class="dropdown-item" href="../about/our-products.html">Our products</a></li>
-              </ul>
-            </li>
-            <!--Shop-->
-            <li class="nav-item dropdown text-center">
-              <a class="nav-link fs-5" href="#" id="navbarDropdownMenuLinkShop" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">Shop</a>
-              <ul class="nav-color-list dropdown-menu text-center text-lg-start"
-                aria-labelledby="navbarDropdownMenuLinkDrop">
-                <li><a class="dropdown-item" href="../shop/shop.html">Catalogue</a></li>
-                <li><a class="dropdown-item" href="../shop/top-offers.html">Top offers</a></li>
-              </ul>
-            </li>
-            <!--Recipes-->
-            <li class="nav-item dropdown text-center">
-              <a class="nav-link fs-5" href="#" id="navbarDropdownMenuLinkRecipes" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">Recipes</a>
-              <ul class="nav-color-list dropdown-menu text-center text-lg-start"
-                aria-labelledby="navbarDropdownMenuLinkRecipes">
-                <li><a class="dropdown-item" href="../recipes/classics.html">Classics</a></li>
-                <li><a class="dropdown-item" href="../recipes/healthy-recipes.html">Healthy</a></li>
-                <li><a class="dropdown-item" href="../recipes/wholemeal-recipes.html">Wholemeal</a></li>
-                <li><a class="dropdown-item" href="../recipes/easy-recipes.html">Easy</a></li>
-              </ul>
-            </li>
-            <!--Help-->
-            <li class="nav-item dropdown text-center">
-              <a class="nav-link fs-5" href="#" id="navbarDropdownMenuLinkHelp" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">Help</a>
-              <ul class="nav-color-list dropdown-menu text-center text-lg-start"
-                aria-labelledby="navbarDropdownMenuLinkHelp">
-                <li><a class="dropdown-item" href="../help/contact.html">Contact</a></li>
-                <li><a class="dropdown-item" href="../help/faq/faq.html">FAQ</a></li>
-              </ul>
-            </li>
-            <!--Searchbar-->
-            <li class="nav-item">
-              <form>
-                <div class="input-group">
-                  <button class="input-group-text nav-searchbar" id="search-icon" aria-label="searchbar icon">
-                    <i class="fas fa-search"></i>
-                  </button>
-                  <input type="text" class="form-control nav-searchbar" placeholder="Search" aria-label="Search"
-                    aria-describedby="search-icon">
-                </div>
-              </form>
-            </li>
-          </ul>
-          <hr>
-          <!--account-nav-->
-          <ul class="navbar-nav align-items-center justify-content-evenly min-w-179px">
-            <li class="nav-item d-block d-lg-flex text-center btn-login-container my-1">
-              <a class="nav-link btn-login rounded text-nowrap px-4 py-3 px-lg-2 py-lg-2"
-                href="../account/login.html">Log in</a>
-            </li>
-            <li class="nav-item text-center btn-sign-up-container my-1">
-              <a class="nav-link btn-sign-up rounded text-nowrap px-4 py-3 px-lg-2 py-lg-2"
-                href="../account/register.html">Sign up</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-    <!--End of nav-menu-container-->
-
-  </header>
-
-  <main>
-    <!--main cart container-->
-    <section class="container-xxl my-4">
-      <!--display cart start-->
-      <div class="row justify-content-center min-h-400px ff-lato-4">
-        <div class="col-11 border rounded shadow">
-          <!--internal cart information start-->
-          <div id="cart-container" class="row my-5 justify-content-center">
-
-            <!--shopping cart navigation -->
-            <div class="col-10">
-              <div class="row border-bottom">
-                <div
-                  class="col-6 col-sm-5 col-md-4 col-lg-3 text-center p-2 border-bottom border-dark border-2 fw-bold position-relative">
-                  <a class="text-dark stretched-link" href="checkout.html">
-                    Cart
-                    <span id="cart-label">(0)</span>
-                  </a>
-                </div>
-                <div class="col-6 col-sm-5 col-md-4 col-lg-3 text-center p-2 position-relative">
-                  <a class="text-primary stretched-link" href="saved.html">
-                    Saved
-                    <span id="saved-label">(0)</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!--cart items-->
-            <div class="col-10">
-              <div class="row" id="cart-items">
-
-              </div>
-            </div>
-
+  <body>
+    <header>
+      <!--Start of nav-menu-container-->
+      <div class="container-xxl">
+        <nav class="navbar navbar-expand-lg navbar-light m-2">
+          <div class="h-40px text-center">
+            <a class="navbar-brand" href="/">
+              <img
+                class="h-100 w-auto"
+                src="../../img/logo/white_background/medium_logo_side/svg/medium_logo_side.svg"
+                alt="side-logo"
+              />
+            </a>
           </div>
-        </div>
-        <!--internal cart information end-->
-      </div>
-      <!--display cart end-->
-    </section>
-    <!--main cart container-->
-  </main>
-
-  <footer>
-    <!--footer-container-fluid-start-->
-    <div class="container-fluid bg-darker-2">
-      <!--footer-container-xxl-start-->
-      <div class="container-xxl my-0">
-        <!--footer-top-start-->
-        <div class="row d-flex align-items-center justify-content-around footer-top m-0">
-          <!--footer-top-left-start-->
-          <div class="row align-items-center justify-content-evenly col-lg-3 p-0">
-            <div class="col-8 p-0 text-center d-none d-lg-block">
-              <div class="mw-200px h-100px overflow-hidden mb-2 mx-auto">
-                <img class="w-100 h-100px" src="../../img/logo/white_background/full_logo/svg/full_logo.svg"
-                  alt="logo-image">
-              </div>
-              <p class="mb-0 text-dark mw-200px mx-auto">Since 1997 making our customers happy</p>
-            </div>
-            <ul
-              class="col col-sm-7 col-md-5 col-lg-4 list-unstyled m-2 m-lg-0 p-0 d-flex flex-row flex-lg-column align-items-center justify-content-evenly">
-              <li class="my-2 my-lg-3 mx-2 mx-lg-0">
-                <a class="p-2 bg-dark text-white rounded-circle" href="https://www.facebook.com/"
-                  aria-label="facebook icon">
-                  <i class="fab fa-facebook-f fa-fw fs-6"></i>
-                </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!--nav-->
+            <ul class="navbar-nav align-items-center justify-content-around mx-auto col-lg-8">
+              <!--Home-->
+              <li class="nav-item">
+                <a class="nav-link fs-5" href="/" aria-current="page">Home</a>
               </li>
-              <li class="my-2 my-lg-0 mb-lg-3 mx-2 mx-lg-0">
-                <a class="p-2 bg-dark text-white rounded-circle" href="https://twitter.com/" aria-label="twitter icon">
-                  <i class="fab fa-twitter fa-fw fs-6"></i>
-                </a>
-              </li>
-              <li class="my-2 my-lg-0 mb-lg-3 mx-2 mx-lg-0">
-                <a class="p-2 bg-dark text-white rounded-circle" href="https://www.youtube.com/"
-                  aria-label="youtube icon">
-                  <i class="fab fa-youtube fa-fw fs-6"></i>
-                </a>
-              </li>
-              <li class="my-2 my-lg-0 mb-lg-3 mx-2 mx-lg-0">
-                <a class="p-2 bg-dark text-white rounded-circle" href="https://www.instagram.com/"
-                  aria-label="instagram icon">
-                  <i class="fab fa-instagram fa-fw fs-6"></i>
-                </a>
-              </li>
-            </ul>
-            <label class="visually-hidden" for="change-language-top">Language</label>
-            <select class="col-7 col-sm-4 col-md-4 d-block d-lg-none p-2 rounded" name="change-language-top"
-              id="change-language-top">
-              <option selected value="English">English</option>
-              <option value="Spanish">Spanish</option>
-            </select>
-            <hr class="d-block d-lg-none my-0">
-          </div>
-          <!--footer-top-left-end-->
-          <!--footer-top-right-start-->
-          <div class="col-12 col-lg-8 mt-3 p-0">
-            <div class="row d-flex justify-content-evenly w-100 m-0">
-              <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
-                <h5 class="mb-2 mb-lg-4"><a href="/" class="text-dark h-white">Home</a></h5>
-                <ul class="list-unstyled">
-                  <li class="mb-1"><a class="text-dark h-white" href="../about/blog.html">Events</a></li>
-                  <li class="mb-1"><a class="text-dark h-white" href="../../index.html#newsletter">Newsletter</a></li>
+              <!--About-->
+              <li class="nav-item dropdown text-center">
+                <a
+                  class="nav-link fs-5"
+                  href="#"
+                  id="navbarDropdownMenuLinkAbout"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >About</a
+                >
+                <ul
+                  class="nav-color-list dropdown-menu text-center text-lg-start"
+                  aria-labelledby="navbarDropdownMenuLinkAbout"
+                >
+                  <li><a class="dropdown-item" href="../about/about-us.html">About us</a></li>
+                  <li><a class="dropdown-item" href="../about/locations.html">Locations</a></li>
+                  <li><a class="dropdown-item" href="../about/our-products.html">Our products</a></li>
                 </ul>
-              </div>
-              <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
-                <h5 class="mb-2 mb-lg-4"><a href="../about/about-us.html" class="text-dark h-white">About</a>
-                </h5>
-                <ul class="list-unstyled">
-                  <li class="mb-1"><a class="text-dark h-white" href="../about/about-us.html">About us</a></li>
-                  <li class="mb-1"><a class="text-dark h-white" href="../about/locations.html">Locations</a>
-                  </li>
-                  <li class="mb-1"><a class="text-dark h-white" href="../about/our-products.html">Our
-                      products</a></li>
-                </ul>
-              </div>
-              <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
-                <h5 class="mb-2 mb-lg-4"><a href="../shop/shop.html" class="text-dark h-white">Shop</a></h5>
-                <ul class="list-unstyled">
-                  <li class="mb-1"><a class="text-dark h-white" href="../shop/shop.html">Catalogue</a></li>
-                  <li class="mb-1"><a class="text-dark h-white" href="../shop/top-offers.html">Top offers</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
-                <h5 class="mb-2 mb-lg-4"><a href="../recipes/classics.html" class="text-dark h-white">Recipes</a></h5>
-                <ul class="list-unstyled">
-                  <li class="mb-1"><a class="text-dark h-white" href="../recipes/classics.html">Classics</a>
-                  </li>
-                  <li class="mb-1"><a class="text-dark h-white" href="../recipes/healthy-recipes.html">Healthy</a></li>
-                  <li class="mb-1"><a class="text-dark h-white" href="../recipes/wholemeal-recipes.html">Wholemeal</a>
-                  </li>
-                  <li class="mb-1"><a class="text-dark h-white" href="../recipes/easy-recipes.html">Easy</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-12 col-lg-2 text-center text-lg-start mb-3">
-                <h5 class="mb-2 mb-lg-4"><a href="../help/contact.html" class="text-dark h-white">Help</a>
-                </h5>
-                <ul class="list-unstyled">
-                  <li class="mb-1"><a class="text-dark h-white" href="../help/contact.html">Contact</a></li>
-                  <li class="mb-1"><a class="text-dark h-white" href="../help/faq/faq.html">FAQ</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!--footer-top-right-end-->
-        </div>
-        <!--footer-top-end-->
-      </div>
-      <!--footer-container-xxl-end-->
-    </div>
-    <!--footer-container-fluid-end-->
-
-    <!--footer-container-fluid-start-->
-    <div class="container-fluid bg-dark">
-      <!--footer-container-xxl-start-->
-      <div class="container-xxl my-0">
-        <!--footer-bottom-start-->
-        <div class="row d-flex align-items-center justify-content-around my-0 mx-auto p-3 footer-bottom">
-          <div class="col-12 col-lg-8 m-2 m-lg-0">
-            <div class="row align-items-center">
-              <div class="col text-center mb-2 mb-lg-0"><a class="footer-link text-white" href="#">Terms of Use</a>
-              </div>
-              <div class="col text-center mb-2 mb-lg-0"><a class="footer-link text-white" href="#">Terms &
-                  Conditions</a>
-              </div>
-              <div class="col text-center mb-2 mb-lg-0"><a class="footer-link text-white" href="#">Privacy Policy</a>
-              </div>
-              <div class="col text-center mb-2 mb-lg-0 d-none d-lg-block">
-                <i class="fas fa-globe text-white"></i>
-                <label class="visually-hidden" for="change-language-bottom">Language</label>
-                <select class="col text-center p-2 rounded bg-dark text-white" name="change-language-bottom"
-                  id="change-language-bottom">
-                  <option selected value="English">English</option>
-                  <option value="Spanish">Spanish</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-lg-3 text-white text-center m-2 m-lg-0">© 2020 Morfi. All Rights Reserved.</div>
-        </div>
-        <!--footer-bottom-end-->
-      </div>
-      <!--footer-container-xxl-end-->
-    </div>
-    <!--footer-container-fluid-end-->
-  </footer>
-
-  <template id="template-cart-item">
-    <div class="col-12 py-5 border-bottom ff-lato-4 overflow-hidden">
-      <div class="row">
-        <div class="col-12 col-md-7 col-lg-8 overflow-hidden">
-          <div class="text-truncate">
-            <div
-              class="d-flex align-items-center flex-column flex-sm-row justify-content-center justify-content-sm-start text-center text-sm-start">
-              <figure class="m-0 w-60px h-60px text-center">
-                <img class="img-rez rounded">
-              </figure>
-              <div class="mx-2">
-                <div class="fw-bold mb-1 text-truncate-1 cart-title-250px">title</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-11 col-sm-6 col-md-3 col-lg-2 order-1 order-md-0 my-2 my-sm-3 my-md-0 mx-auto mx-md-0">
-          <div class="border p-2 d-flex justify-content-center rounded">
-            <form method="POST">
-              <label class="visually-hidden" for="reducequantity">reduce quantity</label>
-              <input class="bg-white border-0" type="submit" name="reducequantity" value="-" disabled>
-            </form>
-            <label class="visually-hidden" for="quantity">quantity</label>
-            <input class="bg-white border-0 w-60px text-center outline-none" type="number" name="quantity" value="1">
-            <form method="POST">
-              <label class="visually-hidden" for="increasequantity">increase quantity</label>
-              <input class="bg-white border-0" type="submit" name="increasequantity" value="+">
-            </form>
-          </div>
-          <div class="text-center">
-            <span class="text-muted">10 available</span>
-          </div>
-        </div>
-        <div
-          class="col-12 col-sm-6 col-md-2 fw-bold fs-5 order-1 order-md-0 text-center text-sm-end my-0 my-sm-3 my-md-0">
-          <div class="d-flex justify-content-center justify-content-sm-end">
-            <div>$</div>
-            <div class="text-truncate">0.00</div>
-          </div>
-        </div>
-        <div class="col-12 text-primary">
-          <div class="ps-60px text-center text-sm-start">
-            <ul class="list-unstyled my-0 mx-2">
-              <li class="d-inline-block">
-                <span class="h-pointer ps-1 ps-sm-0 pe-1 pe-sm-2">Remove</span>
               </li>
-              <li class="d-inline-block">
-                <span class="h-pointer ps-1 ps-sm-0 pe-1 pe-sm-2">Buy now</span>
+              <!--Shop-->
+              <li class="nav-item dropdown text-center">
+                <a
+                  class="nav-link fs-5"
+                  href="#"
+                  id="navbarDropdownMenuLinkShop"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Shop</a
+                >
+                <ul
+                  class="nav-color-list dropdown-menu text-center text-lg-start"
+                  aria-labelledby="navbarDropdownMenuLinkDrop"
+                >
+                  <li><a class="dropdown-item" href="../shop/shop.html">Catalogue</a></li>
+                  <li><a class="dropdown-item" href="../shop/top-offers.html">Top offers</a></li>
+                </ul>
               </li>
-              <li class="d-inline-block h-pointer">
-                <span class="h-pointer ps-1 ps-sm-0 pe-1 pe-sm-2">Save for later</span>
+              <!--Recipes-->
+              <li class="nav-item dropdown text-center">
+                <a
+                  class="nav-link fs-5"
+                  href="#"
+                  id="navbarDropdownMenuLinkRecipes"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Recipes</a
+                >
+                <ul
+                  class="nav-color-list dropdown-menu text-center text-lg-start"
+                  aria-labelledby="navbarDropdownMenuLinkRecipes"
+                >
+                  <li><a class="dropdown-item" href="../recipes/classics.html">Classics</a></li>
+                  <li><a class="dropdown-item" href="../recipes/healthy-recipes.html">Healthy</a></li>
+                  <li><a class="dropdown-item" href="../recipes/wholemeal-recipes.html">Wholemeal</a></li>
+                  <li><a class="dropdown-item" href="../recipes/easy-recipes.html">Easy</a></li>
+                </ul>
               </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </template>
-
-  <template id="template-cart-footer">
-    <!--cart calculator start-->
-    <div class="col-12">
-      <div class="row">
-
-        <div class="col-12 col-sm-11 col-md-10 py-5 border-bottom ff-lato-4 mx-auto">
-          <div class="row align-items-center">
-            <div class="col-12 col-lg-8 text-center text-sm-start">
-              <div class="mb-4">
-                <h1 class="fs-3 fw-bold mb-3">
-                  <span>Choose payment method</span>
-                </h1>
-                <div class="d-flex align-items-center justify-content-center justify-content-sm-start flex-wrap">
-                  <figure class="my-2 me-2 overflow-hidden rounded h-pointer border border-2 border-primary">
-                    <img class="img-fluid w-150px h-100px obfit-contain p-3" src="../../img/cart/paypal.jpeg"
-                      alt="payment-paypal" data-method="paypal">
-                  </figure>
-                  <figure class="my-2 me-2 overflow-hidden rounded h-pointer">
-                    <img class="img-rez w-150px h-100px obfit-contain p-3" src="../../img/cart/mastercard.png"
-                      alt="payment-mastercard" data-method="mastercard">
-                  </figure>
-                  <figure class="my-2 me-2 overflow-hidden rounded h-pointer">
-                    <img class="img-fluid w-150px h-100px obfit-contain p-3" src="../../img/cart/visaandmaster.png"
-                      alt="payment-visaandmaster" data-method="visaandmaster">
-                  </figure>
-                  <figure class="my-2 me-2 overflow-hidden rounded h-pointer">
-                    <img class="img-fluid w-150px h-100px obfit-contain p-3" src="../../img/cart/paysafecard.jpeg"
-                      alt="payment-paysafecard" data-method="paysafecard">
-                  </figure>
-                  <figure class="my-2 me-2 overflow-hidden rounded h-pointer">
-                    <img class="img-fluid w-150px h-100px obfit-contain p-3" src="../../img/cart/klarna.png"
-                      alt="payment-klarna" data-method="klarna">
-                  </figure>
-                </div>
-              </div>
-              <div class="mb-4">
-                <h1 class="fs-3 fw-bold mb-3">
-                  <span>Billing address</span>
-                </h1>
-                <div class="d-flex align-items-center justify-content-center justify-content-sm-start flex-wrap">
-                  <button
-                    class="w-200px h-100px bg-white rounded border border-2 border-primary d-flex align-items-center justify-content-center"
-                    type="button" aria-label="Add new address">
-                    <span class="fw-bold">+Add new address</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-10 col-lg-4 mx-auto mt-5 mt-lg-0">
-
-              <div class="row my-1">
-                <div class="col-6">
-                  <span>Original price:</span>
-                </div>
-                <div class="col-6">
-                  <div class="d-flex">
-                    <div>$</div>
-                    <div class="text-truncate">0.00</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row my-1">
-                <div class="col-6">
-                  <span>Shipping:</span>
-                </div>
-                <div class="col-6">
-                  <span id="shipping-label">Free</span>
-                </div>
-              </div>
-
-              <div class="row my-1">
-                <div class="col-6">
-                  <span>Tax included:</span>
-                </div>
-                <div class="col-6">
-                  <div class="d-flex">
-                    <div>$</div>
-                    <div class="text-truncate">0.00</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row my-1">
-                <div class="col-6">
-                  <span>Payment fee:</span>
-                </div>
-                <div class="col-6">
-                  <div class="d-flex">
-                    <div>$</div>
-                    <div class="text-truncate">0.00</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row my-1">
-                <div class="col-6">
-                  <span>Coupon discounts:</span>
-                </div>
-                <div class="col-6">
-                  <span id="discounts-label">No coupons</span>
-                </div>
-              </div>
-
-              <div class="row my-1 border-top">
-                <div class="col-6 fw-bold fs-5">
-                  <span>Total:</span>
-                </div>
-                <div class="col-6 fw-bold fs-5">
-                  <div class="d-flex">
-                    <div>$</div>
-                    <div class="text-truncate">0.00</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row my-1 py-3">
-                <div class="col-12 col-sm-10 col-lg-12 mx-auto">
-                  <label class="visually-hidden" for="applyCoupon">Apply coupon</label>
-                  <form class="input-group">
-                    <input class="form-control" type="text" name="applyCoupon" id="applyCoupon"
-                      placeholder="Enter Coupon" aria-label="Apply coupon" aria-describedby="applyCouponBtn">
-                    <button class="btn btn-primary" type="button" id="applyCouponBtn">
-                      <span>Apply</span>
+              <!--Help-->
+              <li class="nav-item dropdown text-center">
+                <a
+                  class="nav-link fs-5"
+                  href="#"
+                  id="navbarDropdownMenuLinkHelp"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Help</a
+                >
+                <ul
+                  class="nav-color-list dropdown-menu text-center text-lg-start"
+                  aria-labelledby="navbarDropdownMenuLinkHelp"
+                >
+                  <li><a class="dropdown-item" href="../help/contact.html">Contact</a></li>
+                  <li><a class="dropdown-item" href="../help/faq/faq.html">FAQ</a></li>
+                </ul>
+              </li>
+              <!--Searchbar-->
+              <li class="nav-item">
+                <form>
+                  <div class="input-group">
+                    <button class="input-group-text nav-searchbar" id="search-icon" aria-label="searchbar icon">
+                      <i class="fas fa-search"></i>
                     </button>
-                  </form>
-                </div>
-              </div>
+                    <input
+                      type="text"
+                      class="form-control nav-searchbar"
+                      placeholder="Search"
+                      aria-label="Search"
+                      aria-describedby="search-icon"
+                    />
+                  </div>
+                </form>
+              </li>
+            </ul>
+            <hr />
+            <!--account-nav-->
+            <ul class="navbar-nav align-items-center justify-content-evenly min-w-179px">
+              <li class="nav-item d-block d-lg-flex text-center btn-login-container my-1">
+                <a class="nav-link btn-login rounded text-nowrap px-4 py-3 px-lg-2 py-lg-2" href="../account/login.html"
+                  >Log in</a
+                >
+              </li>
+              <li class="nav-item text-center btn-sign-up-container my-1">
+                <a
+                  class="nav-link btn-sign-up rounded text-nowrap px-4 py-3 px-lg-2 py-lg-2"
+                  href="../account/register.html"
+                  >Sign up</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <!--End of nav-menu-container-->
+    </header>
 
-              <div class="row my-1">
-                <div class="col-12 fw-bold text-center">
-                  <div class="ff-lato-9 fs-5 mb-2">Coupons</div>
-                  <div class="border p-1 rounded">
-                    <span>No coupons applied</span>
+    <main>
+      <!--main cart container-->
+      <section class="container-xxl my-4">
+        <!--display cart start-->
+        <div class="row justify-content-center min-h-400px ff-lato-4">
+          <div class="col-11 border rounded shadow">
+            <!--internal cart information start-->
+            <div id="cart-container" class="row my-5 justify-content-center">
+              <!--shopping cart navigation -->
+              <div class="col-10">
+                <div class="row border-bottom">
+                  <div
+                    class="
+                      col-6 col-sm-5 col-md-4 col-lg-3
+                      text-center
+                      p-2
+                      border-bottom border-dark border-2
+                      fw-bold
+                      position-relative
+                    "
+                  >
+                    <a class="text-dark stretched-link" href="checkout.html">
+                      Cart
+                      <span id="cart-label">(0)</span>
+                    </a>
+                  </div>
+                  <div class="col-6 col-sm-5 col-md-4 col-lg-3 text-center p-2 position-relative">
+                    <a class="text-primary stretched-link" href="saved.html">
+                      Saved
+                      <span id="saved-label">(0)</span>
+                    </a>
                   </div>
                 </div>
               </div>
 
+              <!--cart items-->
+              <div class="col-10">
+                <div class="row" id="cart-items"></div>
+              </div>
+            </div>
+          </div>
+          <!--internal cart information end-->
+        </div>
+        <!--display cart end-->
+      </section>
+      <!--main cart container-->
+    </main>
+
+    <footer>
+      <!--footer-container-fluid-start-->
+      <div class="container-fluid bg-darker-2">
+        <!--footer-container-xxl-start-->
+        <div class="container-xxl my-0">
+          <!--footer-top-start-->
+          <div class="row d-flex align-items-center justify-content-around footer-top m-0">
+            <!--footer-top-left-start-->
+            <div class="row align-items-center justify-content-evenly col-lg-3 p-0">
+              <div class="col-8 p-0 text-center d-none d-lg-block">
+                <div class="mw-200px h-100px overflow-hidden mb-2 mx-auto">
+                  <img
+                    class="w-100 h-100px"
+                    src="../../img/logo/white_background/full_logo/svg/full_logo.svg"
+                    alt="logo-image"
+                  />
+                </div>
+                <p class="mb-0 text-dark mw-200px mx-auto">Since 1997 making our customers happy</p>
+              </div>
+              <ul
+                class="
+                  col col-sm-7 col-md-5 col-lg-4
+                  list-unstyled
+                  m-2 m-lg-0
+                  p-0
+                  d-flex
+                  flex-row flex-lg-column
+                  align-items-center
+                  justify-content-evenly
+                "
+              >
+                <li class="my-2 my-lg-3 mx-2 mx-lg-0">
+                  <a
+                    class="p-2 bg-dark text-white rounded-circle"
+                    href="https://www.facebook.com/"
+                    aria-label="facebook icon"
+                  >
+                    <i class="fab fa-facebook-f fa-fw fs-6"></i>
+                  </a>
+                </li>
+                <li class="my-2 my-lg-0 mb-lg-3 mx-2 mx-lg-0">
+                  <a
+                    class="p-2 bg-dark text-white rounded-circle"
+                    href="https://twitter.com/"
+                    aria-label="twitter icon"
+                  >
+                    <i class="fab fa-twitter fa-fw fs-6"></i>
+                  </a>
+                </li>
+                <li class="my-2 my-lg-0 mb-lg-3 mx-2 mx-lg-0">
+                  <a
+                    class="p-2 bg-dark text-white rounded-circle"
+                    href="https://www.youtube.com/"
+                    aria-label="youtube icon"
+                  >
+                    <i class="fab fa-youtube fa-fw fs-6"></i>
+                  </a>
+                </li>
+                <li class="my-2 my-lg-0 mb-lg-3 mx-2 mx-lg-0">
+                  <a
+                    class="p-2 bg-dark text-white rounded-circle"
+                    href="https://www.instagram.com/"
+                    aria-label="instagram icon"
+                  >
+                    <i class="fab fa-instagram fa-fw fs-6"></i>
+                  </a>
+                </li>
+              </ul>
+              <label class="visually-hidden" for="change-language-top">Language</label>
+              <select
+                class="col-7 col-sm-4 col-md-4 d-block d-lg-none p-2 rounded"
+                name="change-language-top"
+                id="change-language-top"
+              >
+                <option selected value="English">English</option>
+                <option value="Spanish">Spanish</option>
+              </select>
+              <hr class="d-block d-lg-none my-0" />
+            </div>
+            <!--footer-top-left-end-->
+            <!--footer-top-right-start-->
+            <div class="col-12 col-lg-8 mt-3 p-0">
+              <div class="row d-flex justify-content-evenly w-100 m-0">
+                <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
+                  <h5 class="mb-2 mb-lg-4"><a href="/" class="text-dark h-white">Home</a></h5>
+                  <ul class="list-unstyled">
+                    <li class="mb-1"><a class="text-dark h-white" href="../about/blog.html">Events</a></li>
+                    <li class="mb-1"><a class="text-dark h-white" href="../../index.html#newsletter">Newsletter</a></li>
+                  </ul>
+                </div>
+                <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
+                  <h5 class="mb-2 mb-lg-4"><a href="../about/about-us.html" class="text-dark h-white">About</a></h5>
+                  <ul class="list-unstyled">
+                    <li class="mb-1"><a class="text-dark h-white" href="../about/about-us.html">About us</a></li>
+                    <li class="mb-1"><a class="text-dark h-white" href="../about/locations.html">Locations</a></li>
+                    <li class="mb-1">
+                      <a class="text-dark h-white" href="../about/our-products.html">Our products</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
+                  <h5 class="mb-2 mb-lg-4"><a href="../shop/shop.html" class="text-dark h-white">Shop</a></h5>
+                  <ul class="list-unstyled">
+                    <li class="mb-1"><a class="text-dark h-white" href="../shop/shop.html">Catalogue</a></li>
+                    <li class="mb-1"><a class="text-dark h-white" href="../shop/top-offers.html">Top offers</a></li>
+                  </ul>
+                </div>
+                <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
+                  <h5 class="mb-2 mb-lg-4"><a href="../recipes/classics.html" class="text-dark h-white">Recipes</a></h5>
+                  <ul class="list-unstyled">
+                    <li class="mb-1"><a class="text-dark h-white" href="../recipes/classics.html">Classics</a></li>
+                    <li class="mb-1">
+                      <a class="text-dark h-white" href="../recipes/healthy-recipes.html">Healthy</a>
+                    </li>
+                    <li class="mb-1">
+                      <a class="text-dark h-white" href="../recipes/wholemeal-recipes.html">Wholemeal</a>
+                    </li>
+                    <li class="mb-1"><a class="text-dark h-white" href="../recipes/easy-recipes.html">Easy</a></li>
+                  </ul>
+                </div>
+                <div class="col-12 col-lg-2 text-center text-lg-start mb-3">
+                  <h5 class="mb-2 mb-lg-4"><a href="../help/contact.html" class="text-dark h-white">Help</a></h5>
+                  <ul class="list-unstyled">
+                    <li class="mb-1"><a class="text-dark h-white" href="../help/contact.html">Contact</a></li>
+                    <li class="mb-1"><a class="text-dark h-white" href="../help/faq/faq.html">FAQ</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!--footer-top-right-end-->
+          </div>
+          <!--footer-top-end-->
+        </div>
+        <!--footer-container-xxl-end-->
+      </div>
+      <!--footer-container-fluid-end-->
+
+      <!--footer-container-fluid-start-->
+      <div class="container-fluid bg-dark">
+        <!--footer-container-xxl-start-->
+        <div class="container-xxl my-0">
+          <!--footer-bottom-start-->
+          <div class="row d-flex align-items-center justify-content-around my-0 mx-auto p-3 footer-bottom">
+            <div class="col-12 col-lg-8 m-2 m-lg-0">
+              <div class="row align-items-center">
+                <div class="col text-center mb-2 mb-lg-0">
+                  <a class="footer-link text-white" href="#">Terms of Use</a>
+                </div>
+                <div class="col text-center mb-2 mb-lg-0">
+                  <a class="footer-link text-white" href="#">Terms & Conditions</a>
+                </div>
+                <div class="col text-center mb-2 mb-lg-0">
+                  <a class="footer-link text-white" href="#">Privacy Policy</a>
+                </div>
+                <div class="col text-center mb-2 mb-lg-0 d-none d-lg-block">
+                  <i class="fas fa-globe text-white"></i>
+                  <label class="visually-hidden" for="change-language-bottom">Language</label>
+                  <select
+                    class="col text-center p-2 rounded bg-dark text-white"
+                    name="change-language-bottom"
+                    id="change-language-bottom"
+                  >
+                    <option selected value="English">English</option>
+                    <option value="Spanish">Spanish</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-3 text-white text-center m-2 m-lg-0">© 2020 Morfi. All Rights Reserved.</div>
+          </div>
+          <!--footer-bottom-end-->
+        </div>
+        <!--footer-container-xxl-end-->
+      </div>
+      <!--footer-container-fluid-end-->
+    </footer>
+
+    <template id="template-cart-item">
+      <div class="col-12 py-5 border-bottom ff-lato-4 overflow-hidden">
+        <div class="row">
+          <div class="col-12 col-md-7 col-lg-8 overflow-hidden">
+            <div class="text-truncate">
+              <div
+                class="
+                  d-flex
+                  align-items-center
+                  flex-column flex-sm-row
+                  justify-content-center justify-content-sm-start
+                  text-center text-sm-start
+                "
+              >
+                <figure class="m-0 w-60px h-60px text-center">
+                  <img class="img-rez rounded" />
+                </figure>
+                <div class="mx-2">
+                  <div class="fw-bold mb-1 text-truncate-1 cart-title-250px">title</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-11 col-sm-6 col-md-3 col-lg-2 order-1 order-md-0 my-2 my-sm-3 my-md-0 mx-auto mx-md-0">
+            <div class="border p-2 d-flex justify-content-center rounded">
+              <form method="POST">
+                <label class="visually-hidden" for="reducequantity">reduce quantity</label>
+                <input class="bg-white border-0" type="submit" name="reducequantity" value="-" disabled />
+              </form>
+              <label class="visually-hidden" for="quantity">quantity</label>
+              <input
+                class="bg-white border-0 w-60px text-center outline-none"
+                type="number"
+                name="quantity"
+                value="1"
+              />
+              <form method="POST">
+                <label class="visually-hidden" for="increasequantity">increase quantity</label>
+                <input class="bg-white border-0" type="submit" name="increasequantity" value="+" />
+              </form>
+            </div>
+            <div class="text-center">
+              <span class="text-muted">10 available</span>
+            </div>
+          </div>
+          <div
+            class="
+              col-12 col-sm-6 col-md-2
+              fw-bold
+              fs-5
+              order-1 order-md-0
+              text-center text-sm-end
+              my-0 my-sm-3 my-md-0
+            "
+          >
+            <div class="d-flex justify-content-center justify-content-sm-end">
+              <div>$</div>
+              <div class="text-truncate">0.00</div>
+            </div>
+          </div>
+          <div class="col-12 text-primary">
+            <div class="ps-60px text-center text-sm-start">
+              <ul class="list-unstyled my-0 mx-2">
+                <li class="d-inline-block">
+                  <span class="h-pointer ps-1 ps-sm-0 pe-1 pe-sm-2">Remove</span>
+                </li>
+                <li class="d-inline-block">
+                  <span class="h-pointer ps-1 ps-sm-0 pe-1 pe-sm-2">Buy now</span>
+                </li>
+                <li class="d-inline-block h-pointer">
+                  <span class="h-pointer ps-1 ps-sm-0 pe-1 pe-sm-2">Save for later</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
+      </div>
+    </template>
 
-        <div class="col-10 py-5 px-0 mx-auto">
-          <div class="d-flex justify-content-center justify-content-sm-between flex-wrap">
-            <button class="btn btn-primary ff-lato-7 fs-5 mx-1 my-2 my-sm-0">Clear cart</button>
-            <button class="btn btn-primary ff-lato-7 fs-5 mx-1 my-2 my-sm-0">Proceed to checkout</button>
+    <template id="template-cart-footer">
+      <!--cart calculator start-->
+      <div class="col-12">
+        <div class="row">
+          <div class="col-12 col-sm-11 col-md-10 py-5 border-bottom ff-lato-4 mx-auto">
+            <div class="row align-items-center">
+              <div class="col-12 col-lg-8 text-center text-sm-start">
+                <div class="mb-4">
+                  <h1 class="fs-3 fw-bold mb-3">
+                    <span>Choose payment method</span>
+                  </h1>
+                  <div class="d-flex align-items-center justify-content-center justify-content-sm-start flex-wrap">
+                    <figure class="my-2 me-2 overflow-hidden rounded h-pointer border border-2 border-primary">
+                      <img
+                        class="img-fluid w-150px h-100px obfit-contain p-3"
+                        src="../../img/cart/paypal.jpeg"
+                        alt="payment-paypal"
+                        data-method="paypal"
+                      />
+                    </figure>
+                    <figure class="my-2 me-2 overflow-hidden rounded h-pointer">
+                      <img
+                        class="img-rez w-150px h-100px obfit-contain p-3"
+                        src="../../img/cart/mastercard.png"
+                        alt="payment-mastercard"
+                        data-method="mastercard"
+                      />
+                    </figure>
+                    <figure class="my-2 me-2 overflow-hidden rounded h-pointer">
+                      <img
+                        class="img-fluid w-150px h-100px obfit-contain p-3"
+                        src="../../img/cart/visaandmaster.png"
+                        alt="payment-visaandmaster"
+                        data-method="visaandmaster"
+                      />
+                    </figure>
+                    <figure class="my-2 me-2 overflow-hidden rounded h-pointer">
+                      <img
+                        class="img-fluid w-150px h-100px obfit-contain p-3"
+                        src="../../img/cart/paysafecard.jpeg"
+                        alt="payment-paysafecard"
+                        data-method="paysafecard"
+                      />
+                    </figure>
+                    <figure class="my-2 me-2 overflow-hidden rounded h-pointer">
+                      <img
+                        class="img-fluid w-150px h-100px obfit-contain p-3"
+                        src="../../img/cart/klarna.png"
+                        alt="payment-klarna"
+                        data-method="klarna"
+                      />
+                    </figure>
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <h1 class="fs-3 fw-bold mb-3">
+                    <span>Billing address</span>
+                  </h1>
+                  <div class="d-flex align-items-center justify-content-center justify-content-sm-start flex-wrap">
+                    <button
+                      class="
+                        w-200px
+                        h-100px
+                        bg-white
+                        rounded
+                        border border-2 border-primary
+                        d-flex
+                        align-items-center
+                        justify-content-center
+                      "
+                      type="button"
+                      aria-label="Add new address"
+                    >
+                      <span class="fw-bold">+Add new address</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-10 col-lg-4 mx-auto mt-5 mt-lg-0">
+                <div class="row my-1">
+                  <div class="col-6">
+                    <span>Original price:</span>
+                  </div>
+                  <div class="col-6">
+                    <div class="d-flex">
+                      <div>$</div>
+                      <div class="text-truncate">0.00</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row my-1">
+                  <div class="col-6">
+                    <span>Shipping:</span>
+                  </div>
+                  <div class="col-6">
+                    <span id="shipping-label">Free</span>
+                  </div>
+                </div>
+
+                <div class="row my-1">
+                  <div class="col-6">
+                    <span>Tax included:</span>
+                  </div>
+                  <div class="col-6">
+                    <div class="d-flex">
+                      <div>$</div>
+                      <div class="text-truncate">0.00</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row my-1">
+                  <div class="col-6">
+                    <span>Payment fee:</span>
+                  </div>
+                  <div class="col-6">
+                    <div class="d-flex">
+                      <div>$</div>
+                      <div class="text-truncate">0.00</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row my-1">
+                  <div class="col-6">
+                    <span>Coupon discounts:</span>
+                  </div>
+                  <div class="col-6">
+                    <span id="discounts-label">No coupons</span>
+                  </div>
+                </div>
+
+                <div class="row my-1 border-top">
+                  <div class="col-6 fw-bold fs-5">
+                    <span>Total:</span>
+                  </div>
+                  <div class="col-6 fw-bold fs-5">
+                    <div class="d-flex">
+                      <div>$</div>
+                      <div class="text-truncate">0.00</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row my-1 py-3">
+                  <div class="col-12 col-sm-10 col-lg-12 mx-auto">
+                    <label class="visually-hidden" for="applyCoupon">Apply coupon</label>
+                    <form class="input-group">
+                      <input
+                        class="form-control"
+                        type="text"
+                        name="applyCoupon"
+                        id="applyCoupon"
+                        placeholder="Enter Coupon"
+                        aria-label="Apply coupon"
+                        aria-describedby="applyCouponBtn"
+                      />
+                      <button class="btn btn-primary" type="button" id="applyCouponBtn">
+                        <span>Apply</span>
+                      </button>
+                    </form>
+                  </div>
+                </div>
+
+                <div class="row my-1">
+                  <div class="col-12 fw-bold text-center">
+                    <div class="ff-lato-9 fs-5 mb-2">Coupons</div>
+                    <div class="border p-1 rounded">
+                      <span>No coupons applied</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-10 py-5 px-0 mx-auto">
+            <div class="d-flex justify-content-center justify-content-sm-between flex-wrap">
+              <button class="btn btn-primary ff-lato-7 fs-5 mx-1 my-2 my-sm-0">Clear cart</button>
+              <button class="btn btn-primary ff-lato-7 fs-5 mx-1 my-2 my-sm-0">Proceed to checkout</button>
+            </div>
           </div>
         </div>
-
       </div>
-    </div>
-    <!--cart calculator end-->
-  </template>
+      <!--cart calculator end-->
+    </template>
 
-  <template id="template-cart-checkout">
-    <h1 class="text-center text-sm-start my-2 fs-2 mt-3 mt-sm-4 fw-bold">Your order</h1>
+    <template id="template-cart-checkout">
+      <h1 class="text-center text-sm-start my-2 fs-2 mt-3 mt-sm-4 fw-bold">Your order</h1>
 
-    <div class="col-12">
-      <div class="row border-top">
-        <div class="col-xs-12 col-md-8 my-2"></div>
-        <div class="col-xs-12 col-md-4 bg-darker-2 text-center p-2 p-lg-3 p-xl-4">
-          <h2 class="fw-bold">Payment Methods</h2>
-          <p>When you submit your payment information your data is protected by Secure Socket Layer (SSL)
-            technology certified by a digital certificate.</p>
-          <p>Once you've completed this transaction, you'll receive an email message confirming receipt of
-            your purchase. </p>
+      <div class="col-12">
+        <div class="row border-top">
+          <div class="col-xs-12 col-md-8 my-2"></div>
+          <div class="col-xs-12 col-md-4 bg-darker-2 text-center p-2 p-lg-3 p-xl-4">
+            <h2 class="fw-bold">Payment Methods</h2>
+            <p>
+              When you submit your payment information your data is protected by Secure Socket Layer (SSL) technology
+              certified by a digital certificate.
+            </p>
+            <p>
+              Once you've completed this transaction, you'll receive an email message confirming receipt of your
+              purchase.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="col-12 col-sm-11 col-md-8 col-lg-6 my-3 mx-auto">
-      <div class="row text-center text-sm-start">
-        <div class="col-12 col-sm-6 fw-bold cost-border text-center text-sm-end">
-          <span>Payment method:</span>
-        </div>
-        <div class="col-12 col-sm-6">
-          <span class="text-truncate-1">Visa ending in 2394</span>
-          <a href="../account/payment-methods">(Change)</a>
-        </div>
-        <div class="col-12 col-sm-6 fw-bold cost-border text-center text-sm-end">
-          <span>Shipping to:</span>
-        </div>
-        <div class="col-12 col-sm-6">
-          <div class="text-break text-truncate-2">
-            <span class="text-truncate-1">Marillon hill</span>
+      <div class="col-12 col-sm-11 col-md-8 col-lg-6 my-3 mx-auto">
+        <div class="row text-center text-sm-start">
+          <div class="col-12 col-sm-6 fw-bold cost-border text-center text-sm-end">
+            <span>Payment method:</span>
+          </div>
+          <div class="col-12 col-sm-6">
+            <span class="text-truncate-1">Visa ending in 2394</span>
             <a href="../account/payment-methods">(Change)</a>
           </div>
-        </div>
-        <div class="col-12 col-sm-6 fw-bold cost-border text-center text-sm-end">
-          <span>Subtotal (tax included):</span>
-        </div>
-        <div class="col-12 col-sm-6">
-          <div class="text-break text-truncate-2">
-            <span>$13552.33</span>
+          <div class="col-12 col-sm-6 fw-bold cost-border text-center text-sm-end">
+            <span>Shipping to:</span>
+          </div>
+          <div class="col-12 col-sm-6">
+            <div class="text-break text-truncate-2">
+              <span class="text-truncate-1">Marillon hill</span>
+              <a href="../account/payment-methods">(Change)</a>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 fw-bold cost-border text-center text-sm-end">
+            <span>Subtotal (tax included):</span>
+          </div>
+          <div class="col-12 col-sm-6">
+            <div class="text-break text-truncate-2">
+              <span>$13552.33</span>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 fw-bold cost-border text-center text-sm-end">
+            <span>Discount:</span>
+          </div>
+          <div class="col-12 col-sm-6">
+            <div class="text-break text-truncate-2">
+              <span>-$516.93</span>
+              <span>(75%)</span>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 fw-bold cost-border text-center text-sm-end">
+            <span>ORDER TOTAL:</span>
+          </div>
+          <div class="col-12 col-sm-6">
+            <div class="text-break text-truncate-2">
+              <span>$49.99</span>
+            </div>
           </div>
         </div>
-
-        <div class="col-12 col-sm-6 fw-bold cost-border text-center text-sm-end">
-          <span>Discount:</span>
-        </div>
-        <div class="col-12 col-sm-6">
-          <div class="text-break text-truncate-2">
-            <span>-$516.93</span>
-            <span>(75%)</span>
-          </div>
-        </div>
-
-        <div class="col-12 col-sm-6 fw-bold cost-border text-center text-sm-end">
-          <span>ORDER TOTAL:</span>
-        </div>
-        <div class="col-12 col-sm-6">
-          <div class="text-break text-truncate-2">
-            <span>$49.99</span>
-          </div>
-        </div>
-
       </div>
-    </div>
 
-    <div class="col-12 text-center">
-      <span>By placing your order, you agree to our <a href="#">Terms and Conditions</a> and <a href="#">Privacy
-          Policy</a>.</span>
-      <div>
-        <button class="btn btn-primary ff-lato-7 fs-5 my-3">Finish buy</button>
+      <div class="col-12 text-center">
+        <span
+          >By placing your order, you agree to our <a href="#">Terms and Conditions</a> and
+          <a href="#">Privacy Policy</a>.</span
+        >
+        <div>
+          <button class="btn btn-primary ff-lato-7 fs-5 my-3">Finish buy</button>
+        </div>
       </div>
-    </div>
-  </template>
-  <template id="template-cart-purchase">
-    <div class="text-center m-auto">
-      <h1 class="fw-bold fs-2">THANK YOU FOR BUYING</h1>
-      <p>An email has been sent to you with the purchase receipt</p>
-      <div class="d-grid gap-2">
-        <a class="btn btn-outline-primary my-2 col-12 col-sm-6 col-md-5 col-lg-4 mx-auto position-relative"
-          tabindex="-1" role="button" href="../shop/shop.html">Return to the store</a>
-        <a class="btn btn-primary my-2 col-12 col-sm-6 col-md-5 col-lg-4 mx-auto position-relative" tabindex="-1"
-          role="button" href="../account/purchases">See my purchases</a>
+    </template>
+    <template id="template-cart-purchase">
+      <div class="text-center m-auto">
+        <h1 class="fw-bold fs-2">THANK YOU FOR BUYING</h1>
+        <p>An email has been sent to you with the purchase receipt</p>
+        <div class="d-grid gap-2">
+          <a
+            class="btn btn-outline-primary my-2 col-12 col-sm-6 col-md-5 col-lg-4 mx-auto position-relative"
+            tabindex="-1"
+            role="button"
+            href="../shop/shop.html"
+            >Return to the store</a
+          >
+          <a
+            class="btn btn-primary my-2 col-12 col-sm-6 col-md-5 col-lg-4 mx-auto position-relative"
+            tabindex="-1"
+            role="button"
+            href="../account/purchases"
+            >See my purchases</a
+          >
+        </div>
       </div>
-    </div>
-  </template>
-
-</body>
-
+    </template>
+  </body>
 </html>

@@ -1,600 +1,784 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- HTML Meta Tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TheMorfi - Locations</title>
+    <meta
+      name="description"
+      content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more"
+    />
+    <meta name="keywords" content="THE, MORFI, FOOD, HEALTHY, BEST" />
 
-<head>
-  <!-- HTML Meta Tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TheMorfi - Locations</title>
-  <meta name="description"
-    content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more">
-  <meta name="keywords" content="THE, MORFI, FOOD, HEALTHY, BEST">
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="The Morfi" />
+    <meta
+      itemprop="description"
+      content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more"
+    />
+    <meta itemprop="image" content="https://i.imgur.com/NRUXriX.jpg" />
 
-  <!-- Google / Search Engine Tags -->
-  <meta itemprop="name" content="The Morfi">
-  <meta itemprop="description"
-    content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more">
-  <meta itemprop="image" content="https://i.imgur.com/NRUXriX.jpg">
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://arguel.github.io/morfi" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="The Morfi" />
+    <meta
+      property="og:description"
+      content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more"
+    />
+    <meta property="og:image" content="https://i.imgur.com/NRUXriX.jpg" />
 
-  <!-- Facebook Meta Tags -->
-  <meta property="og:url" content="https://arguel.github.io/morfi">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="The Morfi">
-  <meta property="og:description"
-    content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more">
-  <meta property="og:image" content="https://i.imgur.com/NRUXriX.jpg">
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The Morfi" />
+    <meta
+      name="twitter:description"
+      content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more"
+    />
+    <meta name="twitter:image" content="https://i.imgur.com/NRUXriX.jpg" />
 
-  <!-- Twitter Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="The Morfi">
-  <meta name="twitter:description"
-    content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more">
-  <meta name="twitter:image" content="https://i.imgur.com/NRUXriX.jpg">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../../assets/css/main.css" type="text/css" />
 
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="../../assets/css/main.css" type="text/css">
+    <!-- Google / Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
 
-  <!-- Google / Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Tab Icon -->
+    <link rel="icon" href="../../img/logo/white_background/small_logo_icon/svg/small_logo_icon.svg" />
 
-  <!-- Tab Icon -->
-  <link rel="icon" href="../../img/logo/white_background/small_logo_icon/svg/small_logo_icon.svg">
+    <!--Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/1131adf3a1.js" crossorigin="anonymous"></script>
+    <!--------------------->
+    <!--Google maps-->
+    <script>
+      function initMap() {
+        const Woodmere = {lat: 33.885852, lng: -84.472114};
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 12,
+          center: Woodmere,
+        });
+        const marker = new google.maps.Marker({
+          position: Woodmere,
+          map: map,
+        });
+      }
+    </script>
+  </head>
 
-  <!--Font Awesome Icons -->
-  <script src="https://kit.fontawesome.com/1131adf3a1.js" crossorigin="anonymous"></script>
-  <!--------------------->
-  <!--Google maps-->
-  <script>
-    function initMap() {
-      const Woodmere = {lat: 33.885852, lng: -84.472114};
-      const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 12,
-        center: Woodmere,
-      });
-      const marker = new google.maps.Marker({
-        position: Woodmere,
-        map: map,
-      });
-    }
-  </script>
-</head>
+  <body>
+    <header>
+      <!--Start of nav-menu-container-->
+      <div class="container-xxl navbar-min-h">
+        <nav class="navbar navbar-expand-lg navbar-light m-2">
+          <div class="h-40px text-center">
+            <a class="navbar-brand" href="/">
+              <img
+                class="h-100 w-auto"
+                src="../../img/logo/white_background/medium_logo_side/svg/medium_logo_side.svg"
+                alt="side-logo"
+              />
+            </a>
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!--nav-->
+            <ul class="navbar-nav align-items-center justify-content-around mx-auto col-lg-8">
+              <!--Home-->
+              <li class="nav-item">
+                <a class="nav-link fs-5" href="/" aria-current="page">Home</a>
+              </li>
+              <!--About-->
+              <li class="nav-item dropdown text-center">
+                <a
+                  class="nav-link active fs-5"
+                  href="#"
+                  id="navbarDropdownMenuLinkAbout"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >About</a
+                >
+                <ul
+                  class="nav-color-list dropdown-menu text-center text-lg-start"
+                  aria-labelledby="navbarDropdownMenuLinkAbout"
+                >
+                  <li><a class="dropdown-item" href="../about/about-us.html">About us</a></li>
+                  <li><a class="dropdown-item" href="../about/locations.html">Locations</a></li>
+                  <li><a class="dropdown-item" href="../about/our-products.html">Our products</a></li>
+                </ul>
+              </li>
+              <!--Shop-->
+              <li class="nav-item dropdown text-center">
+                <a
+                  class="nav-link fs-5"
+                  href="#"
+                  id="navbarDropdownMenuLinkShop"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Shop</a
+                >
+                <ul
+                  class="nav-color-list dropdown-menu text-center text-lg-start"
+                  aria-labelledby="navbarDropdownMenuLinkDrop"
+                >
+                  <li><a class="dropdown-item" href="../shop/shop.html">Catalogue</a></li>
+                  <li><a class="dropdown-item" href="../shop/top-offers.html">Top offers</a></li>
+                </ul>
+              </li>
+              <!--Recipes-->
+              <li class="nav-item dropdown text-center">
+                <a
+                  class="nav-link fs-5"
+                  href="#"
+                  id="navbarDropdownMenuLinkRecipes"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Recipes</a
+                >
+                <ul
+                  class="nav-color-list dropdown-menu text-center text-lg-start"
+                  aria-labelledby="navbarDropdownMenuLinkRecipes"
+                >
+                  <li><a class="dropdown-item" href="../recipes/classics.html">Classics</a></li>
+                  <li><a class="dropdown-item" href="../recipes/healthy-recipes.html">Healthy</a></li>
+                  <li><a class="dropdown-item" href="../recipes/wholemeal-recipes.html">Wholemeal</a></li>
+                  <li><a class="dropdown-item" href="../recipes/easy-recipes.html">Easy</a></li>
+                </ul>
+              </li>
+              <!--Help-->
+              <li class="nav-item dropdown text-center">
+                <a
+                  class="nav-link fs-5"
+                  href="#"
+                  id="navbarDropdownMenuLinkHelp"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Help</a
+                >
+                <ul
+                  class="nav-color-list dropdown-menu text-center text-lg-start"
+                  aria-labelledby="navbarDropdownMenuLinkHelp"
+                >
+                  <li><a class="dropdown-item" href="../help/contact.html">Contact</a></li>
+                  <li><a class="dropdown-item" href="../help/faq/faq.html">FAQ</a></li>
+                </ul>
+              </li>
+              <!--Searchbar-->
+              <li class="nav-item">
+                <form>
+                  <div class="input-group">
+                    <button class="input-group-text nav-searchbar" id="search-icon" aria-label="searchbar icon">
+                      <i class="fas fa-search"></i>
+                    </button>
+                    <input
+                      type="text"
+                      class="form-control nav-searchbar"
+                      placeholder="Search"
+                      aria-label="Search"
+                      aria-describedby="search-icon"
+                    />
+                  </div>
+                </form>
+              </li>
+            </ul>
+            <hr />
+            <!--account-nav-->
+            <ul class="navbar-nav align-items-center">
+              <li class="nav-item d-block d-lg-flex text-center btn-login-container my-1">
+                <a class="nav-link btn-login rounded text-nowrap px-4 py-3 px-lg-2 py-lg-2" href="../account/login.html"
+                  >Log in</a
+                >
+              </li>
+              <li class="nav-item text-center btn-sign-up-container my-1">
+                <a
+                  class="nav-link btn-sign-up rounded text-nowrap px-4 py-3 px-lg-2 py-lg-2"
+                  href="../account/register.html"
+                  >Sign up</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <!--End of nav-menu-container-->
+    </header>
 
-<body>
-
-  <header>
-
-    <!--Start of nav-menu-container-->
-    <div class="container-xxl navbar-min-h">
-      <nav class="navbar navbar-expand-lg navbar-light m-2">
-        <div class="h-40px text-center">
-          <a class="navbar-brand" href="/">
-            <img class="h-100 w-auto" src="../../img/logo/white_background/medium_logo_side/svg/medium_logo_side.svg"
-              alt="side-logo">
-          </a>
+    <main>
+      <!--top section start-->
+      <section class="container-xxl my-5">
+        <!--main search container start-->
+        <div class="row mb-5">
+          <div class="col text-center">
+            <form>
+              <label class="form-label fs-4 mb-2" for="locations-i">Find a store near you</label>
+              <div class="input-group locations-w-50-searchbar mx-auto">
+                <input class="form-control" type="text" name="locations-i" id="locations-i" placeholder="e.g miami" />
+                <button class="input-group-text" id="si-locations" aria-label="search">
+                  <i class="fas fa-search text-darker-4"></i>
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <!--nav-->
-          <ul class="navbar-nav align-items-center justify-content-around mx-auto col-lg-8">
-            <!--Home-->
-            <li class="nav-item">
-              <a class="nav-link fs-5" href="/" aria-current="page">Home</a>
-            </li>
-            <!--About-->
-            <li class="nav-item dropdown text-center">
-              <a class="nav-link active fs-5" href="#" id="navbarDropdownMenuLinkAbout" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">About</a>
-              <ul class="nav-color-list dropdown-menu text-center text-lg-start"
-                aria-labelledby="navbarDropdownMenuLinkAbout">
-                <li><a class="dropdown-item" href="../about/about-us.html">About us</a></li>
-                <li><a class="dropdown-item" href="../about/locations.html">Locations</a></li>
-                <li><a class="dropdown-item" href="../about/our-products.html">Our products</a></li>
+        <!--main search container end-->
+
+        <!--available locations start-->
+        <h5 class="ff-lato-4 text-center">We currently have restaurants in the following locations:</h5>
+        <div
+          class="
+            row
+            locations-w-75-locations
+            mx-auto
+            align-items-center
+            justify-content-evenly
+            bg-light
+            border
+            rounded-3
+          "
+        >
+          <!--Location1-->
+          <div class="accordion col-md-3 m-2" id="Location1">
+            <div class="accordion-item bg-white rounded">
+              <h2 class="accordion-header" id="heading1">
+                <button
+                  class="accordion-button collapsed ff-lato-4"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse1"
+                  aria-expanded="false"
+                  aria-controls="collapse1"
+                >
+                  Arkansas
+                </button>
+              </h2>
+              <div
+                id="collapse1"
+                class="accordion-collapse collapse"
+                aria-labelledby="heading1"
+                data-bs-parent="#Location1"
+              >
+                <ul class="accordion-body list-unstyled m-0">
+                  <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Little Rock</a></li>
+                  <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Fayetteville</a></li>
+                  <li class="p-3"><a class="text-dark text-center" href="#">Bentonville</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!--Location1-->
+
+          <!--Location2-->
+          <div class="accordion col-md-3 m-2" id="Location2">
+            <div class="accordion-item bg-white rounded">
+              <h2 class="accordion-header" id="heading2">
+                <button
+                  class="accordion-button collapsed ff-lato-4"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse2"
+                  aria-expanded="false"
+                  aria-controls="collapse2"
+                >
+                  Mississipi
+                </button>
+              </h2>
+              <div
+                id="collapse2"
+                class="accordion-collapse collapse"
+                aria-labelledby="heading2"
+                data-bs-parent="#Location2"
+              >
+                <ul class="accordion-body list-unstyled m-0">
+                  <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Jackson</a></li>
+                  <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Laurel</a></li>
+                  <li class="p-3"><a class="text-dark text-center" href="#">Biloxi</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!--Location2-->
+
+          <!--Location3-->
+          <div class="accordion col-md-3 m-2" id="Location3">
+            <div class="accordion-item bg-white rounded">
+              <h2 class="accordion-header" id="heading3">
+                <button
+                  class="accordion-button collapsed ff-lato-4"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse3"
+                  aria-expanded="false"
+                  aria-controls="collapse3"
+                >
+                  Alabama
+                </button>
+              </h2>
+              <div
+                id="collapse3"
+                class="accordion-collapse collapse"
+                aria-labelledby="heading3"
+                data-bs-parent="#Location3"
+              >
+                <ul class="accordion-body list-unstyled m-0">
+                  <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Montgomery</a></li>
+                  <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Birmingham</a></li>
+                  <li class="p-3"><a class="text-dark text-center" href="#">Auburn</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!--Location3-->
+
+          <!--Location4-->
+          <div class="accordion col-md-3 m-2" id="Location4">
+            <div class="accordion-item bg-white rounded">
+              <h2 class="accordion-header" id="heading4">
+                <button
+                  class="accordion-button collapsed ff-lato-4"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse4"
+                  aria-expanded="false"
+                  aria-controls="collapse4"
+                >
+                  Georgia
+                </button>
+              </h2>
+              <div
+                id="collapse4"
+                class="accordion-collapse collapse"
+                aria-labelledby="heading4"
+                data-bs-parent="#Location4"
+              >
+                <ul class="accordion-body list-unstyled m-0">
+                  <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Atlanta</a></li>
+                  <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Savannah</a></li>
+                  <li class="p-3"><a class="text-dark text-center" href="#">Augusta</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!--Location4-->
+
+          <!--Location5-->
+          <div class="accordion col-md-3 m-2" id="Location5">
+            <div class="accordion-item bg-white rounded">
+              <h2 class="accordion-header" id="heading5">
+                <button
+                  class="accordion-button collapsed ff-lato-4"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse5"
+                  aria-expanded="false"
+                  aria-controls="collapse5"
+                >
+                  South Carolina
+                </button>
+              </h2>
+              <div
+                id="collapse5"
+                class="accordion-collapse collapse"
+                aria-labelledby="heading5"
+                data-bs-parent="#Location5"
+              >
+                <ul class="accordion-body list-unstyled m-0">
+                  <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Charleston</a></li>
+                  <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Columbia</a></li>
+                  <li class="p-3"><a class="text-dark text-center" href="#">Myrtle Beach</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!--Location5-->
+
+          <!--Location6-->
+          <div class="accordion col-md-3 m-2" id="Location6">
+            <div class="accordion-item bg-white rounded">
+              <h2 class="accordion-header" id="heading6">
+                <button
+                  class="accordion-button collapsed ff-lato-4"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse6"
+                  aria-expanded="false"
+                  aria-controls="collapse6"
+                >
+                  Tennesse
+                </button>
+              </h2>
+              <div
+                id="collapse6"
+                class="accordion-collapse collapse"
+                aria-labelledby="heading6"
+                data-bs-parent="#Location6"
+              >
+                <ul class="accordion-body list-unstyled m-0">
+                  <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Nashville</a></li>
+                  <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Memphis</a></li>
+                  <li class="p-3"><a class="text-dark text-center" href="#">Gatlinburg</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!--Location6-->
+
+          <!--Location7-->
+          <div class="accordion col-md-3 m-2" id="Location7">
+            <div class="accordion-item bg-white rounded">
+              <h2 class="accordion-header" id="heading7">
+                <button
+                  class="accordion-button collapsed ff-lato-4"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse7"
+                  aria-expanded="false"
+                  aria-controls="collapse7"
+                >
+                  Miami
+                </button>
+              </h2>
+              <div
+                id="collapse7"
+                class="accordion-collapse collapse"
+                aria-labelledby="heading7"
+                data-bs-parent="#Location7"
+              >
+                <ul class="accordion-body list-unstyled m-0">
+                  <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Orlando</a></li>
+                  <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Tampa</a></li>
+                  <li class="p-3"><a class="text-dark text-center" href="#">San Petersburgo</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!--Location7-->
+
+          <!--Location8-->
+          <div class="accordion col-md-3 m-2" id="Location8">
+            <div class="accordion-item bg-white rounded">
+              <h2 class="accordion-header" id="heading8">
+                <button
+                  class="accordion-button collapsed ff-lato-4"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse8"
+                  aria-expanded="false"
+                  aria-controls="collapse8"
+                >
+                  West Virginia
+                </button>
+              </h2>
+              <div
+                id="collapse8"
+                class="accordion-collapse collapse"
+                aria-labelledby="heading8"
+                data-bs-parent="#Location8"
+              >
+                <ul class="accordion-body list-unstyled m-0">
+                  <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Charleston</a></li>
+                  <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Morgantown</a></li>
+                  <li class="p-3"><a class="text-dark text-center" href="#">Huntington</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!--Location8-->
+
+          <!--Location9-->
+          <div class="accordion col-md-3 m-2" id="Location9">
+            <div class="accordion-item bg-white rounded">
+              <h2 class="accordion-header" id="heading9">
+                <button
+                  class="accordion-button collapsed ff-lato-4"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse9"
+                  aria-expanded="false"
+                  aria-controls="collapse9"
+                >
+                  Indiana
+                </button>
+              </h2>
+              <div
+                id="collapse9"
+                class="accordion-collapse collapse"
+                aria-labelledby="heading9"
+                data-bs-parent="#Location9"
+              >
+                <ul class="accordion-body list-unstyled m-0">
+                  <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Evansville </a></li>
+                  <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Fort Wayne</a></li>
+                  <li class="p-3"><a class="text-dark text-center" href="#">Bloomington</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!--Location9-->
+        </div>
+        <!--available locations end-->
+      </section>
+      <!--top section end-->
+
+      <!--mid section start-->
+      <section class="container-xl my-5">
+        <div class="row">
+          <!--left map part start-->
+          <div class="col-md-8 d-none d-md-block">
+            <div id="map" class="w-100 rounded-3"></div>
+            <p class="ms-2 mt-4 fs-5 ff-lato-4 fw-bold">Needs billing enabled ↑</p>
+          </div>
+          <!--left map part end-->
+
+          <!--right info part start-->
+          <div class="col-md-4 bg-light border rounded-3">
+            <!--current location-->
+            <h1 class="text-center mt-3 ff-lato-4">Orlando</h1>
+
+            <!--Direction-->
+            <div class="bg-white p-4 m-2 border border-3 rounded">
+              <h4 class="mb-4 border-bottom border-darker-3">Direction</h4>
+              <p>1700 Convention Center Dr <br />Miami Beach FL 33139 <br />United States</p>
+            </div>
+            <!--Direction-->
+
+            <!--Schedule-->
+            <div class="bg-white p-4 m-2 border border-3 rounded">
+              <h4 class="mb-4 border-bottom border-darker-3">Schedule</h4>
+              <ul>
+                <li>Monday through Friday, from 9 am to 12 pm</li>
+                <li>Saturdays, from 9 am to 5 pm</li>
               </ul>
-            </li>
-            <!--Shop-->
-            <li class="nav-item dropdown text-center">
-              <a class="nav-link fs-5" href="#" id="navbarDropdownMenuLinkShop" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">Shop</a>
-              <ul class="nav-color-list dropdown-menu text-center text-lg-start"
-                aria-labelledby="navbarDropdownMenuLinkDrop">
-                <li><a class="dropdown-item" href="../shop/shop.html">Catalogue</a></li>
-                <li><a class="dropdown-item" href="../shop/top-offers.html">Top offers</a></li>
-              </ul>
-            </li>
-            <!--Recipes-->
-            <li class="nav-item dropdown text-center">
-              <a class="nav-link fs-5" href="#" id="navbarDropdownMenuLinkRecipes" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">Recipes</a>
-              <ul class="nav-color-list dropdown-menu text-center text-lg-start"
-                aria-labelledby="navbarDropdownMenuLinkRecipes">
-                <li><a class="dropdown-item" href="../recipes/classics.html">Classics</a></li>
-                <li><a class="dropdown-item" href="../recipes/healthy-recipes.html">Healthy</a></li>
-                <li><a class="dropdown-item" href="../recipes/wholemeal-recipes.html">Wholemeal</a></li>
-                <li><a class="dropdown-item" href="../recipes/easy-recipes.html">Easy</a></li>
-              </ul>
-            </li>
-            <!--Help-->
-            <li class="nav-item dropdown text-center">
-              <a class="nav-link fs-5" href="#" id="navbarDropdownMenuLinkHelp" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">Help</a>
-              <ul class="nav-color-list dropdown-menu text-center text-lg-start"
-                aria-labelledby="navbarDropdownMenuLinkHelp">
-                <li><a class="dropdown-item" href="../help/contact.html">Contact</a></li>
-                <li><a class="dropdown-item" href="../help/faq/faq.html">FAQ</a></li>
-              </ul>
-            </li>
-            <!--Searchbar-->
-            <li class="nav-item">
-              <form>
-                <div class="input-group">
-                  <button class="input-group-text nav-searchbar" id="search-icon" aria-label="searchbar icon">
-                    <i class="fas fa-search"></i>
-                  </button>
-                  <input type="text" class="form-control nav-searchbar" placeholder="Search" aria-label="Search"
-                    aria-describedby="search-icon">
+            </div>
+            <!--Schedule-->
+
+            <!--Reservations-->
+            <div class="bg-white p-4 m-2 border border-3 rounded">
+              <h4 class="mb-4 border-bottom border-darker-3">Contact / Reservations</h4>
+              <h5 class="ff-lato-4 border rounded text-center p-2">Attention from 9:00 am to 11 pm business hours</h5>
+              <p>(+21)502-1254133</p>
+              <p>
+                ()305) 673-7782
+                <br />
+                Internacional: +1 305-673-7782
+              </p>
+              <p>
+                ()305) 673-7000
+                <br />Internacional: +1 305-673-7000
+              </p>
+
+              <div class="text-center">
+                <button type="button" class="btn btn-success">Make a reservation online</button>
+              </div>
+            </div>
+            <!--Reservations-->
+          </div>
+          <!--right info part end-->
+        </div>
+      </section>
+      <!--mid section end-->
+    </main>
+
+    <footer>
+      <!--footer-container-fluid-start-->
+      <div class="container-fluid bg-darker-2">
+        <!--footer-container-xxl-start-->
+        <div class="container-xxl my-0">
+          <!--footer-top-start-->
+          <div class="row d-flex align-items-center justify-content-around footer-top m-0">
+            <!--footer-top-left-start-->
+            <div class="row align-items-center justify-content-evenly col-lg-3 p-0">
+              <div class="col-8 p-0 text-center d-none d-lg-block">
+                <div class="mw-200px h-100px overflow-hidden mb-2 mx-auto">
+                  <img
+                    class="w-100 h-100px"
+                    src="../../img/logo/white_background/full_logo/svg/full_logo.svg"
+                    alt="logo-image"
+                  />
                 </div>
-              </form>
-            </li>
-          </ul>
-          <hr>
-          <!--account-nav-->
-          <ul class="navbar-nav align-items-center">
-            <li class="nav-item d-block d-lg-flex text-center btn-login-container my-1">
-              <a class="nav-link btn-login rounded text-nowrap px-4 py-3 px-lg-2 py-lg-2"
-                href="../account/login.html">Log in</a>
-            </li>
-            <li class="nav-item text-center btn-sign-up-container my-1">
-              <a class="nav-link btn-sign-up rounded text-nowrap px-4 py-3 px-lg-2 py-lg-2"
-                href="../account/register.html">Sign up</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-    <!--End of nav-menu-container-->
-
-  </header>
-
-  <main>
-
-    <!--top section start-->
-    <section class="container-xxl my-5">
-
-      <!--main search container start-->
-      <div class="row mb-5">
-        <div class="col text-center">
-          <form>
-            <label class="form-label fs-4 mb-2" for="locations-i">Find a store near you</label>
-            <div class="input-group locations-w-50-searchbar mx-auto">
-              <input class="form-control" type="text" name="locations-i" id="locations-i" placeholder="e.g miami">
-              <button class="input-group-text" id="si-locations" aria-label="search">
-                <i class="fas fa-search text-darker-4"></i>
-              </button>
+                <p class="mb-0 text-dark mw-200px mx-auto">Since 1997 making our customers happy</p>
+              </div>
+              <ul
+                class="
+                  col col-sm-7 col-md-5 col-lg-4
+                  list-unstyled
+                  m-2 m-lg-0
+                  p-0
+                  d-flex
+                  flex-row flex-lg-column
+                  align-items-center
+                  justify-content-evenly
+                "
+              >
+                <li class="my-2 my-lg-3 mx-2 mx-lg-0">
+                  <a
+                    class="p-2 bg-dark text-white rounded-circle"
+                    href="https://www.facebook.com/"
+                    aria-label="facebook icon"
+                  >
+                    <i class="fab fa-facebook-f fa-fw fs-6"></i>
+                  </a>
+                </li>
+                <li class="my-2 my-lg-0 mb-lg-3 mx-2 mx-lg-0">
+                  <a
+                    class="p-2 bg-dark text-white rounded-circle"
+                    href="https://twitter.com/"
+                    aria-label="twitter icon"
+                  >
+                    <i class="fab fa-twitter fa-fw fs-6"></i>
+                  </a>
+                </li>
+                <li class="my-2 my-lg-0 mb-lg-3 mx-2 mx-lg-0">
+                  <a
+                    class="p-2 bg-dark text-white rounded-circle"
+                    href="https://www.youtube.com/"
+                    aria-label="youtube icon"
+                  >
+                    <i class="fab fa-youtube fa-fw fs-6"></i>
+                  </a>
+                </li>
+                <li class="my-2 my-lg-0 mb-lg-3 mx-2 mx-lg-0">
+                  <a
+                    class="p-2 bg-dark text-white rounded-circle"
+                    href="https://www.instagram.com/"
+                    aria-label="instagram icon"
+                  >
+                    <i class="fab fa-instagram fa-fw fs-6"></i>
+                  </a>
+                </li>
+              </ul>
+              <label class="visually-hidden" for="change-language-top">Language</label>
+              <select
+                class="col-7 col-sm-4 col-md-4 d-block d-lg-none p-2 rounded"
+                name="change-language-top"
+                id="change-language-top"
+              >
+                <option selected value="English">English</option>
+                <option value="Spanish">Spanish</option>
+              </select>
+              <hr class="d-block d-lg-none my-0" />
             </div>
-          </form>
+            <!--footer-top-left-end-->
+            <!--footer-top-right-start-->
+            <div class="col-12 col-lg-8 mt-3 p-0">
+              <div class="row d-flex justify-content-evenly w-100 m-0">
+                <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
+                  <h5 class="mb-2 mb-lg-4"><a href="/" class="text-dark h-white">Home</a></h5>
+                  <ul class="list-unstyled">
+                    <li class="mb-1"><a class="text-dark h-white" href="../about/blog.html">Events</a></li>
+                    <li class="mb-1"><a class="text-dark h-white" href="../../index.html#newsletter">Newsletter</a></li>
+                  </ul>
+                </div>
+                <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
+                  <h5 class="mb-2 mb-lg-4"><a href="../about/about-us.html" class="text-dark h-white">About</a></h5>
+                  <ul class="list-unstyled">
+                    <li class="mb-1"><a class="text-dark h-white" href="../about/about-us.html">About us</a></li>
+                    <li class="mb-1"><a class="text-dark h-white" href="../about/locations.html">Locations</a></li>
+                    <li class="mb-1">
+                      <a class="text-dark h-white" href="../about/our-products.html">Our products</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
+                  <h5 class="mb-2 mb-lg-4"><a href="../shop/shop.html" class="text-dark h-white">Shop</a></h5>
+                  <ul class="list-unstyled">
+                    <li class="mb-1"><a class="text-dark h-white" href="../shop/shop.html">Catalogue</a></li>
+                    <li class="mb-1"><a class="text-dark h-white" href="../shop/top-offers.html">Top offers</a></li>
+                  </ul>
+                </div>
+                <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
+                  <h5 class="mb-2 mb-lg-4"><a href="../recipes/classics.html" class="text-dark h-white">Recipes</a></h5>
+                  <ul class="list-unstyled">
+                    <li class="mb-1"><a class="text-dark h-white" href="../recipes/classics.html">Classics</a></li>
+                    <li class="mb-1">
+                      <a class="text-dark h-white" href="../recipes/healthy-recipes.html">Healthy</a>
+                    </li>
+                    <li class="mb-1">
+                      <a class="text-dark h-white" href="../recipes/wholemeal-recipes.html">Wholemeal</a>
+                    </li>
+                    <li class="mb-1"><a class="text-dark h-white" href="../recipes/easy-recipes.html">Easy</a></li>
+                  </ul>
+                </div>
+                <div class="col-12 col-lg-2 text-center text-lg-start mb-3">
+                  <h5 class="mb-2 mb-lg-4"><a href="../help/contact.html" class="text-dark h-white">Help</a></h5>
+                  <ul class="list-unstyled">
+                    <li class="mb-1"><a class="text-dark h-white" href="../help/contact.html">Contact</a></li>
+                    <li class="mb-1"><a class="text-dark h-white" href="../help/faq/faq.html">FAQ</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!--footer-top-right-end-->
+          </div>
+          <!--footer-top-end-->
         </div>
+        <!--footer-container-xxl-end-->
       </div>
-      <!--main search container end-->
+      <!--footer-container-fluid-end-->
 
-      <!--available locations start-->
-      <h5 class="ff-lato-4 text-center">We currently have restaurants in the following locations: </h5>
-      <div
-        class="row locations-w-75-locations mx-auto align-items-center justify-content-evenly bg-light border rounded-3">
-        <!--Location1-->
-        <div class="accordion col-md-3 m-2" id="Location1">
-          <div class="accordion-item bg-white rounded">
-            <h2 class="accordion-header" id="heading1">
-              <button class="accordion-button collapsed ff-lato-4" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
-                Arkansas
-              </button>
-            </h2>
-            <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1"
-              data-bs-parent="#Location1">
-              <ul class="accordion-body list-unstyled m-0">
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Little Rock</a></li>
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Fayetteville</a></li>
-                <li class="p-3"><a class="text-dark text-center" href="#">Bentonville</a></li>
-              </ul>
+      <!--footer-container-fluid-start-->
+      <div class="container-fluid bg-dark">
+        <!--footer-container-xxl-start-->
+        <div class="container-xxl my-0">
+          <!--footer-bottom-start-->
+          <div class="row d-flex align-items-center justify-content-around my-0 mx-auto p-3 footer-bottom">
+            <div class="col-12 col-lg-8 m-2 m-lg-0">
+              <div class="row align-items-center">
+                <div class="col text-center mb-2 mb-lg-0">
+                  <a class="footer-link text-white" href="#">Terms of Use</a>
+                </div>
+                <div class="col text-center mb-2 mb-lg-0">
+                  <a class="footer-link text-white" href="#">Terms & Conditions</a>
+                </div>
+                <div class="col text-center mb-2 mb-lg-0">
+                  <a class="footer-link text-white" href="#">Privacy Policy</a>
+                </div>
+                <div class="col text-center mb-2 mb-lg-0 d-none d-lg-block">
+                  <i class="fas fa-globe text-white"></i>
+                  <label class="visually-hidden" for="change-language-bottom">Language</label>
+                  <select
+                    class="col text-center p-2 rounded bg-dark text-white"
+                    name="change-language-bottom"
+                    id="change-language-bottom"
+                  >
+                    <option selected value="English">English</option>
+                    <option value="Spanish">Spanish</option>
+                  </select>
+                </div>
+              </div>
             </div>
+            <div class="col-12 col-lg-3 text-white text-center m-2 m-lg-0">© 2020 Morfi. All Rights Reserved.</div>
           </div>
+          <!--footer-bottom-end-->
         </div>
-        <!--Location1-->
-
-        <!--Location2-->
-        <div class="accordion col-md-3 m-2" id="Location2">
-          <div class="accordion-item bg-white rounded">
-            <h2 class="accordion-header" id="heading2">
-              <button class="accordion-button collapsed ff-lato-4" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                Mississipi
-              </button>
-            </h2>
-            <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2"
-              data-bs-parent="#Location2">
-              <ul class="accordion-body list-unstyled m-0">
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Jackson</a></li>
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Laurel</a></li>
-                <li class="p-3"><a class="text-dark text-center" href="#">Biloxi</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <!--Location2-->
-
-        <!--Location3-->
-        <div class="accordion col-md-3 m-2" id="Location3">
-          <div class="accordion-item bg-white rounded">
-            <h2 class="accordion-header" id="heading3">
-              <button class="accordion-button collapsed ff-lato-4" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                Alabama
-              </button>
-            </h2>
-            <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3"
-              data-bs-parent="#Location3">
-              <ul class="accordion-body list-unstyled m-0">
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Montgomery</a></li>
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Birmingham</a></li>
-                <li class="p-3"><a class="text-dark text-center" href="#">Auburn</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <!--Location3-->
-
-        <!--Location4-->
-        <div class="accordion col-md-3 m-2" id="Location4">
-          <div class="accordion-item bg-white rounded">
-            <h2 class="accordion-header" id="heading4">
-              <button class="accordion-button collapsed ff-lato-4" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                Georgia
-              </button>
-            </h2>
-            <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4"
-              data-bs-parent="#Location4">
-              <ul class="accordion-body list-unstyled m-0">
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Atlanta</a></li>
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Savannah</a></li>
-                <li class="p-3"><a class="text-dark text-center" href="#">Augusta</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <!--Location4-->
-
-        <!--Location5-->
-        <div class="accordion col-md-3 m-2" id="Location5">
-          <div class="accordion-item bg-white rounded">
-            <h2 class="accordion-header" id="heading5">
-              <button class="accordion-button collapsed ff-lato-4" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-                South Carolina
-              </button>
-            </h2>
-            <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5"
-              data-bs-parent="#Location5">
-              <ul class="accordion-body list-unstyled m-0">
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Charleston</a></li>
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Columbia</a></li>
-                <li class="p-3"><a class="text-dark text-center" href="#">Myrtle Beach</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <!--Location5-->
-
-        <!--Location6-->
-        <div class="accordion col-md-3 m-2" id="Location6">
-          <div class="accordion-item bg-white rounded">
-            <h2 class="accordion-header" id="heading6">
-              <button class="accordion-button collapsed ff-lato-4" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
-                Tennesse
-              </button>
-            </h2>
-            <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6"
-              data-bs-parent="#Location6">
-              <ul class="accordion-body list-unstyled m-0">
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Nashville</a></li>
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Memphis</a></li>
-                <li class="p-3"><a class="text-dark text-center" href="#">Gatlinburg</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <!--Location6-->
-
-        <!--Location7-->
-        <div class="accordion col-md-3 m-2" id="Location7">
-          <div class="accordion-item bg-white rounded">
-            <h2 class="accordion-header" id="heading7">
-              <button class="accordion-button collapsed ff-lato-4" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
-                Miami
-              </button>
-            </h2>
-            <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7"
-              data-bs-parent="#Location7">
-              <ul class="accordion-body list-unstyled m-0">
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Orlando</a></li>
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Tampa</a></li>
-                <li class="p-3"><a class="text-dark text-center" href="#">San Petersburgo</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <!--Location7-->
-
-        <!--Location8-->
-        <div class="accordion col-md-3 m-2" id="Location8">
-          <div class="accordion-item bg-white rounded">
-            <h2 class="accordion-header" id="heading8">
-              <button class="accordion-button collapsed ff-lato-4" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
-                West Virginia
-              </button>
-            </h2>
-            <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="heading8"
-              data-bs-parent="#Location8">
-              <ul class="accordion-body list-unstyled m-0">
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Charleston</a></li>
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Morgantown</a></li>
-                <li class="p-3"><a class="text-dark text-center" href="#">Huntington</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <!--Location8-->
-
-        <!--Location9-->
-        <div class="accordion col-md-3 m-2" id="Location9">
-          <div class="accordion-item bg-white rounded">
-            <h2 class="accordion-header" id="heading9">
-              <button class="accordion-button collapsed ff-lato-4" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
-                Indiana
-              </button>
-            </h2>
-            <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="heading9"
-              data-bs-parent="#Location9">
-              <ul class="accordion-body list-unstyled m-0">
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Evansville </a></li>
-                <li class="p-3 border-bottom"><a class="text-dark text-center" href="#">Fort Wayne</a></li>
-                <li class="p-3"><a class="text-dark text-center" href="#">Bloomington</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <!--Location9-->
-
+        <!--footer-container-xxl-end-->
       </div>
-      <!--available locations end-->
-    </section>
-    <!--top section end-->
-
-    <!--mid section start-->
-    <section class="container-xl my-5">
-      <div class="row">
-        <!--left map part start-->
-        <div class="col-md-8 d-none d-md-block">
-          <div id="map" class="w-100 rounded-3"></div>
-          <p class="ms-2 mt-4 fs-5 ff-lato-4 fw-bold">Needs billing enabled ↑</p>
-        </div>
-        <!--left map part end-->
-
-        <!--right info part start-->
-        <div class="col-md-4 bg-light border rounded-3">
-
-          <!--current location-->
-          <h1 class="text-center mt-3 ff-lato-4">Orlando</h1>
-
-          <!--Direction-->
-          <div class="bg-white p-4 m-2 border border-3 rounded">
-            <h4 class="mb-4 border-bottom border-darker-3">Direction</h4>
-            <p>1700 Convention Center Dr
-              <br>Miami Beach FL 33139
-              <br>United States
-            </p>
-          </div>
-          <!--Direction-->
-
-          <!--Schedule-->
-          <div class="bg-white p-4 m-2 border border-3 rounded">
-            <h4 class="mb-4 border-bottom border-darker-3">Schedule</h4>
-            <ul>
-              <li>Monday through Friday, from 9 am to 12 pm</li>
-              <li>Saturdays, from 9 am to 5 pm</li>
-            </ul>
-          </div>
-          <!--Schedule-->
-
-          <!--Reservations-->
-          <div class="bg-white p-4 m-2 border border-3 rounded">
-            <h4 class="mb-4 border-bottom border-darker-3">Contact / Reservations</h4>
-            <h5 class="ff-lato-4 border rounded text-center p-2">Attention from 9:00 am to 11 pm
-              business hours
-            </h5>
-            <p>(+21)502-1254133</p>
-            <p>
-              ()305) 673-7782
-              <br> Internacional: +1 305-673-7782
-            </p>
-            <p>
-              ()305) 673-7000
-              <br>Internacional: +1 305-673-7000
-            </p>
-
-            <div class="text-center">
-              <button type="button" class="btn btn-success">Make a reservation online</button>
-            </div>
-          </div>
-          <!--Reservations-->
-
-        </div>
-        <!--right info part end-->
-      </div>
-    </section>
-    <!--mid section end-->
-
-  </main>
-
-  <footer>
-    <!--footer-container-fluid-start-->
-    <div class="container-fluid bg-darker-2">
-      <!--footer-container-xxl-start-->
-      <div class="container-xxl my-0">
-        <!--footer-top-start-->
-        <div class="row d-flex align-items-center justify-content-around footer-top m-0">
-          <!--footer-top-left-start-->
-          <div class="row align-items-center justify-content-evenly col-lg-3 p-0">
-            <div class="col-8 p-0 text-center d-none d-lg-block">
-              <div class="mw-200px h-100px overflow-hidden mb-2 mx-auto">
-                <img class="w-100 h-100px" src="../../img/logo/white_background/full_logo/svg/full_logo.svg"
-                  alt="logo-image">
-              </div>
-              <p class="mb-0 text-dark mw-200px mx-auto">Since 1997 making our customers happy</p>
-            </div>
-            <ul
-              class="col col-sm-7 col-md-5 col-lg-4 list-unstyled m-2 m-lg-0 p-0 d-flex flex-row flex-lg-column align-items-center justify-content-evenly">
-              <li class="my-2 my-lg-3 mx-2 mx-lg-0">
-                <a class="p-2 bg-dark text-white rounded-circle" href="https://www.facebook.com/"
-                  aria-label="facebook icon">
-                  <i class="fab fa-facebook-f fa-fw fs-6"></i>
-                </a>
-              </li>
-              <li class="my-2 my-lg-0 mb-lg-3 mx-2 mx-lg-0">
-                <a class="p-2 bg-dark text-white rounded-circle" href="https://twitter.com/" aria-label="twitter icon">
-                  <i class="fab fa-twitter fa-fw fs-6"></i>
-                </a>
-              </li>
-              <li class="my-2 my-lg-0 mb-lg-3 mx-2 mx-lg-0">
-                <a class="p-2 bg-dark text-white rounded-circle" href="https://www.youtube.com/"
-                  aria-label="youtube icon">
-                  <i class="fab fa-youtube fa-fw fs-6"></i>
-                </a>
-              </li>
-              <li class="my-2 my-lg-0 mb-lg-3 mx-2 mx-lg-0">
-                <a class="p-2 bg-dark text-white rounded-circle" href="https://www.instagram.com/"
-                  aria-label="instagram icon">
-                  <i class="fab fa-instagram fa-fw fs-6"></i>
-                </a>
-              </li>
-            </ul>
-            <label class="visually-hidden" for="change-language-top">Language</label>
-            <select class="col-7 col-sm-4 col-md-4 d-block d-lg-none p-2 rounded" name="change-language-top"
-              id="change-language-top">
-              <option selected value="English">English</option>
-              <option value="Spanish">Spanish</option>
-            </select>
-            <hr class="d-block d-lg-none my-0">
-          </div>
-          <!--footer-top-left-end-->
-          <!--footer-top-right-start-->
-          <div class="col-12 col-lg-8 mt-3 p-0">
-            <div class="row d-flex justify-content-evenly w-100 m-0">
-              <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
-                <h5 class="mb-2 mb-lg-4"><a href="/" class="text-dark h-white">Home</a></h5>
-                <ul class="list-unstyled">
-                  <li class="mb-1"><a class="text-dark h-white" href="../about/blog.html">Events</a></li>
-                  <li class="mb-1"><a class="text-dark h-white" href="../../index.html#newsletter">Newsletter</a></li>
-                </ul>
-              </div>
-              <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
-                <h5 class="mb-2 mb-lg-4"><a href="../about/about-us.html" class="text-dark h-white">About</a>
-                </h5>
-                <ul class="list-unstyled">
-                  <li class="mb-1"><a class="text-dark h-white" href="../about/about-us.html">About us</a></li>
-                  <li class="mb-1"><a class="text-dark h-white" href="../about/locations.html">Locations</a>
-                  </li>
-                  <li class="mb-1"><a class="text-dark h-white" href="../about/our-products.html">Our
-                      products</a></li>
-                </ul>
-              </div>
-              <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
-                <h5 class="mb-2 mb-lg-4"><a href="../shop/shop.html" class="text-dark h-white">Shop</a></h5>
-                <ul class="list-unstyled">
-                  <li class="mb-1"><a class="text-dark h-white" href="../shop/shop.html">Catalogue</a></li>
-                  <li class="mb-1"><a class="text-dark h-white" href="../shop/top-offers.html">Top offers</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
-                <h5 class="mb-2 mb-lg-4"><a href="../recipes/classics.html" class="text-dark h-white">Recipes</a></h5>
-                <ul class="list-unstyled">
-                  <li class="mb-1"><a class="text-dark h-white" href="../recipes/classics.html">Classics</a>
-                  </li>
-                  <li class="mb-1"><a class="text-dark h-white" href="../recipes/healthy-recipes.html">Healthy</a></li>
-                  <li class="mb-1"><a class="text-dark h-white" href="../recipes/wholemeal-recipes.html">Wholemeal</a>
-                  </li>
-                  <li class="mb-1"><a class="text-dark h-white" href="../recipes/easy-recipes.html">Easy</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-12 col-lg-2 text-center text-lg-start mb-3">
-                <h5 class="mb-2 mb-lg-4"><a href="../help/contact.html" class="text-dark h-white">Help</a></h5>
-                <ul class="list-unstyled">
-                  <li class="mb-1"><a class="text-dark h-white" href="../help/contact.html">Contact</a></li>
-                  <li class="mb-1"><a class="text-dark h-white" href="../help/faq/faq.html">FAQ</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!--footer-top-right-end-->
-        </div>
-        <!--footer-top-end-->
-      </div>
-      <!--footer-container-xxl-end-->
-    </div>
-    <!--footer-container-fluid-end-->
-
-    <!--footer-container-fluid-start-->
-    <div class="container-fluid bg-dark">
-      <!--footer-container-xxl-start-->
-      <div class="container-xxl my-0">
-        <!--footer-bottom-start-->
-        <div class="row d-flex align-items-center justify-content-around my-0 mx-auto p-3 footer-bottom">
-          <div class="col-12 col-lg-8 m-2 m-lg-0">
-            <div class="row align-items-center">
-              <div class="col text-center mb-2 mb-lg-0"><a class="footer-link text-white" href="#">Terms of Use</a>
-              </div>
-              <div class="col text-center mb-2 mb-lg-0"><a class="footer-link text-white" href="#">Terms &
-                  Conditions</a>
-              </div>
-              <div class="col text-center mb-2 mb-lg-0"><a class="footer-link text-white" href="#">Privacy Policy</a>
-              </div>
-              <div class="col text-center mb-2 mb-lg-0 d-none d-lg-block">
-                <i class="fas fa-globe text-white"></i>
-                <label class="visually-hidden" for="change-language-bottom">Language</label>
-                <select class="col text-center p-2 rounded bg-dark text-white" name="change-language-bottom"
-                  id="change-language-bottom">
-                  <option selected value="English">English</option>
-                  <option value="Spanish">Spanish</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-lg-3 text-white text-center m-2 m-lg-0">© 2020 Morfi. All Rights Reserved.</div>
-        </div>
-        <!--footer-bottom-end-->
-      </div>
-      <!--footer-container-xxl-end-->
-    </div>
-    <!--footer-container-fluid-end-->
-  </footer>
-  <!--google maps-->
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBU4-t6ZoyKBcYEhv_7-xLvkmHzZuNWqd0&callback=initMap&libraries=&v=weekly"
-    async></script>
-  <!--bootstrap js-->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-    crossorigin="anonymous"></script>
-</body>
-
+      <!--footer-container-fluid-end-->
+    </footer>
+    <!--google maps-->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBU4-t6ZoyKBcYEhv_7-xLvkmHzZuNWqd0&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+    <!--bootstrap js-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

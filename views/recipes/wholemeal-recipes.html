@@ -1,667 +1,826 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- HTML Meta Tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TheMorfi - Wholemeal recipes</title>
+    <meta
+      name="description"
+      content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more"
+    />
+    <meta name="keywords" content="THE, MORFI, FOOD, HEALTHY, BEST" />
 
-<head>
-  <!-- HTML Meta Tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TheMorfi - Wholemeal recipes</title>
-  <meta name="description"
-    content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more">
-  <meta name="keywords" content="THE, MORFI, FOOD, HEALTHY, BEST">
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="The Morfi" />
+    <meta
+      itemprop="description"
+      content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more"
+    />
+    <meta itemprop="image" content="https://i.imgur.com/NRUXriX.jpg" />
 
-  <!-- Google / Search Engine Tags -->
-  <meta itemprop="name" content="The Morfi">
-  <meta itemprop="description"
-    content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more">
-  <meta itemprop="image" content="https://i.imgur.com/NRUXriX.jpg">
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://arguel.github.io/morfi" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="The Morfi" />
+    <meta
+      property="og:description"
+      content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more"
+    />
+    <meta property="og:image" content="https://i.imgur.com/NRUXriX.jpg" />
 
-  <!-- Facebook Meta Tags -->
-  <meta property="og:url" content="https://arguel.github.io/morfi">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="The Morfi">
-  <meta property="og:description"
-    content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more">
-  <meta property="og:image" content="https://i.imgur.com/NRUXriX.jpg">
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The Morfi" />
+    <meta
+      name="twitter:description"
+      content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more"
+    />
+    <meta name="twitter:image" content="https://i.imgur.com/NRUXriX.jpg" />
 
-  <!-- Twitter Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="The Morfi">
-  <meta name="twitter:description"
-    content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more">
-  <meta name="twitter:image" content="https://i.imgur.com/NRUXriX.jpg">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../../assets/css/main.css" type="text/css" />
 
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="../../assets/css/main.css" type="text/css">
+    <!-- Google / Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
 
-  <!-- Google / Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Tab Icon -->
+    <link rel="icon" href="../../img/logo/white_background/small_logo_icon/svg/small_logo_icon.svg" />
 
-  <!-- Tab Icon -->
-  <link rel="icon" href="../../img/logo/white_background/small_logo_icon/svg/small_logo_icon.svg">
+    <!--Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/1131adf3a1.js" crossorigin="anonymous"></script>
+    <!--------------------->
+  </head>
 
-  <!--Font Awesome Icons -->
-  <script src="https://kit.fontawesome.com/1131adf3a1.js" crossorigin="anonymous"></script>
-  <!--------------------->
-</head>
-
-<body>
-
-  <header>
-
-    <!--Start of nav-menu-container-->
-    <div class="container-xxl navbar-min-h">
-      <nav class="navbar navbar-expand-lg navbar-light m-2">
-        <div class="h-40px text-center">
-          <a class="navbar-brand" href="/">
-            <img class="h-100 w-auto" src="../../img/logo/white_background/medium_logo_side/svg/medium_logo_side.svg"
-              alt="side-logo">
-          </a>
-        </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <!--nav-->
-          <ul class="navbar-nav align-items-center justify-content-around mx-auto col-lg-8">
-            <!--Home-->
-            <li class="nav-item">
-              <a class="nav-link fs-5" href="/" aria-current="page">Home</a>
-            </li>
-            <!--About-->
-            <li class="nav-item dropdown text-center">
-              <a class="nav-link fs-5" href="#" id="navbarDropdownMenuLinkAbout" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">About</a>
-              <ul class="nav-color-list dropdown-menu text-center text-lg-start"
-                aria-labelledby="navbarDropdownMenuLinkAbout">
-                <li><a class="dropdown-item" href="../about/about-us.html">About us</a></li>
-                <li><a class="dropdown-item" href="../about/locations.html">Locations</a></li>
-                <li><a class="dropdown-item" href="../about/our-products.html">Our products</a></li>
-              </ul>
-            </li>
-            <!--Shop-->
-            <li class="nav-item dropdown text-center">
-              <a class="nav-link fs-5" href="#" id="navbarDropdownMenuLinkShop" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">Shop</a>
-              <ul class="nav-color-list dropdown-menu text-center text-lg-start"
-                aria-labelledby="navbarDropdownMenuLinkDrop">
-                <li><a class="dropdown-item" href="../shop/shop.html">Catalogue</a></li>
-                <li><a class="dropdown-item" href="../shop/top-offers.html">Top offers</a></li>
-              </ul>
-            </li>
-            <!--Recipes-->
-            <li class="nav-item dropdown text-center">
-              <a class="nav-link active fs-5" href="#" id="navbarDropdownMenuLinkRecipes" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">Recipes</a>
-              <ul class="nav-color-list dropdown-menu text-center text-lg-start"
-                aria-labelledby="navbarDropdownMenuLinkRecipes">
-                <li><a class="dropdown-item" href="../recipes/classics.html">Classics</a></li>
-                <li><a class="dropdown-item" href="../recipes/healthy-recipes.html">Healthy</a></li>
-                <li><a class="dropdown-item" href="../recipes/wholemeal-recipes.html">Wholemeal</a></li>
-                <li><a class="dropdown-item" href="../recipes/easy-recipes.html">Easy</a></li>
-              </ul>
-            </li>
-            <!--Help-->
-            <li class="nav-item dropdown text-center">
-              <a class="nav-link fs-5" href="#" id="navbarDropdownMenuLinkHelp" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">Help</a>
-              <ul class="nav-color-list dropdown-menu text-center text-lg-start"
-                aria-labelledby="navbarDropdownMenuLinkHelp">
-                <li><a class="dropdown-item" href="../help/contact.html">Contact</a></li>
-                <li><a class="dropdown-item" href="../help/faq/faq.html">FAQ</a></li>
-              </ul>
-            </li>
-            <!--Searchbar-->
-            <li class="nav-item">
-              <form>
-                <div class="input-group">
-                  <button class="input-group-text nav-searchbar" id="search-icon" aria-label="searchbar icon">
-                    <i class="fas fa-search"></i>
-                  </button>
-                  <input type="text" class="form-control nav-searchbar" placeholder="Search" aria-label="Search"
-                    aria-describedby="search-icon">
-                </div>
-              </form>
-            </li>
-          </ul>
-          <hr>
-          <!--account-nav-->
-          <ul class="navbar-nav align-items-center">
-            <li class="nav-item d-block d-lg-flex text-center btn-login-container my-1">
-              <a class="nav-link btn-login rounded text-nowrap px-4 py-3 px-lg-2 py-lg-2"
-                href="../account/login.html">Log in</a>
-            </li>
-            <li class="nav-item text-center btn-sign-up-container my-1">
-              <a class="nav-link btn-sign-up rounded text-nowrap px-4 py-3 px-lg-2 py-lg-2"
-                href="../account/register.html">Sign up</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-    <!--End of nav-menu-container-->
-
-  </header>
-
-  <main>
-    <!--kinds of recipes start-->
-    <section class="container-xxl my-5">
-      <div class="row align-items-center bg-light-sm-white p-2 ff-lato-7 text-center">
-
-        <!--Classics-->
-        <div class="col-12 col-sm-3 bg-trans-sm-light-2 py-2 py-sm-0">
-          <a class="position-relative d-block" href="../recipes/classics.html">
-            <figure class="m-0 d-none d-sm-block overflow-hidden">
-              <img class="img-fluid opacity-50" src="../../img/recipes/header/classics.webp" alt="classics-img">
-            </figure>
-            <span
-              class="position-absolute-xs-0 text-darker-5-xs text-white-sm top-50 start-50 translate-middle fs-4">Classics</span>
-          </a>
-        </div>
-
-        <!--Healthy-->
-        <div class="col-12 col-sm-3 bg-trans-sm-light-2 py-2 py-sm-0">
-          <a class="position-relative d-block" href="../recipes/healthy-recipes.html">
-            <figure class="m-0 d-none d-sm-block overflow-hidden">
-              <img class="img-fluid opacity-50" src="../../img/recipes/header/healthy.webp" alt="healthy-img">
-            </figure>
-            <span
-              class="position-absolute-xs-0 text-darker-5-xs text-white-sm top-50 start-50 translate-middle fs-4">Healthy</span>
-          </a>
-        </div>
-
-        <!--Easy-->
-        <div class="col-12 col-sm-3 bg-trans-sm-light-2 py-2 py-sm-0">
-          <a class="position-relative d-block" href="../recipes/easy-recipes.html">
-            <figure class="m-0 d-none d-sm-block overflow-hidden">
-              <img class="img-fluid opacity-50" src="../../img/recipes/header/easy.webp" alt="easy-img">
-            </figure>
-            <span
-              class="position-absolute-xs-0 text-darker-5-xs text-white-sm top-50 start-50 translate-middle fs-4">Easy</span>
-          </a>
-        </div>
-
-        <!--Wholemeal-->
-        <div class="col-12 col-sm-3 bg-trans-sm-light-2 py-2 py-sm-0">
-          <a class="position-relative d-block" href="../recipes/wholemeal-recipes.html">
-            <figure class="m-0 d-none d-sm-block overflow-hidden">
-              <img class="img-fluid" src="../../img/recipes/header/wholemeal.webp" alt="wholemeal-img">
-            </figure>
-            <span
-              class="position-absolute-xs-0 text-darker-5-xs text-white-sm top-50 start-50 translate-middle fs-4 sel-green-3">Wholemeal</span>
-          </a>
-        </div>
-
-      </div>
-    </section>
-    <!--kinds of recipes end-->
-
-    <section class="container-xxl">
-      <div class="row mb-5 justify-content-evenly">
-
-        <!--recipes section-->
-        <div class="col-11 col-md-10 col-lg-7 order-1 order-lg-0">
-          <div class="row">
-
-            <!--item 1-->
-            <div class="col-12 mb-4 bg-light rounded border border-darker-3">
-              <div class="row align-items-center justify-content-evenly p-2 min-h-224px">
-                <div class="col-12 col-sm-4 mx-auto mb-3 mb-sm-0">
-                  <div class="rb-custom d-flex align-items-center justify-content-center">
-                    <a href="#">
-                      <figure class="m-0 mx-auto">
-                        <img class="img-fluid rounded max-h-300px" src="../../img/recipes/glazed-blueberry-scones.webp"
-                          alt="glazed-blueberry-scones">
-                      </figure>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-12 col-sm-8">
-                  <div class="p-1 mb-2 border-2 border-bottom border-darker-3 border-xs-0 text-center">
-                    <div class="rec-h-58px-im-title m-0 d-flex align-items-center justify-content-center">
-                      <h4 class="fw-bold recipes-text-truncate-2-1 m-0">
-                        <a class="h-underline text-dark" href="#">Glazed Blueberry Scones</a>
-                      </h4>
-                    </div>
-                  </div>
-                  <p class="t-indent-2 ff-lato-4 text-truncate-4 text-center text-sm-start h-96px">Rediscover a
-                    delightful morning treat in these gluten-free scones loaded with fresh blueberries and drizzled with
-                    a sweet lemon glaze. Instead of wedges, you can also scoop and drop the dough by 1/4 cupfuls onto a
-                    parchment-lined baking sheet for easier prep and more crispy browned edges.</p>
-                </div>
-              </div>
-            </div>
-            <!--item 1-->
-
-            <!--item 2-->
-            <div class="col-12 mb-4 bg-light rounded border border-darker-3">
-              <div class="row align-items-center justify-content-evenly p-2 min-h-224px">
-                <div class="col-12 col-sm-4 mx-auto mb-3 mb-sm-0">
-                  <div class="rb-custom d-flex align-items-center justify-content-center">
-                    <a href="#">
-                      <figure class="m-0 mx-auto">
-                        <img class="img-fluid rounded max-h-300px"
-                          src="../../img/recipes/fruit-and-nut-breakfast-barsa.webp"
-                          alt="fruit-and-nut-breakfast-barsa">
-                      </figure>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-12 col-sm-8">
-                  <div class="p-1 mb-2 border-2 border-bottom border-darker-3 border-xs-0 text-center">
-                    <div class="rec-h-58px-im-title m-0 d-flex align-items-center justify-content-center">
-                      <h4 class="fw-bold recipes-text-truncate-2-1 m-0">
-                        <a class="h-underline text-dark" href="#">Fruit-and-Nut Breakfast Bars</a>
-                      </h4>
-                    </div>
-                  </div>
-                  <p class="t-indent-2 ff-lato-4 text-truncate-4 text-center text-sm-start h-96px">Easy to make and very
-                    tasty, these breakfast bars are pure fruit, nuts, and seeds—no pasty fillers.</p>
-                </div>
-              </div>
-            </div>
-            <!--item 2-->
-
-            <!--item 3-->
-            <div class="col-12 mb-4 bg-light rounded border border-darker-3">
-              <div class="row align-items-center justify-content-evenly p-2 min-h-224px">
-                <div class="col-12 col-sm-4 mx-auto mb-3 mb-sm-0">
-                  <div class="rb-custom d-flex align-items-center justify-content-center">
-                    <a href="#">
-                      <figure class="m-0 mx-auto">
-                        <img class="img-fluid rounded max-h-300px"
-                          src="../../img/recipes/leek-and-smoked-gruyere-mini-quiches.webp"
-                          alt="leek-and-smoked-gruyere-mini-quiches">
-                      </figure>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-12 col-sm-8">
-                  <div class="p-1 mb-2 border-2 border-bottom border-darker-3 border-xs-0 text-center">
-                    <div class="rec-h-58px-im-title m-0 d-flex align-items-center justify-content-center">
-                      <h4 class="fw-bold recipes-text-truncate-2-1 m-0">
-                        <a class="h-underline text-dark" href="#">Leek and Smoked Gruyère Mini Quiches</a>
-                      </h4>
-                    </div>
-                  </div>
-                  <p class="t-indent-2 ff-lato-4 text-truncate-4 text-center text-sm-start h-96px">Individual,
-                    itty-bitty quiches are great for serving at a family brunch. While they may look cutesy, the complex
-                    flavors from the leek and applewood-smoked Gruyère ensure these pocket-sized egg parcels are tough
-                    enough for the grown-up's table.</p>
-                </div>
-              </div>
-            </div>
-            <!--item 3-->
-
-            <!--item 4-->
-            <div class="col-12 mb-4 bg-light rounded border border-darker-3">
-              <div class="row align-items-center justify-content-evenly p-2 min-h-224px">
-                <div class="col-12 col-sm-4 mx-auto mb-3 mb-sm-0">
-                  <div class="rb-custom d-flex align-items-center justify-content-center">
-                    <a href="#">
-                      <figure class="m-0 mx-auto">
-                        <img class="img-fluid rounded max-h-300px"
-                          src="../../img/recipes/top-of-the-morning-muffins.webp" alt="top-of-the-morning-muffins">
-                      </figure>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-12 col-sm-8">
-                  <div class="p-1 mb-2 border-2 border-bottom border-darker-3 border-xs-0 text-center">
-                    <div class="rec-h-58px-im-title m-0 d-flex align-items-center justify-content-center">
-                      <h4 class="fw-bold recipes-text-truncate-2-1 m-0">
-                        <a class="h-underline text-dark" href="#">Top of the Morning Muffins</a>
-                      </h4>
-                    </div>
-                  </div>
-                  <p class="t-indent-2 ff-lato-4 text-truncate-4 text-center text-sm-start h-96px">A breakfast of one of
-                    these homemade muffins, a cup of low-fat Greek yogurt, and a piece of fruit has fewer calories and
-                    more protein than one commercial gluten-free muffin.</p>
-                </div>
-              </div>
-            </div>
-            <!--item 4-->
-
-            <!--item 5-->
-            <div class="col-12 mb-4 bg-light rounded border border-darker-3">
-              <div class="row align-items-center justify-content-evenly p-2 min-h-224px">
-                <div class="col-12 col-sm-4 mx-auto mb-3 mb-sm-0">
-                  <div class="rb-custom d-flex align-items-center justify-content-center">
-                    <a href="#">
-                      <figure class="my-0 mx-auto">
-                        <img class="img-fluid rounded max-h-300px" src="../../img/recipes/zucchini-spice-bread.webp"
-                          alt="zucchini-spice-bread">
-                      </figure>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-12 col-sm-8">
-                  <div class="p-1 mb-2 border-2 border-bottom border-darker-3 border-xs-0 text-center">
-                    <div class="rec-h-58px-im-title m-0 d-flex align-items-center justify-content-center">
-                      <h4 class="fw-bold recipes-text-truncate-2-1 m-0">
-                        <a class="h-underline text-dark" href="#">Zucchini-Spice Bread</a>
-                      </h4>
-                    </div>
-                  </div>
-                  <p class="t-indent-2 ff-lato-4 text-truncate-4 text-center text-sm-start h-96px">Recipes for this
-                    popular tea bread are handed down through the generations. Here's a healthy, gluten-free loaf
-                    everyone can enjoy.</p>
-                </div>
-              </div>
-            </div>
-            <!--item 5-->
-
+  <body>
+    <header>
+      <!--Start of nav-menu-container-->
+      <div class="container-xxl navbar-min-h">
+        <nav class="navbar navbar-expand-lg navbar-light m-2">
+          <div class="h-40px text-center">
+            <a class="navbar-brand" href="/">
+              <img
+                class="h-100 w-auto"
+                src="../../img/logo/white_background/medium_logo_side/svg/medium_logo_side.svg"
+                alt="side-logo"
+              />
+            </a>
           </div>
-        </div>
-        <!--recipes section-->
-
-        <!--info section-->
-        <div class="col-12 col-lg-3 order-0 order-lg-1">
-          <div class="row flex-column">
-            <!--types section start-->
-            <div class="col-12 mb-3 border min-h-271px">
-              <h3 class="text-center ff-lato-4 m-0 p-3">Types</h3>
-              <div class="accordion accordion-flush" id="accordionFlushExample">
-                <!--Salad types-->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingOne">
-                    <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                      <span>Salad</span>
-                    </button>
-                  </h2>
-                  <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
-                    data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body bg-light">
-                      <ul class="list-unstyled m-0">
-                        <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Green salad</a></li>
-                        <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Fruit salad</a></li>
-                        <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Rice and pasta salad</a></li>
-                        <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Bound salad</a></li>
-                        <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Dinner salad</a></li>
-                        <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Dessert salad</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <!--Salad types-->
-                <!--Pasta types-->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingTwo">
-                    <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                      <span>Pasta</span>
-                    </button>
-                  </h2>
-                  <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
-                    data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body bg-light">
-                      <ul class="list-unstyled m-0">
-                        <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Spaghetti</a></li>
-                        <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Tagliatelle</a></li>
-                        <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Fusilli</a></li>
-                        <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Orzo</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <!--Pasta types-->
-                <!--Meat types-->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingThree">
-                    <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                      <span>Meat</span>
-                    </button>
-                  </h2>
-                  <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
-                    data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body bg-light">
-                      <ul class="list-unstyled m-0">
-                        <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Pork</a></li>
-                        <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Beef</a></li>
-                        <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Lamb</a></li>
-                        <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Chicken</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <!--Meat types-->
-                <!--Dessert types-->
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingFour">
-                    <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-                      <span>Dessert</span>
-                    </button>
-                  </h2>
-                  <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
-                    data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body bg-light">
-                      <ul class="list-unstyled m-0">
-                        <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Cakes</a></li>
-                        <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Cookies</a></li>
-                        <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Pies</a></li>
-                        <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Puddings</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <!--Dessert types-->
-
-              </div>
-            </div>
-            <!--types section end-->
-
-            <!--Featured-recipes start-->
-            <div class="col-12 mb-3 border bg-green-3 d-none d-lg-block">
-              <h4 class="text-center text-white ff-lato-4 m-0 p-3">Featured recipes</h4>
-            </div>
-            <div class="col-12 mb-3 d-none d-lg-block">
-
-              <!--card 1-->
-              <div class="card mb-3">
-                <figure class="m-0 h-pointer h-opacity-1 max-h-202px overflow-hidden">
-                  <img src="../../img/recipes/featured-recipes/banana-chocolate-french-toast.webp"
-                    class="card-img-top obfit-cover" alt="banana-chocolate-french-toast">
-                </figure>
-                <div class="card-body ff-lato-4">
-                  <div class="card-title text-truncate">
-                    <h5 class="h-underline h-pointer d-inline">Banana-Chocolate French Toast</h5>
-                  </div>
-                  <p class="card-text text-truncate-4">Move over cookies, because we’ve found milk’s new best friend.
-                    These heavenly whole-grain French toast sandwiches are sure to make your mornings sweeter. Oozing
-                    with chocolate-hazelnut spread and bananas, your kids will never believe it’s loaded with fiber too.
-                  </p>
-                </div>
-              </div>
-              <!--card 1-->
-
-            </div>
-            <!--Featured-recipes end-->
-
-          </div>
-        </div>
-        <!--info section-->
-
-      </div>
-    </section>
-
-    <!--pagination-->
-    <section class="container-xxl mb-5">
-      <nav aria-label="shop navigation">
-        <ul class="pagination flex-wrap align-items-center justify-content-center">
-          <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-          </li>
-          <li class="page-item active"><a class="page-link px-3" href="#">1</a></li>
-          <li class="page-item"><a class="page-link px-3" href="#">2</a></li>
-          <li class="page-item"><a class="page-link px-3" href="#">3</a></li>
-          <li class="page-item"><a class="page-link px-3" href="#">4</a></li>
-          <li class="page-item"><a class="page-link px-3" href="#">5</a></li>
-          <li class="page-item"><a class="page-link px-3" href="#">6</a></li>
-          <li class="page-item"><a class="page-link px-3" href="#">7</a></li>
-          <li class="page-item"><a class="page-link px-3" href="#">8</a></li>
-          <li class="page-item"><a class="page-link px-3" href="#">9</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#">Next</a>
-          </li>
-        </ul>
-      </nav>
-    </section>
-    <!--pagination-->
-  </main>
-
-  <footer>
-    <!--footer-container-fluid-start-->
-    <div class="container-fluid bg-darker-2">
-      <!--footer-container-xxl-start-->
-      <div class="container-xxl my-0">
-        <!--footer-top-start-->
-        <div class="row d-flex align-items-center justify-content-around footer-top m-0">
-          <!--footer-top-left-start-->
-          <div class="row align-items-center justify-content-evenly col-lg-3 p-0">
-            <div class="col-8 p-0 text-center d-none d-lg-block">
-              <div class="mw-200px h-100px overflow-hidden mb-2 mx-auto">
-                <img class="w-100 h-100px" src="../../img/logo/white_background/full_logo/svg/full_logo.svg"
-                  alt="logo-image">
-              </div>
-              <p class="mb-0 text-dark mw-200px mx-auto">Since 1997 making our customers happy</p>
-            </div>
-            <ul
-              class="col col-sm-7 col-md-5 col-lg-4 list-unstyled m-2 m-lg-0 p-0 d-flex flex-row flex-lg-column align-items-center justify-content-evenly">
-              <li class="my-2 my-lg-3 mx-2 mx-lg-0">
-                <a class="p-2 bg-dark text-white rounded-circle" href="https://www.facebook.com/"
-                  aria-label="facebook icon">
-                  <i class="fab fa-facebook-f fa-fw fs-6"></i>
-                </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!--nav-->
+            <ul class="navbar-nav align-items-center justify-content-around mx-auto col-lg-8">
+              <!--Home-->
+              <li class="nav-item">
+                <a class="nav-link fs-5" href="/" aria-current="page">Home</a>
               </li>
-              <li class="my-2 my-lg-0 mb-lg-3 mx-2 mx-lg-0">
-                <a class="p-2 bg-dark text-white rounded-circle" href="https://twitter.com/" aria-label="twitter icon">
-                  <i class="fab fa-twitter fa-fw fs-6"></i>
-                </a>
+              <!--About-->
+              <li class="nav-item dropdown text-center">
+                <a
+                  class="nav-link fs-5"
+                  href="#"
+                  id="navbarDropdownMenuLinkAbout"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >About</a
+                >
+                <ul
+                  class="nav-color-list dropdown-menu text-center text-lg-start"
+                  aria-labelledby="navbarDropdownMenuLinkAbout"
+                >
+                  <li><a class="dropdown-item" href="../about/about-us.html">About us</a></li>
+                  <li><a class="dropdown-item" href="../about/locations.html">Locations</a></li>
+                  <li><a class="dropdown-item" href="../about/our-products.html">Our products</a></li>
+                </ul>
               </li>
-              <li class="my-2 my-lg-0 mb-lg-3 mx-2 mx-lg-0">
-                <a class="p-2 bg-dark text-white rounded-circle" href="https://www.youtube.com/"
-                  aria-label="youtube icon">
-                  <i class="fab fa-youtube fa-fw fs-6"></i>
-                </a>
+              <!--Shop-->
+              <li class="nav-item dropdown text-center">
+                <a
+                  class="nav-link fs-5"
+                  href="#"
+                  id="navbarDropdownMenuLinkShop"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Shop</a
+                >
+                <ul
+                  class="nav-color-list dropdown-menu text-center text-lg-start"
+                  aria-labelledby="navbarDropdownMenuLinkDrop"
+                >
+                  <li><a class="dropdown-item" href="../shop/shop.html">Catalogue</a></li>
+                  <li><a class="dropdown-item" href="../shop/top-offers.html">Top offers</a></li>
+                </ul>
               </li>
-              <li class="my-2 my-lg-0 mb-lg-3 mx-2 mx-lg-0">
-                <a class="p-2 bg-dark text-white rounded-circle" href="https://www.instagram.com/"
-                  aria-label="instagram icon">
-                  <i class="fab fa-instagram fa-fw fs-6"></i>
-                </a>
+              <!--Recipes-->
+              <li class="nav-item dropdown text-center">
+                <a
+                  class="nav-link active fs-5"
+                  href="#"
+                  id="navbarDropdownMenuLinkRecipes"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Recipes</a
+                >
+                <ul
+                  class="nav-color-list dropdown-menu text-center text-lg-start"
+                  aria-labelledby="navbarDropdownMenuLinkRecipes"
+                >
+                  <li><a class="dropdown-item" href="../recipes/classics.html">Classics</a></li>
+                  <li><a class="dropdown-item" href="../recipes/healthy-recipes.html">Healthy</a></li>
+                  <li><a class="dropdown-item" href="../recipes/wholemeal-recipes.html">Wholemeal</a></li>
+                  <li><a class="dropdown-item" href="../recipes/easy-recipes.html">Easy</a></li>
+                </ul>
+              </li>
+              <!--Help-->
+              <li class="nav-item dropdown text-center">
+                <a
+                  class="nav-link fs-5"
+                  href="#"
+                  id="navbarDropdownMenuLinkHelp"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Help</a
+                >
+                <ul
+                  class="nav-color-list dropdown-menu text-center text-lg-start"
+                  aria-labelledby="navbarDropdownMenuLinkHelp"
+                >
+                  <li><a class="dropdown-item" href="../help/contact.html">Contact</a></li>
+                  <li><a class="dropdown-item" href="../help/faq/faq.html">FAQ</a></li>
+                </ul>
+              </li>
+              <!--Searchbar-->
+              <li class="nav-item">
+                <form>
+                  <div class="input-group">
+                    <button class="input-group-text nav-searchbar" id="search-icon" aria-label="searchbar icon">
+                      <i class="fas fa-search"></i>
+                    </button>
+                    <input
+                      type="text"
+                      class="form-control nav-searchbar"
+                      placeholder="Search"
+                      aria-label="Search"
+                      aria-describedby="search-icon"
+                    />
+                  </div>
+                </form>
               </li>
             </ul>
-            <label class="visually-hidden" for="change-language-top">Language</label>
-            <select class="col-7 col-sm-4 col-md-4 d-block d-lg-none p-2 rounded" name="change-language-top"
-              id="change-language-top">
-              <option selected value="English">English</option>
-              <option value="Spanish">Spanish</option>
-            </select>
-            <hr class="d-block d-lg-none my-0">
+            <hr />
+            <!--account-nav-->
+            <ul class="navbar-nav align-items-center">
+              <li class="nav-item d-block d-lg-flex text-center btn-login-container my-1">
+                <a class="nav-link btn-login rounded text-nowrap px-4 py-3 px-lg-2 py-lg-2" href="../account/login.html"
+                  >Log in</a
+                >
+              </li>
+              <li class="nav-item text-center btn-sign-up-container my-1">
+                <a
+                  class="nav-link btn-sign-up rounded text-nowrap px-4 py-3 px-lg-2 py-lg-2"
+                  href="../account/register.html"
+                  >Sign up</a
+                >
+              </li>
+            </ul>
           </div>
-          <!--footer-top-left-end-->
-          <!--footer-top-right-start-->
-          <div class="col-12 col-lg-8 mt-3 p-0">
-            <div class="row d-flex justify-content-evenly w-100 m-0">
-              <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
-                <h5 class="mb-2 mb-lg-4"><a href="/" class="text-dark h-white">Home</a></h5>
-                <ul class="list-unstyled">
-                  <li class="mb-1"><a class="text-dark h-white" href="../about/blog.html">Events</a></li>
-                  <li class="mb-1"><a class="text-dark h-white" href="../../index.html#newsletter">Newsletter</a></li>
-                </ul>
+        </nav>
+      </div>
+      <!--End of nav-menu-container-->
+    </header>
+
+    <main>
+      <!--kinds of recipes start-->
+      <section class="container-xxl my-5">
+        <div class="row align-items-center bg-light-sm-white p-2 ff-lato-7 text-center">
+          <!--Classics-->
+          <div class="col-12 col-sm-3 bg-trans-sm-light-2 py-2 py-sm-0">
+            <a class="position-relative d-block" href="../recipes/classics.html">
+              <figure class="m-0 d-none d-sm-block overflow-hidden">
+                <img class="img-fluid opacity-50" src="../../img/recipes/header/classics.webp" alt="classics-img" />
+              </figure>
+              <span class="position-absolute-xs-0 text-darker-5-xs text-white-sm top-50 start-50 translate-middle fs-4"
+                >Classics</span
+              >
+            </a>
+          </div>
+
+          <!--Healthy-->
+          <div class="col-12 col-sm-3 bg-trans-sm-light-2 py-2 py-sm-0">
+            <a class="position-relative d-block" href="../recipes/healthy-recipes.html">
+              <figure class="m-0 d-none d-sm-block overflow-hidden">
+                <img class="img-fluid opacity-50" src="../../img/recipes/header/healthy.webp" alt="healthy-img" />
+              </figure>
+              <span class="position-absolute-xs-0 text-darker-5-xs text-white-sm top-50 start-50 translate-middle fs-4"
+                >Healthy</span
+              >
+            </a>
+          </div>
+
+          <!--Easy-->
+          <div class="col-12 col-sm-3 bg-trans-sm-light-2 py-2 py-sm-0">
+            <a class="position-relative d-block" href="../recipes/easy-recipes.html">
+              <figure class="m-0 d-none d-sm-block overflow-hidden">
+                <img class="img-fluid opacity-50" src="../../img/recipes/header/easy.webp" alt="easy-img" />
+              </figure>
+              <span class="position-absolute-xs-0 text-darker-5-xs text-white-sm top-50 start-50 translate-middle fs-4"
+                >Easy</span
+              >
+            </a>
+          </div>
+
+          <!--Wholemeal-->
+          <div class="col-12 col-sm-3 bg-trans-sm-light-2 py-2 py-sm-0">
+            <a class="position-relative d-block" href="../recipes/wholemeal-recipes.html">
+              <figure class="m-0 d-none d-sm-block overflow-hidden">
+                <img class="img-fluid" src="../../img/recipes/header/wholemeal.webp" alt="wholemeal-img" />
+              </figure>
+              <span
+                class="
+                  position-absolute-xs-0
+                  text-darker-5-xs text-white-sm
+                  top-50
+                  start-50
+                  translate-middle
+                  fs-4
+                  sel-green-3
+                "
+                >Wholemeal</span
+              >
+            </a>
+          </div>
+        </div>
+      </section>
+      <!--kinds of recipes end-->
+
+      <section class="container-xxl">
+        <div class="row mb-5 justify-content-evenly">
+          <!--recipes section-->
+          <div class="col-11 col-md-10 col-lg-7 order-1 order-lg-0">
+            <div class="row">
+              <!--item 1-->
+              <div class="col-12 mb-4 bg-light rounded border border-darker-3">
+                <div class="row align-items-center justify-content-evenly p-2 min-h-224px">
+                  <div class="col-12 col-sm-4 mx-auto mb-3 mb-sm-0">
+                    <div class="rb-custom d-flex align-items-center justify-content-center">
+                      <a href="#">
+                        <figure class="m-0 mx-auto">
+                          <img
+                            class="img-fluid rounded max-h-300px"
+                            src="../../img/recipes/glazed-blueberry-scones.webp"
+                            alt="glazed-blueberry-scones"
+                          />
+                        </figure>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-8">
+                    <div class="p-1 mb-2 border-2 border-bottom border-darker-3 border-xs-0 text-center">
+                      <div class="rec-h-58px-im-title m-0 d-flex align-items-center justify-content-center">
+                        <h4 class="fw-bold recipes-text-truncate-2-1 m-0">
+                          <a class="h-underline text-dark" href="#">Glazed Blueberry Scones</a>
+                        </h4>
+                      </div>
+                    </div>
+                    <p class="t-indent-2 ff-lato-4 text-truncate-4 text-center text-sm-start h-96px">
+                      Rediscover a delightful morning treat in these gluten-free scones loaded with fresh blueberries
+                      and drizzled with a sweet lemon glaze. Instead of wedges, you can also scoop and drop the dough by
+                      1/4 cupfuls onto a parchment-lined baking sheet for easier prep and more crispy browned edges.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
-                <h5 class="mb-2 mb-lg-4"><a href="../about/about-us.html" class="text-dark h-white">About</a>
-                </h5>
-                <ul class="list-unstyled">
-                  <li class="mb-1"><a class="text-dark h-white" href="../about/about-us.html">About us</a></li>
-                  <li class="mb-1"><a class="text-dark h-white" href="../about/locations.html">Locations</a>
-                  </li>
-                  <li class="mb-1"><a class="text-dark h-white" href="../about/our-products.html">Our
-                      products</a></li>
-                </ul>
+              <!--item 1-->
+
+              <!--item 2-->
+              <div class="col-12 mb-4 bg-light rounded border border-darker-3">
+                <div class="row align-items-center justify-content-evenly p-2 min-h-224px">
+                  <div class="col-12 col-sm-4 mx-auto mb-3 mb-sm-0">
+                    <div class="rb-custom d-flex align-items-center justify-content-center">
+                      <a href="#">
+                        <figure class="m-0 mx-auto">
+                          <img
+                            class="img-fluid rounded max-h-300px"
+                            src="../../img/recipes/fruit-and-nut-breakfast-barsa.webp"
+                            alt="fruit-and-nut-breakfast-barsa"
+                          />
+                        </figure>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-8">
+                    <div class="p-1 mb-2 border-2 border-bottom border-darker-3 border-xs-0 text-center">
+                      <div class="rec-h-58px-im-title m-0 d-flex align-items-center justify-content-center">
+                        <h4 class="fw-bold recipes-text-truncate-2-1 m-0">
+                          <a class="h-underline text-dark" href="#">Fruit-and-Nut Breakfast Bars</a>
+                        </h4>
+                      </div>
+                    </div>
+                    <p class="t-indent-2 ff-lato-4 text-truncate-4 text-center text-sm-start h-96px">
+                      Easy to make and very tasty, these breakfast bars are pure fruit, nuts, and seeds—no pasty
+                      fillers.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
-                <h5 class="mb-2 mb-lg-4"><a href="../shop/shop.html" class="text-dark h-white">Shop</a></h5>
-                <ul class="list-unstyled">
-                  <li class="mb-1"><a class="text-dark h-white" href="../shop/shop.html">Catalogue</a></li>
-                  <li class="mb-1"><a class="text-dark h-white" href="../shop/top-offers.html">Top offers</a>
-                  </li>
-                </ul>
+              <!--item 2-->
+
+              <!--item 3-->
+              <div class="col-12 mb-4 bg-light rounded border border-darker-3">
+                <div class="row align-items-center justify-content-evenly p-2 min-h-224px">
+                  <div class="col-12 col-sm-4 mx-auto mb-3 mb-sm-0">
+                    <div class="rb-custom d-flex align-items-center justify-content-center">
+                      <a href="#">
+                        <figure class="m-0 mx-auto">
+                          <img
+                            class="img-fluid rounded max-h-300px"
+                            src="../../img/recipes/leek-and-smoked-gruyere-mini-quiches.webp"
+                            alt="leek-and-smoked-gruyere-mini-quiches"
+                          />
+                        </figure>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-8">
+                    <div class="p-1 mb-2 border-2 border-bottom border-darker-3 border-xs-0 text-center">
+                      <div class="rec-h-58px-im-title m-0 d-flex align-items-center justify-content-center">
+                        <h4 class="fw-bold recipes-text-truncate-2-1 m-0">
+                          <a class="h-underline text-dark" href="#">Leek and Smoked Gruyère Mini Quiches</a>
+                        </h4>
+                      </div>
+                    </div>
+                    <p class="t-indent-2 ff-lato-4 text-truncate-4 text-center text-sm-start h-96px">
+                      Individual, itty-bitty quiches are great for serving at a family brunch. While they may look
+                      cutesy, the complex flavors from the leek and applewood-smoked Gruyère ensure these pocket-sized
+                      egg parcels are tough enough for the grown-up's table.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
-                <h5 class="mb-2 mb-lg-4"><a href="../recipes/classics.html" class="text-dark h-white">Recipes</a></h5>
-                <ul class="list-unstyled">
-                  <li class="mb-1"><a class="text-dark h-white" href="../recipes/classics.html">Classics</a>
-                  </li>
-                  <li class="mb-1"><a class="text-dark h-white" href="../recipes/healthy-recipes.html">Healthy</a></li>
-                  <li class="mb-1"><a class="text-dark h-white" href="../recipes/wholemeal-recipes.html">Wholemeal</a>
-                  </li>
-                  <li class="mb-1"><a class="text-dark h-white" href="../recipes/easy-recipes.html">Easy</a>
-                  </li>
-                </ul>
+              <!--item 3-->
+
+              <!--item 4-->
+              <div class="col-12 mb-4 bg-light rounded border border-darker-3">
+                <div class="row align-items-center justify-content-evenly p-2 min-h-224px">
+                  <div class="col-12 col-sm-4 mx-auto mb-3 mb-sm-0">
+                    <div class="rb-custom d-flex align-items-center justify-content-center">
+                      <a href="#">
+                        <figure class="m-0 mx-auto">
+                          <img
+                            class="img-fluid rounded max-h-300px"
+                            src="../../img/recipes/top-of-the-morning-muffins.webp"
+                            alt="top-of-the-morning-muffins"
+                          />
+                        </figure>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-8">
+                    <div class="p-1 mb-2 border-2 border-bottom border-darker-3 border-xs-0 text-center">
+                      <div class="rec-h-58px-im-title m-0 d-flex align-items-center justify-content-center">
+                        <h4 class="fw-bold recipes-text-truncate-2-1 m-0">
+                          <a class="h-underline text-dark" href="#">Top of the Morning Muffins</a>
+                        </h4>
+                      </div>
+                    </div>
+                    <p class="t-indent-2 ff-lato-4 text-truncate-4 text-center text-sm-start h-96px">
+                      A breakfast of one of these homemade muffins, a cup of low-fat Greek yogurt, and a piece of fruit
+                      has fewer calories and more protein than one commercial gluten-free muffin.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div class="col-12 col-lg-2 text-center text-lg-start mb-3">
-                <h5 class="mb-2 mb-lg-4"><a href="../help/contact.html" class="text-dark h-white">Help</a></h5>
-                <ul class="list-unstyled">
-                  <li class="mb-1"><a class="text-dark h-white" href="../help/contact.html">Contact</a></li>
-                  <li class="mb-1"><a class="text-dark h-white" href="../help/faq/faq.html">FAQ</a></li>
-                </ul>
+              <!--item 4-->
+
+              <!--item 5-->
+              <div class="col-12 mb-4 bg-light rounded border border-darker-3">
+                <div class="row align-items-center justify-content-evenly p-2 min-h-224px">
+                  <div class="col-12 col-sm-4 mx-auto mb-3 mb-sm-0">
+                    <div class="rb-custom d-flex align-items-center justify-content-center">
+                      <a href="#">
+                        <figure class="my-0 mx-auto">
+                          <img
+                            class="img-fluid rounded max-h-300px"
+                            src="../../img/recipes/zucchini-spice-bread.webp"
+                            alt="zucchini-spice-bread"
+                          />
+                        </figure>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-8">
+                    <div class="p-1 mb-2 border-2 border-bottom border-darker-3 border-xs-0 text-center">
+                      <div class="rec-h-58px-im-title m-0 d-flex align-items-center justify-content-center">
+                        <h4 class="fw-bold recipes-text-truncate-2-1 m-0">
+                          <a class="h-underline text-dark" href="#">Zucchini-Spice Bread</a>
+                        </h4>
+                      </div>
+                    </div>
+                    <p class="t-indent-2 ff-lato-4 text-truncate-4 text-center text-sm-start h-96px">
+                      Recipes for this popular tea bread are handed down through the generations. Here's a healthy,
+                      gluten-free loaf everyone can enjoy.
+                    </p>
+                  </div>
+                </div>
               </div>
+              <!--item 5-->
             </div>
           </div>
-          <!--footer-top-right-end-->
-        </div>
-        <!--footer-top-end-->
-      </div>
-      <!--footer-container-xxl-end-->
-    </div>
-    <!--footer-container-fluid-end-->
+          <!--recipes section-->
 
-    <!--footer-container-fluid-start-->
-    <div class="container-fluid bg-dark">
-      <!--footer-container-xxl-start-->
-      <div class="container-xxl my-0">
-        <!--footer-bottom-start-->
-        <div class="row d-flex align-items-center justify-content-around my-0 mx-auto p-3 footer-bottom">
-          <div class="col-12 col-lg-8 m-2 m-lg-0">
-            <div class="row align-items-center">
-              <div class="col text-center mb-2 mb-lg-0"><a class="footer-link text-white" href="#">Terms of Use</a>
+          <!--info section-->
+          <div class="col-12 col-lg-3 order-0 order-lg-1">
+            <div class="row flex-column">
+              <!--types section start-->
+              <div class="col-12 mb-3 border min-h-271px">
+                <h3 class="text-center ff-lato-4 m-0 p-3">Types</h3>
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                  <!--Salad types-->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                      <button
+                        class="accordion-button collapsed bg-white"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne"
+                        aria-expanded="false"
+                        aria-controls="flush-collapseOne"
+                      >
+                        <span>Salad</span>
+                      </button>
+                    </h2>
+                    <div
+                      id="flush-collapseOne"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="flush-headingOne"
+                      data-bs-parent="#accordionFlushExample"
+                    >
+                      <div class="accordion-body bg-light">
+                        <ul class="list-unstyled m-0">
+                          <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Green salad</a></li>
+                          <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Fruit salad</a></li>
+                          <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Rice and pasta salad</a></li>
+                          <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Bound salad</a></li>
+                          <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Dinner salad</a></li>
+                          <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Dessert salad</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!--Salad types-->
+                  <!--Pasta types-->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingTwo">
+                      <button
+                        class="accordion-button collapsed bg-white"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwo"
+                        aria-expanded="false"
+                        aria-controls="flush-collapseTwo"
+                      >
+                        <span>Pasta</span>
+                      </button>
+                    </h2>
+                    <div
+                      id="flush-collapseTwo"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="flush-headingTwo"
+                      data-bs-parent="#accordionFlushExample"
+                    >
+                      <div class="accordion-body bg-light">
+                        <ul class="list-unstyled m-0">
+                          <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Spaghetti</a></li>
+                          <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Tagliatelle</a></li>
+                          <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Fusilli</a></li>
+                          <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Orzo</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!--Pasta types-->
+                  <!--Meat types-->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingThree">
+                      <button
+                        class="accordion-button collapsed bg-white"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseThree"
+                        aria-expanded="false"
+                        aria-controls="flush-collapseThree"
+                      >
+                        <span>Meat</span>
+                      </button>
+                    </h2>
+                    <div
+                      id="flush-collapseThree"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="flush-headingThree"
+                      data-bs-parent="#accordionFlushExample"
+                    >
+                      <div class="accordion-body bg-light">
+                        <ul class="list-unstyled m-0">
+                          <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Pork</a></li>
+                          <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Beef</a></li>
+                          <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Lamb</a></li>
+                          <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Chicken</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!--Meat types-->
+                  <!--Dessert types-->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingFour">
+                      <button
+                        class="accordion-button collapsed bg-white"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseFour"
+                        aria-expanded="false"
+                        aria-controls="flush-collapseFour"
+                      >
+                        <span>Dessert</span>
+                      </button>
+                    </h2>
+                    <div
+                      id="flush-collapseFour"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="flush-headingFour"
+                      data-bs-parent="#accordionFlushExample"
+                    >
+                      <div class="accordion-body bg-light">
+                        <ul class="list-unstyled m-0">
+                          <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Cakes</a></li>
+                          <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Cookies</a></li>
+                          <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Pies</a></li>
+                          <li class="my-1 p-2"><a class="text-dark h-underline" href="#">Puddings</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!--Dessert types-->
+                </div>
               </div>
-              <div class="col text-center mb-2 mb-lg-0"><a class="footer-link text-white" href="#">Terms &
-                  Conditions</a>
+              <!--types section end-->
+
+              <!--Featured-recipes start-->
+              <div class="col-12 mb-3 border bg-green-3 d-none d-lg-block">
+                <h4 class="text-center text-white ff-lato-4 m-0 p-3">Featured recipes</h4>
               </div>
-              <div class="col text-center mb-2 mb-lg-0"><a class="footer-link text-white" href="#">Privacy Policy</a>
+              <div class="col-12 mb-3 d-none d-lg-block">
+                <!--card 1-->
+                <div class="card mb-3">
+                  <figure class="m-0 h-pointer h-opacity-1 max-h-202px overflow-hidden">
+                    <img
+                      src="../../img/recipes/featured-recipes/banana-chocolate-french-toast.webp"
+                      class="card-img-top obfit-cover"
+                      alt="banana-chocolate-french-toast"
+                    />
+                  </figure>
+                  <div class="card-body ff-lato-4">
+                    <div class="card-title text-truncate">
+                      <h5 class="h-underline h-pointer d-inline">Banana-Chocolate French Toast</h5>
+                    </div>
+                    <p class="card-text text-truncate-4">
+                      Move over cookies, because we’ve found milk’s new best friend. These heavenly whole-grain French
+                      toast sandwiches are sure to make your mornings sweeter. Oozing with chocolate-hazelnut spread and
+                      bananas, your kids will never believe it’s loaded with fiber too.
+                    </p>
+                  </div>
+                </div>
+                <!--card 1-->
               </div>
-              <div class="col text-center mb-2 mb-lg-0 d-none d-lg-block">
-                <i class="fas fa-globe text-white"></i>
-                <label class="visually-hidden" for="change-language-bottom">Language</label>
-                <select class="col text-center p-2 rounded bg-dark text-white" name="change-language-bottom"
-                  id="change-language-bottom">
-                  <option selected value="English">English</option>
-                  <option value="Spanish">Spanish</option>
-                </select>
-              </div>
+              <!--Featured-recipes end-->
             </div>
           </div>
-          <div class="col-12 col-lg-3 text-white text-center m-2 m-lg-0">© 2020 Morfi. All Rights Reserved.</div>
+          <!--info section-->
         </div>
-        <!--footer-bottom-end-->
+      </section>
+
+      <!--pagination-->
+      <section class="container-xxl mb-5">
+        <nav aria-label="shop navigation">
+          <ul class="pagination flex-wrap align-items-center justify-content-center">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            <li class="page-item active"><a class="page-link px-3" href="#">1</a></li>
+            <li class="page-item"><a class="page-link px-3" href="#">2</a></li>
+            <li class="page-item"><a class="page-link px-3" href="#">3</a></li>
+            <li class="page-item"><a class="page-link px-3" href="#">4</a></li>
+            <li class="page-item"><a class="page-link px-3" href="#">5</a></li>
+            <li class="page-item"><a class="page-link px-3" href="#">6</a></li>
+            <li class="page-item"><a class="page-link px-3" href="#">7</a></li>
+            <li class="page-item"><a class="page-link px-3" href="#">8</a></li>
+            <li class="page-item"><a class="page-link px-3" href="#">9</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+      <!--pagination-->
+    </main>
+
+    <footer>
+      <!--footer-container-fluid-start-->
+      <div class="container-fluid bg-darker-2">
+        <!--footer-container-xxl-start-->
+        <div class="container-xxl my-0">
+          <!--footer-top-start-->
+          <div class="row d-flex align-items-center justify-content-around footer-top m-0">
+            <!--footer-top-left-start-->
+            <div class="row align-items-center justify-content-evenly col-lg-3 p-0">
+              <div class="col-8 p-0 text-center d-none d-lg-block">
+                <div class="mw-200px h-100px overflow-hidden mb-2 mx-auto">
+                  <img
+                    class="w-100 h-100px"
+                    src="../../img/logo/white_background/full_logo/svg/full_logo.svg"
+                    alt="logo-image"
+                  />
+                </div>
+                <p class="mb-0 text-dark mw-200px mx-auto">Since 1997 making our customers happy</p>
+              </div>
+              <ul
+                class="
+                  col col-sm-7 col-md-5 col-lg-4
+                  list-unstyled
+                  m-2 m-lg-0
+                  p-0
+                  d-flex
+                  flex-row flex-lg-column
+                  align-items-center
+                  justify-content-evenly
+                "
+              >
+                <li class="my-2 my-lg-3 mx-2 mx-lg-0">
+                  <a
+                    class="p-2 bg-dark text-white rounded-circle"
+                    href="https://www.facebook.com/"
+                    aria-label="facebook icon"
+                  >
+                    <i class="fab fa-facebook-f fa-fw fs-6"></i>
+                  </a>
+                </li>
+                <li class="my-2 my-lg-0 mb-lg-3 mx-2 mx-lg-0">
+                  <a
+                    class="p-2 bg-dark text-white rounded-circle"
+                    href="https://twitter.com/"
+                    aria-label="twitter icon"
+                  >
+                    <i class="fab fa-twitter fa-fw fs-6"></i>
+                  </a>
+                </li>
+                <li class="my-2 my-lg-0 mb-lg-3 mx-2 mx-lg-0">
+                  <a
+                    class="p-2 bg-dark text-white rounded-circle"
+                    href="https://www.youtube.com/"
+                    aria-label="youtube icon"
+                  >
+                    <i class="fab fa-youtube fa-fw fs-6"></i>
+                  </a>
+                </li>
+                <li class="my-2 my-lg-0 mb-lg-3 mx-2 mx-lg-0">
+                  <a
+                    class="p-2 bg-dark text-white rounded-circle"
+                    href="https://www.instagram.com/"
+                    aria-label="instagram icon"
+                  >
+                    <i class="fab fa-instagram fa-fw fs-6"></i>
+                  </a>
+                </li>
+              </ul>
+              <label class="visually-hidden" for="change-language-top">Language</label>
+              <select
+                class="col-7 col-sm-4 col-md-4 d-block d-lg-none p-2 rounded"
+                name="change-language-top"
+                id="change-language-top"
+              >
+                <option selected value="English">English</option>
+                <option value="Spanish">Spanish</option>
+              </select>
+              <hr class="d-block d-lg-none my-0" />
+            </div>
+            <!--footer-top-left-end-->
+            <!--footer-top-right-start-->
+            <div class="col-12 col-lg-8 mt-3 p-0">
+              <div class="row d-flex justify-content-evenly w-100 m-0">
+                <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
+                  <h5 class="mb-2 mb-lg-4"><a href="/" class="text-dark h-white">Home</a></h5>
+                  <ul class="list-unstyled">
+                    <li class="mb-1"><a class="text-dark h-white" href="../about/blog.html">Events</a></li>
+                    <li class="mb-1"><a class="text-dark h-white" href="../../index.html#newsletter">Newsletter</a></li>
+                  </ul>
+                </div>
+                <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
+                  <h5 class="mb-2 mb-lg-4"><a href="../about/about-us.html" class="text-dark h-white">About</a></h5>
+                  <ul class="list-unstyled">
+                    <li class="mb-1"><a class="text-dark h-white" href="../about/about-us.html">About us</a></li>
+                    <li class="mb-1"><a class="text-dark h-white" href="../about/locations.html">Locations</a></li>
+                    <li class="mb-1">
+                      <a class="text-dark h-white" href="../about/our-products.html">Our products</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
+                  <h5 class="mb-2 mb-lg-4"><a href="../shop/shop.html" class="text-dark h-white">Shop</a></h5>
+                  <ul class="list-unstyled">
+                    <li class="mb-1"><a class="text-dark h-white" href="../shop/shop.html">Catalogue</a></li>
+                    <li class="mb-1"><a class="text-dark h-white" href="../shop/top-offers.html">Top offers</a></li>
+                  </ul>
+                </div>
+                <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
+                  <h5 class="mb-2 mb-lg-4"><a href="../recipes/classics.html" class="text-dark h-white">Recipes</a></h5>
+                  <ul class="list-unstyled">
+                    <li class="mb-1"><a class="text-dark h-white" href="../recipes/classics.html">Classics</a></li>
+                    <li class="mb-1">
+                      <a class="text-dark h-white" href="../recipes/healthy-recipes.html">Healthy</a>
+                    </li>
+                    <li class="mb-1">
+                      <a class="text-dark h-white" href="../recipes/wholemeal-recipes.html">Wholemeal</a>
+                    </li>
+                    <li class="mb-1"><a class="text-dark h-white" href="../recipes/easy-recipes.html">Easy</a></li>
+                  </ul>
+                </div>
+                <div class="col-12 col-lg-2 text-center text-lg-start mb-3">
+                  <h5 class="mb-2 mb-lg-4"><a href="../help/contact.html" class="text-dark h-white">Help</a></h5>
+                  <ul class="list-unstyled">
+                    <li class="mb-1"><a class="text-dark h-white" href="../help/contact.html">Contact</a></li>
+                    <li class="mb-1"><a class="text-dark h-white" href="../help/faq/faq.html">FAQ</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!--footer-top-right-end-->
+          </div>
+          <!--footer-top-end-->
+        </div>
+        <!--footer-container-xxl-end-->
       </div>
-      <!--footer-container-xxl-end-->
-    </div>
-    <!--footer-container-fluid-end-->
-  </footer>
+      <!--footer-container-fluid-end-->
 
-  <!--bootstrap js-->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-    crossorigin="anonymous"></script>
-</body>
+      <!--footer-container-fluid-start-->
+      <div class="container-fluid bg-dark">
+        <!--footer-container-xxl-start-->
+        <div class="container-xxl my-0">
+          <!--footer-bottom-start-->
+          <div class="row d-flex align-items-center justify-content-around my-0 mx-auto p-3 footer-bottom">
+            <div class="col-12 col-lg-8 m-2 m-lg-0">
+              <div class="row align-items-center">
+                <div class="col text-center mb-2 mb-lg-0">
+                  <a class="footer-link text-white" href="#">Terms of Use</a>
+                </div>
+                <div class="col text-center mb-2 mb-lg-0">
+                  <a class="footer-link text-white" href="#">Terms & Conditions</a>
+                </div>
+                <div class="col text-center mb-2 mb-lg-0">
+                  <a class="footer-link text-white" href="#">Privacy Policy</a>
+                </div>
+                <div class="col text-center mb-2 mb-lg-0 d-none d-lg-block">
+                  <i class="fas fa-globe text-white"></i>
+                  <label class="visually-hidden" for="change-language-bottom">Language</label>
+                  <select
+                    class="col text-center p-2 rounded bg-dark text-white"
+                    name="change-language-bottom"
+                    id="change-language-bottom"
+                  >
+                    <option selected value="English">English</option>
+                    <option value="Spanish">Spanish</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-3 text-white text-center m-2 m-lg-0">© 2020 Morfi. All Rights Reserved.</div>
+          </div>
+          <!--footer-bottom-end-->
+        </div>
+        <!--footer-container-xxl-end-->
+      </div>
+      <!--footer-container-fluid-end-->
+    </footer>
 
+    <!--bootstrap js-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
