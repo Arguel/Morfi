@@ -59,7 +59,7 @@
   <body>
     <header>
       <!--Start of nav-menu-container-->
-      <div class="container-xxl navbar-min-h">
+      <div class="container-xxl navbar-min-h fixed-top bg-white">
         <nav class="navbar navbar-expand-lg navbar-light m-2">
           <div class="h-40px text-center">
             <a class="navbar-brand" href="/">
@@ -187,15 +187,15 @@
             </ul>
             <hr />
             <!--account-nav-->
-            <ul class="navbar-nav align-items-center">
-              <li class="nav-item d-block d-lg-flex text-center btn-login-container my-1">
+            <ul class="navbar-nav align-items-center justify-content-evenly min-w-179px">
+              <li class="nav-item d-block d-lg-flex text-center btn-login-container my-1 mx-1">
                 <a
                   class="nav-link btn-login rounded text-nowrap px-4 py-3 px-lg-2 py-lg-2"
                   href="views/account/login.html"
                   >Log in</a
                 >
               </li>
-              <li class="nav-item text-center btn-sign-up-container my-1">
+              <li class="nav-item text-center btn-sign-up-container my-1 mx-1">
                 <a
                   class="nav-link btn-sign-up rounded text-nowrap px-4 py-3 px-lg-2 py-lg-2"
                   href="views/account/register.html"
@@ -209,7 +209,7 @@
       <!--End of nav-menu-container-->
     </header>
 
-    <main>
+    <main class="mt-11">
       <!--Start of news-container-->
       <!--titles-->
       <section class="container-xxl">
@@ -464,7 +464,7 @@
       <!--End of news-container-->
 
       <!--Start of top-offers-container-->
-      <section class="container-xxl mw-1800px min-h-362px">
+      <section class="container-xxl min-h-362px">
         <div class="m-2">
           <a href="views/shop/top-offers.html">
             <h1 class="h1-title text-center text-xl-start d-inline h-underline">Top offers</h1>
