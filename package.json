@@ -1,7 +1,7 @@
 {
   "name": "morfi",
   "version": "1.0.0",
-  "description": "morfi source code/dependencies",
+  "description": "A simple food website",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,8 +14,9 @@
   },
   "keywords": [
     "node",
-    "modules",
-    "dependencies"
+    "javascript",
+    "jquery",
+    "bootstrap"
   ],
   "author": "Arguel",
   "license": "MIT",
@@ -24,11 +25,11 @@
   },
   "homepage": "https://github.com/Arguel/morfi#readme",
   "devDependencies": {
+    "bootstrap": "^5.1.0",
     "node-sass": "^5.0.0",
     "nodemon": "^2.0.7"
   },
   "dependencies": {
-    "bootstrap": "^5.0.0-beta1",
-    "express": "^4.17.1"
+    "prettier": "^2.4.0"
   }
 }

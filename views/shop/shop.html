@@ -1,1128 +1,1457 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- HTML Meta Tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TheMorfi - Shop</title>
+    <meta
+      name="description"
+      content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more"
+    />
+    <meta name="keywords" content="THE, MORFI, FOOD, HEALTHY, BEST" />
 
-<head>
-  <!-- HTML Meta Tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TheMorfi - Shop</title>
-  <meta name="description"
-    content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more">
-  <meta name="keywords" content="THE, MORFI, FOOD, HEALTHY, BEST">
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="The Morfi" />
+    <meta
+      itemprop="description"
+      content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more"
+    />
+    <meta itemprop="image" content="https://i.imgur.com/NRUXriX.jpg" />
 
-  <!-- Google / Search Engine Tags -->
-  <meta itemprop="name" content="The Morfi">
-  <meta itemprop="description"
-    content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more">
-  <meta itemprop="image" content="https://i.imgur.com/NRUXriX.jpg">
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://arguel.github.io/morfi" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="The Morfi" />
+    <meta
+      property="og:description"
+      content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more"
+    />
+    <meta property="og:image" content="https://i.imgur.com/NRUXriX.jpg" />
 
-  <!-- Facebook Meta Tags -->
-  <meta property="og:url" content="https://arguel.github.io/morfi">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="The Morfi">
-  <meta property="og:description"
-    content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more">
-  <meta property="og:image" content="https://i.imgur.com/NRUXriX.jpg">
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The Morfi" />
+    <meta
+      name="twitter:description"
+      content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more"
+    />
+    <meta name="twitter:image" content="https://i.imgur.com/NRUXriX.jpg" />
 
-  <!-- Twitter Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="The Morfi">
-  <meta name="twitter:description"
-    content="The Morfi is a restaurant franchise dedicated to offering the public a new experience with food. Come and discover healthy meals, unique recipes, products of the best quality, events, and much more">
-  <meta name="twitter:image" content="https://i.imgur.com/NRUXriX.jpg">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../../assets/css/main.css" type="text/css" />
 
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="../../assets/css/main.css" type="text/css">
+    <!-- Google / Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
 
-  <!-- Google / Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Tab Icon -->
+    <link rel="icon" href="../../img/logo/white_background/small_logo_icon/svg/small_logo_icon.svg" />
 
-  <!-- Tab Icon -->
-  <link rel="icon" href="../../img/logo/white_background/small_logo_icon/svg/small_logo_icon.svg">
+    <!--Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/1131adf3a1.js" crossorigin="anonymous"></script>
 
-  <!--Font Awesome Icons -->
-  <script src="https://kit.fontawesome.com/1131adf3a1.js" crossorigin="anonymous"></script>
+    <!--Bootstrap js bundle-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+      defer
+    ></script>
 
-  <!--Bootstrap js bundle-->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"
-    defer></script>
+    <!--Jquery lib-->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+      defer
+    ></script>
 
-  <!--Jquery lib-->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous" defer></script>
+    <!--Main shop js-->
+    <script src="../../js/shop.js" charset="utf-8" defer></script>
+    <!--------------------->
+  </head>
 
-  <!--Main shop js-->
-  <script src="../../js/shop.js" charset="utf-8" defer></script>
-  <!--------------------->
-</head>
-
-<body>
-
-  <header>
-
-    <!--Start of nav-menu-container-->
-    <div class="container-xxl navbar-min-h fixed-top bg-white">
-      <nav class="navbar navbar-expand-lg navbar-light m-2">
-        <div class="h-40px text-center">
-          <a class="navbar-brand" href="/">
-            <img class="h-100 w-auto" src="../../img/logo/white_background/medium_logo_side/svg/medium_logo_side.svg"
-              alt="side-logo">
-          </a>
-        </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <!--nav-->
-          <ul class="navbar-nav align-items-center justify-content-around mx-auto col-lg-8">
-            <!--Home-->
-            <li class="nav-item">
-              <a class="nav-link fs-5" href="/" aria-current="page">Home</a>
-            </li>
-            <!--About-->
-            <li class="nav-item dropdown text-center">
-              <a class="nav-link fs-5" href="#" id="navbarDropdownMenuLinkAbout" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">About</a>
-              <ul class="nav-color-list dropdown-menu text-center text-lg-start"
-                aria-labelledby="navbarDropdownMenuLinkAbout">
-                <li><a class="dropdown-item" href="../about/about-us.html">About us</a></li>
-                <li><a class="dropdown-item" href="../about/locations.html">Locations</a></li>
-                <li><a class="dropdown-item" href="../about/our-products.html">Our products</a></li>
-              </ul>
-            </li>
-            <!--Shop-->
-            <li class="nav-item dropdown text-center">
-              <a class="nav-link active fs-5" href="#" id="navbarDropdownMenuLinkShop" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-              <ul class="nav-color-list dropdown-menu text-center text-lg-start"
-                aria-labelledby="navbarDropdownMenuLinkDrop">
-                <li><a class="dropdown-item" href="../shop/shop.html">Catalogue</a></li>
-                <li><a class="dropdown-item" href="../shop/top-offers.html">Top offers</a></li>
-              </ul>
-            </li>
-            <!--Recipes-->
-            <li class="nav-item dropdown text-center">
-              <a class="nav-link fs-5" href="#" id="navbarDropdownMenuLinkRecipes" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">Recipes</a>
-              <ul class="nav-color-list dropdown-menu text-center text-lg-start"
-                aria-labelledby="navbarDropdownMenuLinkRecipes">
-                <li><a class="dropdown-item" href="../recipes/classics.html">Classics</a></li>
-                <li><a class="dropdown-item" href="../recipes/healthy-recipes.html">Healthy</a></li>
-                <li><a class="dropdown-item" href="../recipes/wholemeal-recipes.html">Wholemeal</a></li>
-                <li><a class="dropdown-item" href="../recipes/easy-recipes.html">Easy</a></li>
-              </ul>
-            </li>
-            <!--Help-->
-            <li class="nav-item dropdown text-center">
-              <a class="nav-link fs-5" href="#" id="navbarDropdownMenuLinkHelp" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">Help</a>
-              <ul class="nav-color-list dropdown-menu text-center text-lg-start"
-                aria-labelledby="navbarDropdownMenuLinkHelp">
-                <li><a class="dropdown-item" href="../help/contact.html">Contact</a></li>
-                <li><a class="dropdown-item" href="../help/faq/faq.html">FAQ</a></li>
-              </ul>
-            </li>
-            <!--Searchbar-->
-            <li class="nav-item">
-              <form>
-                <div class="input-group">
-                  <button class="input-group-text nav-searchbar" id="search-icon" aria-label="searchbar icon">
-                    <i class="fas fa-search"></i>
-                  </button>
-                  <input type="text" class="form-control nav-searchbar" placeholder="Search" aria-label="Search"
-                    aria-describedby="search-icon">
-                </div>
-              </form>
-            </li>
-          </ul>
-          <hr>
-          <!--account-nav-->
-          <ul class="navbar-nav align-items-center justify-content-evenly min-w-179px">
-            <li class="mx-1 d-none d-lg-block">
-              <i class="fas fa-user-circle fa-fw fs-4 h-pointer"></i>
-              <span class="text-darker-4 h-pointer">Username</span>
-              <span class="visually-hidden">account</span>
-            </li>
-            <li class="mx-1 d-none d-lg-block position-relative">
-              <a class="text-dark" id="cart-checkout" href="../cart/checkout.html">
-                <i class="fas fa-shopping-cart fa-fw fs-4 h-pointer"></i>
-                <span
-                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary h-pointer">
-                  <span>0</span>
-                  <span class="visually-hidden">cart</span>
-                </span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-    <!--End of nav-menu-container-->
-
-  </header>
-
-  <main class=" mt-13">
-    <!--banner section-->
-    <section class="container-xl my-5">
-      <div id="banner-carousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-
-          <!--banner-1-->
-          <div class="carousel-item active">
-            <a class="h-opacity-1" href="top-offers.html">
-              <figure class="m-0">
-                <img class="img-fluid" src="../../img/shop/shop/banner/pizza-banner.webp" alt="pizza-banner">
-              </figure>
+  <body>
+    <header>
+      <!--Start of nav-menu-container-->
+      <div class="container-xxl navbar-min-h fixed-top bg-white">
+        <nav class="navbar navbar-expand-lg navbar-light m-2">
+          <div class="h-40px text-center">
+            <a class="navbar-brand" href="/">
+              <img
+                class="h-100 w-auto"
+                src="../../img/logo/white_background/medium_logo_side/svg/medium_logo_side.svg"
+                alt="side-logo"
+              />
             </a>
           </div>
-          <!--banner-1-->
-
-          <!--banner-2-->
-          <div class="carousel-item">
-            <a class="h-opacity-1" href="top-offers.html">
-              <figure class="m-0">
-                <img class="img-fluid" src="../../img/shop/shop/banner/fry-banner.webp" alt="fry-banner">
-              </figure>
-            </a>
-          </div>
-          <!--banner-2-->
-
-          <!--banner-3-->
-          <div class="carousel-item">
-            <a class="h-opacity-1" href="top-offers.html">
-              <figure class="m-0">
-                <img class="img-fluid" src="../../img/shop/shop/banner/chicken-banner.webp" alt="chicken-banner">
-              </figure>
-            </a>
-          </div>
-          <!--banner-3-->
-
-        </div>
-
-        <!--controls-->
-        <button class="carousel-control-prev" type="button" data-bs-target="#banner-carousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#banner-carousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-        <!--controls-->
-      </div>
-    </section>
-    <!--banner section-->
-
-    <!--shop-->
-    <section class="container-xxl mb-5">
-
-      <!--breadcrumb start-->
-      <div class="row align-items-center ff-lato-4">
-        <div class="col-12 col-lg-6">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb m-0 p-3">
-              <li class="breadcrumb-item"><a href="#">Condiments</a></li>
-              <li class="breadcrumb-item"><a href="#">Example</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Text</li>
-            </ol>
-          </nav>
-        </div>
-        <!--breadcrumb end-->
-
-        <!--mobile filters start-->
-        <div class="col-12 d-block d-lg-none">
-          <div class="p-3">
-            <button type="button" class="btn btn-light border w-100 text-center" data-bs-toggle="modal"
-              data-bs-target="#shop-filters">
-              <span>Sort &#38; Filter</span>
-              <span class="mx-2"><i class="fas fa-sliders-h"></i></span>
-            </button>
-          </div>
-          <!-- Modal -->
-          <div class="modal fade" id="shop-filters" tabindex="-1" aria-labelledby="shop-filters-label"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen">
-              <div class="modal-content">
-
-                <!--top-->
-                <div class="modal-header position-relative">
-                  <span type="button"
-                    class="position-absolute top-50 start-0 translate-middle-y btn-primary px-3 py-2 mx-3 rounded"
-                    data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fas fa-arrow-left"></i>
-                  </span>
-                  <h5 class="modal-title d-block mx-auto" id="shop-filters-label">Sort &#38; Filter</h5>
-                </div>
-                <!--top-->
-
-                <!--mid-->
-                <div class="modal-body p-0">
-                  <div class="container-fluid">
-                    <div class="accordion accordion-flush" id="shop-filters-body">
-
-                      <!--Categories-->
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingOne">
-                          <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                            <span>Categories</span>
-                          </button>
-                        </h2>
-                        <div id="flush-collapseOne" class="accordion-collapse collapse"
-                          aria-labelledby="flush-headingOne" data-bs-parent="#shop-filters-body">
-                          <div>
-                            <ul class="list-group list-group-flush list-unstyled">
-                              <li class="list-group-item active"><a class="sel-primary" href="#">All</a>
-                              </li>
-                              <li class="list-group-item bg-light"><a class="text-dark" href="#">Appetizers</a></li>
-                              <li class="list-group-item bg-light"><a class="text-dark" href="#">Condiments</a></li>
-                              <li class="list-group-item bg-light"><a class="text-dark" href="#">Confectionery</a></li>
-                              <li class="list-group-item bg-light"><a class="text-dark" href="#">Convenience foods</a>
-                              </li>
-                              <li class="list-group-item bg-light"><a class="text-dark" href="#">Desserts</a></li>
-                              <li class="list-group-item bg-light"><a class="text-dark" href="#">Dips,
-                                  pastes and
-                                  spreads</a></li>
-                              <li class="list-group-item bg-light"><a class="text-dark" href="#">Dried
-                                  foods</a></li>
-                              <li class="list-group-item bg-light"><a class="text-dark" href="#">Dumplings</a></li>
-                              <li class="list-group-item bg-light"><a class="text-dark" href="#">Fast
-                                  food</a></li>
-                              <li class="list-group-item bg-light"><a class="text-dark" href="#">Products</a></li>
-                              <li class="list-group-item bg-light text-decoration-underline"><a href="#">Show more</a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <!--Categories-->
-
-                      <!--Region-->
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingTwo">
-                          <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                            <span>Region</span>
-                          </button>
-                        </h2>
-                        <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                          aria-labelledby="flush-headingTwo" data-bs-parent="#shop-filters-body">
-                          <div>
-                            <ul class="list-group list-group-flush list-unstyled">
-                              <li class="list-group-item active"><span class="sel-primary">North
-                                  America</span></li>
-                              <li class="list-group-item bg-light"><span>United States</span></li>
-                              <li class="list-group-item bg-light"><span>Europe</span></li>
-                              <li class="list-group-item bg-light"><span>Global</span></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <!--Region-->
-
-                      <!--Discount-->
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingThree">
-                          <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseThree" aria-expanded="false"
-                            aria-controls="flush-collapseThree">
-                            <span>Discount</span>
-                          </button>
-                        </h2>
-                        <div id="flush-collapseThree" class="accordion-collapse collapse"
-                          aria-labelledby="flush-headingThree" data-bs-parent="#shop-filters-body">
-                          <div>
-                            <ul class="list-group list-group-flush list-unstyled">
-                              <li class="list-group-item bg-light"><span>25%</span></li>
-                              <li class="list-group-item bg-light"><span>50%</span></li>
-                              <li class="list-group-item bg-light"><span>75%</span></li>
-                              <li class="list-group-item bg-light"><span>100%</span></li>
-                              <li class="list-group-item bg-light">
-                                <form class="row align-items-center">
-                                  <div class="col-6">
-                                    <div class="row align-items-center">
-                                      <div class="col-12 mb-1">
-                                        <label class="form-label" for="dsc-from-r">From:</label>
-                                        <input class="form-control" type="number" name="dsc-from-r" id="dsc-from-r"
-                                          placeholder="Min">
-                                      </div>
-                                      <div class="col-12 mt-1">
-                                        <label class="form-label" for="dis-to-r">To:</label>
-                                        <input class="form-control" type="number" name="dis-to-r" id="dis-to-r"
-                                          placeholder="Max">
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-6 text-center">
-                                    <button class="btn btn-primary p-3">Submit</button>
-                                  </div>
-                                </form>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <!--Discount-->
-
-                      <!--Ratings-->
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingFour">
-                          <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseFour" aria-expanded="false"
-                            aria-controls="flush-collapseFour">
-                            <span>Ratings</span>
-                          </button>
-                        </h2>
-                        <div id="flush-collapseFour" class="accordion-collapse collapse"
-                          aria-labelledby="flush-headingFour" data-bs-parent="#shop-filters-body">
-                          <div>
-                            <ul class="list-group list-group-flush list-unstyled">
-                              <li class="list-group-item active" data-stars="1">
-                                <span class="sel-primary"><i class="fas fa-star"></i><i class="far fa-star"></i><i
-                                    class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
-                                  <span class="mx-2">&#38; Up</span>
-                                </span>
-                              </li>
-                              <li class="list-group-item bg-light" data-stars="2">
-                                <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
-                                  <span class="mx-2">&#38; Up</span>
-                                </span>
-                              </li>
-                              <li class="list-group-item bg-light" data-stars="3">
-                                <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
-                                  <span class="mx-2">&#38; Up</span>
-                                </span>
-                              </li>
-                              <li class="list-group-item bg-light" data-stars="4">
-                                <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-                                  <span class="mx-2">&#38; Up</span>
-                                </span>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <!--Ratings-->
-
-                      <!--Payment-->
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingFive">
-                          <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseFive" aria-expanded="false"
-                            aria-controls="flush-collapseFive">
-                            <span>Payment</span>
-                          </button>
-                        </h2>
-                        <div id="flush-collapseFive" class="accordion-collapse collapse"
-                          aria-labelledby="flush-headingFive" data-bs-parent="#shop-filters-body">
-                          <div>
-                            <ul class="list-group list-group-flush list-unstyled">
-                              <li class="list-group-item bg-light"><span>In 12 installments</span></li>
-                              <li class="list-group-item bg-light"><span>In 6 installments</span></li>
-                              <li class="list-group-item bg-light"><span>In cash</span></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <!--Payment-->
-
-                      <!--Promotions-->
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingSix">
-                          <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
-                            <span>Promotions</span>
-                          </button>
-                        </h2>
-                        <div id="flush-collapseSix" class="accordion-collapse collapse"
-                          aria-labelledby="flush-headingSix" data-bs-parent="#shop-filters-body">
-                          <div>
-                            <ul class="list-group list-group-flush list-unstyled">
-                              <li class="list-group-item active"><span class="sel-primary">Special
-                                  offer</span></li>
-                              <li class="list-group-item bg-light"><span>New</span></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <!--Promotions-->
-
-                      <!--Delivery-->
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingSeven">
-                          <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseSeven" aria-expanded="false"
-                            aria-controls="flush-collapseSeven">
-                            <span>Delivery</span>
-                          </button>
-                        </h2>
-                        <div id="flush-collapseSeven" class="accordion-collapse collapse"
-                          aria-labelledby="flush-headingSeven" data-bs-parent="#shop-filters-body">
-                          <div>
-                            <ul class="list-group list-group-flush list-unstyled">
-                              <li class="list-group-item bg-light"><span>Free shipping</span></li>
-                              <li class="list-group-item bg-light"><span>Withdrawal in person</span>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <!--Delivery-->
-
-                      <!--Price-->
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingEight">
-                          <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseEight" aria-expanded="false"
-                            aria-controls="flush-collapseEight">
-                            <span>Price</span>
-                          </button>
-                        </h2>
-                        <div id="flush-collapseEight" class="accordion-collapse collapse"
-                          aria-labelledby="flush-headingEight" data-bs-parent="#shop-filters-body">
-                          <div>
-                            <ul class="list-group list-group-flush list-unstyled">
-                              <li class="list-group-item bg-light">
-                                <button class="sel-none">$0 - $10</button>
-                              </li>
-                              <li class="list-group-item bg-light">$10 - $50</li>
-                              <li class="list-group-item bg-light">$50 - $100</li>
-                              <li class="list-group-item bg-light">$100+</li>
-                              <li class="list-group-item bg-light">
-                                <form class="row align-items-center">
-                                  <div class="col-6">
-                                    <div class="row align-items-center">
-                                      <div class="col-12 mb-1">
-                                        <label class="form-label" for="pri-from-r">From:</label>
-                                        <input class="form-control" type="number" name="pri-from-r" id="pri-from-r"
-                                          placeholder="Min">
-                                      </div>
-                                      <div class="col-12 mt-1">
-                                        <label class="form-label" for="pri-to-r">To:</label>
-                                        <input class="form-control" type="number" name="pri-to-r" id="pri-to-r"
-                                          placeholder="Max">
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-6 text-center">
-                                    <button class="btn btn-primary p-3">Submit</button>
-                                  </div>
-                                </form>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <!--Price-->
-
-                      <!--Sort By-->
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingNine">
-                          <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseNine" aria-expanded="false"
-                            aria-controls="flush-collapseNine">
-                            <span>Sort by</span>
-                          </button>
-                        </h2>
-                        <div id="flush-collapseNine" class="accordion-collapse collapse"
-                          aria-labelledby="flush-headingNine" data-bs-parent="#shop-filters-body">
-                          <div>
-                            <ul class="list-group list-group-flush list-unstyled">
-                              <li class="list-group-item active"><span class="sel-primary">Featured</span></li>
-                              <li class="list-group-item bg-light"><span>Low to high</span></li>
-                              <li class="list-group-item bg-light"><span>High to low</span></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <!--Sort By-->
-
-                    </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!--nav-->
+            <ul class="navbar-nav align-items-center justify-content-around mx-auto col-lg-8">
+              <!--Home-->
+              <li class="nav-item">
+                <a class="nav-link fs-5" href="/" aria-current="page">Home</a>
+              </li>
+              <!--About-->
+              <li class="nav-item dropdown text-center">
+                <a
+                  class="nav-link fs-5"
+                  href="#"
+                  id="navbarDropdownMenuLinkAbout"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >About</a
+                >
+                <ul
+                  class="nav-color-list dropdown-menu text-center text-lg-start"
+                  aria-labelledby="navbarDropdownMenuLinkAbout"
+                >
+                  <li>
+                    <a class="dropdown-item" href="../about/about-us.html">About us</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="../about/locations.html">Locations</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="../about/our-products.html">Our products</a>
+                  </li>
+                </ul>
+              </li>
+              <!--Shop-->
+              <li class="nav-item dropdown text-center">
+                <a
+                  class="nav-link active fs-5"
+                  href="#"
+                  id="navbarDropdownMenuLinkShop"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Shop</a
+                >
+                <ul
+                  class="nav-color-list dropdown-menu text-center text-lg-start"
+                  aria-labelledby="navbarDropdownMenuLinkDrop"
+                >
+                  <li>
+                    <a class="dropdown-item" href="../shop/shop.html">Catalogue</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="../shop/top-offers.html">Top offers</a>
+                  </li>
+                </ul>
+              </li>
+              <!--Recipes-->
+              <li class="nav-item dropdown text-center">
+                <a
+                  class="nav-link fs-5"
+                  href="#"
+                  id="navbarDropdownMenuLinkRecipes"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Recipes</a
+                >
+                <ul
+                  class="nav-color-list dropdown-menu text-center text-lg-start"
+                  aria-labelledby="navbarDropdownMenuLinkRecipes"
+                >
+                  <li>
+                    <a class="dropdown-item" href="../recipes/classics.html">Classics</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="../recipes/healthy-recipes.html">Healthy</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="../recipes/wholemeal-recipes.html">Wholemeal</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="../recipes/easy-recipes.html">Easy</a>
+                  </li>
+                </ul>
+              </li>
+              <!--Help-->
+              <li class="nav-item dropdown text-center">
+                <a
+                  class="nav-link fs-5"
+                  href="#"
+                  id="navbarDropdownMenuLinkHelp"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Help</a
+                >
+                <ul
+                  class="nav-color-list dropdown-menu text-center text-lg-start"
+                  aria-labelledby="navbarDropdownMenuLinkHelp"
+                >
+                  <li>
+                    <a class="dropdown-item" href="../help/contact.html">Contact</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="../help/faq/faq.html">FAQ</a>
+                  </li>
+                </ul>
+              </li>
+              <!--Searchbar-->
+              <li class="nav-item">
+                <form>
+                  <div class="input-group">
+                    <button class="input-group-text nav-searchbar" id="search-icon" aria-label="searchbar icon">
+                      <i class="fas fa-search"></i>
+                    </button>
+                    <input
+                      type="text"
+                      class="form-control nav-searchbar"
+                      placeholder="Search"
+                      aria-label="Search"
+                      aria-describedby="search-icon"
+                    />
                   </div>
-                </div>
-                <!--mid-->
-
-              </div>
-            </div>
-          </div>
-        </div>
-        <!--mobile filters end-->
-
-        <!--sortby desktop -->
-        <div class="d-none d-lg-block col-lg-6">
-          <div class="row align-items-center p-3">
-            <div class="col-lg-8 text-end">
-              <label class="form-label m-0" for="sortby">Sort by</label>
-            </div>
-            <div class="col-lg-4">
-              <label class="visually-hidden" for="sortby">Sort-by</label>
-              <select class="form-select" name="sortby" id="sortby">
-                <option value="Featured" selected>Featured</option>
-                <option value="Low to high">Low to high</option>
-                <option value="High to low">High to low</option>
-              </select>
-            </div>
-          </div>
-        </div>
-        <!--sortby desktop -->
-      </div>
-
-      <div class="row align-content-evenly justify-content-around" id="main-shop-container">
-
-        <!--filters start-->
-        <aside class="d-none d-lg-block col-lg-4 col-xl-3 border bg-light">
-          <div class="p-md-3 ff-lato-4" id="filters-btns-container">
-            <form>
-              <label class="form-label visually-hidden" for="s-shop">Search</label>
-              <div class="input-group mb-3 mt-2">
-                <input class="form-control" type="text" name="s-shop" id="s-shop" placeholder="Search">
-                <button class="input-group-text" id="si-shop" aria-label="search" type="button">
-                  <i class="fas fa-search text-darker-4"></i>
-                </button>
-              </div>
-            </form>
-            <div>
-              <div class="row filter">
-                <div class="col-md-9">
-                  <h4>Categories <span class="text-muted fs-6">- (A-Z)</span></h4>
-                </div>
-              </div>
-              <ul class="list-unstyled">
-                <li>
-                  <button class="sel-primary">
-                    <a class="text-white" href="#">All</a>
-                  </button>
-                </li>
-                <li>
-                  <button class="sel-none">
-                    <a class="text-dark" href="#">Appetizers</a>
-                  </button>
-                </li>
-                <li>
-                  <button class="sel-none">
-                    <a class="text-dark" href="#">Condiments</a>
-                  </button>
-                </li>
-                <li>
-                  <button class="sel-none">
-                    <a class="text-dark" href="#">Confectionery</a>
-                  </button>
-                </li>
-                <li>
-                  <button class="sel-none">
-                    <a class="text-dark" href="#">Convenience foods</a>
-                  </button>
-                </li>
-                <li>
-                  <button class="sel-none">
-                    <a class="text-dark" href="#">Desserts</a>
-                  </button>
-                </li>
-                <li>
-                  <button class="sel-none">
-                    <a class="text-dark" href="#">Dips, pastes and spreads</a>
-                  </button>
-                </li>
-                <li>
-                  <button class="sel-none">
-                    <a class="text-dark" href="#">Dried foods</a>
-                  </button>
-                </li>
-                <li>
-                  <button class="sel-none">
-                    <a class="text-dark" href="#">Dumplings</a>
-                  </button>
-                </li>
-                <li>
-                  <button class="sel-none">
-                    <a class="text-dark" href="#">Fast food</a>
-                  </button>
-                </li>
-                <li>
-                  <button class="sel-none">
-                    <a class="text-dark" href="#">Products</a>
-                  </button>
-                </li>
-                <li>
-                  <button class="sel-none">
-                    <a class="text-decoration-underline" href="#">Show more</a>
-                  </button>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <div class="row filter">
-                <div class="col-md-9">
-                  <h4>Region</h4>
-                </div>
-              </div>
-              <ul class="list-unstyled">
-                <li>
-                  <button class="sel-none">North America</button>
-                </li>
-                <li>
-                  <button class="sel-none">United States</button>
-                </li>
-                <li>
-                  <button class="sel-none">Europe</button>
-                </li>
-                <li>
-                  <button class="sel-none">Global</button>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <div class="row filter">
-                <div class="col-md-9">
-                  <h4>Discount</h4>
-                </div>
-              </div>
-              <ul class="list-unstyled">
-                <li>
-                  <button class="sel-none">25%</button>
-                </li>
-                <li>
-                  <button class="sel-none">50%</button>
-                </li>
-                <li>
-                  <button class="sel-none">75%</button>
-                </li>
-                <li>
-                  <button class="sel-none">100%</button>
-                </li>
-                <li>
-                  <form class="px-1">
-                    <label class="visually-hidden" for="dis-from">minimum-discount</label>
-                    <input class="w-80px border border-darker-4" type="number" name="dis-from" id="dis-from"
-                      placeholder="Min">
-                    <span>-</span>
-                    <label class="visually-hidden" for="dis-to">maximum-discount</label>
-                    <input class="w-80px border border-darker-4" type="number" name="dis-to" id="dis-to"
-                      placeholder="Max">
-                    <button class="sel-primary disabled" id="discount-filter" type="button"><i
-                        class="fas fa-chevron-right"></i></button>
-                  </form>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <div class="row filter">
-                <div class="col-md-9">
-                  <h4>Ratings</h4>
-                </div>
-              </div>
-              <ul class="list-unstyled">
-                <li>
-                  <button class="sel-none" data-stars="1">
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <span class="mx-2">&#38; Up</span>
-                  </button>
-                </li>
-                <li>
-                  <button class="sel-none" data-stars="2">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <span class="mx-2">&#38; Up</span>
-                  </button>
-                </li>
-                <li>
-                  <button class="sel-none" data-stars="3">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <span class="mx-2">&#38; Up</span>
-                  </button>
-                </li>
-                <li>
-                  <button class="sel-none" data-stars="4">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <span class="mx-2">&#38; Up</span>
-                  </button>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <div class="row filter">
-                <div class="col-md-9">
-                  <h4>Payment</h4>
-                </div>
-              </div>
-              <ul class="list-unstyled">
-                <li>
-                  <button class="sel-none">In 12 installments</button>
-                </li>
-                <li>
-                  <button class="sel-none">In 6 installments</button>
-                </li>
-                <li>
-                  <button class="sel-none">In cash</button>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <div class="row filter">
-                <div class="col-md-9">
-                  <h4>Promotions</h4>
-                </div>
-              </div>
-              <ul class="list-unstyled">
-                <li>
-                  <button class="sel-none">Special offer</button>
-                </li>
-                <li>
-                  <button class="sel-none">New</button>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <div class="row filter">
-                <div class="col-md-9">
-                  <h4>Delivery</h4>
-                </div>
-              </div>
-              <ul class="list-unstyled">
-                <li>
-                  <button class="sel-none">Free shipping</button>
-                </li>
-                <li>
-                  <button class="sel-none">Withdrawal in person</button>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <!--select-->
-              <div class="row filter">
-                <div class="col-md-9">
-                  <h4>Price</h4>
-                </div>
-              </div>
-              <ul class="list-unstyled">
-                <li>
-                  <button class="sel-none">$0 - $10</button>
-                </li>
-                <li>
-                  <button class="sel-none">$10 - $50</button>
-                </li>
-                <li>
-                  <button class="sel-none">$50 - $100</button>
-                </li>
-                <li>
-                  <button class="sel-none">$100+</button>
-                </li>
-                <li>
-                  <form class="px-1">
-                    <label class="visually-hidden" for="pri-from">price-from</label>
-                    <input class="w-80px border border-darker-4" type="number" name="pri-from" id="pri-from"
-                      placeholder="Min">
-                    <span>-</span>
-                    <label class="visually-hidden" for="pri-to">price-to</label>
-                    <input class="w-80px border border-darker-4" type="number" name="pri-to" id="pri-to"
-                      placeholder="Max">
-                    <button class="sel-primary disabled" id="price-filter" type="button"><i
-                        class="fas fa-chevron-right"></i></button>
-                  </form>
-                </li>
-              </ul>
-            </div>
-            <div class="text-center">
-              <button class="btn btn-primary" id="clean-all-filters">Clean all filters</button>
-            </div>
-          </div>
-        </aside>
-        <!--filters end-->
-
-        <!--shop items start-->
-        <section class="col-md-12 col-lg-8 col-xl-9">
-          <div class="d-flex justify-content-center">
-            <div class="spinner-grow text-secondary my-2" role="status">
-              <span class="visually-hidden">Loading...</span>
-            </div>
-          </div>
-          <ul class="list-unstyled" id="shop-items-display"></ul>
-        </section>
-        <!--shop items end-->
-
-      </div>
-    </section>
-    <!--shop-->
-
-    <!--pagination-->
-    <section class="container-xxl mb-5">
-      <nav aria-label="shop navigation" class="">
-        <ul class="pagination flex-wrap align-items-center justify-content-center">
-          <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-          </li>
-          <li class="page-item active"><a class="page-link px-3" href="#">1</a></li>
-          <li class="page-item"><a class="page-link px-3" href="#">2</a></li>
-          <li class="page-item"><a class="page-link px-3" href="#">3</a></li>
-          <li class="page-item"><a class="page-link px-3" href="#">4</a></li>
-          <li class="page-item"><a class="page-link px-3" href="#">5</a></li>
-          <li class="page-item"><a class="page-link px-3" href="#">6</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#">Next</a>
-          </li>
-        </ul>
-      </nav>
-    </section>
-    <!--pagination-->
-  </main>
-
-  <footer>
-    <!--footer-container-fluid-start-->
-    <div class="container-fluid bg-darker-2">
-      <!--footer-container-xxl-start-->
-      <div class="container-xxl my-0">
-        <!--footer-top-start-->
-        <div class="row d-flex align-items-center justify-content-around footer-top m-0">
-          <!--footer-top-left-start-->
-          <div class="row align-items-center justify-content-evenly col-lg-3 p-0">
-            <div class="col-8 p-0 text-center d-none d-lg-block">
-              <div class="mw-200px h-100px overflow-hidden mb-2 mx-auto">
-                <img class="w-100 h-100px" src="../../img/logo/white_background/full_logo/svg/full_logo.svg"
-                  alt="logo-image">
-              </div>
-              <p class="mb-0 text-dark mw-200px mx-auto">Since 1997 making our customers happy</p>
-            </div>
-            <ul
-              class="col col-sm-7 col-md-5 col-lg-4 list-unstyled m-2 m-lg-0 p-0 d-flex flex-row flex-lg-column align-items-center justify-content-evenly">
-              <li class="my-2 my-lg-3 mx-2 mx-lg-0">
-                <a class="p-2 bg-dark text-white rounded-circle" href="https://www.facebook.com/"
-                  aria-label="facebook icon">
-                  <i class="fab fa-facebook-f fa-fw fs-6"></i>
-                </a>
+                </form>
               </li>
-              <li class="my-2 my-lg-0 mb-lg-3 mx-2 mx-lg-0">
-                <a class="p-2 bg-dark text-white rounded-circle" href="https://twitter.com/" aria-label="twitter icon">
-                  <i class="fab fa-twitter fa-fw fs-6"></i>
-                </a>
+            </ul>
+            <hr />
+            <!--account-nav-->
+            <ul class="navbar-nav align-items-center justify-content-evenly min-w-179px">
+              <li class="mx-1 d-none d-lg-block">
+                <i class="fas fa-user-circle fa-fw fs-4 h-pointer"></i>
+                <span class="text-darker-4 h-pointer">Username</span>
+                <span class="visually-hidden">account</span>
               </li>
-              <li class="my-2 my-lg-0 mb-lg-3 mx-2 mx-lg-0">
-                <a class="p-2 bg-dark text-white rounded-circle" href="https://www.youtube.com/"
-                  aria-label="youtube icon">
-                  <i class="fab fa-youtube fa-fw fs-6"></i>
-                </a>
-              </li>
-              <li class="my-2 my-lg-0 mb-lg-3 mx-2 mx-lg-0">
-                <a class="p-2 bg-dark text-white rounded-circle" href="https://www.instagram.com/"
-                  aria-label="instagram icon">
-                  <i class="fab fa-instagram fa-fw fs-6"></i>
+              <li class="mx-1 d-none d-lg-block position-relative">
+                <a class="text-dark" id="cart-checkout" href="../cart/checkout.html">
+                  <i class="fas fa-shopping-cart fa-fw fs-4 h-pointer"></i>
+                  <span
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary h-pointer"
+                  >
+                    <span>0</span>
+                    <span class="visually-hidden">cart</span>
+                  </span>
                 </a>
               </li>
             </ul>
-            <label class="visually-hidden" for="change-language-top">Language</label>
-            <select class="col-7 col-sm-4 col-md-4 d-block d-lg-none p-2 rounded" name="change-language-top"
-              id="change-language-top">
-              <option selected value="English">English</option>
-              <option value="Spanish">Spanish</option>
-            </select>
-            <hr class="d-block d-lg-none my-0">
           </div>
-          <!--footer-top-left-end-->
-          <!--footer-top-right-start-->
-          <div class="col-12 col-lg-8 mt-3 p-0">
-            <div class="row d-flex justify-content-evenly w-100 m-0">
-              <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
-                <h5 class="mb-2 mb-lg-4"><a href="/" class="text-dark h-white">Home</a></h5>
-                <ul class="list-unstyled">
-                  <li class="mb-1"><a class="text-dark h-white" href="../about/blog.html">Events</a>
-                  </li>
-                  <li class="mb-1"><a class="text-dark h-white" href="../../index.html#newsletter">Newsletter</a></li>
-                </ul>
-              </div>
-              <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
-                <h5 class="mb-2 mb-lg-4"><a href="../about/about-us.html" class="text-dark h-white">About</a>
-                </h5>
-                <ul class="list-unstyled">
-                  <li class="mb-1"><a class="text-dark h-white" href="../about/about-us.html">About
-                      us</a></li>
-                  <li class="mb-1"><a class="text-dark h-white" href="../about/locations.html">Locations</a>
-                  </li>
-                  <li class="mb-1"><a class="text-dark h-white" href="../about/our-products.html">Our
-                      products</a></li>
-                </ul>
-              </div>
-              <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
-                <h5 class="mb-2 mb-lg-4"><a href="../shop/shop.html" class="text-dark h-white">Shop</a></h5>
-                <ul class="list-unstyled">
-                  <li class="mb-1"><a class="text-dark h-white" href="../shop/shop.html">Catalogue</a>
-                  </li>
-                  <li class="mb-1"><a class="text-dark h-white" href="../shop/top-offers.html">Top
-                      offers</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
-                <h5 class="mb-2 mb-lg-4"><a href="../recipes/classics.html" class="text-dark h-white">Recipes</a></h5>
-                <ul class="list-unstyled">
-                  <li class="mb-1"><a class="text-dark h-white" href="../recipes/classics.html">Classics</a>
-                  </li>
-                  <li class="mb-1"><a class="text-dark h-white" href="../recipes/healthy-recipes.html">Healthy</a></li>
-                  <li class="mb-1"><a class="text-dark h-white" href="../recipes/wholemeal-recipes.html">Wholemeal</a>
-                  </li>
-                  <li class="mb-1"><a class="text-dark h-white" href="../recipes/easy-recipes.html">Easy</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-12 col-lg-2 text-center text-lg-start mb-3">
-                <h5 class="mb-2 mb-lg-4"><a href="../help/contact.html" class="text-dark h-white">Help</a></h5>
-                <ul class="list-unstyled">
-                  <li class="mb-1"><a class="text-dark h-white" href="../help/contact.html">Contact</a></li>
-                  <li class="mb-1"><a class="text-dark h-white" href="../help/faq/faq.html">FAQ</a>
-                  </li>
-                </ul>
+        </nav>
+      </div>
+      <!--End of nav-menu-container-->
+    </header>
+
+    <main class="mt-13">
+      <!--banner section-->
+      <section class="container-xl my-5">
+        <div id="banner-carousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <!--banner-1-->
+            <div class="carousel-item active">
+              <a class="h-opacity-1" href="top-offers.html">
+                <figure class="m-0">
+                  <img class="img-fluid" src="../../img/shop/shop/banner/pizza-banner.webp" alt="pizza-banner" />
+                </figure>
+              </a>
+            </div>
+            <!--banner-1-->
+
+            <!--banner-2-->
+            <div class="carousel-item">
+              <a class="h-opacity-1" href="top-offers.html">
+                <figure class="m-0">
+                  <img class="img-fluid" src="../../img/shop/shop/banner/fry-banner.webp" alt="fry-banner" />
+                </figure>
+              </a>
+            </div>
+            <!--banner-2-->
+
+            <!--banner-3-->
+            <div class="carousel-item">
+              <a class="h-opacity-1" href="top-offers.html">
+                <figure class="m-0">
+                  <img class="img-fluid" src="../../img/shop/shop/banner/chicken-banner.webp" alt="chicken-banner" />
+                </figure>
+              </a>
+            </div>
+            <!--banner-3-->
+          </div>
+
+          <!--controls-->
+          <button class="carousel-control-prev" type="button" data-bs-target="#banner-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#banner-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+          <!--controls-->
+        </div>
+      </section>
+      <!--banner section-->
+
+      <!--shop-->
+      <section class="container-xxl mb-5">
+        <!--breadcrumb start-->
+        <div class="row align-items-center ff-lato-4">
+          <div class="col-12 col-lg-6">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb m-0 p-3">
+                <li class="breadcrumb-item"><a href="#">Condiments</a></li>
+                <li class="breadcrumb-item"><a href="#">Example</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Text</li>
+              </ol>
+            </nav>
+          </div>
+          <!--breadcrumb end-->
+
+          <!--mobile filters start-->
+          <div class="col-12 d-block d-lg-none">
+            <div class="p-3">
+              <button
+                type="button"
+                class="btn btn-light border w-100 text-center"
+                data-bs-toggle="modal"
+                data-bs-target="#shop-filters"
+              >
+                <span>Sort &#38; Filter</span>
+                <span class="mx-2"><i class="fas fa-sliders-h"></i></span>
+              </button>
+            </div>
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="shop-filters"
+              tabindex="-1"
+              aria-labelledby="shop-filters-label"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen">
+                <div class="modal-content">
+                  <!--top-->
+                  <div class="modal-header position-relative">
+                    <span
+                      type="button"
+                      class="position-absolute top-50 start-0 translate-middle-y btn-primary px-3 py-2 mx-3 rounded"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <i class="fas fa-arrow-left"></i>
+                    </span>
+                    <h5 class="modal-title d-block mx-auto" id="shop-filters-label">Sort &#38; Filter</h5>
+                  </div>
+                  <!--top-->
+
+                  <!--mid-->
+                  <div class="modal-body p-0">
+                    <div class="container-fluid">
+                      <div class="accordion accordion-flush" id="shop-filters-body">
+                        <!--Categories-->
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="flush-headingOne">
+                            <button
+                              class="accordion-button collapsed bg-white"
+                              type="button"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#flush-collapseOne"
+                              aria-expanded="false"
+                              aria-controls="flush-collapseOne"
+                            >
+                              <span>Categories</span>
+                            </button>
+                          </h2>
+                          <div
+                            id="flush-collapseOne"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingOne"
+                            data-bs-parent="#shop-filters-body"
+                          >
+                            <div>
+                              <ul class="list-group list-group-flush list-unstyled">
+                                <li class="list-group-item active">
+                                  <a class="sel-primary" href="#">All</a>
+                                </li>
+                                <li class="list-group-item bg-light">
+                                  <a class="text-dark" href="#">Appetizers</a>
+                                </li>
+                                <li class="list-group-item bg-light">
+                                  <a class="text-dark" href="#">Condiments</a>
+                                </li>
+                                <li class="list-group-item bg-light">
+                                  <a class="text-dark" href="#">Confectionery</a>
+                                </li>
+                                <li class="list-group-item bg-light">
+                                  <a class="text-dark" href="#">Convenience foods</a>
+                                </li>
+                                <li class="list-group-item bg-light">
+                                  <a class="text-dark" href="#">Desserts</a>
+                                </li>
+                                <li class="list-group-item bg-light">
+                                  <a class="text-dark" href="#">Dips, pastes and spreads</a>
+                                </li>
+                                <li class="list-group-item bg-light">
+                                  <a class="text-dark" href="#">Dried foods</a>
+                                </li>
+                                <li class="list-group-item bg-light">
+                                  <a class="text-dark" href="#">Dumplings</a>
+                                </li>
+                                <li class="list-group-item bg-light">
+                                  <a class="text-dark" href="#">Fast food</a>
+                                </li>
+                                <li class="list-group-item bg-light">
+                                  <a class="text-dark" href="#">Products</a>
+                                </li>
+                                <li class="list-group-item bg-light text-decoration-underline">
+                                  <a href="#">Show more</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <!--Categories-->
+
+                        <!--Region-->
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="flush-headingTwo">
+                            <button
+                              class="accordion-button collapsed bg-white"
+                              type="button"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#flush-collapseTwo"
+                              aria-expanded="false"
+                              aria-controls="flush-collapseTwo"
+                            >
+                              <span>Region</span>
+                            </button>
+                          </h2>
+                          <div
+                            id="flush-collapseTwo"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingTwo"
+                            data-bs-parent="#shop-filters-body"
+                          >
+                            <div>
+                              <ul class="list-group list-group-flush list-unstyled">
+                                <li class="list-group-item active">
+                                  <span class="sel-primary">North America</span>
+                                </li>
+                                <li class="list-group-item bg-light">
+                                  <span>United States</span>
+                                </li>
+                                <li class="list-group-item bg-light">
+                                  <span>Europe</span>
+                                </li>
+                                <li class="list-group-item bg-light">
+                                  <span>Global</span>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <!--Region-->
+
+                        <!--Discount-->
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="flush-headingThree">
+                            <button
+                              class="accordion-button collapsed bg-white"
+                              type="button"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#flush-collapseThree"
+                              aria-expanded="false"
+                              aria-controls="flush-collapseThree"
+                            >
+                              <span>Discount</span>
+                            </button>
+                          </h2>
+                          <div
+                            id="flush-collapseThree"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingThree"
+                            data-bs-parent="#shop-filters-body"
+                          >
+                            <div>
+                              <ul class="list-group list-group-flush list-unstyled">
+                                <li class="list-group-item bg-light">
+                                  <span>25%</span>
+                                </li>
+                                <li class="list-group-item bg-light">
+                                  <span>50%</span>
+                                </li>
+                                <li class="list-group-item bg-light">
+                                  <span>75%</span>
+                                </li>
+                                <li class="list-group-item bg-light">
+                                  <span>100%</span>
+                                </li>
+                                <li class="list-group-item bg-light">
+                                  <form class="row align-items-center">
+                                    <div class="col-6">
+                                      <div class="row align-items-center">
+                                        <div class="col-12 mb-1">
+                                          <label class="form-label" for="dsc-from-r">From:</label>
+                                          <input
+                                            class="form-control"
+                                            type="number"
+                                            name="dsc-from-r"
+                                            id="dsc-from-r"
+                                            placeholder="Min"
+                                          />
+                                        </div>
+                                        <div class="col-12 mt-1">
+                                          <label class="form-label" for="dis-to-r">To:</label>
+                                          <input
+                                            class="form-control"
+                                            type="number"
+                                            name="dis-to-r"
+                                            id="dis-to-r"
+                                            placeholder="Max"
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-6 text-center">
+                                      <button class="btn btn-primary p-3">Submit</button>
+                                    </div>
+                                  </form>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <!--Discount-->
+
+                        <!--Ratings-->
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="flush-headingFour">
+                            <button
+                              class="accordion-button collapsed bg-white"
+                              type="button"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#flush-collapseFour"
+                              aria-expanded="false"
+                              aria-controls="flush-collapseFour"
+                            >
+                              <span>Ratings</span>
+                            </button>
+                          </h2>
+                          <div
+                            id="flush-collapseFour"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingFour"
+                            data-bs-parent="#shop-filters-body"
+                          >
+                            <div>
+                              <ul class="list-group list-group-flush list-unstyled">
+                                <li class="list-group-item active" data-stars="1">
+                                  <span class="sel-primary"
+                                    ><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i
+                                    ><i class="far fa-star"></i><i class="far fa-star"></i>
+                                    <span class="mx-2">&#38; Up</span>
+                                  </span>
+                                </li>
+                                <li class="list-group-item bg-light" data-stars="2">
+                                  <span
+                                    ><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i
+                                    ><i class="far fa-star"></i><i class="far fa-star"></i>
+                                    <span class="mx-2">&#38; Up</span>
+                                  </span>
+                                </li>
+                                <li class="list-group-item bg-light" data-stars="3">
+                                  <span
+                                    ><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i
+                                    ><i class="far fa-star"></i><i class="far fa-star"></i>
+                                    <span class="mx-2">&#38; Up</span>
+                                  </span>
+                                </li>
+                                <li class="list-group-item bg-light" data-stars="4">
+                                  <span
+                                    ><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i
+                                    ><i class="fas fa-star"></i><i class="far fa-star"></i>
+                                    <span class="mx-2">&#38; Up</span>
+                                  </span>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <!--Ratings-->
+
+                        <!--Payment-->
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="flush-headingFive">
+                            <button
+                              class="accordion-button collapsed bg-white"
+                              type="button"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#flush-collapseFive"
+                              aria-expanded="false"
+                              aria-controls="flush-collapseFive"
+                            >
+                              <span>Payment</span>
+                            </button>
+                          </h2>
+                          <div
+                            id="flush-collapseFive"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingFive"
+                            data-bs-parent="#shop-filters-body"
+                          >
+                            <div>
+                              <ul class="list-group list-group-flush list-unstyled">
+                                <li class="list-group-item bg-light">
+                                  <span>In 12 installments</span>
+                                </li>
+                                <li class="list-group-item bg-light">
+                                  <span>In 6 installments</span>
+                                </li>
+                                <li class="list-group-item bg-light">
+                                  <span>In cash</span>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <!--Payment-->
+
+                        <!--Promotions-->
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="flush-headingSix">
+                            <button
+                              class="accordion-button collapsed bg-white"
+                              type="button"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#flush-collapseSix"
+                              aria-expanded="false"
+                              aria-controls="flush-collapseSix"
+                            >
+                              <span>Promotions</span>
+                            </button>
+                          </h2>
+                          <div
+                            id="flush-collapseSix"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingSix"
+                            data-bs-parent="#shop-filters-body"
+                          >
+                            <div>
+                              <ul class="list-group list-group-flush list-unstyled">
+                                <li class="list-group-item active">
+                                  <span class="sel-primary">Special offer</span>
+                                </li>
+                                <li class="list-group-item bg-light">
+                                  <span>New</span>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <!--Promotions-->
+
+                        <!--Delivery-->
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="flush-headingSeven">
+                            <button
+                              class="accordion-button collapsed bg-white"
+                              type="button"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#flush-collapseSeven"
+                              aria-expanded="false"
+                              aria-controls="flush-collapseSeven"
+                            >
+                              <span>Delivery</span>
+                            </button>
+                          </h2>
+                          <div
+                            id="flush-collapseSeven"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingSeven"
+                            data-bs-parent="#shop-filters-body"
+                          >
+                            <div>
+                              <ul class="list-group list-group-flush list-unstyled">
+                                <li class="list-group-item bg-light">
+                                  <span>Free shipping</span>
+                                </li>
+                                <li class="list-group-item bg-light">
+                                  <span>Withdrawal in person</span>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <!--Delivery-->
+
+                        <!--Price-->
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="flush-headingEight">
+                            <button
+                              class="accordion-button collapsed bg-white"
+                              type="button"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#flush-collapseEight"
+                              aria-expanded="false"
+                              aria-controls="flush-collapseEight"
+                            >
+                              <span>Price</span>
+                            </button>
+                          </h2>
+                          <div
+                            id="flush-collapseEight"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingEight"
+                            data-bs-parent="#shop-filters-body"
+                          >
+                            <div>
+                              <ul class="list-group list-group-flush list-unstyled">
+                                <li class="list-group-item bg-light">
+                                  <button class="sel-none">$0 - $10</button>
+                                </li>
+                                <li class="list-group-item bg-light">$10 - $50</li>
+                                <li class="list-group-item bg-light">$50 - $100</li>
+                                <li class="list-group-item bg-light">$100+</li>
+                                <li class="list-group-item bg-light">
+                                  <form class="row align-items-center">
+                                    <div class="col-6">
+                                      <div class="row align-items-center">
+                                        <div class="col-12 mb-1">
+                                          <label class="form-label" for="pri-from-r">From:</label>
+                                          <input
+                                            class="form-control"
+                                            type="number"
+                                            name="pri-from-r"
+                                            id="pri-from-r"
+                                            placeholder="Min"
+                                          />
+                                        </div>
+                                        <div class="col-12 mt-1">
+                                          <label class="form-label" for="pri-to-r">To:</label>
+                                          <input
+                                            class="form-control"
+                                            type="number"
+                                            name="pri-to-r"
+                                            id="pri-to-r"
+                                            placeholder="Max"
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-6 text-center">
+                                      <button class="btn btn-primary p-3">Submit</button>
+                                    </div>
+                                  </form>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <!--Price-->
+
+                        <!--Sort By-->
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="flush-headingNine">
+                            <button
+                              class="accordion-button collapsed bg-white"
+                              type="button"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#flush-collapseNine"
+                              aria-expanded="false"
+                              aria-controls="flush-collapseNine"
+                            >
+                              <span>Sort by</span>
+                            </button>
+                          </h2>
+                          <div
+                            id="flush-collapseNine"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingNine"
+                            data-bs-parent="#shop-filters-body"
+                          >
+                            <div>
+                              <ul class="list-group list-group-flush list-unstyled">
+                                <li class="list-group-item active">
+                                  <span class="sel-primary">Featured</span>
+                                </li>
+                                <li class="list-group-item bg-light">
+                                  <span>Low to high</span>
+                                </li>
+                                <li class="list-group-item bg-light">
+                                  <span>High to low</span>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <!--Sort By-->
+                      </div>
+                    </div>
+                  </div>
+                  <!--mid-->
+                </div>
               </div>
             </div>
           </div>
-          <!--footer-top-right-end-->
-        </div>
-        <!--footer-top-end-->
-      </div>
-      <!--footer-container-xxl-end-->
-    </div>
-    <!--footer-container-fluid-end-->
+          <!--mobile filters end-->
 
-    <!--footer-container-fluid-start-->
-    <div class="container-fluid bg-dark">
-      <!--footer-container-xxl-start-->
-      <div class="container-xxl my-0">
-        <!--footer-bottom-start-->
-        <div class="row d-flex align-items-center justify-content-around my-0 mx-auto p-3 footer-bottom">
-          <div class="col-12 col-lg-8 m-2 m-lg-0">
-            <div class="row align-items-center">
-              <div class="col text-center mb-2 mb-lg-0"><a class="footer-link text-white" href="#">Terms of Use</a>
+          <!--sortby desktop -->
+          <div class="d-none d-lg-block col-lg-6">
+            <div class="row align-items-center p-3">
+              <div class="col-lg-8 text-end">
+                <label class="form-label m-0" for="sortby">Sort by</label>
               </div>
-              <div class="col text-center mb-2 mb-lg-0"><a class="footer-link text-white" href="#">Terms &
-                  Conditions</a>
-              </div>
-              <div class="col text-center mb-2 mb-lg-0"><a class="footer-link text-white" href="#">Privacy Policy</a>
-              </div>
-              <div class="col text-center mb-2 mb-lg-0 d-none d-lg-block">
-                <i class="fas fa-globe text-white"></i>
-                <label class="visually-hidden" for="change-language-bottom">Language</label>
-                <select class="col text-center p-2 rounded bg-dark text-white" name="change-language-bottom"
-                  id="change-language-bottom">
-                  <option selected value="English">English</option>
-                  <option value="Spanish">Spanish</option>
+              <div class="col-lg-4">
+                <label class="visually-hidden" for="sortby">Sort-by</label>
+                <select class="form-select" name="sortby" id="sortby">
+                  <option value="Featured" selected>Featured</option>
+                  <option value="Low to high">Low to high</option>
+                  <option value="High to low">High to low</option>
                 </select>
               </div>
             </div>
           </div>
-          <div class="col-12 col-lg-3 text-white text-center m-2 m-lg-0">© 2020 Morfi. All Rights
-            Reserved.</div>
+          <!--sortby desktop -->
         </div>
-        <!--footer-bottom-end-->
-      </div>
-      <!--footer-container-xxl-end-->
-    </div>
-    <!--footer-container-fluid-end-->
-  </footer>
 
-  <!--shop items-->
-  <template id="template-item-li">
-    <li class="m-2 shop-w-220px d-inline-block">
-      <div class="border m-2 rounded">
-        <a class="d-block" href="#">
-          <div class="m-auto p-2 h-200px overflow-hidden">
-            <figure class="figure w-100 h-100">
-              <img class="mw-100 mh-100 min-h-100 obfit-cover d-block m-auto" src="" alt="">
-            </figure>
-          </div>
-        </a>
-        <div class="p-2 h-130px">
-          <h5 class="my-2 text-truncate ff-lato-4 child-underline">
-            <a class="c-under text-dark" href="#">title</a>
-          </h5>
-          <div class="overflow-hidden text-truncate-2">
-            <div class="ff-mont-6 text-truncate-1">
-              <span>final price</span>
-            </div>
-          </div>
-          <div class="text-truncate">description</div>
-        </div>
-        <div class="pb-2 px-2">
-          <button class="btn btn-primary d-block w-100 ff-lato-4">Add to Cart</button>
-        </div>
-      </div>
-    </li>
-  </template>
-  <template id="template-cart-checkout-submenu">
-    <span class="position-absolute top-100 start-50 translate-middle mt-1 cart-triangle animation-cart-submenu"></span>
-    <div class="position-absolute end-0 mt-2 w-500px ff-lato-4 cart-submenu-manager animation-cart-submenu">
-      <div class="bg-white border border-1 border-darker-5">
-        <!--top part-->
-        <div class="bg-light pt-3 px-3 border-bottom border-darker-2">
-          <div class="row">
-            <div class="col-4">
-              <div class="row">
-                <div class="col-12 text-muted">Your shopping cart</div>
-                <div class="col-12 fw-bold text-truncate">0 Products added</div>
+        <div class="row align-content-evenly justify-content-around" id="main-shop-container">
+          <!--filters start-->
+          <aside class="d-none d-lg-block col-lg-4 col-xl-3 border bg-light">
+            <div class="p-md-3 ff-lato-4" id="filters-btns-container">
+              <form>
+                <label class="form-label visually-hidden" for="s-shop">Search</label>
+                <div class="input-group mb-3 mt-2">
+                  <input class="form-control" type="text" name="s-shop" id="s-shop" placeholder="Search" />
+                  <button class="input-group-text" id="si-shop" aria-label="search" type="button">
+                    <i class="fas fa-search text-darker-4"></i>
+                  </button>
+                </div>
+              </form>
+              <div>
+                <div class="row filter">
+                  <div class="col-md-9">
+                    <h4>Categories <span class="text-muted fs-6">- (A-Z)</span></h4>
+                  </div>
+                </div>
+                <ul class="list-unstyled">
+                  <li>
+                    <button class="sel-primary">
+                      <a class="text-white" href="#">All</a>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="sel-none">
+                      <a class="text-dark" href="#">Appetizers</a>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="sel-none">
+                      <a class="text-dark" href="#">Condiments</a>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="sel-none">
+                      <a class="text-dark" href="#">Confectionery</a>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="sel-none">
+                      <a class="text-dark" href="#">Convenience foods</a>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="sel-none">
+                      <a class="text-dark" href="#">Desserts</a>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="sel-none">
+                      <a class="text-dark" href="#">Dips, pastes and spreads</a>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="sel-none">
+                      <a class="text-dark" href="#">Dried foods</a>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="sel-none">
+                      <a class="text-dark" href="#">Dumplings</a>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="sel-none">
+                      <a class="text-dark" href="#">Fast food</a>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="sel-none">
+                      <a class="text-dark" href="#">Products</a>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="sel-none">
+                      <a class="text-decoration-underline" href="#">Show more</a>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div class="row filter">
+                  <div class="col-md-9">
+                    <h4>Region</h4>
+                  </div>
+                </div>
+                <ul class="list-unstyled">
+                  <li>
+                    <button class="sel-none">North America</button>
+                  </li>
+                  <li>
+                    <button class="sel-none">United States</button>
+                  </li>
+                  <li>
+                    <button class="sel-none">Europe</button>
+                  </li>
+                  <li>
+                    <button class="sel-none">Global</button>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div class="row filter">
+                  <div class="col-md-9">
+                    <h4>Discount</h4>
+                  </div>
+                </div>
+                <ul class="list-unstyled">
+                  <li>
+                    <button class="sel-none">25%</button>
+                  </li>
+                  <li>
+                    <button class="sel-none">50%</button>
+                  </li>
+                  <li>
+                    <button class="sel-none">75%</button>
+                  </li>
+                  <li>
+                    <button class="sel-none">100%</button>
+                  </li>
+                  <li>
+                    <form class="px-1">
+                      <label class="visually-hidden" for="dis-from">minimum-discount</label>
+                      <input
+                        class="w-80px border border-darker-4"
+                        type="number"
+                        name="dis-from"
+                        id="dis-from"
+                        placeholder="Min"
+                      />
+                      <span>-</span>
+                      <label class="visually-hidden" for="dis-to">maximum-discount</label>
+                      <input
+                        class="w-80px border border-darker-4"
+                        type="number"
+                        name="dis-to"
+                        id="dis-to"
+                        placeholder="Max"
+                      />
+                      <button class="sel-primary disabled" id="discount-filter" type="button">
+                        <i class="fas fa-chevron-right"></i>
+                      </button>
+                    </form>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div class="row filter">
+                  <div class="col-md-9">
+                    <h4>Ratings</h4>
+                  </div>
+                </div>
+                <ul class="list-unstyled">
+                  <li>
+                    <button class="sel-none" data-stars="1">
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <span class="mx-2">&#38; Up</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="sel-none" data-stars="2">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <span class="mx-2">&#38; Up</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="sel-none" data-stars="3">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <span class="mx-2">&#38; Up</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="sel-none" data-stars="4">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <span class="mx-2">&#38; Up</span>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div class="row filter">
+                  <div class="col-md-9">
+                    <h4>Payment</h4>
+                  </div>
+                </div>
+                <ul class="list-unstyled">
+                  <li>
+                    <button class="sel-none">In 12 installments</button>
+                  </li>
+                  <li>
+                    <button class="sel-none">In 6 installments</button>
+                  </li>
+                  <li>
+                    <button class="sel-none">In cash</button>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div class="row filter">
+                  <div class="col-md-9">
+                    <h4>Promotions</h4>
+                  </div>
+                </div>
+                <ul class="list-unstyled">
+                  <li>
+                    <button class="sel-none">Special offer</button>
+                  </li>
+                  <li>
+                    <button class="sel-none">New</button>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div class="row filter">
+                  <div class="col-md-9">
+                    <h4>Delivery</h4>
+                  </div>
+                </div>
+                <ul class="list-unstyled">
+                  <li>
+                    <button class="sel-none">Free shipping</button>
+                  </li>
+                  <li>
+                    <button class="sel-none">Withdrawal in person</button>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <!--select-->
+                <div class="row filter">
+                  <div class="col-md-9">
+                    <h4>Price</h4>
+                  </div>
+                </div>
+                <ul class="list-unstyled">
+                  <li>
+                    <button class="sel-none">$0 - $10</button>
+                  </li>
+                  <li>
+                    <button class="sel-none">$10 - $50</button>
+                  </li>
+                  <li>
+                    <button class="sel-none">$50 - $100</button>
+                  </li>
+                  <li>
+                    <button class="sel-none">$100+</button>
+                  </li>
+                  <li>
+                    <form class="px-1">
+                      <label class="visually-hidden" for="pri-from">price-from</label>
+                      <input
+                        class="w-80px border border-darker-4"
+                        type="number"
+                        name="pri-from"
+                        id="pri-from"
+                        placeholder="Min"
+                      />
+                      <span>-</span>
+                      <label class="visually-hidden" for="pri-to">price-to</label>
+                      <input
+                        class="w-80px border border-darker-4"
+                        type="number"
+                        name="pri-to"
+                        id="pri-to"
+                        placeholder="Max"
+                      />
+                      <button class="sel-primary disabled" id="price-filter" type="button">
+                        <i class="fas fa-chevron-right"></i>
+                      </button>
+                    </form>
+                  </li>
+                </ul>
+              </div>
+              <div class="text-center">
+                <button class="btn btn-primary" id="clean-all-filters">Clean all filters</button>
               </div>
             </div>
-            <div class="col-8 text-end">
-              <div class="row align-items-center">
-                <div class="col-4">
-                  <div class="text-truncate fw-bold">$0.00</div>
-                </div>
-                <div class="col-8 text-center">
-                  <a class="btn btn-primary bg-gradient text-uppercase" href="../cart/checkout.html" type="button">Go to
-                    checkout</a>
-                </div>
+          </aside>
+          <!--filters end-->
+
+          <!--shop items start-->
+          <section class="col-md-12 col-lg-8 col-xl-9">
+            <div class="d-flex justify-content-center">
+              <div class="spinner-grow text-secondary my-2" role="status">
+                <span class="visually-hidden">Loading...</span>
               </div>
             </div>
-          </div>
+            <ul class="list-unstyled" id="shop-items-display"></ul>
+          </section>
+          <!--shop items end-->
         </div>
-        <!--top part-->
-        <!--product-->
-        <div id="cart-checkout-products" class="max-h-400px overflow-auto"></div>
-      </div>
-    </div>
-  </template>
-  <template id="template-cart-product-submenu">
-    <div class="border-top border-darker-5 border-1 p-1 cart-product cart-product-bg-hover">
-      <a class="row align-items-center m-auto text-dark child-underline" href="#">
-        <div class="col-3 ps-0">
-          <figure class="m-0">
-            <img class="img-fluid h-60px w-100 obfit-cover" src="#" alt="#">
-          </figure>
-        </div>
-        <div class="col-5">
-          <span class="text-truncate-1 fw-bold">Product</span>
-          <ul class="list-unstyled text-muted">
-            <li class="d-inline-block">
-              <span class="c-under pe-2">Remove</span>
+      </section>
+      <!--shop-->
+
+      <!--pagination-->
+      <section class="container-xxl mb-5">
+        <nav aria-label="shop navigation" class="">
+          <ul class="pagination flex-wrap align-items-center justify-content-center">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
             </li>
-            <li class="d-inline-block">
-              <span class="c-under pe-2 animation-cart-option">Save for later</span>
+            <li class="page-item active">
+              <a class="page-link px-3" href="#">1</a>
+            </li>
+            <li class="page-item"><a class="page-link px-3" href="#">2</a></li>
+            <li class="page-item"><a class="page-link px-3" href="#">3</a></li>
+            <li class="page-item"><a class="page-link px-3" href="#">4</a></li>
+            <li class="page-item"><a class="page-link px-3" href="#">5</a></li>
+            <li class="page-item"><a class="page-link px-3" href="#">6</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
             </li>
           </ul>
-        </div>
-        <div class="col-2">
-          <span class="badge bg-primary p-2"></span>
-        </div>
-        <div class="col-2 pe-0 text-truncate fw-bold">$</div>
-      </a>
-    </div>
-  </template>
-</body>
+        </nav>
+      </section>
+      <!--pagination-->
+    </main>
 
+    <footer>
+      <!--footer-container-fluid-start-->
+      <div class="container-fluid bg-darker-2">
+        <!--footer-container-xxl-start-->
+        <div class="container-xxl my-0">
+          <!--footer-top-start-->
+          <div class="row d-flex align-items-center justify-content-around footer-top m-0">
+            <!--footer-top-left-start-->
+            <div class="row align-items-center justify-content-evenly col-lg-3 p-0">
+              <div class="col-8 p-0 text-center d-none d-lg-block">
+                <div class="mw-200px h-100px overflow-hidden mb-2 mx-auto">
+                  <img
+                    class="w-100 h-100px"
+                    src="../../img/logo/white_background/full_logo/svg/full_logo.svg"
+                    alt="logo-image"
+                  />
+                </div>
+                <p class="mb-0 text-dark mw-200px mx-auto">Since 1997 making our customers happy</p>
+              </div>
+              <ul
+                class="
+                  col col-sm-7 col-md-5 col-lg-4
+                  list-unstyled
+                  m-2 m-lg-0
+                  p-0
+                  d-flex
+                  flex-row flex-lg-column
+                  align-items-center
+                  justify-content-evenly
+                "
+              >
+                <li class="my-2 my-lg-3 mx-2 mx-lg-0">
+                  <a
+                    class="p-2 bg-dark text-white rounded-circle"
+                    href="https://www.facebook.com/"
+                    aria-label="facebook icon"
+                  >
+                    <i class="fab fa-facebook-f fa-fw fs-6"></i>
+                  </a>
+                </li>
+                <li class="my-2 my-lg-0 mb-lg-3 mx-2 mx-lg-0">
+                  <a
+                    class="p-2 bg-dark text-white rounded-circle"
+                    href="https://twitter.com/"
+                    aria-label="twitter icon"
+                  >
+                    <i class="fab fa-twitter fa-fw fs-6"></i>
+                  </a>
+                </li>
+                <li class="my-2 my-lg-0 mb-lg-3 mx-2 mx-lg-0">
+                  <a
+                    class="p-2 bg-dark text-white rounded-circle"
+                    href="https://www.youtube.com/"
+                    aria-label="youtube icon"
+                  >
+                    <i class="fab fa-youtube fa-fw fs-6"></i>
+                  </a>
+                </li>
+                <li class="my-2 my-lg-0 mb-lg-3 mx-2 mx-lg-0">
+                  <a
+                    class="p-2 bg-dark text-white rounded-circle"
+                    href="https://www.instagram.com/"
+                    aria-label="instagram icon"
+                  >
+                    <i class="fab fa-instagram fa-fw fs-6"></i>
+                  </a>
+                </li>
+              </ul>
+              <label class="visually-hidden" for="change-language-top">Language</label>
+              <select
+                class="col-7 col-sm-4 col-md-4 d-block d-lg-none p-2 rounded"
+                name="change-language-top"
+                id="change-language-top"
+              >
+                <option selected value="English">English</option>
+                <option value="Spanish">Spanish</option>
+              </select>
+              <hr class="d-block d-lg-none my-0" />
+            </div>
+            <!--footer-top-left-end-->
+            <!--footer-top-right-start-->
+            <div class="col-12 col-lg-8 mt-3 p-0">
+              <div class="row d-flex justify-content-evenly w-100 m-0">
+                <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
+                  <h5 class="mb-2 mb-lg-4">
+                    <a href="/" class="text-dark h-white">Home</a>
+                  </h5>
+                  <ul class="list-unstyled">
+                    <li class="mb-1">
+                      <a class="text-dark h-white" href="../about/blog.html">Events</a>
+                    </li>
+                    <li class="mb-1">
+                      <a class="text-dark h-white" href="../../index.html#newsletter">Newsletter</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
+                  <h5 class="mb-2 mb-lg-4">
+                    <a href="../about/about-us.html" class="text-dark h-white">About</a>
+                  </h5>
+                  <ul class="list-unstyled">
+                    <li class="mb-1">
+                      <a class="text-dark h-white" href="../about/about-us.html">About us</a>
+                    </li>
+                    <li class="mb-1">
+                      <a class="text-dark h-white" href="../about/locations.html">Locations</a>
+                    </li>
+                    <li class="mb-1">
+                      <a class="text-dark h-white" href="../about/our-products.html">Our products</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
+                  <h5 class="mb-2 mb-lg-4">
+                    <a href="../shop/shop.html" class="text-dark h-white">Shop</a>
+                  </h5>
+                  <ul class="list-unstyled">
+                    <li class="mb-1">
+                      <a class="text-dark h-white" href="../shop/shop.html">Catalogue</a>
+                    </li>
+                    <li class="mb-1">
+                      <a class="text-dark h-white" href="../shop/top-offers.html">Top offers</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-6 col-lg-2 text-center text-lg-start mb-3">
+                  <h5 class="mb-2 mb-lg-4">
+                    <a href="../recipes/classics.html" class="text-dark h-white">Recipes</a>
+                  </h5>
+                  <ul class="list-unstyled">
+                    <li class="mb-1">
+                      <a class="text-dark h-white" href="../recipes/classics.html">Classics</a>
+                    </li>
+                    <li class="mb-1">
+                      <a class="text-dark h-white" href="../recipes/healthy-recipes.html">Healthy</a>
+                    </li>
+                    <li class="mb-1">
+                      <a class="text-dark h-white" href="../recipes/wholemeal-recipes.html">Wholemeal</a>
+                    </li>
+                    <li class="mb-1">
+                      <a class="text-dark h-white" href="../recipes/easy-recipes.html">Easy</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-12 col-lg-2 text-center text-lg-start mb-3">
+                  <h5 class="mb-2 mb-lg-4">
+                    <a href="../help/contact.html" class="text-dark h-white">Help</a>
+                  </h5>
+                  <ul class="list-unstyled">
+                    <li class="mb-1">
+                      <a class="text-dark h-white" href="../help/contact.html">Contact</a>
+                    </li>
+                    <li class="mb-1">
+                      <a class="text-dark h-white" href="../help/faq/faq.html">FAQ</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!--footer-top-right-end-->
+          </div>
+          <!--footer-top-end-->
+        </div>
+        <!--footer-container-xxl-end-->
+      </div>
+      <!--footer-container-fluid-end-->
+
+      <!--footer-container-fluid-start-->
+      <div class="container-fluid bg-dark">
+        <!--footer-container-xxl-start-->
+        <div class="container-xxl my-0">
+          <!--footer-bottom-start-->
+          <div class="row d-flex align-items-center justify-content-around my-0 mx-auto p-3 footer-bottom">
+            <div class="col-12 col-lg-8 m-2 m-lg-0">
+              <div class="row align-items-center">
+                <div class="col text-center mb-2 mb-lg-0">
+                  <a class="footer-link text-white" href="#">Terms of Use</a>
+                </div>
+                <div class="col text-center mb-2 mb-lg-0">
+                  <a class="footer-link text-white" href="#">Terms & Conditions</a>
+                </div>
+                <div class="col text-center mb-2 mb-lg-0">
+                  <a class="footer-link text-white" href="#">Privacy Policy</a>
+                </div>
+                <div class="col text-center mb-2 mb-lg-0 d-none d-lg-block">
+                  <i class="fas fa-globe text-white"></i>
+                  <label class="visually-hidden" for="change-language-bottom">Language</label>
+                  <select
+                    class="col text-center p-2 rounded bg-dark text-white"
+                    name="change-language-bottom"
+                    id="change-language-bottom"
+                  >
+                    <option selected value="English">English</option>
+                    <option value="Spanish">Spanish</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-3 text-white text-center m-2 m-lg-0">© 2020 Morfi. All Rights Reserved.</div>
+          </div>
+          <!--footer-bottom-end-->
+        </div>
+        <!--footer-container-xxl-end-->
+      </div>
+      <!--footer-container-fluid-end-->
+    </footer>
+
+    <!--shop items-->
+    <template id="template-item-li">
+      <li class="m-2 shop-w-220px d-inline-block">
+        <div class="border m-2 rounded">
+          <a class="d-block" href="#">
+            <div class="m-auto p-2 h-200px overflow-hidden">
+              <figure class="figure w-100 h-100">
+                <img class="mw-100 mh-100 min-h-100 obfit-cover d-block m-auto" src="" alt="" />
+              </figure>
+            </div>
+          </a>
+          <div class="p-2 h-130px">
+            <h5 class="my-2 text-truncate ff-lato-4 child-underline">
+              <a class="c-under text-dark" href="#">title</a>
+            </h5>
+            <div class="overflow-hidden text-truncate-2">
+              <div class="ff-mont-6 text-truncate-1">
+                <span>final price</span>
+              </div>
+            </div>
+            <div class="text-truncate">description</div>
+          </div>
+          <div class="pb-2 px-2">
+            <button class="btn btn-primary d-block w-100 ff-lato-4">Add to Cart</button>
+          </div>
+        </div>
+      </li>
+    </template>
+    <template id="template-cart-checkout-submenu">
+      <span
+        class="position-absolute top-100 start-50 translate-middle mt-1 cart-triangle animation-cart-submenu"
+      ></span>
+      <div class="position-absolute end-0 mt-2 w-500px ff-lato-4 cart-submenu-manager animation-cart-submenu">
+        <div class="bg-white border border-1 border-darker-5">
+          <!--top part-->
+          <div class="bg-light pt-3 px-3 border-bottom border-darker-2">
+            <div class="row">
+              <div class="col-4">
+                <div class="row">
+                  <div class="col-12 text-muted">Your shopping cart</div>
+                  <div class="col-12 fw-bold text-truncate">0 Products added</div>
+                </div>
+              </div>
+              <div class="col-8 text-end">
+                <div class="row align-items-center">
+                  <div class="col-4">
+                    <div class="text-truncate fw-bold">$0.00</div>
+                  </div>
+                  <div class="col-8 text-center">
+                    <a class="btn btn-primary bg-gradient text-uppercase" href="../cart/checkout.html" type="button"
+                      >Go to checkout</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--top part-->
+          <!--product-->
+          <div id="cart-checkout-products" class="max-h-400px overflow-auto"></div>
+        </div>
+      </div>
+    </template>
+    <template id="template-cart-product-submenu">
+      <div class="border-top border-darker-5 border-1 p-1 cart-product cart-product-bg-hover">
+        <a class="row align-items-center m-auto text-dark child-underline" href="#">
+          <div class="col-3 ps-0">
+            <figure class="m-0">
+              <img class="img-fluid h-60px w-100 obfit-cover" src="#" alt="#" />
+            </figure>
+          </div>
+          <div class="col-5">
+            <span class="text-truncate-1 fw-bold">Product</span>
+            <ul class="list-unstyled text-muted">
+              <li class="d-inline-block">
+                <span class="c-under pe-2">Remove</span>
+              </li>
+              <li class="d-inline-block">
+                <span class="c-under pe-2 animation-cart-option">Save for later</span>
+              </li>
+            </ul>
+          </div>
+          <div class="col-2">
+            <span class="badge bg-primary p-2"></span>
+          </div>
+          <div class="col-2 pe-0 text-truncate fw-bold">$</div>
+        </a>
+      </div>
+    </template>
+  </body>
 </html>
