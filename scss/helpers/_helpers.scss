@@ -259,6 +259,18 @@
     border: none !important;
   }
 }
+.border-end-md {
+
+  @include bps($bp-xs) {
+    border: none !important;
+  }
+  //@include bps($bp-sm) {
+    //border: none !important;
+  //}
+  @include bps($bp-md) {
+    border-right: 1px solid #dee2e6 !important;
+  }
+}
 
 //text colors
 .text-darker-5 {

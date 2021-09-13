@@ -7825,6 +7825,14 @@ textarea.form-control-lg {
   .border-xs-0 {
     border: none !important; } }
 
+@media only screen and (max-width: 576px) {
+  .border-end-md {
+    border: none !important; } }
+
+@media only screen and (min-width: 768px) {
+  .border-end-md {
+    border-right: 1px solid #dee2e6 !important; } }
+
 .text-darker-5 {
   color: #212121; }
 
