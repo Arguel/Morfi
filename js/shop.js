@@ -29,6 +29,8 @@ const submenuSession = {
   active: false,
 };
 
+let toast;
+
 //templates-----------------------------------------------------------------------------------------
 
 const templateShopLi = document.getElementById("template-item-li").content;
@@ -526,7 +528,9 @@ function setToCart(parentItem) {
 
   localStorage.setItem("cart", JSON.stringify(cart));
 
-  var toast = new bootstrap.Toast(myToast, {autohide: true, animation: true, delay: 5000});
+  if (toast) toast.dispose();
+
+  toast = new bootstrap.Toast(myToast);
 
   toast.show();
 }
