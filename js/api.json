@@ -1,6 +1,6 @@
 [
   {
-    "price": 22.00,
+    "price": 22.0,
     "id": 1,
     "title": "Polenta Squares with Gorgonzola and Pine Nuts",
     "thumnailUrl": "../../img/shop/shop/polenta-squares-with-gorgonzola-and-pine-nuts.webp",
@@ -8,22 +8,11 @@
     "hasDiscount": true,
     "discount": 50,
     "unitsAvailable": 34,
-    "promotion": [
-      "50% off"
-    ],
-    "categories": [
-      "Appetizer"
-    ],
-    "region": [
-      "North America",
-      "Europe"
-    ],
+    "promotion": ["50% off"],
+    "categories": ["Appetizer"],
+    "region": ["North America", "Europe"],
     "rating": 4.23,
-    "payment": [
-      "In 12 installments",
-      "In 6 installments",
-      "In cash"
-    ],
+    "payment": ["In 12 installments", "In 6 installments", "In cash"],
     "description": "Instead of crostini, try gluten-free polenta squares as the base for a variety of toppings. Creamy polenta becomes perfectly firm once chilled; it will hold its shape when sliced and seared. The result is a golden brown crust outside and a creamy, not rubbery, texture inside. We top ours with a funky Gorgonzola cheese, balsamic reduction, faintly sweet dried currants, and pine nuts. You could substitute chopped dried figs or cranberries for the currants, or come up with your own flavor combo. Try diced marinated tomato and basil, sautéed mushrooms and garlic, or more substantial shredded pork shoulder."
   },
   {
@@ -36,19 +25,10 @@
     "discount": 0,
     "unitsAvailable": 53,
     "promotion": [],
-    "categories": [
-      "Appetizer"
-    ],
-    "region": [
-      "United States",
-      "Europe"
-    ],
+    "categories": ["Appetizer"],
+    "region": ["United States", "Europe"],
     "rating": 2.56,
-    "payment": [
-      "In 12 installments",
-      "In 6 installments",
-      "In cash"
-    ],
+    "payment": ["In 12 installments", "In 6 installments", "In cash"],
     "description": "Chickpea flour is gluten-free, protein packed, and makes an incredibly light batter for baked cauliflower. Look for it near the other gluten-free flours at your local health food store. Tamari is a slightly thicker, wheat-free alternative to soy sauce with a more robust flavor. These bites can double as an appetizer or side dish served with grilled fish or baked chicken."
   },
   {
@@ -60,24 +40,15 @@
     "hasDiscount": false,
     "discount": 0,
     "unitsAvailable": 63,
-    "promotion": [
-      "Special offer"
-    ],
-    "categories": [
-      "Appetizer"
-    ],
-    "region": [
-      "Global"
-    ],
+    "promotion": ["Special offer"],
+    "categories": ["Appetizer"],
+    "region": ["Global"],
     "rating": 3.51,
-    "payment": [
-      "In 6 installments",
-      "In cash"
-    ],
+    "payment": ["In 6 installments", "In cash"],
     "description": "These bites are a step up from classic prosciutto-wrapped melon and provide sweet, spicy, salty, tart, and meaty tastes. If you can’t find serrano ham, use prosciutto; you also can use balsamic glaze in place of pomegranate molasses."
   },
   {
-    "price": 98.00,
+    "price": 98.0,
     "id": 4,
     "title": "Smoked Salmon Bites",
     "thumnailUrl": "../../img/shop/shop/smoked-salmon-bites.webp",
@@ -86,20 +57,14 @@
     "discount": 0,
     "unitsAvailable": 35,
     "promotion": [],
-    "categories": [
-      "Appetizer"
-    ],
-    "region": [
-      "Europe"
-    ],
+    "categories": ["Appetizer"],
+    "region": ["Europe"],
     "rating": 4.23,
-    "payment": [
-      "In cash"
-    ],
+    "payment": ["In cash"],
     "description": "If you're looking for an appetizer that will delight your guests with its gorgeous presentation and rich, delicious taste, the search stops here. These beautiful canapés start with a base of candy cane (or Chioggia) beet squares, whose alternating ruby and white rings are stunning. (You can add more color to the platter by alternating candy cane beet and golden beet slices.) The beet stays raw, so the slices are crunchy and sweet and hold up nicely. The jewel-like topping of easy-to-find salmon caviar turns what's truly a simple make-ahead nibble into an absolute work of art that'll make you the talk of your social circle."
   },
   {
-    "price": 109.00,
+    "price": 109.0,
     "id": 5,
     "title": "French Onion Dip With Sweet Potato Chips",
     "thumnailUrl": "../../img/shop/shop/french-onion-dip-with-sweet-potato-chips.webp",
@@ -108,17 +73,10 @@
     "discount": 0,
     "unitsAvailable": 19,
     "promotion": [],
-    "categories": [
-      "Appetizer"
-    ],
-    "region": [
-      "North America"
-    ],
+    "categories": ["Appetizer"],
+    "region": ["North America"],
     "rating": 5,
-    "payment": [
-      "In 12 installments",
-      "In 6 installments"
-    ],
+    "payment": ["In 12 installments", "In 6 installments"],
     "description": "With big flavor and less heft, our healthier ode to the classic French onion dip is a delicious way to sneak in extra vegetables. Ditch the sodium-bomb seasoning packets and sour cream-and-mayonnaise–laden dip (which can pack a small meal’s worth of calories and sat fat into a single serving) for our homemade dip. And be patient with the caramelizing process—slowly sizzled onions have noteworthy sweetness and concentrated umami. And because no dip is complete without a dipper, baked sweet potatoes will satisfy your chip craving for half the calories of most bagged varieties."
   },
   {
@@ -131,21 +89,14 @@
     "discount": 0,
     "unitsAvailable": 2,
     "promotion": [],
-    "categories": [
-      "Dessert"
-    ],
-    "region": [
-      "Global"
-    ],
+    "categories": ["Dessert"],
+    "region": ["Global"],
     "rating": 1.24,
-    "payment": [
-      "In 6 installments",
-      "In cash"
-    ],
+    "payment": ["In 6 installments", "In cash"],
     "description": "Put those ripe, speckled bananas to good use. This dish starts with roasting bananas which adds caramelized notes to their tropical sweetness. The bananas flavor the light-and-fluffy bars, which are topped with cream cheese icing and chopped pecans for the perfect amount of tanginess and crunch."
   },
   {
-    "price": 25.80,
+    "price": 25.8,
     "id": 7,
     "title": "Texas Sheet Cake",
     "thumnailUrl": "../../img/shop/shop/texas-sheet-cake.webp",
@@ -154,21 +105,14 @@
     "discount": 0,
     "unitsAvailable": 221,
     "promotion": [],
-    "categories": [
-      "Dessert"
-    ],
-    "region": [
-      "North America",
-      "United States"
-    ],
+    "categories": ["Dessert"],
+    "region": ["North America", "United States"],
     "rating": 2.53,
-    "payment": [
-      "In cash"
-    ],
+    "payment": ["In cash"],
     "description": "This recipe uses butter and buttermilk in quantities that give it the right indulgently moist texture and rich flavor, but keep a serving's fat at just 10 grams and calories at about 300."
   },
   {
-    "price": 50.00,
+    "price": 50.0,
     "id": 8,
     "title": "Espresso Crinkles",
     "thumnailUrl": "../../img/shop/shop/espresso-crinkles.webp",
@@ -176,22 +120,11 @@
     "hasDiscount": true,
     "discount": 20,
     "unitsAvailable": 83,
-    "promotion": [
-      "20% off",
-      "New"
-    ],
-    "categories": [
-      "Dessert"
-    ],
-    "region": [
-      "North America",
-      "United States"
-    ],
+    "promotion": ["20% off", "New"],
+    "categories": ["Dessert"],
+    "region": ["North America", "United States"],
     "rating": 3.12,
-    "payment": [
-      "In 12 installments",
-      "In 6 installments"
-    ],
+    "payment": ["In 12 installments", "In 6 installments"],
     "description": "Unsweetened chocolate and instant espresso powder give depth of flavor to these sophisticated cookies. A dredge in powdered sugar before baking ensures sweetness, and also gives them a unique cracked surface and snow-covered look."
   },
   {
@@ -203,20 +136,11 @@
     "hasDiscount": false,
     "discount": 0,
     "unitsAvailable": 55,
-    "promotion": [
-      "Special offer"
-    ],
-    "categories": [
-      "Dessert"
-    ],
-    "region": [
-      "United States",
-      "Europe"
-    ],
+    "promotion": ["Special offer"],
+    "categories": ["Dessert"],
+    "region": ["United States", "Europe"],
     "rating": 4.51,
-    "payment": [
-      "In cash"
-    ],
+    "payment": ["In cash"],
     "description": "In this rich cheesecake, we use the entire vanilla bean, so none of it is wasted: The seeds flavor the cheesecake, and the bean halves flavor the topping."
   },
   {
@@ -229,22 +153,14 @@
     "discount": 0,
     "unitsAvailable": 15,
     "promotion": [],
-    "categories": [
-      "Dessert"
-    ],
-    "region": [
-      "North America",
-      "United States"
-    ],
+    "categories": ["Dessert"],
+    "region": ["North America", "United States"],
     "rating": 5,
-    "payment": [
-      "In 6 installments",
-      "In cash"
-    ],
+    "payment": ["In 6 installments", "In cash"],
     "description": "Top tender apple cupcakes with a sweet and crunchy topping of brown sugar and almonds, then drizzle with a powdered sugar glaze. The amaretto adds an even more distinct almond flavor to the cupcakes, but if you don't have it, you can use almond extract instead."
   },
   {
-    "price": 47.80,
+    "price": 47.8,
     "id": 11,
     "title": "Salted Caramel Ice Cream",
     "thumnailUrl": "../../img/shop/shop/salted-caramel-ice-cream.webp",
@@ -253,19 +169,10 @@
     "discount": 0,
     "unitsAvailable": 9,
     "promotion": [],
-    "categories": [
-      "Dessert"
-    ],
-    "region": [
-      "North America",
-      "Europe"
-    ],
+    "categories": ["Dessert"],
+    "region": ["North America", "Europe"],
     "rating": 1.11,
-    "payment": [
-      "In 12 installments",
-      "In 6 installments",
-      "In cash"
-    ],
+    "payment": ["In 12 installments", "In 6 installments", "In cash"],
     "description": "It's hard to beat the sweet-salty goodness of this indulgent yet light caramel ice cream. Light ice cream has evolved from its watery ice-milk days and in the Test Kitchen, we like to get creative with ingredients and flavors, but we hold fast to settling for nothing less than smooth, creamy, rich results."
   },
   {
@@ -278,18 +185,10 @@
     "discount": 0,
     "unitsAvailable": 39,
     "promotion": [],
-    "categories": [
-      "Dessert"
-    ],
-    "region": [
-      "North America",
-      "Europe"
-    ],
+    "categories": ["Dessert"],
+    "region": ["North America", "Europe"],
     "rating": 2.35,
-    "payment": [
-      "In 6 installments",
-      "In cash"
-    ],
+    "payment": ["In 6 installments", "In cash"],
     "description": "Tiramisu is Italian for 'lift me up.' And its indulgent creamy, mocha-tinged flavor is indeed uplifting. With layers of ladyfingers, coffee, mascarpone cheese, and shaved or grated chocolate, traditional tiramisu is a cross between a trifle and bread pudding. Our lightened version is less than 300 calories per serving, and makes for a sophisticated dinner-party treat."
   },
   {
@@ -301,23 +200,15 @@
     "hasDiscount": false,
     "discount": 0,
     "unitsAvailable": 390,
-    "promotion": [
-      "Special offer"
-    ],
-    "categories": [
-      "Dessert"
-    ],
-    "region": [
-      "Global"
-    ],
+    "promotion": ["Special offer"],
+    "categories": ["Dessert"],
+    "region": ["Global"],
     "rating": 3.51,
-    "payment": [
-      "In cash"
-    ],
+    "payment": ["In cash"],
     "description": "Perfect for a backyard cookout with friends, just six ingredients make one delicious dessert in less than 10 minutes. Grilling caramelizes the sugars in the fruit for a light treat that is delicious on its own or served with low-fat vanilla ice cream."
   },
   {
-    "price": 60.00,
+    "price": 60.0,
     "id": 14,
     "title": "Carrot Cake",
     "thumnailUrl": "../../img/shop/shop/carrot-cake.webp",
@@ -325,25 +216,15 @@
     "hasDiscount": true,
     "discount": 80,
     "unitsAvailable": 35,
-    "promotion": [
-      "80% off"
-    ],
-    "categories": [
-      "Dessert"
-    ],
-    "region": [
-      "Global"
-    ],
+    "promotion": ["80% off"],
+    "categories": ["Dessert"],
+    "region": ["Global"],
     "rating": 4.44,
-    "payment": [
-      "In 12 installments",
-      "In 6 installments",
-      "In cash"
-    ],
+    "payment": ["In 12 installments", "In 6 installments", "In cash"],
     "description": "This lighter twist on traditional carrot cake features a tender cake packed with grated carrot, juicy pineapple, flaked coconut, and chopped pecans. Cream cheese frosting and a garnish of grated carrot tops the cake."
   },
   {
-    "price": 3.00,
+    "price": 3.0,
     "id": 15,
     "title": "Chicken Sandwich",
     "thumnailUrl": "../../img/shop/shop/chicken-sandwich.webp",
@@ -352,16 +233,10 @@
     "discount": 0,
     "unitsAvailable": 24,
     "promotion": [],
-    "categories": [
-      "Fast food"
-    ],
-    "region": [
-      "Europe"
-    ],
+    "categories": ["Fast food"],
+    "region": ["Europe"],
     "rating": 5,
-    "payment": [
-      "In cash"
-    ],
+    "payment": ["In cash"],
     "description": "The perfect combination of a generous portion of breaded chicken, soft bun, and tart pickles, it's enhanced by only one thing: Polynesian sauce."
   },
   {
@@ -374,17 +249,10 @@
     "discount": 0,
     "unitsAvailable": 220,
     "promotion": [],
-    "categories": [
-      "Fast food"
-    ],
-    "region": [
-      "Europe"
-    ],
+    "categories": ["Fast food"],
+    "region": ["Europe"],
     "rating": 1.39,
-    "payment": [
-      "In 6 installments",
-      "In cash"
-    ],
+    "payment": ["In 6 installments", "In cash"],
     "description": "An effective fast-food experience hinges on texture. Mouthfeel. Most fast food is rough and salty or mushy and gelatinous. But rarely the twain shall meet in one package."
   }
 ]

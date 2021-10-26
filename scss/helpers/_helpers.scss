@@ -490,3 +490,8 @@
 .outline-none {
   outline: none;
 }
+
+.a-disabled {
+  pointer-events: none;
+  cursor: default;
+}
