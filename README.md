@@ -87,7 +87,7 @@ Digital version
 Website preview
 <p><img src="https://i.imgur.com/8HtUPWY.png" alt="The Morfi logo" height="200"></p>
 Color palette
-<p align="center"><img src="https://i.imgur.com/hTmoHQk.png" alt="The Morfi logo"></p>
+<p><img src="https://i.imgur.com/hTmoHQk.png" alt="The Morfi logo"></p>
 
 ### Credits (in construction)
 [Credits page](https://morfi.vercel.app/views/about/credits.html)
