@@ -86,7 +86,7 @@ Digital version
 </p>
 Website preview
 <p><img src="https://i.imgur.com/8HtUPWY.png" alt="The Morfi logo" height="200"></p>
-Color palette (they are not all used)
+Color palette
 <p align="center"><img src="https://i.imgur.com/hTmoHQk.png" alt="The Morfi logo"></p>
 
 ### Credits (in construction)
