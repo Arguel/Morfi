@@ -76,7 +76,7 @@ Several tests were done during development and most of them got positive ratings
 
 #### Unknown bugs?
 
-I could not test that 100% of the page works well, although I did some tests, I cannot assure anything. If you find a bug and want to help me you can upload a pull request (in the rework branch) or you can open a [new issue](https://github.com/Arguel/morfi/issues/new)
+I could not test that 100% of the page works well, although I did some tests, I cannot assure anything. If you find a bug and want to help me you can upload a pull request (in the rework branch) or you can open a [new issue](https://github.com/enzoarguello512/morfi/issues/new)
 
 ### Images
 Digital version
