@@ -13,7 +13,7 @@ It is a project only with the intention of learning and improving skills, the en
 <strong>Active deployments</strong>
 * [Vercel](https://morfi.vercel.app/) (full)
 * [000webhost](https://the-morfi.000webhostapp.com/) (outdated) (only what is necessary to run)
-* [Github](https://arguel.github.io/morfi/) (full)
+* [Github](https://enzoarguello512.github.io/morfi/) (full)
 
 ## Table of contents
 
@@ -76,7 +76,7 @@ Several tests were done during development and most of them got positive ratings
 
 #### Unknown bugs?
 
-I could not test that 100% of the page works well, although I did some tests, I cannot assure anything. If you find a bug and want to help me you can upload a pull request (in the rework branch) or you can open a [new issue](https://github.com/enzoarguello512/morfi/issues/new)
+I could not test that 100% of the page works well, although I did some tests, I cannot assure anything. If you find a bug and want to help me you can upload a pull request (in the rework branch) or you can open a [new issue](https://github.com/enzoArguello512/morfi/issues/new)
 
 ### Images
 Digital version
