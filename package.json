@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Arguel/morfi.git"
+    "url": "git+https://github.com/enzoarguello512/morfi.git"
   },
   "keywords": [
     "node",
@@ -18,12 +18,12 @@
     "jquery",
     "bootstrap"
   ],
-  "author": "Arguel",
+  "author": "enzoarguello512",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Arguel/morfi/issues"
+    "url": "https://github.com/enzoarguello512/morfi/issues"
   },
-  "homepage": "https://github.com/Arguel/morfi#readme",
+  "homepage": "https://github.com/enzoarguello512/morfi#readme",
   "devDependencies": {
     "bootstrap": "^5.1.0",
     "node-sass": "^5.0.0",
