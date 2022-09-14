@@ -15,6 +15,10 @@ It is a project only with the intention of learning and improving skills, the en
 * [000webhost](https://the-morfi.000webhostapp.com/) (outdated) (only what is necessary to run)
 * [Github](https://enzoarguello512.github.io/morfi/) (full)
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/75096734/190256290-e7404de3-f3e0-4f71-b8a8-438653f0c1d9.png" alt="photos gallery" height="400">
+</p>
+
 ## Table of contents
 
 - [Tests](#tests)
