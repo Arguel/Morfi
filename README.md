@@ -14,6 +14,7 @@ It is a project only with the intention of learning and improving skills, the en
 * [Vercel](https://morfi.vercel.app/) (full)
 * [000webhost](https://the-morfi.000webhostapp.com/) (outdated) (only what is necessary to run)
 * [Github](https://enzoarguello512.github.io/morfi/) (full)
+* [React version](https://github.com/enzoarguello512/morfi-react) **(New!)**
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/75096734/190256290-e7404de3-f3e0-4f71-b8a8-438653f0c1d9.png" alt="photos gallery" height="400">
@@ -87,6 +88,7 @@ Digital version
 <p align="center">
     <img src="https://i.imgur.com/lnFv8zW.png" alt="digital1">
     <img src="https://i.imgur.com/heFQlBe.png" alt="digital2">
+    <img src="https://user-images.githubusercontent.com/75096734/210747865-58e695d6-69fd-49fd-972c-533d2537e6de.png" alt="digital3" height="400">
 </p>
 Website preview
 <p><img src="https://i.imgur.com/8HtUPWY.png" alt="The Morfi logo" height="200"></p>
